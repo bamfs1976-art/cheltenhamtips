@@ -932,6 +932,57 @@
   /* ===== RACING POST PANEL ===== */
   #tab-rp.active { background: #be185d; border-color: #be185d; color: #fff; }
   #tab-bets.active { background: #0f766e; border-color: #0f766e; color: #fff; }
+  #tab-guide.active { background: #7c3aed; border-color: #7c3aed; color: #fff; }
+
+  /* ===== GUIDE PANEL ===== */
+  .guide-day-tabs { display: flex; gap: 8px; margin-bottom: 18px; flex-wrap: wrap; }
+  .guide-day-btn { padding: 6px 15px; border-radius: 16px; border: 1px solid rgba(212,175,55,0.2); background: transparent; color: var(--silver); font-size: 12px; font-family: 'DM Sans', sans-serif; cursor: pointer; transition: all 0.2s; }
+  .guide-day-btn.gd1.gactive { border-color: #34d399; color: #34d399; background: rgba(52,211,153,0.1); }
+  .guide-day-btn.gd2.gactive { border-color: #60a5fa; color: #60a5fa; background: rgba(96,165,250,0.1); }
+  .guide-day-btn.gd3.gactive { border-color: #f472b6; color: #f472b6; background: rgba(244,114,182,0.1); }
+  .guide-day-btn.gd4.gactive { border-color: #fbbf24; color: #fbbf24; background: rgba(251,191,36,0.1); }
+  .guide-panel { display: none; }
+  .guide-panel.active { display: block; }
+
+  .guide-race-block { margin-bottom: 16px; background: rgba(15,48,32,0.6); border: 1px solid rgba(212,175,55,0.14); border-radius: 10px; overflow: hidden; }
+  .guide-race-hdr { display: flex; align-items: center; gap: 10px; padding: 10px 15px; background: rgba(212,175,55,0.05); border-bottom: 1px solid rgba(212,175,55,0.1); }
+  .guide-race-time { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--gold); min-width: 36px; }
+  .guide-race-name { font-weight: 600; font-size: 13px; flex: 1; }
+  .guide-race-grade { font-size: 10px; color: var(--silver); background: rgba(255,255,255,0.05); padding: 2px 6px; border-radius: 4px; font-family: 'DM Mono', monospace; }
+
+  .guide-tipsters { display: grid; grid-template-columns: repeat(auto-fill, minmax(155px,1fr)); }
+  .guide-tip { padding: 9px 12px; border-right: 1px solid rgba(212,175,55,0.05); border-bottom: 1px solid rgba(212,175,55,0.05); }
+  .guide-tipster-name { font-size: 10px; font-family: 'DM Mono', monospace; font-weight: 600; margin-bottom: 3px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .guide-tip-picks { font-size: 12px; line-height: 1.6; }
+  .guide-pick-1 { color: var(--white); font-weight: 600; }
+  .guide-pick-2 { color: var(--silver); }
+  .guide-pick-3 { color: var(--gold-dim); }
+
+  .gt-dineen  { color: #34d399; }
+  .gt-kealy   { color: #60a5fa; }
+  .gt-park    { color: #6ee7b7; }
+  .gt-playle  { color: #f472b6; }
+  .gt-williams{ color: #fb923c; }
+  .gt-wilson  { color: #93c5fd; }
+  .gt-fennelly{ color: #a78bfa; }
+
+  .guide-legend { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+  .guide-leg { display: flex; align-items: center; gap: 4px; font-size: 10px; color: var(--silver); font-family: 'DM Mono', monospace; }
+  .guide-leg-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+
+  .guide-consensus { display: flex; align-items: center; gap: 8px; padding: 6px 14px; background: rgba(212,175,55,0.03); border-top: 1px solid rgba(212,175,55,0.07); flex-wrap: wrap; }
+  .guide-con-label { color: var(--gold-dim); font-family: 'DM Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; }
+  .guide-con-horse { font-weight: 600; color: #f0d070; font-size: 12px; }
+  .guide-con-count { color: var(--silver); font-size: 11px; }
+
+  .guide-best-bets { background: rgba(124,58,237,0.07); border: 1px solid rgba(124,58,237,0.2); border-radius: 10px; padding: 14px 16px; margin-bottom: 18px; }
+  .guide-best-bets h4 { font-family: 'Playfair Display', serif; font-size: 14px; color: #c4b5fd; margin-bottom: 10px; }
+  .guide-bb-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  @media (max-width: 600px) { .guide-bb-grid { grid-template-columns: 1fr; } .guide-tipsters { grid-template-columns: 1fr 1fr; } }
+  .guide-bb-item { padding: 8px 10px; background: rgba(124,58,237,0.06); border: 1px solid rgba(124,58,237,0.15); border-radius: 7px; }
+  .guide-bb-horse { font-size: 13px; font-weight: 600; color: var(--white); margin-bottom: 1px; }
+  .guide-bb-race { font-size: 10px; color: var(--silver); font-family: 'DM Mono', monospace; }
+  .guide-bb-odds { font-family: 'DM Mono', monospace; font-size: 11px; color: #c4b5fd; margin-top: 2px; }
   .rp-day-tabs { display: flex; gap: 8px; margin-bottom: 18px; flex-wrap: wrap; }
   .rp-day-btn { padding: 6px 15px; border-radius: 16px; border: 1px solid rgba(212,175,55,0.2); background: transparent; color: var(--silver); font-size: 12px; font-family: 'DM Sans', sans-serif; cursor: pointer; transition: all 0.2s; }
   .rp-day-btn.rd1 { border-color: #34d399; color: #34d399; background: rgba(52,211,153,0.08); }
@@ -1190,6 +1241,7 @@
     <button class="btn btn-outline" onclick="openTableView('mullington')" style="border-color:rgba(184,134,11,0.5);color:#f0c060">📰 Mullington</button>
     <button class="btn btn-outline" onclick="openTableView('rp')" style="border-color:rgba(190,24,93,0.5);color:#f472b6">📰 Racing Post</button>
     <button class="btn btn-outline" onclick="openTableView('bets')" style="border-color:rgba(15,118,110,0.5);color:#34d399">🍀 Bets Guide</button>
+    <button class="btn btn-outline" onclick="openTableView('guide')" style="border-color:rgba(124,58,237,0.5);color:#c4b5fd">📖 The Guide</button>
     <button class="btn btn-ghost" id="refreshBtn" onclick="refreshTips()">
       <span id="refreshIcon">↻</span> Refresh
     </button>
@@ -1229,6 +1281,7 @@
     <button class="btn btn-ghost btn-sm" onclick="openTableView('mullington')" style="color:#f0c060;border-color:rgba(184,134,11,0.3)">📰 Mullington</button>
     <button class="btn btn-ghost btn-sm" onclick="openTableView('rp')" style="color:#f472b6;border-color:rgba(190,24,93,0.3)">📰 Rac. Post</button>
     <button class="btn btn-ghost btn-sm" onclick="openTableView('bets')" style="color:#34d399;border-color:rgba(15,118,110,0.3)">🍀 Bets</button>
+    <button class="btn btn-ghost btn-sm" onclick="openTableView('guide')" style="color:#c4b5fd;border-color:rgba(124,58,237,0.3)">📖 Guide</button>
   </div>
 </div>
 
@@ -1245,6 +1298,7 @@
       <button class="table-tab" id="tab-mullington" onclick="switchTableTab('mullington')">📰 Mullington</button>
       <button class="table-tab" id="tab-rp" onclick="switchTableTab('rp')">📰 Racing Post</button>
       <button class="table-tab" id="tab-bets" onclick="switchTableTab('bets')">🍀 Bets Guide</button>
+      <button class="table-tab" id="tab-guide" onclick="switchTableTab('guide')">📖 The Guide</button>
     </div>
     <button class="btn btn-ghost btn-sm" onclick="hideAllNaps()">✕ Close</button>
   </div>
@@ -1816,7 +1870,449 @@
       <div class="bets-strat-item"><strong>📌 Key declarations to watch</strong>Bambino Fever (Day 2 Bumper vs Day 3 Mares' Novices') and Dinoblue (Mares' Chase odds TBC). Always check NRNB terms — William Hill, Paddy Power and BetFred typically lead on Festival NRNB coverage.</div>
     </div>
   </div>
-</div><!-- end panel-bets -->
+  </div><!-- end panel-bets -->
+
+  <!-- GUIDE PANEL -->
+  <div class="table-panel" id="panel-guide" style="display:none">
+    <p class="table-subtitle">The Cheltenham Festival Ultimate Guide — full tipster panel: Johnny Dineen, Paul Kealy, Tom Park, Maddy Playle, Matt Williams, Harry Wilson + Conor Fennelly (Irish runners) + Tom Park's Best Bets. First, second and third picks per tipster per race.</p>
+
+    <!-- BEST BETS BOXES -->
+    <div class="guide-best-bets">
+      <h4>⭐ Tom Park's Best Bets (Pricewise / Ultimate Guide)</h4>
+      <div class="guide-bb-grid">
+        <div class="guide-bb-item"><div class="guide-bb-horse">Dignam</div><div class="guide-bb-race">Juvenile Handicap Hurdle · Tue 14:40</div><div class="guide-bb-odds">16/1 e/w</div></div>
+        <div class="guide-bb-item"><div class="guide-bb-horse">The Mighty Celt</div><div class="guide-bb-race">Juvenile Handicap Hurdle · Tue 14:40</div><div class="guide-bb-odds">40/1 e/w</div></div>
+        <div class="guide-bb-item"><div class="guide-bb-horse">Jingko Blue</div><div class="guide-bb-race">Cup Handicap Hurdle · Wed 14:40</div><div class="guide-bb-odds">33/1 e/w (bet365)</div></div>
+        <div class="guide-bb-item"><div class="guide-bb-horse">Kateira</div><div class="guide-bb-race">Cup Handicap Hurdle · Wed 14:40</div><div class="guide-bb-odds">50/1 e/w (bet365)</div></div>
+        <div class="guide-bb-item"><div class="guide-bb-horse">Supremely West</div><div class="guide-bb-race">Pertemps · Thu 16:40</div><div class="guide-bb-odds">8/1 win (bet365)</div></div>
+        <div class="guide-bb-item"><div class="guide-bb-horse">Joyeuse</div><div class="guide-bb-race">County Hurdle · Fri 14:00</div><div class="guide-bb-odds">25/1 e/w generally</div></div>
+        <div class="guide-bb-item"><div class="guide-bb-horse">The Passing Wife</div><div class="guide-bb-race">Martin Pipe · Fri 17:20</div><div class="guide-bb-odds">12/1 win</div></div>
+      </div>
+    </div>
+    <div class="guide-best-bets" style="background:rgba(167,139,250,0.06);border-color:rgba(167,139,250,0.18);">
+      <h4 style="color:#a78bfa;">🇮🇪 Conor Fennelly's Irish Runners Best Bets</h4>
+      <div class="guide-bb-grid">
+        <div class="guide-bb-item" style="border-color:rgba(167,139,250,0.18)"><div class="guide-bb-horse">Munsif</div><div class="guide-bb-race">Juvenile Handicap Hurdle · Tue 14:40</div><div class="guide-bb-odds" style="color:#a78bfa">10/1 generally</div></div>
+        <div class="guide-bb-item" style="border-color:rgba(167,139,250,0.18)"><div class="guide-bb-horse">Ole Ole</div><div class="guide-bb-race">Juvenile Handicap Hurdle · Tue 14:40</div><div class="guide-bb-odds" style="color:#a78bfa">25/1 Ladbrokes (20/1 gen)</div></div>
+        <div class="guide-bb-item" style="border-color:rgba(167,139,250,0.18)"><div class="guide-bb-horse">Brave Fortune</div><div class="guide-bb-race">NH Chase · Tue 17:20</div><div class="guide-bb-odds" style="color:#a78bfa">16/1 WH (12/1 gen)</div></div>
+        <div class="guide-bb-item" style="border-color:rgba(167,139,250,0.18)"><div class="guide-bb-horse">Slade Steel</div><div class="guide-bb-race">Jack Richards Chase · Thu 14:00</div><div class="guide-bb-odds" style="color:#a78bfa">14/1 PP/Skybet (12/1 gen)</div></div>
+        <div class="guide-bb-item" style="border-color:rgba(167,139,250,0.18)"><div class="guide-bb-horse">Uhavemeinstitches</div><div class="guide-bb-race">Kim Muir · Thu 17:20</div><div class="guide-bb-odds" style="color:#a78bfa">9/1 bet365 (8/1 gen)</div></div>
+        <div class="guide-bb-item" style="border-color:rgba(167,139,250,0.18)"><div class="guide-bb-horse">Workahead</div><div class="guide-bb-race">County Hurdle · Fri 14:00</div><div class="guide-bb-odds" style="color:#a78bfa">16/1 bet365 (14/1 gen)</div></div>
+      </div>
+    </div>
+
+    <div class="guide-legend">
+      <div class="guide-leg"><div class="guide-leg-dot" style="background:#34d399"></div>J. Dineen</div>
+      <div class="guide-leg"><div class="guide-leg-dot" style="background:#60a5fa"></div>P. Kealy</div>
+      <div class="guide-leg"><div class="guide-leg-dot" style="background:#6ee7b7"></div>T. Park</div>
+      <div class="guide-leg"><div class="guide-leg-dot" style="background:#f472b6"></div>M. Playle</div>
+      <div class="guide-leg"><div class="guide-leg-dot" style="background:#fb923c"></div>M. Williams</div>
+      <div class="guide-leg"><div class="guide-leg-dot" style="background:#93c5fd"></div>H. Wilson</div>
+      <div class="guide-leg"><div class="guide-leg-dot" style="background:#a78bfa"></div>C. Fennelly</div>
+      <div class="guide-leg" style="color:var(--gold-dim)">1st pick in <strong style="color:var(--white)">white</strong> · 2nd in <span style="color:var(--silver)">silver</span> · 3rd in <span style="color:var(--gold-dim)">gold-dim</span></div>
+    </div>
+
+    <div class="guide-day-tabs">
+      <button class="guide-day-btn gd1 gactive" onclick="showGuideDay(1)">🟢 Tuesday</button>
+      <button class="guide-day-btn gd2" onclick="showGuideDay(2)">🔵 Wednesday</button>
+      <button class="guide-day-btn gd3" onclick="showGuideDay(3)">🩷 Thursday</button>
+      <button class="guide-day-btn gd4" onclick="showGuideDay(4)">🟡 Friday</button>
+    </div>
+
+    <!-- ===== TUESDAY ===== -->
+    <div class="guide-panel active" id="guide-d1">
+
+      <div class="guide-race-block">
+        <div class="guide-race-hdr"><span class="guide-race-time">13:20</span><span class="guide-race-name">Sky Bet Supreme Novices' Hurdle</span><span class="guide-race-grade">Grade 1</span></div>
+        <div class="guide-tipsters">
+          <div class="guide-tip"><div class="guide-tipster-name gt-dineen">Dineen</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Leader D'Allier</div><div class="guide-pick-2">2 Talk The Talk</div><div class="guide-pick-3">3 Old Park Star</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-kealy">Kealy</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Sober Glory</div><div class="guide-pick-2">2 Old Park Star</div><div class="guide-pick-3">3 Leader D'Allier</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-park">Park</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Old Park Star</div><div class="guide-pick-2">2 Mydaddypaddy</div><div class="guide-pick-3">3 Talk The Talk</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-playle">Playle</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Old Park Star</div><div class="guide-pick-2">2 Mighty Park</div><div class="guide-pick-3">3 Idaho Sun</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-williams">Williams</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Old Park Star</div><div class="guide-pick-2">2 Leader D'Allier</div><div class="guide-pick-3">3 El Cairos</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-wilson">Wilson</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Sober Glory</div><div class="guide-pick-2">2 Old Park Star</div><div class="guide-pick-3">3 Talk The Talk</div></div></div>
+        </div>
+        <div class="guide-consensus"><span class="guide-con-label">Consensus</span><span class="guide-con-horse">Old Park Star</span><span class="guide-con-count">Park, Playle, Williams all 1st pick · Kealy &amp; Wilson on Sober Glory</span></div>
+      </div>
+
+      <div class="guide-race-block">
+        <div class="guide-race-hdr"><span class="guide-race-time">14:00</span><span class="guide-race-name">Singer Arkle Novices' Chase</span><span class="guide-race-grade">Grade 1</span></div>
+        <div class="guide-tipsters">
+          <div class="guide-tip"><div class="guide-tipster-name gt-dineen">Dineen</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Lulamba</div><div class="guide-pick-2">2 Kopek Des Bordes</div><div class="guide-pick-3">3 Steel Ally</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-kealy">Kealy</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Lulamba</div><div class="guide-pick-2">2 Kargese</div><div class="guide-pick-3">3 Kopek Des Bordes</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-park">Park</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Kopek Des Bordes</div><div class="guide-pick-2">2 Lulamba</div><div class="guide-pick-3">3 Kappa Jy Pyke</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-playle">Playle</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Lulamba</div><div class="guide-pick-2">2 Kargese</div><div class="guide-pick-3">3 Kappa Jy Pyke</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-williams">Williams</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Lulamba</div><div class="guide-pick-2">2 Kargese</div><div class="guide-pick-3">3 Kopek Des Bordes</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-wilson">Wilson</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Lulamba</div><div class="guide-pick-2">2 Kopek Des Bordes</div><div class="guide-pick-3">3 Steel Ally</div></div></div>
+        </div>
+        <div class="guide-consensus"><span class="guide-con-label">Strong consensus</span><span class="guide-con-horse">Lulamba</span><span class="guide-con-count">5 of 6 tipsters pick Lulamba 1st · Park picks Kopek Des Bordes 1st</span></div>
+      </div>
+
+      <div class="guide-race-block">
+        <div class="guide-race-hdr"><span class="guide-race-time">14:40</span><span class="guide-race-name">McCoy Contractors Juvenile Handicap Hurdle</span><span class="guide-race-grade">H'cap</span></div>
+        <div class="guide-tipsters">
+          <div class="guide-tip"><div class="guide-tipster-name gt-dineen">Dineen</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Secret Force</div><div class="guide-pick-2">2 Winston Junior</div><div class="guide-pick-3">3 Indian River</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-kealy">Kealy</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Winston Junior</div><div class="guide-pick-2">2 Saratoga</div><div class="guide-pick-3">3 Genealogy</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-park">Park</div><div class="guide-tip-picks"><div class="guide-pick-1">1 The Mighty Celt</div><div class="guide-pick-2">2 Dignam</div><div class="guide-pick-3">3 Manlaga</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-playle">Playle</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Winston Junior</div><div class="guide-pick-2">2 Manlaga</div><div class="guide-pick-3">3 Made U Blush</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-williams">Williams</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Genealogy</div><div class="guide-pick-2">2 Manlaga</div><div class="guide-pick-3">3 Saratoga</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-wilson">Wilson</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Ammes</div><div class="guide-pick-2">2 Winston Junior</div><div class="guide-pick-3">3 Secret Force</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-fennelly" style="color:#a78bfa">Fennelly 🇮🇪</div><div class="guide-tip-picks"><div class="guide-pick-1">Munsif 10/1</div><div class="guide-pick-2">Ole Ole 25/1</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-park">Park Best Bets</div><div class="guide-tip-picks"><div class="guide-pick-1">Dignam 16/1 e/w</div><div class="guide-pick-2">Mighty Celt 40/1 e/w</div></div></div>
+        </div>
+        <div class="guide-consensus"><span class="guide-con-label">Slight lean</span><span class="guide-con-horse">Winston Junior</span><span class="guide-con-count">Kealy, Playle, Wilson (2nd) · Park on Mighty Celt 40/1 e/w</span></div>
+      </div>
+
+      <div class="guide-race-block">
+        <div class="guide-race-hdr"><span class="guide-race-time">15:20</span><span class="guide-race-name">Trustmarque Ultima Handicap Chase</span><span class="guide-race-grade">H'cap</span></div>
+        <div class="guide-tipsters">
+          <div class="guide-tip"><div class="guide-tipster-name gt-dineen">Dineen</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Jagwar</div><div class="guide-pick-2">2 Kim Roque</div><div class="guide-pick-3">3 Blaze The Way</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-kealy">Kealy</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Jagwar</div><div class="guide-pick-2">2 King Of Answers</div><div class="guide-pick-3">3 The Short Go</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-park">Park</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Handstands</div><div class="guide-pick-2">2 Jagwar</div><div class="guide-pick-3">3 Resplendent Grey</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-playle">Playle</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Myretown</div><div class="guide-pick-2">2 Quebecois</div><div class="guide-pick-3">3 Herakles Westwood</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-williams">Williams</div><div class="guide-tip-picks"><div class="guide-pick-1">1 King Of Answers</div><div class="guide-pick-2">2 Konfusion</div><div class="guide-pick-3">3 The Short Go</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-wilson">Wilson</div><div class="guide-tip-picks"><div class="guide-pick-1">1 In D'Or</div><div class="guide-pick-2">2 Leave Of Absence</div><div class="guide-pick-3">3 Herakles Westwood</div></div></div>
+        </div>
+        <div class="guide-consensus"><span class="guide-con-label">Consensus</span><span class="guide-con-horse">Jagwar</span><span class="guide-con-count">Dineen 1st, Kealy 1st, Park 2nd — most agreed selection</span></div>
+      </div>
+
+      <div class="guide-race-block">
+        <div class="guide-race-hdr"><span class="guide-race-time">16:00</span><span class="guide-race-name">Unibet Champion Hurdle</span><span class="guide-race-grade">Grade 1 ⭐</span></div>
+        <div class="guide-tipsters">
+          <div class="guide-tip"><div class="guide-tipster-name gt-dineen">Dineen</div><div class="guide-tip-picks"><div class="guide-pick-1">1 The New Lion</div><div class="guide-pick-2">2 Lossiemouth</div><div class="guide-pick-3">3 Alexei</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-kealy">Kealy</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Golden Ace</div><div class="guide-pick-2">2 The New Lion</div><div class="guide-pick-3">3 Alexei</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-park">Park</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Lossiemouth</div><div class="guide-pick-2">2 Brighterdaysahead</div><div class="guide-pick-3">3 The New Lion</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-playle">Playle</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Lossiemouth</div><div class="guide-pick-2">2 The New Lion</div><div class="guide-pick-3">3 Golden Ace</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-williams">Williams</div><div class="guide-tip-picks"><div class="guide-pick-1">1 The New Lion</div><div class="guide-pick-2">2 Golden Ace</div><div class="guide-pick-3">3 Poniros</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-wilson">Wilson</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Anzadam</div><div class="guide-pick-2">2 Golden Ace</div><div class="guide-pick-3">3 The New Lion</div></div></div>
+        </div>
+        <div class="guide-consensus"><span class="guide-con-label">Split</span><span class="guide-con-horse">The New Lion vs Lossiemouth</span><span class="guide-con-count">Dineen &amp; Williams on The New Lion · Park &amp; Playle on Lossiemouth · Kealy: Golden Ace</span></div>
+      </div>
+
+      <div class="guide-race-block">
+        <div class="guide-race-hdr"><span class="guide-race-time">16:40</span><span class="guide-race-name">Sun Racing Plate Handicap Chase</span><span class="guide-race-grade">H'cap</span></div>
+        <div class="guide-tipsters">
+          <div class="guide-tip"><div class="guide-tipster-name gt-dineen">Dineen</div><div class="guide-tip-picks"><div class="guide-pick-1">1 McLaurey</div><div class="guide-pick-2">2 Vincenzo</div><div class="guide-pick-3">3 Blaze The Way</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-kealy">Kealy</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Donnacha</div><div class="guide-pick-2">2 McLaurey</div><div class="guide-pick-3">3 Beckett Rock</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-park">Park</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Madara</div><div class="guide-pick-2">2 Slade Steel</div><div class="guide-pick-3">3 Downmexicoway</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-playle">Playle</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Madara</div><div class="guide-pick-2">2 Jagwar</div><div class="guide-pick-3">3 Vincenzo</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-williams">Williams</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Madara</div><div class="guide-pick-2">2 O'Moore Park</div><div class="guide-pick-3">3 Jagwar</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-wilson">Wilson</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Madara</div><div class="guide-pick-2">2 McLaurey</div><div class="guide-pick-3">3 Donnacha</div></div></div>
+        </div>
+        <div class="guide-consensus"><span class="guide-con-label">Strong consensus</span><span class="guide-con-horse">Madara</span><span class="guide-con-count">Park, Playle, Williams, Wilson all 1st pick · McLaurey also well-backed</span></div>
+      </div>
+
+      <div class="guide-race-block">
+        <div class="guide-race-hdr"><span class="guide-race-time">17:20</span><span class="guide-race-name">Princess Royal National Hunt Challenge Cup</span><span class="guide-race-grade">Grade 2</span></div>
+        <div class="guide-tipsters">
+          <div class="guide-tip"><div class="guide-tipster-name gt-dineen">Dineen</div><div class="guide-tip-picks"><div class="guide-pick-1">1 One Big Bang</div><div class="guide-pick-2">2 Newton Tornado</div><div class="guide-pick-3">3 Road To Home</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-kealy">Kealy</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Brave Fortune</div><div class="guide-pick-2">2 The Jukebox Kid</div><div class="guide-pick-3">3 The Lovely Man</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-park">Park</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Wade Out</div><div class="guide-pick-2">2 One Big Bang</div><div class="guide-pick-3">3 Newton Tornado</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-playle">Playle</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Newton Tornado</div><div class="guide-pick-2">2 Wade Out</div><div class="guide-pick-3">3 Grand Geste</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-williams">Williams</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Kurasso Blue</div><div class="guide-pick-2">2 Bossofthebrownies</div><div class="guide-pick-3">3 One Big Bang</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-wilson">Wilson</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Backmersackme</div><div class="guide-pick-2">2 Wade Out</div><div class="guide-pick-3">3 Newton Tornado</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-fennelly" style="color:#a78bfa">Fennelly 🇮🇪</div><div class="guide-tip-picks"><div class="guide-pick-1">Brave Fortune 16/1</div></div></div>
+        </div>
+        <div class="guide-consensus"><span class="guide-con-label">No consensus</span><span class="guide-con-horse">6 different 1st picks</span><span class="guide-con-count">Newton Tornado most backed overall (2nd/3rd picks) · Wide open</span></div>
+      </div>
+
+    </div><!-- end guide-d1 -->
+
+    <!-- ===== WEDNESDAY ===== -->
+    <div class="guide-panel" id="guide-d2">
+
+      <div class="guide-race-block">
+        <div class="guide-race-hdr"><span class="guide-race-time">13:20</span><span class="guide-race-name">Turners Novices' Hurdle</span><span class="guide-race-grade">Grade 1</span></div>
+        <div class="guide-tipsters">
+          <div class="guide-tip"><div class="guide-tipster-name gt-dineen">Dineen</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Mighty Park</div><div class="guide-pick-2">2 No Drama This End</div><div class="guide-pick-3">3 Shuttle Diplomacy</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-kealy">Kealy</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Mighty Park</div><div class="guide-pick-2">2 No Drama This End</div><div class="guide-pick-3">3 Skylight Hustle</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-park">Park</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Skylight Hustle</div><div class="guide-pick-2">2 Ballyfad</div><div class="guide-pick-3">—</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-playle">Playle</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Skylight Hustle</div><div class="guide-pick-2">2 Bossman Jack</div><div class="guide-pick-3">3 King Rasko Grey</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-williams">Williams</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Mighty Park</div><div class="guide-pick-2">2 No Drama This End</div><div class="guide-pick-3">3 Act Of Innocence</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-wilson">Wilson</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Mighty Park</div><div class="guide-pick-2">2 Skylight Hustle</div><div class="guide-pick-3">3 No Drama This End</div></div></div>
+        </div>
+        <div class="guide-consensus"><span class="guide-con-label">Split</span><span class="guide-con-horse">Mighty Park vs Skylight Hustle</span><span class="guide-con-count">Dineen/Kealy/Williams/Wilson on Mighty Park · Park/Playle on Skylight Hustle</span></div>
+      </div>
+
+      <div class="guide-race-block">
+        <div class="guide-race-hdr"><span class="guide-race-time">14:00</span><span class="guide-race-name">Brown Advisory Novices' Chase</span><span class="guide-race-grade">Grade 1</span></div>
+        <div class="guide-tipsters">
+          <div class="guide-tip"><div class="guide-tipster-name gt-dineen">Dineen</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Wendigo</div><div class="guide-pick-2">2 The Big Westerner</div><div class="guide-pick-3">3 Kaid D'Authie</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-kealy">Kealy</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Wendigo</div><div class="guide-pick-2">2 The Big Westerner</div><div class="guide-pick-3">3 Western Fold</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-park">Park</div><div class="guide-tip-picks"><div class="guide-pick-1">1 The Big Westerner</div><div class="guide-pick-2">2 Western Fold</div><div class="guide-pick-3">3 Wendigo</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-playle">Playle</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Wendigo</div><div class="guide-pick-2">2 Kitzbuhel</div><div class="guide-pick-3">3 Final Demand</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-williams">Williams</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Final Demand</div><div class="guide-pick-2">2 Wendigo</div><div class="guide-pick-3">3 The Big Westerner</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-wilson">Wilson</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Wendigo</div><div class="guide-pick-2">2 The Big Westerner</div><div class="guide-pick-3">3 Final Demand</div></div></div>
+        </div>
+        <div class="guide-consensus"><span class="guide-con-label">Strong consensus</span><span class="guide-con-horse">Wendigo</span><span class="guide-con-count">Dineen, Kealy, Playle, Wilson all 1st pick · Park on The Big Westerner 1st</span></div>
+      </div>
+
+      <div class="guide-race-block">
+        <div class="guide-race-hdr"><span class="guide-race-time">14:40</span><span class="guide-race-name">BetMGM Cup Handicap Hurdle (Coral Cup)</span><span class="guide-race-grade">H'cap</span></div>
+        <div class="guide-tipsters">
+          <div class="guide-tip"><div class="guide-tipster-name gt-dineen">Dineen</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Jump Allen</div><div class="guide-pick-2">2 I Started A Joke</div><div class="guide-pick-3">3 Storm Heart</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-kealy">Kealy</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Jingko Blue</div><div class="guide-pick-2">2 Came From Nowhere</div><div class="guide-pick-3">3 Storm Heart</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-park">Park</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Kateira</div><div class="guide-pick-2">2 Jingko Blue</div><div class="guide-pick-3">3 The Yellow Clay</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-playle">Playle</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Indeevar Bleu</div><div class="guide-pick-2">2 Storm Heart</div><div class="guide-pick-3">3 Andashan</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-williams">Williams</div><div class="guide-tip-picks"><div class="guide-pick-1">1 I Started A Joke</div><div class="guide-pick-2">2 Wendrock</div><div class="guide-pick-3">3 Ballyadam</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-wilson">Wilson</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Indeevar Bleu</div><div class="guide-pick-2">2 Kopeck De Mee</div><div class="guide-pick-3">3 Came From Nowhere</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-park">Park Best Bets</div><div class="guide-tip-picks"><div class="guide-pick-1">Jingko Blue 33/1 e/w</div><div class="guide-pick-2">Kateira 50/1 e/w</div></div></div>
+        </div>
+        <div class="guide-consensus"><span class="guide-con-label">No consensus</span><span class="guide-con-horse">6 different 1st picks</span><span class="guide-con-count">Park's Best Bets: Jingko Blue 33/1 &amp; Kateira 50/1 e/w · Indeevar Bleu: Playle &amp; Wilson</span></div>
+      </div>
+
+      <div class="guide-race-block">
+        <div class="guide-race-hdr"><span class="guide-race-time">15:20</span><span class="guide-race-name">Glenfarclas Cross Country Chase</span><span class="guide-race-grade">Grade 3</span></div>
+        <div class="guide-tipsters">
+          <div class="guide-tip"><div class="guide-tipster-name gt-dineen">Dineen</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Favori De Champdou</div><div class="guide-pick-2">2 Stumptown</div><div class="guide-pick-3">3 Desertmore House</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-kealy">Kealy</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Favori De Champdou</div><div class="guide-pick-2">2 Stumptown</div><div class="guide-pick-3">3 French Dynamite</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-park">Park</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Favori De Champdou</div><div class="guide-pick-2">2 Stumptown</div><div class="guide-pick-3">3 Desertmore House</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-playle">Playle</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Stumptown</div><div class="guide-pick-2">2 Favori De Champdou</div><div class="guide-pick-3">3 Vanillier</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-williams">Williams</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Stumptown</div><div class="guide-pick-2">2 J'Arrive De L'Est</div><div class="guide-pick-3">3 Desertmore House</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-wilson">Wilson</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Favori De Champdou</div><div class="guide-pick-2">2 Desertmore House</div><div class="guide-pick-3">3 Vanillier</div></div></div>
+        </div>
+        <div class="guide-consensus"><span class="guide-con-label">Split</span><span class="guide-con-horse">Favori De Champdou vs Stumptown</span><span class="guide-con-count">Dineen/Kealy/Park/Wilson on Favori · Playle/Williams on Stumptown</span></div>
+      </div>
+
+      <div class="guide-race-block">
+        <div class="guide-race-hdr"><span class="guide-race-time">16:00</span><span class="guide-race-name">BetMGM Queen Mother Champion Chase</span><span class="guide-race-grade">Grade 1 ⭐</span></div>
+        <div class="guide-tipsters">
+          <div class="guide-tip"><div class="guide-tipster-name gt-dineen">Dineen</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Majborough</div><div class="guide-pick-2">2 Marine Nationale</div><div class="guide-pick-3">3 Il Etait Temps</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-kealy">Kealy</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Majborough</div><div class="guide-pick-2">2 Il Etait Temps</div><div class="guide-pick-3">3 L'Eau Du Sud</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-park">Park</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Majborough</div><div class="guide-pick-2">2 Marine Nationale</div><div class="guide-pick-3">3 L'Eau Du Sud</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-playle">Playle</div><div class="guide-tip-picks"><div class="guide-pick-1">1 L'Eau Du Sud</div><div class="guide-pick-2">2 Il Etait Temps</div><div class="guide-pick-3">3 Marine Nationale</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-williams">Williams</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Marine Nationale</div><div class="guide-pick-2">2 L'Eau Du Sud</div><div class="guide-pick-3">3 Majborough</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-wilson">Wilson</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Marine Nationale</div><div class="guide-pick-2">2 Majborough</div><div class="guide-pick-3">3 L'Eau Du Sud</div></div></div>
+        </div>
+        <div class="guide-consensus"><span class="guide-con-label">Split</span><span class="guide-con-horse">Majborough vs Marine Nationale</span><span class="guide-con-count">Dineen/Kealy/Park on Majborough · Williams/Wilson on Marine Nationale · Playle: L'Eau Du Sud</span></div>
+      </div>
+
+      <div class="guide-race-block">
+        <div class="guide-race-hdr"><span class="guide-race-time">16:40</span><span class="guide-race-name">Johnny Henderson Grand Annual H'cap Chase</span><span class="guide-race-grade">H'cap</span></div>
+        <div class="guide-tipsters">
+          <div class="guide-tip"><div class="guide-tipster-name gt-dineen">Dineen</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Inthepocket</div><div class="guide-pick-2">2 Vanderpoel</div><div class="guide-pick-3">3 Diego Western</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-kealy">Kealy</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Golden Joy</div><div class="guide-pick-2">2 Ryan's Rocket</div><div class="guide-pick-3">3 Jacob's Ladder</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-park">Park</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Inthepocket</div><div class="guide-pick-2">2 Jacob's Ladder</div><div class="guide-pick-3">3 Vanderpoel</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-playle">Playle</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Ryan's Rocket</div><div class="guide-pick-2">2 Jazzy Matty</div><div class="guide-pick-3">3 No Questions Asked</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-williams">Williams</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Addragoole</div><div class="guide-pick-2">2 Be Aware</div><div class="guide-pick-3">3 Jacob's Ladder</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-wilson">Wilson</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Be Aware</div><div class="guide-pick-2">2 Ryan's Rocket</div><div class="guide-pick-3">3 Libberty Hunter</div></div></div>
+        </div>
+        <div class="guide-consensus"><span class="guide-con-label">No consensus</span><span class="guide-con-horse">6 different 1st picks</span><span class="guide-con-count">Ryan's Rocket most backed overall (Playle 1st, Kealy 2nd, Wilson 2nd)</span></div>
+      </div>
+
+      <div class="guide-race-block">
+        <div class="guide-race-hdr"><span class="guide-race-time">17:20</span><span class="guide-race-name">Weatherbys Champion Bumper</span><span class="guide-race-grade">Grade 1</span></div>
+        <div class="guide-tipsters">
+          <div class="guide-tip"><div class="guide-tipster-name gt-dineen">Dineen</div><div class="guide-tip-picks"><div class="guide-pick-1">1 It's Only A Game</div><div class="guide-pick-2">2 Outofafrika</div><div class="guide-pick-3">3 Keep Him Company</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-kealy">Kealy</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Charismatic Kid</div><div class="guide-pick-2">2 Our Trigger</div><div class="guide-pick-3">3 Oh My Word</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-park">Park</div><div class="guide-tip-picks"><div class="guide-pick-1">1 The Irish Avatar</div><div class="guide-pick-2">2 Charismatic Kid</div><div class="guide-pick-3">3 Keep Him Company</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-playle">Playle</div><div class="guide-tip-picks"><div class="guide-pick-1">1 The Irish Avatar</div><div class="guide-pick-2">2 Love Sign D'Anou</div><div class="guide-pick-3">3 Bass Hunter</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-williams">Williams</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Our Trigger</div><div class="guide-pick-2">2 Love Sign D'Anou</div><div class="guide-pick-3">3 Keep Him Company</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-wilson">Wilson</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Keep Him Company</div><div class="guide-pick-2">2 Love Sign D'Anou</div><div class="guide-pick-3">3 Quiryn</div></div></div>
+        </div>
+        <div class="guide-consensus"><span class="guide-con-label">Slight lean</span><span class="guide-con-horse">The Irish Avatar &amp; Love Sign D'Anou</span><span class="guide-con-count">Park &amp; Playle on Irish Avatar · Love Sign D'Anou in 2nd for 3 tipsters</span></div>
+      </div>
+
+    </div><!-- end guide-d2 -->
+
+    <!-- ===== THURSDAY ===== -->
+    <div class="guide-panel" id="guide-d3">
+
+      <div class="guide-race-block">
+        <div class="guide-race-hdr"><span class="guide-race-time">13:20</span><span class="guide-race-name">Ryanair Mares' Novices' Hurdle</span><span class="guide-race-grade">Grade 2</span></div>
+        <div class="guide-tipsters">
+          <div class="guide-tip"><div class="guide-tipster-name gt-dineen">Dineen</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Carrigmoornaspruce</div><div class="guide-pick-2">2 Bambino Fever</div><div class="guide-pick-3">3 Oldschool Outlaw</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-kealy">Kealy</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Oldschool Outlaw</div><div class="guide-pick-2">2 Bambino Fever</div><div class="guide-pick-3">3 La Conquiere</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-park">Park</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Bambino Fever</div><div class="guide-pick-2">2 Oldschool Outlaw</div><div class="guide-pick-3">3 Jackie Hobbs</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-playle">Playle</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Bambino Fever</div><div class="guide-pick-2">2 Oldschool Outlaw</div><div class="guide-pick-3">3 Carrigmoornaspruce</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-williams">Williams</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Bambino Fever</div><div class="guide-pick-2">2 Oldschool Outlaw</div><div class="guide-pick-3">3 La Conquiere</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-wilson">Wilson</div><div class="guide-tip-picks"><div class="guide-pick-1">1 La Conquiere</div><div class="guide-pick-2">2 Oldschool Outlaw</div><div class="guide-pick-3">3 Bambino Fever</div></div></div>
+        </div>
+        <div class="guide-consensus"><span class="guide-con-label">Consensus</span><span class="guide-con-horse">Bambino Fever</span><span class="guide-con-count">Park, Playle, Williams 1st · Kealy &amp; Wilson have Oldschool Outlaw 2nd</span></div>
+      </div>
+
+      <div class="guide-race-block">
+        <div class="guide-race-hdr"><span class="guide-race-time">14:00</span><span class="guide-race-name">Jack Richards Novices' Handicap Chase</span><span class="guide-race-grade">Grade 3</span></div>
+        <div class="guide-tipsters">
+          <div class="guide-tip"><div class="guide-tipster-name gt-dineen">Dineen</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Meetmebythesea</div><div class="guide-pick-2">2 Waterford Whispers</div><div class="guide-pick-3">3 Slade Steel</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-kealy">Kealy</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Koktail Divin</div><div class="guide-pick-2">2 Jordans Cross</div><div class="guide-pick-3">3 Regent's Stroll</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-park">Park</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Koktail Divin</div><div class="guide-pick-2">2 Sixmilebridge</div><div class="guide-pick-3">3 Meetmebythesea</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-playle">Playle</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Meetmebythesea</div><div class="guide-pick-2">2 Regent's Stroll</div><div class="guide-pick-3">3 Sixmilebridge</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-williams">Williams</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Koktail Divin</div><div class="guide-pick-2">2 Waterford Whispers</div><div class="guide-pick-3">3 Regent's Stroll</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-wilson">Wilson</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Sixmilebridge</div><div class="guide-pick-2">2 Jacob's Ladder</div><div class="guide-pick-3">3 Regent's Stroll</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-fennelly" style="color:#a78bfa">Fennelly 🇮🇪</div><div class="guide-tip-picks"><div class="guide-pick-1">Slade Steel 14/1</div></div></div>
+        </div>
+        <div class="guide-consensus"><span class="guide-con-label">Split</span><span class="guide-con-horse">Koktail Divin vs Meetmebythesea</span><span class="guide-con-count">Kealy/Park/Williams on Koktail Divin · Dineen/Playle on Meetmebythesea</span></div>
+      </div>
+
+      <div class="guide-race-block">
+        <div class="guide-race-hdr"><span class="guide-race-time">14:40</span><span class="guide-race-name">Close Brothers Mares' Hurdle</span><span class="guide-race-grade">Grade 1</span></div>
+        <div class="guide-tipsters">
+          <div class="guide-tip"><div class="guide-tipster-name gt-dineen">Dineen</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Wodhooh</div><div class="guide-pick-2">2 Feet Of A Dancer</div><div class="guide-pick-3">3 Take No Chances</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-kealy">Kealy</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Wodhooh</div><div class="guide-pick-2">2 Jade De Grugy</div><div class="guide-pick-3">3 Feet Of A Dancer</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-park">Park</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Wodhooh</div><div class="guide-pick-2">2 Lossiemouth</div><div class="guide-pick-3">3 Jade De Grugy</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-playle">Playle</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Lossiemouth</div><div class="guide-pick-2">2 Wodhooh</div><div class="guide-pick-3">3 Jade De Grugy</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-williams">Williams</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Lossiemouth</div><div class="guide-pick-2">2 Wodhooh</div><div class="guide-pick-3">3 Jade De Grugy</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-wilson">Wilson</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Lossiemouth</div><div class="guide-pick-2">2 Wodhooh</div><div class="guide-pick-3">3 Jade De Grugy</div></div></div>
+        </div>
+        <div class="guide-consensus"><span class="guide-con-label">Split</span><span class="guide-con-horse">Wodhooh vs Lossiemouth</span><span class="guide-con-count">Dineen/Kealy/Park on Wodhooh · Playle/Williams/Wilson on Lossiemouth · Jade De Grugy 3rd in 3 picks</span></div>
+      </div>
+
+      <div class="guide-race-block">
+        <div class="guide-race-hdr"><span class="guide-race-time">15:20</span><span class="guide-race-name">Paddy Power Stayers' Hurdle</span><span class="guide-race-grade">Grade 1</span></div>
+        <div class="guide-tipsters">
+          <div class="guide-tip"><div class="guide-tipster-name gt-dineen">Dineen</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Honesty Policy</div><div class="guide-pick-2">2 Teahupoo</div><div class="guide-pick-3">3 Impose Toi</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-kealy">Kealy</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Ma Shantou</div><div class="guide-pick-2">2 Bob Olinger</div><div class="guide-pick-3">3 Teahupoo</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-park">Park</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Teahupoo</div><div class="guide-pick-2">2 Bob Olinger</div><div class="guide-pick-3">3 Ma Shantou</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-playle">Playle</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Honesty Policy</div><div class="guide-pick-2">2 Ma Shantou</div><div class="guide-pick-3">3 Bob Olinger</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-williams">Williams</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Ballyburn</div><div class="guide-pick-2">2 Teahupoo</div><div class="guide-pick-3">3 Impose Toi</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-wilson">Wilson</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Bob Olinger</div><div class="guide-pick-2">2 Teahupoo</div><div class="guide-pick-3">3 Honesty Policy</div></div></div>
+        </div>
+        <div class="guide-consensus"><span class="guide-con-label">No consensus</span><span class="guide-con-horse">Wide open</span><span class="guide-con-count">Teahupoo most featured (Park 1st, Kealy 3rd, Williams 2nd, Wilson 2nd) · Honesty Policy: Dineen/Playle 1st</span></div>
+      </div>
+
+      <div class="guide-race-block">
+        <div class="guide-race-hdr"><span class="guide-race-time">16:00</span><span class="guide-race-name">Ryanair Chase</span><span class="guide-race-grade">Grade 1 ⭐</span></div>
+        <div class="guide-tipsters">
+          <div class="guide-tip"><div class="guide-tipster-name gt-dineen">Dineen</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Gaelic Warrior</div><div class="guide-pick-2">2 Impaire Et Passe</div><div class="guide-pick-3">3 Heart Wood</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-kealy">Kealy</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Fact To File</div><div class="guide-pick-2">2 Banbridge</div><div class="guide-pick-3">3 Matata</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-park">Park</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Fact To File</div><div class="guide-pick-2">2 Banbridge</div><div class="guide-pick-3">3 Firefox</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-playle">Playle</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Fact To File</div><div class="guide-pick-2">2 Impaire Et Passe</div><div class="guide-pick-3">3 Heart Wood</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-williams">Williams</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Jonbon</div><div class="guide-pick-2">2 Impaire Et Passe</div><div class="guide-pick-3">3 Handstands</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-wilson">Wilson</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Fact To File</div><div class="guide-pick-2">2 Banbridge</div><div class="guide-pick-3">3 Jonbon</div></div></div>
+        </div>
+        <div class="guide-consensus"><span class="guide-con-label">Strong consensus</span><span class="guide-con-horse">Fact To File</span><span class="guide-con-count">Kealy/Park/Playle/Wilson all 1st pick · Dineen on Gaelic Warrior · Williams on Jonbon</span></div>
+      </div>
+
+      <div class="guide-race-block">
+        <div class="guide-race-hdr"><span class="guide-race-time">16:40</span><span class="guide-race-name">Pertemps Network Final Handicap Hurdle</span><span class="guide-race-grade">H'cap</span></div>
+        <div class="guide-tipsters">
+          <div class="guide-tip"><div class="guide-tipster-name gt-dineen">Dineen</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Electric Mason</div><div class="guide-pick-2">2 Champagne Chic</div><div class="guide-pick-3">3 Supremely West</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-kealy">Kealy</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Bold Endeavour</div><div class="guide-pick-2">2 Kikijo</div><div class="guide-pick-3">3 Staffordshire Knot</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-park">Park</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Supremely West</div><div class="guide-pick-2">2 Impose Toi</div><div class="guide-pick-3">3 Staffordshire Knot</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-playle">Playle</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Electric Mason</div><div class="guide-pick-2">2 Absolutely Doyen</div><div class="guide-pick-3">3 Kikijo</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-williams">Williams</div><div class="guide-tip-picks"><div class="guide-pick-1">1 C'Est Different</div><div class="guide-pick-2">2 Duke Silver</div><div class="guide-pick-3">3 Bold Endeavour</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-wilson">Wilson</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Onewaywest</div><div class="guide-pick-2">2 Minella Emperor</div><div class="guide-pick-3">3 C'Est Different</div></div></div>
+        </div>
+        <div class="guide-consensus"><span class="guide-con-label">No consensus</span><span class="guide-con-horse">6 different 1st picks</span><span class="guide-con-count">Electric Mason: Dineen &amp; Playle · Park Best Bet: Supremely West 8/1</span></div>
+      </div>
+
+      <div class="guide-race-block">
+        <div class="guide-race-hdr"><span class="guide-race-time">17:20</span><span class="guide-race-name">Fulke Walwyn Kim Muir Challenge Cup</span><span class="guide-race-grade">H'cap</span></div>
+        <div class="guide-tipsters">
+          <div class="guide-tip"><div class="guide-tipster-name gt-dineen">Dineen</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Weveallbeencaught</div><div class="guide-pick-2">2 Uhavemeinstitches</div><div class="guide-pick-3">3 Heron's Friend</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-kealy">Kealy</div><div class="guide-tip-picks"><div class="guide-pick-1">1 In D'Or</div><div class="guide-pick-2">2 Uhavemeinstitches</div><div class="guide-pick-3">3 Herakles Westwood</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-park">Park</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Jeriko Du Reponet</div><div class="guide-pick-2">2 In D'Or</div><div class="guide-pick-3">3 Montregard</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-playle">Playle</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Uhavemeinstitches</div><div class="guide-pick-2">2 In D'Or</div><div class="guide-pick-3">3 Jeriko Du Reponet</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-williams">Williams</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Dom Of Mary</div><div class="guide-pick-2">2 Weveallbeencaught</div><div class="guide-pick-3">3 Mister Coffey</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-wilson">Wilson</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Ask Brewster</div><div class="guide-pick-2">2 Jeriko Du Reponet</div><div class="guide-pick-3">3 Grand Albert</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-fennelly" style="color:#a78bfa">Fennelly 🇮🇪</div><div class="guide-tip-picks"><div class="guide-pick-1">Uhavemeinstitches 9/1</div></div></div>
+        </div>
+        <div class="guide-consensus"><span class="guide-con-label">No consensus</span><span class="guide-con-horse">6 different 1st picks</span><span class="guide-con-count">In D'Or &amp; Uhavemeinstitches most featured across all picks · Fennelly: Uhavemeinstitches 9/1</span></div>
+      </div>
+
+    </div><!-- end guide-d3 -->
+
+    <!-- ===== FRIDAY ===== -->
+    <div class="guide-panel" id="guide-d4">
+
+      <div class="guide-race-block">
+        <div class="guide-race-hdr"><span class="guide-race-time">13:20</span><span class="guide-race-name">JCB Triumph Hurdle</span><span class="guide-race-grade">Grade 1</span></div>
+        <div class="guide-tipsters">
+          <div class="guide-tip"><div class="guide-tipster-name gt-dineen">Dineen</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Proactif</div><div class="guide-pick-2">2 Selma De Vary</div><div class="guide-pick-3">3 Maestro Conti</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-kealy">Kealy</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Selma De Vary</div><div class="guide-pick-2">2 Mange Tout</div><div class="guide-pick-3">3 Minella Study</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-park">Park</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Proactif</div><div class="guide-pick-2">2 Selma De Vary</div><div class="guide-pick-3">3 Macho Man</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-playle">Playle</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Maestro Conti</div><div class="guide-pick-2">2 Minella Study</div><div class="guide-pick-3">3 Macho Man</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-williams">Williams</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Selma De Vary</div><div class="guide-pick-2">2 Minella Study</div><div class="guide-pick-3">3 Macho Man</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-wilson">Wilson</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Minella Study</div><div class="guide-pick-2">2 Selma De Vary</div><div class="guide-pick-3">3 Proactif</div></div></div>
+        </div>
+        <div class="guide-consensus"><span class="guide-con-label">Split</span><span class="guide-con-horse">Selma De Vary vs Proactif</span><span class="guide-con-count">Selma De Vary: Kealy/Williams 1st, Park/Wilson 2nd · Proactif: Dineen/Park 1st · Minella Study: Wilson 1st</span></div>
+      </div>
+
+      <div class="guide-race-block">
+        <div class="guide-race-hdr"><span class="guide-race-time">14:00</span><span class="guide-race-name">William Hill County Handicap Hurdle</span><span class="guide-race-grade">H'cap</span></div>
+        <div class="guide-tipsters">
+          <div class="guide-tip"><div class="guide-tipster-name gt-dineen">Dineen</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Murcia</div><div class="guide-pick-2">2 Puturhands­together</div><div class="guide-pick-3">3 Sticktothep­lan</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-kealy">Kealy</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Puturhands­together</div><div class="guide-pick-2">2 Sinnatra</div><div class="guide-pick-3">3 Murcia</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-park">Park</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Joyeuse</div><div class="guide-pick-2">2 Tellherthename</div><div class="guide-pick-3">3 Sixandahalf</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-playle">Playle</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Roc Dino</div><div class="guide-pick-2">2 Workahead</div><div class="guide-pick-3">3 Absurde</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-williams">Williams</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Murcia</div><div class="guide-pick-2">2 Khrisma</div><div class="guide-pick-3">3 Workahead</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-wilson">Wilson</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Sinnatra</div><div class="guide-pick-2">2 Roc Dino</div><div class="guide-pick-3">3 Celtic Dino</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-park">Park Best Bet</div><div class="guide-tip-picks"><div class="guide-pick-1">Joyeuse 25/1 e/w</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-fennelly" style="color:#a78bfa">Fennelly 🇮🇪</div><div class="guide-tip-picks"><div class="guide-pick-1">Workahead 16/1</div></div></div>
+        </div>
+        <div class="guide-consensus"><span class="guide-con-label">No consensus</span><span class="guide-con-horse">6 different 1st picks</span><span class="guide-con-count">Murcia: Dineen &amp; Williams · Park Best Bet: Joyeuse 25/1 e/w · Fennelly: Workahead 16/1</span></div>
+      </div>
+
+      <div class="guide-race-block">
+        <div class="guide-race-hdr"><span class="guide-race-time">14:40</span><span class="guide-race-name">Mrs Paddy Power Mares' Chase</span><span class="guide-race-grade">Grade 2</span></div>
+        <div class="guide-tipsters">
+          <div class="guide-tip"><div class="guide-tipster-name gt-dineen">Dineen</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Dinoblue</div><div class="guide-pick-2">2 Jade De Grugy</div><div class="guide-pick-3">3 Panic Attack</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-kealy">Kealy</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Dinoblue</div><div class="guide-pick-2">2 Spindleberry</div><div class="guide-pick-3">3 Diva Luna</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-park">Park</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Diva Luna</div><div class="guide-pick-2">2 Dinoblue</div><div class="guide-pick-3">3 Panic Attack</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-playle">Playle</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Panic Attack</div><div class="guide-pick-2">2 Dinoblue</div><div class="guide-pick-3">3 The Big Westerner</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-williams">Williams</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Panic Attack</div><div class="guide-pick-2">2 Spindleberry</div><div class="guide-pick-3">3 Dinoblue</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-wilson">Wilson</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Spindleberry</div><div class="guide-pick-2">2 Panic Attack</div><div class="guide-pick-3">3 Dinoblue</div></div></div>
+        </div>
+        <div class="guide-consensus"><span class="guide-con-label">Split</span><span class="guide-con-horse">Dinoblue vs Panic Attack</span><span class="guide-con-count">Dinoblue: Dineen/Kealy 1st, Park/Playle 2nd, Williams 3rd · Panic Attack: Playle/Williams 1st · Spindleberry: Wilson 1st</span></div>
+      </div>
+
+      <div class="guide-race-block">
+        <div class="guide-race-hdr"><span class="guide-race-time">15:20</span><span class="guide-race-name">Albert Bartlett Novices' Hurdle</span><span class="guide-race-grade">Grade 1</span></div>
+        <div class="guide-tipsters">
+          <div class="guide-tip"><div class="guide-tipster-name gt-dineen">Dineen</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Sortudo</div><div class="guide-pick-2">2 Thedeviluno</div><div class="guide-pick-3">3 Jalon D'Oudairies</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-kealy">Kealy</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Spinningayarn</div><div class="guide-pick-2">2 Thedeviluno</div><div class="guide-pick-3">3 Zanoosh</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-park">Park</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Spinningayarn</div><div class="guide-pick-2">2 Thedeviluno</div><div class="guide-pick-3">3 Doctor Steinberg</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-playle">Playle</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Thedeviluno</div><div class="guide-pick-2">2 Apache Tribe</div><div class="guide-pick-3">3 Espresso Milan</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-williams">Williams</div><div class="guide-tip-picks"><div class="guide-pick-1">1 King's Bucks</div><div class="guide-pick-2">2 Doctor Steinberg</div><div class="guide-pick-3">3 Thedeviluno</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-wilson">Wilson</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Doctor Steinberg</div><div class="guide-pick-2">2 I'll Sort That</div><div class="guide-pick-3">3 Espresso Milan</div></div></div>
+        </div>
+        <div class="guide-consensus"><span class="guide-con-label">Split</span><span class="guide-con-horse">Spinningayarn vs Thedeviluno</span><span class="guide-con-count">Kealy/Park on Spinningayarn · Playle on Thedeviluno · Thedeviluno 2nd for Kealy, Park &amp; Williams · Doctor Steinberg: Wilson 1st</span></div>
+      </div>
+
+      <div class="guide-race-block">
+        <div class="guide-race-hdr"><span class="guide-race-time">16:00</span><span class="guide-race-name">Boodles Cheltenham Gold Cup</span><span class="guide-race-grade">Grade 1 ⭐⭐</span></div>
+        <div class="guide-tipsters">
+          <div class="guide-tip"><div class="guide-tipster-name gt-dineen">Dineen</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Fact To File</div><div class="guide-pick-2">2 Jango Baie</div><div class="guide-pick-3">3 Inothewayurthinkin</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-kealy">Kealy</div><div class="guide-tip-picks"><div class="guide-pick-1">1 The Jukebox Man</div><div class="guide-pick-2">2 Gaelic Warrior</div><div class="guide-pick-3">3 Grey Dawning</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-park">Park</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Gaelic Warrior</div><div class="guide-pick-2">2 The Jukebox Man</div><div class="guide-pick-3">3 Jango Baie</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-playle">Playle</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Jango Baie</div><div class="guide-pick-2">2 Haiti Couleurs</div><div class="guide-pick-3">3 Galopin Des Champs</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-williams">Williams</div><div class="guide-tip-picks"><div class="guide-pick-1">1 I Am Maximus</div><div class="guide-pick-2">2 Jango Baie</div><div class="guide-pick-3">3 Galopin Des Champs</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-wilson">Wilson</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Jango Baie</div><div class="guide-pick-2">2 Gaelic Warrior</div><div class="guide-pick-3">3 The Jukebox Man</div></div></div>
+        </div>
+        <div class="guide-consensus"><span class="guide-con-label">Split 5 ways</span><span class="guide-con-horse">Jango Baie leads overall</span><span class="guide-con-count">Jango Baie: Playle/Wilson 1st, Dineen/Park/Williams 2nd-3rd · Dineen: Fact To File · Kealy: The Jukebox Man · Park: Gaelic Warrior</span></div>
+      </div>
+
+      <div class="guide-race-block">
+        <div class="guide-race-hdr"><span class="guide-race-time">16:40</span><span class="guide-race-name">Festival Challenge Cup Hunters' Chase</span><span class="guide-race-grade">H'cap</span></div>
+        <div class="guide-tipsters">
+          <div class="guide-tip"><div class="guide-tipster-name gt-dineen">Dineen</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Its On The Line</div><div class="guide-pick-2">2 Panda Boy</div><div class="guide-pick-3">3 Wonderwall</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-kealy">Kealy</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Panda Boy</div><div class="guide-pick-2">2 Wonderwall</div><div class="guide-pick-3">3 Its On The Line</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-park">Park</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Chemical Energy</div><div class="guide-pick-2">2 Wonderwall</div><div class="guide-pick-3">3 Its On The Line</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-playle">Playle</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Its On The Line</div><div class="guide-pick-2">2 Con's Roc</div><div class="guide-pick-3">3 Wonderwall</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-williams">Williams</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Wonderwall</div><div class="guide-pick-2">2 Con's Roc</div><div class="guide-pick-3">3 Its On The Line</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-wilson">Wilson</div><div class="guide-tip-picks"><div class="guide-pick-1">1 Panda Boy</div><div class="guide-pick-2">2 Its On The Line</div><div class="guide-pick-3">3 Stattler</div></div></div>
+        </div>
+        <div class="guide-consensus"><span class="guide-con-label">Split</span><span class="guide-con-horse">Its On The Line vs Panda Boy</span><span class="guide-con-count">Its On The Line: Dineen/Playle 1st, widely placed · Panda Boy: Kealy/Wilson 1st · Wonderwall: Williams 1st</span></div>
+      </div>
+
+      <div class="guide-race-block">
+        <div class="guide-race-hdr"><span class="guide-race-time">17:20</span><span class="guide-race-name">Martin Pipe Conditional Jockeys' Hurdle</span><span class="guide-race-grade">H'cap</span></div>
+        <div class="guide-tipsters">
+          <div class="guide-tip"><div class="guide-tipster-name gt-dineen">Dineen</div><div class="guide-tip-picks"><div class="guide-pick-1">1 The Passing Wife</div><div class="guide-pick-2">2 Timeless Treaty</div><div class="guide-pick-3">3 A Pai De Nom</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-kealy">Kealy</div><div class="guide-tip-picks"><div class="guide-pick-1">1 The Passing Wife</div><div class="guide-pick-2">2 Jump Allen</div><div class="guide-pick-3">3 Act Of Authority</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-park">Park</div><div class="guide-tip-picks"><div class="guide-pick-1">1 The Passing Wife</div><div class="guide-pick-2">2 Air Of Entitlement</div><div class="guide-pick-3">3 Timeless Treaty</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-playle">Playle</div><div class="guide-tip-picks"><div class="guide-pick-1">1 The Passing Wife</div><div class="guide-pick-2">2 A Pai De Nom</div><div class="guide-pick-3">3 I Started A Joke</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-williams">Williams</div><div class="guide-tip-picks"><div class="guide-pick-1">1 The Passing Wife</div><div class="guide-pick-2">2 He Can't Dance</div><div class="guide-pick-3">3 Roc Dino</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-wilson">Wilson</div><div class="guide-tip-picks"><div class="guide-pick-1">1 I Started A Joke</div><div class="guide-pick-2">2 A Pai De Nom</div><div class="guide-pick-3">3 Jump Allen</div></div></div>
+          <div class="guide-tip"><div class="guide-tipster-name gt-park">Park Best Bet</div><div class="guide-tip-picks"><div class="guide-pick-1">The Passing Wife 12/1</div></div></div>
+        </div>
+        <div class="guide-consensus"><span class="guide-con-label">Overwhelming consensus</span><span class="guide-con-horse">The Passing Wife</span><span class="guide-con-count">5 of 6 tipsters pick The Passing Wife 1st — strongest Guide consensus of the festival</span></div>
+      </div>
+
+    </div><!-- end guide-d4 -->
+
+  </div><!-- end panel-guide -->
 </div><!-- end allNapsView -->
 <button class="tracker-toggle-btn" onclick="toggleTracker()" title="My Bet Tracker">
   📋
@@ -2497,14 +2993,14 @@ let currentTableTab = 'nap';
 
 function openTableView(tab) {
   currentTableTab = tab;
-  if (tab !== 'rp' && tab !== 'bets') populateAllTables();
+  if (tab !== 'rp' && tab !== 'bets' && tab !== 'guide') populateAllTables();
   switchTableTab(tab);
   document.getElementById('allNapsView').classList.add('open');
 }
 
 function switchTableTab(tab) {
   currentTableTab = tab;
-  ['nap','ls','irish','mullington','rp','bets'].forEach(t => {
+  ['nap','ls','irish','mullington','rp','bets','guide'].forEach(t => {
     const tabEl = document.getElementById('tab-' + t);
     const panelEl = document.getElementById('panel-' + t);
     if (tabEl) tabEl.classList.toggle('active', t === tab);
@@ -2785,6 +3281,13 @@ function showBetsDay(n) {
   document.querySelectorAll('.bets-day-btn').forEach(b => b.classList.remove('bactive'));
   document.getElementById('bets-d' + n).classList.add('active');
   document.querySelectorAll('.bets-day-btn')[n-1].classList.add('bactive');
+}
+
+function showGuideDay(n) {
+  document.querySelectorAll('.guide-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.guide-day-btn').forEach(b => b.classList.remove('gactive'));
+  document.getElementById('guide-d' + n).classList.add('active');
+  document.querySelectorAll('.guide-day-btn')[n-1].classList.add('gactive');
 }
 </script>
 </body>
