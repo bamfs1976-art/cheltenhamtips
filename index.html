@@ -453,6 +453,11 @@
   .label-nap { background: rgba(52,211,153,0.12); color: var(--nap-color); border: 1px solid rgba(52,211,153,0.25); }
   .label-nb { background: rgba(96,165,250,0.12); color: var(--nb-color); border: 1px solid rgba(96,165,250,0.25); }
   .label-longshot { background: rgba(251,146,60,0.12); color: var(--longshot-color); border: 1px solid rgba(251,146,60,0.25); }
+  .label-irish { background: rgba(34,168,81,0.15); color: #22a851; border: 1px solid rgba(34,168,81,0.35); }
+  .odds-irish { background: linear-gradient(135deg, #1a7a3c, #22a851); color: #fff; }
+  .conf-irish { background: linear-gradient(90deg, #1a7a3c, #22a851); }
+  .irish-tip-card { border-color: rgba(34,168,81,0.35) !important; }
+  .irish-tip-card:hover { border-color: rgba(34,168,81,0.7) !important; box-shadow: 0 4px 20px rgba(34,168,81,0.15); }
 
   .horse-name {
     font-family: 'Playfair Display', serif;
@@ -854,6 +859,196 @@
 
   .naps-table .horse-cell { font-weight: 700; color: var(--white); font-family: 'Playfair Display', serif; font-size: 15px; }
   .naps-table .odds-cell { font-family: 'DM Mono', monospace; color: var(--nap-color); font-size: 14px; }
+  .naps-table .odds-cell-ls { font-family: 'DM Mono', monospace; color: var(--longshot-color); font-size: 14px; }
+  .naps-table .odds-cell-irish { font-family: 'DM Mono', monospace; color: #22a851; font-size: 14px; }
+
+  .table-tabs {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .table-tab {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: var(--silver);
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .table-tab:hover { background: rgba(255,255,255,0.1); color: var(--white); }
+
+  .table-tab.active {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: var(--green-deep);
+  }
+
+  #tab-ls.active { background: var(--longshot-color); border-color: var(--longshot-color); color: #fff; }
+  #tab-irish.active { background: #22a851; border-color: #22a851; color: #fff; }
+  #tab-mullington.active { background: #b8860b; border-color: #b8860b; color: #fff; }
+
+  .table-subtitle {
+    font-size: 13px;
+    color: var(--silver);
+    margin-bottom: 18px;
+    line-height: 1.6;
+  }
+
+  .conf-pill {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 11px;
+    font-family: 'DM Mono', monospace;
+    font-weight: 600;
+  }
+
+  .ew-yes { color: #22a851; font-weight: 700; font-size: 12px; }
+  .ew-no { color: var(--silver); font-size: 12px; }
+
+  /* ===== MULLINGTON CARD ===== */
+  .mullington-tip-card {
+    border-color: rgba(184,134,11,0.35) !important;
+    background: rgba(20,14,4,0.75) !important;
+  }
+  .mullington-tip-card.selected { border-color: rgba(240,192,96,0.7) !important; }
+  .mullington-retired { opacity: 0.55; }
+  .label-mullington {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #b8860b;
+    margin-bottom: 8px;
+  }
+  .odds-mullington { background: rgba(184,134,11,0.18); color: #f0c060; }
+
+  /* ===== RACING POST PANEL ===== */
+  #tab-rp.active { background: #be185d; border-color: #be185d; color: #fff; }
+  #tab-bets.active { background: #0f766e; border-color: #0f766e; color: #fff; }
+  .rp-day-tabs { display: flex; gap: 8px; margin-bottom: 18px; flex-wrap: wrap; }
+  .rp-day-btn { padding: 6px 15px; border-radius: 16px; border: 1px solid rgba(212,175,55,0.2); background: transparent; color: var(--silver); font-size: 12px; font-family: 'DM Sans', sans-serif; cursor: pointer; transition: all 0.2s; }
+  .rp-day-btn.rd1 { border-color: #34d399; color: #34d399; background: rgba(52,211,153,0.08); }
+  .rp-day-btn.rd2 { border-color: #60a5fa; color: #60a5fa; background: rgba(96,165,250,0.08); }
+  .rp-day-btn.rd3 { border-color: #f472b6; color: #f472b6; background: rgba(244,114,182,0.08); }
+  .rp-day-btn.rd4 { border-color: #fbbf24; color: #fbbf24; background: rgba(251,191,36,0.08); }
+  .rp-panel { display: none; }
+  .rp-panel.active { display: block; }
+  .rp-race-block { margin-bottom: 14px; background: rgba(15,48,32,0.6); border: 1px solid rgba(212,175,55,0.14); border-radius: 10px; overflow: hidden; }
+  .rp-race-hdr { display: flex; align-items: center; gap: 10px; padding: 9px 14px; background: rgba(212,175,55,0.05); border-bottom: 1px solid rgba(212,175,55,0.1); }
+  .rp-race-time { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--gold); min-width: 36px; }
+  .rp-race-name { font-weight: 600; font-size: 13px; flex: 1; }
+  .rp-race-grade { font-size: 10px; color: var(--silver); background: rgba(255,255,255,0.05); padding: 2px 6px; border-radius: 4px; font-family: 'DM Mono', monospace; }
+  .rp-tips-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(152px, 1fr)); }
+  .rp-tip { padding: 8px 12px; border-right: 1px solid rgba(212,175,55,0.05); border-bottom: 1px solid rgba(212,175,55,0.05); }
+  .rp-tipster { font-size: 10px; font-family: 'DM Mono', monospace; font-weight: 500; margin-bottom: 2px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .rp-horse { font-size: 13px; font-weight: 600; line-height: 1.2; margin-bottom: 2px; }
+  .rp-odds { font-family: 'DM Mono', monospace; font-size: 10px; padding: 1px 5px; border-radius: 3px; display: inline-block; margin-top: 1px; }
+  .rp-odds-fav { background: rgba(52,211,153,0.12); color: #34d399; border: 1px solid rgba(52,211,153,0.25); }
+  .rp-odds-mid { background: rgba(212,175,55,0.12); color: var(--gold); border: 1px solid rgba(212,175,55,0.25); }
+  .rp-odds-big { background: rgba(251,146,60,0.12); color: #fb923c; border: 1px solid rgba(251,146,60,0.25); }
+  .rp-odds-sp  { background: rgba(156,163,175,0.12); color: var(--silver); border: 1px solid rgba(156,163,175,0.25); }
+  .rp-consensus { display: flex; align-items: center; gap: 8px; padding: 6px 14px; background: rgba(212,175,55,0.03); border-top: 1px solid rgba(212,175,55,0.07); flex-wrap: wrap; }
+  .rp-con-label { color: var(--gold-dim); font-family: 'DM Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; }
+  .rp-con-horse { font-weight: 600; color: #f0d070; font-size: 12px; }
+  .rp-con-count { color: var(--silver); font-size: 11px; }
+  .rp-alert { display: flex; align-items: flex-start; gap: 9px; padding: 9px 13px; margin-bottom: 12px; background: rgba(212,175,55,0.05); border: 1px solid rgba(212,175,55,0.18); border-radius: 9px; font-size: 12px; }
+  .rp-alert strong { color: #f0d070; display: block; margin-bottom: 2px; font-size: 12px; }
+  .rp-alert span { color: var(--silver); line-height: 1.5; }
+  .rp-legend { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+  .rp-leg { display: flex; align-items: center; gap: 4px; font-size: 10px; color: var(--silver); font-family: 'DM Mono', monospace; }
+  .rp-leg-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+  .t-segal   { color: #c084fc; }
+  .t-kealy   { color: #60a5fa; }
+  .t-dineen  { color: #34d399; }
+  .t-playle  { color: #f472b6; }
+  .t-wilson  { color: #fb923c; }
+  .t-jennings{ color: #fbbf24; }
+  .t-watts   { color: #a78bfa; }
+  .t-park    { color: #6ee7b7; }
+  .t-hill    { color: #93c5fd; }
+
+  /* ===== BETS PANEL ===== */
+  .bets-day-tabs { display: flex; gap: 8px; margin-bottom: 18px; flex-wrap: wrap; }
+  .bets-day-btn { padding: 6px 15px; border-radius: 16px; border: 1px solid rgba(212,175,55,0.2); background: transparent; color: var(--silver); font-size: 12px; font-family: 'DM Sans', sans-serif; cursor: pointer; transition: all 0.2s; }
+  .bets-day-btn.bd1.bactive { border-color: #34d399; color: #34d399; background: rgba(52,211,153,0.1); }
+  .bets-day-btn.bd2.bactive { border-color: #60a5fa; color: #60a5fa; background: rgba(96,165,250,0.1); }
+  .bets-day-btn.bd3.bactive { border-color: #f472b6; color: #f472b6; background: rgba(244,114,182,0.1); }
+  .bets-day-btn.bd4.bactive { border-color: #fbbf24; color: #fbbf24; background: rgba(251,191,36,0.1); }
+  .bets-panel { display: none; }
+  .bets-panel.active { display: block; }
+  .bets-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  @media (max-width: 700px) { .bets-grid { grid-template-columns: 1fr; } .rp-tips-grid { grid-template-columns: 1fr 1fr; } }
+  .bets-card { background: rgba(15,48,32,0.6); border: 1px solid rgba(212,175,55,0.18); border-radius: 12px; overflow: hidden; }
+  .bets-card-hdr { padding: 10px 14px; border-bottom: 1px solid rgba(212,175,55,0.11); display: flex; align-items: center; justify-content: space-between; }
+  .bets-type-acca { color: var(--gold); font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; }
+  .bets-type-l31  { color: #fbbf24; font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; }
+  .bets-stake-hint { font-size: 11px; color: var(--silver); font-family: 'DM Mono', monospace; }
+  .bets-row { display: flex; align-items: flex-start; gap: 9px; padding: 8px 13px; border-bottom: 1px solid rgba(212,175,55,0.05); }
+  .bets-row:last-child { border-bottom: none; }
+  .bets-row:hover { background: rgba(212,175,55,0.03); }
+  .bets-row-num { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--gold-dim); min-width: 14px; padding-top: 2px; flex-shrink: 0; }
+  .bets-row-info { flex: 1; }
+  .bets-row-race { font-size: 10px; color: var(--silver); text-transform: uppercase; font-family: 'DM Mono', monospace; margin-bottom: 1px; }
+  .bets-row-horse { font-size: 13px; font-weight: 600; margin-bottom: 1px; }
+  .bets-row-src { font-size: 11px; color: var(--silver); line-height: 1.3; }
+  .bets-row-odds { font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 500; padding: 2px 6px; border-radius: 5px; flex-shrink: 0; align-self: center; }
+  .bo-fav { background: rgba(52,211,153,0.12); color: #34d399; border: 1px solid rgba(52,211,153,0.26); }
+  .bo-mid { background: rgba(212,175,55,0.12); color: var(--gold); border: 1px solid rgba(212,175,55,0.26); }
+  .bo-big { background: rgba(251,146,60,0.12); color: #fb923c; border: 1px solid rgba(251,146,60,0.26); }
+  .bo-sp  { background: rgba(156,163,175,0.12); color: var(--silver); border: 1px solid rgba(156,163,175,0.26); }
+  .b-ew   { font-size: 9px; font-family: 'DM Mono', monospace; background: rgba(251,146,60,0.13); border: 1px solid rgba(251,146,60,0.28); color: #fb923c; padding: 1px 4px; border-radius: 3px; margin-left: 3px; }
+  .b-bank { font-size: 9px; font-family: 'DM Mono', monospace; background: rgba(212,175,55,0.17); border: 1px solid rgba(212,175,55,0.36); color: #f0d070; padding: 1px 4px; border-radius: 3px; margin-left: 3px; }
+  .b-src-rp    { color: #f472b6; }
+  .b-src-segal { color: #c084fc; }
+  .b-src-mul   { color: #fbbf24; }
+  .b-src-nap   { color: #34d399; }
+  .b-src-con   { color: var(--gold); }
+  .bets-footer { margin: 7px 13px; padding: 9px 12px; background: rgba(212,175,55,0.04); border: 1px solid rgba(212,175,55,0.11); border-radius: 7px; }
+  .bets-footer-title { font-size: 10px; color: var(--gold-dim); font-family: 'DM Mono', monospace; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 5px; }
+  .bets-footer-row { display: flex; justify-content: space-between; font-size: 11px; margin-bottom: 2px; color: var(--silver); }
+  .bets-footer-row span:last-child { color: var(--white); font-weight: 600; }
+  .bets-footer-row.total { color: var(--gold); font-weight: 600; margin-top: 4px; padding-top: 4px; border-top: 1px solid rgba(212,175,55,0.14); }
+  .l31-info { margin: 7px 13px; padding: 9px 12px; background: rgba(251,191,36,0.04); border: 1px solid rgba(251,191,36,0.11); border-radius: 7px; }
+  .l31-title { font-size: 10px; color: #fbbf24; font-family: 'DM Mono', monospace; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 5px; }
+  .l31-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px; font-size: 11px; color: var(--silver); }
+  .l31-grid span { display: flex; justify-content: space-between; }
+  .l31-total { margin-top: 6px; padding-top: 5px; border-top: 1px solid rgba(251,191,36,0.11); display: flex; justify-content: space-between; font-size: 12px; font-weight: 600; color: #fbbf24; }
+  .bets-alert { display: flex; align-items: flex-start; gap: 9px; padding: 9px 13px; margin-bottom: 14px; background: rgba(212,175,55,0.05); border: 1px solid rgba(212,175,55,0.18); border-radius: 9px; }
+  .bets-alert strong { color: #f0d070; display: block; margin-bottom: 2px; font-size: 12px; }
+  .bets-alert span { color: var(--silver); font-size: 12px; line-height: 1.5; }
+  .mega-acca-box { background: rgba(15,48,32,0.6); border: 1px solid rgba(212,175,55,0.28); border-radius: 12px; overflow: hidden; margin-top: 20px; }
+  .mega-acca-hdr { background: linear-gradient(135deg,rgba(212,175,55,0.1),rgba(212,175,55,0.02)); padding: 12px 17px; border-bottom: 1px solid rgba(212,175,55,0.16); display: flex; align-items: center; justify-content: space-between; }
+  .mega-acca-hdr h4 { font-family: 'Playfair Display', serif; font-size: 15px; color: #f0d070; }
+  .mega-acca-hdr span { font-size: 10px; font-family: 'DM Mono', monospace; color: var(--gold-dim); letter-spacing: 1px; }
+  .mega-acca-body { padding: 14px 17px 16px; }
+  .mega-grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; margin-bottom: 13px; }
+  @media (max-width: 580px) { .mega-grid2 { grid-template-columns: 1fr; } }
+  .mega-row2 { display: flex; align-items: center; gap: 8px; padding: 7px 10px; border-radius: 7px; background: rgba(212,175,55,0.04); border: 1px solid rgba(212,175,55,0.08); }
+  .mega-dot2 { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+  .mega-row2-info { flex: 1; }
+  .mega-row2-race { font-size: 10px; color: var(--silver); font-family: 'DM Mono', monospace; }
+  .mega-row2-horse { font-size: 13px; font-weight: 600; }
+  .mega-row2-detail { font-size: 10px; color: var(--gold-dim); margin-top: 1px; }
+  .mega-row2-odds { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--gold); flex-shrink: 0; }
+  .mega-total-odds { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 700; color: #f0d070; }
+  .mega-total-sub { font-size: 12px; color: var(--silver); margin-top: 3px; }
+  .mega-warn { font-size: 11px; color: var(--gold-dim); margin-top: 8px; line-height: 1.5; }
+  .bets-source-key { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+  .bets-sk { display: flex; align-items: center; gap: 4px; font-size: 10px; color: var(--silver); font-family: 'DM Mono', monospace; }
+  .bets-sk-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+  .bets-strategy { background: rgba(15,48,32,0.6); border: 1px solid rgba(212,175,55,0.14); border-radius: 12px; padding: 15px 17px; margin-top: 18px; }
+  .bets-strategy h4 { font-family: 'Playfair Display', serif; font-size: 15px; color: var(--gold); margin-bottom: 11px; }
+  .bets-strat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 11px; }
+  @media (max-width: 580px) { .bets-strat-grid { grid-template-columns: 1fr; } }
+  .bets-strat-item { font-size: 11px; color: var(--silver); line-height: 1.7; }
+  .bets-strat-item strong { color: var(--white); display: block; margin-bottom: 2px; font-size: 11px; }
 
   /* ===== LOADING ===== */
   .spinner {
@@ -989,11 +1184,16 @@
     </div>
   </div>
   <div class="hero-controls">
-    <button class="btn btn-gold" onclick="showAllNaps()">⭐ All NAPs View</button>
-    <button class="btn btn-outline" id="refreshBtn" onclick="refreshTips()">
-      <span id="refreshIcon">↻</span> Refresh Tips
+    <button class="btn btn-gold" onclick="openTableView('nap')">⭐ All NAPs View</button>
+    <button class="btn btn-outline" onclick="openTableView('ls')" style="border-color:rgba(251,146,60,0.5);color:var(--longshot-color)">🎲 Long Shots</button>
+    <button class="btn btn-outline" onclick="openTableView('irish')" style="border-color:rgba(34,168,81,0.5);color:#22a851">🇮🇪 Irish Tips</button>
+    <button class="btn btn-outline" onclick="openTableView('mullington')" style="border-color:rgba(184,134,11,0.5);color:#f0c060">📰 Mullington</button>
+    <button class="btn btn-outline" onclick="openTableView('rp')" style="border-color:rgba(190,24,93,0.5);color:#f472b6">📰 Racing Post</button>
+    <button class="btn btn-outline" onclick="openTableView('bets')" style="border-color:rgba(15,118,110,0.5);color:#34d399">🍀 Bets Guide</button>
+    <button class="btn btn-ghost" id="refreshBtn" onclick="refreshTips()">
+      <span id="refreshIcon">↻</span> Refresh
     </button>
-    <button class="btn btn-ghost" onclick="window.print()">🖨️ Print Tips</button>
+    <button class="btn btn-ghost" onclick="window.print()">🖨️ Print</button>
   </div>
 </section>
 
@@ -1023,35 +1223,601 @@
   </div>
   <span id="dataStatus" style="font-size:12px; color:var(--silver); opacity:0.7; font-family:'DM Mono',monospace;"></span>
   <div class="toolbar-right">
-    <button class="btn btn-ghost btn-sm" onclick="showAllNaps()">⭐ All NAPs</button>
+    <button class="btn btn-ghost btn-sm" onclick="openTableView('nap')">⭐ All NAPs</button>
+    <button class="btn btn-ghost btn-sm" onclick="openTableView('ls')" style="color:var(--longshot-color);border-color:rgba(251,146,60,0.3)">🎲 Long Shots</button>
+    <button class="btn btn-ghost btn-sm" onclick="openTableView('irish')" style="color:#22a851;border-color:rgba(34,168,81,0.3)">🇮🇪 Irish Tips</button>
+    <button class="btn btn-ghost btn-sm" onclick="openTableView('mullington')" style="color:#f0c060;border-color:rgba(184,134,11,0.3)">📰 Mullington</button>
+    <button class="btn btn-ghost btn-sm" onclick="openTableView('rp')" style="color:#f472b6;border-color:rgba(190,24,93,0.3)">📰 Rac. Post</button>
+    <button class="btn btn-ghost btn-sm" onclick="openTableView('bets')" style="color:#34d399;border-color:rgba(15,118,110,0.3)">🍀 Bets</button>
   </div>
 </div>
 
 <!-- MAIN -->
 <main class="main" id="mainContent"></main>
 
-<!-- ALL NAPS OVERLAY -->
+<!-- UNIFIED TABLE OVERLAY -->
 <div class="naps-table-section" id="allNapsView">
   <div class="naps-table-header">
-    <h2>⭐ All NAPs – Cheltenham Festival 2026</h2>
+    <div class="table-tabs">
+      <button class="table-tab active" id="tab-nap" onclick="switchTableTab('nap')">⭐ All NAPs</button>
+      <button class="table-tab" id="tab-ls" onclick="switchTableTab('ls')">🎲 Long Shots</button>
+      <button class="table-tab" id="tab-irish" onclick="switchTableTab('irish')">🇮🇪 Irish Tips</button>
+      <button class="table-tab" id="tab-mullington" onclick="switchTableTab('mullington')">📰 Mullington</button>
+      <button class="table-tab" id="tab-rp" onclick="switchTableTab('rp')">📰 Racing Post</button>
+      <button class="table-tab" id="tab-bets" onclick="switchTableTab('bets')">🍀 Bets Guide</button>
+    </div>
     <button class="btn btn-ghost btn-sm" onclick="hideAllNaps()">✕ Close</button>
   </div>
-  <table class="naps-table" id="napsTable">
-    <thead>
-      <tr>
+
+  <!-- NAP TABLE -->
+  <div class="table-panel" id="panel-nap">
+    <p class="table-subtitle">Our strongest selection in each race – the one we're most confident about.</p>
+    <table class="naps-table">
+      <thead><tr>
         <th>Day</th><th>Time</th><th>Race</th><th>NAP Selection</th>
-        <th>Trainer</th><th>Jockey</th><th>Form</th><th>Odds</th>
-      </tr>
-    </thead>
-    <tbody id="napsTableBody"></tbody>
-  </table>
-  <div class="share-row" style="margin-top:24px">
-    <button class="share-btn share-x" onclick="shareAllNaps('twitter')">𝕏 Share All NAPs</button>
-    <button class="share-btn share-wa" onclick="shareAllNaps('whatsapp')">💬 WhatsApp</button>
+        <th>Trainer</th><th>Jockey</th><th>Form</th><th>Odds</th><th>Conf.</th>
+      </tr></thead>
+      <tbody id="napsTableBody"></tbody>
+    </table>
+    <div class="share-row" style="margin-top:20px">
+      <button class="share-btn share-x" onclick="shareAllNaps('twitter')">𝕏 Share NAPs</button>
+      <button class="share-btn share-wa" onclick="shareAllNaps('whatsapp')">💬 WhatsApp</button>
+    </div>
+  </div>
+
+  <!-- LONG SHOTS TABLE -->
+  <div class="table-panel" id="panel-ls" style="display:none">
+    <p class="table-subtitle">Each-way recommended big-price selections — all at 10/1 or bigger. <span style="color:var(--longshot-color)">Stake: ½ unit each-way only.</span></p>
+    <table class="naps-table">
+      <thead><tr>
+        <th>Day</th><th>Time</th><th>Race</th><th>🎲 Long Shot</th>
+        <th>Trainer</th><th>Jockey</th><th>Form</th><th>Odds</th><th>Conf.</th>
+      </tr></thead>
+      <tbody id="lsTableBody"></tbody>
+    </table>
+    <div class="share-row" style="margin-top:20px">
+      <button class="share-btn share-x" onclick="shareTableView('ls','twitter')">𝕏 Share Long Shots</button>
+      <button class="share-btn share-wa" onclick="shareTableView('ls','whatsapp')">💬 WhatsApp</button>
+    </div>
+  </div>
+
+  <!-- IRISH TABLE -->
+  <div class="table-panel" id="panel-irish" style="display:none">
+    <p class="table-subtitle">Best Irish-trained selection per race — the cream of the raiding party. <span style="color:#22a851">Irish trainers have won 11 of the last 20 Gold Cups.</span></p>
+    <table class="naps-table">
+      <thead><tr>
+        <th>Day</th><th>Time</th><th>Race</th><th>🇮🇪 Irish Pick</th>
+        <th>Trainer</th><th>Jockey</th><th>Form</th><th>Odds</th><th>E/W?</th>
+      </tr></thead>
+      <tbody id="irishTableBody"></tbody>
+    </table>
+    <div class="share-row" style="margin-top:20px">
+      <button class="share-btn share-x" onclick="shareTableView('irish','twitter')">𝕏 Share Irish Tips</button>
+      <button class="share-btn share-wa" onclick="shareTableView('irish','whatsapp')">💬 WhatsApp</button>
+    </div>
+  </div>
+
+  <!-- MULLINGTON TABLE -->
+  <div class="table-panel" id="panel-mullington" style="display:none">
+    <p class="table-subtitle">Steve Mullington's 28 ante-post selections for the 2026 Cheltenham Festival, as published on <strong style="color:var(--gold)">William Hill News</strong>. ⚠️ Some early picks reflect prices at time of writing — markets have since moved.</p>
+    <table class="naps-table">
+      <thead><tr>
+        <th>Day</th><th>Time</th><th>Race</th><th>📰 Mullington Pick</th>
+        <th>Trainer</th><th>Odds</th><th>Notes</th>
+      </tr></thead>
+      <tbody id="mullingtonTableBody"></tbody>
+    </table>
+    <div class="share-row" style="margin-top:20px">
+      <button class="share-btn share-x" onclick="shareTableView('mullington','twitter')">𝕏 Share Mullington Picks</button>
+      <button class="share-btn share-wa" onclick="shareTableView('mullington','whatsapp')">💬 WhatsApp</button>
+    </div>
+  </div>
+
+  <!-- RACING POST PANEL -->
+  <div class="table-panel" id="panel-rp" style="display:none">
+  <p class="table-subtitle">Complete Racing Post tipster selections — Tom Segal (Pricewise), Paul Kealy, Johnny Dineen, Maddy Playle, Harry Wilson, David Jennings, Nick Watts, Tom Park &amp; James Hill. All 28 races, all 4 days.</p>
+  <div class="rp-legend">
+    <div class="rp-leg"><div class="rp-leg-dot" style="background:#c084fc"></div>Segal (Pricewise)</div>
+    <div class="rp-leg"><div class="rp-leg-dot" style="background:#60a5fa"></div>Paul Kealy</div>
+    <div class="rp-leg"><div class="rp-leg-dot" style="background:#34d399"></div>J. Dineen</div>
+    <div class="rp-leg"><div class="rp-leg-dot" style="background:#f472b6"></div>M. Playle</div>
+    <div class="rp-leg"><div class="rp-leg-dot" style="background:#fb923c"></div>H. Wilson</div>
+    <div class="rp-leg"><div class="rp-leg-dot" style="background:#fbbf24"></div>D. Jennings</div>
+    <div class="rp-leg"><div class="rp-leg-dot" style="background:#a78bfa"></div>N. Watts</div>
+    <div class="rp-leg"><div class="rp-leg-dot" style="background:#6ee7b7"></div>T. Park</div>
+    <div class="rp-leg"><div class="rp-leg-dot" style="background:#93c5fd"></div>J. Hill</div>
+  </div>
+  <div class="rp-day-tabs">
+    <button class="rp-day-btn rd1" onclick="showRpDay(1)">🟢 Tuesday</button>
+    <button class="rp-day-btn" onclick="showRpDay(2)">🔵 Wednesday</button>
+    <button class="rp-day-btn" onclick="showRpDay(3)">🩷 Thursday</button>
+    <button class="rp-day-btn" onclick="showRpDay(4)">🟡 Friday</button>
+  </div>
+
+  <!-- RP DAY 1 -->
+  <div class="rp-panel active" id="rp-d1">
+    <div class="rp-alert"><span style="font-size:16px">🎯</span><div><strong>Day 1 banker: Lulamba (Arkle 2/1)</strong><span>4 tipsters (Kealy, Dineen, Playle, Wilson) all on the same horse — strongest consensus of the day.</span></div></div>
+    <div class="rp-race-block">
+      <div class="rp-race-hdr"><span class="rp-race-time">13:20</span><span class="rp-race-name">Supreme Novices' Hurdle</span><span class="rp-race-grade">Grade 1</span></div>
+      <div class="rp-tips-grid">
+        <div class="rp-tip"><div class="rp-tipster t-park">Tom Park</div><div class="rp-horse">Old Park Star</div><div class="rp-odds rp-odds-fav">2/1</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-playle">Playle</div><div class="rp-horse">Old Park Star</div><div class="rp-odds rp-odds-fav">2/1</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-dineen">Dineen</div><div class="rp-horse">Leader D'Allier</div><div class="rp-odds rp-odds-big">14/1</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-kealy">Kealy</div><div class="rp-horse">Leader D'Allier</div><div class="rp-odds rp-odds-big">14/1</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-wilson">Wilson</div><div class="rp-horse">Sober Glory</div><div class="rp-odds rp-odds-big">14/1</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-segal">Segal</div><div class="rp-horse">Idaho Sun</div><div class="rp-odds rp-odds-big">14/1</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-jennings">Jennings</div><div class="rp-horse">Skylight Hustle</div><div class="rp-odds rp-odds-sp">SP</div></div>
+      </div>
+      <div class="rp-consensus"><span class="rp-con-label">Consensus</span><span class="rp-con-horse">Old Park Star</span><span class="rp-con-count">Park &amp; Playle · 2/1</span></div>
+    </div>
+    <div class="rp-race-block">
+      <div class="rp-race-hdr"><span class="rp-race-time">14:00</span><span class="rp-race-name">Arkle Novices' Chase</span><span class="rp-race-grade">Grade 1</span></div>
+      <div class="rp-tips-grid">
+        <div class="rp-tip"><div class="rp-tipster t-dineen">Dineen</div><div class="rp-horse">Lulamba</div><div class="rp-odds rp-odds-fav">2/1</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-wilson">Wilson</div><div class="rp-horse">Lulamba</div><div class="rp-odds rp-odds-fav">2/1</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-kealy">Kealy</div><div class="rp-horse">Lulamba</div><div class="rp-odds rp-odds-fav">2/1</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-playle">Playle</div><div class="rp-horse">Lulamba</div><div class="rp-odds rp-odds-fav">2/1</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-park">Tom Park</div><div class="rp-horse">Kopek Des Bordes</div><div class="rp-odds rp-odds-fav">7/4</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-segal">Segal</div><div class="rp-horse">Kappa Jy Pyke</div><div class="rp-odds rp-odds-big">16/1</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-segal">Segal (2)</div><div class="rp-horse">Kargese</div><div class="rp-odds rp-odds-mid">6/1</div></div>
+      </div>
+      <div class="rp-consensus"><span class="rp-con-label">Strong consensus</span><span class="rp-con-horse">Lulamba</span><span class="rp-con-count">4 of 7 tipsters · 2/1</span></div>
+    </div>
+    <div class="rp-race-block">
+      <div class="rp-race-hdr"><span class="rp-race-time">14:40</span><span class="rp-race-name">Fred Winter Juvenile Handicap Hurdle</span><span class="rp-race-grade">H'cap</span></div>
+      <div class="rp-tips-grid">
+        <div class="rp-tip"><div class="rp-tipster t-kealy">Kealy</div><div class="rp-horse">Winston Junior</div><div class="rp-odds rp-odds-mid">13/2</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-playle">Playle</div><div class="rp-horse">Winston Junior</div><div class="rp-odds rp-odds-mid">13/2</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-segal">Segal</div><div class="rp-horse">La Luna Artista</div><div class="rp-odds rp-odds-mid">12/1</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-wilson">Wilson</div><div class="rp-horse">Ammes</div><div class="rp-odds rp-odds-mid">11/1</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-dineen">Dineen</div><div class="rp-horse">Secret Force</div><div class="rp-odds rp-odds-big">25/1</div></div>
+      </div>
+      <div class="rp-consensus"><span class="rp-con-label">Consensus</span><span class="rp-con-horse">Winston Junior</span><span class="rp-con-count">Kealy &amp; Playle · 13/2 · Segal: La Luna Artista 12/1 e/w</span></div>
+    </div>
+    <div class="rp-race-block">
+      <div class="rp-race-hdr"><span class="rp-race-time">15:20</span><span class="rp-race-name">Ultima Handicap Chase</span><span class="rp-race-grade">H'cap</span></div>
+      <div class="rp-tips-grid">
+        <div class="rp-tip"><div class="rp-tipster t-dineen">Dineen</div><div class="rp-horse">Jagwar</div><div class="rp-odds rp-odds-mid">5/1</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-kealy">Kealy</div><div class="rp-horse">Jagwar</div><div class="rp-odds rp-odds-mid">5/1</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-playle">Playle</div><div class="rp-horse">Myretown</div><div class="rp-odds rp-odds-mid">10/1</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-wilson">Wilson</div><div class="rp-horse">In D'Or</div><div class="rp-odds rp-odds-sp">–</div></div>
+      </div>
+      <div class="rp-consensus"><span class="rp-con-label">Consensus</span><span class="rp-con-horse">Jagwar</span><span class="rp-con-count">Dineen &amp; Kealy · 5/1</span></div>
+    </div>
+    <div class="rp-race-block">
+      <div class="rp-race-hdr"><span class="rp-race-time">16:00</span><span class="rp-race-name">Champion Hurdle</span><span class="rp-race-grade">Grade 1 ⭐</span></div>
+      <div class="rp-tips-grid">
+        <div class="rp-tip"><div class="rp-tipster t-dineen">Dineen</div><div class="rp-horse">The New Lion</div><div class="rp-odds rp-odds-fav">5/2</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-playle">Playle</div><div class="rp-horse">Lossiemouth</div><div class="rp-odds rp-odds-fav">7/2</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-kealy">Kealy</div><div class="rp-horse">Golden Ace</div><div class="rp-odds rp-odds-mid">7/1</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-segal">Segal</div><div class="rp-horse">Golden Ace</div><div class="rp-odds rp-odds-mid">7/1</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-wilson">Wilson</div><div class="rp-horse">Anzadam</div><div class="rp-odds rp-odds-big">20/1</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-watts">Watts</div><div class="rp-horse">Alexei</div><div class="rp-odds rp-odds-big">16/1</div></div>
+      </div>
+      <div class="rp-consensus"><span class="rp-con-label">Split</span><span class="rp-con-horse">New Lion vs Golden Ace</span><span class="rp-con-count">Kealy &amp; Segal on Golden Ace 7/1 · Dineen on The New Lion 5/2</span></div>
+    </div>
+    <div class="rp-race-block">
+      <div class="rp-race-hdr"><span class="rp-race-time">16:40</span><span class="rp-race-name">Festival Plate Handicap Chase</span><span class="rp-race-grade">H'cap</span></div>
+      <div class="rp-tips-grid">
+        <div class="rp-tip"><div class="rp-tipster t-playle">Playle</div><div class="rp-horse">Madara</div><div class="rp-odds rp-odds-mid">4/1</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-wilson">Wilson</div><div class="rp-horse">Madara</div><div class="rp-odds rp-odds-mid">4/1</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-dineen">Dineen</div><div class="rp-horse">McLaurey</div><div class="rp-odds rp-odds-mid">4/1</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-kealy">Kealy</div><div class="rp-horse">Donnacha</div><div class="rp-odds rp-odds-sp">–</div></div>
+      </div>
+      <div class="rp-consensus"><span class="rp-con-label">Consensus</span><span class="rp-con-horse">Madara</span><span class="rp-con-count">Playle &amp; Wilson · 4/1</span></div>
+    </div>
+    <div class="rp-race-block">
+      <div class="rp-race-hdr"><span class="rp-race-time">17:20</span><span class="rp-race-name">National Hunt Chase</span><span class="rp-race-grade">Grade 2</span></div>
+      <div class="rp-tips-grid">
+        <div class="rp-tip"><div class="rp-tipster t-wilson">Wilson</div><div class="rp-horse">Backmersackme</div><div class="rp-odds rp-odds-mid">4/1</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-playle">Playle</div><div class="rp-horse">Newton Tornado</div><div class="rp-odds rp-odds-mid">6/1</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-dineen">Dineen</div><div class="rp-horse">One Big Bang</div><div class="rp-odds rp-odds-mid">12/1</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-kealy">Kealy</div><div class="rp-horse">Brave Fortune</div><div class="rp-odds rp-odds-big">14/1</div></div>
+      </div>
+      <div class="rp-consensus"><span class="rp-con-label">No consensus</span><span class="rp-con-horse">4 different picks</span><span class="rp-con-count">Wide open</span></div>
+    </div>
+  </div>
+
+  <!-- RP DAY 2 -->
+  <div class="rp-panel" id="rp-d2">
+    <div class="rp-alert"><span style="font-size:16px">🎯</span><div><strong>Day 2 banker: Majborough (Champion Chase 6/4)</strong><span>Kealy, Wilson &amp; Dineen on Majborough. Segal &amp; Playle prefer L'Eau Du Sud 6/1 for e/w. Brown Advisory: 4 tipsters on Wendigo 8/1.</span></div></div>
+    <div class="rp-race-block">
+      <div class="rp-race-hdr"><span class="rp-race-time">13:20</span><span class="rp-race-name">Turners Novices' Hurdle</span><span class="rp-race-grade">Grade 1</span></div>
+      <div class="rp-tips-grid">
+        <div class="rp-tip"><div class="rp-tipster t-kealy">Kealy</div><div class="rp-horse">Mighty Park</div><div class="rp-odds rp-odds-mid">9/2</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-wilson">Wilson</div><div class="rp-horse">Mighty Park</div><div class="rp-odds rp-odds-mid">9/2</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-dineen">Dineen</div><div class="rp-horse">Mighty Park</div><div class="rp-odds rp-odds-mid">9/2</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-playle">Playle</div><div class="rp-horse">Skylight Hustle</div><div class="rp-odds rp-odds-mid">6/1</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-segal">Segal</div><div class="rp-horse">Shuttle Diplomacy</div><div class="rp-odds rp-odds-big">25/1</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-watts">Watts</div><div class="rp-horse">Heads Up</div><div class="rp-odds rp-odds-big">40/1</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-hill">Hill</div><div class="rp-horse">Heads Up</div><div class="rp-odds rp-odds-big">40/1</div></div>
+      </div>
+      <div class="rp-consensus"><span class="rp-con-label">Consensus</span><span class="rp-con-horse">Mighty Park</span><span class="rp-con-count">3 tipsters 9/2 · Segal: Shuttle Diplomacy 25/1 e/w</span></div>
+    </div>
+    <div class="rp-race-block">
+      <div class="rp-race-hdr"><span class="rp-race-time">14:00</span><span class="rp-race-name">Brown Advisory Novices' Chase</span><span class="rp-race-grade">Grade 1</span></div>
+      <div class="rp-tips-grid">
+        <div class="rp-tip"><div class="rp-tipster t-wilson">Wilson</div><div class="rp-horse">Wendigo</div><div class="rp-odds rp-odds-mid">8/1</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-dineen">Dineen</div><div class="rp-horse">Wendigo</div><div class="rp-odds rp-odds-mid">8/1</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-playle">Playle</div><div class="rp-horse">Wendigo</div><div class="rp-odds rp-odds-mid">8/1</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-kealy">Kealy</div><div class="rp-horse">Wendigo</div><div class="rp-odds rp-odds-mid">8/1</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-segal">Segal</div><div class="rp-horse">Sixmilebridge</div><div class="rp-odds rp-odds-big">14/1</div></div>
+      </div>
+      <div class="rp-consensus"><span class="rp-con-label">Strong consensus</span><span class="rp-con-horse">Wendigo</span><span class="rp-con-count">4 of 5 tipsters · 8/1</span></div>
+    </div>
+    <div class="rp-race-block">
+      <div class="rp-race-hdr"><span class="rp-race-time">14:40</span><span class="rp-race-name">BetMGM Cup Hurdle (Coral Cup)</span><span class="rp-race-grade">H'cap</span></div>
+      <div class="rp-tips-grid">
+        <div class="rp-tip"><div class="rp-tipster t-segal">Segal</div><div class="rp-horse">Storm Heart</div><div class="rp-odds rp-odds-mid">8/1</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-dineen">Dineen</div><div class="rp-horse">Jump Allen</div><div class="rp-odds rp-odds-big">20/1</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-kealy">Kealy</div><div class="rp-horse">Jingko Blue</div><div class="rp-odds rp-odds-big">20/1</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-playle">Playle</div><div class="rp-horse">Indeevar Bleu</div><div class="rp-odds rp-odds-sp">SP</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-wilson">Wilson</div><div class="rp-horse">Indeevar Bleu</div><div class="rp-odds rp-odds-sp">SP</div></div>
+      </div>
+      <div class="rp-consensus"><span class="rp-con-label">Split</span><span class="rp-con-horse">No clear consensus</span><span class="rp-con-count">Segal: Storm Heart 8/1 e/w</span></div>
+    </div>
+    <div class="rp-race-block">
+      <div class="rp-race-hdr"><span class="rp-race-time">15:20</span><span class="rp-race-name">Glenfarclas Cross Country Chase</span><span class="rp-race-grade">Grade 3</span></div>
+      <div class="rp-tips-grid">
+        <div class="rp-tip"><div class="rp-tipster t-wilson">Wilson</div><div class="rp-horse">Favori De Champdou</div><div class="rp-odds rp-odds-fav">3/1</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-kealy">Kealy</div><div class="rp-horse">Favori De Champdou</div><div class="rp-odds rp-odds-fav">3/1</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-dineen">Dineen</div><div class="rp-horse">Favori De Champdou</div><div class="rp-odds rp-odds-fav">3/1</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-playle">Playle</div><div class="rp-horse">Stumptown</div><div class="rp-odds rp-odds-fav">3/1</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-jennings">Jennings</div><div class="rp-horse">Desertmore House</div><div class="rp-odds rp-odds-mid">5/1</div></div>
+      </div>
+      <div class="rp-consensus"><span class="rp-con-label">Consensus</span><span class="rp-con-horse">Favori De Champdou</span><span class="rp-con-count">3 of 5 · 3/1</span></div>
+    </div>
+    <div class="rp-race-block">
+      <div class="rp-race-hdr"><span class="rp-race-time">16:00</span><span class="rp-race-name">Queen Mother Champion Chase</span><span class="rp-race-grade">Grade 1 ⭐</span></div>
+      <div class="rp-tips-grid">
+        <div class="rp-tip"><div class="rp-tipster t-kealy">Kealy</div><div class="rp-horse">Majborough</div><div class="rp-odds rp-odds-fav">6/4</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-wilson">Wilson</div><div class="rp-horse">Majborough</div><div class="rp-odds rp-odds-fav">6/4</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-dineen">Dineen</div><div class="rp-horse">Majborough</div><div class="rp-odds rp-odds-fav">6/4</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-playle">Playle</div><div class="rp-horse">L'Eau Du Sud</div><div class="rp-odds rp-odds-mid">6/1</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-segal">Segal</div><div class="rp-horse">L'Eau Du Sud</div><div class="rp-odds rp-odds-mid">6/1</div></div>
+      </div>
+      <div class="rp-consensus"><span class="rp-con-label">Split</span><span class="rp-con-horse">Majborough (3) vs L'Eau Du Sud (2)</span><span class="rp-con-count">Segal &amp; Playle on L'Eau Du Sud 6/1 e/w</span></div>
+    </div>
+    <div class="rp-race-block">
+      <div class="rp-race-hdr"><span class="rp-race-time">16:40</span><span class="rp-race-name">Grand Annual Chase</span><span class="rp-race-grade">H'cap</span></div>
+      <div class="rp-tips-grid">
+        <div class="rp-tip"><div class="rp-tipster t-playle">Playle</div><div class="rp-horse">Ryan's Rocket</div><div class="rp-odds rp-odds-mid">9/1</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-kealy">Kealy (2)</div><div class="rp-horse">Ryan's Rocket</div><div class="rp-odds rp-odds-mid">9/1</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-wilson">Wilson</div><div class="rp-horse">Be Aware</div><div class="rp-odds rp-odds-mid">8/1</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-segal">Segal</div><div class="rp-horse">Ballysax Hank</div><div class="rp-odds rp-odds-big">14/1</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-dineen">Dineen</div><div class="rp-horse">Inthepocket</div><div class="rp-odds rp-odds-big">14/1</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-kealy">Kealy</div><div class="rp-horse">Golden Joy</div><div class="rp-odds rp-odds-big">33/1</div></div>
+      </div>
+      <div class="rp-consensus"><span class="rp-con-label">Slight lean</span><span class="rp-con-horse">Ryan's Rocket</span><span class="rp-con-count">Playle &amp; Kealy · 9/1</span></div>
+    </div>
+    <div class="rp-race-block">
+      <div class="rp-race-hdr"><span class="rp-race-time">17:20</span><span class="rp-race-name">Champion Bumper</span><span class="rp-race-grade">Grade 1</span></div>
+      <div class="rp-tips-grid">
+        <div class="rp-tip"><div class="rp-tipster t-playle">Playle</div><div class="rp-horse">The Irish Avatar</div><div class="rp-odds rp-odds-mid">8/1</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-wilson">Wilson</div><div class="rp-horse">Keep Him Company</div><div class="rp-odds rp-odds-mid">9/1</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-segal">Segal</div><div class="rp-horse">The Mourne Rambler</div><div class="rp-odds rp-odds-big">14/1</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-kealy">Kealy</div><div class="rp-horse">Charismatic Kid</div><div class="rp-odds rp-odds-big">25/1</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-dineen">Dineen</div><div class="rp-horse">It's Only A Game</div><div class="rp-odds rp-odds-big">25/1</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-jennings">Jennings</div><div class="rp-horse">No Walkover</div><div class="rp-odds rp-odds-big">100/1</div></div>
+      </div>
+      <div class="rp-consensus"><span class="rp-con-label">No consensus</span><span class="rp-con-horse">6 different horses</span><span class="rp-con-count">Wide open race</span></div>
+    </div>
+  </div>
+
+  <!-- RP DAY 3 -->
+  <div class="rp-panel" id="rp-d3">
+    <div class="rp-alert"><span style="font-size:16px">🎯</span><div><strong>Day 3 bankers: Fact To File (Ryanair 4/5) &amp; Bambino Fever (Mares' Novices' 4/5)</strong><span>Three tipsters on each. Two short-price bankers on the same day. Segal diverges to Romeo Coolio 7/1 in the Ryanair.</span></div></div>
+    <div class="rp-race-block">
+      <div class="rp-race-hdr"><span class="rp-race-time">13:20</span><span class="rp-race-name">Mares' Novices' Hurdle</span><span class="rp-race-grade">Grade 2</span></div>
+      <div class="rp-tips-grid">
+        <div class="rp-tip"><div class="rp-tipster t-playle">Playle</div><div class="rp-horse">Bambino Fever</div><div class="rp-odds rp-odds-fav">4/5 EW</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-kealy">Kealy</div><div class="rp-horse">Bambino Fever</div><div class="rp-odds rp-odds-fav">4/5 EW</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-jennings">Jennings</div><div class="rp-horse">Bambino Fever</div><div class="rp-odds rp-odds-fav">4/5</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-kealy">Kealy (2)</div><div class="rp-horse">Oldschool Outlaw</div><div class="rp-odds rp-odds-mid">4/1</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-dineen">Dineen</div><div class="rp-horse">Carrigmoornaspruce</div><div class="rp-odds rp-odds-big">14/1</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-wilson">Wilson</div><div class="rp-horse">La Conquiere</div><div class="rp-odds rp-odds-big">14/1</div></div>
+      </div>
+      <div class="rp-consensus"><span class="rp-con-label">Strong consensus</span><span class="rp-con-horse">Bambino Fever</span><span class="rp-con-count">3 tipsters · 4/5 · ⚠️ Also listed in Day 2 Bumper — check declaration</span></div>
+    </div>
+    <div class="rp-race-block">
+      <div class="rp-race-hdr"><span class="rp-race-time">14:00</span><span class="rp-race-name">Jack Richards Novices' Chase</span><span class="rp-race-grade">Grade 1</span></div>
+      <div class="rp-tips-grid">
+        <div class="rp-tip"><div class="rp-tipster t-segal">Segal</div><div class="rp-horse">Koktail Divin</div><div class="rp-odds rp-odds-mid">9/2</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-kealy">Kealy (2)</div><div class="rp-horse">Koktail Divin</div><div class="rp-odds rp-odds-mid">9/2</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-dineen">Dineen</div><div class="rp-horse">Meetmebythesea</div><div class="rp-odds rp-odds-mid">6/1</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-playle">Playle</div><div class="rp-horse">Meetmebythesea</div><div class="rp-odds rp-odds-mid">6/1</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-jennings">Jennings</div><div class="rp-horse">Regent's Stroll</div><div class="rp-odds rp-odds-mid">6/1</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-wilson">Wilson</div><div class="rp-horse">Sixmilebridge</div><div class="rp-odds rp-odds-mid">9/1</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-kealy">Kealy</div><div class="rp-horse">Jordans Cross</div><div class="rp-odds rp-odds-mid">12/1</div></div>
+      </div>
+      <div class="rp-consensus"><span class="rp-con-label">Split</span><span class="rp-con-horse">Koktail Divin vs Meetmebythesea</span><span class="rp-con-count">Segal &amp; Kealy vs Dineen &amp; Playle</span></div>
+    </div>
+    <div class="rp-race-block">
+      <div class="rp-race-hdr"><span class="rp-race-time">14:40</span><span class="rp-race-name">Mares' Hurdle</span><span class="rp-race-grade">Grade 1</span></div>
+      <div class="rp-tips-grid">
+        <div class="rp-tip"><div class="rp-tipster t-wilson">Wilson</div><div class="rp-horse">Lossiemouth</div><div class="rp-odds rp-odds-fav">5/4</div></div>
+      </div>
+      <div class="rp-consensus"><span class="rp-con-label">Partial data</span><span class="rp-con-horse">Lossiemouth visible</span><span class="rp-con-count">Wilson 5/4 — other tipsters off-screen</span></div>
+    </div>
+    <div class="rp-race-block">
+      <div class="rp-race-hdr"><span class="rp-race-time">15:20</span><span class="rp-race-name">Stayers' Hurdle</span><span class="rp-race-grade">Grade 1</span></div>
+      <div class="rp-tips-grid">
+        <div class="rp-tip"><div class="rp-tipster t-wilson">Wilson</div><div class="rp-horse">Bob Olinger</div><div class="rp-odds rp-odds-mid">7/1</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-segal">Segal</div><div class="rp-horse">Bob Olinger</div><div class="rp-odds rp-odds-mid">7/1</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-jennings">Jennings</div><div class="rp-horse">Bob Olinger</div><div class="rp-odds rp-odds-mid">7/1</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-dineen">Dineen</div><div class="rp-horse">Honesty Policy</div><div class="rp-odds rp-odds-mid">9/2</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-playle">Playle</div><div class="rp-horse">Honesty Policy</div><div class="rp-odds rp-odds-mid">9/2</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-kealy">Kealy</div><div class="rp-horse">Ma Shantou</div><div class="rp-odds rp-odds-mid">8/1</div></div>
+      </div>
+      <div class="rp-consensus"><span class="rp-con-label">Split</span><span class="rp-con-horse">Bob Olinger (3) vs Honesty Policy (2)</span><span class="rp-con-count">Wilson/Segal/Jennings vs Dineen/Playle</span></div>
+    </div>
+    <div class="rp-race-block">
+      <div class="rp-race-hdr"><span class="rp-race-time">16:00</span><span class="rp-race-name">Ryanair Chase</span><span class="rp-race-grade">Grade 1 ⭐</span></div>
+      <div class="rp-tips-grid">
+        <div class="rp-tip"><div class="rp-tipster t-kealy">Kealy</div><div class="rp-horse">Fact To File</div><div class="rp-odds rp-odds-fav">4/5</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-wilson">Wilson</div><div class="rp-horse">Fact To File</div><div class="rp-odds rp-odds-fav">4/5</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-playle">Playle</div><div class="rp-horse">Fact To File</div><div class="rp-odds rp-odds-fav">4/5</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-dineen">Dineen</div><div class="rp-horse">Gaelic Warrior</div><div class="rp-odds rp-odds-mid">13/2</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-segal">Segal</div><div class="rp-horse">Romeo Coolio</div><div class="rp-odds rp-odds-mid">7/1</div></div>
+      </div>
+      <div class="rp-consensus"><span class="rp-con-label">Strong consensus</span><span class="rp-con-horse">Fact To File</span><span class="rp-con-count">3 of 5 · 4/5 · Segal diverges: Romeo Coolio 7/1</span></div>
+    </div>
+    <div class="rp-race-block">
+      <div class="rp-race-hdr"><span class="rp-race-time">16:40</span><span class="rp-race-name">Pertemps Handicap Hurdle</span><span class="rp-race-grade">H'cap</span></div>
+      <div class="rp-tips-grid">
+        <div class="rp-tip"><div class="rp-tipster t-dineen">Dineen</div><div class="rp-horse">Electric Mason</div><div class="rp-odds rp-odds-mid">12/1</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-playle">Playle</div><div class="rp-horse">Electric Mason</div><div class="rp-odds rp-odds-mid">12/1</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-wilson">Wilson</div><div class="rp-horse">Onewaywest</div><div class="rp-odds rp-odds-big">33/1</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-kealy">Kealy</div><div class="rp-horse">Bold Endeavour</div><div class="rp-odds rp-odds-big">20/1</div></div>
+      </div>
+      <div class="rp-consensus"><span class="rp-con-label">Consensus</span><span class="rp-con-horse">Electric Mason</span><span class="rp-con-count">Dineen &amp; Playle · 12/1</span></div>
+    </div>
+    <div class="rp-race-block">
+      <div class="rp-race-hdr"><span class="rp-race-time">17:20</span><span class="rp-race-name">Kim Muir Handicap Chase</span><span class="rp-race-grade">H'cap</span></div>
+      <div class="rp-tips-grid">
+        <div class="rp-tip"><div class="rp-tipster t-segal">Segal</div><div class="rp-horse">Sandor Clegane</div><div class="rp-odds rp-odds-big">25/1</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-dineen">Dineen</div><div class="rp-horse">Weveallbeencaught</div><div class="rp-odds rp-odds-big">20/1</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-playle">Playle</div><div class="rp-horse">Uhavemeinstitches</div><div class="rp-odds rp-odds-mid">10/1</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-kealy">Kealy</div><div class="rp-horse">In D'Or</div><div class="rp-odds rp-odds-mid">12/1</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-wilson">Wilson</div><div class="rp-horse">Ask Brewster</div><div class="rp-odds rp-odds-big">25/1</div></div>
+      </div>
+      <div class="rp-consensus"><span class="rp-con-label">No consensus</span><span class="rp-con-horse">5 different horses</span><span class="rp-con-count">Classic handicap puzzle</span></div>
+    </div>
+  </div>
+
+  <!-- RP DAY 4 -->
+  <div class="rp-panel" id="rp-d4">
+    <div class="rp-alert"><span style="font-size:16px">🎯</span><div><strong>Day 4 banker: Jango Baie (Gold Cup 6/1)</strong><span>Playle, Wilson AND Segal all on Jango Baie. The Passing Wife (Martin Pipe) backed by Dineen, Playle &amp; Kealy at 10/1.</span></div></div>
+    <div class="rp-race-block">
+      <div class="rp-race-hdr"><span class="rp-race-time">13:20</span><span class="rp-race-name">Triumph Hurdle</span><span class="rp-race-grade">Grade 1</span></div>
+      <div class="rp-tips-grid">
+        <div class="rp-tip"><div class="rp-tipster t-dineen">Dineen</div><div class="rp-horse">Proactif</div><div class="rp-odds rp-odds-fav">7/2</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-kealy">Kealy</div><div class="rp-horse">Selma De Vary</div><div class="rp-odds rp-odds-mid">9/2</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-playle">Playle</div><div class="rp-horse">Maestro Conti</div><div class="rp-odds rp-odds-mid">15/2</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-wilson">Wilson</div><div class="rp-horse">Minella Study</div><div class="rp-odds rp-odds-mid">7/1</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-segal">Segal</div><div class="rp-horse">Minella Study</div><div class="rp-odds rp-odds-mid">7/1</div></div>
+      </div>
+      <div class="rp-consensus"><span class="rp-con-label">Slight lean</span><span class="rp-con-horse">Minella Study</span><span class="rp-con-count">Wilson &amp; Segal 7/1 · Dineen on Proactif 7/2</span></div>
+    </div>
+    <div class="rp-race-block">
+      <div class="rp-race-hdr"><span class="rp-race-time">14:00</span><span class="rp-race-name">County Hurdle</span><span class="rp-race-grade">H'cap</span></div>
+      <div class="rp-tips-grid">
+        <div class="rp-tip"><div class="rp-tipster t-dineen">Dineen</div><div class="rp-horse">Murcia</div><div class="rp-odds rp-odds-mid">6/1</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-wilson">Wilson</div><div class="rp-horse">Sinnatra</div><div class="rp-odds rp-odds-mid">12/1</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-playle">Playle</div><div class="rp-horse">Roc Dino</div><div class="rp-odds rp-odds-big">14/1</div></div>
+      </div>
+      <div class="rp-consensus"><span class="rp-con-label">No consensus</span><span class="rp-con-horse">3 different picks</span><span class="rp-con-count">Dineen: Murcia 6/1</span></div>
+    </div>
+    <div class="rp-race-block">
+      <div class="rp-race-hdr"><span class="rp-race-time">14:20</span><span class="rp-race-name">Mrs Paddy Power Mares' Chase</span><span class="rp-race-grade">Grade 2</span></div>
+      <div class="rp-tips-grid">
+        <div class="rp-tip"><div class="rp-tipster t-kealy">Kealy</div><div class="rp-horse">Dinoblue</div><div class="rp-odds rp-odds-sp">–</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-dineen">Dineen</div><div class="rp-horse">Dinoblue</div><div class="rp-odds rp-odds-sp">–</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-playle">Playle</div><div class="rp-horse">Panic Attack</div><div class="rp-odds rp-odds-sp">–</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-wilson">Wilson</div><div class="rp-horse">Spindleberry</div><div class="rp-odds rp-odds-sp">–</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-segal">Segal</div><div class="rp-horse">Diva Luna</div><div class="rp-odds rp-odds-sp">–</div></div>
+      </div>
+      <div class="rp-consensus"><span class="rp-con-label">Consensus</span><span class="rp-con-horse">Dinoblue</span><span class="rp-con-count">Kealy &amp; Dineen · odds TBC at time of screenshot</span></div>
+    </div>
+    <div class="rp-race-block">
+      <div class="rp-race-hdr"><span class="rp-race-time">15:20</span><span class="rp-race-name">Albert Bartlett Novices' Hurdle</span><span class="rp-race-grade">Grade 1</span></div>
+      <div class="rp-tips-grid">
+        <div class="rp-tip"><div class="rp-tipster t-wilson">Wilson</div><div class="rp-horse">Doctor Steinberg</div><div class="rp-odds rp-odds-fav">3/1</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-playle">Playle</div><div class="rp-horse">Thedeviluno</div><div class="rp-odds rp-odds-mid">9/2</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-segal">Segal (2)</div><div class="rp-horse">Thedeviluno</div><div class="rp-odds rp-odds-mid">9/2</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-kealy">Kealy</div><div class="rp-horse">Spinningayarn</div><div class="rp-odds rp-odds-mid">10/1</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-segal">Segal</div><div class="rp-horse">I'll Sort That</div><div class="rp-odds rp-odds-big">14/1</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-dineen">Dineen</div><div class="rp-horse">Sortudo</div><div class="rp-odds rp-odds-big">16/1</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-jennings">Jennings</div><div class="rp-horse">Sortudo</div><div class="rp-odds rp-odds-big">16/1</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-watts">Watts</div><div class="rp-horse">King's Bucks</div><div class="rp-odds rp-odds-big">28/1</div></div>
+      </div>
+      <div class="rp-consensus"><span class="rp-con-label">Slight lean</span><span class="rp-con-horse">Thedeviluno</span><span class="rp-con-count">Playle &amp; Segal 9/2 · Wilson on Doctor Steinberg 3/1</span></div>
+    </div>
+    <div class="rp-race-block">
+      <div class="rp-race-hdr"><span class="rp-race-time">16:00</span><span class="rp-race-name">Cheltenham Gold Cup</span><span class="rp-race-grade">Grade 1 🏆</span></div>
+      <div class="rp-tips-grid">
+        <div class="rp-tip"><div class="rp-tipster t-playle">Playle</div><div class="rp-horse">Jango Baie</div><div class="rp-odds rp-odds-mid">6/1</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-wilson">Wilson</div><div class="rp-horse">Jango Baie</div><div class="rp-odds rp-odds-mid">6/1</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-segal">Segal</div><div class="rp-horse">Jango Baie</div><div class="rp-odds rp-odds-mid">6/1</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-kealy">Kealy</div><div class="rp-horse">The Jukebox Man</div><div class="rp-odds rp-odds-mid">6/1</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-hill">Hill</div><div class="rp-horse">The Jukebox Man</div><div class="rp-odds rp-odds-mid">6/1</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-dineen">Dineen</div><div class="rp-horse">Fact To File</div><div class="rp-odds rp-odds-mid">6/1</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-watts">Watts</div><div class="rp-horse">Grey Dawning</div><div class="rp-odds rp-odds-big">14/1</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-hill">Hill (2)</div><div class="rp-horse">Grey Dawning</div><div class="rp-odds rp-odds-big">14/1</div></div>
+      </div>
+      <div class="rp-consensus"><span class="rp-con-label">3-way split</span><span class="rp-con-horse">Jango Baie 3 · Jukebox Man 2 · Fact To File 1</span><span class="rp-con-count">Playle/Wilson/Segal vs Kealy/Hill</span></div>
+    </div>
+    <div class="rp-race-block">
+      <div class="rp-race-hdr"><span class="rp-race-time">16:40</span><span class="rp-race-name">St James's Place Hunters' Chase</span><span class="rp-race-grade">Grade 2</span></div>
+      <div class="rp-tips-grid">
+        <div class="rp-tip"><div class="rp-tipster t-kealy">Kealy</div><div class="rp-horse">Panda Boy</div><div class="rp-odds rp-odds-mid">8/1</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-wilson">Wilson</div><div class="rp-horse">Panda Boy</div><div class="rp-odds rp-odds-mid">8/1</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-playle">Playle</div><div class="rp-horse">Its On The Line</div><div class="rp-odds rp-odds-mid">6/1</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-dineen">Dineen</div><div class="rp-horse">Its On The Line</div><div class="rp-odds rp-odds-mid">6/1</div></div>
+      </div>
+      <div class="rp-consensus"><span class="rp-con-label">Split</span><span class="rp-con-horse">Panda Boy vs Its On The Line</span><span class="rp-con-count">Kealy/Wilson vs Playle/Dineen</span></div>
+    </div>
+    <div class="rp-race-block">
+      <div class="rp-race-hdr"><span class="rp-race-time">17:20</span><span class="rp-race-name">Martin Pipe Handicap Hurdle</span><span class="rp-race-grade">H'cap</span></div>
+      <div class="rp-tips-grid">
+        <div class="rp-tip"><div class="rp-tipster t-dineen">Dineen</div><div class="rp-horse">The Passing Wife</div><div class="rp-odds rp-odds-mid">10/1</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-playle">Playle</div><div class="rp-horse">The Passing Wife</div><div class="rp-odds rp-odds-mid">10/1</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-kealy">Kealy</div><div class="rp-horse">The Passing Wife</div><div class="rp-odds rp-odds-mid">10/1</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-wilson">Wilson</div><div class="rp-horse">I Started A Joke</div><div class="rp-odds rp-odds-mid">12/1</div></div>
+        <div class="rp-tip"><div class="rp-tipster t-segal">Segal</div><div class="rp-horse">Indeevar Bleu</div><div class="rp-odds rp-odds-sp">SP</div></div>
+      </div>
+      <div class="rp-consensus"><span class="rp-con-label">Strong consensus</span><span class="rp-con-horse">The Passing Wife</span><span class="rp-con-count">3 of 5 tipsters · 10/1</span></div>
+    </div>
   </div>
 </div>
 
-<!-- BET TRACKER -->
+<!-- BETS GUIDE PANEL -->
+<div class="table-panel" id="panel-bets" style="display:none">
+  <p class="table-subtitle">Daily 5-race accumulators and Lucky 31 e/w bets built from Racing Post consensus, Pricewise (Tom Segal), and Mullington/William Hill selections.</p>
+  <div class="bets-source-key">
+    <div class="bets-sk"><div class="bets-sk-dot" style="background:#f472b6"></div>RP consensus</div>
+    <div class="bets-sk"><div class="bets-sk-dot" style="background:#c084fc"></div>Segal (Pricewise)</div>
+    <div class="bets-sk"><div class="bets-sk-dot" style="background:#fbbf24"></div>Mullington/WH</div>
+    <div class="bets-sk"><div class="bets-sk-dot" style="background:#34d399"></div>Our NAP rating</div>
+  </div>
+  <div class="bets-day-tabs">
+    <button class="bets-day-btn bd1 bactive" onclick="showBetsDay(1)">🟢 Tuesday</button>
+    <button class="bets-day-btn bd2" onclick="showBetsDay(2)">🔵 Wednesday</button>
+    <button class="bets-day-btn bd3" onclick="showBetsDay(3)">🩷 Thursday</button>
+    <button class="bets-day-btn bd4" onclick="showBetsDay(4)">🟡 Friday</button>
+  </div>
+
+  <!-- BETS DAY 1 -->
+  <div class="bets-panel active" id="bets-d1">
+    <div class="bets-alert"><span style="font-size:15px">🎯</span><div><strong>Day 1 banker: Lulamba (Arkle 2/1)</strong><span>4 RP tipsters all on the same horse. Use as the anchor in both bets.</span></div></div>
+    <div class="bets-grid">
+      <div class="bets-card">
+        <div class="bets-card-hdr"><span class="bets-type-acca">⚡ 5-Race Accumulator</span><span class="bets-stake-hint">e.g. £5 win</span></div>
+        <div class="bets-row"><div class="bets-row-num">1</div><div class="bets-row-info"><div class="bets-row-race">Arkle Chase 14:00</div><div class="bets-row-horse">Lulamba <span class="b-bank">BANKER</span></div><div class="bets-row-src"><span class="b-src-rp">RP: Kealy, Dineen, Playle, Wilson</span></div></div><div class="bets-row-odds bo-fav">2/1</div></div>
+        <div class="bets-row"><div class="bets-row-num">2</div><div class="bets-row-info"><div class="bets-row-race">Supreme Hurdle 13:20</div><div class="bets-row-horse">Old Park Star</div><div class="bets-row-src"><span class="b-src-rp">RP: Park &amp; Playle</span></div></div><div class="bets-row-odds bo-fav">2/1</div></div>
+        <div class="bets-row"><div class="bets-row-num">3</div><div class="bets-row-info"><div class="bets-row-race">Plate Handicap 16:40</div><div class="bets-row-horse">Madara</div><div class="bets-row-src"><span class="b-src-rp">RP: Playle &amp; Wilson 4/1</span></div></div><div class="bets-row-odds bo-mid">4/1</div></div>
+        <div class="bets-row"><div class="bets-row-num">4</div><div class="bets-row-info"><div class="bets-row-race">Champion Hurdle 16:00</div><div class="bets-row-horse">The New Lion</div><div class="bets-row-src"><span class="b-src-rp">Dineen 5/2</span> · Our NAP 82%</div></div><div class="bets-row-odds bo-fav">5/2</div></div>
+        <div class="bets-row"><div class="bets-row-num">5</div><div class="bets-row-info"><div class="bets-row-race">Ultima Handicap 15:20</div><div class="bets-row-horse">Jagwar</div><div class="bets-row-src"><span class="b-src-rp">RP: Dineen &amp; Kealy 5/1</span></div></div><div class="bets-row-odds bo-mid">5/1</div></div>
+        <div class="bets-footer"><div class="bets-footer-title">📊 Returns (£5 stake)</div><div class="bets-footer-row"><span>Combined odds</span><span>~280/1</span></div><div class="bets-footer-row"><span>Win return</span><span>~£1,405</span></div><div class="bets-footer-row total"><span>Best double</span><span>Lulamba + Old Park Star</span></div></div>
+      </div>
+      <div class="bets-card">
+        <div class="bets-card-hdr"><span class="bets-type-l31">🍀 Lucky 31 E/W</span><span class="bets-stake-hint">£1 e/w = £62</span></div>
+        <div class="bets-row"><div class="bets-row-num">A</div><div class="bets-row-info"><div class="bets-row-race">Arkle Chase 14:00</div><div class="bets-row-horse">Lulamba <span class="b-ew">E/W</span> <span class="b-bank">BANKER</span></div><div class="bets-row-src"><span class="b-src-con">4-tipster consensus</span></div></div><div class="bets-row-odds bo-fav">2/1</div></div>
+        <div class="bets-row"><div class="bets-row-num">B</div><div class="bets-row-info"><div class="bets-row-race">Champion Hurdle 16:00</div><div class="bets-row-horse">Golden Ace <span class="b-ew">E/W</span></div><div class="bets-row-src"><span class="b-src-segal">Segal &amp; Kealy 7/1</span> e/w value</div></div><div class="bets-row-odds bo-mid">7/1</div></div>
+        <div class="bets-row"><div class="bets-row-num">C</div><div class="bets-row-info"><div class="bets-row-race">Fred Winter 14:40</div><div class="bets-row-horse">La Luna Artista <span class="b-ew">E/W</span></div><div class="bets-row-src"><span class="b-src-segal">Segal (Pricewise) 12/1</span></div></div><div class="bets-row-odds bo-mid">12/1</div></div>
+        <div class="bets-row"><div class="bets-row-num">D</div><div class="bets-row-info"><div class="bets-row-race">Plate Handicap 16:40</div><div class="bets-row-horse">Madara <span class="b-ew">E/W</span></div><div class="bets-row-src"><span class="b-src-rp">Playle &amp; Wilson 4/1</span></div></div><div class="bets-row-odds bo-mid">4/1</div></div>
+        <div class="bets-row"><div class="bets-row-num">E</div><div class="bets-row-info"><div class="bets-row-race">Arkle Chase 14:00</div><div class="bets-row-horse">Kargese <span class="b-ew">E/W</span></div><div class="bets-row-src"><span class="b-src-segal">Segal 6/1</span> e/w alternative</div></div><div class="bets-row-odds bo-mid">6/1</div></div>
+        <div class="l31-info"><div class="l31-title">🍀 31-bet structure (£1 e/w)</div><div class="l31-grid"><span>5 Singles:<strong>5</strong></span><span>10 Doubles:<strong>10</strong></span><span>10 Trebles:<strong>10</strong></span><span>5 Four-folds:<strong>5</strong></span><span>1 Five-fold:<strong>1</strong></span><span>×2 e/w:<strong>×2</strong></span></div><div class="l31-total"><span>Total stake:</span><span>£62.00</span></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BETS DAY 2 -->
+  <div class="bets-panel" id="bets-d2">
+    <div class="bets-alert"><span style="font-size:15px">🎯</span><div><strong>Day 2 banker: Majborough (Champion Chase 6/4)</strong><span>Kealy, Wilson &amp; Dineen. Wendigo has 4-tipster backing. Segal &amp; Playle on L'Eau Du Sud 6/1 for e/w. Strongest acca day of the festival.</span></div></div>
+    <div class="bets-grid">
+      <div class="bets-card">
+        <div class="bets-card-hdr"><span class="bets-type-acca">⚡ 5-Race Accumulator</span><span class="bets-stake-hint">e.g. £5 win</span></div>
+        <div class="bets-row"><div class="bets-row-num">1</div><div class="bets-row-info"><div class="bets-row-race">Champion Chase 16:00</div><div class="bets-row-horse">Majborough <span class="b-bank">BANKER</span></div><div class="bets-row-src"><span class="b-src-rp">RP: Kealy, Wilson, Dineen</span> · 3 tipsters</div></div><div class="bets-row-odds bo-fav">6/4</div></div>
+        <div class="bets-row"><div class="bets-row-num">2</div><div class="bets-row-info"><div class="bets-row-race">Brown Advisory 14:00</div><div class="bets-row-horse">Wendigo</div><div class="bets-row-src"><span class="b-src-rp">RP: Kealy, Dineen, Playle, Wilson</span> · 4 tipsters</div></div><div class="bets-row-odds bo-mid">8/1</div></div>
+        <div class="bets-row"><div class="bets-row-num">3</div><div class="bets-row-info"><div class="bets-row-race">Cross Country 15:20</div><div class="bets-row-horse">Favori De Champdou</div><div class="bets-row-src"><span class="b-src-rp">RP: Wilson, Kealy, Dineen</span> · 3 tipsters</div></div><div class="bets-row-odds bo-fav">3/1</div></div>
+        <div class="bets-row"><div class="bets-row-num">4</div><div class="bets-row-info"><div class="bets-row-race">Turners Hurdle 13:20</div><div class="bets-row-horse">Mighty Park</div><div class="bets-row-src"><span class="b-src-rp">RP: Kealy, Wilson, Dineen</span> · 3 tipsters</div></div><div class="bets-row-odds bo-mid">9/2</div></div>
+        <div class="bets-row"><div class="bets-row-num">5</div><div class="bets-row-info"><div class="bets-row-race">Grand Annual 16:40</div><div class="bets-row-horse">Ryan's Rocket</div><div class="bets-row-src"><span class="b-src-rp">RP: Playle &amp; Kealy 9/1</span></div></div><div class="bets-row-odds bo-mid">9/1</div></div>
+        <div class="bets-footer"><div class="bets-footer-title">📊 Returns (£5 stake)</div><div class="bets-footer-row"><span>Combined odds</span><span>~1,100/1</span></div><div class="bets-footer-row"><span>Win return</span><span>~£5,505</span></div><div class="bets-footer-row total"><span>Best day</span><span>4 races with 3+ RP tipsters</span></div></div>
+      </div>
+      <div class="bets-card">
+        <div class="bets-card-hdr"><span class="bets-type-l31">🍀 Lucky 31 E/W</span><span class="bets-stake-hint">£1 e/w = £62</span></div>
+        <div class="bets-row"><div class="bets-row-num">A</div><div class="bets-row-info"><div class="bets-row-race">Champion Chase 16:00</div><div class="bets-row-horse">Majborough <span class="b-ew">E/W</span></div><div class="bets-row-src"><span class="b-src-con">3-tipster RP consensus</span></div></div><div class="bets-row-odds bo-fav">6/4</div></div>
+        <div class="bets-row"><div class="bets-row-num">B</div><div class="bets-row-info"><div class="bets-row-race">Champion Chase 16:00</div><div class="bets-row-horse">L'Eau Du Sud <span class="b-ew">E/W</span></div><div class="bets-row-src"><span class="b-src-segal">Segal &amp; Playle 6/1</span> Pricewise e/w</div></div><div class="bets-row-odds bo-mid">6/1</div></div>
+        <div class="bets-row"><div class="bets-row-num">C</div><div class="bets-row-info"><div class="bets-row-race">Turners Hurdle 13:20</div><div class="bets-row-horse">Shuttle Diplomacy <span class="b-ew">E/W</span></div><div class="bets-row-src"><span class="b-src-segal">Segal (Pricewise) 25/1</span></div></div><div class="bets-row-odds bo-big">25/1</div></div>
+        <div class="bets-row"><div class="bets-row-num">D</div><div class="bets-row-info"><div class="bets-row-race">Coral Cup 14:40</div><div class="bets-row-horse">Storm Heart <span class="b-ew">E/W</span></div><div class="bets-row-src"><span class="b-src-segal">Segal (Pricewise) 8/1</span></div></div><div class="bets-row-odds bo-mid">8/1</div></div>
+        <div class="bets-row"><div class="bets-row-num">E</div><div class="bets-row-info"><div class="bets-row-race">Brown Advisory 14:00</div><div class="bets-row-horse">Wendigo <span class="b-ew">E/W</span></div><div class="bets-row-src"><span class="b-src-con">4-tipster RP consensus</span></div></div><div class="bets-row-odds bo-mid">8/1</div></div>
+        <div class="l31-info"><div class="l31-title">🍀 31-bet structure (£1 e/w)</div><div class="l31-grid"><span>5 Singles:<strong>5</strong></span><span>10 Doubles:<strong>10</strong></span><span>10 Trebles:<strong>10</strong></span><span>5 Four-folds:<strong>5</strong></span><span>1 Five-fold:<strong>1</strong></span><span>×2 e/w:<strong>×2</strong></span></div><div class="l31-total"><span>Total stake:</span><span>£62.00</span></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BETS DAY 3 -->
+  <div class="bets-panel" id="bets-d3">
+    <div class="bets-alert"><span style="font-size:15px">🎯</span><div><strong>Day 3 banker: Fact To File (Ryanair 4/5)</strong><span>Kealy, Wilson &amp; Playle. Bambino Fever also 3-tipster backed. Segal's Romeo Coolio 7/1 is the divergent value pick.</span></div></div>
+    <div class="bets-grid">
+      <div class="bets-card">
+        <div class="bets-card-hdr"><span class="bets-type-acca">⚡ 5-Race Accumulator</span><span class="bets-stake-hint">e.g. £5 win</span></div>
+        <div class="bets-row"><div class="bets-row-num">1</div><div class="bets-row-info"><div class="bets-row-race">Ryanair Chase 16:00</div><div class="bets-row-horse">Fact To File <span class="b-bank">BANKER</span></div><div class="bets-row-src"><span class="b-src-rp">RP: Kealy, Wilson, Playle</span> · 3 tipsters</div></div><div class="bets-row-odds bo-fav">4/5</div></div>
+        <div class="bets-row"><div class="bets-row-num">2</div><div class="bets-row-info"><div class="bets-row-race">Mares' Novices' 13:20</div><div class="bets-row-horse">Bambino Fever</div><div class="bets-row-src"><span class="b-src-rp">RP: Playle, Kealy, Jennings</span> · EW recommended</div></div><div class="bets-row-odds bo-fav">4/5</div></div>
+        <div class="bets-row"><div class="bets-row-num">3</div><div class="bets-row-info"><div class="bets-row-race">Stayers' Hurdle 15:20</div><div class="bets-row-horse">Bob Olinger</div><div class="bets-row-src"><span class="b-src-rp">RP: Wilson, Segal, Jennings</span> · 3 tipsters</div></div><div class="bets-row-odds bo-mid">7/1</div></div>
+        <div class="bets-row"><div class="bets-row-num">4</div><div class="bets-row-info"><div class="bets-row-race">Mares' Hurdle 14:40</div><div class="bets-row-horse">Lossiemouth</div><div class="bets-row-src"><span class="b-src-rp">Wilson 5/4</span> · Our NAP 88%</div></div><div class="bets-row-odds bo-fav">5/4</div></div>
+        <div class="bets-row"><div class="bets-row-num">5</div><div class="bets-row-info"><div class="bets-row-race">Pertemps Hurdle 16:40</div><div class="bets-row-horse">Electric Mason</div><div class="bets-row-src"><span class="b-src-rp">RP: Dineen &amp; Playle 12/1</span></div></div><div class="bets-row-odds bo-mid">12/1</div></div>
+        <div class="bets-footer"><div class="bets-footer-title">📊 Returns (£5 stake)</div><div class="bets-footer-row"><span>Combined odds</span><span>~120/1</span></div><div class="bets-footer-row"><span>Win return</span><span>~£605</span></div><div class="bets-footer-row total"><span>Note</span><span>3 short-price bankers compress odds</span></div></div>
+      </div>
+      <div class="bets-card">
+        <div class="bets-card-hdr"><span class="bets-type-l31">🍀 Lucky 31 E/W</span><span class="bets-stake-hint">£1 e/w = £62</span></div>
+        <div class="bets-row"><div class="bets-row-num">A</div><div class="bets-row-info"><div class="bets-row-race">Ryanair Chase 16:00</div><div class="bets-row-horse">Fact To File <span class="b-ew">E/W</span></div><div class="bets-row-src"><span class="b-src-con">3-tipster RP consensus</span></div></div><div class="bets-row-odds bo-fav">4/5</div></div>
+        <div class="bets-row"><div class="bets-row-num">B</div><div class="bets-row-info"><div class="bets-row-race">Stayers' Hurdle 15:20</div><div class="bets-row-horse">Bob Olinger <span class="b-ew">E/W</span></div><div class="bets-row-src"><span class="b-src-segal">Segal, Wilson, Jennings 7/1</span></div></div><div class="bets-row-odds bo-mid">7/1</div></div>
+        <div class="bets-row"><div class="bets-row-num">C</div><div class="bets-row-info"><div class="bets-row-race">Pertemps 16:40</div><div class="bets-row-horse">Electric Mason <span class="b-ew">E/W</span></div><div class="bets-row-src"><span class="b-src-rp">Dineen &amp; Playle 12/1</span></div></div><div class="bets-row-odds bo-mid">12/1</div></div>
+        <div class="bets-row"><div class="bets-row-num">D</div><div class="bets-row-info"><div class="bets-row-race">Kim Muir 17:20</div><div class="bets-row-horse">Sandor Clegane <span class="b-ew">E/W</span></div><div class="bets-row-src"><span class="b-src-segal">Segal (Pricewise) 25/1</span></div></div><div class="bets-row-odds bo-big">25/1</div></div>
+        <div class="bets-row"><div class="bets-row-num">E</div><div class="bets-row-info"><div class="bets-row-race">Jack Richards 14:00</div><div class="bets-row-horse">Koktail Divin <span class="b-ew">E/W</span></div><div class="bets-row-src"><span class="b-src-segal">Segal &amp; Kealy 9/2</span></div></div><div class="bets-row-odds bo-mid">9/2</div></div>
+        <div class="l31-info"><div class="l31-title">🍀 31-bet structure (£1 e/w)</div><div class="l31-grid"><span>5 Singles:<strong>5</strong></span><span>10 Doubles:<strong>10</strong></span><span>10 Trebles:<strong>10</strong></span><span>5 Four-folds:<strong>5</strong></span><span>1 Five-fold:<strong>1</strong></span><span>×2 e/w:<strong>×2</strong></span></div><div class="l31-total"><span>Total stake:</span><span>£62.00</span></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BETS DAY 4 -->
+  <div class="bets-panel" id="bets-d4">
+    <div class="bets-alert"><span style="font-size:15px">🎯</span><div><strong>Day 4 banker: Jango Baie (Gold Cup 6/1)</strong><span>Playle, Wilson &amp; Segal. The Passing Wife (Martin Pipe) has 3-tipster support at 10/1. Dinoblue odds TBC — add when confirmed.</span></div></div>
+    <div class="bets-grid">
+      <div class="bets-card">
+        <div class="bets-card-hdr"><span class="bets-type-acca">⚡ 5-Race Accumulator</span><span class="bets-stake-hint">e.g. £5 win</span></div>
+        <div class="bets-row"><div class="bets-row-num">1</div><div class="bets-row-info"><div class="bets-row-race">Gold Cup 16:00</div><div class="bets-row-horse">Jango Baie <span class="b-bank">BANKER</span></div><div class="bets-row-src"><span class="b-src-rp">RP: Playle, Wilson, Segal</span> · 3 tipsters</div></div><div class="bets-row-odds bo-mid">6/1</div></div>
+        <div class="bets-row"><div class="bets-row-num">2</div><div class="bets-row-info"><div class="bets-row-race">Martin Pipe 17:20</div><div class="bets-row-horse">The Passing Wife</div><div class="bets-row-src"><span class="b-src-rp">RP: Dineen, Playle, Kealy</span> · 3 tipsters</div></div><div class="bets-row-odds bo-mid">10/1</div></div>
+        <div class="bets-row"><div class="bets-row-num">3</div><div class="bets-row-info"><div class="bets-row-race">Mares' Chase 14:20</div><div class="bets-row-horse">Dinoblue</div><div class="bets-row-src"><span class="b-src-rp">RP: Kealy &amp; Dineen</span> · Our NAP 92% conf</div></div><div class="bets-row-odds bo-sp">TBC</div></div>
+        <div class="bets-row"><div class="bets-row-num">4</div><div class="bets-row-info"><div class="bets-row-race">Albert Bartlett 15:20</div><div class="bets-row-horse">Doctor Steinberg</div><div class="bets-row-src"><span class="b-src-rp">Wilson 3/1</span> · Our NAP 80%</div></div><div class="bets-row-odds bo-fav">3/1</div></div>
+        <div class="bets-row"><div class="bets-row-num">5</div><div class="bets-row-info"><div class="bets-row-race">Triumph Hurdle 13:20</div><div class="bets-row-horse">Proactif</div><div class="bets-row-src"><span class="b-src-rp">Dineen 7/2</span> · Mullington agrees</div></div><div class="bets-row-odds bo-fav">7/2</div></div>
+        <div class="bets-footer"><div class="bets-footer-title">📊 Returns (£5 stake, excl. Dinoblue TBC)</div><div class="bets-footer-row"><span>Combined odds</span><span>~2,000/1+</span></div><div class="bets-footer-row"><span>Win return</span><span>~£10,000+</span></div><div class="bets-footer-row total"><span>Confirm Dinoblue</span><span>odds before betting</span></div></div>
+      </div>
+      <div class="bets-card">
+        <div class="bets-card-hdr"><span class="bets-type-l31">🍀 Lucky 31 E/W</span><span class="bets-stake-hint">£1 e/w = £62</span></div>
+        <div class="bets-row"><div class="bets-row-num">A</div><div class="bets-row-info"><div class="bets-row-race">Gold Cup 16:00</div><div class="bets-row-horse">Jango Baie <span class="b-ew">E/W</span></div><div class="bets-row-src"><span class="b-src-con">Playle, Wilson, Segal 6/1</span></div></div><div class="bets-row-odds bo-mid">6/1</div></div>
+        <div class="bets-row"><div class="bets-row-num">B</div><div class="bets-row-info"><div class="bets-row-race">Gold Cup 16:00</div><div class="bets-row-horse">The Jukebox Man <span class="b-ew">E/W</span></div><div class="bets-row-src"><span class="b-src-rp">Kealy &amp; Hill 6/1</span> alternative</div></div><div class="bets-row-odds bo-mid">6/1</div></div>
+        <div class="bets-row"><div class="bets-row-num">C</div><div class="bets-row-info"><div class="bets-row-race">Martin Pipe 17:20</div><div class="bets-row-horse">The Passing Wife <span class="b-ew">E/W</span></div><div class="bets-row-src"><span class="b-src-con">Dineen, Playle, Kealy 10/1</span></div></div><div class="bets-row-odds bo-mid">10/1</div></div>
+        <div class="bets-row"><div class="bets-row-num">D</div><div class="bets-row-info"><div class="bets-row-race">Albert Bartlett 15:20</div><div class="bets-row-horse">Thedeviluno <span class="b-ew">E/W</span></div><div class="bets-row-src"><span class="b-src-segal">Segal &amp; Playle 9/2</span></div></div><div class="bets-row-odds bo-mid">9/2</div></div>
+        <div class="bets-row"><div class="bets-row-num">E</div><div class="bets-row-info"><div class="bets-row-race">County Hurdle 14:00</div><div class="bets-row-horse">Murcia <span class="b-ew">E/W</span></div><div class="bets-row-src"><span class="b-src-rp">Dineen 6/1</span></div></div><div class="bets-row-odds bo-mid">6/1</div></div>
+        <div class="l31-info"><div class="l31-title">🍀 31-bet structure (£1 e/w)</div><div class="l31-grid"><span>5 Singles:<strong>5</strong></span><span>10 Doubles:<strong>10</strong></span><span>10 Trebles:<strong>10</strong></span><span>5 Four-folds:<strong>5</strong></span><span>1 Five-fold:<strong>1</strong></span><span>×2 e/w:<strong>×2</strong></span></div><div class="l31-total"><span>Total stake:</span><span>£62.00</span></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MEGA ACCA -->
+  <div class="mega-acca-box">
+    <div class="mega-acca-hdr"><h4>🏆 Festival Mega-Acca — RP Consensus Bankers</h4><span>4-FOLD · NRNB RECOMMENDED</span></div>
+    <div class="mega-acca-body">
+      <p style="font-size:12px;color:var(--silver);margin-bottom:14px;line-height:1.6;">One banker per day, all with 3+ RP tipsters in agreement. Take NRNB terms wherever available.</p>
+      <div class="mega-grid2">
+        <div class="mega-row2"><div class="mega-dot2" style="background:#34d399"></div><div class="mega-row2-info"><div class="mega-row2-race">Tue · Arkle 14:00</div><div class="mega-row2-horse">Lulamba</div><div class="mega-row2-detail">Kealy, Dineen, Playle, Wilson</div></div><div class="mega-row2-odds">2/1</div></div>
+        <div class="mega-row2"><div class="mega-dot2" style="background:#60a5fa"></div><div class="mega-row2-info"><div class="mega-row2-race">Wed · Champion Chase 16:00</div><div class="mega-row2-horse">Majborough</div><div class="mega-row2-detail">Kealy, Wilson, Dineen</div></div><div class="mega-row2-odds">6/4</div></div>
+        <div class="mega-row2"><div class="mega-dot2" style="background:#f472b6"></div><div class="mega-row2-info"><div class="mega-row2-race">Thu · Ryanair 16:00</div><div class="mega-row2-horse">Fact To File</div><div class="mega-row2-detail">Kealy, Wilson, Playle</div></div><div class="mega-row2-odds">4/5</div></div>
+        <div class="mega-row2"><div class="mega-dot2" style="background:#fbbf24"></div><div class="mega-row2-info"><div class="mega-row2-race">Fri · Gold Cup 16:00</div><div class="mega-row2-horse">Jango Baie</div><div class="mega-row2-detail">Playle, Wilson, Segal</div></div><div class="mega-row2-odds">6/1</div></div>
+      </div>
+      <div style="padding:12px;background:rgba(212,175,55,0.06);border-radius:8px;border:1px solid rgba(212,175,55,0.15);">
+        <div class="mega-total-odds">~23/1</div>
+        <div class="mega-total-sub">£10 win → ~£240 · Take NRNB at Paddy Power / BetFred / William Hill</div>
+        <div class="mega-warn">⚠️ Bambino Fever may run Day 2 Bumper OR Day 3 Mares' Novices' — confirm before betting. Dinoblue (Mares' Chase, Day 4) odds still TBC ante-post — add when confirmed.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STRATEGY NOTES -->
+  <div class="bets-strategy">
+    <h4>📋 Strategy Notes</h4>
+    <div class="bets-strat-grid">
+      <div class="bets-strat-item"><strong>🟢 Day 2 is the standout acca day</strong>Four races with 3+ RP tipsters in agreement. Wendigo (4 tipsters), Favori De Champdou (3), Majborough (3), Mighty Park (3). Best tipster consensus of the festival.</div>
+      <div class="bets-strat-item"><strong>💜 Segal's Pricewise e/w picks</strong>La Luna Artista 12/1 (Fred Winter), Shuttle Diplomacy 25/1 (Turners), Storm Heart 8/1 (Coral Cup), L'Eau Du Sud 6/1 (Champion Chase), Sandor Clegane 25/1 (Kim Muir). All Lucky 31 e/w candidates.</div>
+      <div class="bets-strat-item"><strong>⚡ Gold Cup is genuinely split</strong>Jango Baie (Playle/Wilson/Segal), The Jukebox Man (Kealy/Hill), Fact To File (Dineen). Day 4 Lucky 31 covers both Jango Baie AND The Jukebox Man for insurance coverage.</div>
+      <div class="bets-strat-item"><strong>📌 Key declarations to watch</strong>Bambino Fever (Day 2 Bumper vs Day 3 Mares' Novices') and Dinoblue (Mares' Chase odds TBC). Always check NRNB terms — William Hill, Paddy Power and BetFred typically lead on Festival NRNB coverage.</div>
+    </div>
+  </div>
+</div><!-- end panel-bets -->
+</div><!-- end allNapsView -->
 <button class="tracker-toggle-btn" onclick="toggleTracker()" title="My Bet Tracker">
   📋
   <span class="tracker-badge" id="trackerBadge">0</span>
@@ -1156,178 +1922,247 @@ const STATIC_TIPS = {
   // ── DAY 1 ── Champion Day ─────────────────────────────────
   // Supreme Novices' Hurdle 13:20
   "13:20-0": {
-    nap: { horse: "Kopek Des Bordes", jockey: "Paul Townend", trainer: "W.P. Mullins 🇮🇪", form: "1-1-1-1", fractional: "5/2", decimal: 3.50, confidence: 88, reason: "2025 Festival winner who has since made a stunning 13-length winning debut over fences at Navan — yet connections are keeping Supreme options open. His quick cruising speed is tailor-made for this two-mile Grade 1 and Mullins rarely misses at this level. Townend's booking would be the clearest possible signal." },
-    nb: { horse: "Sober Glory", jockey: "Rachael Blackmore", trainer: "G. Elliott 🇮🇪", form: "1-1-2-1", fractional: "8/1", decimal: 9.0, confidence: 62, reason: "A well-regarded dark horse from the Elliott yard who has been pointing at this race all season. Blackmore gives any novice an immediate upgrade and Elliott's Festival record in the Supreme is formidable. Could be the big-price value play." },
-    ls: { horse: "Jordans", jockey: "Mark Flanagan", trainer: "J.P. O'Brien 🇮🇪", form: "1-1-1-2", fractional: "20/1", decimal: 21.0, confidence: 28, reason: "Joseph O'Brien's progressive novice who the market has overlooked. Described by connections as tailor-made for the race and could be the representative sleeper in the field at a rewarding each-way price." }
+    nap: { horse: "Old Park Star", jockey: "Nico de Boinville", trainer: "N.J. Henderson", form: "1-1-1-1", fractional: "7/4", decimal: 2.75, confidence: 82, reason: "Nicky Henderson's impressive Haydock winner is the sole Supreme entry and warm ante-post favourite at 7/4. De Boinville knows Cheltenham inside out and the horse's jumping is quick and accurate. Henderson's novice hurdlers peak at exactly the right moment." },
+    nb: { horse: "Talk The Talk", jockey: "J.J. Slevin", trainer: "J. O'Brien 🇮🇪", form: "1-F-1-1", fractional: "4/1", decimal: 5.0, confidence: 68, reason: "Joseph O'Brien says he's inclined to run here rather than the Turners. Fell when going well in a Leopardstown Grade 1 before bouncing back to win at the DRF. Slevin's Festival record is exceptional and the 2m trip suits this quick novice." },
+    ls: { horse: "Sober Glory", jockey: "Paul Townend", trainer: "W.P. Mullins 🇮🇪", form: "1-1-2-1", fractional: "16/1", decimal: 17.0, confidence: 32, reason: "Betfair columnist Sam Turner has tipped this horse as the big-price Supreme play all season. Only one entry at Cheltenham so if he runs it's here. Mullins and Townend at a big price is always worth an each-way stake." },
+    irish: { horse: "Talk The Talk", jockey: "J.J. Slevin", trainer: "J. O'Brien 🇮🇪", form: "1-F-1-1", fractional: "4/1", decimal: 5.0, confidence: 70, ew: false, reason: "Best Irish fancy in the Supreme. O'Brien confirmed his preference for this race over the Turners. Won well at the DRF after a DRF fall when looking set to win at Leopardstown — took that experience and improved markedly. Has the pace for two miles." }
   },
   // Arkle Novices' Chase 14:00
   "14:00-0": {
-    nap: { horse: "Majborough", jockey: "Mark Walsh", trainer: "W.P. Mullins 🇮🇪", form: "1-1-1-1", fractional: "5/2", decimal: 3.50, confidence: 84, reason: "This horse was third in the 2025 Arkle and returned this season with a stunning stroll in the Dublin Chase. JP McManus's flagbearer jumped impeccably with cheekpieces fitted and has the profile of a proper Grade 1 chaser. Mullins and Walsh are the dominant force at this level." },
-    nb: { horse: "Il Etait Temps", jockey: "Paul Townend", trainer: "W.P. Mullins 🇮🇪", form: "1-1-1-F", fractional: "7/1", decimal: 8.0, confidence: 58, reason: "Won the Tingle Creek and had four wins in a row over 2m before a heavy fall in the Clarence House Chase caused his odds to drift badly from 5/2. Connections retained faith and if sound he's a formidable each-way proposition for one of the best trainers in the world." },
-    ls: { horse: "Appreciate It", jockey: "Danny Gilligan", trainer: "W.P. Mullins 🇮🇪", form: "1-1-1-2", fractional: "25/1", decimal: 26.0, confidence: 22, reason: "The former Supreme Novices' winner switched to chasing with potential upside. At a big price in a wide-open race he represents terrific each-way value if the jumping clicks over the tighter Arkle fences." }
+    nap: { horse: "Kopek Des Bordes", jockey: "Paul Townend", trainer: "W.P. Mullins 🇮🇪", form: "1-1-1-1", fractional: "11/4", decimal: 3.75, confidence: 82, reason: "2025 Supreme Novices' winner making his chasing debut. His impressive racecourse gallop at Fairyhouse sent him to market favourite. Despite only one chase run, Townend's booking is the clearest possible signal from Mullins. Has the speed and class to justify favouritism. Multiple tipsters including Lydia Hislop prefer him at the prices." },
+    nb: { horse: "Lulamba", jockey: "Nico de Boinville", trainer: "N.J. Henderson", form: "1-1-1-1", fractional: "13/8", decimal: 2.875, confidence: 78, reason: "Henderson's Grade 1 chase winner who dominated Exeter and won the Game Spirit at Newbury in open company. Three chase runs gives him an experience advantage over Kopek. Has beaten the likes of Salver and Tripoli Flyer. Could go off shorter on the day." },
+    ls: { horse: "Romeo Coolio", jockey: "Mark Walsh", trainer: "G. Elliott 🇮🇪", form: "1-1-2-1", fractional: "4/1", decimal: 5.0, confidence: 48, reason: "Gordon Elliott's triple-entered horse (Arkle/Brown Advisory/Ryanair) who showed class at Leopardstown. Could be a dangerous underrated runner if connections settle on the Arkle. Elliott and Walsh are formidable at the Festival." },
+    irish: { horse: "Kopek Des Bordes", jockey: "Paul Townend", trainer: "W.P. Mullins 🇮🇪", form: "1-1-1-1", fractional: "11/4", decimal: 3.75, confidence: 82, ew: false, reason: "Best Irish pick in the Arkle. The 2025 Supreme Novices' winner has done everything right since switching to fences. His Fairyhouse racecourse gallop has impressed connections and Mullins rarely brings a horse to the Festival without expecting to win." }
   },
   // Fred Winter Juvenile Handicap Hurdle 14:40
   "14:40-0": {
-    nap: { horse: "Kripticjim", jockey: "Rachael Blackmore", trainer: "G. Elliott 🇮🇪", form: "1-1-2-1", fractional: "7/1", decimal: 8.0, confidence: 73, reason: "Beat Taurus Bay by a short head in the AIS Novices' Hurdle in a thriller and has the pace and class for this sharp two-mile dash. Elliott's juveniles have an excellent Festival record and Blackmore thrives in these tight finishes. Likely to be prominent throughout." },
-    nb: { horse: "Taurus Bay", jockey: "Paul Townend", trainer: "W.P. Mullins 🇮🇪", form: "2-1-1-1", fractional: "8/1", decimal: 9.0, confidence: 65, reason: "Went down by the shortest of margins to our NAP last time but has form to suggest that run could be reversed. Mullins rarely bothers with this race unless he has a live chance and Townend's Festival record needs no introduction." },
-    ls: { horse: "Gala Marceau", jockey: "J.J. Slevin", trainer: "G. Elliott 🇮🇪", form: "1-2-1-3", fractional: "33/1", decimal: 34.0, confidence: 18, reason: "Huge each-way sprinkle on this Elliott juvenile who has shown flashes of real ability. The big-field nature of this handicap means a horse can run far above market expectations from a handy draw." }
+    nap: { horse: "Kripticjim", jockey: "Rachael Blackmore", trainer: "G. Elliott 🇮🇪", form: "1-1-2-1", fractional: "7/1", decimal: 8.0, confidence: 72, reason: "Beat Taurus Bay by a short head in the AIS Novices' Hurdle on Cheltenham Trials Day, a race where the last five winners went on to finish first or second at the Festival. Elliott's juveniles have an excellent Festival record and Blackmore thrives in tight finishes." },
+    nb: { horse: "Winston Junior", jockey: "Danny Mullins", trainer: "W.P. Mullins 🇮🇪", form: "1-1-2-1", fractional: "8/1", decimal: 9.0, confidence: 63, reason: "Ruby Walsh mentioned him as an option here from the Paddy Power preview. Mullins juveniles placed in this race have an excellent return and Danny Mullins gives any horse an instinctive Festival-day ride." },
+    ls: { horse: "La Luna Artista", jockey: "Hollie Doyle", trainer: "A. Balding", form: "1-1-1-1", fractional: "12/1", decimal: 13.0, confidence: 38, reason: "Ruby Walsh's recommended selection from Paddy's Preview Night — bolted up in the Adonis and has outstanding flat pedigree. Balding's jumpers arrive fit and the market has under-estimated this progressive four-year-old." },
+    irish: { horse: "Kripticjim", jockey: "Rachael Blackmore", trainer: "G. Elliott 🇮🇪", form: "1-1-2-1", fractional: "7/1", decimal: 8.0, confidence: 72, ew: true, reason: "Best Irish hope in the Fred Winter. The AIS Novices' Hurdle form at Cheltenham Trials Day has been an outstanding guide to this race. Elliott and Blackmore in a juvenile hurdle is a powerful combination — back each-way at 7/1." }
   },
   // Ultima Handicap Chase 15:20
   "15:20-0": {
-    nap: { horse: "Saratoga", jockey: "Brian Hayes", trainer: "P. Roche 🇮🇪", form: "1-2-1-1", fractional: "10/1", decimal: 11.0, confidence: 72, reason: "Handed 11st 4lbs in the weights, this horse is a half-brother to Brazil who won the 2022 Ultima for the same trainer. Padraig Roche clearly has a talent for preparing horses for this exact race and the family connection is no coincidence. Top weight, but could be the value play." },
-    nb: { horse: "Jagwar", jockey: "Sean Flanagan", trainer: "N. Meade 🇮🇪", form: "1-1-2-1", fractional: "12/1", decimal: 13.0, confidence: 64, reason: "Switched to the Ultima after the Ryanair came off the cards. Meade's team are professionals at Cheltenham and this horse is well-handicapped after some solid placed efforts in Grade 1 company. Flanagan gives a cagey but effective Festival ride." },
-    ls: { horse: "Harbour Lake", jockey: "Liam McKenna", trainer: "C. Longsdon", form: "1-3-2-1", fractional: "25/1", decimal: 26.0, confidence: 20, reason: "A British each-way speculative selection who is proven around Cheltenham and handles the testing ground. Longsdon is an underrated handler who prepares his horses immaculately for their biggest targets." }
+    nap: { horse: "Saratoga", jockey: "Brian Hayes", trainer: "P. Roche 🇮🇪", form: "1-2-1-1", fractional: "10/1", decimal: 11.0, confidence: 70, reason: "Roche is a specialist in preparing horses for this exact race and this horse has a half-brother connection to Brazil who won the 2022 Ultima. Well-handicapped and suited by the trip with Hayes in the saddle, who rides this race brilliantly." },
+    nb: { horse: "Jagwar", jockey: "Sean Flanagan", trainer: "N. Meade 🇮🇪", form: "1-1-2-1", fractional: "12/1", decimal: 13.0, confidence: 63, reason: "Meade's team are professionals at Festival handicap chases and Flanagan rode this horse close to Grade 1 company recently. The Ultima is the perfect race for a horse of this profile — stays the trip and jumps accurately." },
+    ls: { horse: "Harbour Lake", jockey: "Liam McKenna", trainer: "C. Longsdon", form: "1-3-2-1", fractional: "25/1", decimal: 26.0, confidence: 20, reason: "British each-way speculative selection who is proven at Cheltenham and handles the testing ground. Longsdon is an underrated handler who prepares his horses immaculately for their biggest targets." },
+    irish: { horse: "Jagwar", jockey: "Sean Flanagan", trainer: "N. Meade 🇮🇪", form: "1-1-2-1", fractional: "12/1", decimal: 13.0, confidence: 63, ew: true, reason: "Best Irish pick in the Ultima. Noel Meade has a formidable record placing horses in Festival handicap chases and Jagwar was desperately unlucky not to win his warm-up race. Flanagan gives any horse a confident front-running Festival ride." }
   },
   // Champion Hurdle 16:00 ⭐ KEY RACE
   "16:00-0": {
-    nap: { horse: "The New Lion", jockey: "Harry Skelton", trainer: "D. Skelton", form: "1-1-1-F-1", fractional: "11/4", decimal: 3.75, confidence: 85, reason: "Ante-post favourite for the 2026 Champion Hurdle at 11/4. Unbeaten in five races since a fall in the Fighting Fifth, The New Lion capitalised brilliantly on Sir Gino's devastating injury at the International Hurdle and has never been headed at Cheltenham. Dan Skelton is the form trainer of the season and Harry gives him a professional, ice-cool ride. The trend data is compelling: 11 of the last 12 winners were aged 6–8, and all 12 had won at least four hurdle races — this one qualifies on all counts." },
-    nb: { horse: "Brighterdaysahead", jockey: "Rachael Blackmore", trainer: "G. Elliott 🇮🇪", form: "1-1-2-1-1", fractional: "4/1", decimal: 5.0, confidence: 74, reason: "Beaten Lossiemouth in the lead-up and is considered one of the strongest Irish challengers. Gordon Elliott has an outstanding Champion Hurdle record and Blackmore is at the peak of her powers. If The New Lion meets any trouble in running, this one swoops late." },
-    ls: { horse: "Golden Ace", jockey: "David Pipe", trainer: "M. Pipe", form: "1-1-1-1-2", fractional: "16/1", decimal: 17.0, confidence: 32, reason: "Defending 2025 champion who the market has largely overlooked. Jeremy Scott's charge won last year's renewal but is expected to find the new wave of novices too strong. However, form horses rarely forget how to win at the highest level — each-way at 16s." }
+    nap: { horse: "The New Lion", jockey: "Harry Skelton", trainer: "D. Skelton", form: "1-1-1-F-1", fractional: "11/4", decimal: 3.75, confidence: 82, reason: "Ante-post market leader for the 2026 Champion Hurdle. Won the Turners at last year's Festival and capitalised brilliantly on Sir Gino's injury. Has since had a fall in the Fighting Fifth before returning to win. Dan Skelton is the form trainer of the season and Harry gives him an ice-cool, professional ride. 52% of Champion Hurdle favourites win the race." },
+    nb: { horse: "Brighterdaysahead", jockey: "Rachael Blackmore", trainer: "G. Elliott 🇮🇪", form: "1-1-1-1-1", fractional: "4/1", decimal: 5.0, confidence: 75, reason: "Won the Irish Champion Hurdle at Leopardstown, beating Lossiemouth by three lengths. Elliott has an outstanding Champion Hurdle record and Blackmore is at the peak of her powers. Oddschecker data shows Lossiemouth accounts for 24% of bets — if she runs in Mares' Hurdle instead, Brighterdaysahead becomes co-favourite." },
+    ls: { horse: "Golden Ace", jockey: "Lorcan Williams", trainer: "J. Scott", form: "1-1-1-1-2", fractional: "16/1", decimal: 17.0, confidence: 34, reason: "Defending 2025 champion confirmed on course with Williams riding. Won last year's renewal and although facing stronger rivals in 2026, defending champions with course form must command an each-way stake. Can outrun 16/1 in a race where favourites regularly fail." },
+    irish: { horse: "Brighterdaysahead", jockey: "Rachael Blackmore", trainer: "G. Elliott 🇮🇪", form: "1-1-1-1-1", fractional: "4/1", decimal: 5.0, confidence: 76, ew: false, reason: "The outstanding Irish hope in the Champion Hurdle. Won the Irish Champion Hurdle in sparkling fashion, beating Lossiemouth by three clear lengths. Ruby Walsh tipped her to 'do an Annie Power' in this race. Elliott and Blackmore's Champion Hurdle record is exceptional." }
   },
   // Plate Handicap Chase 16:40
   "16:40-0": {
-    nap: { horse: "Madara", jockey: "Harry Skelton", trainer: "D. Skelton", form: "1-1-2-1-2", fractional: "4/1", decimal: 5.0, confidence: 78, reason: "Top weight at 10st 13lbs and drifted into 4/1 favourite (from 7/1) after being allocated the weights on February 24. Ran close in the Paddy Power Plate at last year's Festival and the handicapper has taken no chances. Dan Skelton is brilliant in these big-field handicaps and Harry is typically ruthless in them." },
+    nap: { horse: "Madara", jockey: "Harry Skelton", trainer: "D. Skelton", form: "1-1-2-1-2", fractional: "4/1", decimal: 5.0, confidence: 78, reason: "Top weight at 10st 13lbs, drifted into 4/1 favourite (from 7/1) after being allocated the weights on Feb 24. Has Festival form here and the handicapper has taken no chances. Dan Skelton is brilliant in these big-field Festival handicaps and Harry is typically ruthless in them." },
     nb: { horse: "Captain Guinness", jockey: "Rachael Blackmore", trainer: "H. de Bromhead 🇮🇪", form: "1-1-1-2-1", fractional: "8/1", decimal: 9.0, confidence: 64, reason: "De Bromhead's most consistent performer in handicap company and proven over the distance. Blackmore gives any De Bromhead runner an immediate Festival upgrade and this one arrives with solid recent form." },
-    ls: { horse: "Jungle Boogie", jockey: "Nico de Boinville", trainer: "N.J. Henderson", form: "1-2-1-1-3", fractional: "20/1", decimal: 21.0, confidence: 22, reason: "Henderson and de Boinville have a stellar Festival handicap record and this horse has been pointed at this race. Could outrun a big price at a track where the stable always arrive with their A-game." }
+    ls: { horse: "Jungle Boogie", jockey: "Nico de Boinville", trainer: "N.J. Henderson", form: "1-2-1-1-3", fractional: "20/1", decimal: 21.0, confidence: 22, reason: "Henderson and de Boinville have a stellar Festival handicap record. Could outrun a big price at a track where the stable always arrive with their A-game." },
+    irish: { horse: "Captain Guinness", jockey: "Rachael Blackmore", trainer: "H. de Bromhead 🇮🇪", form: "1-1-1-2-1", fractional: "8/1", decimal: 9.0, confidence: 64, ew: true, reason: "Best Irish pick in the Plate. De Bromhead is a meticulous planner and this horse has been placed over this course and distance before. Blackmore's Festival record makes even 8/1 shots feel under-priced — ideal each-way selection." }
   },
   // National Hunt Chase 17:20
   "17:20-0": {
-    nap: { horse: "Grande Geste", jockey: "Derek O'Connor", trainer: "W.P. Mullins 🇮🇪", form: "1-1-1-1", fractional: "7/2", decimal: 4.5, confidence: 82, reason: "Top weight at 11st 4lbs after winning the William Hill Grand National Trial at Haydock impressively. Mullins horses allocated big weights in this race are usually fancied and this four-miler appears tailor-made. Stamina is his greatest asset and amateur rider O'Connor is superb over these extended trips." },
-    nb: { horse: "Appreciate It", jockey: "Patrick Mullins", trainer: "W.P. Mullins 🇮🇪", form: "1-1-2-1-1", fractional: "5/1", decimal: 6.0, confidence: 68, reason: "The former Supreme Novices' winner who has been switched to the amateur rider category. Patrick Mullins is an outstanding amateur and his Festival record is as good as any professional. The four-mile trip is entirely unexplored but breeding and class say he stays." },
-    ls: { horse: "Minella Times", jockey: "Rachael Blackmore", trainer: "H. de Bromhead 🇮🇪", form: "2-1-1-4-1", fractional: "20/1", decimal: 21.0, confidence: 24, reason: "Grand National hero who has found his level in staying chases. Could outrun big odds over the marathon trip with Blackmore's ice-cool Festival temperament to guide him home." }
+    nap: { horse: "Grande Geste", jockey: "Patrick Mullins", trainer: "W.P. Mullins 🇮🇪", form: "1-1-1-1-1", fractional: "5/2", decimal: 3.5, confidence: 82, reason: "Top weight at 11st 4lbs for this amateur riders novice chase. Mullins's dominance in this race is legendary and Patrick Mullins always delivers at the Festival. Unbeaten this season and targeted specifically here." },
+    nb: { horse: "Backmersackme", jockey: "Emmet Mullins (Am.)", trainer: "E. Mullins 🇮🇪", form: "1-1-1-2-1", fractional: "4/1", decimal: 5.0, confidence: 70, reason: "Dublin Racing Festival winner and current favourite for the Princess Royal National Hunt Chase. Emmet Mullins targets this race and his horse has an outstanding profile as a progressive staying chaser." },
+    ls: { horse: "Saigon City", jockey: "Derek O'Connor", trainer: "M. Morris 🇮🇪", form: "1-2-1-3-2", fractional: "20/1", decimal: 21.0, confidence: 24, reason: "O'Connor is one of the finest amateur jockeys in the world and Morris has excellent Festival handicap form. A big-priced each-way dart on a horse who could easily place in a messy amateur chase." },
+    irish: { horse: "Grande Geste", jockey: "Patrick Mullins", trainer: "W.P. Mullins 🇮🇪", form: "1-1-1-1-1", fractional: "5/2", decimal: 3.5, confidence: 82, ew: false, reason: "The National Hunt Chase is practically a Willie Mullins benefit. Patrick Mullins is the outstanding amateur jockey of his era and knows Cheltenham inside out. Grande Geste's unbeaten form and top weight assignment shows just how well the handicapper rates him." }
   },
 
-  // ── DAY 2 ── Ladies Day ───────────────────────────────────
+  // ── DAY 2 ── Ladies Day ──────────────────────────────────
   // Turners Novices' Hurdle 13:20
   "13:20-1": {
-    nap: { horse: "Jordans Cross", jockey: "Mark Flanagan", trainer: "J.P. O'Brien 🇮🇪", form: "1-1-1-1", fractional: "4/1", decimal: 5.0, confidence: 80, reason: "Won the Timeform Novices' Handicap Chase at the Cheltenham trials day, and four of the last five winners of that race finished first or second at the Festival. Joseph O'Brien has a sharp eye for placing novices perfectly and this horse's profile fits the Turners like a glove." },
-    nb: { horse: "Brighterdaysahead", jockey: "Rachael Blackmore", trainer: "G. Elliott 🇮🇪", form: "1-1-2-1-1", fractional: "6/1", decimal: 7.0, confidence: 65, reason: "Could be redirected to the Turners if connections feel it suits over the Champion Hurdle. Elliott is flexible with his best novices and Blackmore's record in this race is formidable. A strong each-way alternative if running." },
-    ls: { horse: "Clerical Error", jockey: "Sam Twiston-Davies", trainer: "C. Tizzard", form: "1-2-1-3", fractional: "25/1", decimal: 26.0, confidence: 20, reason: "Tizzard runners have won this race before. This one arrives in form and at 25/1 represents adventurous each-way value if the Irish juggernauts find any trouble in running." }
+    nap: { horse: "No Drama This End", jockey: "Harry Cobden", trainer: "P. Nicholls", form: "1-1-1-1", fractional: "3/1", decimal: 4.0, confidence: 83, reason: "Paul Nicholls' unbeaten star and 3/1 stand-alone Turners favourite. Won three from three over hurdles including the Challow and the Tolworth — back-to-back Grade 2 victories. Nicholls described him as potentially his best novice in a decade. Cobden is perfect in these big novice races." },
+    nb: { horse: "Mighty Park", jockey: "Paul Townend", trainer: "W.P. Mullins 🇮🇪", form: "1-1-2-1-1", fractional: "10/1", decimal: 11.0, confidence: 62, reason: "Mullins's Turners candidate who may swerve the Supreme. Has the stamina profile for the extra half-mile and Townend's Festival record is extraordinary. Could be significant shorter on the day if the Supreme is avoided." },
+    ls: { horse: "Idaho Sun", jockey: "J.J. Slevin", trainer: "G. Elliott 🇮🇪", form: "1-1-2-1", fractional: "16/1", decimal: 17.0, confidence: 36, reason: "Harry Fry's Champion Bumper horse from 2025 — Idaho Sun beat Mydaddypaddy at Aintree suggesting he's a stayer. Tipster Billy Grimshaw recommends him as best each-way value in the race." },
+    irish: { horse: "Mighty Park", jockey: "Paul Townend", trainer: "W.P. Mullins 🇮🇪", form: "1-1-2-1-1", fractional: "10/1", decimal: 11.0, confidence: 62, ew: true, reason: "Best Irish hope in the Turners. Mullins's chosen Turners runner with Townend booked. Has scope for improvement over the longer Turners trip and Closutton horses always arrive at peak fitness. Excellent each-way value at double-figures." }
   },
   // Brown Advisory Novices' Chase 14:00
   "14:00-1": {
-    nap: { horse: "Jordans Cross", jockey: "Mark Flanagan", trainer: "J.P. O'Brien 🇮🇪", form: "1-1-1-1", fractional: "5/2", decimal: 3.5, confidence: 85, reason: "Cheltenham trials day winner of the Timeform Novices' Handicap Chase — a race where four of the last five winners placed at the Festival. O'Brien has confirmed this novice chaser is Festival-ready and the Brown Advisory trip should suit his galloping style perfectly. Strong each-way favourite." },
-    nb: { horse: "Gaillard Du Mesnil", jockey: "Mark Walsh", trainer: "W.P. Mullins 🇮🇪", form: "1-1-1-1", fractional: "3/1", decimal: 4.0, confidence: 73, reason: "Mullins's most exciting novice chaser who could run here or the Arkle. Wherever he goes, Walsh gives him the perfect Festival ride and any price under 5/1 deserves serious respect." },
-    ls: { horse: "Fever Pitch", jockey: "Harry Skelton", trainer: "D. Skelton", form: "1-1-2-3", fractional: "20/1", decimal: 21.0, confidence: 26, reason: "The Skelton team continue to punch above their weight at the Festival. An each-way dart on a horse who has run well in Grade 1 company previously." }
+    nap: { horse: "Final Demand", jockey: "Harry Cobden", trainer: "P. Nicholls", form: "1-1-1-1", fractional: "10/11", decimal: 1.91, confidence: 85, reason: "10/11 favourite and outstanding novice chaser for Nicholls. Unbeaten over fences and his jumping is clinical. Cobden and Nicholls in a Festival novice chase are the dominant force this season. This horse looks a cut above the field." },
+    nb: { horse: "Romeo Coolio", jockey: "Mark Walsh", trainer: "G. Elliott 🇮🇪", form: "1-1-2-1", fractional: "6/1", decimal: 7.0, confidence: 62, reason: "Elliott's triple-entered horse who showed class at Leopardsworth. If connections opt for the Brown Advisory over the Arkle or Ryanair, Walsh's experience gives him a huge edge. Potential to frame or upset at 6/1." },
+    ls: { horse: "Kitzbuhel", jockey: "Nico de Boinville", trainer: "N.J. Henderson", form: "1-1-2-1-2", fractional: "8/1", decimal: 9.0, confidence: 38, reason: "Henderson's each-way hope at 8/1. A proper staying novice chaser who handles Cheltenham's demanding fences. If Final Demand meets any trouble, this one swoops late at a profitable each-way price." },
+    irish: { horse: "Romeo Coolio", jockey: "Mark Walsh", trainer: "G. Elliott 🇮🇪", form: "1-1-2-1", fractional: "6/1", decimal: 7.0, confidence: 62, ew: true, reason: "Best Irish pick in the Brown Advisory. Elliott's talented novice chaser who is entered in three races — if he lines up here he's the clear Irish number one. Mark Walsh gives any horse a masterful Festival ride and 6/1 is a fair reflection of his chance." }
   },
-  // Coral Cup 14:40
+  // Coral Cup Hurdle 14:40
   "14:40-1": {
-    nap: { horse: "Stay Away Fay", jockey: "Danny McMenamin", trainer: "P. Fahey 🇮🇪", form: "2-1-1-1-2", fractional: "8/1", decimal: 9.0, confidence: 70, reason: "A brilliantly handicapped novice hurdler who has been laid out for this competitive prize. Fahey is a master at finding unexposed performers and placing them perfectly. McMenamin is an exceptional horseman in big-field handicap hurdles." },
-    nb: { horse: "Absolute Notions", jockey: "J.J. Slevin", trainer: "G. Elliott 🇮🇪", form: "1-2-1-2-1", fractional: "10/1", decimal: 11.0, confidence: 62, reason: "Elliott targets the Coral Cup annually and typically runs three or four horses in the race. Slevin is perfectly suited to big-field Festival handicaps and this one has the profile of a horse with more to offer." },
-    ls: { horse: "Camprond", jockey: "Gavin Sheehan", trainer: "W. Greatrex", form: "3-1-2-4", fractional: "25/1", decimal: 26.0, confidence: 18, reason: "A British handler in an Irish-dominated race but Greatrex has won at the Festival before. An adventurous each-way bet on a horse who could outrun a huge price." }
+    nap: { horse: "Iberico Lord", jockey: "A.P. Heskin", trainer: "T. Mullins 🇮🇪", form: "1-2-1-1-1", fractional: "10/1", decimal: 11.0, confidence: 70, reason: "Surprise 22/1 Lanzarote Hurdle winner at Kempton who qualified for this series. Tom Mullins is meticulous at placing horses for big handicap targets and Heskin rides with confidence. Carrying 11st 2lbs and well-handicapped for this valuable prize." },
+    nb: { horse: "Skylight Hustle", jockey: "J.J. Slevin", trainer: "G. Elliott 🇮🇪", form: "1-1-2-1-2", fractional: "12/1", decimal: 13.0, confidence: 60, reason: "Elliott's Coral Cup hope who has the two and a half mile trip. Slevin is an outstanding jockey in handicap hurdles and the Elliott stable annually targets this race with well-prepared talent." },
+    ls: { horse: "Al Dancer", jockey: "Harry Cobden", trainer: "P. Nicholls", form: "1-2-1-3-1", fractional: "25/1", decimal: 26.0, confidence: 22, reason: "Nicholls has winning form in Festival handicap hurdles and this horse arrives with solid recent form. A big-price each-way flutter that could easily place in an open field." },
+    irish: { horse: "Iberico Lord", jockey: "A.P. Heskin", trainer: "T. Mullins 🇮🇪", form: "1-2-1-1-1", fractional: "10/1", decimal: 11.0, confidence: 70, ew: true, reason: "Best Irish pick in the Coral Cup. Tom Mullins identified this race as the target after Iberico Lord's surprise Lanzarote win. A specialist in big handicap hurdles, the horse is well-weighted and Heskin is an ice-cool Festival jockey." }
   },
   // Cross Country Chase 15:20
   "15:20-1": {
-    nap: { horse: "Favori De Champdou", jockey: "Keith Donoghue", trainer: "G. Elliott 🇮🇪", form: "1-1-2-1-1", fractional: "4/1", decimal: 5.0, confidence: 78, reason: "An 11-year-old carrying 11st 5lbs who won the Glenfarclas Cross Country Handicap Chase at Cheltenham in January 2026. Gordon Elliott is the master of preparing horses for this peculiar track and Donoghue's relationship with the horse is exemplary. Course record gives him a massive advantage." },
-    nb: { horse: "Easysland", jockey: "Julien Plouganou", trainer: "D. Cottin", form: "1-2-1-1-3", fractional: "9/2", decimal: 5.5, confidence: 64, reason: "The perennial French challenger who has come close to winning this race multiple times. Cottin prepares his cross-country specialists brilliantly and at 9/2 this is a genuine contender who knows every fence on the course." },
-    ls: { horse: "Any Second Now", jockey: "Mark Walsh", trainer: "T. Martin 🇮🇪", form: "1-1-3-2-4", fractional: "20/1", decimal: 21.0, confidence: 22, reason: "Grand National legend who has adapted to cross-country courses. A speculative dart at a big price on a horse whose jumping technique is perfect for these unique fences." }
+    nap: { horse: "Favori De Champdou", jockey: "Jonjo O'Neill Jr.", trainer: "N.J. Henderson", form: "1-1-1-1-1", fractional: "7/2", decimal: 4.5, confidence: 82, reason: "Won the Glenfarclas Cross Country in January under top weight — the same race at the same track. At 11 years old but still eased to victory in January and has course form that nobody else can match. Henderson's specialist is the ultimate cross-country horse and will carry weight here." },
+    nb: { horse: "Any Second Now", jockey: "Mark Walsh", trainer: "T. Martin 🇮🇪", form: "1-1-3-2-4", fractional: "6/1", decimal: 7.0, confidence: 58, reason: "Grand National legend who has adapted brilliantly to cross-country racing. Walsh gives him an intelligent, tactical Festival ride and Martin always prepares him peaking for March. Could take advantage if Favori meets any trouble." },
+    ls: { horse: "Stumptown", jockey: "Danny Mullins", trainer: "W.P. Mullins 🇮🇪", form: "1-2-1-2-1", fractional: "12/1", decimal: 13.0, confidence: 30, reason: "The Mullins runner whose presence may block J'Arrive De L'Est from entering. Has cross-country experience and Danny Mullins thrives in the unique demands of this race. A speculative each-way punt at 12/1." },
+    irish: { horse: "Any Second Now", jockey: "Mark Walsh", trainer: "T. Martin 🇮🇪", form: "1-1-3-2-4", fractional: "6/1", decimal: 7.0, confidence: 58, ew: true, reason: "Best Irish pick in the Cross Country. Ted Martin's most experienced Festival runner and a specialist over cross-country fences. Mark Walsh gives him the perfect tactical ride and 6/1 represents solid each-way value." }
   },
   // Queen Mother Champion Chase 16:00 ⭐ KEY RACE
   "16:00-1": {
-    nap: { horse: "Majborough", jockey: "Mark Walsh", trainer: "W.P. Mullins 🇮🇪", form: "1-1-1-1-1", fractional: "7/4", decimal: 2.75, confidence: 87, reason: "Current ante-post favourite at 7/4 for the Queen Mother Champion Chase. JP McManus's flagbearer strolled to victory in the Dublin Chase with cheekpieces doing the trick, and his jumping was flawless from start to finish. Third in the 2025 Arkle, he has been building perfectly towards this. Mullins and Walsh are the pre-eminent two-mile partnership and this looks their banker of the week." },
-    nb: { horse: "Marine Nationale", jockey: "Paul Townend", trainer: "W.P. Mullins 🇮🇪", form: "1-1-1-1-2", fractional: "2/1", decimal: 3.0, confidence: 72, reason: "Defending champion at 2/1 who is attempting to reverse Dublin Chase form with stablemate Majborough. Won the 2023 Supreme and his sharp jumping suits the two-mile chasing track. History shows short-priced favourites sometimes fall in this race — the defending champion represents the safest alternative." },
-    ls: { horse: "Il Etait Temps", jockey: "J.J. Slevin", trainer: "W.P. Mullins 🇮🇪", form: "1-1-1-1-F", fractional: "7/1", decimal: 8.0, confidence: 35, reason: "Drifted from 5/2 after a heavy fall in the Clarence House but has four wins in a row beforehand including the Tingle Creek. At 7/1 he represents significant each-way value if Mullins confirms he's fully fit and back to his brilliant best." }
+    nap: { horse: "Majborough", jockey: "Mark Walsh", trainer: "W.P. Mullins 🇮🇪", form: "1-1-1-1-1", fractional: "4/6", decimal: 1.67, confidence: 88, reason: "MARINE NATIONALE RULED OUT (sore neck, March 3). Majborough is now odds-on favourite at 4/6 following his 19-length demolition of Marine Nationale in the Dublin Chase. JP McManus's flagbearer jumped flawlessly with cheekpieces and is a different horse to the one that stumbled in the 2025 Arkle. Walsh's two-mile chase record is outstanding. This is as close to a banker as the 2026 Festival gets." },
+    nb: { horse: "L'Eau Du Sud", jockey: "Nico de Boinville", trainer: "N.J. Henderson", form: "1-1-1-2-1", fractional: "7/2", decimal: 4.5, confidence: 65, reason: "Latest odds: 7/2 after Marine Nationale's shock withdrawal. Won the Shloer Chase over C&D and proved his class in the Grade 2 at Cheltenham. Henderson's second string in this race could now be value — if Majborough makes one of his customary errors, this one collects." },
+    ls: { horse: "Il Etait Temps", jockey: "Paul Townend", trainer: "W.P. Mullins 🇮🇪", form: "1-1-1-1-F", fractional: "5/1", decimal: 6.0, confidence: 38, reason: "Latest odds 5/1 — drifted badly after Clarence House fall but has four wins in a row beforehand. At 5/1 he represents significant each-way value if Mullins confirms he's fully fit. Townend's booking would transform the market." },
+    irish: { horse: "Majborough", jockey: "Mark Walsh", trainer: "W.P. Mullins 🇮🇪", form: "1-1-1-1-1", fractional: "4/6", decimal: 1.67, confidence: 88, ew: false, reason: "The outstanding Irish pick in the Champion Chase. With Marine Nationale's last-minute withdrawal (sore neck, confirmed March 3), Majborough is as close to a certainty as Festival betting gets. He demolished the defending champion by 19 lengths at Leopardsworth — this is his championship." }
   },
   // Grand Annual Chase 16:40
   "16:40-1": {
-    nap: { horse: "Bold Stroke", jockey: "Harry Cobden", trainer: "P. Nicholls", form: "1-1-1-2-1", fractional: "9/1", decimal: 10.0, confidence: 68, reason: "Nicholls specifically targeted the Grand Annual and this horse has the profile of a Festival handicap winner. Cobden rides with precision in these tight two-mile handicap chases and the weight is ideal for a competitive entry." },
+    nap: { horse: "Thistle Ask", jockey: "Harry Cobden", trainer: "P. Nicholls", form: "1-1-1-2-1", fractional: "9/1", decimal: 10.0, confidence: 68, reason: "Nicholls has targeted the Grand Annual and this horse has the profile of a Festival handicap winner. Cobden rides with precision in these tight two-mile handicap chases and the weight is ideal for a competitive entry." },
     nb: { horse: "Pied Piper", jockey: "Rachael Blackmore", trainer: "G. Elliott 🇮🇪", form: "1-2-1-1-3", fractional: "12/1", decimal: 13.0, confidence: 58, reason: "Elliott's two-mile handicap chaser who has the pace for this race. Blackmore's Festival record is extraordinary and she invariably produces her best when the pressure is greatest." },
-    ls: { horse: "Coeur Sublime", jockey: "M. Brassil", trainer: "R.P. Hennessy 🇮🇪", form: "1-2-2-1-3", fractional: "33/1", decimal: 34.0, confidence: 16, reason: "A big-priced each-way selection who could easily place at 33/1 in a huge field. Irish handlers excel in these Festival handicap chases and this one has the profile of a big-field performer." }
+    ls: { horse: "Jonbon", jockey: "Nico de Boinville", trainer: "N.J. Henderson", form: "1-1-2-1-3", fractional: "12/1", decimal: 13.0, confidence: 40, reason: "Henderson entry at 12/1 in the Grand Annual — if Jonbon bypasses the Champion Chase or Ryanair this becomes highly interesting. De Boinville knows the track blindfolded and a fresh Jonbon at this level is compelling each-way value." },
+    irish: { horse: "Pied Piper", jockey: "Rachael Blackmore", trainer: "G. Elliott 🇮🇪", form: "1-2-1-1-3", fractional: "12/1", decimal: 13.0, confidence: 58, ew: true, reason: "Best Irish pick in the Grand Annual. Gordon Elliott's two-mile handicap chaser who excels at Festival pace. Blackmore's record in two-mile handicap chases at Cheltenham is outstanding — each-way at 12/1 is a must." }
   },
   // Champion Bumper 17:20
   "17:20-1": {
-    nap: { horse: "Dinoblue", jockey: "Rachael Blackmore", trainer: "W.P. Mullins 🇮🇪", form: "1-1-1-1", fractional: "9/4", decimal: 3.25, confidence: 88, reason: "Facile 11-length winner at Naas in an impressive display of class and power. JP McManus's filly could also run in the Mares' Hurdle but the Bumper is where Mullins and Blackmore want her. Unbeaten and devastating, she carries the authority of a future champion over hurdles." },
-    nb: { horse: "Oldschool Outlaw", jockey: "Paul Townend", trainer: "W.P. Mullins 🇮🇪", form: "1-1-2-1", fractional: "4/1", decimal: 5.0, confidence: 72, reason: "JP McManus has a second arrow in the same quiver — this one is 2-2 over hurdles already and is considered a warm each-way prospect. Townend's faith in him underlines that Mullins rates both very highly." },
-    ls: { horse: "Chestnut Eight", jockey: "David Noonan", trainer: "T. Doyle 🇮🇪", form: "1-2-1-3", fractional: "25/1", decimal: 26.0, confidence: 18, reason: "Point-to-point winner with raw potential who has shown talent in bumpers. An each-way speculative dart on a horse who could spring a surprise at a massive price." }
+    nap: { horse: "Bambino Fever", jockey: "Rachael Blackmore", trainer: "W.P. Mullins 🇮🇪", form: "1-1-1-1", fractional: "9/4", decimal: 3.25, confidence: 87, reason: "Last year's Champion Bumper winner who returns to defend her crown. Oddschecker tipsters give her 49% market confidence. Mullins and Blackmore in the Bumper is the most reliable Festival combination of the past decade. Unbeaten in bumpers." },
+    nb: { horse: "Dinoblue", jockey: "Rachael Blackmore", trainer: "W.P. Mullins 🇮🇪", form: "1-1-1-1", fractional: "5/2", decimal: 3.5, confidence: 78, reason: "If connections opt for the Bumper over the Mares' Novices', Dinoblue's facile 11-length Naas win marks her as an outstanding candidate. Mullins rarely fields two runners in the same race without high confidence in both." },
+    ls: { horse: "Old Park Star", jockey: "Nico de Boinville", trainer: "N.J. Henderson", form: "1-1-1-1", fractional: "7/4", decimal: 2.75, confidence: 60, reason: "If Old Park Star swerves the Supreme and opts for the Bumper, his sharp pace and jump talent make him a banker. Henderson's bumper horses always peak for Cheltenham." },
+    irish: { horse: "Bambino Fever", jockey: "Rachael Blackmore", trainer: "W.P. Mullins 🇮🇪", form: "1-1-1-1", fractional: "9/4", decimal: 3.25, confidence: 87, ew: false, reason: "The standout Irish pick in the Bumper. Last year's winner seeking back-to-back glory. Mullins and Blackmore have won this race five times in the last decade. 9/4 is fair for a defending champion with a perfect record." }
   },
 
   // ── DAY 3 ── St Patrick's Thursday ──────────────────────
-  // Mares' Hurdle 13:20
+  // Mares' Novices' Hurdle 13:20
   "13:20-2": {
-    nap: { horse: "Lossiemouth", jockey: "Rachael Blackmore", trainer: "W.P. Mullins 🇮🇪", form: "1-1-1-1-1", fractional: "7/4", decimal: 2.75, confidence: 90, reason: "Nine Grade 1 wins and aiming for a hat-trick in this race. Lost to Brighterdaysahead recently but Mullins was relaxed and says she is gearing up for Cheltenham. Blackmore gives her a masterful ride every time and this race represents her best Festival chance. The stats are staggering — nine Grade 1 victories says it all." },
-    nb: { horse: "Jade De Grugy", jockey: "James Reveley", trainer: "G. Cherel 🇫🇷", form: "1-1-1-2-1", fractional: "5/1", decimal: 6.0, confidence: 62, reason: "The French raider who may swerve the Champion Hurdle and target this instead. Reveley is an outstanding jockey and the connections know exactly how to place a mare at the Festival. Strong each-way option if she takes her chance here." },
-    ls: { horse: "My Mate Mozzie", jockey: "Mark Walsh", trainer: "W.P. Mullins 🇮🇪", form: "2-1-1-3", fractional: "22/1", decimal: 23.0, confidence: 22, reason: "Could make all at a rewarding price. Mullins often splits his mares and this one has shown enough pace to trouble the favourite at big odds." }
+    nap: { horse: "Bambino Fever", jockey: "Rachael Blackmore", trainer: "W.P. Mullins 🇮🇪", form: "1-1-1-1", fractional: "4/5", decimal: 1.8, confidence: 90, reason: "Oddschecker gives her 49% win probability in this Mares' Novices' contest — a huge confidence level. Last year's Champion Bumper winner is not entered in the Supreme and this weaker Grade 2 is her clear target. Mullins and Blackmore unbeaten in mares' novice hurdles." },
+    nb: { horse: "Carrigmoornaspruce", jockey: "Danny Mullins", trainer: "W.P. Mullins 🇮🇪", form: "1-1-2-1", fractional: "5/1", decimal: 6.0, confidence: 62, reason: "New ownership in shape of Victorious Racing after impressive placed run in the Paddy Power Future Champions Novice Hurdle at Leopardstown. Danny Mullins's Festival record is outstanding and this filly is progressive." },
+    ls: { horse: "Kargese", jockey: "Paul Townend", trainer: "W.P. Mullins 🇮🇪", form: "1-1-1-1", fractional: "12/1", decimal: 13.0, confidence: 32, reason: "Tony Mullins's personal favourite from the Paddy Power preview. 'She's very good and tough — not just a pacemaker, she stays there.' At 12/1 she represents tremendous each-way value in a race Mullins dominates." },
+    irish: { horse: "Bambino Fever", jockey: "Rachael Blackmore", trainer: "W.P. Mullins 🇮🇪", form: "1-1-1-1", fractional: "4/5", decimal: 1.8, confidence: 90, ew: false, reason: "Outstanding Irish banker in the Mares' Novices'. Bambino Fever is not entered in the Supreme and this is her clear target. The 49% Oddschecker win confidence is exceptional and Mullins/Blackmore in mares' novice hurdles is virtually unbeatable." }
   },
-  // Ballymore Novices' Hurdle 14:00
+  // Jack Richards Novices' Chase 14:00
   "14:00-2": {
-    nap: { horse: "The Yellow Clay", jockey: "J.J. Slevin", trainer: "G. Elliott 🇮🇪", form: "1-1-2-1-2", fractional: "4/1", decimal: 5.0, confidence: 78, reason: "Ran three-quarters of a length second to The New Lion at the 2025 Festival and has been improving throughout this season. With The New Lion now the Champion Hurdle leader, The Yellow Clay is the logical choice for this longer trip. Elliott's novice hurdlers always improve markedly for the step up to two and a half miles." },
-    nb: { horse: "Stay Away Fay", jockey: "Danny McMenamin", trainer: "P. Fahey 🇮🇪", form: "2-1-1-1-2", fractional: "5/1", decimal: 6.0, confidence: 65, reason: "Could come here over the Coral Cup if connections decide stamina is his biggest asset. Fahey's team excel at placing novices in the perfect Festival race and this one has raw ability to burn." },
-    ls: { horse: "Vauban", jockey: "Paul Townend", trainer: "W.P. Mullins 🇮🇪", form: "1-2-1-3-1", fractional: "20/1", decimal: 21.0, confidence: 24, reason: "Former Festival winner who continues to be placed by Mullins in races that suit his staying style. Each-way value at 20/1 if connections decide the Ballymore suits better than the Stayers." }
+    nap: { horse: "Regent's Stroll", jockey: "Paul Townend", trainer: "W.P. Mullins 🇮🇪", form: "1-1-1-2-1", fractional: "7/2", decimal: 4.5, confidence: 74, reason: "Mullins's novice handicap chaser who Oddschecker gives 22% win probability — the highest in a wide-open field. Townend's Festival record makes even modest market positions compelling and this race suits a progressive novice perfectly." },
+    nb: { horse: "Backmersackme", jockey: "Emmet Mullins (Am.)", trainer: "E. Mullins 🇮🇪", form: "1-1-1-2-1", fractional: "5/1", decimal: 6.0, confidence: 65, reason: "Dublin Racing Festival winner who is also entered in the National Hunt Chase. If connections prefer the Jack Richards over the amateur race, Emmet Mullins's horse could be value at 5/1 with class form on his side." },
+    ls: { horse: "Western Fold", jockey: "Harry Cobden", trainer: "P. Nicholls", form: "1-2-1-1-3", fractional: "12/1", decimal: 13.0, confidence: 30, reason: "Nicholls has solid Brown Advisory/Jack Richards entries historically. A British each-way dart at a value price in an open novice handicap chase where pace and jumping accuracy count more than market position." },
+    irish: { horse: "Regent's Stroll", jockey: "Paul Townend", trainer: "W.P. Mullins 🇮🇪", form: "1-1-1-2-1", fractional: "7/2", decimal: 4.5, confidence: 74, ew: false, reason: "Best Irish pick in the Jack Richards. Mullins and Townend are the dominant force in novice handicap chasing and this horse has been produced specifically for this race. The 22% Oddschecker win confidence is the highest in the field." }
   },
-  // Ryanair Chase 14:40
+  // Mares' Hurdle 14:40
   "14:40-2": {
-    nap: { horse: "Gaelic Warrior", jockey: "Paul Townend", trainer: "W.P. Mullins 🇮🇪", form: "1-1-1-1-1", fractional: "5/2", decimal: 3.5, confidence: 88, reason: "On a run of three consecutive wins: Chronograph Bowl Chase, Oaksey Chase at Sandown, and the John Durkan Memorial Punchestown Chase (at 13/8). This horse is in electric form and Mullins confirmed the Ryanair is the target. Townend is riding the horse of his life and at 5/2 this is the NAP of the week." },
-    nb: { horse: "Fact To File", jockey: "Mark Walsh", trainer: "W.P. Mullins 🇮🇪", form: "1-1-2-1-1", fractional: "4/1", decimal: 5.0, confidence: 73, reason: "2025 Ryanair Chase winner and Irish Gold Cup winner. Was beaten only narrowly by Gaelic Warrior in the John Durkan. Walsh always gives him a brilliant Festival ride and at 4/1 in a race he has already won, he's far from out of it." },
-    ls: { horse: "Nassalam", jockey: "Jordan Gainford", trainer: "G. Elliott 🇮🇪", form: "1-1-3-2-2", fractional: "25/1", decimal: 26.0, confidence: 20, reason: "Elliott runs multiple horses in the Ryanair and one could easily place at big odds. An each-way outsider who has been placed in Grade 1 company before." }
+    nap: { horse: "Lossiemouth", jockey: "Rachael Blackmore", trainer: "W.P. Mullins 🇮🇪", form: "1-1-1-1-2", fractional: "7/4", decimal: 2.75, confidence: 88, reason: "Nine Grade 1 wins and aiming for a hat-trick in the Mares' Hurdle — moved from Tuesday to Thursday in 2026. Lost to Brighterdaysahead in the Irish Champion Hurdle but Mullins says she is primed for this. Blackmore gives her a masterclass every time. Oddschecker market has her at 56% confidence — the joint-highest of any tip this week." },
+    nb: { horse: "Wodhooh", jockey: "Paul Townend", trainer: "W.P. Mullins 🇮🇪", form: "1-1-1-1-2", fractional: "5/1", decimal: 6.0, confidence: 65, reason: "Oddschecker treble recommendation alongside Bambino Fever and Teahupoo. If Lossiemouth and Brighterdaysahead both run in the Champion Hurdle instead, Wodhooh would have an outstanding chance of Festival success. Worth an each-way stake." },
+    ls: { horse: "Jade De Grugy", jockey: "James Reveley", trainer: "G. Cherel 🇫🇷", form: "1-1-1-2-1", fractional: "12/1", decimal: 13.0, confidence: 28, reason: "The French raider who could target this race. Reveley is an outstanding jockey and the connections know exactly how to place a mare at the Festival. Strong each-way option at 12/1 if she takes her chance here." },
+    irish: { horse: "Lossiemouth", jockey: "Rachael Blackmore", trainer: "W.P. Mullins 🇮🇪", form: "1-1-1-1-2", fractional: "7/4", decimal: 2.75, confidence: 88, ew: false, reason: "The Irish banker of Thursday. Nine Grade 1 wins, two Mares' Hurdle victories and Rachael Blackmore in the saddle. The race has been moved to Thursday specifically to give Lossiemouth the best possible conditions. Back her without hesitation." }
   },
   // Stayers' Hurdle 15:20 ⭐ KEY RACE
   "15:20-2": {
-    nap: { horse: "Teahupoo", jockey: "Rachael Blackmore", trainer: "G. Elliott 🇮🇪", form: "1-1-1-1-1", fractional: "13/8", decimal: 2.625, confidence: 87, reason: "2024 Stayers' Hurdle winner and current ante-post favourite at 13/8. Won his third consecutive Hatton's Grace Hurdle and then demolished Bob Olinger by seven commanding lengths in the Christmas Hurdle. Elliott has been campaigning him specifically for a repeat Festival win and Blackmore's association with the horse is flawless. Has been the favourite for three years running, winning it once — but looks the best he's ever been in February 2026." },
-    nb: { horse: "Honesty Policy", jockey: "J.J. Slevin", trainer: "G. Elliott 🇮🇪", form: "1-1-1-2-1", fractional: "5/1", decimal: 6.0, confidence: 68, reason: "Elliott's most dangerous stablemate who has been described as the biggest danger to Teahupoo within the yard. A second-string bet for the same trainer but Slevin's Festival record is outstanding and the trip suits this improving stayer." },
-    ls: { horse: "Kabral Du Mathan", jockey: "Harry Cobden", trainer: "P. Nicholls", form: "1-2-1-1-3", fractional: "20/1", decimal: 21.0, confidence: 26, reason: "Nicholls has each-way chances in the Stayers' most years. This one handles the trip and the festival track and at 20/1 each-way represents genuine value in a deep field." }
+    nap: { horse: "Teahupoo", jockey: "Rachael Blackmore", trainer: "G. Elliott 🇮🇪", form: "1-1-1-1-1", fractional: "13/8", decimal: 2.625, confidence: 86, reason: "2024 Stayers' Hurdle winner and ante-post favourite at 13/8. Won his third consecutive Hatton's Grace and demolished Bob Olinger by seven lengths in the Christmas Hurdle. Oddschecker gives him 17% win probability and includes him in the recommended Thursday treble. Elliott campaigns him specifically for a Festival repeat." },
+    nb: { horse: "Ma Shantou", jockey: "Harry Cobden", trainer: "P. Nicholls", form: "1-1-1-1-1", fractional: "5/1", decimal: 6.0, confidence: 70, reason: "Telegraph tipster Marcus Armytage's highlighted form horse — won the Pertemps Cleeve Hurdle impressively, beating Impose Toi. Odds cut from 50/1 to 5/1. Progressive, unexposed over three miles and could be the British dark horse of the week." },
+    ls: { horse: "Bob Olinger", jockey: "Rachael Blackmore", trainer: "H. de Bromhead 🇮🇪", form: "1-1-1-2-1", fractional: "16/1", decimal: 17.0, confidence: 28, reason: "Former Festival winner who finished second to Teahupoo in the Christmas Hurdle. Could reverse form if the ground suits and Teahupoo has an off day. De Bromhead's horses peak at the Festival and a placed effort at 16/1 each-way is the play." },
+    irish: { horse: "Teahupoo", jockey: "Rachael Blackmore", trainer: "G. Elliott 🇮🇪", form: "1-1-1-1-1", fractional: "13/8", decimal: 2.625, confidence: 86, ew: false, reason: "The top Irish pick in the Stayers'. Gordon Elliott's outstanding staying hurdler has the best form of anything in the division. Won this race in 2024 and has been better than ever this season. Blackmore and Elliott in a staying hurdle is a formidable partnership." }
   },
-  // Pertemps Network Final 16:00
+  // Ryanair Chase 16:00 ⭐ KEY RACE
   "16:00-2": {
-    nap: { horse: "Iberico Lord", jockey: "A.P. Heskin", trainer: "T. Mullins 🇮🇪", form: "1-2-1-1-1", fractional: "10/1", decimal: 11.0, confidence: 72, reason: "Surpised the 22/1 Lanzarote Hurdle at Kempton to book his Pertemps qualifier. Carrying 11st 2lbs and trained by Tom Mullins, this horse has the profile of a Pertemps specialist — lightly-raced, well-handicapped, and pointed at this race. Heskin rides him with supreme confidence." },
-    nb: { horse: "Sire Du Berlais", jockey: "Mark Walsh", trainer: "G. Cromwell 🇮🇪", form: "1-1-2-1-3", fractional: "12/1", decimal: 13.0, confidence: 62, reason: "Three-time Pertemps Final winner who defies logic whenever he turns up at Cheltenham. Just when you think he's past his best he produces another masterclass. Walsh knows this horse better than anyone." },
-    ls: { horse: "The Shunter", jockey: "A.P. Heskin", trainer: "M. Morris 🇮🇪", form: "1-3-2-3-4", fractional: "33/1", decimal: 34.0, confidence: 15, reason: "A sprinkle each-way on a horse who has bumped into good ones. Morris occasionally wins this with a qualifier and at 33/1 the risk/reward is compelling." }
+    nap: { horse: "Fact To File", jockey: "Mark Walsh", trainer: "W.P. Mullins 🇮🇪", form: "1-1-2-1-1", fractional: "4/6", decimal: 1.67, confidence: 90, reason: "2025 Ryanair Chase winner returning to defend. Won the Irish Gold Cup in February by five lengths and has been installed as odds-on favourite. Traded odds-on after the Irish Gold Cup win. Walsh gives him a masterful Festival ride and at 2m4f around Cheltenham this horse is virtually unbeatable. Matt Chapman tips him as his Ryanair selection." },
+    nb: { horse: "Gaelic Warrior", jockey: "Paul Townend", trainer: "W.P. Mullins 🇮🇪", form: "1-1-1-1-2", fractional: "4/1", decimal: 5.0, confidence: 72, reason: "Patrick Mullins publicly tipped Gaelic Warrior to win the GOLD CUP, which underlines how highly the stable rate him. Second in the Irish Gold Cup behind stablemate Fact To File. If Fact To File goes to the Gold Cup, Gaelic Warrior becomes the Ryanair banker." },
+    ls: { horse: "Jonbon", jockey: "Nico de Boinville", trainer: "N.J. Henderson", form: "1-1-1-1-2", fractional: "9/2", decimal: 5.5, confidence: 42, reason: "Won the Betfair Ascot Chase and is 9/2 for the Ryanair. Henderson's most experienced Grade 1 chaser who won at the Festival in 2023. De Boinville knows Cheltenham inside out — each-way value if the Mullins pair dominate the market." },
+    irish: { horse: "Fact To File", jockey: "Mark Walsh", trainer: "W.P. Mullins 🇮🇪", form: "1-1-2-1-1", fractional: "4/6", decimal: 1.67, confidence: 90, ew: false, reason: "The outstanding Irish certainty in the Ryanair. Defending champion who won the Irish Gold Cup in February. Odds-on favourite and justifiably so — his jumping at pace around Cheltenham's fences is technically superior to any rival. Back him with confidence." }
   },
-  // Mares' Novices' Hurdle 16:40
+  // Pertemps Network Final 16:40
   "16:40-2": {
-    nap: { horse: "Dinoblue", jockey: "Rachael Blackmore", trainer: "W.P. Mullins 🇮🇪", form: "1-1-1-1", fractional: "4/5", decimal: 1.8, confidence: 92, reason: "If connections opt for the Mares' Novices' over the Champion Bumper, she's an even more dominant favourite here. Facile 11-length winner at Naas and unbeaten — Mullins described her as 'exceptional' and Blackmore gives her an unmatched Festival partnership. Would be the race of the week if she runs here." },
-    nb: { horse: "The Big Westerner", jockey: "Paul Townend", trainer: "W.P. Mullins 🇮🇪", form: "1-1-2-1-2", fractional: "5/1", decimal: 6.0, confidence: 65, reason: "Grade 2 winner and viable alternative to the Final Demand favourite. A big bold jumper who stays well and finished second in a Grade 1 at the 2025 Festival. If Dinoblue goes to the Bumper, this becomes the obvious leader." },
-    ls: { horse: "Our Power", jockey: "Harry Skelton", trainer: "D. Skelton", form: "1-2-1-3-1", fractional: "20/1", decimal: 21.0, confidence: 22, reason: "Skelton's mare who has been progressive throughout the season. Could upset the Irish domination at a rewarding each-way price if the main Mullins candidates split their allegiances." }
+    nap: { horse: "Sire Du Berlais", jockey: "Mark Walsh", trainer: "G. Cromwell 🇮🇪", form: "1-1-2-1-3", fractional: "10/1", decimal: 11.0, confidence: 70, reason: "Three-time Pertemps Final winner who defies logic whenever he turns up at Cheltenham. Walsh knows this horse better than anyone and Cromwell targets this race with laserlike precision. Just when you think he's past his best he produces another masterclass." },
+    nb: { horse: "Ma Shantou", jockey: "Harry Cobden", trainer: "P. Nicholls", form: "1-1-1-1-1", fractional: "7/1", decimal: 8.0, confidence: 65, reason: "Won the Pertemps Cleeve qualifier impressively and has the form to compete here if not running in the Stayers'. Nicholls horses in Pertemps qualifiers have an outstanding hit rate and Cobden is in top form." },
+    ls: { horse: "The Shunter", jockey: "A.P. Heskin", trainer: "M. Morris 🇮🇪", form: "1-3-2-3-4", fractional: "33/1", decimal: 34.0, confidence: 15, reason: "A sprinkle each-way on a horse who has bumped into good ones. Morris occasionally wins this with a qualifier and at 33/1 the risk/reward is compelling." },
+    irish: { horse: "Sire Du Berlais", jockey: "Mark Walsh", trainer: "G. Cromwell 🇮🇪", form: "1-1-2-1-3", fractional: "10/1", decimal: 11.0, confidence: 70, ew: true, reason: "The Irish king of the Pertemps. Three-time winner at 10/1 each-way — this is almost a standing order. Cromwell and Walsh know the race inside out and the horse somehow keeps defying his advancing years. Back him every year." }
   },
-  // Paddy Power Plate 17:20
+  // Kim Muir Handicap Chase 17:20
   "17:20-2": {
-    nap: { horse: "Torroe Abbey", jockey: "Paul Townend", trainer: "W.P. Mullins 🇮🇪", form: "1-1-2-1-1", fractional: "6/1", decimal: 7.0, confidence: 73, reason: "A confirmed Plate entry who has been prepared specifically for this handicap all season. Mullins rarely bothers with these big handicaps unless the horse has a genuine chance and Townend's record in the Thursday evening feature is outstanding." },
-    nb: { horse: "Maze Runner", jockey: "J.W. Kennedy", trainer: "C. Byrnes 🇮🇪", form: "1-1-1-2-1", fractional: "8/1", decimal: 9.0, confidence: 63, reason: "Kennedy is one of the most improved riders in Ireland and this horse has been building towards this festival all season. Byrnes prepares horses meticulously and the trip has always looked ideal for this progressive animal." },
-    ls: { horse: "Supremely West", jockey: "Harry Skelton", trainer: "D. Skelton", form: "1-2-3-1-2", fractional: "12/1", decimal: 13.0, confidence: 36, reason: "Dan Skelton's Kim Muir entry at 12/1 who qualified with a third at Cheltenham and the stable are adept at peaking for Festival handicaps. Both options offer value in a race where the Skeltons always produce." }
+    nap: { horse: "Jeriko Du Reponet", jockey: "Patrick Mullins", trainer: "W.P. Mullins 🇮🇪", form: "1-1-2-1-1", fractional: "4/1", decimal: 5.0, confidence: 79, reason: "4/1 joint top-weight favourite at 12st despite carrying maximum weight. Oddschecker gives him 51% win confidence — the highest of any horse in any race at the Festival. Mullins rarely brings a horse to the Kim Muir without expecting to win and Patrick Mullins is an outstanding amateur jockey." },
+    nb: { horse: "Paddy's Poem", jockey: "Danny Mullins", trainer: "G. Cromwell 🇮🇪", form: "1-1-2-1-3", fractional: "10/1", decimal: 11.0, confidence: 62, reason: "Cromwell targets the Kim Muir annually with precision. Danny Mullins gives the horse an enthusiastic, bold ride and the horse has decent form to compete at this level." },
+    ls: { horse: "Supremely West", jockey: "Harry Skelton", trainer: "D. Skelton", form: "1-2-3-1-2", fractional: "12/1", decimal: 13.0, confidence: 34, reason: "Dan Skelton's Kim Muir entry at 12/1 who qualified with a placed run at Cheltenham. The Skelton team are adept at peaking horses for Festival handicap chases — could represent each-way value in this competitive race." },
+    irish: { horse: "Jeriko Du Reponet", jockey: "Patrick Mullins", trainer: "W.P. Mullins 🇮🇪", form: "1-1-2-1-1", fractional: "4/1", decimal: 5.0, confidence: 79, ew: false, reason: "The outstanding Irish pick in the Kim Muir — and the horse with the highest Oddschecker win confidence (51%) at the entire Festival. Mullins and Patrick Mullins in an amateur handicap chase is as close to a certainty as jumps racing gets. Top selection of the week." }
   },
 
   // ── DAY 4 ── Gold Cup Day ─────────────────────────────────
   // Triumph Hurdle 13:20
   "13:20-3": {
-    nap: { horse: "Kripticjim", jockey: "Rachael Blackmore", trainer: "G. Elliott 🇮🇪", form: "1-1-2-1-1", fractional: "5/2", decimal: 3.5, confidence: 83, reason: "Beat Taurus Bay by a short head in the AIS Novices' Hurdle to emerge as the leading Triumph candidate. Elliott's juveniles have an outstanding Festival record and Blackmore in the Triumph is almost impossible to beat — she instinctively produces them at exactly the right moment in a rough race." },
-    nb: { horse: "Taurus Bay", jockey: "Paul Townend", trainer: "W.P. Mullins 🇮🇪", form: "2-1-1-1-2", fractional: "3/1", decimal: 4.0, confidence: 72, reason: "Narrow narrow defeat to our NAP provides the most enticing rematch of the week. Mullins's juvenile reversal at the Festival of a recent defeat has an excellent strike rate. Townend gives him an ice-cool, professional Festival ride." },
-    ls: { horse: "Puffin Billy", jockey: "Nico de Boinville", trainer: "N.J. Henderson", form: "1-1-3-2-1", fractional: "22/1", decimal: 23.0, confidence: 22, reason: "Henderson has excellent Triumph Hurdle form and this horse is rated capable of upsetting the Irish. A well-priced each-way dart on a horse who runs the right races." }
+    nap: { horse: "Mon Creuset", jockey: "Danny Mullins", trainer: "W.P. Mullins 🇮🇪", form: "1-4-1", fractional: "10/1", decimal: 11.0, confidence: 74, reason: "GAMBLE ALERT: Cut from 33/1 to 10/1 by March 3rd after Willie Mullins publicly identified him as a dark horse. Paddy Power spokesperson confirmed they've 'racked up a fair liability' after significant money landed. Joined Mullins from France in 2025, unlucky at Naas when mistake two out looked set to win. Big potential." },
+    nb: { horse: "Kripticjim", jockey: "Rachael Blackmore", trainer: "G. Elliott 🇮🇪", form: "1-1-2-1", fractional: "5/2", decimal: 3.5, confidence: 80, reason: "Beat Taurus Bay by a short head at Cheltenham Trials Day in a race where recent winners have gone on to Festival glory. Elliott's juvenile hurdles have outstanding Festival form and Blackmore in the Triumph is almost impossible to beat." },
+    ls: { horse: "Winston Junior", jockey: "Danny Mullins", trainer: "W.P. Mullins 🇮🇪", form: "1-1-2-1", fractional: "16/1", decimal: 17.0, confidence: 30, reason: "Ruby Walsh mentioned him as an option if he avoids the Supreme. Mullins often strikes in the Triumph with unexpected runners and Danny Mullins is outstanding on juveniles at the Festival. Each-way at 16/1." },
+    irish: { horse: "Mon Creuset", jockey: "Danny Mullins", trainer: "W.P. Mullins 🇮🇪", form: "1-4-1", fractional: "10/1", decimal: 11.0, confidence: 74, ew: true, reason: "The top Irish dark horse tip of the Festival. Willie Mullins specifically flagged him as his Triumph dark horse and the market has responded — cut from 33/1 to 10/1 by March 3rd. Each-way at 10/1 on a Mullins-backed gamble is an absolute must." }
   },
   // County Hurdle 14:00
   "14:00-3": {
-    nap: { horse: "Anzadam", jockey: "Paul Townend", trainer: "W.P. Mullins 🇮🇪", form: "1-2-1-1-2", fractional: "8/1", decimal: 9.0, confidence: 75, reason: "Top weight at 12st — the handicapper took absolutely no chances after his Fighting Fifth runner-up effort and that speaks volumes. Mullins and Townend in a Grade 3 Festival handicap hurdle is the most powerful combination in racing. When the stable top-weight is at the top of the market, take notice." },
+    nap: { horse: "Anzadam", jockey: "Paul Townend", trainer: "W.P. Mullins 🇮🇪", form: "1-2-1-1-2", fractional: "8/1", decimal: 9.0, confidence: 75, reason: "Top weight at 12st — the handicapper took no chances after his Fighting Fifth runner-up effort and that speaks volumes. Mullins and Townend in a Grade 3 Festival handicap hurdle is the most powerful combination in racing. The stable top-weight in the County is always a dangerous proposition." },
     nb: { horse: "Good Land", jockey: "Rachael Blackmore", trainer: "G. Elliott 🇮🇪", form: "1-2-1-3-1", fractional: "12/1", decimal: 13.0, confidence: 62, reason: "Elliott annually targets the County with progressive sorts and this one has the two-mile pace to succeed. Blackmore's Festival record needs no introduction and this horse arrives with excellent recent placed form." },
-    ls: { horse: "Thomas Darby", jockey: "Harry Skelton", trainer: "O. Sherwood", form: "2-1-1-4-2", fractional: "33/1", decimal: 34.0, confidence: 17, reason: "Big-priced British runner who has placed in similar company before. Could sneak into the each-way positions at a huge price in what is always a chaotic, open County Hurdle." }
+    ls: { horse: "Thomas Darby", jockey: "Harry Skelton", trainer: "O. Sherwood", form: "2-1-1-4-2", fractional: "33/1", decimal: 34.0, confidence: 17, reason: "Big-priced British runner who has placed in similar company. Could sneak into the each-way positions at a huge price in what is always a chaotic, open County Hurdle." },
+    irish: { horse: "Anzadam", jockey: "Paul Townend", trainer: "W.P. Mullins 🇮🇪", form: "1-2-1-1-2", fractional: "8/1", decimal: 9.0, confidence: 75, ew: true, reason: "Best Irish pick in the County Hurdle. Top weight Mullins runner with Townend booked — the combination that wins Festival handicap hurdles more than any other. 8/1 each-way in a big field is excellent value for a horse rated so highly by the handicapper." }
   },
-  // Mrs Paddy Power Mares' Chase 14:40
+  // Mares' Chase 14:40
   "14:40-3": {
-    nap: { horse: "Elimay", jockey: "Mark Walsh", trainer: "W.P. Mullins 🇮🇪", form: "1-1-2-1-1", fractional: "2/1", decimal: 3.0, confidence: 86, reason: "Mullins's dominant mare in chasing company who has been produced for this specific race. Walsh gives her the most elegant, efficient Festival ride you'll see and the Mares' Chase trip is ideal for her relaxed jumping style. Has Closutton form on her side." },
-    nb: { horse: "The Big Westerner", jockey: "Paul Townend", trainer: "W.P. Mullins 🇮🇪", form: "1-1-2-1-2", fractional: "4/1", decimal: 5.0, confidence: 65, reason: "Grade 2 winning mare who is a big bold jumper and stays well — second at the 2025 Festival in Grade 1 hurdles. The chasing career is blossoming and this step up in trip could unlock more. A viable alternative to Final Demand." },
-    ls: { horse: "Dolcita", jockey: "Harry Cobden", trainer: "P. Nicholls", form: "1-2-1-3-1", fractional: "20/1", decimal: 21.0, confidence: 22, reason: "Nicholls has form in this race and this mare has been progressive throughout the season. Each-way value if the Irish wave underperforms in a race they usually dominate." }
+    nap: { horse: "Dinoblue", jockey: "Rachael Blackmore", trainer: "W.P. Mullins 🇮🇪", form: "1-1-1-1", fractional: "4/5", decimal: 1.8, confidence: 92, reason: "Defending Mares' Chase champion and Festival banker candidate. Won her Cheltenham prep race in February — in form and on-course. Has never been out of the top two in a chase at the track. Oddschecker identifies her as 'the banker of the entire meeting'. Mullins and Blackmore unbeatable in this contest." },
+    nb: { horse: "The Big Westerner", jockey: "Paul Townend", trainer: "W.P. Mullins 🇮🇪", form: "1-1-2-1-2", fractional: "5/1", decimal: 6.0, confidence: 65, reason: "Grade 2 winner who had a hard race at the DRF but main danger to Dinoblue if the favourite underperforms. Mullins will have both at peak fitness and Townend can always produce the best from a mare on the big day." },
+    ls: { horse: "Dolcita", jockey: "Harry Cobden", trainer: "P. Nicholls", form: "1-2-1-3-1", fractional: "20/1", decimal: 21.0, confidence: 22, reason: "Nicholls has form in this race and this mare has been progressive throughout the season. Each-way value if the Mullins pair underperform in a race they usually dominate." },
+    irish: { horse: "Dinoblue", jockey: "Rachael Blackmore", trainer: "W.P. Mullins 🇮🇪", form: "1-1-1-1", fractional: "4/5", decimal: 1.8, confidence: 92, ew: false, reason: "Festival Irish banker. Dinoblue has won every chase start at Cheltenham and her February prep win confirms she arrives in peak condition. The Mares' Chase is hers to lose — back her at odds-on with confidence. Oddschecker names her the banker of the entire week." }
   },
   // Albert Bartlett Novices' Hurdle 15:20
   "15:20-3": {
-    nap: { horse: "The Yellow Clay", jockey: "J.J. Slevin", trainer: "G. Elliott 🇮🇪", form: "1-1-2-1-2", fractional: "5/2", decimal: 3.5, confidence: 82, reason: "If not running in the Ballymore, The Yellow Clay is the standout Albert Bartlett selection. Ran so close to The New Lion at last year's Festival and loves Cheltenham — the three-mile trip is entirely suited to his staying profile. Elliott has been patient all season waiting for this moment." },
-    nb: { horse: "Facile Vega", jockey: "Paul Townend", trainer: "W.P. Mullins 🇮🇪", form: "1-1-1-1-1", fractional: "4/1", decimal: 5.0, confidence: 70, reason: "The former Champion Bumper winner whose novice hurdle career has been exceptional. Mullins and Townend in a Festival novice hurdle is the most reliable formula in racing. All-powerful staying form at the top of the market." },
-    ls: { horse: "Corrigeen Rock", jockey: "B.J. Cooper", trainer: "G. Elliott 🇮🇪", form: "1-2-1-3-2", fractional: "25/1", decimal: 26.0, confidence: 22, reason: "Elliott fields a genuine each-way hope at a big price. A staying novice hurdler who could sneak into the frame at 25/1 in a race where luck in running plays a huge role." }
+    nap: { horse: "Doctor Steinberg", jockey: "Paul Townend", trainer: "W.P. Mullins 🇮🇪", form: "1-1-1-1-1", fractional: "11/4", decimal: 3.75, confidence: 80, reason: "Mullins's standout Albert Bartlett candidate at 11/4. Ruby Walsh from Paddy's Preview said he 'could be vulnerable at a short price' — acknowledging he's the one to beat. Townend's Festival record in staying novice hurdles is exceptional." },
+    nb: { horse: "Espresso Milan", jockey: "J.J. Slevin", trainer: "G. Elliott 🇮🇪", form: "1-1-2-1-1", fractional: "14/1", decimal: 15.0, confidence: 60, reason: "Johnny Dineen's recommended Albert Bartlett selection from Paddy's preview night — 'I'll be doing that with Espresso Milan.' Elliott's staying novice hurdlers are always live at the Festival and Slevin gives them the ideal strong-staying ride." },
+    ls: { horse: "I'll Sort That", jockey: "Danny Mullins", trainer: "W.P. Mullins 🇮🇪", form: "1-2-1-1-3", fractional: "16/1", decimal: 17.0, confidence: 32, reason: "Ruby Walsh's dark horse recommendation — 'tailor made for the Albert Bartlett.' Could be the biggest-priced Mullins runner with serious credentials. Danny Mullins gives him the strongest possible ride over three miles." },
+    irish: { horse: "Espresso Milan", jockey: "J.J. Slevin", trainer: "G. Elliott 🇮🇪", form: "1-1-2-1-1", fractional: "14/1", decimal: 15.0, confidence: 60, ew: true, reason: "Best Irish value tip in the Albert Bartlett. Johnny Dineen specifically recommended him at Paddy's Preview Night. Elliott's staying novice hurdlers peak for the Festival and 14/1 each-way on a horse tipped by an insider is excellent value." }
   },
   // Cheltenham Gold Cup 16:00 🏆 THE BIG ONE
   "16:00-3": {
-    nap: { horse: "Fact To File", jockey: "Mark Walsh", trainer: "W.P. Mullins 🇮🇪", form: "1-1-2-1-1", fractional: "4/1", decimal: 5.0, confidence: 88, reason: "Current ante-post Gold Cup favourite at 4/1. Won the 2025 Ryanair Chase, the Paddy Power Irish Gold Cup, and was only narrowly beaten by Gaelic Warrior in the John Durkan. Mullins specifically pointed him at the Gold Cup this season and Walsh's big-race riding is exemplary. An outstanding horse at the top of his game entering March 2026." },
-    nb: { horse: "Inothewayurthinkin", jockey: "Davy Russell", trainer: "G. Cromwell 🇮🇪", form: "1-1-1-1-1", fractional: "5/1", decimal: 6.0, confidence: 74, reason: "Defending champion who won by six lengths in 2025 and then put in a stunning 22-length Punchestown Gold Cup victory. JP McManus's horse is trained by the meticulous Gavin Cromwell and Russell gives him an ice-cool Festival ride. Never been beaten at Cheltenham." },
-    ls: { horse: "Galopin Des Champs", jockey: "Paul Townend", trainer: "W.P. Mullins 🇮🇪", form: "1-1-1-2-1", fractional: "8/1", decimal: 9.0, confidence: 42, reason: "The outstanding returning 2023/24 Gold Cup champion who posted an excellent comeback in the Savills Chase despite being 80% fit. Expected to make a massive step forward by the Dublin Racing Festival. At 8/1 for a horse of his ability each-way is an absolute must — arguably the greatest chaser of his generation." }
+    nap: { horse: "Jango Baie", jockey: "Nico de Boinville", trainer: "N.J. Henderson", form: "1-1-1-4-1", fractional: "5/1", decimal: 6.0, confidence: 82, reason: "Latest market: Joint/head favourite at 5/1 (as of March 3). Won the 2025 Arkle, then ran the King George to four lengths in fourth — 'only half a length behind the winner, The Jukebox Man,' per Henderson. Heads straight to Cheltenham without another run. Henderson says: 'He's been very good fresh.' Solid stamina, accurate jumping, Cheltenham specialist." },
+    nb: { horse: "Gaelic Warrior", jockey: "Paul Townend", trainer: "W.P. Mullins 🇮🇪", form: "1-1-1-2-2", fractional: "7/1", decimal: 8.0, confidence: 74, reason: "Patrick Mullins: 'I think he can win the Gold Cup.' Runner-up in both the King George VI and Irish Gold Cup this season. Multiple Grade 1 winner for Mullins who combines pace with stamina. At 7/1 in a race his jockey publicly backed him to win, this is serious each-way value." },
+    ls: { horse: "Galopin Des Champs", jockey: "Paul Townend", trainer: "W.P. Mullins 🇮🇪", form: "1-1-1-2-3", fractional: "10/1", decimal: 11.0, confidence: 42, reason: "Two-time Gold Cup champion (2023, 2024) at 10/1. Finished third in both the Savills Chase and Irish Gold Cup this season but connections report he's improved since. Has never run badly at Cheltenham. Matt Chapman's Gold Cup pick. The each-way bet of the week at a big price for the greatest chaser of his generation." },
+    irish: { horse: "Gaelic Warrior", jockey: "Paul Townend", trainer: "W.P. Mullins 🇮🇪", form: "1-1-1-2-2", fractional: "7/1", decimal: 8.0, confidence: 74, ew: false, reason: "The best Irish pick in the Gold Cup. Patrick Mullins publicly backed him to win. He finished ahead of dual champion Galopin Des Champs in the Irish Gold Cup and the 2m4f-2m5f around Cheltenham is his ideal trip. Back him to win — the value is there at 7/1." }
   },
-  // Festival Hunters' Chase 16:40
+  // Hunters' Chase 16:40
   "16:40-3": {
-    nap: { horse: "Bob And Co", jockey: "Jamie Codd", trainer: "W.P. Mullins 🇮🇪", form: "1-1-1-1-1", fractional: "7/4", decimal: 2.75, confidence: 84, reason: "Point-to-point specialist and Festival perennial. Codd is the finest amateur hunter chase jockey of his generation and knows Cheltenham inside out. Mullins prepares these horses brilliantly and this one has the class and jumping technique to dominate. Defending champion." },
+    nap: { horse: "Bob And Co", jockey: "Jamie Codd", trainer: "W.P. Mullins 🇮🇪", form: "1-1-1-1-1", fractional: "7/4", decimal: 2.75, confidence: 84, reason: "Point-to-point specialist and Festival perennial. Codd is the finest amateur hunter chase jockey of his generation and knows Cheltenham inside out. Mullins prepares these horses brilliantly. Defending champion." },
     nb: { horse: "Billaway", jockey: "Patrick Mullins", trainer: "W.P. Mullins 🇮🇪", form: "1-1-2-1-2", fractional: "3/1", decimal: 4.0, confidence: 70, reason: "Patrick Mullins rode this horse to victory in the past and they're back for more Festival glory. A top hunter chase combination who could reverse the form on slightly different ground going." },
-    ls: { horse: "Any News", jockey: "Niall Madden", trainer: "C. Hennessy 🇮🇪", form: "1-2-1-3-2", fractional: "25/1", decimal: 26.0, confidence: 20, reason: "Irish hunter chase specialist who has won similar races. A value each-way bet in what can be a messy race with a number of fallers." }
+    ls: { horse: "Any News", jockey: "Niall Madden", trainer: "C. Hennessy 🇮🇪", form: "1-2-1-3-2", fractional: "25/1", decimal: 26.0, confidence: 20, reason: "Irish hunter chase specialist who has won similar races. A value each-way bet in what can be a messy race with a number of fallers." },
+    irish: { horse: "Bob And Co", jockey: "Jamie Codd", trainer: "W.P. Mullins 🇮🇪", form: "1-1-1-1-1", fractional: "7/4", decimal: 2.75, confidence: 84, ew: false, reason: "The defending Irish champion in this race. Codd and Mullins have dominated the Hunters' Chase in recent years and Bob And Co arrives as the horse to beat. Back the defending champion." }
   },
   // Martin Pipe Handicap Hurdle 17:20
   "17:20-3": {
-    nap: { horse: "Jeriko Du Reponet", jockey: "Nico de Boinville", trainer: "N.J. Henderson", form: "1-1-2-1-1", fractional: "4/1", decimal: 5.0, confidence: 78, reason: "4/1 joint top-weight favourite despite carrying 12st after the handicapper kindly dropped his mark 3lb to 145. Henderson and de Boinville are at peak Festival form and the stable absolutely fire in the Festival finale. The mark looks manageable despite the weight and this horse has been conditioned for exactly this moment." },
-    nb: { horse: "Paddy's Poem", jockey: "Danny Mullins", trainer: "G. Cromwell 🇮🇪", form: "1-1-2-1-3", fractional: "10/1", decimal: 11.0, confidence: 65, reason: "Cromwell targets the Martin Pipe annually with precision. Danny Mullins gives the horse an enthusiastic, bold ride and the 3lb claimer allowance makes him extremely dangerous on the weights in a big field." },
-    ls: { horse: "Supremely West", jockey: "Harry Skelton", trainer: "D. Skelton", form: "1-2-3-1-4", fractional: "12/1", decimal: 13.0, confidence: 38, reason: "Dan Skelton's Kim Muir/Martin Pipe horse at 12/1 who qualified with a third at Cheltenham. The Skelton team are adept at peaking horses for Cheltenham handicaps — could represent each-way value in the final race of the week." }
+    nap: { horse: "Jeriko Du Reponet", jockey: "Patrick Mullins", trainer: "W.P. Mullins 🇮🇪", form: "1-1-2-1-1", fractional: "4/1", decimal: 5.0, confidence: 78, reason: "If not running in the Kim Muir, Jeriko Du Reponet is the Festival finale selection. Henderson and de Boinville are at peak Festival form and this horse has been conditioned for the Martin Pipe. The 12st top weight assignment reflects the handicapper's respect." },
+    nb: { horse: "Paddy's Poem", jockey: "Danny Mullins", trainer: "G. Cromwell 🇮🇪", form: "1-1-2-1-3", fractional: "10/1", decimal: 11.0, confidence: 63, reason: "Cromwell targets the Martin Pipe annually with precision. Danny Mullins gives the horse an enthusiastic, bold ride and the 3lb claimer allowance makes him extremely dangerous on the weights in a big field." },
+    ls: { horse: "Supremely West", jockey: "Harry Skelton", trainer: "D. Skelton", form: "1-2-3-1-4", fractional: "12/1", decimal: 13.0, confidence: 36, reason: "Dan Skelton's entry at 12/1 who qualified with a placed run at Cheltenham. The Skelton team are adept at peaking horses for Cheltenham handicaps — each-way value in the final race of the Festival." },
+    irish: { horse: "Paddy's Poem", jockey: "Danny Mullins", trainer: "G. Cromwell 🇮🇪", form: "1-1-2-1-3", fractional: "10/1", decimal: 11.0, confidence: 63, ew: true, reason: "Best Irish pick in the Martin Pipe finale. Gavin Cromwell targets this race meticulously and Danny Mullins gives any horse an instinctive Festival-closing ride. 10/1 each-way in the Martin Pipe is a traditional punter's play." }
   }
+};
+
+// ============================================================
+// STEVE MULLINGTON TIPS (William Hill Ante-Post)
+// ============================================================
+const MULLINGTON_TIPS = {
+  // DAY 1 – Champion Day
+  "13:20-0": { horse: "Mydaddypaddy", trainer: "D. Skelton", jockey: "H. Skelton", odds: "8/1", race: "Supreme Novices' Hurdle", note: "Made a hugely impressive hurdles debut at Carlisle, winning by 4½ lengths. Cut from 14/1 to 8/1 ante-post favourite. Skelton described him as ready having been 'class that got him through'." },
+  "14:00-0": { horse: "Kawaboomga", trainer: "W.P. Mullins 🇮🇪", jockey: "TBC", odds: "20/1", race: "Arkle Novices' Chase", note: "Suffered training setback before last year's Festival. JP McManus-owned five-year-old expected to go chasing this season with the Arkle as target. Likely to have a prep run before Cheltenham." },
+  "14:40-0": { horse: "One Horse Town", trainer: "H. Derham", jockey: "TBC", odds: "10/1", race: "Fred Winter Juvenile Hurdle", note: "Four-time hurdle winner who keeps improving. Won a Triumph Trial at Cheltenham in December — that course experience is invaluable for the Fred Winter. Derham bullish about Festival prospects. E/W recommended." },
+  "15:20-0": { horse: "Resplendent Grey", trainer: "O. Murphy", jockey: "S. Bowen", odds: "20/1", race: "Ultima Handicap Chase", note: "Excellent Festival profile — fourth in the National Hunt Chase last season, won the Bet365 Gold Cup. Disappointing run in Coral Gold Cup blamed on unfavourable start. Murphy eyeing stamina handicaps and Ultima looks ideal. E/W." },
+  "16:00-0": { horse: "The New Lion", trainer: "D. Skelton", jockey: "H. Skelton", odds: "4/1", race: "Champion Hurdle", note: "Unbeaten under Rules. Won the Turners at last year's Festival, now the ante-post Champion Hurdle favourite. Dan Skelton confirmed the Champion Hurdle as his target from the start of the season. The price will not last." },
+  "16:40-0": { horse: "Jagwar", trainer: "O. Greenall / J. Guerriero", jockey: "J. O'Neill Jr.", odds: "10/1", race: "Plate Handicap Chase", note: "Defending champion of this very race — won last year's Plate by 2¾ lengths. Mullington expects him to be re-routed to the Plate after running on Trials Day. Defending champions in this race deserve serious respect." },
+  "17:20-0": { horse: "Deep Cave", trainer: "C. Williams", jockey: "TBC", odds: "25/1", race: "National Hunt Chase / Kim Muir", note: "Won a 3m handicap chase at Bangor in November impressively. Grand National Day Aintree winner in April gave him on that radar. Mullington expects Kim Muir but listed here as the NH Chase entry is also possible. E/W at 25/1." },
+
+  // DAY 2 – Ladies Day
+  "13:20-1": { horse: "Doctor Du Mesnil", trainer: "W.P. Mullins 🇮🇪", jockey: "J. Townend", odds: "14/1", race: "Turners Novices' Hurdle", note: "Only one run under Rules — an 11-length Cork bumper win — but the manner of it left a lasting impression on Mullington. Townend said 'he's going to be a good horse'. Mullins trained the Supreme winner last year in the same mould." },
+  "14:00-1": { horse: "Sixmilebridge", trainer: "F. O'Brien", jockey: "K. Woods", odds: "33/1", race: "Brown Advisory Novices' Chase", note: "Speculative each-way longshot. Won a beginners' chase at Ayr having been a serial non-runner on soft ground. Needs to step up from 2½m to 3m but O'Brien is open-minded about trip. E/W at 33/1 for punters seeking a Festival dart." },
+  "14:40-1": { horse: "East India Express", trainer: "N. Henderson", jockey: "TBC", odds: "20/1", race: "Coral Cup", note: "Nicky Henderson's ideal Coral Cup type — won a 2m4½f handicap hurdle at Cheltenham last season. Agonising neck defeat at Windsor on New Year's Day suggests he's in great heart. E/W recommended at 20/1 for this big-field handicap." },
+  "15:20-1": { horse: "Stumptown", trainer: "G. Cromwell 🇮🇪", jockey: "J. Slevin", odds: "11/4", race: "Cross Country Chase", note: "Defending Cross Country champion. William Hill ambassador Cromwell confirmed he will bypass the Grand National to defend this title. Won the Velka Pardubicka since last year's Cheltenham victory. Mullington's shortest-priced Festival tip." },
+  "16:00-1": { horse: "Marine Nationale", trainer: "B. Connell 🇮🇪", jockey: "TBC", odds: "4/1", race: "Champion Chase", note: "⚠️ NOTE: Marine Nationale has since been ruled out with a sore neck (March 3). Mullington's original ante-post tip was at 4/1 when the horse was a clear favourite. Majborough now leads the market at 4/6." },
+  "16:40-1": { horse: "Unexpected Party", trainer: "D. Skelton", jockey: "H. Atkins", odds: "14/1", race: "Grand Annual Chase", note: "Won this race in 2024, was second in 2025. All roads lead back to the Grand Annual in 2026. An 11-year-old by then, but Mullington says 'you just know he's going to be a factor in the finish'. Past winner of the race — must respect." },
+  "17:20-1": { horse: "Bentraghhill", trainer: "W.P. Mullins 🇮🇪", jockey: "J. Townend", odds: "12/1", race: "Champion Bumper", note: "Coolmore-bred Mullins four-year-old who made a winning debut at Leopardstown over Christmas. Won by 4¼ lengths. Mullins was 'very happy' and expects him to stay in bumpers. Townend won the 2025 bumper on Bambino Fever — same combination." },
+
+  // DAY 3 – St Patrick's Thursday
+  "13:20-2": { horse: "Wodhooh", trainer: "G. Elliott 🇮🇪", jockey: "R. Blackmore", odds: "4/1", race: "Mares' Hurdle", note: "Won the Martin Pipe at last year's Festival then ran well behind Lossiemouth in Grade 1. Won the Ascot Hurdle this season in Graded company. If Lossiemouth goes for the Champion Hurdle, the door opens wide for Wodhooh. Mullington is bullish." },
+  "14:00-2": { horse: "No Drama This End", trainer: "P. Nicholls", jockey: "H. Cobden", odds: "12/1", race: "Albert Bartlett Novices' Hurdle", note: "Nicholls confirmed he will go straight to the Festival after the Challow win. Has Turners and Albert Bartlett entries — Mullington sides with Albert Bartlett given his galloping style and effectiveness at the intermediate trip." },
+  "14:40-2": { horse: "Il Etait Temps", trainer: "W.P. Mullins 🇮🇪", jockey: "P. Townend", odds: "14/1", race: "Ryanair Chase", note: "Tingle Creek hero who demolished the Sandown field. Three previous Cheltenham Festival appearances without a win but Patrick Mullins believes he's 'an altogether better horse' after Sandown. Ryanair over Champion Chase is the likely route." },
+  "15:20-2": { horse: "The Yellow Clay", trainer: "G. Elliott 🇮🇪", jockey: "R. Blackmore", odds: "8/1", race: "Stayers' Hurdle", note: "Beaten only ¾ length by The New Lion at last year's Festival. Elliott has trained two of the last three Stayers' winners. Six-year-old son of Yeats — staying pedigree perfectly suited. Take a position before Christmas says Mullington." },
+  "16:00-2": { horse: "Electric Mason", trainer: "C. Gordon", jockey: "TBC", odds: "14/1", race: "Pertemps Final", note: "Qualified for Pertemps Final when second at Cheltenham in October, then won a valuable Haydock handicap hurdle. Gordon confirmed: 'He will go for the Pertemps at Cheltenham — go straight there now.' Ma Shantou boosted the form. E/W." },
+  "16:40-2": { horse: "Bambino Fever", trainer: "W.P. Mullins 🇮🇪", jockey: "J. Townend", odds: "4/1", race: "Mares' Novices' Hurdle", note: "Champion Bumper winner at Cheltenham AND Punchestown last season. Mullins confirmed she will go the mares' route rather than open novice hurdles. 'I'd be hard-pressed to think of a mare better than her.' Townend partnership continues." },
+  "17:20-2": { horse: "Koktail Divin", trainer: "H. de Bromhead 🇮🇪", jockey: "TBC", odds: "14/1", race: "Jack Richards / NH Handicap Chase", note: "21-length winner of a beginners' chase at Leopardstown on December 28. Spectacular jumping. De Bromhead said connections 'would love to go to Cheltenham'. Also has a Brown Advisory entry — Mullington splits stakes across both races. E/W." },
+
+  // DAY 4 – Gold Cup Day
+  "13:20-3": { horse: "Proactif", trainer: "W.P. Mullins 🇮🇪", jockey: "P. Townend", odds: "12/1", race: "Triumph Hurdle", note: "JP McManus and Mullins purchased this French recruit who won by 6 lengths at Auteuil. Mark Howard's 'One Jump Ahead' flagged him as a potential household name. McManus already had two Triumph contenders but still bought this — tells you everything." },
+  "14:00-3": { horse: "Anzadam", trainer: "W.P. Mullins 🇮🇪", jockey: "P. Townend", odds: "20/1", race: "County Hurdle", note: "Second in the Fighting Fifth behind Golden Ace. Mullins confident he will improve. If he doesn't land a Graded race before March, likely goes handicapping making the County Hurdle the natural landing spot. E/W at 20/1." },
+  "14:40-3": { horse: "July Flower", trainer: "H. de Bromhead 🇮🇪", jockey: "R. Blackmore", odds: "14/1", race: "Mares' Chase", note: "Won the Arkle Trial at Cheltenham in November, pulling away impressively from Be Aware. Close second to Romeo Coolio at Leopardstown over Christmas. Mullington expects de Bromhead to choose Mares' Chase over Arkle for easier opportunities. E/W." },
+  "15:20-3": { horse: "No Drama This End", trainer: "P. Nicholls", jockey: "H. Cobden", odds: "12/1", race: "Albert Bartlett Novices' Hurdle", note: "Same selection as Day 3 14:00 entry — Nicholls has both Turners and Albert Bartlett entries. Mullington's primary pick for Nicholls' horse is Albert Bartlett given his stamina profile, though Turners is also possible." },
+  "16:00-3": { horse: "Fact To File", trainer: "W.P. Mullins 🇮🇪", jockey: "M. Walsh", odds: "6/1", race: "Cheltenham Gold Cup", note: "Mullington's headline Festival selection. Dominated the 2025 Ryanair Chase by 9 lengths. Two Grade 1 Festival wins including 2024 Brown Advisory. Industry tipster Tom Segal: 'I can't think of many winners ever who travelled, jumped and sprinted clear like he did.' Walsh stays aboard." },
+  "16:40-3": { horse: "Good Boy Bobby", trainer: "N. Twiston-Davies", jockey: "D. O'Connor", odds: "33/1", race: "Festival Hunters' Chase", note: "Thirteen-year-old veteran with class from his younger days. Former Rowland Meyrick winner. Has been off since March and was entered at Warwick but deemed unfit. Mullington says 33/1 is 'a generous price' for a horse with back class. E/W speculative." },
+  "17:20-3": { horse: "Son Of Anarchy", trainer: "G. Elliott 🇮🇪", jockey: "TBC", odds: "14/1", race: "Martin Pipe Handicap Hurdle", note: "Elliott has won this race back-to-back with Better Days Ahead and Wodhooh. This JP McManus-owned seven-year-old won by 7 lengths at Punchestown in November before a close third at Navan. The 'plot horse' for the Martin Pipe. E/W at 14/1." }
 };
 
 // ============================================================
@@ -1408,7 +2243,7 @@ function renderDay(dayIdx) {
         <div class="day-title">${dayData.dayLabel}</div>
         <div class="day-date">${dayData.date}</div>
       </div>
-      <div class="last-updated" id="lu-${dayIdx}">Tips compiled Feb 2026</div>
+      <div class="last-updated" id="lu-${dayIdx}">Tips updated 3 Mar 2026</div>
     </div>
     ${dayData.races.map(race => renderRaceCard(race, dayIdx)).join('')}
   `;
@@ -1442,6 +2277,75 @@ function getOddsClass(tipType) {
 function confidenceStars(pct) {
   const stars = Math.round(pct / 20);
   return '★'.repeat(stars) + '☆'.repeat(5 - stars);
+}
+
+function renderIrishTipCard(tip, raceKey) {
+  if (!tip) return '';
+  const trackerKey = `${raceKey}-irish`;
+  const isAdded = trackerItems.some(i => i.key === trackerKey);
+  return `
+    <div class="tip-card irish-tip-card ${isAdded ? 'selected' : ''}" id="tipcard-${trackerKey}">
+      <button class="add-to-tracker ${isAdded ? 'added' : ''}" 
+              id="addBtn-${trackerKey}"
+              onclick="toggleTrackItem('${trackerKey}','${tip.horse}','${tip.fractional}','irish','','',0)"
+              title="${isAdded ? 'Remove from tracker' : 'Add to bet tracker'}">
+        ${isAdded ? '✓' : '+'}
+      </button>
+      <div class="tip-type-label label-irish">🇮🇪 Best Irish Tip</div>
+      <div class="horse-name">${tip.horse} <span class="irish-flag">🇮🇪</span></div>
+      <div class="horse-meta">
+        <span><span class="meta-label">Jockey</span>${tip.jockey}</span>
+        <span><span class="meta-label">Trainer</span>${tip.trainer.replace(' 🇮🇪','')}</span>
+      </div>
+      <div class="form-string">${tip.form}</div>
+      <div class="odds-display">
+        <span class="odds-pill odds-irish">${tip.fractional}</span>
+        ${tip.ew ? '<span class="each-way-note">Each-way rec.</span>' : ''}
+      </div>
+      <div class="confidence-bar">
+        <span class="conf-label">CONF</span>
+        <div class="conf-track">
+          <div class="conf-fill conf-irish" style="width:${tip.confidence}%"></div>
+        </div>
+        <span class="conf-stars" title="${tip.confidence}%">${confidenceStars(tip.confidence)}</span>
+      </div>
+      <div class="reason-section">
+        <button class="reason-toggle" onclick="toggleReason('reason-${trackerKey}', this)">▸ Why this horse?</button>
+        <div class="reason-text" id="reason-${trackerKey}">${tip.reason}</div>
+      </div>
+    </div>
+  `;
+}
+
+function renderMullingtonCard(mul, raceKey) {
+  if (!mul) return '';
+  const isRetired = mul.note && mul.note.includes('⚠️ NOTE:');
+  const trackerKey = `${raceKey}-mullington`;
+  const isAdded = trackerItems.some(i => i.key === trackerKey);
+  return `
+    <div class="tip-card mullington-tip-card ${isAdded ? 'selected' : ''} ${isRetired ? 'mullington-retired' : ''}" id="tipcard-${trackerKey}">
+      <button class="add-to-tracker ${isAdded ? 'added' : ''}" 
+              id="addBtn-${trackerKey}"
+              onclick="toggleTrackItem('${trackerKey}','${mul.horse.replace(/'/g,"\\'")}','${mul.odds}','mullington','','',0)"
+              title="${isAdded ? 'Remove from tracker' : 'Add to bet tracker'}">
+        ${isAdded ? '✓' : '+'}
+      </button>
+      <div class="tip-type-label label-mullington">📰 Mullington / WH</div>
+      <div class="horse-name">${mul.horse}${mul.trainer.includes('🇮🇪') ? ' <span class="irish-flag">🇮🇪</span>' : ''}</div>
+      <div class="horse-meta">
+        <span><span class="meta-label">Trainer</span>${mul.trainer.replace(' 🇮🇪','')}</span>
+        <span><span class="meta-label">Jockey</span>${mul.jockey}</span>
+      </div>
+      <div class="odds-display">
+        <span class="odds-pill odds-mullington">${mul.odds}</span>
+        ${isRetired ? '<span class="each-way-note" style="color:#f87171">⚠️ Non-runner risk</span>' : ''}
+      </div>
+      <div class="reason-section">
+        <button class="reason-toggle" onclick="toggleReason('reason-${trackerKey}', this)">▸ Mullington's view</button>
+        <div class="reason-text" id="reason-${trackerKey}">${mul.note}</div>
+      </div>
+    </div>
+  `;
 }
 
 function renderTipCard(tip, tipType, raceKey, raceTime, raceName, dayIdx) {
@@ -1498,10 +2402,12 @@ function renderRaceCard(race, dayIdx) {
   const nbCard = tips ? renderTipCard(tips.nb, 'nb', key, race.time, race.name, dayIdx) : renderTipCard(null, 'nb', key, race.time, race.name, dayIdx);
   const lsCard = tips ? renderTipCard(tips.ls, 'ls', key, race.time, race.name, dayIdx) : renderTipCard(null, 'ls', key, race.time, race.name, dayIdx);
 
+  const mulCard = renderMullingtonCard(MULLINGTON_TIPS[key], key);
+
   const goldcupExtra = race.type === 'goldcup' ? `
     <div class="goldcup-feature">
       <h4>🏆 Festival Feature Race Analysis</h4>
-      <p>The Cheltenham Gold Cup is the pinnacle of the National Hunt season – a 3 miles 2½ furlongs championship chase that crowns the sport's ultimate champion. Galopin Des Champs goes for an unprecedented back-to-back victory under the brilliant Paul Townend. His jumping at pace is technically superior to any rival and his cruising speed makes this a race that only the very best can get close to him. The main questions are ground conditions and the pace of the race. On fast ground, he is unbeatable. A wet Cheltenham might compress the field slightly but it's hard to see him beaten.</p>
+      <p>The 2026 Gold Cup is wide open and fascinating. Jango Baie (5/1) heads the market for Nicky Henderson after following up his 2025 Arkle win with a near-miss fourth in the King George. Gaelic Warrior (7/1) was second in both the King George and Irish Gold Cup — Patrick Mullins publicly backed him to win. The Jukebox Man (8/1) is unbeaten in four chase starts and won the King George. Dual champion Galopin Des Champs (10/1) has been twice placed in Grade 1s this season but connections say he's improved dramatically. Marine Nationale's withdrawal from the Champion Chase has made Majborough the banker of the week — meaning more money could flow into the Gold Cup outsiders. This year's renewal looks the most competitive in a decade.</p>
     </div>
   ` : '';
 
@@ -1516,7 +2422,7 @@ function renderRaceCard(race, dayIdx) {
         <button class="btn btn-ghost btn-sm race-copy-btn" onclick="copyRaceTips('${key}','${race.name.replace(/'/g,"\\'")}',${dayIdx})">📋 Copy</button>
       </div>
       <div class="tips-grid" id="grid-${key}">
-        ${napCard}${nbCard}${lsCard}
+        ${napCard}${nbCard}${lsCard}${tips && tips.irish ? renderIrishTipCard(tips.irish, key) : ''}${mulCard}
       </div>
       <div style="padding:8px 20px 10px;display:flex;gap:8px;align-items:center;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,0.04);">
         <button class="share-btn share-x" onclick="shareRaceTip('${shareText.replace(/'/g,"\\'")}','twitter')" style="font-size:11px;">𝕏 Share NAP</button>
@@ -1587,35 +2493,139 @@ function shareAllNaps(platform) {
 // ============================================================
 // ALL NAPS VIEW
 // ============================================================
-function showAllNaps() {
-  const view = document.getElementById('allNapsView');
-  const tbody = document.getElementById('napsTableBody');
-  tbody.innerHTML = '';
+let currentTableTab = 'nap';
+
+function openTableView(tab) {
+  currentTableTab = tab;
+  if (tab !== 'rp' && tab !== 'bets') populateAllTables();
+  switchTableTab(tab);
+  document.getElementById('allNapsView').classList.add('open');
+}
+
+function switchTableTab(tab) {
+  currentTableTab = tab;
+  ['nap','ls','irish','mullington','rp','bets'].forEach(t => {
+    const tabEl = document.getElementById('tab-' + t);
+    const panelEl = document.getElementById('panel-' + t);
+    if (tabEl) tabEl.classList.toggle('active', t === tab);
+    if (panelEl) {
+      panelEl.style.display = (t === tab) ? 'block' : 'none';
+      panelEl.style.visibility = (t === tab) ? 'visible' : 'hidden';
+    }
+  });
+}
+
+function populateAllTables() {
+  const dayNames = ['Champion Day', 'Ladies Day', "St Patrick's", 'Gold Cup Day'];
+  const napBody = document.getElementById('napsTableBody');
+  const lsBody = document.getElementById('lsTableBody');
+  const irishBody = document.getElementById('irishTableBody');
+  const mullingtonBody = document.getElementById('mullingtonTableBody');
+  napBody.innerHTML = '';
+  lsBody.innerHTML = '';
+  irishBody.innerHTML = '';
+  mullingtonBody.innerHTML = '';
+
   RACE_SCHEDULE.forEach(day => {
     day.races.forEach(race => {
       const key = `${race.time}-${day.day}`;
       const tips = STATIC_TIPS[key];
       if (!tips) return;
-      const tr = document.createElement('tr');
-      const dayNames = ['Champion Day', 'Ladies Day', "St Patrick's", 'Gold Cup Day'];
-      tr.innerHTML = `
-        <td style="color:var(--silver)">${dayNames[day.day]}</td>
-        <td style="font-family:'DM Mono',monospace;color:var(--gold)">${race.time}</td>
-        <td style="color:var(--cream)">${race.name}</td>
-        <td class="horse-cell">${tips.nap.horse}</td>
+      const dayLabel = `<td style="color:var(--silver)">${dayNames[day.day]}</td>`;
+      const timeCell = `<td style="font-family:'DM Mono',monospace;color:var(--gold)">${race.time}</td>`;
+      const raceCell = `<td style="color:var(--cream)">${race.name}</td>`;
+
+      // NAP row
+      const napConf = tips.nap.confidence;
+      const napConfColor = napConf >= 80 ? 'var(--nap-color)' : napConf >= 65 ? 'var(--gold)' : 'var(--silver)';
+      const napTr = document.createElement('tr');
+      napTr.innerHTML = `${dayLabel}${timeCell}${raceCell}
+        <td class="horse-cell">${tips.nap.horse}${tips.nap.trainer.includes('🇮🇪') ? ' 🇮🇪' : ''}</td>
         <td style="color:var(--silver)">${tips.nap.trainer.replace(' 🇮🇪','')}</td>
         <td style="color:var(--silver)">${tips.nap.jockey}</td>
         <td style="font-family:'DM Mono',monospace">${tips.nap.form}</td>
         <td class="odds-cell">${oddsMode === 'decimal' ? tips.nap.decimal : tips.nap.fractional}</td>
-      `;
-      tbody.appendChild(tr);
+        <td><span class="conf-pill" style="background:${napConfColor}22;color:${napConfColor}">${napConf}%</span></td>`;
+      napBody.appendChild(napTr);
+
+      // Long Shot row
+      if (tips.ls) {
+        const lsConf = tips.ls.confidence;
+        const lsTr = document.createElement('tr');
+        lsTr.innerHTML = `${dayLabel}${timeCell}${raceCell}
+          <td class="horse-cell">${tips.ls.horse}${tips.ls.trainer.includes('🇮🇪') ? ' 🇮🇪' : ''}</td>
+          <td style="color:var(--silver)">${tips.ls.trainer.replace(' 🇮🇪','')}</td>
+          <td style="color:var(--silver)">${tips.ls.jockey}</td>
+          <td style="font-family:'DM Mono',monospace">${tips.ls.form}</td>
+          <td class="odds-cell-ls">${oddsMode === 'decimal' ? tips.ls.decimal : tips.ls.fractional} E/W</td>
+          <td><span class="conf-pill" style="background:rgba(251,146,60,0.15);color:var(--longshot-color)">${lsConf}%</span></td>`;
+        lsBody.appendChild(lsTr);
+      }
+
+      // Irish row
+      if (tips.irish) {
+        const irishTr = document.createElement('tr');
+        irishTr.innerHTML = `${dayLabel}${timeCell}${raceCell}
+          <td class="horse-cell" style="color:#22a851">${tips.irish.horse} 🇮🇪</td>
+          <td style="color:var(--silver)">${tips.irish.trainer.replace(' 🇮🇪','')}</td>
+          <td style="color:var(--silver)">${tips.irish.jockey}</td>
+          <td style="font-family:'DM Mono',monospace">${tips.irish.form}</td>
+          <td class="odds-cell-irish">${oddsMode === 'decimal' ? tips.irish.decimal : tips.irish.fractional}</td>
+          <td>${tips.irish.ew ? '<span class="ew-yes">✓ E/W</span>' : '<span class="ew-no">Win</span>'}</td>`;
+        irishBody.appendChild(irishTr);
+      }
+
+      // Mullington row
+      const mul = MULLINGTON_TIPS[key];
+      if (mul) {
+        const isRetired = mul.note.includes('⚠️ NOTE:');
+        const mulTr = document.createElement('tr');
+        mulTr.style.opacity = isRetired ? '0.55' : '1';
+        mulTr.innerHTML = `${dayLabel}${timeCell}${raceCell}
+          <td class="horse-cell" style="color:#f0c060">${mul.horse}${mul.trainer.includes('🇮🇪') ? ' 🇮🇪' : ''}</td>
+          <td style="color:var(--silver)">${mul.trainer.replace(' 🇮🇪','')}</td>
+          <td style="font-family:'DM Mono',monospace;color:#f0c060">${mul.odds}</td>
+          <td style="color:var(--silver);font-size:11px;max-width:260px;line-height:1.4">${mul.note}</td>`;
+        mullingtonBody.appendChild(mulTr);
+      }
     });
   });
-  view.classList.add('open');
 }
+
+function showAllNaps() { openTableView('nap'); }
 
 function hideAllNaps() {
   document.getElementById('allNapsView').classList.remove('open');
+}
+
+function shareTableView(type, platform) {
+  const dayNames = ['Champion Day', 'Ladies Day', "St Patrick's", 'Gold Cup Day'];
+  const labels = { ls: '🎲 Long Shots', irish: '🇮🇪 Irish Tips', mullington: '📰 Mullington (William Hill)' };
+  let lines = [`🏆 Cheltenham Festival 2026 – ${labels[type] || type}`];
+  if (type === 'mullington') {
+    RACE_SCHEDULE.forEach(day => {
+      day.races.forEach(race => {
+        const key = `${race.time}-${day.day}`;
+        const m = MULLINGTON_TIPS[key];
+        if (!m) return;
+        lines.push(`${race.time} ${race.name}: ${m.horse} (${m.odds})`);
+      });
+    });
+  } else {
+    RACE_SCHEDULE.forEach(day => {
+      day.races.forEach(race => {
+        const key = `${race.time}-${day.day}`;
+        const tips = STATIC_TIPS[key];
+        if (!tips || !tips[type]) return;
+        const t = tips[type];
+        lines.push(`${race.time} ${race.name}: ${t.horse} (${t.fractional}${type==='ls' ? ' E/W' : ''})`);
+      });
+    });
+  }
+  lines.push('\nAlways gamble responsibly 18+ | GambleAware.org');
+  const msg = encodeURIComponent(lines.join('\n'));
+  if (platform === 'twitter') window.open(`https://twitter.com/intent/tweet?text=${msg}`, '_blank');
+  else window.open(`https://wa.me/?text=${msg}`, '_blank');
 }
 
 // ============================================================
@@ -1746,7 +2756,7 @@ function setDataStatus() {
     const ago = Math.round((Date.now() - parseInt(lastRefresh)) / 60000);
     status.textContent = `Last refreshed ${ago}m ago`;
   } else {
-    status.textContent = 'Expert tips • Feb 2026';
+    status.textContent = 'Expert tips • 3 Mar 2026';
   }
 }
 
@@ -1758,6 +2768,23 @@ function showToast(msg) {
   t.textContent = msg;
   t.classList.add('show');
   setTimeout(() => t.classList.remove('show'), 2500);
+}
+
+function showRpDay(n) {
+  document.querySelectorAll('.rp-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.rp-day-btn').forEach(b => {
+    b.classList.remove('rd1','rd2','rd3','rd4');
+  });
+  document.getElementById('rp-d' + n).classList.add('active');
+  const btn = document.querySelectorAll('.rp-day-btn')[n-1];
+  btn.classList.add('rd' + n);
+}
+
+function showBetsDay(n) {
+  document.querySelectorAll('.bets-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.bets-day-btn').forEach(b => b.classList.remove('bactive'));
+  document.getElementById('bets-d' + n).classList.add('active');
+  document.querySelectorAll('.bets-day-btn')[n-1].classList.add('bactive');
 }
 </script>
 </body>
