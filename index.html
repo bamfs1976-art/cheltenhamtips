@@ -805,6 +805,50 @@
 
   .tracker-count { color: var(--gold); font-weight: 600; font-family: 'DM Mono', monospace; }
 
+  /* ===== RACE CARDS PANEL ===== */
+  .rc-intro { font-size:13px; color:var(--silver); margin-bottom:18px; line-height:1.6; }
+  .rc-day-tabs { display:flex; gap:8px; margin-bottom:20px; flex-wrap:wrap; }
+  .rc-day-btn { background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.15); color:var(--silver); padding:7px 14px; border-radius:8px; font-size:12px; cursor:pointer; transition:all .2s; }
+  .rc-day-btn:hover { background:rgba(52,211,153,0.1); border-color:rgba(52,211,153,0.4); color:#34d399; }
+  .rc-day-btn.active { background:rgba(52,211,153,0.15); border-color:#34d399; color:#34d399; font-weight:600; }
+  .rc-day-panel { display:none; }
+  .rc-day-panel.active { display:block; }
+  .rc-race-card { background:rgba(52,211,153,0.04); border:1px solid rgba(52,211,153,0.15); border-radius:12px; margin-bottom:16px; overflow:hidden; }
+  .rc-race-hdr { display:flex; align-items:center; gap:12px; padding:12px 16px; background:rgba(52,211,153,0.07); border-bottom:1px solid rgba(52,211,153,0.1); flex-wrap:wrap; cursor:pointer; user-select:none; }
+  .rc-race-hdr:hover { background:rgba(52,211,153,0.12); }
+  .rc-time { color:#34d399; font-weight:700; font-size:13px; font-family:'DM Mono',monospace; }
+  .rc-name { color:var(--white); font-weight:600; font-size:14px; flex:1; }
+  .rc-grade-badge { background:rgba(52,211,153,0.15); color:#34d399; font-size:10px; padding:2px 7px; border-radius:4px; font-weight:600; }
+  .rc-runners-count { font-size:11px; color:rgba(255,255,255,0.35); }
+  .rc-toggle-icon { font-size:12px; color:rgba(255,255,255,0.35); margin-left:auto; transition:transform .2s; }
+  .rc-race-card.expanded .rc-toggle-icon { transform:rotate(180deg); }
+  .rc-body { display:none; padding:0; }
+  .rc-race-card.expanded .rc-body { display:block; }
+  .rc-load-btn { display:flex; align-items:center; gap:10px; padding:16px; cursor:pointer; background:rgba(52,211,153,0.06); border:none; border-radius:0; width:100%; text-align:left; color:#34d399; font-size:13px; transition:background .2s; }
+  .rc-load-btn:hover { background:rgba(52,211,153,0.12); }
+  .rc-load-btn .rc-btn-icon { font-size:18px; }
+  .rc-loading { padding:20px 16px; display:flex; align-items:center; gap:10px; color:var(--silver); font-size:13px; }
+  .rc-spinner { width:18px; height:18px; border:2px solid rgba(52,211,153,0.2); border-top-color:#34d399; border-radius:50%; animation:spin .7s linear infinite; flex-shrink:0; }
+  .rc-table-wrap { overflow-x:auto; padding:12px 16px; }
+  .rc-table { width:100%; border-collapse:collapse; font-size:13px; }
+  .rc-table th { color:var(--silver); font-size:11px; text-transform:uppercase; letter-spacing:.06em; padding:6px 10px; text-align:left; border-bottom:1px solid rgba(255,255,255,0.08); white-space:nowrap; }
+  .rc-table td { padding:9px 10px; border-bottom:1px solid rgba(255,255,255,0.04); vertical-align:middle; }
+  .rc-table tr:last-child td { border-bottom:none; }
+  .rc-table tr:hover td { background:rgba(52,211,153,0.04); }
+  .rc-horse { color:var(--gold); font-weight:700; font-size:14px; }
+  .rc-horse.is-tipped { color:#f43f5e; }
+  .rc-horse.is-tipped::after { content:'⭐'; font-size:10px; margin-left:4px; vertical-align:middle; }
+  .rc-form { font-family:'DM Mono',monospace; color:var(--silver); font-size:12px; letter-spacing:.03em; }
+  .rc-odds-cell { color:#fbbf24; font-weight:700; font-size:13px; font-family:'DM Mono',monospace; white-space:nowrap; }
+  .rc-trainer { color:rgba(255,255,255,0.6); font-size:12px; }
+  .rc-jockey { color:rgba(255,255,255,0.75); font-size:12px; }
+  .rc-age { color:rgba(255,255,255,0.4); font-size:12px; text-align:center; }
+  .rc-verdict { margin:0 16px 16px; padding:12px 14px; background:rgba(52,211,153,0.07); border-radius:8px; border-left:3px solid #34d399; font-size:12px; color:var(--silver); line-height:1.6; }
+  .rc-verdict strong { color:#34d399; }
+  .rc-error { padding:16px; color:#f87171; font-size:13px; }
+  .rc-nap-flag { display:inline-block; background:rgba(244,63,94,0.15); color:#f43f5e; font-size:9px; padding:1px 5px; border-radius:3px; font-weight:700; margin-left:4px; vertical-align:middle; }
+  .rc-tip-row td { background:rgba(244,63,94,0.05) !important; }
+
   /* ===== ALL NAPS VIEW ===== */
   .naps-table-section {
     display: none;
@@ -1314,6 +1358,7 @@
     <button class="btn btn-outline" onclick="openTableView('oc')" style="border-color:rgba(249,115,22,0.5);color:#fb923c">📊 OddsChecker</button>
     <button class="btn btn-outline" onclick="openTableView('most')" style="border-color:rgba(244,63,94,0.5);color:#f43f5e">🔥 Most Tipped</button>
     <button class="btn btn-outline" onclick="openTableView('bigodds')" style="border-color:rgba(167,139,250,0.5);color:#a78bfa">💰 Highest Odds</button>
+    <button class="btn btn-outline" onclick="openTableView('cards')" style="border-color:rgba(52,211,153,0.5);color:#34d399">🃏 Race Cards</button>
     <button class="btn btn-ghost" id="refreshBtn" onclick="refreshTips()">
       <span id="refreshIcon">↻</span> Refresh
     </button>
@@ -1358,6 +1403,7 @@
     <button class="btn btn-ghost btn-sm" onclick="openTableView('oc')" style="color:#fb923c;border-color:rgba(249,115,22,0.3)">📊 OC</button>
     <button class="btn btn-ghost btn-sm" onclick="openTableView('most')" style="color:#f43f5e;border-color:rgba(244,63,94,0.3)">🔥 Most Tipped</button>
     <button class="btn btn-ghost btn-sm" onclick="openTableView('bigodds')" style="color:#a78bfa;border-color:rgba(167,139,250,0.3)">💰 Highest Odds</button>
+    <button class="btn btn-ghost btn-sm" onclick="openTableView('cards')" style="color:#34d399;border-color:rgba(52,211,153,0.3)">🃏 Race Cards</button>
   </div>
 </div>
 
@@ -1379,6 +1425,7 @@
       <button class="table-tab" id="tab-oc" onclick="switchTableTab('oc')">📊 Oddschecker</button>
       <button class="table-tab" id="tab-most" onclick="switchTableTab('most')">🔥 Most Tipped</button>
       <button class="table-tab" id="tab-bigodds" onclick="switchTableTab('bigodds')">💰 Highest Odds</button>
+      <button class="table-tab" id="tab-cards" onclick="switchTableTab('cards')">🃏 Race Cards</button>
     </div>
     <button class="btn btn-ghost btn-sm" onclick="hideAllNaps()">✕ Close</button>
   </div>
@@ -2398,11 +2445,13 @@
   <div class="table-panel" id="panel-hrn" style="display:none">
     <div style="margin-bottom:16px;">
       <div style="font-size:13px;color:var(--silver);margin-bottom:4px;">Tipster: <strong style="color:#67e8f9">Billy Grimshaw</strong> — Editor, HorseRacing.net</div>
-      <div style="font-size:11px;color:rgba(255,255,255,0.4);">Source: horseracing.net/news/cheltenham-festival-day-1-tips-2026 &amp; day-2-tips-2026</div>
+      <div style="font-size:11px;color:rgba(255,255,255,0.4);">Source: horseracing.net — Day 1, Day 2, Day 3 &amp; Day 4 tips articles (all four days complete)</div>
     </div>
     <div class="hrn-day-tabs">
       <button class="hrn-day-btn active" onclick="showHrnDay('hrn-d1',this)">Tuesday (Day 1)</button>
       <button class="hrn-day-btn" onclick="showHrnDay('hrn-d2',this)">Wednesday (Day 2)</button>
+      <button class="hrn-day-btn" onclick="showHrnDay('hrn-d3',this)">Thursday (Day 3)</button>
+      <button class="hrn-day-btn" onclick="showHrnDay('hrn-d4',this)">Friday (Day 4)</button>
     </div>
 
     <!-- DAY 1 -->
@@ -2498,6 +2547,100 @@
       </div>
 
     </div><!-- end hrn-d2 -->
+
+    <!-- DAY 3 -->
+    <div class="hrn-panel" id="hrn-d3">
+
+      <div class="hrn-race">
+        <div class="hrn-race-hdr"><span class="hrn-race-time">13:20</span><span class="hrn-race-name">Mares' Novices' Hurdle</span><span class="hrn-grade">Grade 1</span></div>
+        <div class="hrn-tip"><span class="hrn-horse">Bambino Fever</span><span class="hrn-odds">4/5</span></div>
+        <div class="hrn-note">The 2025 Champion Bumper winner. Would not be out of place in Tuesday's Supreme. Already had colours lowered by the reopposing Old School Outlaw on her hurdling debut, but that was when her yard was underperforming — only beaten by fitness. Grimshaw sees favourite-backers being rewarded in race one on Thursday.</div>
+      </div>
+
+      <div class="hrn-race">
+        <div class="hrn-race-hdr"><span class="hrn-race-time">14:00</span><span class="hrn-race-name">Jack Richards Novices' Handicap Chase</span><span class="hrn-grade">H'cap</span></div>
+        <div class="hrn-tip"><span class="hrn-horse">Slade Steel</span><span class="hrn-odds">SP</span><span class="hrn-ew">E/W</span></div>
+        <div class="hrn-note">Winner of the Supreme two years ago. De Bromhead's stable transforms come the big spring Festivals. Grimshaw has been sweet on this horse for the race all season — a strong each-way play if Koktail Divin heads to the Brown Advisory.</div>
+      </div>
+
+      <div class="hrn-race">
+        <div class="hrn-race-hdr"><span class="hrn-race-time">14:40</span><span class="hrn-race-name">Close Brothers Mares' Hurdle</span><span class="hrn-grade">Grade 1 ⭐</span></div>
+        <div class="hrn-tip"><span class="hrn-horse">Lossiemouth</span><span class="hrn-odds">4/5</span></div>
+        <div class="hrn-note">Rich Ricci defers to Mullins on running plans and Grimshaw is confident she'll attempt to win this for a third consecutive season. Wodhooh (Elliott) is the toughest rival she's faced in this race so far, but Lossiemouth saves her best for this racecourse and this contest.</div>
+      </div>
+
+      <div class="hrn-race">
+        <div class="hrn-race-hdr"><span class="hrn-race-time">15:20</span><span class="hrn-race-name">Paddy Power Stayers' Hurdle</span><span class="hrn-grade">Grade 1 ⭐</span></div>
+        <div class="hrn-tip"><span class="hrn-horse">Impose Toi</span><span class="hrn-odds">SP</span><span class="hrn-ew">E/W</span></div>
+        <div class="hrn-note">Grimshaw suspects the old guard (Teahupoo, Bob Olinger) are vulnerable to the new generation. Prefers Impose Toi — beat by Ma Shantou in the Cleeve but De Boinville didn't push him once the race was lost. With a strong pace to aim at and quicker ground, can pick them all off after the last.</div>
+      </div>
+
+      <div class="hrn-race">
+        <div class="hrn-race-hdr"><span class="hrn-race-time">16:00</span><span class="hrn-race-name">Ryanair Chase</span><span class="hrn-grade">Grade 1 ⭐</span></div>
+        <div class="hrn-tip"><span class="hrn-horse">Fact To File</span><span class="hrn-odds">4/7</span></div>
+        <div class="hrn-note">🏆 GRIMSHAW NAP — Thursday NAP. Ryanair Chase looks weaker in 2026 than when Fact To File dominated in 2025. Could be the shortest-priced favourite of the whole Festival and cornerstone of every acca. "NAP material." JP McManus / Willie Mullins superstar.</div>
+      </div>
+
+      <div class="hrn-race">
+        <div class="hrn-race-hdr"><span class="hrn-race-time">16:40</span><span class="hrn-race-name">Pertemps Network Final</span><span class="hrn-grade">H'cap</span></div>
+        <div class="hrn-tip"><span class="hrn-horse">Supremely West</span><span class="hrn-odds">SP</span><span class="hrn-ew">E/W</span></div>
+        <div class="hrn-note">Flagged by @RoadCheltenham at 12/1 several weeks ago — market has tumbled into 4/1 since on sustained yard support. Dan Skelton has been bullish about his wellbeing. The market move tells its own story.</div>
+      </div>
+
+      <div class="hrn-race">
+        <div class="hrn-race-hdr"><span class="hrn-race-time">17:20</span><span class="hrn-race-name">Kim Muir Handicap Chase</span><span class="hrn-grade">H'cap</span></div>
+        <div class="hrn-tip"><span class="hrn-horse">Kim Roque</span><span class="hrn-odds">9/1</span><span class="hrn-ew">E/W</span></div>
+        <div class="hrn-note">@RoadCheltenham selected Kim Roque antepost at 20/1. Six starts over fences with slick, accurate jumping. Joseph O'Brien renowned for targeting major meetings with precision. Staying handicap trip at Cheltenham should bring further improvement.</div>
+      </div>
+
+    </div><!-- end hrn-d3 -->
+
+    <!-- DAY 4 -->
+    <div class="hrn-panel" id="hrn-d4">
+
+      <div class="hrn-race">
+        <div class="hrn-race-hdr"><span class="hrn-race-time">13:20</span><span class="hrn-race-name">JCB Triumph Hurdle</span><span class="hrn-grade">Grade 1</span></div>
+        <div class="hrn-tip"><span class="hrn-horse">Selma De Vary</span><span class="hrn-odds">7/2</span></div>
+        <div class="hrn-note">⚠️ Narciso Has ruled out — race now wide open. Selma De Vary ran 2nd to Narciso Has at Leopardstown, made early mistakes when green but finished powerfully. Wearing the Ricci colours (same as Lossiemouth who won this race). Grimshaw's Day 4 NAP.</div>
+      </div>
+
+      <div class="hrn-race">
+        <div class="hrn-race-hdr"><span class="hrn-race-time">14:00</span><span class="hrn-race-name">William Hill County Hurdle</span><span class="hrn-grade">H'cap</span></div>
+        <div class="hrn-tip"><span class="hrn-horse">Sinnatra</span><span class="hrn-odds">10/1</span><span class="hrn-ew">E/W</span></div>
+        <div class="hrn-note">Skelton's interesting runner — recent Warwick win came with plenty in hand, Harry keen not to let him run away. Could be a long-term County Hurdle target. Absurde is also considered but Sinnatra is Grimshaw's each-way play at 10/1.</div>
+      </div>
+
+      <div class="hrn-race">
+        <div class="hrn-race-hdr"><span class="hrn-race-time">14:40</span><span class="hrn-race-name">Boodles Mares' Chase</span><span class="hrn-grade">Grade 1</span></div>
+        <div class="hrn-tip"><span class="hrn-horse">Only By Night</span><span class="hrn-odds">13/2</span></div>
+        <div class="hrn-note">Campaign shaped with this firmly in mind — connections briefly considered the Champion Chase but switched here. Big Festival form from the 2025 Arkle where she was travelling strongly approaching the final fence. Capable of giving the Mullins team something to think about.</div>
+      </div>
+
+      <div class="hrn-race">
+        <div class="hrn-race-hdr"><span class="hrn-race-time">15:20</span><span class="hrn-race-name">Albert Bartlett Novices' Hurdle</span><span class="hrn-grade">Grade 1</span></div>
+        <div class="hrn-tip"><span class="hrn-horse">Doctor Steinberg</span><span class="hrn-odds">5/2</span></div>
+        <div class="hrn-note">Propelled into clear favouritism after an impressive Dublin Racing Festival win. Some observers question the form strength and his tendency to race keenly over 3m. But Grimshaw sticks with him — best form in the book, progressive profile, Mullins/Townend combination.</div>
+      </div>
+
+      <div class="hrn-race">
+        <div class="hrn-race-hdr"><span class="hrn-race-time">16:00</span><span class="hrn-race-name">Boodles Cheltenham Gold Cup</span><span class="hrn-grade">Grade 1 🏆</span></div>
+        <div class="hrn-tip"><span class="hrn-horse">Jango Baie</span><span class="hrn-odds">9/2</span></div>
+        <div class="hrn-note">🏆 GRIMSHAW GOLD CUP NAP. ⚠️ Galopin Des Champs confirmed NR (ruled out March 7). Last season's Arkle winner — looked beaten and traded big odds in-running before staying on to snatch it. Shapes like a horse who improves over further. Cheltenham's relentless hill is perfect for him.</div>
+      </div>
+
+      <div class="hrn-race">
+        <div class="hrn-race-hdr"><span class="hrn-race-time">16:40</span><span class="hrn-race-name">St. James's Place Festival Hunters' Chase</span><span class="hrn-grade">Hunter</span></div>
+        <div class="hrn-tip"><span class="hrn-horse">Wrappedupinmay</span><span class="hrn-odds">9/1</span></div>
+        <div class="hrn-note">Sent to Sam Curling after wind surgery — career reboot has been remarkable. Won by 11 lengths at Carrigarostig under Derek O'Connor. Curling won this race last season with Wonderwall (race favourite here). Stamina-packed pedigree, will relish Cheltenham's test.</div>
+      </div>
+
+      <div class="hrn-race">
+        <div class="hrn-race-hdr"><span class="hrn-race-time">17:20</span><span class="hrn-race-name">Martin Pipe Conditional Jockeys' Hurdle</span><span class="hrn-grade">H'cap</span></div>
+        <div class="hrn-tip"><span class="hrn-horse">The Passing Wife</span><span class="hrn-odds">SP</span><span class="hrn-ew">E/W</span></div>
+        <div class="hrn-note">@RoadCheltenham's strongest handicap fancy of the week. 11 runs under rules, only 5 over hurdles. Form behind Thedeviluno and Skylight Hustle reads well. Won last time bolting up on step up in trip, beating Doctor Du Mesnil on the bridle. Cromwell targets this race with precision.</div>
+      </div>
+
+    </div><!-- end hrn-d4 -->
 
   </div><!-- end panel-hrn -->
 
@@ -2940,6 +3083,29 @@
     </div>
   </div>
 
+  <!-- ===== RACE CARDS PANEL ===== -->
+  <div class="table-panel" id="panel-cards" style="display:none">
+    <p class="rc-intro">Full runner-by-runner race cards for all 28 races. Click any race to load the complete field with form, jockey, trainer, odds and a brief verdict — powered by AI. ⭐ = our tipped selection.</p>
+    <div class="rc-day-tabs">
+      <button class="rc-day-btn active" onclick="showRcDay('rc-d1',this)">🏆 Tuesday — Champion Day</button>
+      <button class="rc-day-btn" onclick="showRcDay('rc-d2',this)">👒 Wednesday — Ladies Day</button>
+      <button class="rc-day-btn" onclick="showRcDay('rc-d3',this)">☘️ Thursday — St Patrick's</button>
+      <button class="rc-day-btn" onclick="showRcDay('rc-d4',this)">🥇 Friday — Gold Cup Day</button>
+    </div>
+
+    <!-- DAY 1 -->
+    <div class="rc-day-panel active" id="rc-d1" data-day="1" data-dayname="Champion Day (Tuesday 11 March 2026)"></div>
+
+    <!-- DAY 2 -->
+    <div class="rc-day-panel" id="rc-d2" data-day="2" data-dayname="Ladies Day (Wednesday 12 March 2026)"></div>
+
+    <!-- DAY 3 -->
+    <div class="rc-day-panel" id="rc-d3" data-day="3" data-dayname="St Patrick's Thursday (13 March 2026)"></div>
+
+    <!-- DAY 4 -->
+    <div class="rc-day-panel" id="rc-d4" data-day="4" data-dayname="Gold Cup Day (Friday 14 March 2026)"></div>
+  </div>
+
 </div><!-- end allNapsView -->
 <button class="tracker-toggle-btn" onclick="toggleTracker()" title="My Bet Tracker">
   📋
@@ -3240,12 +3406,13 @@ const STATIC_TIPS = {
   // ── DAY 4 ── Gold Cup Day ─────────────────────────────────
 
   // Triumph Hurdle 13:20
-  // Cross-source: OC Banker is Narciso Has 7/2; our previous NAP was Mon Creuset 10/1 (Mullins gamble)
+  // ⚠️ NR UPDATE: Narciso Has suffered a setback and is OUT of Cheltenham 2026 (confirmed HRN Day 4 article, 6 March)
+  // New NAP: Selma De Vary (HRN Day 4 tip, 7/2) — finished 2nd to Narciso Has at Leopardstown, race now much more open
   "13:20-3": {
-    nap: { horse: "Narciso Has", jockey: "Paul Townend", trainer: "W.P. Mullins 🇮🇪", form: "1-2-1-1", fractional: "7/2", decimal: 4.5, confidence: 78, reason: "OC DAY 4 BANKER — upgraded to NAP. Won by 11 lengths at Leopardstown on Boxing Day from the front despite a pace bias against him. Joined Mullins from France with lofty reputation. Expected to win the Spring Juvenile Hurdle at DRF before giving Mullins a fifth consecutive Triumph win. Townend confirmed." },
-    nb: { horse: "Mon Creuset", jockey: "Danny Mullins", trainer: "W.P. Mullins 🇮🇪", form: "1-4-1", fractional: "10/1", decimal: 11.0, confidence: 72, reason: "GAMBLE ALERT: Cut from 33/1 to 10/1 by March 3rd after Willie Mullins publicly flagged him as Triumph dark horse. Paddy Power confirmed 'racking up fair liability'. Joined from France in 2025 — unlucky at Naas. Second string banker at 10/1." },
-    ls: { horse: "Winston Junior", jockey: "Danny Mullins", trainer: "W.P. Mullins 🇮🇪", form: "1-1-2-1", fractional: "16/1", decimal: 17.0, confidence: 30, reason: "Ruby Walsh mentioned as an option if he avoids the Supreme. Danny Mullins outstanding on juveniles. Mullins often strikes with unexpected Triumph runners. Each-way at 16/1." },
-    irish: { horse: "Mon Creuset", jockey: "Danny Mullins", trainer: "W.P. Mullins 🇮🇪", form: "1-4-1", fractional: "10/1", decimal: 11.0, confidence: 72, ew: true, reason: "Top Irish dark horse. Mullins specifically flagged him as Triumph dark horse and the market responded — cut from 33/1 to 10/1. Each-way at 10/1 on a Mullins-backed gamble is a must." }
+    nap: { horse: "Selma De Vary", jockey: "Paul Townend", trainer: "W.P. Mullins 🇮🇪", form: "2-1-1", fractional: "7/2", decimal: 4.5, confidence: 74, reason: "⚠️ NR UPDATE: Narciso Has ruled out (setback, March 2026) — race now wide open. HRN NAP (Grimshaw, Day 4). Ran 2nd to Narciso Has at Leopardstown — made mistakes early when raw but finished powerfully. Wearing Ricci colours (same ownership as Lossiemouth who won this race). With the market leader gone, Selma De Vary is the new form pick." },
+    nb: { horse: "Mon Creuset", jockey: "Danny Mullins", trainer: "W.P. Mullins 🇮🇪", form: "1-4-1", fractional: "10/1", decimal: 11.0, confidence: 68, reason: "GAMBLE ALERT: Cut from 33/1 to 10/1 after Willie Mullins publicly flagged him. Paddy Power confirmed 'racking up fair liability'. Joined from France in 2025 — unlucky at Naas. Each-way at 10/1 in a now-open race." },
+    ls: { horse: "Winston Junior", jockey: "Danny Mullins", trainer: "W.P. Mullins 🇮🇪", form: "1-1-2-1", fractional: "16/1", decimal: 17.0, confidence: 30, reason: "Mullins's big-priced outsider in the Triumph. Each-way at 16/1 if you want a dart in what is now an open race without the odds-on favourite." },
+    irish: { horse: "Mon Creuset", jockey: "Danny Mullins", trainer: "W.P. Mullins 🇮🇪", form: "1-4-1", fractional: "10/1", decimal: 11.0, confidence: 68, ew: true, reason: "Best Irish value in the Triumph with Narciso Has out. Mullins's flagged Triumph dark horse at 10/1 now looks a live contender in an open race. Each-way must." }
   },
 
   // County Hurdle 14:00
@@ -3278,8 +3445,8 @@ const STATIC_TIPS = {
   "16:00-3": {
     nap: { horse: "Jango Baie", jockey: "Nico de Boinville", trainer: "N.J. Henderson", form: "1-1-1-4-1", fractional: "5/1", decimal: 6.0, confidence: 82, reason: "Joint/head favourite at 5/1 (March 3). Our NAP, Mullington pick, RP 3 of 7 tipsters. Won the 2025 Arkle. King George: fourth but only half a length behind The Jukebox Man per Henderson. Heads straight to Cheltenham — 'been very good fresh.' Accurate jumping, Cheltenham specialist, de Boinville gives him the ideal ride." },
     nb: { horse: "Gaelic Warrior", jockey: "Paul Townend", trainer: "W.P. Mullins 🇮🇪", form: "1-1-1-2-2", fractional: "7/1", decimal: 8.0, confidence: 74, reason: "Patrick Mullins publicly: 'I think he can win the Gold Cup.' Runner-up in both the King George VI and Irish Gold Cup. Multiple Grade 1 winner. At 7/1 in a race his jockey publicly backed, this is serious each-way value." },
-    ls: { horse: "Galopin Des Champs", jockey: "Paul Townend", trainer: "W.P. Mullins 🇮🇪", form: "1-1-1-2-3", fractional: "10/1", decimal: 11.0, confidence: 42, reason: "Two-time Gold Cup champion (2023, 2024) at 10/1. OC multiples treble pick and Matt Chapman's Gold Cup selection. Third in Savills and Irish Gold Cup but connections say improved. Has never run badly at Cheltenham. The each-way bet of the week." },
-    irish: { horse: "Gaelic Warrior", jockey: "Paul Townend", trainer: "W.P. Mullins 🇮🇪", form: "1-1-1-2-2", fractional: "7/1", decimal: 8.0, confidence: 74, ew: false, reason: "Best Irish pick. Patrick Mullins backed him publicly. Finished ahead of Galopin Des Champs in the Irish Gold Cup. The 2m4f-2m5f around Cheltenham is ideal — back at 7/1." }
+    ls: { horse: "The Jukebox Man", jockey: "Paul Townend", trainer: "W.P. Mullins 🇮🇪", form: "1-1-1-1-2", fractional: "8/1", decimal: 9.0, confidence: 48, reason: "⚠️ NR UPDATE: Galopin Des Champs ruled out of 2026 Gold Cup (confirmed March 7, HRN). The Jukebox Man steps up as best-priced each-way chance — unbeaten in four chase starts, King George winner, reopposing Jango Baie and Gaelic Warrior. Was trading as Gold Cup favourite before Jango's price collapsed. 8/1 each-way in a race his trainer dominates." },
+    irish: { horse: "Gaelic Warrior", jockey: "Paul Townend", trainer: "W.P. Mullins 🇮🇪", form: "1-1-1-2-2", fractional: "7/1", decimal: 8.0, confidence: 74, ew: false, reason: "Best Irish pick. Patrick Mullins backed him publicly. Runner-up in both King George and Irish Gold Cup. ⚠️ Galopin Des Champs (dual champion, 2023/24) confirmed non-runner for 2026 — race is now more open and Gaelic Warrior's claims improve. The 2m4f-2m5f Cheltenham test is ideal — back at 7/1." }
   },
 
   // Hunters' Chase 16:40
@@ -3583,7 +3750,7 @@ function renderRaceCard(race, dayIdx) {
   const goldcupExtra = race.type === 'goldcup' ? `
     <div class="goldcup-feature">
       <h4>🏆 Festival Feature Race Analysis</h4>
-      <p>The 2026 Gold Cup is wide open and fascinating. Jango Baie (5/1) heads the market for Nicky Henderson after following up his 2025 Arkle win with a near-miss fourth in the King George. Gaelic Warrior (7/1) was second in both the King George and Irish Gold Cup — Patrick Mullins publicly backed him to win. The Jukebox Man (8/1) is unbeaten in four chase starts and won the King George. Dual champion Galopin Des Champs (10/1) has been twice placed in Grade 1s this season but connections say he's improved dramatically. Marine Nationale's withdrawal from the Champion Chase has made Majborough the banker of the week — meaning more money could flow into the Gold Cup outsiders. This year's renewal looks the most competitive in a decade.</p>
+      <p>The 2026 Gold Cup is wide open. Jango Baie (9/2, HRN NAP) heads the market for Nicky Henderson — last season's Arkle winner who stays powerfully up the Cheltenham hill. Gaelic Warrior (7/1) was runner-up in both the King George and Irish Gold Cup — Patrick Mullins publicly backed him to win. The Jukebox Man (8/1) is unbeaten in four chase starts and won the King George. ⚠️ <strong>Dual champion Galopin Des Champs has been ruled out of the 2026 Gold Cup</strong> — confirmed as a non-runner (March 7, 2026). Marine Nationale's Champion Chase withdrawal and Galopin's Gold Cup exit mean both Majborough and Jango Baie head their respective feature races as warm favourites. This year's renewal looks the most competitive in a decade even without the two-time champion.</p>
     </div>
   ` : '';
 
@@ -3673,9 +3840,10 @@ let currentTableTab = 'nap';
 
 function openTableView(tab) {
   currentTableTab = tab;
-  if (tab !== 'rp' && tab !== 'bets' && tab !== 'guide' && tab !== 'hrn' && tab !== 'oc' && tab !== 'most' && tab !== 'bigodds') populateAllTables();
+  if (tab !== 'rp' && tab !== 'bets' && tab !== 'guide' && tab !== 'hrn' && tab !== 'oc' && tab !== 'most' && tab !== 'bigodds' && tab !== 'cards') populateAllTables();
   if (tab === 'most') populateMostTipped();
   if (tab === 'bigodds') populateBigOdds();
+  if (tab === 'cards') initRaceCards();
   switchTableTab(tab);
   document.getElementById('allNapsView').classList.add('open');
 }
@@ -3684,7 +3852,8 @@ function switchTableTab(tab) {
   currentTableTab = tab;
   if (tab === 'most') populateMostTipped();
   if (tab === 'bigodds') populateBigOdds();
-  ['nap','ls','irish','mullington','rp','bets','guide','hrn','oc','most','bigodds'].forEach(t => {
+  if (tab === 'cards') initRaceCards();
+  ['nap','ls','irish','mullington','rp','bets','guide','hrn','oc','most','bigodds','cards'].forEach(t => {
     const tabEl = document.getElementById('tab-' + t);
     const panelEl = document.getElementById('panel-' + t);
     if (tabEl) tabEl.classList.toggle('active', t === tab);
@@ -3810,10 +3979,10 @@ const MOST_TIPPED_DATA = [
     note:'RP gives 51% win confidence — highest of any horse at the entire Festival. Our NAP and Irish pick. Mullington tips Koktail Divin. OC also reports Jeriko as most popular Jan bet at 51%.' },
   // DAY 4
   { day:'Gold Cup Day', time:'13:20', race:'JCB Triumph Hurdle',
-    winner:'Narciso Has', count:3,
-    sources:[{l:'OC Banker',c:'src-oc'},{l:'RP',c:'src-rp'},{l:'OC multi',c:'src-oc'}],
-    runner_up:'Kripticjim', runner_up_count:2,
-    note:'OC Day 4 Banker and multiples anchor. RP mentions. Our NAP is Mon Creuset (Mullins gamble cut from 33/1). Mullington tips Proactif. Kripticjim is our NB at 5/2.' },
+    winner:'Selma De Vary', count:2,
+    sources:[{l:'HRN NAP',c:'src-hrn'},{l:'Ricci colours',c:'src-nb'}],
+    runner_up:'Mon Creuset', runner_up_count:2,
+    note:'⚠️ Narciso Has RULED OUT (setback, March 2026) — race now wide open. HRN Day 4 NAP: Selma De Vary 7/2 (Grimshaw). Our updated NAP. Mon Creuset is our NB (Mullins gamble, cut from 33/1).' },
   { day:'Gold Cup Day', time:'14:00', race:'William Hill County Hurdle',
     winner:'Anzadam', count:3,
     sources:[{l:'NAP',c:'src-nap'},{l:'Irish',c:'src-nb'},{l:'OC tip',c:'src-oc'}],
@@ -3833,7 +4002,7 @@ const MOST_TIPPED_DATA = [
     winner:'Jango Baie', count:4,
     sources:[{l:'NAP',c:'src-nap'},{l:'RP 3/7',c:'src-rp'},{l:'Mul',c:'src-mul'},{l:'RP con.',c:'src-rp'}],
     runner_up:'Gaelic Warrior', runner_up_count:3,
-    note:'Our NAP and Mullington pick. RP consensus 3 of 7 tipsters. OC multiples pick is Galopin Des Champs 10/1. Gaelic Warrior is our NB and Irish pick — Patrick Mullins publicly backed him.' },
+    note:'Our NAP and Mullington pick. RP consensus 3 of 7 tipsters. HRN NAP: Jango Baie (9/2). ⚠️ Galopin Des Champs NR (ruled out March 7). Gaelic Warrior is our NB and Irish pick — Patrick Mullins publicly backed him.' },
   { day:'Gold Cup Day', time:'16:40', race:'Festival Hunters\' Chase',
     winner:'Bob And Co', count:3,
     sources:[{l:'NAP',c:'src-nap'},{l:'Irish',c:'src-nb'},{l:'RP',c:'src-rp'}],
@@ -3931,7 +4100,7 @@ const BIG_ODDS_DATA = [
     horse:'I\'ll Sort That', odds:'16/1', decimal:17.0, source:'LS',
     note:'Ruby Walsh\'s dark horse from Paddy\'s preview: "tailor made for the Albert Bartlett." Danny Mullins rides over three miles with supreme confidence.' },
   { day:'Gold Cup Day', time:'16:00', race:'Boodles Cheltenham Gold Cup',
-    horse:'Galopin Des Champs', odds:'10/1', decimal:11.0, source:'LS + OC',
+    horse:'The Jukebox Man', odds:'8/1', decimal:9.0, source:'LS',
     note:'Two-time Gold Cup champion. Third in both the Savills Chase and Irish Gold Cup — but connections say he\'s improved. Matt Chapman\'s Gold Cup pick. OC multiples pick. Each-way at 10/1 on the greatest chaser of his generation.' },
   { day:'Gold Cup Day', time:'16:40', race:'Festival Hunters\' Chase',
     horse:'Any News', odds:'25/1', decimal:26.0, source:'LS',
@@ -4285,6 +4454,229 @@ function showOcDay(id, btn) {
   document.querySelectorAll('.oc-day-btn').forEach(b => b.classList.remove('active'));
   document.getElementById(id).classList.add('active');
   btn.classList.add('active');
+}
+
+// ============================================================
+// RACE CARDS — AI-POWERED (Claude API)
+// ============================================================
+const RC_SCHEDULE = {
+  1: [
+    { time:'13:20', name:"Supreme Novices' Hurdle", grade:'Grade 1', dist:'2m ½f', runners:15, key:'13:20-0' },
+    { time:'14:00', name:"Arkle Challenge Trophy", grade:'Grade 1', dist:'1m 7½f', runners:12, key:'14:00-0' },
+    { time:'14:40', name:"Fred Winter Juvenile Handicap Hurdle", grade:'Grade 3 H\'cap', dist:'2m ½f', runners:24, key:'14:40-0' },
+    { time:'15:20', name:"Ultima Handicap Chase", grade:'Grade 3 H\'cap', dist:'3m 1f', runners:24, key:'15:20-0' },
+    { time:'16:00', name:"Champion Hurdle", grade:'Grade 1', dist:'2m ½f', runners:12, key:'16:00-0' },
+    { time:'16:40', name:"Festival Plate Handicap Chase", grade:'H\'cap', dist:'2m 4½f', runners:16, key:'16:40-0' },
+    { time:'17:20', name:"National Hunt Chase", grade:'Amateur H\'cap', dist:'3m 6f', runners:24, key:'17:20-0' }
+  ],
+  2: [
+    { time:'13:20', name:"Turners Novices' Hurdle", grade:'Grade 1', dist:'2m 1f', runners:10, key:'13:20-1' },
+    { time:'14:00', name:"Brown Advisory Novices' Chase", grade:'Grade 1', dist:'3m 1f', runners:8, key:'14:00-1' },
+    { time:'14:40', name:"BetMGM Cup (Coral Cup) Handicap Hurdle", grade:'Grade 3 H\'cap', dist:'2m 5f', runners:24, key:'14:40-1' },
+    { time:'15:20', name:"Glenfarclas Cross Country Chase", grade:'H\'cap', dist:'3m 6f', runners:24, key:'15:20-1' },
+    { time:'16:00', name:"Queen Mother Champion Chase", grade:'Grade 1', dist:'1m 7½f', runners:12, key:'16:00-1' },
+    { time:'16:40', name:"Grand Annual Handicap Chase", grade:'Grade 3 H\'cap', dist:'2m ½f', runners:24, key:'16:40-1' },
+    { time:'17:20', name:"Champion Bumper", grade:'Grade 1 NHF', dist:'2m ½f', runners:24, key:'17:20-1' }
+  ],
+  3: [
+    { time:'13:20', name:"Mares' Novices' Hurdle", grade:'Grade 2', dist:'2m 1f', runners:12, key:'13:20-2' },
+    { time:'14:00', name:"Jack Richards Novices' Handicap Chase", grade:'Grade 3 H\'cap', dist:'2m ½f', runners:20, key:'14:00-2' },
+    { time:'14:40', name:"Close Brothers Mares' Hurdle", grade:'Grade 1', dist:'2m 4f', runners:8, key:'14:40-2' },
+    { time:'15:20', name:"Paddy Power Stayers' Hurdle", grade:'Grade 1', dist:'3m 1f', runners:12, key:'15:20-2' },
+    { time:'16:00', name:"Ryanair Chase", grade:'Grade 1', dist:'2m 4½f', runners:10, key:'16:00-2' },
+    { time:'16:40', name:"Pertemps Network Final", grade:'Grade 3 H\'cap', dist:'3m 2f', runners:24, key:'16:40-2' },
+    { time:'17:20', name:"Kim Muir Handicap Chase", grade:'H\'cap Amateur', dist:'3m 2f', runners:24, key:'17:20-2' }
+  ],
+  4: [
+    { time:'13:20', name:"JCB Triumph Hurdle", grade:'Grade 1', dist:'2m 1f', runners:12, key:'13:20-3' },
+    { time:'14:00', name:"William Hill County Hurdle", grade:'Grade 3 H\'cap', dist:'2m 1f', runners:24, key:'14:00-3' },
+    { time:'14:40', name:"Boodles Mares' Chase", grade:'Grade 2', dist:'2m 4f', runners:8, key:'14:40-3' },
+    { time:'15:20', name:"Albert Bartlett Novices' Hurdle", grade:'Grade 1', dist:'3m 1f', runners:10, key:'15:20-3' },
+    { time:'16:00', name:"Boodles Cheltenham Gold Cup", grade:'Grade 1 🏆', dist:'3m 2½f', runners:12, key:'16:00-3' },
+    { time:'16:40', name:"St James's Place Festival Hunters' Chase", grade:'Hunter Chase', dist:'3m 2f', runners:20, key:'16:40-3' },
+    { time:'17:20', name:"Martin Pipe Conditional Jockeys' Hurdle", grade:'Grade 3 H\'cap', dist:'2m 4½f', runners:24, key:'17:20-3' }
+  ]
+};
+
+// Which horses are our tipped selections (for highlighting)
+function getRcTippedHorse(key) {
+  if (!STATIC_TIPS || !STATIC_TIPS[key]) return null;
+  return STATIC_TIPS[key].nap ? STATIC_TIPS[key].nap.horse : null;
+}
+
+let rcInitDone = false;
+function initRaceCards() {
+  if (rcInitDone) return;
+  rcInitDone = true;
+  [1,2,3,4].forEach(day => {
+    const panel = document.getElementById('rc-d' + day);
+    if (!panel) return;
+    RC_SCHEDULE[day].forEach(race => {
+      const card = document.createElement('div');
+      card.className = 'rc-race-card';
+      card.id = 'rc-card-' + race.key;
+      const tipped = getRcTippedHorse(race.key);
+      const tipNote = tipped ? `<span class="rc-nap-flag">⭐ ${tipped}</span>` : '';
+      card.innerHTML = `
+        <div class="rc-race-hdr" onclick="toggleRcCard('${race.key}')">
+          <span class="rc-time">${race.time}</span>
+          <span class="rc-name">${race.name} ${tipNote}</span>
+          <span class="rc-grade-badge">${race.grade}</span>
+          <span class="rc-runners-count">~${race.runners} rnrs · ${race.dist}</span>
+          <span class="rc-toggle-icon">▼</span>
+        </div>
+        <div class="rc-body">
+          <button class="rc-load-btn" onclick="loadRaceCard('${race.key}', this)" data-loaded="false">
+            <span class="rc-btn-icon">🃏</span>
+            <span>Load full field with form, jockey & trainer — AI powered</span>
+          </button>
+        </div>`;
+      panel.appendChild(card);
+    });
+  });
+}
+
+function showRcDay(id, btn) {
+  document.querySelectorAll('.rc-day-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.rc-day-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+}
+
+function toggleRcCard(key) {
+  const card = document.getElementById('rc-card-' + key);
+  if (!card) return;
+  card.classList.toggle('expanded');
+}
+
+async function loadRaceCard(key, btn) {
+  if (btn.dataset.loaded === 'true') return;
+  btn.dataset.loaded = 'true';
+
+  const card = document.getElementById('rc-card-' + key);
+  const body = card.querySelector('.rc-body');
+
+  // Find the race info
+  let raceInfo = null;
+  for (const day of [1,2,3,4]) {
+    const found = RC_SCHEDULE[day].find(r => r.key === key);
+    if (found) { raceInfo = { ...found, day }; break; }
+  }
+  if (!raceInfo) return;
+
+  const tipped = getRcTippedHorse(key);
+  const tipData = STATIC_TIPS[key] ? STATIC_TIPS[key].nap : null;
+
+  // Show loading state
+  body.innerHTML = `<div class="rc-loading"><div class="rc-spinner"></div><span>Loading ${raceInfo.name} runners...</span></div>`;
+
+  const dayNames = ['','Champion Day (Tue 11 Mar)','Ladies Day (Wed 12 Mar)',"St Patrick's (Thu 13 Mar)",'Gold Cup Day (Fri 14 Mar)'];
+  const tipContext = tipData ? `Our tipped NAP for this race is ${tipped} (${tipData.fractional}, ${tipData.trainer}). Reason: ${tipData.reason.substring(0,200)}` : 'No specific tip for this race.';
+
+  const prompt = `You are a Cheltenham Festival 2026 race card expert. Provide the complete field for this race:
+
+Race: ${raceInfo.name}
+Grade: ${raceInfo.grade}
+Distance: ${raceInfo.dist}
+Day: ${dayNames[raceInfo.day]}
+Approximate runners: ${raceInfo.runners}
+${tipContext}
+
+IMPORTANT CONTEXT:
+- Narciso Has is a NON-RUNNER (setback, ruled out March 2026)
+- Galopin Des Champs is a NON-RUNNER (ruled out Gold Cup March 7 2026)
+- Marine Nationale is a NON-RUNNER (sore neck)
+
+Return ONLY a JSON object with this exact structure (no markdown, no preamble):
+{
+  "runners": [
+    {
+      "horse": "Horse Name",
+      "age": "6",
+      "form": "1-2-F-1-1",
+      "trainer": "W.P. Mullins",
+      "jockey": "Paul Townend",
+      "odds": "5/2",
+      "note": "One sentence on why this horse is interesting or a danger"
+    }
+  ],
+  "verdict": "Two to three sentence race verdict highlighting the key betting angle and main threats."
+}
+
+List runners roughly in betting order (favourite first). Include all confirmed runners you know about for this race at Cheltenham Festival 2026. Mark any known non-runners by NOT including them. Form should be last 5 runs (most recent last), using: 1=won, 2=2nd, 3=3rd, F=fell, U=unseated, P=pulled up, R=refused, 0=unplaced.`;
+
+  try {
+    const response = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 1000,
+        tools: [{ type: 'web_search_20250305', name: 'web_search' }],
+        messages: [{ role: 'user', content: prompt }]
+      })
+    });
+
+    const data = await response.json();
+
+    // Extract text from response (may include tool use blocks)
+    let text = '';
+    if (data.content) {
+      for (const block of data.content) {
+        if (block.type === 'text') text += block.text;
+      }
+    }
+
+    // Parse JSON from response
+    const jsonMatch = text.match(/\{[\s\S]*"runners"[\s\S]*\}/);
+    if (!jsonMatch) throw new Error('No JSON found in response');
+
+    const parsed = JSON.parse(jsonMatch[0]);
+    renderRaceCard(body, parsed, tipped, raceInfo);
+
+  } catch (err) {
+    body.innerHTML = `<div class="rc-error">⚠️ Could not load race card. Try clicking the race header to reload.<br><small>${err.message}</small></div>
+    <button class="rc-load-btn" onclick="this.parentElement.querySelector('.rc-load-btn').dataset.loaded='false'; loadRaceCard('${key}', this)" style="margin-top:8px">
+      <span class="rc-btn-icon">🔄</span><span>Retry</span>
+    </button>`;
+    btn.dataset.loaded = 'false';
+  }
+}
+
+function renderRaceCard(body, data, tipped, raceInfo) {
+  const runners = data.runners || [];
+  const verdict = data.verdict || '';
+
+  let rows = '';
+  runners.forEach((r, i) => {
+    const isTip = tipped && r.horse.toLowerCase().includes(tipped.toLowerCase().substring(0, 6));
+    const rowClass = isTip ? 'rc-tip-row' : '';
+    const horseClass = isTip ? 'rc-horse is-tipped' : 'rc-horse';
+    rows += `<tr class="${rowClass}">
+      <td style="color:rgba(255,255,255,0.25);font-size:12px;text-align:center;width:28px">${i+1}</td>
+      <td>
+        <div class="${horseClass}">${r.horse}</div>
+        <div style="font-size:11px;color:rgba(255,255,255,0.4);margin-top:2px">${r.note || ''}</div>
+      </td>
+      <td class="rc-age">${r.age || '–'}</td>
+      <td class="rc-form">${r.form || '–'}</td>
+      <td class="rc-trainer">${r.trainer || '–'}</td>
+      <td class="rc-jockey">${r.jockey || '–'}</td>
+      <td class="rc-odds-cell">${r.odds || 'SP'}</td>
+    </tr>`;
+  });
+
+  body.innerHTML = `
+    <div class="rc-table-wrap">
+      <table class="rc-table">
+        <thead><tr>
+          <th>#</th><th>Horse</th><th>Age</th><th>Form</th><th>Trainer</th><th>Jockey</th><th>Odds</th>
+        </tr></thead>
+        <tbody>${rows}</tbody>
+      </table>
+    </div>
+    ${verdict ? `<div class="rc-verdict"><strong>Verdict:</strong> ${verdict}</div>` : ''}
+    <div style="padding:8px 16px 12px;font-size:10px;color:rgba(255,255,255,0.25)">AI-generated field data — verify with official racecard before betting. Form: most recent result last.</div>`;
 }
 </script>
 </body>
