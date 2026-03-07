@@ -806,48 +806,6 @@
   .tracker-count { color: var(--gold); font-weight: 600; font-family: 'DM Mono', monospace; }
 
   /* ===== RACE CARDS PANEL ===== */
-  .rc-intro { font-size:13px; color:var(--silver); margin-bottom:18px; line-height:1.6; }
-  .rc-day-tabs { display:flex; gap:8px; margin-bottom:20px; flex-wrap:wrap; }
-  .rc-day-btn { background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.15); color:var(--silver); padding:7px 14px; border-radius:8px; font-size:12px; cursor:pointer; transition:all .2s; }
-  .rc-day-btn:hover { background:rgba(52,211,153,0.1); border-color:rgba(52,211,153,0.4); color:#34d399; }
-  .rc-day-btn.active { background:rgba(52,211,153,0.15); border-color:#34d399; color:#34d399; font-weight:600; }
-  .rc-day-panel { display:none; }
-  .rc-day-panel.active { display:block; }
-  .rc-race-card { background:rgba(52,211,153,0.04); border:1px solid rgba(52,211,153,0.15); border-radius:12px; margin-bottom:16px; overflow:hidden; }
-  .rc-race-hdr { display:flex; align-items:center; gap:12px; padding:12px 16px; background:rgba(52,211,153,0.07); border-bottom:1px solid rgba(52,211,153,0.1); flex-wrap:wrap; cursor:pointer; user-select:none; }
-  .rc-race-hdr:hover { background:rgba(52,211,153,0.12); }
-  .rc-time { color:#34d399; font-weight:700; font-size:13px; font-family:'DM Mono',monospace; }
-  .rc-name { color:var(--white); font-weight:600; font-size:14px; flex:1; }
-  .rc-grade-badge { background:rgba(52,211,153,0.15); color:#34d399; font-size:10px; padding:2px 7px; border-radius:4px; font-weight:600; }
-  .rc-runners-count { font-size:11px; color:rgba(255,255,255,0.35); }
-  .rc-toggle-icon { font-size:12px; color:rgba(255,255,255,0.35); margin-left:auto; transition:transform .2s; }
-  .rc-race-card.expanded .rc-toggle-icon { transform:rotate(180deg); }
-  .rc-body { display:none; padding:0; }
-  .rc-race-card.expanded .rc-body { display:block; }
-  .rc-load-btn { display:flex; align-items:center; gap:10px; padding:16px; cursor:pointer; background:rgba(52,211,153,0.06); border:none; border-radius:0; width:100%; text-align:left; color:#34d399; font-size:13px; transition:background .2s; }
-  .rc-load-btn:hover { background:rgba(52,211,153,0.12); }
-  .rc-load-btn .rc-btn-icon { font-size:18px; }
-  .rc-loading { padding:20px 16px; display:flex; align-items:center; gap:10px; color:var(--silver); font-size:13px; }
-  .rc-spinner { width:18px; height:18px; border:2px solid rgba(52,211,153,0.2); border-top-color:#34d399; border-radius:50%; animation:spin .7s linear infinite; flex-shrink:0; }
-  .rc-table-wrap { overflow-x:auto; padding:12px 16px; }
-  .rc-table { width:100%; border-collapse:collapse; font-size:13px; }
-  .rc-table th { color:var(--silver); font-size:11px; text-transform:uppercase; letter-spacing:.06em; padding:6px 10px; text-align:left; border-bottom:1px solid rgba(255,255,255,0.08); white-space:nowrap; }
-  .rc-table td { padding:9px 10px; border-bottom:1px solid rgba(255,255,255,0.04); vertical-align:middle; }
-  .rc-table tr:last-child td { border-bottom:none; }
-  .rc-table tr:hover td { background:rgba(52,211,153,0.04); }
-  .rc-horse { color:var(--gold); font-weight:700; font-size:14px; }
-  .rc-horse.is-tipped { color:#f43f5e; }
-  .rc-horse.is-tipped::after { content:'⭐'; font-size:10px; margin-left:4px; vertical-align:middle; }
-  .rc-form { font-family:'DM Mono',monospace; color:var(--silver); font-size:12px; letter-spacing:.03em; }
-  .rc-odds-cell { color:#fbbf24; font-weight:700; font-size:13px; font-family:'DM Mono',monospace; white-space:nowrap; }
-  .rc-trainer { color:rgba(255,255,255,0.6); font-size:12px; }
-  .rc-jockey { color:rgba(255,255,255,0.75); font-size:12px; }
-  .rc-age { color:rgba(255,255,255,0.4); font-size:12px; text-align:center; }
-  .rc-verdict { margin:0 16px 16px; padding:12px 14px; background:rgba(52,211,153,0.07); border-radius:8px; border-left:3px solid #34d399; font-size:12px; color:var(--silver); line-height:1.6; }
-  .rc-verdict strong { color:#34d399; }
-  .rc-error { padding:16px; color:#f87171; font-size:13px; }
-  .rc-nap-flag { display:inline-block; background:rgba(244,63,94,0.15); color:#f43f5e; font-size:9px; padding:1px 5px; border-radius:3px; font-weight:700; margin-left:4px; vertical-align:middle; }
-  .rc-tip-row td { background:rgba(244,63,94,0.05) !important; }
 
   /* ===== ALL NAPS VIEW ===== */
   .naps-table-section {
@@ -1358,7 +1316,6 @@
     <button class="btn btn-outline" onclick="openTableView('oc')" style="border-color:rgba(249,115,22,0.5);color:#fb923c">📊 OddsChecker</button>
     <button class="btn btn-outline" onclick="openTableView('most')" style="border-color:rgba(244,63,94,0.5);color:#f43f5e">🔥 Most Tipped</button>
     <button class="btn btn-outline" onclick="openTableView('bigodds')" style="border-color:rgba(167,139,250,0.5);color:#a78bfa">💰 Highest Odds</button>
-    <button class="btn btn-outline" onclick="openTableView('cards')" style="border-color:rgba(52,211,153,0.5);color:#34d399">🃏 Race Cards</button>
     <button class="btn btn-ghost" id="refreshBtn" onclick="refreshTips()">
       <span id="refreshIcon">↻</span> Refresh
     </button>
@@ -1403,7 +1360,6 @@
     <button class="btn btn-ghost btn-sm" onclick="openTableView('oc')" style="color:#fb923c;border-color:rgba(249,115,22,0.3)">📊 OC</button>
     <button class="btn btn-ghost btn-sm" onclick="openTableView('most')" style="color:#f43f5e;border-color:rgba(244,63,94,0.3)">🔥 Most Tipped</button>
     <button class="btn btn-ghost btn-sm" onclick="openTableView('bigodds')" style="color:#a78bfa;border-color:rgba(167,139,250,0.3)">💰 Highest Odds</button>
-    <button class="btn btn-ghost btn-sm" onclick="openTableView('cards')" style="color:#34d399;border-color:rgba(52,211,153,0.3)">🃏 Race Cards</button>
   </div>
 </div>
 
@@ -1425,7 +1381,6 @@
       <button class="table-tab" id="tab-oc" onclick="switchTableTab('oc')">📊 Oddschecker</button>
       <button class="table-tab" id="tab-most" onclick="switchTableTab('most')">🔥 Most Tipped</button>
       <button class="table-tab" id="tab-bigodds" onclick="switchTableTab('bigodds')">💰 Highest Odds</button>
-      <button class="table-tab" id="tab-cards" onclick="switchTableTab('cards')">🃏 Race Cards</button>
     </div>
     <button class="btn btn-ghost btn-sm" onclick="hideAllNaps()">✕ Close</button>
   </div>
@@ -3084,27 +3039,6 @@
   </div>
 
   <!-- ===== RACE CARDS PANEL ===== -->
-  <div class="table-panel" id="panel-cards" style="display:none">
-    <p class="rc-intro">Full runner-by-runner race cards for all 28 races. Click any race to load the complete field with form, jockey, trainer, odds and a brief verdict — powered by AI. ⭐ = our tipped selection.</p>
-    <div class="rc-day-tabs">
-      <button class="rc-day-btn active" onclick="showRcDay('rc-d1',this)">🏆 Tuesday — Champion Day</button>
-      <button class="rc-day-btn" onclick="showRcDay('rc-d2',this)">👒 Wednesday — Ladies Day</button>
-      <button class="rc-day-btn" onclick="showRcDay('rc-d3',this)">☘️ Thursday — St Patrick's</button>
-      <button class="rc-day-btn" onclick="showRcDay('rc-d4',this)">🥇 Friday — Gold Cup Day</button>
-    </div>
-
-    <!-- DAY 1 -->
-    <div class="rc-day-panel active" id="rc-d1" data-day="1" data-dayname="Champion Day (Tuesday 11 March 2026)"></div>
-
-    <!-- DAY 2 -->
-    <div class="rc-day-panel" id="rc-d2" data-day="2" data-dayname="Ladies Day (Wednesday 12 March 2026)"></div>
-
-    <!-- DAY 3 -->
-    <div class="rc-day-panel" id="rc-d3" data-day="3" data-dayname="St Patrick's Thursday (13 March 2026)"></div>
-
-    <!-- DAY 4 -->
-    <div class="rc-day-panel" id="rc-d4" data-day="4" data-dayname="Gold Cup Day (Friday 14 March 2026)"></div>
-  </div>
 
 </div><!-- end allNapsView -->
 <button class="tracker-toggle-btn" onclick="toggleTracker()" title="My Bet Tracker">
@@ -3840,10 +3774,9 @@ let currentTableTab = 'nap';
 
 function openTableView(tab) {
   currentTableTab = tab;
-  if (tab !== 'rp' && tab !== 'bets' && tab !== 'guide' && tab !== 'hrn' && tab !== 'oc' && tab !== 'most' && tab !== 'bigodds' && tab !== 'cards') populateAllTables();
+  if (tab !== 'rp' && tab !== 'bets' && tab !== 'guide' && tab !== 'hrn' && tab !== 'oc' && tab !== 'most' && tab !== 'bigodds') populateAllTables();
   if (tab === 'most') populateMostTipped();
   if (tab === 'bigodds') populateBigOdds();
-  if (tab === 'cards') initRaceCards();
   switchTableTab(tab);
   document.getElementById('allNapsView').classList.add('open');
 }
@@ -3852,8 +3785,7 @@ function switchTableTab(tab) {
   currentTableTab = tab;
   if (tab === 'most') populateMostTipped();
   if (tab === 'bigodds') populateBigOdds();
-  if (tab === 'cards') initRaceCards();
-  ['nap','ls','irish','mullington','rp','bets','guide','hrn','oc','most','bigodds','cards'].forEach(t => {
+  ['nap','ls','irish','mullington','rp','bets','guide','hrn','oc','most','bigodds'].forEach(t => {
     const tabEl = document.getElementById('tab-' + t);
     const panelEl = document.getElementById('panel-' + t);
     if (tabEl) tabEl.classList.toggle('active', t === tab);
@@ -4457,230 +4389,6 @@ function showOcDay(id, btn) {
 }
 
 // ============================================================
-// RACE CARDS — AI-POWERED (Claude API)
-// ============================================================
-const RC_SCHEDULE = {
-  1: [
-    { time:'13:20', name:"Supreme Novices' Hurdle", grade:'Grade 1', dist:'2m ½f', runners:15, key:'13:20-0' },
-    { time:'14:00', name:"Arkle Challenge Trophy", grade:'Grade 1', dist:'1m 7½f', runners:12, key:'14:00-0' },
-    { time:'14:40', name:"Fred Winter Juvenile Handicap Hurdle", grade:'Grade 3 H\'cap', dist:'2m ½f', runners:24, key:'14:40-0' },
-    { time:'15:20', name:"Ultima Handicap Chase", grade:'Grade 3 H\'cap', dist:'3m 1f', runners:24, key:'15:20-0' },
-    { time:'16:00', name:"Champion Hurdle", grade:'Grade 1', dist:'2m ½f', runners:12, key:'16:00-0' },
-    { time:'16:40', name:"Festival Plate Handicap Chase", grade:'H\'cap', dist:'2m 4½f', runners:16, key:'16:40-0' },
-    { time:'17:20', name:"National Hunt Chase", grade:'Amateur H\'cap', dist:'3m 6f', runners:24, key:'17:20-0' }
-  ],
-  2: [
-    { time:'13:20', name:"Turners Novices' Hurdle", grade:'Grade 1', dist:'2m 1f', runners:10, key:'13:20-1' },
-    { time:'14:00', name:"Brown Advisory Novices' Chase", grade:'Grade 1', dist:'3m 1f', runners:8, key:'14:00-1' },
-    { time:'14:40', name:"BetMGM Cup (Coral Cup) Handicap Hurdle", grade:'Grade 3 H\'cap', dist:'2m 5f', runners:24, key:'14:40-1' },
-    { time:'15:20', name:"Glenfarclas Cross Country Chase", grade:'H\'cap', dist:'3m 6f', runners:24, key:'15:20-1' },
-    { time:'16:00', name:"Queen Mother Champion Chase", grade:'Grade 1', dist:'1m 7½f', runners:12, key:'16:00-1' },
-    { time:'16:40', name:"Grand Annual Handicap Chase", grade:'Grade 3 H\'cap', dist:'2m ½f', runners:24, key:'16:40-1' },
-    { time:'17:20', name:"Champion Bumper", grade:'Grade 1 NHF', dist:'2m ½f', runners:24, key:'17:20-1' }
-  ],
-  3: [
-    { time:'13:20', name:"Mares' Novices' Hurdle", grade:'Grade 2', dist:'2m 1f', runners:12, key:'13:20-2' },
-    { time:'14:00', name:"Jack Richards Novices' Handicap Chase", grade:'Grade 3 H\'cap', dist:'2m ½f', runners:20, key:'14:00-2' },
-    { time:'14:40', name:"Close Brothers Mares' Hurdle", grade:'Grade 1', dist:'2m 4f', runners:8, key:'14:40-2' },
-    { time:'15:20', name:"Paddy Power Stayers' Hurdle", grade:'Grade 1', dist:'3m 1f', runners:12, key:'15:20-2' },
-    { time:'16:00', name:"Ryanair Chase", grade:'Grade 1', dist:'2m 4½f', runners:10, key:'16:00-2' },
-    { time:'16:40', name:"Pertemps Network Final", grade:'Grade 3 H\'cap', dist:'3m 2f', runners:24, key:'16:40-2' },
-    { time:'17:20', name:"Kim Muir Handicap Chase", grade:'H\'cap Amateur', dist:'3m 2f', runners:24, key:'17:20-2' }
-  ],
-  4: [
-    { time:'13:20', name:"JCB Triumph Hurdle", grade:'Grade 1', dist:'2m 1f', runners:12, key:'13:20-3' },
-    { time:'14:00', name:"William Hill County Hurdle", grade:'Grade 3 H\'cap', dist:'2m 1f', runners:24, key:'14:00-3' },
-    { time:'14:40', name:"Boodles Mares' Chase", grade:'Grade 2', dist:'2m 4f', runners:8, key:'14:40-3' },
-    { time:'15:20', name:"Albert Bartlett Novices' Hurdle", grade:'Grade 1', dist:'3m 1f', runners:10, key:'15:20-3' },
-    { time:'16:00', name:"Boodles Cheltenham Gold Cup", grade:'Grade 1 🏆', dist:'3m 2½f', runners:12, key:'16:00-3' },
-    { time:'16:40', name:"St James's Place Festival Hunters' Chase", grade:'Hunter Chase', dist:'3m 2f', runners:20, key:'16:40-3' },
-    { time:'17:20', name:"Martin Pipe Conditional Jockeys' Hurdle", grade:'Grade 3 H\'cap', dist:'2m 4½f', runners:24, key:'17:20-3' }
-  ]
-};
-
-// Which horses are our tipped selections (for highlighting)
-function getRcTippedHorse(key) {
-  if (!STATIC_TIPS || !STATIC_TIPS[key]) return null;
-  return STATIC_TIPS[key].nap ? STATIC_TIPS[key].nap.horse : null;
-}
-
-let rcInitDone = false;
-function initRaceCards() {
-  if (rcInitDone) return;
-  rcInitDone = true;
-  [1,2,3,4].forEach(day => {
-    const panel = document.getElementById('rc-d' + day);
-    if (!panel) return;
-    RC_SCHEDULE[day].forEach(race => {
-      const card = document.createElement('div');
-      card.className = 'rc-race-card';
-      card.id = 'rc-card-' + race.key;
-      const tipped = getRcTippedHorse(race.key);
-      const tipNote = tipped ? `<span class="rc-nap-flag">⭐ ${tipped}</span>` : '';
-      card.innerHTML = `
-        <div class="rc-race-hdr" onclick="toggleRcCard('${race.key}')">
-          <span class="rc-time">${race.time}</span>
-          <span class="rc-name">${race.name} ${tipNote}</span>
-          <span class="rc-grade-badge">${race.grade}</span>
-          <span class="rc-runners-count">~${race.runners} rnrs · ${race.dist}</span>
-          <span class="rc-toggle-icon">▼</span>
-        </div>
-        <div class="rc-body">
-          <button class="rc-load-btn" onclick="loadRaceCard('${race.key}', this)" data-loaded="false">
-            <span class="rc-btn-icon">🃏</span>
-            <span>Load full field with form, jockey & trainer — AI powered</span>
-          </button>
-        </div>`;
-      panel.appendChild(card);
-    });
-  });
-}
-
-function showRcDay(id, btn) {
-  document.querySelectorAll('.rc-day-panel').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.rc-day-btn').forEach(b => b.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-  btn.classList.add('active');
-}
-
-function toggleRcCard(key) {
-  const card = document.getElementById('rc-card-' + key);
-  if (!card) return;
-  card.classList.toggle('expanded');
-}
-
-async function loadRaceCard(key, btn) {
-  if (btn.dataset.loaded === 'true') return;
-  btn.dataset.loaded = 'true';
-
-  const card = document.getElementById('rc-card-' + key);
-  const body = card.querySelector('.rc-body');
-
-  // Find the race info
-  let raceInfo = null;
-  for (const day of [1,2,3,4]) {
-    const found = RC_SCHEDULE[day].find(r => r.key === key);
-    if (found) { raceInfo = { ...found, day }; break; }
-  }
-  if (!raceInfo) return;
-
-  const tipped = getRcTippedHorse(key);
-  const tipData = STATIC_TIPS[key] ? STATIC_TIPS[key].nap : null;
-
-  // Show loading state
-  body.innerHTML = `<div class="rc-loading"><div class="rc-spinner"></div><span>Loading ${raceInfo.name} runners...</span></div>`;
-
-  const dayNames = ['','Champion Day (Tue 11 Mar)','Ladies Day (Wed 12 Mar)',"St Patrick's (Thu 13 Mar)",'Gold Cup Day (Fri 14 Mar)'];
-  const tipContext = tipData ? `Our tipped NAP for this race is ${tipped} (${tipData.fractional}, ${tipData.trainer}). Reason: ${tipData.reason.substring(0,200)}` : 'No specific tip for this race.';
-
-  const prompt = `You are a Cheltenham Festival 2026 race card expert. Provide the complete field for this race:
-
-Race: ${raceInfo.name}
-Grade: ${raceInfo.grade}
-Distance: ${raceInfo.dist}
-Day: ${dayNames[raceInfo.day]}
-Approximate runners: ${raceInfo.runners}
-${tipContext}
-
-IMPORTANT CONTEXT:
-- Narciso Has is a NON-RUNNER (setback, ruled out March 2026)
-- Galopin Des Champs is a NON-RUNNER (ruled out Gold Cup March 7 2026)
-- Marine Nationale is a NON-RUNNER (sore neck)
-
-Return ONLY a JSON object with this exact structure (no markdown, no preamble):
-{
-  "runners": [
-    {
-      "horse": "Horse Name",
-      "age": "6",
-      "form": "1-2-F-1-1",
-      "trainer": "W.P. Mullins",
-      "jockey": "Paul Townend",
-      "odds": "5/2",
-      "note": "One sentence on why this horse is interesting or a danger"
-    }
-  ],
-  "verdict": "Two to three sentence race verdict highlighting the key betting angle and main threats."
-}
-
-List runners roughly in betting order (favourite first). Include all confirmed runners you know about for this race at Cheltenham Festival 2026. Mark any known non-runners by NOT including them. Form should be last 5 runs (most recent last), using: 1=won, 2=2nd, 3=3rd, F=fell, U=unseated, P=pulled up, R=refused, 0=unplaced.`;
-
-  try {
-    const response = await fetch('https://api.anthropic.com/v1/messages', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'anthropic-dangerous-direct-browser-access': 'true'
-      },
-      body: JSON.stringify({
-        model: 'claude-sonnet-4-20250514',
-        max_tokens: 1000,
-        tools: [{ type: 'web_search_20250305', name: 'web_search' }],
-        messages: [{ role: 'user', content: prompt }]
-      })
-    });
-
-    const data = await response.json();
-
-    // Extract text from response (may include tool use blocks)
-    let text = '';
-    if (data.content) {
-      for (const block of data.content) {
-        if (block.type === 'text') text += block.text;
-      }
-    }
-
-    // Parse JSON from response
-    const jsonMatch = text.match(/\{[\s\S]*"runners"[\s\S]*\}/);
-    if (!jsonMatch) throw new Error('No JSON found in response');
-
-    const parsed = JSON.parse(jsonMatch[0]);
-    renderRaceCard(body, parsed, tipped, raceInfo);
-
-  } catch (err) {
-    body.innerHTML = `<div class="rc-error">⚠️ Could not load race card. Try clicking the race header to reload.<br><small>${err.message}</small></div>
-    <button class="rc-load-btn" onclick="this.parentElement.querySelector('.rc-load-btn').dataset.loaded='false'; loadRaceCard('${key}', this)" style="margin-top:8px">
-      <span class="rc-btn-icon">🔄</span><span>Retry</span>
-    </button>`;
-    btn.dataset.loaded = 'false';
-  }
-}
-
-function renderRaceCard(body, data, tipped, raceInfo) {
-  const runners = data.runners || [];
-  const verdict = data.verdict || '';
-
-  let rows = '';
-  runners.forEach((r, i) => {
-    const isTip = tipped && r.horse.toLowerCase().includes(tipped.toLowerCase().substring(0, 6));
-    const rowClass = isTip ? 'rc-tip-row' : '';
-    const horseClass = isTip ? 'rc-horse is-tipped' : 'rc-horse';
-    rows += `<tr class="${rowClass}">
-      <td style="color:rgba(255,255,255,0.25);font-size:12px;text-align:center;width:28px">${i+1}</td>
-      <td>
-        <div class="${horseClass}">${r.horse}</div>
-        <div style="font-size:11px;color:rgba(255,255,255,0.4);margin-top:2px">${r.note || ''}</div>
-      </td>
-      <td class="rc-age">${r.age || '–'}</td>
-      <td class="rc-form">${r.form || '–'}</td>
-      <td class="rc-trainer">${r.trainer || '–'}</td>
-      <td class="rc-jockey">${r.jockey || '–'}</td>
-      <td class="rc-odds-cell">${r.odds || 'SP'}</td>
-    </tr>`;
-  });
-
-  body.innerHTML = `
-    <div class="rc-table-wrap">
-      <table class="rc-table">
-        <thead><tr>
-          <th>#</th><th>Horse</th><th>Age</th><th>Form</th><th>Trainer</th><th>Jockey</th><th>Odds</th>
-        </tr></thead>
-        <tbody>${rows}</tbody>
-      </table>
-    </div>
-    ${verdict ? `<div class="rc-verdict"><strong>Verdict:</strong> ${verdict}</div>` : ''}
-    <div style="padding:8px 16px 12px;font-size:10px;color:rgba(255,255,255,0.25)">AI-generated field data — verify with official racecard before betting. Form: most recent result last.</div>`;
-}
 </script>
 </body>
 </html>
