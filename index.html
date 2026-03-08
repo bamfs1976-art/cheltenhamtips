@@ -965,6 +965,30 @@
   .bigodds-price { font-family:'DM Mono',monospace; font-weight:700; font-size:15px; color:#a78bfa; }
   .bigodds-src { font-size:11px; color:var(--silver); margin-top:2px; }
   .most-rank { font-size:18px; font-weight:800; color:rgba(255,255,255,0.15); width:30px; }
+  /* E/W TRACKER */
+  .ewt-day-btn { padding:6px 14px; border-radius:6px; border:1px solid rgba(52,211,153,0.3); background:transparent; color:#34d399; font-size:12px; cursor:pointer; transition:all .2s; }
+  .ewt-day-btn.active { background:#059669; border-color:#059669; color:#fff; font-weight:600; }
+  .ewt-race-section { background:rgba(52,211,153,0.04); border:1px solid rgba(52,211,153,0.18); border-radius:10px; padding:14px 16px; margin-bottom:16px; }
+  .ewt-race-header { display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:10px; margin-bottom:12px; }
+  .ewt-race-meta { display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+  .ewt-day-badge { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.5px; }
+  .ewt-time { font-family:'DM Mono',monospace; color:var(--gold); font-size:13px; font-weight:700; }
+  .ewt-race-name { color:var(--cream); font-size:13px; font-weight:600; }
+  .ewt-race-totals { display:flex; gap:12px; flex-wrap:wrap; }
+  .ewt-stat { display:flex; flex-direction:column; align-items:center; min-width:56px; }
+  .ewt-stat-lbl { font-size:10px; opacity:.5; text-transform:uppercase; letter-spacing:.4px; }
+  .ewt-stat-val { font-size:13px; font-weight:700; color:var(--silver); }
+  .ewt-stat-place .ewt-stat-val { color:#60a5fa; }
+  .ewt-stat-win .ewt-stat-val { color:#f472b6; }
+  .ewt-table { width:100%; border-collapse:collapse; font-size:13px; }
+  .ewt-table th { text-align:left; color:var(--silver); font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:.5px; padding:5px 8px; border-bottom:1px solid rgba(255,255,255,0.08); }
+  .ewt-table td { padding:7px 8px; border-bottom:1px solid rgba(255,255,255,0.05); vertical-align:middle; }
+  .ewt-horse { color:var(--cream); font-weight:600; }
+  .ewt-odds { font-family:'DM Mono',monospace; font-weight:700; color:var(--gold); font-size:13px; }
+  .ewt-odds-big { color:#34d399; }
+  .ewt-odds-fav { color:#f472b6; }
+  .ewt-pr { color:#60a5fa; font-family:'DM Mono',monospace; font-size:12px; }
+  .ewt-wr { color:#f472b6; font-family:'DM Mono',monospace; font-size:12px; }
   .oc-day-tabs { display:flex; gap:8px; margin-bottom:20px; flex-wrap:wrap; }
   .oc-day-btn { padding:6px 14px; border-radius:6px; border:1px solid rgba(251,146,60,0.3); background:transparent; color:#fb923c; font-size:12px; cursor:pointer; transition:all .2s; }
   .oc-day-btn.active { background:#ea580c; border-color:#ea580c; color:#fff; font-weight:600; }
@@ -1316,6 +1340,7 @@
     <button class="btn btn-outline" onclick="openTableView('oc')" style="border-color:rgba(249,115,22,0.5);color:#fb923c">📊 OddsChecker</button>
     <button class="btn btn-outline" onclick="openTableView('most')" style="border-color:rgba(244,63,94,0.5);color:#f43f5e">🔥 Most Tipped</button>
     <button class="btn btn-outline" onclick="openTableView('bigodds')" style="border-color:rgba(167,139,250,0.5);color:#a78bfa">💰 Highest Odds</button>
+    <button class="btn btn-outline" onclick="openTableView('ewtracker')" style="border-color:rgba(52,211,153,0.5);color:#34d399">💷 E/W Tracker</button>
     <button class="btn btn-ghost" id="refreshBtn" onclick="refreshTips()">
       <span id="refreshIcon">↻</span> Refresh
     </button>
@@ -1360,6 +1385,7 @@
     <button class="btn btn-ghost btn-sm" onclick="openTableView('oc')" style="color:#fb923c;border-color:rgba(249,115,22,0.3)">📊 OC</button>
     <button class="btn btn-ghost btn-sm" onclick="openTableView('most')" style="color:#f43f5e;border-color:rgba(244,63,94,0.3)">🔥 Most Tipped</button>
     <button class="btn btn-ghost btn-sm" onclick="openTableView('bigodds')" style="color:#a78bfa;border-color:rgba(167,139,250,0.3)">💰 Highest Odds</button>
+    <button class="btn btn-ghost btn-sm" onclick="openTableView('ewtracker')" style="color:#34d399;border-color:rgba(52,211,153,0.3)">💷 E/W</button>
   </div>
 </div>
 
@@ -1381,6 +1407,7 @@
       <button class="table-tab" id="tab-oc" onclick="switchTableTab('oc')">📊 Oddschecker</button>
       <button class="table-tab" id="tab-most" onclick="switchTableTab('most')">🔥 Most Tipped</button>
       <button class="table-tab" id="tab-bigodds" onclick="switchTableTab('bigodds')">💰 Highest Odds</button>
+      <button class="table-tab" id="tab-ewtracker" onclick="switchTableTab('ewtracker')">💷 E/W Tracker</button>
     </div>
     <button class="btn btn-ghost btn-sm" onclick="hideAllNaps()">✕ Close</button>
   </div>
@@ -3040,6 +3067,36 @@
     </div>
   </div>
 
+  <!-- ===== E/W TRACKER PANEL ===== -->
+  <div class="table-panel" id="panel-ewtracker" style="display:none">
+    <p class="table-subtitle">Every horse tipped across all sources — <strong style="color:#34d399">50p each-way</strong> on each. Place returns assume 1/4 odds. 3 confirmed NRs removed (Galopin Des Champs, Marine Nationale, Narciso Has).</p>
+
+    <!-- Summary bar -->
+    <div id="ewt-summary" style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:20px;padding:14px 16px;background:rgba(52,211,153,0.08);border:1px solid rgba(52,211,153,0.25);border-radius:10px;">
+      <div style="text-align:center;min-width:90px"><div style="font-size:22px;font-weight:700;color:#34d399" id="ewt-total-horses">107</div><div style="font-size:11px;opacity:0.6;text-transform:uppercase;letter-spacing:.5px">Total Horses</div></div>
+      <div style="text-align:center;min-width:90px"><div style="font-size:22px;font-weight:700;color:#fbbf24" id="ewt-outlay">£107.00</div><div style="font-size:11px;opacity:0.6;text-transform:uppercase;letter-spacing:.5px">Outlay (50p e/w)</div></div>
+      <div style="text-align:center;min-width:90px"><div style="font-size:22px;font-weight:700;color:#60a5fa" id="ewt-place-return">~£190</div><div style="font-size:11px;opacity:0.6;text-transform:uppercase;letter-spacing:.5px">If All Place</div></div>
+      <div style="text-align:center;min-width:90px"><div style="font-size:22px;font-weight:700;color:#f472b6" id="ewt-win-return">~£670</div><div style="font-size:11px;opacity:0.6;text-transform:uppercase;letter-spacing:.5px">If All Win</div></div>
+      <div style="text-align:center;min-width:90px"><div style="font-size:22px;font-weight:700;color:#a78bfa" id="ewt-avg-odds">—</div><div style="font-size:11px;opacity:0.6;text-transform:uppercase;letter-spacing:.5px">Avg Price</div></div>
+    </div>
+
+    <!-- Day filter -->
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px">
+      <button class="ewt-day-btn active" onclick="ewtFilterDay('all')">All Days</button>
+      <button class="ewt-day-btn" onclick="ewtFilterDay('Tue')">📅 Tuesday</button>
+      <button class="ewt-day-btn" onclick="ewtFilterDay('Wed')">📅 Wednesday</button>
+      <button class="ewt-day-btn" onclick="ewtFilterDay('Thu')">📅 Thursday</button>
+      <button class="ewt-day-btn" onclick="ewtFilterDay('Fri')">📅 Friday</button>
+    </div>
+
+    <div id="ewt-races-container"></div>
+
+    <div class="share-row" style="margin-top:20px">
+      <button class="share-btn share-x" onclick="shareTableView('ewtracker','twitter')">𝕏 Share E/W List</button>
+      <button class="share-btn share-wa" onclick="shareTableView('ewtracker','whatsapp')">💬 WhatsApp</button>
+    </div>
+  </div>
+
   <!-- ===== RACE CARDS PANEL ===== -->
 
 </div><!-- end allNapsView -->
@@ -3787,7 +3844,8 @@ function switchTableTab(tab) {
   currentTableTab = tab;
   if (tab === 'most') populateMostTipped();
   if (tab === 'bigodds') populateBigOdds();
-  ['nap','ls','irish','mullington','rp','bets','guide','hrn','oc','most','bigodds'].forEach(t => {
+  if (tab === 'ewtracker') populateEWTracker();
+  ['nap','ls','irish','mullington','rp','bets','guide','hrn','oc','most','bigodds','ewtracker'].forEach(t => {
     const tabEl = document.getElementById('tab-' + t);
     const panelEl = document.getElementById('panel-' + t);
     if (tabEl) tabEl.classList.toggle('active', t === tab);
@@ -4096,6 +4154,282 @@ function populateBigOdds() {
       <td><span class="bigodds-price">${r.odds}</span><div style="font-size:10px;color:rgba(255,255,255,0.3)">E/W rec.</div></td>
       <td><span class="most-src-chip ${srcClasses[r.source]||'src-nb'}">${r.source}</span></td>`;
     body.appendChild(tr);
+  });
+}
+
+// ============================================================
+// E/W TRACKER DATA & RENDERING
+// ============================================================
+const EWT_DATA = [
+  { day:'Tue', label:'Champion Day', time:'13:20', race:"Supreme Novices' Hurdle", horses:[
+    { name:'Talk The Talk', odds:'8/1', src:'NAP/NB/LS' },
+    { name:'Old Park Star', odds:'7/4', src:'NAP/NB/LS' },
+    { name:'Sober Glory', odds:'16/1', src:'NAP/NB/LS' },
+    { name:'Mydaddypaddy', odds:'8/1', src:'Mullington' }
+  ]},
+  { day:'Tue', label:'Champion Day', time:'14:00', race:"Arkle Novices' Chase", horses:[
+    { name:'Lulamba', odds:'13/8', src:'NAP/NB/LS' },
+    { name:'Kopek Des Bordes', odds:'11/4', src:'NAP/NB/LS' },
+    { name:'Poniros', odds:'9/1', src:'NAP/NB/LS' },
+    { name:'Kawaboomga', odds:'20/1', src:'Mullington' }
+  ]},
+  { day:'Tue', label:'Champion Day', time:'14:40', race:'Fred Winter Juvenile Handicap', horses:[
+    { name:'Kripticjim', odds:'7/1', src:'NAP/NB/LS' },
+    { name:'Winston Junior', odds:'8/1', src:'NAP/NB/LS' },
+    { name:'Genealogy', odds:'25/1', src:'NAP/NB/LS' },
+    { name:'One Horse Town', odds:'10/1', src:'Mullington' }
+  ]},
+  { day:'Tue', label:'Champion Day', time:'15:20', race:'Ultima Handicap Chase', horses:[
+    { name:'Handstands', odds:'15/2', src:'NAP/NB/LS' },
+    { name:'Jagwar', odds:'12/1', src:'NAP/NB/LS' },
+    { name:'Resplendent Grey', odds:'20/1', src:'NAP/NB/LS' }
+  ]},
+  { day:'Tue', label:'Champion Day', time:'16:00', race:'Champion Hurdle', horses:[
+    { name:'The New Lion', odds:'11/4', src:'NAP/NB/LS' },
+    { name:'Brighterdaysahead', odds:'4/1', src:'NAP/NB/LS' },
+    { name:'Golden Ace', odds:'16/1', src:'NAP/NB/LS' }
+  ]},
+  { day:'Tue', label:'Champion Day', time:'16:40', race:'Festival Plate Handicap Chase', horses:[
+    { name:'Madara', odds:'4/1', src:'NAP/NB/LS' },
+    { name:'Captain Guinness', odds:'8/1', src:'NAP/NB/LS' },
+    { name:'Jungle Boogie', odds:'20/1', src:'NAP/NB/LS' },
+    { name:'Jagwar', odds:'10/1', src:'Mullington' }
+  ]},
+  { day:'Tue', label:'Champion Day', time:'17:20', race:'National Hunt Chase', horses:[
+    { name:'Grande Geste', odds:'5/2', src:'NAP/NB/LS' },
+    { name:'Backmersackme', odds:'4/1', src:'NAP/NB/LS' },
+    { name:'Saigon City', odds:'20/1', src:'NAP/NB/LS' },
+    { name:'Deep Cave', odds:'25/1', src:'Mullington' }
+  ]},
+  { day:'Wed', label:'Ladies Day', time:'13:20', race:"Turners Novices' Hurdle", horses:[
+    { name:'No Drama This End', odds:'3/1', src:'NAP/NB/LS' },
+    { name:'Mighty Park', odds:'10/1', src:'NAP/NB/LS' },
+    { name:'Idaho Sun', odds:'16/1', src:'NAP/NB/LS' },
+    { name:'Doctor Du Mesnil', odds:'14/1', src:'Mullington' }
+  ]},
+  { day:'Wed', label:'Ladies Day', time:'14:00', race:"Brown Advisory Novices' Chase", horses:[
+    { name:'Final Demand', odds:'6/4', src:'NAP/NB/LS' },
+    { name:'Wendigo', odds:'8/1', src:'NAP/NB/LS' },
+    { name:'Kitzbuhel', odds:'8/1', src:'NAP/NB/LS' },
+    { name:'Sixmilebridge', odds:'33/1', src:'Mullington' }
+  ]},
+  { day:'Wed', label:'Ladies Day', time:'14:40', race:'Coral Cup Handicap Hurdle', horses:[
+    { name:'Iberico Lord', odds:'10/1', src:'NAP/NB/LS' },
+    { name:'Skylight Hustle', odds:'12/1', src:'NAP/NB/LS' },
+    { name:'Al Dancer', odds:'25/1', src:'NAP/NB/LS' },
+    { name:'East India Express', odds:'20/1', src:'Mullington' }
+  ]},
+  { day:'Wed', label:'Ladies Day', time:'15:20', race:'Cross Country Chase', horses:[
+    { name:'Favori De Champdou', odds:'7/2', src:'NAP/NB/LS' },
+    { name:'Any Second Now', odds:'6/1', src:'NAP/NB/LS' },
+    { name:'Stumptown', odds:'12/1', src:'NAP/NB/LS' }
+  ]},
+  { day:'Wed', label:'Ladies Day', time:'16:00', race:'Queen Mother Champion Chase', horses:[
+    { name:'Majborough', odds:'4/6', src:'NAP/NB/LS' },
+    { name:"L'Eau Du Sud", odds:'7/2', src:'NAP/NB/LS' },
+    { name:'Il Etait Temps', odds:'5/1', src:'NAP/NB/LS' }
+  ]},
+  { day:'Wed', label:'Ladies Day', time:'16:40', race:'Grand Annual Handicap Chase', horses:[
+    { name:'Thistle Ask', odds:'9/1', src:'NAP/NB/LS' },
+    { name:'Be Aware', odds:'10/1', src:'NAP/NB/LS' },
+    { name:'Jonbon', odds:'12/1', src:'NAP/NB/LS' },
+    { name:'Pied Piper', odds:'12/1', src:'NAP/NB/LS' },
+    { name:'Unexpected Party', odds:'14/1', src:'Mullington' }
+  ]},
+  { day:'Wed', label:'Ladies Day', time:'17:20', race:'Champion Bumper', horses:[
+    { name:'Keep Him Company', odds:'16/1', src:'NAP/NB/LS' },
+    { name:'Old School Outlaw', odds:'7/2', src:'NAP/NB/LS' },
+    { name:'Bambino Fever', odds:'9/4', src:'NAP/NB/LS' },
+    { name:'Bentraghhill', odds:'12/1', src:'Mullington' }
+  ]},
+  { day:'Thu', label:"St Patrick's Day", time:'13:20', race:"Mares' Novices' Hurdle", horses:[
+    { name:'Bambino Fever', odds:'4/5', src:'NAP/NB/LS' },
+    { name:'Old School Outlaw', odds:'7/2', src:'NAP/NB/LS' },
+    { name:'Carrigmoornaspruce', odds:'8/1', src:'NAP/NB/LS' },
+    { name:'Wodhooh', odds:'4/1', src:'Mullington' }
+  ]},
+  { day:'Thu', label:"St Patrick's Day", time:'14:00', race:"Jack Richards Novices' Chase", horses:[
+    { name:"Regent's Stroll", odds:'7/2', src:'NAP/NB/LS' },
+    { name:'Backmersackme', odds:'5/1', src:'NAP/NB/LS' },
+    { name:'Western Fold', odds:'12/1', src:'NAP/NB/LS' },
+    { name:'No Drama This End', odds:'12/1', src:'Mullington' }
+  ]},
+  { day:'Thu', label:"St Patrick's Day", time:'14:40', race:"Mares' Hurdle", horses:[
+    { name:'Lossiemouth', odds:'7/4', src:'NAP/NB/LS' },
+    { name:'Wodhooh', odds:'5/1', src:'NAP/NB/LS' },
+    { name:'Jade De Grugy', odds:'12/1', src:'NAP/NB/LS' },
+    { name:'Il Etait Temps', odds:'14/1', src:'Mullington' }
+  ]},
+  { day:'Thu', label:"St Patrick's Day", time:'15:20', race:"Stayers' Hurdle", horses:[
+    { name:'Teahupoo', odds:'2/1', src:'NAP/NB/LS' },
+    { name:'Ma Shantou', odds:'5/1', src:'NAP/NB/LS' },
+    { name:'Bob Olinger', odds:'16/1', src:'NAP/NB/LS' },
+    { name:'The Yellow Clay', odds:'8/1', src:'Mullington' }
+  ]},
+  { day:'Thu', label:"St Patrick's Day", time:'16:00', race:'Ryanair Chase', horses:[
+    { name:'Fact To File', odds:'4/6', src:'NAP/NB/LS' },
+    { name:'Gaelic Warrior', odds:'4/1', src:'NAP/NB/LS' },
+    { name:'Matata', odds:'66/1', src:'NAP/NB/LS' },
+    { name:'Electric Mason', odds:'14/1', src:'Mullington' }
+  ]},
+  { day:'Thu', label:"St Patrick's Day", time:'16:40', race:'Pertemps Final', horses:[
+    { name:'Sire Du Berlais', odds:'10/1', src:'NAP/NB/LS' },
+    { name:'Ma Shantou', odds:'7/1', src:'NAP/NB/LS' },
+    { name:'The Shunter', odds:'33/1', src:'NAP/NB/LS' },
+    { name:'Bambino Fever', odds:'4/1', src:'Mullington' }
+  ]},
+  { day:'Thu', label:"St Patrick's Day", time:'17:20', race:'Kim Muir Chase', horses:[
+    { name:'Jeriko Du Reponet', odds:'4/1', src:'NAP/NB/LS' },
+    { name:"Paddy's Poem", odds:'10/1', src:'NAP/NB/LS' },
+    { name:'Supremely West', odds:'12/1', src:'NAP/NB/LS' },
+    { name:'Koktail Divin', odds:'14/1', src:'Mullington' }
+  ]},
+  { day:'Fri', label:'Gold Cup Day', time:'13:20', race:'Triumph Hurdle', horses:[
+    { name:'Selma De Vary', odds:'7/2', src:'NAP/NB/LS' },
+    { name:'Mon Creuset', odds:'10/1', src:'NAP/NB/LS' },
+    { name:'Winston Junior', odds:'16/1', src:'NAP/NB/LS' },
+    { name:'Proactif', odds:'12/1', src:'Mullington' }
+  ]},
+  { day:'Fri', label:'Gold Cup Day', time:'14:00', race:'County Hurdle', horses:[
+    { name:'Anzadam', odds:'8/1', src:'NAP/NB/LS' },
+    { name:'Good Land', odds:'12/1', src:'NAP/NB/LS' },
+    { name:'Thomas Darby', odds:'33/1', src:'NAP/NB/LS' }
+  ]},
+  { day:'Fri', label:'Gold Cup Day', time:'14:40', race:"Mares' Chase", horses:[
+    { name:'Dinoblue', odds:'4/5', src:'NAP/NB/LS' },
+    { name:'Panic Attack', odds:'9/1', src:'NAP/NB/LS' },
+    { name:'Spindleberry', odds:'8/1', src:'NAP/NB/LS' },
+    { name:'July Flower', odds:'14/1', src:'Mullington' }
+  ]},
+  { day:'Fri', label:'Gold Cup Day', time:'15:20', race:"Albert Bartlett Novices' Hurdle", horses:[
+    { name:'Doctor Steinberg', odds:'11/4', src:'NAP/NB/LS' },
+    { name:'Espresso Milan', odds:'14/1', src:'NAP/NB/LS' },
+    { name:"I'll Sort That", odds:'16/1', src:'NAP/NB/LS' },
+    { name:'No Drama This End', odds:'12/1', src:'Mullington' }
+  ]},
+  { day:'Fri', label:'Gold Cup Day', time:'16:00', race:'Cheltenham Gold Cup', horses:[
+    { name:'Jango Baie', odds:'5/1', src:'NAP/NB/LS' },
+    { name:'Gaelic Warrior', odds:'7/1', src:'NAP/NB/LS' },
+    { name:'The Jukebox Man', odds:'8/1', src:'NAP/NB/LS' },
+    { name:'Fact To File', odds:'6/1', src:'Mullington' }
+  ]},
+  { day:'Fri', label:'Gold Cup Day', time:'16:40', race:"Hunters' Chase", horses:[
+    { name:'Bob And Co', odds:'7/4', src:'NAP/NB/LS' },
+    { name:'Its On The Line', odds:'5/1', src:'NAP/NB/LS' },
+    { name:'Any News', odds:'25/1', src:'NAP/NB/LS' },
+    { name:'Good Boy Bobby', odds:'33/1', src:'Mullington' }
+  ]},
+  { day:'Fri', label:'Gold Cup Day', time:'17:20', race:'Martin Pipe Conditional Hurdle', horses:[
+    { name:'Son Of Anarchy', odds:'6/1', src:'NAP/NB/LS' },
+    { name:"Paddy's Poem", odds:'10/1', src:'NAP/NB/LS' },
+    { name:'Supremely West', odds:'12/1', src:'NAP/NB/LS' }
+  ]}
+];
+
+let ewtCurrentDay = 'all';
+
+function fracToDecEWT(f) {
+  if (!f || f === 'SP') return null;
+  if (f.includes('/')) {
+    const [n, d] = f.split('/');
+    return parseFloat(n) / parseFloat(d);
+  }
+  return parseFloat(f) || null;
+}
+
+function ewtFilterDay(day) {
+  ewtCurrentDay = day;
+  document.querySelectorAll('.ewt-day-btn').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+  renderEWTRaces();
+}
+
+function populateEWTracker() {
+  renderEWTRaces();
+}
+
+function renderEWTRaces() {
+  const container = document.getElementById('ewt-races-container');
+  if (!container) return;
+  container.innerHTML = '';
+
+  const filtered = ewtCurrentDay === 'all' ? EWT_DATA : EWT_DATA.filter(r => r.day === ewtCurrentDay);
+
+  const dayColors = { 'Tue':'#60a5fa', 'Wed':'#f9a8d4', 'Thu':'#4ade80', 'Fri':'#fbbf24' };
+
+  let totalHorses = 0, totalOutlay = 0, totalPlace = 0, totalWin = 0, oddsSum = 0, oddsCount = 0;
+  // Always compute totals from full dataset for summary bar
+  EWT_DATA.forEach(race => {
+    race.horses.forEach(h => {
+      totalHorses++;
+      totalOutlay += 1.0;
+      const d = fracToDecEWT(h.odds);
+      if (d !== null) {
+        totalPlace += 0.5 * (d / 4 + 1);
+        totalWin += 0.5 * (d + 1) + 0.5 * (d / 4 + 1);
+        oddsSum += d; oddsCount++;
+      }
+    });
+  });
+
+  document.getElementById('ewt-total-horses').textContent = totalHorses;
+  document.getElementById('ewt-outlay').textContent = '£' + totalOutlay.toFixed(2);
+  document.getElementById('ewt-place-return').textContent = '£' + totalPlace.toFixed(2);
+  document.getElementById('ewt-win-return').textContent = '£' + totalWin.toFixed(2);
+  if (oddsCount > 0) {
+    const avg = oddsSum / oddsCount;
+    // Convert decimal back to approximate fractional display
+    const whole = Math.round(avg);
+    document.getElementById('ewt-avg-odds').textContent = whole + '/1';
+  }
+
+  filtered.forEach(race => {
+    const section = document.createElement('div');
+    section.className = 'ewt-race-section';
+
+    const racePlace = 0.5 * race.horses.reduce((sum, h) => {
+      const d = fracToDecEWT(h.odds); return sum + (d ? d/4+1 : 0);
+    }, 0);
+    const raceWin = race.horses.reduce((sum, h) => {
+      const d = fracToDecEWT(h.odds); return sum + (d ? 0.5*(d+1)+0.5*(d/4+1) : 0);
+    }, 0);
+    const raceOutlay = race.horses.length;
+
+    section.innerHTML = `
+      <div class="ewt-race-header">
+        <div class="ewt-race-meta">
+          <span class="ewt-day-badge" style="color:${dayColors[race.day]||'var(--gold)'}">${race.label}</span>
+          <span class="ewt-time">${race.time}</span>
+          <span class="ewt-race-name">${race.race}</span>
+        </div>
+        <div class="ewt-race-totals">
+          <span class="ewt-stat"><span class="ewt-stat-lbl">Bets</span><span class="ewt-stat-val">${race.horses.length}</span></span>
+          <span class="ewt-stat"><span class="ewt-stat-lbl">Outlay</span><span class="ewt-stat-val">£${raceOutlay}.00</span></span>
+          <span class="ewt-stat ewt-stat-place"><span class="ewt-stat-lbl">All Place</span><span class="ewt-stat-val">£${racePlace.toFixed(2)}</span></span>
+          <span class="ewt-stat ewt-stat-win"><span class="ewt-stat-lbl">All Win</span><span class="ewt-stat-val">£${raceWin.toFixed(2)}</span></span>
+        </div>
+      </div>
+      <table class="ewt-table">
+        <thead><tr>
+          <th>Horse</th><th>Odds</th><th>Source</th>
+          <th>Place ret.</th><th>Win ret.</th>
+        </tr></thead>
+        <tbody>${race.horses.map(h => {
+          const d = fracToDecEWT(h.odds);
+          const pr = d ? '£' + (0.5*(d/4+1)).toFixed(2) : '—';
+          const wr = d ? '£' + (0.5*(d+1)+0.5*(d/4+1)).toFixed(2) : '—';
+          const srcClass = h.src === 'Mullington' ? 'src-mul' : 'src-nb';
+          const oddsClass = d && d >= 10 ? 'ewt-odds ewt-odds-big' : d && d < 1 ? 'ewt-odds ewt-odds-fav' : 'ewt-odds';
+          return `<tr>
+            <td class="ewt-horse">${h.name}</td>
+            <td><span class="${oddsClass}">${h.odds}</span></td>
+            <td><span class="most-src-chip ${srcClass}">${h.src}</span></td>
+            <td class="ewt-pr">${pr}</td>
+            <td class="ewt-wr">${wr}</td>
+          </tr>`;
+        }).join('')}</tbody>
+      </table>`;
+    container.appendChild(section);
   });
 }
 
