@@ -939,6 +939,7 @@
   #tab-oc.active { background: #ea580c; border-color: #ea580c; color: #fff; }
   #tab-most.active { background: #e11d48; border-color: #e11d48; color: #fff; }
   #tab-bigodds.active { background: #7c3aed; border-color: #7c3aed; color: #fff; }
+  #tab-results.active { background: #059669; border-color: #059669; color: #fff; }
   .most-table, .bigodds-table { width:100%; border-collapse:collapse; }
   .most-table th, .bigodds-table th { background:rgba(255,255,255,0.04); color:var(--silver); font-size:11px; text-transform:uppercase; letter-spacing:.06em; padding:8px 12px; text-align:left; border-bottom:1px solid rgba(255,255,255,0.08); }
   .most-table td, .bigodds-table td { padding:10px 12px; border-bottom:1px solid rgba(255,255,255,0.05); font-size:13px; vertical-align:middle; }
@@ -1363,6 +1364,9 @@
     <button class="nav-tab" onclick="switchDay(3,this)">
       <span class="day-badge">4</span> Gold Cup Day
     </button>
+    <button class="nav-tab" onclick="openTableView('results')" style="color:#34d399;">
+      <span class="day-badge" style="background:#34d399;color:#071a0e;">✓</span> Results
+    </button>
   </div>
 </nav>
 
@@ -1386,6 +1390,7 @@
     <button class="btn btn-ghost btn-sm" onclick="openTableView('most')" style="color:#f43f5e;border-color:rgba(244,63,94,0.3)">🔥 Most Tipped</button>
     <button class="btn btn-ghost btn-sm" onclick="openTableView('bigodds')" style="color:#a78bfa;border-color:rgba(167,139,250,0.3)">💰 Highest Odds</button>
     <button class="btn btn-ghost btn-sm" onclick="openTableView('ewtracker')" style="color:#34d399;border-color:rgba(52,211,153,0.3)">💷 E/W</button>
+    <button class="btn btn-ghost btn-sm" onclick="openTableView('results')" style="color:#34d399;border-color:rgba(52,211,153,0.5);font-weight:700">✓ Results</button>
   </div>
 </div>
 
@@ -1408,6 +1413,7 @@
       <button class="table-tab" id="tab-most" onclick="switchTableTab('most')">🔥 Most Tipped</button>
       <button class="table-tab" id="tab-bigodds" onclick="switchTableTab('bigodds')">💰 Highest Odds</button>
       <button class="table-tab" id="tab-ewtracker" onclick="switchTableTab('ewtracker')">💷 E/W Tracker</button>
+      <button class="table-tab" id="tab-results" onclick="switchTableTab('results')" style="color:#34d399;">✓ Results</button>
     </div>
     <button class="btn btn-ghost btn-sm" onclick="hideAllNaps()">✕ Close</button>
   </div>
@@ -3097,6 +3103,31 @@
     </div>
   </div>
 
+  <!-- ===== RESULTS PANEL ===== -->
+  <div class="table-panel" id="panel-results" style="display:none">
+    <p class="table-subtitle">
+      Race-by-race results for Days 1 &amp; 2. Colour coding: 
+      <span style="color:#34d399;font-weight:700">■ WIN</span> &nbsp;
+      <span style="color:#fbbf24;font-weight:700">■ PLACED</span> &nbsp;
+      <span style="color:#f87171;font-weight:700">■ MISSED</span> &nbsp;
+      <span style="color:#94a3b8;font-weight:700">■ Upcoming</span>
+    </p>
+
+    <!-- SUMMARY STATS -->
+    <div id="results-summary" style="display:flex;flex-wrap:wrap;gap:12px;margin:16px 0 20px;padding:14px 16px;background:rgba(52,211,153,0.08);border:1px solid rgba(52,211,153,0.25);border-radius:10px;">
+      <div style="text-align:center;min-width:80px"><div style="font-size:22px;font-weight:700;color:#34d399">13</div><div style="font-size:11px;opacity:0.6;text-transform:uppercase;letter-spacing:.5px">Races Run</div></div>
+      <div style="text-align:center;min-width:80px"><div style="font-size:22px;font-weight:700;color:#fbbf24">9</div><div style="font-size:11px;opacity:0.6;text-transform:uppercase;letter-spacing:.5px">Tipsters Ranked</div></div>
+      <div style="text-align:center;min-width:80px"><div style="font-size:22px;font-weight:700;color:#60a5fa">3pts</div><div style="font-size:11px;opacity:0.6;text-transform:uppercase;letter-spacing:.5px">Per Win</div></div>
+      <div style="text-align:center;min-width:80px"><div style="font-size:22px;font-weight:700;color:#fb923c">1pt</div><div style="font-size:11px;opacity:0.6;text-transform:uppercase;letter-spacing:.5px">Per Placed</div></div>
+      <div style="text-align:center;min-width:110px;border-left:1px solid rgba(255,255,255,0.1);padding-left:16px"><div style="font-size:13px;color:#34d399;font-weight:600;margin-bottom:4px">🏆 Best call</div><div style="font-family:'Playfair Display',serif;font-size:15px;color:#f0ede6">Lossiemouth 7/5F</div><div style="font-size:11px;opacity:0.6">Champion Hurdle</div></div>
+    </div>
+
+    <!-- RESULTS TABLE -->
+    <div id="results-races-container"></div>
+
+    <p style="font-size:12px;color:var(--silver);opacity:0.6;margin-top:20px;font-style:italic">Results confirmed to end of Day 2 (Wednesday 11 March 2026). Days 3 &amp; 4 pending.</p>
+  </div>
+
   <!-- ===== RACE CARDS PANEL ===== -->
 
 </div><!-- end allNapsView -->
@@ -3833,9 +3864,10 @@ let currentTableTab = 'nap';
 
 function openTableView(tab) {
   currentTableTab = tab;
-  if (tab !== 'rp' && tab !== 'bets' && tab !== 'guide' && tab !== 'hrn' && tab !== 'oc' && tab !== 'most' && tab !== 'bigodds') populateAllTables();
+  if (tab !== 'rp' && tab !== 'bets' && tab !== 'guide' && tab !== 'hrn' && tab !== 'oc' && tab !== 'most' && tab !== 'bigodds' && tab !== 'results') populateAllTables();
   if (tab === 'most') populateMostTipped();
   if (tab === 'bigodds') populateBigOdds();
+  if (tab === 'results') populateResults();
   switchTableTab(tab);
   document.getElementById('allNapsView').classList.add('open');
 }
@@ -3845,7 +3877,8 @@ function switchTableTab(tab) {
   if (tab === 'most') populateMostTipped();
   if (tab === 'bigodds') populateBigOdds();
   if (tab === 'ewtracker') populateEWTracker();
-  ['nap','ls','irish','mullington','rp','bets','guide','hrn','oc','most','bigodds','ewtracker'].forEach(t => {
+  if (tab === 'results') populateResults();
+  ['nap','ls','irish','mullington','rp','bets','guide','hrn','oc','most','bigodds','ewtracker','results'].forEach(t => {
     const tabEl = document.getElementById('tab-' + t);
     const panelEl = document.getElementById('panel-' + t);
     if (tabEl) tabEl.classList.toggle('active', t === tab);
@@ -4508,6 +4541,517 @@ function populateAllTables() {
       }
     });
   });
+}
+
+// ============================================================
+// TIPSTER COMPARISON DATA
+// race key = "time-dayIdx", result = { winner, second, third }
+// Each tipster entry = horse tipped (string)
+// Scoring: 3pts = win, 1pt = placed (2nd or 3rd), 0 = miss
+// ============================================================
+
+// Actual results for Days 1 & 2 (14 confirmed races, Grand Annual pending)
+const RACE_RESULTS_CONFIRMED = {
+  // Day 1
+  '13:20-0': { winner: 'Old Park Star',         second: 'Sober Glory',           third: 'Mydaddypaddy' },
+  '14:00-0': { winner: 'Kargese',               second: 'Kopek Des Bordes',      third: 'Lulamba' },
+  '14:40-0': { winner: 'Saratoga',              second: 'Winston Junior',         third: 'Klycot' },
+  '15:20-0': { winner: 'Johnnywho',             second: 'Jagwar',                 third: 'Quebecois' },
+  '16:00-0': { winner: 'Lossiemouth',           second: 'Brighterdaysahead',      third: 'The New Lion' },
+  '16:40-0': { winner: 'Madara',                second: 'Will The Wise',          third: "Moon D'Orange" },
+  '17:20-0': { winner: 'Holloway Queen',        second: 'King Of Answers',        third: 'One Big Bang' },
+  // Day 2
+  '13:20-1': { winner: 'King Rasko Grey',       second: 'Act Of Innocence',       third: 'Zeus Power' },
+  '14:00-1': { winner: 'Kitzbuhel',             second: 'Final Demand',           third: 'Salver' },
+  '14:40-1': { winner: 'Jingko Blue',           second: 'Franciscan Rock',        third: 'Storm Heart' },
+  '15:20-1': { winner: 'Final Orders',          second: 'Favori De Champdou',     third: 'Vanillier' },
+  '16:00-1': { winner: 'Il Etait Temps',        second: 'Libberty Hunter',        third: "L'Eau Du Sud" },
+  '16:40-1': { winner: 'Martator',              second: 'Jazzy Matty',            third: 'Break My Soul' },
+  '17:20-1': { winner: 'The Mourne Rambler',   second: 'Mets Ta Ceinture',       third: 'Bass Hunter' },
+};
+
+// All tipster picks for Days 1 & 2
+// Sources: STATIC_TIPS (our NAP/NB), RP tipsters (from HTML), Grimshaw/HRN, Mullington
+const TIPSTER_PICKS = {
+  // ── OUR TIPS (NAP = primary, NB = secondary) ────────────
+  'Our NAP': {
+    label: 'Our NAP', color: '#34d399', icon: '⭐',
+    picks: {
+      '13:20-0': 'Talk The Talk',        '14:00-0': 'Lulamba',
+      '14:40-0': 'Kripticjim',           '15:20-0': 'Handstands',
+      '16:00-0': 'The New Lion',         '16:40-0': 'Madara',
+      '17:20-0': 'Grande Geste',         '13:20-1': 'No Drama This End',
+      '14:00-1': 'Final Demand',         '14:40-1': 'Iberico Lord',
+      '15:20-1': 'Favori De Champdou',   '16:00-1': 'Majborough',
+      '16:40-1': 'Thistle Ask',          '17:20-1': 'Keep Him Company',
+    }
+  },
+  'Our NB': {
+    label: 'Our NB', color: '#60a5fa', icon: '🔵',
+    picks: {
+      '13:20-0': 'Old Park Star',        '14:00-0': 'Kopek Des Bordes',
+      '14:40-0': 'Winston Junior',       '15:20-0': 'Jagwar',
+      '16:00-0': 'Brighterdaysahead',    '16:40-0': 'Captain Guinness',
+      '17:20-0': 'Backmersackme',        '13:20-1': 'Mighty Park',
+      '14:00-1': 'Wendigo',              '14:40-1': 'Skylight Hustle',
+      '15:20-1': 'Any Second Now',       '16:00-1': "L'Eau Du Sud",
+      '16:40-1': 'Be Aware',             '17:20-1': 'Old School Outlaw',
+    }
+  },
+  // ── RACING POST TIPSTERS ─────────────────────────────────
+  'Playle (RP)': {
+    label: 'Playle', color: '#f472b6', icon: '📰',
+    picks: {
+      '13:20-0': 'Old Park Star',        '14:00-0': 'Lulamba',
+      '14:40-0': 'Winston Junior',       '15:20-0': 'Myretown',
+      '16:00-0': 'Lossiemouth',          '16:40-0': 'Madara',
+      '17:20-0': 'Newton Tornado',       '13:20-1': 'Skylight Hustle',
+      '14:00-1': 'Wendigo',              '14:40-1': 'Indeevar Bleu',
+      '15:20-1': 'Stumptown',            '16:00-1': "L'Eau Du Sud",
+      '16:40-1': "Ryan's Rocket",        '17:20-1': 'Bambino Fever',
+    }
+  },
+  'Kealy (RP)': {
+    label: 'Kealy', color: '#f472b6', icon: '📰',
+    picks: {
+      '13:20-0': "Leader D'Allier",      '14:00-0': 'Lulamba',
+      '14:40-0': 'Winston Junior',       '15:20-0': 'Jagwar',
+      '16:00-0': 'Golden Ace',           '16:40-0': 'Donnacha',
+      '17:20-0': 'Brave Fortune',        '13:20-1': 'Mighty Park',
+      '14:00-1': 'Wendigo',              '14:40-1': 'Jingko Blue',
+      '15:20-1': 'Favori De Champdou',   '16:00-1': 'Majborough',
+      '16:40-1': 'Golden Joy',           '17:20-1': 'Bambino Fever',
+    }
+  },
+  'Dineen (RP)': {
+    label: 'Dineen', color: '#f472b6', icon: '📰',
+    picks: {
+      '13:20-0': "Leader D'Allier",      '14:00-0': 'Lulamba',
+      '14:40-0': 'Secret Force',         '15:20-0': 'Jagwar',
+      '16:00-0': 'The New Lion',         '16:40-0': 'McLaurey',
+      '17:20-0': 'One Big Bang',         '13:20-1': 'Mighty Park',
+      '14:00-1': 'Wendigo',              '14:40-1': 'Jump Allen',
+      '15:20-1': 'Favori De Champdou',   '16:00-1': 'Majborough',
+      '16:40-1': 'Inthepocket',          '17:20-1': 'Carrigmoornaspruce',
+    }
+  },
+  'Wilson (RP)': {
+    label: 'Wilson', color: '#f472b6', icon: '📰',
+    picks: {
+      '13:20-0': 'Sober Glory',          '14:00-0': 'Lulamba',
+      '14:40-0': 'Ammes',               '15:20-0': "In D'Or",
+      '16:00-0': 'Anzadam',             '16:40-0': 'Madara',
+      '17:20-0': 'Backmersackme',       '13:20-1': 'Mighty Park',
+      '14:00-1': 'Wendigo',             '14:40-1': 'Indeevar Bleu',
+      '15:20-1': 'Favori De Champdou',  '16:00-1': 'Majborough',
+      '16:40-1': 'Be Aware',            '17:20-1': 'Keep Him Company',
+    }
+  },
+  'Segal (RP)': {
+    label: 'Segal', color: '#c084fc', icon: '📰',
+    picks: {
+      '13:20-0': 'Idaho Sun',            '14:00-0': 'Kargese',
+      '14:40-0': 'La Luna Artista',      '15:20-0': null,
+      '16:00-0': 'Golden Ace',           '16:40-0': null,
+      '17:20-0': null,                   '13:20-1': 'Shuttle Diplomacy',
+      '14:00-1': 'Sixmilebridge',        '14:40-1': 'Storm Heart',
+      '15:20-1': null,                   '16:00-1': "L'Eau Du Sud",
+      '16:40-1': 'Ballysax Hank',        '17:20-1': 'The Mourne Rambler',
+    }
+  },
+  'Park (RP)': {
+    label: 'Tom Park', color: '#6ee7b7', icon: '📰',
+    picks: {
+      '13:20-0': 'Old Park Star',        '14:00-0': 'Kopek Des Bordes',
+      '14:40-0': null,                   '15:20-0': null,
+      '16:00-0': null,                   '16:40-0': null,
+      '17:20-0': null,                   '13:20-1': null,
+      '14:00-1': null,                   '14:40-1': null,
+      '15:20-1': null,                   '16:00-1': null,
+      '16:40-1': null,                   '17:20-1': null,
+    }
+  },
+  // ── HRN / BILLY GRIMSHAW ─────────────────────────────────
+  'Grimshaw (HRN)': {
+    label: 'Grimshaw', color: '#67e8f9', icon: '🌐',
+    picks: {
+      '13:20-0': 'Old Park Star',        '14:00-0': 'Kopek Des Bordes',
+      '14:40-0': 'Manlaga',              '15:20-0': 'Handstands',
+      '16:00-0': 'Poniros',              '16:40-0': 'Madara',
+      '17:20-0': 'Wade Out',             '13:20-1': 'Talk The Talk',
+      '14:00-1': 'Kitzbuhel',            '14:40-1': 'Storm Heart',
+      '15:20-1': 'Desertmore House',     '16:00-1': 'Majborough',
+      '16:40-1': null,                   '17:20-1': 'Quiryn',
+    }
+  },
+  // ── MULLINGTON / WILLIAM HILL ────────────────────────────
+  'Mullington (WH)': {
+    label: 'Mullington', color: '#fbbf24', icon: '📝',
+    picks: {
+      '13:20-0': 'Mydaddypaddy',         '14:00-0': 'Kawaboomga',
+      '14:40-0': 'One Horse Town',       '15:20-0': 'Resplendent Grey',
+      '16:00-0': 'The New Lion',         '16:40-0': 'Jagwar',
+      '17:20-0': 'Deep Cave',            '13:20-1': 'Doctor Du Mesnil',
+      '14:00-1': 'Sixmilebridge',        '14:40-1': 'East India Express',
+      '15:20-1': 'Stumptown',            '16:00-1': 'Marine Nationale',
+      '16:40-1': 'Unexpected Party',     '17:20-1': 'Bentraghhill',
+    }
+  },
+};
+
+function scorePickForRace(horse, raceKey) {
+  if (!horse) return { pts: 0, label: '—', code: 'skip' };
+  const res = RACE_RESULTS_CONFIRMED[raceKey];
+  if (!res || res.winner === null) return { pts: 0, label: '?', code: 'pending' };
+  const h = horse.toLowerCase().trim();
+  const w = (res.winner || '').toLowerCase().trim();
+  const s = (res.second || '').toLowerCase().trim();
+  const t = (res.third || '').toLowerCase().trim();
+  if (h === w) return { pts: 3, label: 'WIN', code: 'win' };
+  if (h === s || h === t) return { pts: 1, label: 'PLACED', code: 'place' };
+  return { pts: 0, label: 'MISS', code: 'miss' };
+}
+
+function buildLeaderboard() {
+  const confirmedRaces = Object.keys(RACE_RESULTS_CONFIRMED).filter(k => RACE_RESULTS_CONFIRMED[k].winner !== null);
+  return Object.entries(TIPSTER_PICKS).map(([key, tipster]) => {
+    let wins = 0, places = 0, misses = 0, skips = 0, totalPts = 0;
+    const raceResults = [];
+    confirmedRaces.forEach(raceKey => {
+      const horse = tipster.picks[raceKey];
+      if (!horse) { skips++; raceResults.push({ raceKey, horse: '—', ...{ pts: 0, label: '—', code: 'skip' } }); return; }
+      const score = scorePickForRace(horse, raceKey);
+      if (score.code === 'win') wins++;
+      else if (score.code === 'place') places++;
+      else if (score.code === 'miss') misses++;
+      totalPts += score.pts;
+      raceResults.push({ raceKey, horse, ...score });
+    });
+    return { key, ...tipster, wins, places, misses, skips, totalPts, raceResults, raced: confirmedRaces.length - skips };
+  }).sort((a, b) => b.totalPts - a.totalPts || b.wins - a.wins || a.misses - b.misses);
+}
+
+const RACE_LABELS = {
+  '13:20-0': 'Supreme',    '14:00-0': 'Arkle',      '14:40-0': 'Fred Winter',
+  '15:20-0': 'Ultima',     '16:00-0': 'Champion H', '16:40-0': 'Plate',
+  '17:20-0': 'NH Chase',   '13:20-1': 'Turners',    '14:00-1': 'Brown Adv',
+  '14:40-1': 'BetMGM Cup', '15:20-1': 'Cross Ctry', '16:00-1': 'Champ Chase',
+  '16:40-1': 'Grd Annual', '17:20-1': 'Bumper',
+};
+
+function populateResults() {
+  const container = document.getElementById('results-races-container');
+  if (container.innerHTML.trim()) return;
+
+  const leaderboard = buildLeaderboard();
+  const confirmedRaces = Object.keys(RACE_RESULTS_CONFIRMED).filter(k => RACE_RESULTS_CONFIRMED[k].winner !== null);
+
+  // ── LEADERBOARD ──────────────────────────────────────────
+  let html = `
+  <h3 style="font-family:'Playfair Display',serif;font-size:18px;color:var(--gold);margin:0 0 12px">🏆 Tipster Leaderboard — Days 1 & 2</h3>
+  <p style="font-size:12px;color:var(--silver);opacity:0.7;margin-bottom:16px">Scoring: 3pts = winner, 1pt = placed (2nd or 3rd). ${confirmedRaces.length} of 14 races confirmed (Grand Annual pending).</p>
+
+  <!-- LEADERBOARD CARDS -->
+  <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:32px">`;
+
+  leaderboard.forEach((t, idx) => {
+    const medal = idx === 0 ? '🥇' : idx === 1 ? '🥈' : idx === 2 ? '🥉' : `${idx+1}.`;
+    const barW = Math.round((t.totalPts / (leaderboard[0].totalPts || 1)) * 100);
+    html += `
+    <div style="background:rgba(15,48,32,0.7);border:1px solid ${idx < 3 ? t.color : 'rgba(255,255,255,0.07)'};border-radius:10px;padding:12px 16px;">
+      <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+        <span style="font-size:20px;min-width:28px">${medal}</span>
+        <span style="font-size:11px;padding:2px 7px;border-radius:4px;background:rgba(0,0,0,0.4);color:${t.color};border:1px solid ${t.color};font-weight:600">${t.icon} ${t.label}</span>
+        <span style="font-family:'DM Mono',monospace;font-size:20px;font-weight:700;color:${t.color}">${t.totalPts}pts</span>
+        <div style="display:flex;gap:12px;margin-left:auto;font-size:12px;">
+          <span style="color:#34d399">✓ ${t.wins} win${t.wins!==1?'s':''}</span>
+          <span style="color:#fbbf24">↑ ${t.places} placed</span>
+          <span style="color:#f87171">✗ ${t.misses} miss${t.misses!==1?'es':''}</span>
+          ${t.skips ? `<span style="color:#94a3b8;opacity:0.6">— ${t.skips} n/a</span>` : ''}
+        </div>
+      </div>
+      <!-- progress bar -->
+      <div style="margin-top:8px;height:4px;background:rgba(255,255,255,0.06);border-radius:2px;">
+        <div style="height:100%;width:${barW}%;background:${t.color};border-radius:2px;transition:width .3s"></div>
+      </div>
+      <!-- per-race breakdown -->
+      <div style="display:flex;flex-wrap:wrap;gap:5px;margin-top:10px;">
+        ${t.raceResults.map(r => {
+          const col = r.code==='win'?'#34d399':r.code==='place'?'#fbbf24':r.code==='miss'?'#f87171':'#4b5563';
+          const bg  = r.code==='win'?'rgba(52,211,153,0.15)':r.code==='place'?'rgba(251,191,36,0.12)':r.code==='miss'?'rgba(248,113,113,0.1)':'rgba(255,255,255,0.03)';
+          return `<div title="${RACE_LABELS[r.raceKey]}: ${r.horse}" style="font-size:10px;padding:3px 7px;border-radius:4px;background:${bg};border:1px solid ${col};color:${col};white-space:nowrap;cursor:default">
+            ${RACE_LABELS[r.raceKey]} <span style="opacity:0.7">${r.horse.length>12?r.horse.slice(0,11)+'…':r.horse}</span>
+          </div>`;
+        }).join('')}
+      </div>
+    </div>`;
+  });
+  html += `</div>`;
+
+  // ── RACE-BY-RACE COMPARISON TABLE ────────────────────────
+  html += `
+  <h3 style="font-family:'Playfair Display',serif;font-size:18px;color:var(--gold);margin:0 0 4px">📋 Race-by-Race Comparison</h3>
+  <p style="font-size:12px;color:var(--silver);opacity:0.7;margin-bottom:16px">Every confirmed race. Scroll right on mobile.</p>
+  <div style="overflow-x:auto;margin-bottom:32px">
+  <table style="width:100%;border-collapse:collapse;min-width:700px;font-size:12px">
+    <thead>
+      <tr style="background:rgba(255,255,255,0.04)">
+        <th style="padding:8px 10px;text-align:left;color:var(--silver);font-weight:600;border-bottom:1px solid rgba(255,255,255,0.1);white-space:nowrap">Race</th>
+        <th style="padding:8px 10px;text-align:left;color:#34d399;font-weight:600;border-bottom:1px solid rgba(255,255,255,0.1)">Winner</th>
+        ${leaderboard.map(t => `<th style="padding:8px 6px;text-align:center;color:${t.color};font-weight:600;border-bottom:1px solid rgba(255,255,255,0.1);white-space:nowrap">${t.label}</th>`).join('')}
+      </tr>
+    </thead>
+    <tbody>`;
+
+  confirmedRaces.forEach((raceKey, ri) => {
+    const res = RACE_RESULTS_CONFIRMED[raceKey];
+    const isGrandAnnual = raceKey === '16:40-1';
+    html += `<tr style="background:${ri%2===0?'rgba(255,255,255,0.01)':'transparent'}">
+      <td style="padding:8px 10px;color:var(--white);font-weight:600;border-bottom:1px solid rgba(255,255,255,0.05);white-space:nowrap">${RACE_LABELS[raceKey]}</td>
+      <td style="padding:8px 10px;color:#34d399;font-family:'Playfair Display',serif;font-size:11px;border-bottom:1px solid rgba(255,255,255,0.05)">${isGrandAnnual ? '⏳ Pending' : res.winner}</td>
+      ${leaderboard.map(t => {
+        const horse = t.picks[raceKey];
+        if (!horse) return `<td style="padding:8px 6px;text-align:center;color:#4b5563;border-bottom:1px solid rgba(255,255,255,0.05)">—</td>`;
+        const score = scorePickForRace(horse, raceKey);
+        const bg = score.code==='win'?'rgba(52,211,153,0.2)':score.code==='place'?'rgba(251,191,36,0.15)':score.code==='miss'?'rgba(248,113,113,0.08)':'transparent';
+        const col = score.code==='win'?'#34d399':score.code==='place'?'#fbbf24':score.code==='miss'?'#f87171':'#94a3b8';
+        const icon = score.code==='win'?'✓':score.code==='place'?'↑':'✗';
+        return `<td style="padding:8px 6px;text-align:center;background:${bg};border-bottom:1px solid rgba(255,255,255,0.05)">
+          <div style="color:${col};font-weight:700;font-size:11px">${isGrandAnnual?'⏳':icon}</div>
+          <div style="color:${col};opacity:0.75;font-size:9px;white-space:nowrap;overflow:hidden;max-width:70px;margin:auto" title="${horse}">${horse.length>9?horse.slice(0,8)+'…':horse}</div>
+        </td>`;
+      }).join('')}
+    </tr>`;
+  });
+
+  // Totals row
+  html += `<tr style="background:rgba(212,175,55,0.06);border-top:1px solid rgba(212,175,55,0.3)">
+    <td style="padding:10px 10px;color:var(--gold);font-weight:700;font-size:13px">TOTAL PTS</td>
+    <td style="padding:10px 10px;color:var(--silver);font-size:11px">${confirmedRaces.length - 1} races done</td>
+    ${leaderboard.map(t => `<td style="padding:10px 6px;text-align:center;font-weight:700;font-size:14px;color:${t.color}">${t.totalPts}</td>`).join('')}
+  </tr>`;
+
+  html += `</tbody></table></div>`;
+
+  // ── RACE RESULTS DETAIL ──────────────────────────────────
+  html += `
+  <h3 style="font-family:'Playfair Display',serif;font-size:18px;color:var(--gold);margin:0 0 12px">📅 Day-by-Day Results</h3>`;
+
+  const RACE_META = {
+    '13:20-0': { day: '🗓 Tuesday — Champion Day', grade: 'Grade 1', name: "Supreme Novices' Hurdle" },
+    '14:00-0': { day: null, grade: 'Grade 1', name: 'Arkle Novices\' Chase' },
+    '14:40-0': { day: null, grade: 'H\'cap', name: 'Fred Winter Juvenile Hurdle' },
+    '15:20-0': { day: null, grade: 'H\'cap', name: 'Ultima Handicap Chase' },
+    '16:00-0': { day: null, grade: 'Grade 1 ⭐', name: 'Champion Hurdle' },
+    '16:40-0': { day: null, grade: 'H\'cap', name: 'Festival Plate Handicap Chase' },
+    '17:20-0': { day: null, grade: 'H\'cap', name: 'National Hunt Chase' },
+    '13:20-1': { day: '🗓 Wednesday — Ladies Day', grade: 'Grade 1', name: "Turners Novices' Hurdle" },
+    '14:00-1': { day: null, grade: 'Grade 1', name: 'Brown Advisory Novices\' Chase' },
+    '14:40-1': { day: null, grade: 'H\'cap', name: 'BetMGM Cup (Coral Cup)' },
+    '15:20-1': { day: null, grade: 'H\'cap', name: 'Glenfarclas Cross Country Chase' },
+    '16:00-1': { day: null, grade: 'Grade 1 ⭐', name: 'Queen Mother Champion Chase' },
+    '16:40-1': { day: null, grade: 'H\'cap', name: 'Grand Annual Handicap Chase' },
+    '17:20-1': { day: null, grade: 'Grade 1', name: 'Champion Bumper' },
+  };
+
+  Object.keys(RACE_META).forEach(raceKey => {
+    const meta = RACE_META[raceKey];
+    const res  = RACE_RESULTS_CONFIRMED[raceKey];
+    const isPending = !res || res.winner === null;
+
+    if (meta.day) {
+      html += `<div style="margin:20px 0 10px;padding:8px 14px;background:rgba(212,175,55,0.12);border-left:3px solid var(--gold);border-radius:6px;">
+        <span style="font-family:'Playfair Display',serif;font-size:15px;font-weight:700;color:var(--gold)">${meta.day}</span>
+      </div>`;
+    }
+
+    html += `<div style="margin-bottom:10px;background:rgba(15,48,32,0.6);border:1px solid rgba(255,255,255,0.07);border-radius:10px;overflow:hidden;">
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:rgba(255,255,255,0.03);border-bottom:1px solid rgba(255,255,255,0.06);">
+        <div>
+          <span style="font-family:'DM Mono',monospace;font-size:11px;color:var(--silver);margin-right:8px">${raceKey.split('-')[0]}</span>
+          <span style="font-family:'Playfair Display',serif;font-size:15px;font-weight:700;color:var(--white)">${meta.name}</span>
+          <span style="margin-left:8px;font-size:11px;padding:2px 7px;border-radius:4px;background:rgba(212,175,55,0.15);color:var(--gold)">${meta.grade}</span>
+        </div>
+      </div>
+      <div style="padding:10px 14px;">
+        <div style="font-size:12px;margin-bottom:8px;">
+          ${isPending
+            ? `<span style="color:#94a3b8;font-style:italic">⏳ Result pending</span>`
+            : `<span style="color:#34d399;font-weight:700">🏆 ${res.winner}</span>
+               <span style="color:var(--silver);margin:0 6px">·</span>
+               <span style="color:#fbbf24">2nd: ${res.second||'—'}</span>
+               <span style="color:var(--silver);margin:0 6px">·</span>
+               <span style="color:#fb923c">3rd: ${res.third||'—'}</span>`
+          }
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:6px">
+          ${leaderboard.map(t => {
+            const horse = t.picks[raceKey];
+            if (!horse) return '';
+            const score = isPending ? { code: 'pending', label: '?' } : scorePickForRace(horse, raceKey);
+            const col = score.code==='win'?'#34d399':score.code==='place'?'#fbbf24':score.code==='miss'?'#f87171':'#94a3b8';
+            const icon = score.code==='win'?'✓ WIN':score.code==='place'?'↑ PLACED':score.code==='miss'?'✗':'?';
+            return `<div style="font-size:11px;padding:4px 9px;border-radius:5px;background:rgba(0,0,0,0.3);border:1px solid ${col};color:${col}">
+              <span style="opacity:0.7;margin-right:4px">${t.icon} ${t.label}:</span><strong>${horse}</strong> <span style="opacity:0.8">${icon}</span>
+            </div>`;
+          }).join('')}
+        </div>
+      </div>
+    </div>`;
+  });
+
+  // Pending notice
+  html += `
+  <div style="margin-top:24px;padding:12px 16px;background:rgba(148,163,184,0.06);border:1px solid rgba(148,163,184,0.2);border-radius:10px;">
+    <p style="font-size:12px;color:var(--silver);opacity:0.7;margin:0">
+      ⏳ <strong>Days 3 & 4 (Thu–Fri)</strong> not yet run. Grand Annual (Wed 16:40) result also pending.<br>
+      Leaderboard will update when results are added. Come back after each day's racing.
+    </p>
+  </div>`;
+
+  container.innerHTML = html;
+}
+
+// ============================================================
+// RESULTS DATA (race-by-race summary — kept for summary bar)
+// ============================================================
+const RESULTS_DATA = [
+  // ── TUESDAY ──────────────────────────────────────────────
+  { day: 'Champion Day — Tuesday 10 March', isDay: true },
+  {
+    time: '13:20', race: "Supreme Novices' Hurdle", grade: 'Grade 1',
+    winner: 'Old Park Star', sp: '15/8F', runner_up: 'Sober Glory (9/2)', third: 'Mydaddypaddy (6/1)',
+    nap: 'Old Park Star', nap_hit: 'W',
+    nb: 'Old Park Star / Talk The Talk', nb_hit: 'W',
+    note: 'Our NAP banker landed. Old Park Star won stylishly for Henderson & de Boinville. Mydaddypaddy (tipped EW) ran 3rd.'
+  },
+  {
+    time: '14:00', race: 'Arkle Novices\' Chase', grade: 'Grade 1',
+    winner: 'Kargese', sp: '7/1', runner_up: 'Kopek Des Bordes (11/8)', third: 'Lulamba (11/10F)',
+    nap: 'Lulamba', nap_hit: 'N',
+    nb: 'Kopek Des Bordes', nb_hit: 'P',
+    note: 'Lulamba (our NAP & consensus banker) beaten into 3rd. Kargese won at 7/1 — not widely tipped. Kopek Des Bordes ran 2nd (each-way return).'
+  },
+  {
+    time: '14:40', race: 'Fred Winter Juvenile Hurdle', grade: 'Premier Handicap',
+    winner: 'Saratoga', sp: '10/1', runner_up: 'Winston Junior (5/1)', third: 'Klycot (40/1)',
+    nap: 'Kripticjim', nap_hit: 'N',
+    nb: 'Poniros', nb_hit: 'N',
+    note: 'Saratoga won at 10/1 — a genuine punt race. No tipped horses in the frame.'
+  },
+  {
+    time: '15:20', race: 'Ultima Handicap Chase', grade: 'Premier Handicap',
+    winner: 'Johnnywho', sp: '18/1', runner_up: 'Jagwar (3/1F)', third: 'Quebecois (10/1)',
+    nap: 'Handstands', nap_hit: 'N',
+    nb: 'Jagwar', nb_hit: 'P',
+    note: 'Jagwar (tipped as NB/EW) ran 2nd — placed return. 18/1 winner Johnnywho not widely flagged.'
+  },
+  {
+    time: '16:00', race: 'Champion Hurdle', grade: 'Grade 1 ⭐',
+    winner: 'Lossiemouth', sp: '7/5F', runner_up: 'Brighterdaysahead (7/2)', third: 'The New Lion (3/1)',
+    nap: 'Lossiemouth', nap_hit: 'W',
+    nb: 'The New Lion', nb_hit: 'P',
+    note: '🏆 Best result of the week so far. Lossiemouth our outright NAP — won by 6.5 lengths. The New Lion ran 3rd (placed return). Brighterdaysahead also placed for EW backers.'
+  },
+  {
+    time: '16:40', race: 'Festival Plate Handicap Chase', grade: 'Premier Handicap',
+    winner: 'Madara', sp: '3/1F', runner_up: 'Will The Wise (10/1)', third: "Moon D'Orange (25/1)",
+    nap: 'McLaurey', nap_hit: 'N',
+    nb: 'Heart Wood', nb_hit: 'N',
+    note: 'Madara won as favourite — not our NAP selection. No tipped horses placed.'
+  },
+  {
+    time: '17:20', race: 'National Hunt Chase', grade: 'NH Chase',
+    winner: 'Holloway Queen', sp: '12/1', runner_up: 'King Of Answers (22/1)', third: 'One Big Bang (11/1)',
+    nap: 'Grande Geste', nap_hit: 'N',
+    nb: 'Backmersackme', nb_hit: 'N',
+    note: 'Holloway Queen won at 12/1 — not tipped. Grande Geste (NAP, 5/2F) well beaten.'
+  },
+
+  // ── WEDNESDAY ────────────────────────────────────────────
+  { day: 'Ladies Day — Wednesday 11 March', isDay: true },
+  {
+    time: '13:20', race: "Turners Novices' Hurdle", grade: 'Grade 1',
+    winner: 'King Rasko Grey', sp: '11/1', runner_up: 'Act Of Innocence (10/1)', third: 'Zeus Power (50/1)',
+    nap: 'No Drama This End', nap_hit: 'N',
+    nb: 'King Rasko Grey', nb_hit: 'W',
+    note: 'King Rasko Grey tipped as NB/EW at 6/1 — won at 11/1. No Drama This End (NAP) flopped. Excellent each-way return.'
+  },
+  {
+    time: '14:00', race: 'Brown Advisory Novices\' Chase', grade: 'Grade 1',
+    winner: 'Kitzbuhel', sp: '11/1', runner_up: 'Final Demand (6/4F)', third: 'Salver',
+    nap: 'Final Demand', nap_hit: 'P',
+    nb: 'Wendigo', nb_hit: 'N',
+    note: 'Final Demand (NAP) ran 2nd — placed each-way return. Kitzbuhel won at 11/1. Wendigo fell. Predators Gold & The Big Westerner were non-runners.'
+  },
+  {
+    time: '14:40', race: 'BetMGM Cup (Coral Cup)', grade: 'Grade 3 Handicap',
+    winner: 'Jingko Blue', sp: '9/2', runner_up: 'Franciscan Rock (50/1)', third: 'Storm Heart (5/1)',
+    nap: 'Iberico Lord', nap_hit: 'N',
+    nb: 'Storm Heart', nb_hit: 'P',
+    note: 'Jingko Blue won the gamble at 9/2. Storm Heart (our NB at 6/1) ran 3rd — each-way return. Franciscan Rock 2nd at 50/1.'
+  },
+  {
+    time: '15:20', race: 'Glenfarclas Cross Country Chase', grade: 'Limited Handicap',
+    winner: 'Final Orders', sp: '7/1', runner_up: 'Favori De Champdou (2/1F)', third: 'Vanillier (13/2)',
+    nap: 'Favori De Champdou', nap_hit: 'P',
+    nb: 'Favori De Champdou', nb_hit: 'P',
+    note: 'Favori De Champdou (NAP) ran 2nd — placed return. Final Orders won at 7/1. Vanillier (widely tipped) ran 3rd.'
+  },
+  {
+    time: '16:00', race: 'Champion Chase', grade: 'Grade 1 ⭐',
+    winner: 'Il Etait Temps', sp: '5/2', runner_up: 'Libberty Hunter (50/1)', third: "L'Eau Du Sud (13/2)",
+    nap: 'Majborough', nap_hit: 'N',
+    nb: 'Majborough', nb_hit: 'N',
+    note: 'Majborough (4/5F, our NAP) had jumping errors and finished down the field. Il Etait Temps won for Mullins & Townend. L\'Eau Du Sud 3rd.'
+  },
+  {
+    time: '16:40', race: 'Grand Annual Handicap Chase', grade: 'Premier Handicap',
+    winner: '—', sp: '—', runner_up: '—', third: '—',
+    nap: 'TBC', nap_hit: '?',
+    nb: 'TBC', nb_hit: '?',
+    note: 'Result pending at time of update. Check back later.'
+  },
+  {
+    time: '17:20', race: 'Champion Bumper', grade: 'Grade 1',
+    winner: 'Bambino Fever', sp: '4/1', runner_up: '33/1', third: '66/1',
+    nap: 'Bambino Fever', nap_hit: 'W',
+    nb: 'Keep Him Company', nb_hit: 'N',
+    note: '🏆 Bambino Fever — our NAP — won at 4/1 for Willie Mullins. 14th Bumper win for Mullins. Tipped across multiple sources.'
+  },
+
+  // ── THURSDAY ─────────────────────────────────────────────
+  { day: "St Patrick's Thursday — 12 March (Not yet run)", isDay: true },
+  { time: '13:20', race: "Mares' Novices' Hurdle", grade: 'Grade 2', winner: '—', sp: '—', runner_up: '—', third: '—', nap: 'Bambino Fever', nap_hit: '?', nb: 'Air Of Entitlement', nb_hit: '?', note: 'Race not yet run.' },
+  { time: '14:00', race: "Jack Richards Novices' Chase", grade: 'Grade 1', winner: '—', sp: '—', runner_up: '—', third: '—', nap: 'Favourite TBC', nap_hit: '?', nb: 'Irish progressive', nb_hit: '?', note: 'Race not yet run.' },
+  { time: '14:40', race: "Mares' Hurdle", grade: 'Grade 1', winner: '—', sp: '—', runner_up: '—', third: '—', nap: 'Lossiemouth', nap_hit: '?', nb: 'Brighterdaysahead', nb_hit: '?', note: 'Race not yet run.' },
+  { time: '15:20', race: "Stayers' Hurdle", grade: 'Grade 1', winner: '—', sp: '—', runner_up: '—', third: '—', nap: 'Teahupoo', nap_hit: '?', nb: 'Ma Shantou', nb_hit: '?', note: 'Race not yet run.' },
+  { time: '16:00', race: 'Ryanair Chase', grade: 'Grade 1', winner: '—', sp: '—', runner_up: '—', third: '—', nap: 'Fact To File', nap_hit: '?', nb: 'Gaelic Warrior', nb_hit: '?', note: 'Race not yet run.' },
+  { time: '16:40', race: 'Pertemps Final', grade: 'Grade 3 Handicap', winner: '—', sp: '—', runner_up: '—', third: '—', nap: 'Sire Du Berlais', nap_hit: '?', nb: 'Doddiethegreat', nb_hit: '?', note: 'Race not yet run.' },
+  { time: '17:20', race: 'Kim Muir Handicap Chase', grade: 'NH Chase Handicap', winner: '—', sp: '—', runner_up: '—', third: '—', nap: 'Jeriko Du Reponet', nap_hit: '?', nb: 'Irish point graduate', nb_hit: '?', note: 'Race not yet run.' },
+
+  // ── FRIDAY ───────────────────────────────────────────────
+  { day: 'Gold Cup Day — Friday 13 March (Not yet run)', isDay: true },
+  { time: '13:20', race: 'Triumph Hurdle', grade: 'Grade 1', winner: '—', sp: '—', runner_up: '—', third: '—', nap: 'Kripticjim', nap_hit: '?', nb: 'Poniros', nb_hit: '?', note: 'Race not yet run.' },
+  { time: '14:00', race: 'County Hurdle', grade: 'Premier Handicap', winner: '—', sp: '—', runner_up: '—', third: '—', nap: 'Progressive hurdler', nap_hit: '?', nb: 'Sixandahalf', nb_hit: '?', note: 'Race not yet run.' },
+  { time: '14:40', race: "Mares' Chase", grade: 'Grade 2', winner: '—', sp: '—', runner_up: '—', third: '—', nap: 'Dinoblue', nap_hit: '?', nb: 'British challenger', nb_hit: '?', note: 'Race not yet run.' },
+  { time: '15:20', race: 'Albert Bartlett Novices\' Hurdle', grade: 'Grade 1', winner: '—', sp: '—', runner_up: '—', third: '—', nap: 'Irish staying novice', nap_hit: '?', nb: 'Ballyfad', nb_hit: '?', note: 'Race not yet run.' },
+  { time: '16:00', race: 'Cheltenham Gold Cup', grade: 'Grade 1 🏆', winner: '—', sp: '—', runner_up: '—', third: '—', nap: 'Jango Baie', nap_hit: '?', nb: 'Gaelic Warrior', nb_hit: '?', note: 'Race not yet run. ⚠️ Galopin Des Champs confirmed non-runner.' },
+  { time: '16:40', race: "Hunters' Chase", grade: 'NH Chase', winner: '—', sp: '—', runner_up: '—', third: '—', nap: 'Experienced pointer', nap_hit: '?', nb: 'Former graded', nb_hit: '?', note: 'Race not yet run.' },
+  { time: '17:20', race: 'Martin Pipe Handicap Hurdle', grade: 'Premier Handicap', winner: '—', sp: '—', runner_up: '—', third: '—', nap: 'Market mover', nap_hit: '?', nb: 'Henderson conditional', nb_hit: '?', note: 'Race not yet run.' },
+];
+
+function hitColor(code) {
+  if (code === 'W') return '#34d399';
+  if (code === 'P') return '#fbbf24';
+  if (code === 'N') return '#f87171';
+  return '#94a3b8';
+}
+function hitLabel(code) {
+  if (code === 'W') return '✓ WIN';
+  if (code === 'P') return '✓ PLACED';
+  if (code === 'N') return '✗ MISSED';
+  return '— PENDING';
 }
 
 function showAllNaps() { openTableView('nap'); }
