@@ -911,30 +911,30 @@
 // DATA — RACE SCHEDULE
 // ════════════════════════════════════════════════════════════════
 const RACE_SCHEDULE = [
-  // Day 0 — Thursday Opening Day
-  { time:'13:45', name:"Manifesto Novices' Chase",                            grade:'Grade 1',         dist:'2m 4f', type:'grade1' },
-  { time:'14:20', name:"Anniversary 4-Y-O Juvenile Hurdle",                   grade:'Grade 1',         dist:'2m 1f', type:'grade1' },
-  { time:'14:55', name:"Golden Miller Chronograph Bowl Chase",                 grade:'Grade 1',         dist:'3m 1f', type:'grade1' },
+  // Day 0 — Thursday 9 April (Opening Day)
+  { time:'13:45', name:"EBC Group Manifesto Novices' Chase",                  grade:'Grade 1',         dist:'2m 4f', type:'grade1' },
+  { time:'14:20', name:"Boodles Anniversary 4-Y-O Juvenile Hurdle",           grade:'Grade 1',         dist:'2m 1f', type:'grade1' },
+  { time:'14:55', name:"Brooklands Golden Miller Chronograph Bowl Chase",     grade:'Grade 1',         dist:'3m 1f', type:'grade1' },
   { time:'15:30', name:"William Hill Aintree Hurdle",                         grade:'Grade 1',         dist:'2m 4f', type:'grade1' },
-  { time:'16:05', name:"Foxhunters' Open Hunters' Chase",                     grade:'Hunters',         dist:'2m 5f', type:'hunters' },
-  { time:'16:40', name:"Red Rum Handicap Chase",                              grade:'Premier H\'cap',  dist:'2m',    type:'handicap' },
-  { time:'17:15', name:"Nickel Coin Mares' NH Flat Race",                     grade:'Grade 2',         dist:'2m 1f', type:'grade2' },
-  // Day 1 — Friday Ladies Day
-  { time:'13:45', name:"Blennerhassett Mildmay Novices' Chase",               grade:'Grade 1',         dist:'3m 1f', type:'grade1' },
+  { time:'16:05', name:"Randox Foxhunters' Open Hunters' Chase",              grade:'Class 2',         dist:'2m 5f', type:'hunters' },
+  { time:'16:40', name:"Close Brothers Red Rum Handicap Chase",               grade:'Premier H\'cap',  dist:'2m',    type:'handicap' },
+  { time:'17:15', name:"Goffs Nickel Coin Mares' NH Flat Race",               grade:'Grade 2',         dist:'2m 1f', type:'grade2' },
+  // Day 1 — Friday 10 April (Ladies Day)
+  { time:'13:45', name:"Mildmay Novices' Chase",                              grade:'Grade 1',         dist:'3m 1f', type:'grade1' },
   { time:'14:20', name:"William Hill Handicap Hurdle",                        grade:'Premier H\'cap',  dist:'2m 4f', type:'handicap' },
   { time:'14:55', name:"TrustATrader Top Novices' Hurdle",                    grade:'Grade 1',         dist:'2m ½f', type:'grade1' },
   { time:'15:30', name:"Melling Chase",                                       grade:'Grade 1',         dist:'2m 4f', type:'grade1' },
-  { time:'16:05', name:"Topham Handicap Chase",                               grade:'Premier H\'cap',  dist:'2m 5f', type:'handicap' },
-  { time:'16:40', name:"Sefton Novices' Hurdle",                              grade:'Grade 1',         dist:'3m ½f', type:'grade1' },
-  { time:'17:15', name:"Hallgarten Handicap Hurdle (Cond/Am)",                grade:'Class 2',         dist:'2m ½f', type:'amateur' },
-  // Day 2 — Saturday National Day
+  { time:'16:05', name:"Randox Topham Handicap Chase",                        grade:'Premier H\'cap',  dist:'2m 5f', type:'handicap' },
+  { time:'16:40', name:"OddsChecker Sefton Novices' Hurdle",                  grade:'Grade 1',         dist:'3m ½f', type:'grade1' },
+  { time:'17:15', name:"Hallgarten & Novum Wines Handicap Hurdle (Cond/Am)",  grade:'Class 2',         dist:'2m ½f', type:'amateur' },
+  // Day 2 — Saturday 11 April (Grand National Day)
   { time:'13:20', name:"William Hill Top Price Guarantee Handicap Hurdle",    grade:'Premier H\'cap',  dist:'3m ½f', type:'handicap' },
-  { time:'13:55', name:"Mersey Novices' Hurdle",                              grade:'Grade 1',         dist:'2m 4f', type:'grade1' },
-  { time:'14:30', name:"Freebooter Handicap Chase",                           grade:'Premier H\'cap',  dist:'3m 1f', type:'handicap' },
+  { time:'13:55', name:"Turners Mersey Novices' Hurdle",                      grade:'Grade 1',         dist:'2m 4f', type:'grade1' },
+  { time:'14:30', name:"William Hill Freebooter Handicap Chase",              grade:'Premier H\'cap',  dist:'3m 1f', type:'handicap' },
   { time:'15:05', name:"Ivy Liverpool Hurdle",                                grade:'Grade 1',         dist:'3m ½f', type:'grade1' },
   { time:'16:00', name:"RANDOX GRAND NATIONAL",                               grade:'Premier H\'cap',  dist:'4m 2½f', type:'feature' },
-  { time:'17:00', name:"Maghull Novices' Chase",                              grade:'Grade 1',         dist:'2m',    type:'grade1' },
-  { time:'17:35', name:"NHStallions.co.uk NH Flat Race",                      grade:'Grade 2',         dist:'2m 1f', type:'grade2' },
+  { time:'17:00', name:"Rosconn Group Maghull Novices' Chase",                grade:'Grade 1',         dist:'2m',    type:'grade1' },
+  { time:'17:35', name:"Weatherbys NHSTALLIONS.CO.UK NH Flat Race",           grade:'Grade 2',         dist:'2m 1f', type:'grade2' },
 ];
 
 // ════════════════════════════════════════════════════════════════
@@ -1000,12 +1000,12 @@ const TIPS = {
     nap: { horse:'TBC', odds:'0/1', dec:1.0, trainer:'TBC', conf:0, reason:'Tips to be added — Liverpool Hurdle 2026.' }
   },
   '16:00-2': {
-    nap: { horse:'I Am Maximus',    odds:'10/1',  dec:11.0, trainer:'W P Mullins 🇮🇪', conf:68,
-           reason:"2024 Grand National winner at 7/1, 2nd in 2025. History suggests back-to-back winners are rare but I Am Maximus has the quality. Proven over the fences and likely to run well fresh. The market leader." },
-    nb:  { horse:'Iroko',           odds:'12/1',  dec:13.0, trainer:'O Greenall / J Guerriero', conf:62,
-           reason:"4th in the 2025 National as favourite. Only 8 years old, the ideal age for improvement. British-trained and expected to arrive here from Cheltenham in fine fettle. Leading British hope." },
-    ew:  { horse:'Grangeclare West',odds:'12/1',  dec:13.0, trainer:'W P Mullins 🇮🇪', conf:55,
-           reason:"3rd in the 2025 National at 33/1. Already proven over these fences and likely to appreciate the trip. Progressive and well-handicapped — excellent each-way value at double-figure odds." },
+    nap: { horse:'I Am Maximus',    odds:'8/1',   dec:9.0,  trainer:'W P Mullins 🇮🇪', conf:70,
+           reason:"2024 Grand National winner at 7/1, 2nd in 2025. Carries top weight of 11st 12lbs but has the class to defy it. Proven over these fences — the quality horse in the field and deserved market leader." },
+    nb:  { horse:'Jagwar',          odds:'10/1',  dec:11.0, trainer:'O Greenall / J Guerriero', conf:65,
+           reason:"Won the Ultima at Cheltenham 2026, immediately shortening from 40/1 to 10/1. Progressive 7-year-old with stamina to burn. Connections have targeted this race all season — could be the year's big story." },
+    ew:  { horse:'Grangeclare West',odds:'11/1',  dec:12.0, trainer:'W P Mullins 🇮🇪', conf:58,
+           reason:"3rd in the 2025 National at 33/1, then won the Bobbyjo Chase to confirm his staying credentials. Already proven over these unique fences. Excellent each-way value at double-figure odds." },
   },
   '17:00-2': {
     nap: { horse:'TBC', odds:'0/1', dec:1.0, trainer:'TBC', conf:0, reason:"Tips to be added — Maghull Novices' Chase 2026." }
@@ -1046,18 +1046,50 @@ const RESULTS = {
 // DATA — GRAND NATIONAL RUNNERS
 // ════════════════════════════════════════════════════════════════
 const GN_RUNNERS = [
-  { name:'I Am Maximus',      odds:'10/1',  trainer:'W P Mullins 🇮🇪',  country:'ireland', tag:'prev',  note:'2024 National winner. 2nd in 2025 carrying top weight. Has run in two Nationals and placed both times. The quality horse in the field.' },
-  { name:'Iroko',             odds:'12/1',  trainer:'Greenall/Guerriero', country:'britain', tag:'brit',  note:'4th as favourite in 2025. Only 8. Bypassed Kelso to go straight to Cheltenham then the National. Course experience counts.' },
-  { name:'Grangeclare West',  odds:'12/1',  trainer:'W P Mullins 🇮🇪',  country:'ireland', tag:'prev',  note:'3rd in the 2025 National at 33/1. Already proven over these fences. Each-way banker at 12/1.' },
-  { name:'Jagwar',            odds:'14/1',  trainer:'O Greenall / J Guerriero', country:'britain', tag:'dark', note:"Won the Ultima at Cheltenham 2026. Progressive 7-year-old chaser. Connections targeting the National — could be the year's surprise." },
-  { name:'Johnnywho',         odds:'16/1',  trainer:"Jonjo O'Neill",      country:'britain', tag:'dark',  note:'Won the Ultima Handicap at Cheltenham 2026 at 18/1. Stamina in abundance. Old-fashioned National type.' },
-  { name:'Nick Rockett',      odds:'25/1',  trainer:'W P Mullins 🇮🇪',  country:'ireland', tag:'prev',  note:'2025 National winner at 33/1 for Patrick Mullins. Defending champion — has not run since Aintree. Fitness is the question.' },
-  { name:'Haiti Couleurs',    odds:'25/1',  trainer:'R Curtis 🏴󠁧󠁢󠁷󠁬󠁿',   country:'britain', tag:'dark',  note:'Won both the 2025 Irish and Welsh Grand Nationals. Disappointing 2026 Gold Cup dampens enthusiasm but the staying form is there.' },
-  { name:'Monty\'s Star',     odds:'20/1',  trainer:'TBC',                country:'ireland', tag:'dark',  note:"One of the 'Five To Follow' for 2026. Progressive staying chaser with improving profile. Could make the frame." },
-  { name:'Favori De Champdou',odds:'33/1',  trainer:'G Elliott 🇮🇪',     country:'ireland', tag:'irish', note:"2nd in the 2026 Cross Country at Cheltenham. Proven stayer who loves a trip. Elliott's best National hope." },
-  { name:'Gerri Colombe',     odds:'33/1',  trainer:'G Elliott 🇮🇪',     country:'ireland', tag:'irish', note:'Talented chaser who has run well at Grade 1 level. Elliott hoping he can translate that ability to the unique National test.' },
-  { name:'Final Orders',      odds:'25/1',  trainer:'G Cromwell 🇮🇪',    country:'ireland', tag:'irish', note:'Won the 2026 Cross Country Chase at Cheltenham at 7/1. Proven stamina and jumping. Cromwell regularly targets Aintree.' },
-  { name:'Spillane\'s Tower', odds:'33/1',  trainer:'J J Mangan 🇮🇪',    country:'ireland', tag:'dark',  note:'Won the 2026 Cotswold Chase and is entered in the Gold Cup. JP McManus horse — if he runs in the National, respect him.' },
+  // Top 10 — Market Principals
+  { name:'I Am Maximus',      odds:'8/1',   trainer:'W P Mullins 🇮🇪',            country:'ireland', tag:'prev',  note:'2024 National winner. 2nd in 2025 carrying top weight of 11st 12lbs. The class horse in the field — proven over these fences.' },
+  { name:'Jagwar',            odds:'10/1',  trainer:'O Greenall / J Guerriero',   country:'britain', tag:'brit',  note:'Won the Ultima at Cheltenham 2026. Progressive 7-year-old, 10st 10lbs. Connections have targeted this race all season.' },
+  { name:'Grangeclare West',  odds:'11/1',  trainer:'W P Mullins 🇮🇪',            country:'ireland', tag:'prev',  note:'3rd in 2025 National at 33/1, then won the Bobbyjo Chase. 11st 10lbs. Proven over these fences — each-way banker.' },
+  { name:'Iroko',             odds:'12/1',  trainer:'O Greenall / J Guerriero',   country:'britain', tag:'brit',  note:'4th as favourite in 2025 National. Only 8. 11st 1lb. Leading British hope with course experience.' },
+  { name:'Oscar\'s Brother',  odds:'16/1',  trainer:'C King',                     country:'ireland', tag:'dark',  note:'8-year-old with 10st 13lbs. Progressive chaser with stamina in abundance. Dark horse at a big price.' },
+  { name:'Johnnywho',         odds:'16/1',  trainer:"Jonjo O'Neill",              country:'britain', tag:'brit',  note:'Won the Ultima at Cheltenham 2026 at 18/1. 10st 4lbs. Old-fashioned National type with stamina to burn.' },
+  { name:'Haiti Couleurs',    odds:'16/1',  trainer:'R Curtis 🏴󠁧󠁢󠁷󠁬󠁿',             country:'britain', tag:'dark',  note:'Won 2025 Irish and Welsh Grand Nationals. 11st 10lbs. Staying form is rock-solid despite Gold Cup disappointment.' },
+  { name:'Monty\'s Star',     odds:'20/1',  trainer:'H de Bromhead 🇮🇪',          country:'ireland', tag:'dark',  note:'9-year-old, 11st 3lbs. Progressive staying chaser with an improving profile. Could make the frame at big odds.' },
+  { name:'Nick Rockett',      odds:'20/1',  trainer:'W P Mullins 🇮🇪',            country:'ireland', tag:'prev',  note:'2025 National winner at 33/1. Defending champion, 11st 11lbs. Has not run since Aintree — fitness is the question.' },
+  { name:'Panic Attack',      odds:'22/1',  trainer:'D Skelton',                  country:'britain', tag:'brit',  note:'10-year-old, 10st 5lbs. Dan Skelton targeting Aintree with this progressive staying chaser.' },
+  // 11–20 — Each-way Contenders
+  { name:'Stellar Story',     odds:'25/1',  trainer:'G Elliott 🇮🇪',              country:'ireland', tag:'irish', note:'9-year-old, 10st 11lbs. Elliott runner with solid staying form.' },
+  { name:'Captain Cody',      odds:'25/1',  trainer:'W P Mullins 🇮🇪',            country:'ireland', tag:'irish', note:'8-year-old, 10st 10lbs. Won the Scottish National — catapulted into National contention.' },
+  { name:'Gorgeous Tom',      odds:'25/1',  trainer:'H de Bromhead 🇮🇪',          country:'ireland', tag:'irish', note:'8-year-old, 10st 9lbs. De Bromhead stayer with solid placed form.' },
+  { name:'Final Orders',      odds:'33/1',  trainer:'G Cromwell 🇮🇪',             country:'ireland', tag:'irish', note:'10-year-old. Won the 2026 Cross Country at Cheltenham at 7/1. Proven stamina and jumping.' },
+  { name:'Now Is The Hour',   odds:'33/1',  trainer:'G Cromwell 🇮🇪',             country:'ireland', tag:'irish', note:'9-year-old, 10st 7lbs. Second Cromwell runner — staying form over fences is encouraging.' },
+  { name:'Spillane\'s Tower', odds:'33/1',  trainer:'J J Mangan 🇮🇪',             country:'ireland', tag:'dark',  note:'8-year-old, 11st 8lbs. Won the 2026 Cotswold Chase. JP McManus horse — respect if he lines up.' },
+  { name:'Favori De Champdou',odds:'33/1',  trainer:'G Elliott 🇮🇪',              country:'ireland', tag:'irish', note:'11-year-old, 11st 1lb. 2nd in the 2026 Cross Country at Cheltenham. Proven stayer who loves a trip.' },
+  { name:'Jordans',           odds:'33/1',  trainer:'J P O\'Brien 🇮🇪',           country:'ireland', tag:'irish', note:'7-year-old, 10st 8lbs. Youth on his side — young for a National runner but has the stamina.' },
+  { name:'Gerri Colombe',     odds:'33/1',  trainer:'G Elliott 🇮🇪',              country:'ireland', tag:'irish', note:'10-year-old, 11st 10lbs. Won Bobbyjo runner-up, shortened from 100/1 to 33/1. Grade 1 quality.' },
+  { name:'Quai De Bourbon',   odds:'40/1',  trainer:'W P Mullins 🇮🇪',            country:'ireland', tag:'irish', note:'7-year-old. Another Mullins entry — youngest in the field with untapped potential over these fences.' },
+  // 21–30 — Outsiders with a Chance
+  { name:'Banbridge',         odds:'50/1',  trainer:'J P O\'Brien 🇮🇪',           country:'ireland', tag:'irish', note:'10-year-old. Has run at Grade 1 level. Needs everything to fall right but has the talent.' },
+  { name:'Three Card Brag',   odds:'50/1',  trainer:'G Elliott 🇮🇪',              country:'ireland', tag:'irish', note:'9-year-old, 11st. Elliott runner with solid staying form over fences.' },
+  { name:'Perceval Legallois',odds:'50/1',  trainer:'G Cromwell 🇮🇪',             country:'ireland', tag:'irish', note:'9-year-old, 10st 9lbs. Third Cromwell runner — staying trip is ideal.' },
+  { name:'Lecky Watson',      odds:'50/1',  trainer:'W P Mullins 🇮🇪',            country:'ireland', tag:'irish', note:'8-year-old, 11st 2lbs. Mullins runner with solid form over fences.' },
+  { name:'Spanish Harlem',    odds:'50/1',  trainer:'W P Mullins 🇮🇪',            country:'ireland', tag:'irish', note:'8-year-old, 11st 3lbs. Mullins has a strong hand — another who stays well.' },
+  { name:'Firefox',           odds:'50/1',  trainer:'G Elliott 🇮🇪',              country:'ireland', tag:'irish', note:'8-year-old, 11st 4lbs. Has shown ability at a high level — needs to translate it to the National fences.' },
+  { name:'Answer To Kayf',    odds:'50/1',  trainer:'T O\'Brien',                 country:'britain', tag:'brit',  note:'10-year-old. Outsider but has placed form over staying trips.' },
+  { name:'Twig',              odds:'66/1',  trainer:'B Pauling',                  country:'britain', tag:'brit',  note:'11-year-old, 10st 4lbs. Veteran chaser — light weight could help.' },
+  { name:'High Class Hero',   odds:'66/1',  trainer:'W P Mullins 🇮🇪',            country:'ireland', tag:'irish', note:'9-year-old, 10st 11lbs. Mullins runner at a massive price.' },
+  { name:'Champ Kiely',       odds:'80/1',  trainer:'W P Mullins 🇮🇪',            country:'ireland', tag:'irish', note:'10-year-old. Mullins stayer — the fences are the unknown.' },
+  // 31–40 — Long Shots
+  { name:'Mr Vango',          odds:'80/1',  trainer:'S Bradstock',                country:'britain', tag:'brit',  note:'10-year-old. 2nd of 13 in December\'s Becher Chase — proven over these fences at a big price.' },
+  { name:'Marble Sands',      odds:'100/1', trainer:'Killahena / McPherson',      country:'britain', tag:'brit',  note:'10-year-old. Outsider but has placed form over staying trips.' },
+  { name:'Top Of The Bill',   odds:'100/1', trainer:'N & W Twiston-Davies',       country:'britain', tag:'brit',  note:'10-year-old, 10st 5lbs. Twiston-Davies runner at a huge price.' },
+  { name:'Blaze The Way',     odds:'100/1', trainer:'M Mullins 🇮🇪',              country:'ireland', tag:'irish', note:'8-year-old. Margaret Mullins runner — stamina guaranteed.' },
+  { name:'Beauport',          odds:'100/1', trainer:'N & W Twiston-Davies',       country:'britain', tag:'brit',  note:'10-year-old. Second Twiston-Davies runner — needs a big improvement.' },
+  { name:'The Real Whacker',  odds:'100/1', trainer:'P Neville 🇮🇪',              country:'ireland', tag:'irish', note:'10-year-old. Formerly high-class but has lost his way — needs to recapture past form.' },
+  { name:'L\'Homme Presse',   odds:'100/1', trainer:'V Williams',                 country:'britain', tag:'brit',  note:'11-year-old. Venetia Williams runner — loves soft ground and staying trips.' },
+  { name:'French Dynamite',   odds:'100/1', trainer:'E McNamara 🇮🇪',             country:'ireland', tag:'irish', note:'11-year-old. Veteran who stays well but faces a stiff task off his mark.' },
+  { name:'Hyland',            odds:'100/1', trainer:'N Henderson',                country:'britain', tag:'brit',  note:'9-year-old. Nicky Henderson runner — the big fences are the question mark.' },
+  { name:'Will Do',           odds:'150/1', trainer:'G Elliott 🇮🇪',              country:'ireland', tag:'irish', note:'9-year-old. Longest-priced runner in the field — needs a miracle but stranger things have happened.' },
 ];
 
 // ════════════════════════════════════════════════════════════════
