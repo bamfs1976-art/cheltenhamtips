@@ -1,0 +1,1337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🏇 Grand National Festival 2026 – Expert Tips & Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  /* ── TOKENS ───────────────────────────────────────────── */
+  :root {
+    --navy:      #0b1628;
+    --navy-mid:  #132040;
+    --navy-card: #1a2d55;
+    --navy-lit:  #243660;
+    --scarlet:   #c0392b;
+    --scarlet-b: #e74c3c;
+    --scarlet-d: #922b21;
+    --gold:      #d4a843;
+    --gold-dim:  #a07830;
+    --gold-lt:   #f0c86a;
+    --cream:     #f5f0e8;
+    --cream-dim: #e8e0d0;
+    --silver:    #a0aec0;
+    --white:     #ffffff;
+    --green-win: #27ae60;
+    --amber:     #e67e22;
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-body:    'Source Serif 4', Georgia, serif;
+  }
+
+  /* ── RESET ────────────────────────────────────────────── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--navy);
+    color: var(--cream);
+    font-family: var(--font-body);
+    font-size: 15px;
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  /* ── HEADER ───────────────────────────────────────────── */
+  .site-header {
+    background: linear-gradient(160deg, var(--navy) 0%, var(--navy-mid) 60%, var(--scarlet-d) 100%);
+    border-bottom: 3px solid var(--scarlet);
+    padding: 28px 20px 24px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .site-header::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 40px,
+      rgba(192,57,43,0.06) 40px,
+      rgba(192,57,43,0.06) 41px
+    );
+    pointer-events: none;
+  }
+  .header-badge {
+    display: inline-block;
+    background: var(--scarlet);
+    color: var(--white);
+    font-family: var(--font-body);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 3px 12px;
+    border-radius: 2px;
+    margin-bottom: 10px;
+  }
+  .site-header h1 {
+    font-family: var(--font-display);
+    font-size: clamp(1.8rem, 5vw, 3rem);
+    font-weight: 900;
+    color: var(--white);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+  .site-header h1 span { color: var(--scarlet-b); }
+  .hero-dates {
+    color: var(--gold);
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-top: 6px;
+    font-weight: 300;
+  }
+  .hero-meta {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 16px;
+    flex-wrap: wrap;
+  }
+  .hero-stat {
+    text-align: center;
+  }
+  .hero-stat-val {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--gold-lt);
+  }
+  .hero-stat-lbl {
+    font-size: 0.7rem;
+    color: var(--silver);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .header-link {
+    display: inline-block;
+    margin-top: 14px;
+    background: rgba(192,57,43,0.15);
+    border: 1px solid var(--scarlet);
+    color: var(--cream-dim);
+    font-size: 0.75rem;
+    padding: 5px 14px;
+    border-radius: 3px;
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    transition: background 0.2s;
+  }
+  .header-link:hover { background: rgba(192,57,43,0.3); }
+
+  /* ── COUNTDOWN ────────────────────────────────────────── */
+  .countdown-bar {
+    background: var(--navy-mid);
+    border-bottom: 1px solid rgba(192,57,43,0.3);
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--silver);
+  }
+  .countdown-bar span { color: var(--gold); font-weight: 600; }
+  #gn-countdown { color: var(--scarlet-b); font-weight: 700; font-size: 0.95rem; }
+
+  /* ── NAV TABS ─────────────────────────────────────────── */
+  .main-nav {
+    background: var(--navy-mid);
+    border-bottom: 2px solid rgba(192,57,43,0.25);
+    display: flex;
+    overflow-x: auto;
+    gap: 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .main-nav::-webkit-scrollbar { display: none; }
+  .nav-btn {
+    flex-shrink: 0;
+    padding: 13px 18px;
+    background: none;
+    border: none;
+    border-bottom: 3px solid transparent;
+    color: var(--silver);
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+  .nav-btn:hover { color: var(--cream); background: rgba(255,255,255,0.04); }
+  .nav-btn.active { color: var(--scarlet-b); border-bottom-color: var(--scarlet); background: rgba(192,57,43,0.08); }
+
+  /* ── MAIN CONTENT ─────────────────────────────────────── */
+  .main-wrap { max-width: 900px; margin: 0 auto; padding: 0 16px 60px; }
+
+  /* ── PANEL SYSTEM ─────────────────────────────────────── */
+  .panel { display: none; }
+  .panel.active { display: block; }
+
+  /* ── DAY SELECTOR ─────────────────────────────────────── */
+  .day-selector {
+    display: flex;
+    gap: 8px;
+    padding: 16px 0 8px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .day-selector::-webkit-scrollbar { display: none; }
+  .day-btn {
+    flex-shrink: 0;
+    padding: 8px 16px;
+    border: 1px solid rgba(192,57,43,0.3);
+    border-radius: 4px;
+    background: var(--navy-card);
+    color: var(--silver);
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .day-btn:hover { border-color: var(--scarlet); color: var(--cream); }
+  .day-btn.active {
+    background: var(--scarlet);
+    border-color: var(--scarlet);
+    color: var(--white);
+  }
+  .day-label {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--white);
+    margin: 4px 0 2px;
+  }
+  .day-sublabel {
+    font-size: 0.75rem;
+    color: var(--silver);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  /* ── RACE CARD ────────────────────────────────────────── */
+  .race-card {
+    background: var(--navy-card);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-left: 4px solid var(--navy-lit);
+    border-radius: 6px;
+    margin-bottom: 12px;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+  .race-card:hover { border-left-color: var(--scarlet); }
+  .race-card.grade1 { border-left-color: var(--gold); }
+  .race-card.feature { border-left-color: var(--scarlet); background: linear-gradient(135deg, var(--navy-card), rgba(192,57,43,0.08)); }
+  .race-card.handicap { border-left-color: #5b8dd9; }
+
+  .race-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 16px 8px;
+    cursor: pointer;
+    flex-wrap: wrap;
+  }
+  .race-time {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--scarlet-b);
+    min-width: 48px;
+  }
+  .race-name {
+    flex: 1;
+    font-weight: 600;
+    color: var(--white);
+    font-size: 0.9rem;
+    line-height: 1.3;
+  }
+  .race-meta { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+  .badge {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    padding: 2px 7px;
+    border-radius: 2px;
+    text-transform: uppercase;
+  }
+  .badge-g1 { background: rgba(212,168,67,0.15); color: var(--gold); border: 1px solid rgba(212,168,67,0.3); }
+  .badge-g2 { background: rgba(90,140,217,0.15); color: #7eaff5; border: 1px solid rgba(90,140,217,0.3); }
+  .badge-hcap { background: rgba(91,141,217,0.1); color: #8eb0e8; border: 1px solid rgba(91,141,217,0.2); }
+  .badge-feature { background: linear-gradient(135deg, rgba(192,57,43,0.3), rgba(192,57,43,0.1)); color: var(--scarlet-b); border: 1px solid var(--scarlet); font-size: 0.7rem; }
+  .badge-dist { background: rgba(255,255,255,0.06); color: var(--silver); border: 1px solid rgba(255,255,255,0.1); }
+
+  .race-tips {
+    padding: 0 16px 14px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 8px;
+  }
+  .tip-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 4px;
+    padding: 10px 12px;
+    position: relative;
+  }
+  .tip-type {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .tip-nap .tip-type { color: var(--scarlet-b); }
+  .tip-nb .tip-type { color: #60a5fa; }
+  .tip-ew .tip-type { color: var(--gold); }
+  .tip-horse {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--white);
+    line-height: 1.2;
+  }
+  .tip-odds {
+    font-size: 0.78rem;
+    color: var(--gold-lt);
+    font-weight: 600;
+    margin-top: 2px;
+  }
+  .tip-trainer {
+    font-size: 0.72rem;
+    color: var(--silver);
+    margin-top: 1px;
+  }
+  .tip-reason {
+    font-size: 0.75rem;
+    color: var(--silver);
+    margin-top: 6px;
+    line-height: 1.4;
+    font-style: italic;
+  }
+  .conf-bar {
+    height: 3px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 2px;
+    margin-top: 8px;
+    overflow: hidden;
+  }
+  .conf-fill {
+    height: 100%;
+    border-radius: 2px;
+    background: linear-gradient(90deg, var(--scarlet-d), var(--scarlet-b));
+    transition: width 0.6s ease;
+  }
+  .conf-label {
+    font-size: 0.65rem;
+    color: var(--silver);
+    margin-top: 3px;
+    text-align: right;
+  }
+  .add-to-tracker {
+    position: absolute;
+    top: 8px; right: 8px;
+    background: none;
+    border: 1px solid rgba(255,255,255,0.15);
+    color: var(--silver);
+    font-size: 0.65rem;
+    padding: 2px 6px;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .add-to-tracker:hover { background: rgba(192,57,43,0.15); color: var(--scarlet-b); border-color: var(--scarlet); }
+  .add-to-tracker.added { background: rgba(192,57,43,0.15); color: var(--scarlet-b); border-color: var(--scarlet); }
+
+  /* ── GRAND NATIONAL SPECIAL PANEL ────────────────────── */
+  .gn-hero {
+    background: linear-gradient(135deg, var(--navy-mid), var(--scarlet-d) 150%);
+    border: 1px solid var(--scarlet);
+    border-radius: 8px;
+    padding: 20px;
+    margin: 16px 0;
+    text-align: center;
+  }
+  .gn-hero-title {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: var(--white);
+    line-height: 1.1;
+  }
+  .gn-hero-title span { color: var(--scarlet-b); }
+  .gn-hero-sub { color: var(--gold); font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; margin-top: 4px; }
+
+  .gn-runners-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 10px;
+    margin-top: 16px;
+  }
+  .runner-card {
+    background: var(--navy-card);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 6px;
+    padding: 12px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    cursor: pointer;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .runner-card:hover { border-color: var(--scarlet); background: rgba(192,57,43,0.06); }
+  .runner-card.favourite { border-color: var(--gold); }
+  .runner-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; }
+  .runner-name {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--white);
+    line-height: 1.2;
+  }
+  .runner-odds {
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: var(--gold-lt);
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .runner-odds.fav { color: var(--scarlet-b); }
+  .runner-trainer { font-size: 0.72rem; color: var(--silver); }
+  .runner-note { font-size: 0.72rem; color: var(--cream-dim); line-height: 1.4; margin-top: 4px; font-style: italic; }
+  .runner-tag {
+    display: inline-block;
+    font-size: 0.6rem;
+    padding: 1px 6px;
+    border-radius: 2px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-top: 2px;
+    width: fit-content;
+  }
+  .tag-prev { background: rgba(212,168,67,0.15); color: var(--gold); border: 1px solid rgba(212,168,67,0.3); }
+  .tag-irish { background: rgba(39,174,96,0.15); color: #4ade80; border: 1px solid rgba(39,174,96,0.3); }
+  .tag-brit { background: rgba(90,140,217,0.15); color: #7eaff5; border: 1px solid rgba(90,140,217,0.3); }
+  .tag-dark { background: rgba(230,126,34,0.15); color: #fb923c; border: 1px solid rgba(230,126,34,0.3); }
+
+  /* ── BET TRACKER ──────────────────────────────────────── */
+  .tracker-wrap { padding: 16px 0; }
+  .tracker-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; flex-wrap: wrap; gap: 8px; }
+  .tracker-title { font-family: var(--font-display); font-size: 1.3rem; font-weight: 700; color: var(--white); }
+  .tracker-clear {
+    background: none;
+    border: 1px solid rgba(192,57,43,0.4);
+    color: var(--scarlet-b);
+    font-size: 0.75rem;
+    padding: 5px 12px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .tracker-clear:hover { background: rgba(192,57,43,0.1); }
+  .tracker-empty { text-align: center; padding: 40px; color: var(--silver); font-size: 0.9rem; }
+  .tracker-item {
+    background: var(--navy-card);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 5px;
+    padding: 12px 14px;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .ti-horse { font-family: var(--font-display); font-weight: 700; color: var(--white); flex: 1; min-width: 120px; }
+  .ti-race { font-size: 0.75rem; color: var(--silver); }
+  .ti-odds { font-size: 0.85rem; color: var(--gold); font-weight: 600; }
+  .ti-type { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.08em; padding: 2px 7px; border-radius: 2px; }
+  .ti-nap { background: rgba(192,57,43,0.2); color: var(--scarlet-b); }
+  .ti-nb { background: rgba(96,165,250,0.15); color: #60a5fa; }
+  .ti-ew { background: rgba(212,168,67,0.15); color: var(--gold); }
+  .ti-remove {
+    background: none; border: none; color: var(--silver);
+    cursor: pointer; font-size: 1rem; padding: 0 4px;
+    transition: color 0.2s;
+  }
+  .ti-remove:hover { color: var(--scarlet-b); }
+  .tracker-summary {
+    background: var(--navy-mid);
+    border: 1px solid rgba(192,57,43,0.2);
+    border-radius: 5px;
+    padding: 14px 16px;
+    margin-top: 12px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .ts-item { text-align: center; }
+  .ts-val { display: block; font-family: var(--font-display); font-size: 1.3rem; font-weight: 700; color: var(--gold-lt); }
+  .ts-lbl { font-size: 0.68rem; color: var(--silver); letter-spacing: 0.08em; text-transform: uppercase; }
+
+  /* ── RESULTS PANEL ────────────────────────────────────── */
+  .results-notice {
+    background: var(--navy-card);
+    border: 1px solid rgba(212,168,67,0.3);
+    border-radius: 6px;
+    padding: 20px;
+    text-align: center;
+    margin: 16px 0;
+    color: var(--silver);
+  }
+  .results-notice strong { color: var(--gold); display: block; margin-bottom: 6px; font-family: var(--font-display); font-size: 1.1rem; }
+
+  .result-row {
+    background: var(--navy-card);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 5px;
+    padding: 10px 14px;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .rr-time { font-size: 0.78rem; color: var(--scarlet-b); font-weight: 700; min-width: 42px; }
+  .rr-race { flex: 1; font-size: 0.82rem; color: var(--cream-dim); min-width: 140px; }
+  .rr-winner { font-family: var(--font-display); font-weight: 700; color: var(--white); }
+  .rr-sp { font-size: 0.8rem; color: var(--gold); font-weight: 600; white-space: nowrap; }
+  .rr-pending { color: var(--silver); font-style: italic; font-size: 0.78rem; }
+
+  /* ── GUIDE PANEL ──────────────────────────────────────── */
+  .guide-section { margin: 20px 0; }
+  .guide-section h3 {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--gold-lt);
+    margin-bottom: 10px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid rgba(212,168,67,0.2);
+  }
+  .guide-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+  }
+  .guide-card {
+    background: var(--navy-card);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 5px;
+    padding: 12px 14px;
+  }
+  .guide-card-title { font-weight: 700; color: var(--white); font-size: 0.88rem; margin-bottom: 4px; }
+  .guide-card-body { font-size: 0.78rem; color: var(--silver); line-height: 1.5; }
+  .fence-list { list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 6px; }
+  .fence-item {
+    background: var(--navy-card);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 4px;
+    padding: 8px 12px;
+    font-size: 0.78rem;
+    display: flex; gap: 8px; align-items: baseline;
+  }
+  .fence-num { color: var(--scarlet-b); font-weight: 700; font-size: 0.85rem; min-width: 24px; }
+  .fence-name { color: var(--cream-dim); }
+  .fence-note { color: var(--silver); font-style: italic; font-size: 0.7rem; }
+  .stat-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 8px; }
+  .stat-card {
+    background: var(--navy-card);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 5px;
+    padding: 10px 12px;
+    text-align: center;
+  }
+  .stat-val { font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; color: var(--gold-lt); }
+  .stat-lbl { font-size: 0.68rem; color: var(--silver); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 2px; }
+
+  /* ── SECTION HEADERS ──────────────────────────────────── */
+  .section-hdr {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--white);
+    margin: 20px 0 4px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-hdr::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, var(--scarlet), transparent);
+  }
+  .section-sub { font-size: 0.78rem; color: var(--silver); margin-bottom: 14px; }
+
+  /* ── ODDS TOGGLE ──────────────────────────────────────── */
+  .odds-toggle {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    padding: 10px 0;
+  }
+  .odds-btn {
+    background: var(--navy-card);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: var(--silver);
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .odds-btn.active { background: var(--scarlet); border-color: var(--scarlet); color: var(--white); }
+  .odds-lbl { font-size: 0.72rem; color: var(--silver); }
+
+  /* ── PREVIOUS WINNERS TABLE ───────────────────────────── */
+  .prev-winners { width: 100%; border-collapse: collapse; font-size: 0.78rem; }
+  .prev-winners th { background: var(--navy-mid); color: var(--gold); font-weight: 600; padding: 8px 10px; text-align: left; border-bottom: 2px solid var(--scarlet); }
+  .prev-winners td { padding: 7px 10px; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--cream-dim); }
+  .prev-winners tr:nth-child(even) td { background: rgba(255,255,255,0.02); }
+  .prev-winners tr:hover td { background: rgba(192,57,43,0.06); }
+  .win-yr { color: var(--scarlet-b); font-weight: 700; }
+  .win-horse { color: var(--white); font-weight: 600; }
+
+  /* ── RESPONSIVE ───────────────────────────────────────── */
+  @media(max-width:600px) {
+    .race-tips { grid-template-columns: 1fr; }
+    .gn-runners-grid { grid-template-columns: 1fr 1fr; }
+    .guide-grid { grid-template-columns: 1fr; }
+    .stat-grid { grid-template-columns: 1fr 1fr; }
+  }
+
+  /* ── SCROLLBAR ────────────────────────────────────────── */
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: var(--navy); }
+  ::-webkit-scrollbar-thumb { background: var(--scarlet-d); border-radius: 3px; }
+
+  /* ── GLOBAL NAV (Festival Form Book) ───────────────────── */
+  .ffb-nav {
+    background: rgba(0,0,0,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(212,168,67,0.25);
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    height: 42px;
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    gap: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+  .ffb-brand {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #d4a843;
+    text-decoration: none;
+    white-space: nowrap;
+    padding-right: 14px;
+    border-right: 1px solid rgba(255,255,255,0.1);
+    margin-right: 10px;
+    letter-spacing: -0.01em;
+    flex-shrink: 0;
+  }
+  .ffb-links {
+    display: flex;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 0;
+    flex: 1;
+  }
+  .ffb-links::-webkit-scrollbar { display: none; }
+  .ffb-link {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 0 10px;
+    height: 42px;
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+    font-size: 0.72rem;
+    font-weight: 500;
+    white-space: nowrap;
+    border-bottom: 2px solid transparent;
+    transition: color 0.15s, border-color 0.15s;
+  }
+  .ffb-link:hover { color: rgba(255,255,255,0.85); }
+  .ffb-link.ffb-active { color: #d4a843; border-bottom-color: #d4a843; }
+  .ffb-dot { width: 5px; height: 5px; border-radius: 50%; flex-shrink: 0; }
+  .ffb-dot-archive  { background: #6b7280; }
+  .ffb-dot-upcoming { background: #38bdf8; }
+  .ffb-dot-shell    { background: #374151; border: 1px solid #6b7280; }
+  .ffb-dot-home     { background: #d4a843; }
+</style>
+</head>
+<body>
+
+<nav class="ffb-nav">
+  <a href="index.html" class="ffb-brand">🏇 Festival Form Book</a>
+  <div class="ffb-links">
+    <a href="index.html" class="ffb-link"><span class="ffb-dot ffb-dot-home"></span>Hub</a>
+    <a href="cheltenham-2026.html" class="ffb-link"><span class="ffb-dot ffb-dot-archive"></span>Cheltenham 2026</a>
+    <a href="grand-national-2026.html" class="ffb-link ffb-active"><span class="ffb-dot ffb-dot-upcoming"></span>Grand National 2026</a>
+    <a href="cheltenham-2027.html" class="ffb-link"><span class="ffb-dot ffb-dot-shell"></span>Cheltenham 2027</a>
+  </div>
+</nav>
+
+
+<!-- ── HEADER ──────────────────────────────────────────────── -->
+<div class="site-header">
+  <div class="header-badge">Aintree Racecourse · Liverpool</div>
+  <h1>🏇 Randox <span>Grand National</span> Festival</h1>
+  <p class="hero-dates">9 – 11 April 2026 · Opening Day · Ladies Day · Grand National Day</p>
+  <div class="hero-meta">
+    <div class="hero-stat"><span class="hero-stat-val">21</span><span class="hero-stat-lbl">Races</span></div>
+    <div class="hero-stat"><span class="hero-stat-val">3</span><span class="hero-stat-lbl">Days</span></div>
+    <div class="hero-stat"><span class="hero-stat-val">4pm Sat</span><span class="hero-stat-lbl">The National</span></div>
+    <div class="hero-stat"><span class="hero-stat-val">£1m+</span><span class="hero-stat-lbl">Prize Fund</span></div>
+    <div class="hero-stat"><span class="hero-stat-val">34</span><span class="hero-stat-lbl">Max Runners</span></div>
+  </div>
+  <a href="cheltenham-2026.html" class="header-link">📁 Cheltenham 2026 Archive →</a>
+</div>
+
+<!-- ── COUNTDOWN ────────────────────────────────────────────── -->
+<div class="countdown-bar">
+  Grand National Day: <span id="gn-countdown">—</span> &nbsp;|&nbsp; Saturday 11 April 2026 · 4:00pm · ITV1
+</div>
+
+<!-- ── NAV ───────────────────────────────────────────────────── -->
+<nav class="main-nav">
+  <button class="nav-btn active" onclick="showPanel('tips')">🏇 Tips</button>
+  <button class="nav-btn" onclick="showPanel('national')">🏆 The National</button>
+  <button class="nav-btn" onclick="showPanel('results')">✓ Results</button>
+  <button class="nav-btn" onclick="showPanel('tracker')">📋 My Tracker</button>
+  <button class="nav-btn" onclick="showPanel('guide')">📖 Course Guide</button>
+</nav>
+
+<div class="main-wrap">
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- TIPS PANEL -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<div id="panel-tips" class="panel active">
+
+  <div class="day-selector">
+    <button class="day-btn active" id="daybtn-0" onclick="switchDay(0,this)">Thu 9 Apr · Opening Day</button>
+    <button class="day-btn" id="daybtn-1" onclick="switchDay(1,this)">Fri 10 Apr · Ladies Day</button>
+    <button class="day-btn" id="daybtn-2" onclick="switchDay(2,this)">Sat 11 Apr · National Day</button>
+  </div>
+
+  <div class="odds-toggle">
+    <span class="odds-lbl">Odds:</span>
+    <button class="odds-btn active" id="oBtn-frac" onclick="setOdds('frac')">Fractional</button>
+    <button class="odds-btn" id="oBtn-dec" onclick="setOdds('dec')">Decimal</button>
+  </div>
+
+  <div id="tips-day-0"></div>
+  <div id="tips-day-1" style="display:none"></div>
+  <div id="tips-day-2" style="display:none"></div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- THE NATIONAL PANEL -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<div id="panel-national" class="panel">
+  <div class="gn-hero" style="margin-top:16px">
+    <div class="gn-hero-title">🏆 The <span>Grand National</span></div>
+    <div class="gn-hero-sub">Saturday 11 April · 4:00pm · 4m 2½f · 30 fences · Up to 34 runners</div>
+  </div>
+
+  <div class="section-hdr">2026 Ante-Post Market</div>
+  <p class="section-sub">Latest ante-post odds. Correct as of mid-March 2026 — will move significantly before declarations.</p>
+
+  <div class="gn-runners-grid" id="gn-runners-grid"></div>
+
+  <div class="section-hdr" style="margin-top:24px">Trainer Watch</div>
+  <div class="guide-grid">
+    <div class="guide-card">
+      <div class="guide-card-title">Willie Mullins 🇮🇪</div>
+      <div class="guide-card-body">Has won 3 of the last 4 Nationals. Entered 15 horses for 2026 including Nick Rockett, I Am Maximus and Captain Cody. His dominance makes opposition look thin on the ground.</div>
+    </div>
+    <div class="guide-card">
+      <div class="guide-card-title">Gordon Elliott 🇮🇪</div>
+      <div class="guide-card-body">Has 12 entries including Favori De Champdou, Firefox, and Gerri Colombe. Elliott finished 2nd, 3rd and 5th in 2025. Chasing a fourth GN to equal the trainer record.</div>
+    </div>
+    <div class="guide-card">
+      <div class="guide-card-title">Rebecca Curtis 🏴󠁧󠁢󠁷󠁬󠁿</div>
+      <div class="guide-card-body">Haiti Couleurs is her leading National hope — won both the Irish and Welsh Grand Nationals in 2025. Disappointing Gold Cup run at Cheltenham has eased her market position slightly.</div>
+    </div>
+    <div class="guide-card">
+      <div class="guide-card-title">Oliver Greenall / J Guerriero</div>
+      <div class="guide-card-body">Iroko was 4th in the 2025 National as favourite. Still only 8 years old and expected to improve. British challenge could go through this progressive chaser.</div>
+    </div>
+  </div>
+
+  <div class="section-hdr" style="margin-top:24px">Key Stats</div>
+  <div class="stat-grid">
+    <div class="stat-card"><div class="stat-val">8–9</div><div class="stat-lbl">Ideal winning age</div></div>
+    <div class="stat-card"><div class="stat-val">~20/1</div><div class="stat-lbl">Average winning SP</div></div>
+    <div class="stat-card"><div class="stat-val">34</div><div class="stat-lbl">Max runners</div></div>
+    <div class="stat-card"><div class="stat-val">30</div><div class="stat-lbl">Fences (16 unique)</div></div>
+    <div class="stat-card"><div class="stat-val">4m 2½f</div><div class="stat-lbl">Race distance</div></div>
+    <div class="stat-card"><div class="stat-val">6 of 7</div><div class="stat-lbl">Irish wins 2019–25</div></div>
+    <div class="stat-card"><div class="stat-val">11st 10lb</div><div class="stat-lbl">Haiti Couleurs' weight</div></div>
+    <div class="stat-card"><div class="stat-val">4pm</div><div class="stat-lbl">Saturday start time</div></div>
+  </div>
+
+  <div class="section-hdr" style="margin-top:24px">Recent Winners</div>
+  <table class="prev-winners">
+    <thead><tr><th>Year</th><th>Winner</th><th>SP</th><th>Trainer</th><th>Jockey</th><th>Age/Wt</th></tr></thead>
+    <tbody>
+      <tr><td class="win-yr">2025</td><td class="win-horse">Nick Rockett</td><td>33/1</td><td>W Mullins</td><td>P Mullins (Am)</td><td>9 / 10-7</td></tr>
+      <tr><td class="win-yr">2024</td><td class="win-horse">I Am Maximus</td><td>7/1F</td><td>W Mullins</td><td>P Townend</td><td>9 / 11-6</td></tr>
+      <tr><td class="win-yr">2023</td><td class="win-horse">Corach Rambler</td><td>8/1F</td><td>L Russell</td><td>D Fox</td><td>9 / 10-3</td></tr>
+      <tr><td class="win-yr">2022</td><td class="win-horse">Noble Yeats</td><td>50/1</td><td>E Harty</td><td>S Waley-Cohen (Am)</td><td>7 / 10-0</td></tr>
+      <tr><td class="win-yr">2021</td><td class="win-horse">Minella Times</td><td>11/1</td><td>H de Bromhead</td><td>R Blackmore</td><td>8 / 10-3</td></tr>
+      <tr><td class="win-yr">2019</td><td class="win-horse">Tiger Roll</td><td>4/1F</td><td>G Elliott</td><td>D Russell</td><td>9 / 11-5</td></tr>
+      <tr><td class="win-yr">2018</td><td class="win-horse">Tiger Roll</td><td>10/1</td><td>G Elliott</td><td>D Russell</td><td>8 / 10-13</td></tr>
+      <tr><td class="win-yr">2017</td><td class="win-horse">One For Arthur</td><td>14/1</td><td>L Russell</td><td>D Mullins</td><td>8 / 10-11</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- RESULTS PANEL -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<div id="panel-results" class="panel">
+  <div class="results-notice">
+    <strong>📅 Results will appear here from Thursday 9 April 2026</strong>
+    Results are entered after each race. Check back during and after each day of the Festival.
+  </div>
+
+  <div id="results-day-0">
+    <div class="section-hdr">Thursday 9 April — Opening Day</div>
+    <div id="results-0-rows"></div>
+  </div>
+  <div id="results-day-1" style="margin-top:20px">
+    <div class="section-hdr">Friday 10 April — Ladies Day</div>
+    <div id="results-1-rows"></div>
+  </div>
+  <div id="results-day-2" style="margin-top:20px">
+    <div class="section-hdr">Saturday 11 April — Grand National Day</div>
+    <div id="results-2-rows"></div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- TRACKER PANEL -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<div id="panel-tracker" class="panel">
+  <div class="tracker-wrap">
+    <div class="tracker-header">
+      <div class="tracker-title">📋 My Selections</div>
+      <button class="tracker-clear" onclick="clearTracker()">Clear All</button>
+    </div>
+    <div id="tracker-list"></div>
+    <div id="tracker-summary" class="tracker-summary" style="display:none"></div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- GUIDE PANEL -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<div id="panel-guide" class="panel">
+
+  <div class="guide-section">
+    <h3>About the Festival</h3>
+    <div class="guide-grid">
+      <div class="guide-card">
+        <div class="guide-card-title">Opening Day — Thursday</div>
+        <div class="guide-card-body">Four Grade 1s including the Manifesto Novices' Chase and William Hill Aintree Hurdle. Often considered the best day for pure racing quality. Gates open 11am.</div>
+      </div>
+      <div class="guide-card">
+        <div class="guide-card-title">Ladies Day — Friday</div>
+        <div class="guide-card-body">The Melling Chase (Grade 1) and Topham Handicap Chase over the National fences. Famous for fashion — the Style Award is a major draw alongside top-class racing.</div>
+      </div>
+      <div class="guide-card">
+        <div class="guide-card-title">Grand National Day — Saturday</div>
+        <div class="guide-card-body">Seven races culminating in the 4pm Grand National itself. The Liverpool Hurdle (Grade 1) and Mersey Novices' Hurdle are supporting highlights. Gates open 10am.</div>
+      </div>
+      <div class="guide-card">
+        <div class="guide-card-title">Getting There</div>
+        <div class="guide-card-body">Aintree Racecourse, L9 5AS — 1 mile from the M57/M58. Merseyrail Aintree station is a 5-min walk. Car parks must be booked in advance and open at 6am.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="guide-section">
+    <h3>The Grand National Fences</h3>
+    <p style="font-size:0.78rem;color:var(--silver);margin-bottom:10px">The National is run over two circuits — fences 1–16, Valentine's, then the Chair, Water Jump, then back around. 30 fences in total, 16 unique.</p>
+    <ul class="fence-list" id="fence-list"></ul>
+  </div>
+
+  <div class="guide-section" style="margin-top:20px">
+    <h3>Betting Guide</h3>
+    <div class="guide-grid">
+      <div class="guide-card">
+        <div class="guide-card-title">Each-Way Betting</div>
+        <div class="guide-card-body">Most bookmakers pay 5 places (1/4 odds) for the Grand National. With 34 runners, this represents excellent value — an each-way bet means you're paid if your horse finishes top 5.</div>
+      </div>
+      <div class="guide-card">
+        <div class="guide-card-title">Non-Runner Money Back</div>
+        <div class="guide-card-body">Many bookmakers offer NRMB for the National — if your selection is a non-runner, your stake is returned. Check individual bookie terms before placing ante-post bets.</div>
+      </div>
+      <div class="guide-card">
+        <div class="guide-card-title">Best Odds Guaranteed</div>
+        <div class="guide-card-body">BOG is widely offered on the National. Place your bet at current odds and if the SP is bigger, you're paid the SP. Place bets on the morning of the race for best value.</div>
+      </div>
+      <div class="guide-card">
+        <div class="guide-card-title">Trends to Note</div>
+        <div class="guide-card-body">8–9 year olds dominate. Average winning SP ~20/1. Favourites rarely win — only 6 in the last 25 years. Irish-trained horses have won 6 of the last 7. Weight under 11st is preferred.</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</div><!-- /.main-wrap -->
+
+<script>
+// ════════════════════════════════════════════════════════════════
+// DATA — RACE SCHEDULE
+// ════════════════════════════════════════════════════════════════
+const RACE_SCHEDULE = [
+  // Day 0 — Thursday Opening Day
+  { time:'13:45', name:"Manifesto Novices' Chase",                            grade:'Grade 1',         dist:'2m 4f', type:'grade1' },
+  { time:'14:20', name:"Anniversary 4-Y-O Juvenile Hurdle",                   grade:'Grade 1',         dist:'2m 1f', type:'grade1' },
+  { time:'14:55', name:"Golden Miller Chronograph Bowl Chase",                 grade:'Grade 1',         dist:'3m 1f', type:'grade1' },
+  { time:'15:30', name:"William Hill Aintree Hurdle",                         grade:'Grade 1',         dist:'2m 4f', type:'grade1' },
+  { time:'16:05', name:"Foxhunters' Open Hunters' Chase",                     grade:'Hunters',         dist:'2m 5f', type:'hunters' },
+  { time:'16:40', name:"Red Rum Handicap Chase",                              grade:'Premier H\'cap',  dist:'2m',    type:'handicap' },
+  { time:'17:15', name:"Nickel Coin Mares' NH Flat Race",                     grade:'Grade 2',         dist:'2m 1f', type:'grade2' },
+  // Day 1 — Friday Ladies Day
+  { time:'13:45', name:"Blennerhassett Mildmay Novices' Chase",               grade:'Grade 1',         dist:'3m 1f', type:'grade1' },
+  { time:'14:20', name:"William Hill Handicap Hurdle",                        grade:'Premier H\'cap',  dist:'2m 4f', type:'handicap' },
+  { time:'14:55', name:"TrustATrader Top Novices' Hurdle",                    grade:'Grade 1',         dist:'2m ½f', type:'grade1' },
+  { time:'15:30', name:"Melling Chase",                                       grade:'Grade 1',         dist:'2m 4f', type:'grade1' },
+  { time:'16:05', name:"Topham Handicap Chase",                               grade:'Premier H\'cap',  dist:'2m 5f', type:'handicap' },
+  { time:'16:40', name:"Sefton Novices' Hurdle",                              grade:'Grade 1',         dist:'3m ½f', type:'grade1' },
+  { time:'17:15', name:"Hallgarten Handicap Hurdle (Cond/Am)",                grade:'Class 2',         dist:'2m ½f', type:'amateur' },
+  // Day 2 — Saturday National Day
+  { time:'13:20', name:"William Hill Top Price Guarantee Handicap Hurdle",    grade:'Premier H\'cap',  dist:'3m ½f', type:'handicap' },
+  { time:'13:55', name:"Mersey Novices' Hurdle",                              grade:'Grade 1',         dist:'2m 4f', type:'grade1' },
+  { time:'14:30', name:"Freebooter Handicap Chase",                           grade:'Premier H\'cap',  dist:'3m 1f', type:'handicap' },
+  { time:'15:05', name:"Ivy Liverpool Hurdle",                                grade:'Grade 1',         dist:'3m ½f', type:'grade1' },
+  { time:'16:00', name:"RANDOX GRAND NATIONAL",                               grade:'Premier H\'cap',  dist:'4m 2½f', type:'feature' },
+  { time:'17:00', name:"Maghull Novices' Chase",                              grade:'Grade 1',         dist:'2m',    type:'grade1' },
+  { time:'17:35', name:"NHStallions.co.uk NH Flat Race",                      grade:'Grade 2',         dist:'2m 1f', type:'grade2' },
+];
+
+// ════════════════════════════════════════════════════════════════
+// DATA — TIPS
+// ════════════════════════════════════════════════════════════════
+// Tips keyed 'HH:MM-dayIdx' (0=Thu, 1=Fri, 2=Sat)
+const TIPS = {
+  // ── THURSDAY ────────────────────────────────────────────────
+  '13:45-0': {
+    nap: { horse:'TBC', odds:'0/1', dec:1.0, trainer:'TBC', conf:0, reason:'Tips to be added ahead of the festival — Manifesto Novices Chase 2026.' }
+  },
+  '14:20-0': {
+    nap: { horse:'TBC', odds:'0/1', dec:1.0, trainer:'TBC', conf:0, reason:'Tips to be added — Anniversary Juvenile Hurdle 2026.' }
+  },
+  '14:55-0': {
+    nap: { horse:'TBC', odds:'0/1', dec:1.0, trainer:'TBC', conf:0, reason:'Tips to be added — Golden Miller Bowl 2026.' }
+  },
+  '15:30-0': {
+    nap: { horse:'TBC', odds:'0/1', dec:1.0, trainer:'TBC', conf:0, reason:'Tips to be added — Aintree Hurdle 2026.' }
+  },
+  '16:05-0': {
+    nap: { horse:'TBC', odds:'0/1', dec:1.0, trainer:'TBC', conf:0, reason:"Tips to be added — Foxhunters' 2026." }
+  },
+  '16:40-0': {
+    nap: { horse:'TBC', odds:'0/1', dec:1.0, trainer:'TBC', conf:0, reason:'Tips to be added — Red Rum Handicap Chase 2026.' }
+  },
+  '17:15-0': {
+    nap: { horse:'TBC', odds:'0/1', dec:1.0, trainer:'TBC', conf:0, reason:"Tips to be added — Mares' NH Flat 2026." }
+  },
+  // ── FRIDAY ──────────────────────────────────────────────────
+  '13:45-1': {
+    nap: { horse:'TBC', odds:'0/1', dec:1.0, trainer:'TBC', conf:0, reason:'Tips to be added — Mildmay Novices Chase 2026.' }
+  },
+  '14:20-1': {
+    nap: { horse:'TBC', odds:'0/1', dec:1.0, trainer:'TBC', conf:0, reason:'Tips to be added — William Hill Handicap Hurdle 2026.' }
+  },
+  '14:55-1': {
+    nap: { horse:'TBC', odds:'0/1', dec:1.0, trainer:'TBC', conf:0, reason:"Tips to be added — Top Novices' Hurdle 2026." }
+  },
+  '15:30-1': {
+    nap: { horse:'TBC', odds:'0/1', dec:1.0, trainer:'TBC', conf:0, reason:'Tips to be added — Melling Chase 2026.' }
+  },
+  '16:05-1': {
+    nap: { horse:'TBC', odds:'0/1', dec:1.0, trainer:'TBC', conf:0, reason:'Tips to be added — Topham Handicap Chase 2026.' }
+  },
+  '16:40-1': {
+    nap: { horse:'TBC', odds:'0/1', dec:1.0, trainer:'TBC', conf:0, reason:"Tips to be added — Sefton Novices' Hurdle 2026." }
+  },
+  '17:15-1': {
+    nap: { horse:'TBC', odds:'0/1', dec:1.0, trainer:'TBC', conf:0, reason:'Tips to be added — Conditional/Amateur Hurdle 2026.' }
+  },
+  // ── SATURDAY ────────────────────────────────────────────────
+  '13:20-2': {
+    nap: { horse:'TBC', odds:'0/1', dec:1.0, trainer:'TBC', conf:0, reason:'Tips to be added — WH Handicap Hurdle 2026.' }
+  },
+  '13:55-2': {
+    nap: { horse:'TBC', odds:'0/1', dec:1.0, trainer:'TBC', conf:0, reason:"Tips to be added — Mersey Novices' Hurdle 2026." }
+  },
+  '14:30-2': {
+    nap: { horse:'TBC', odds:'0/1', dec:1.0, trainer:'TBC', conf:0, reason:'Tips to be added — Freebooter Handicap Chase 2026.' }
+  },
+  '15:05-2': {
+    nap: { horse:'TBC', odds:'0/1', dec:1.0, trainer:'TBC', conf:0, reason:'Tips to be added — Liverpool Hurdle 2026.' }
+  },
+  '16:00-2': {
+    nap: { horse:'I Am Maximus',    odds:'10/1',  dec:11.0, trainer:'W P Mullins 🇮🇪', conf:68,
+           reason:"2024 Grand National winner at 7/1, 2nd in 2025. History suggests back-to-back winners are rare but I Am Maximus has the quality. Proven over the fences and likely to run well fresh. The market leader." },
+    nb:  { horse:'Iroko',           odds:'12/1',  dec:13.0, trainer:'O Greenall / J Guerriero', conf:62,
+           reason:"4th in the 2025 National as favourite. Only 8 years old, the ideal age for improvement. British-trained and expected to arrive here from Cheltenham in fine fettle. Leading British hope." },
+    ew:  { horse:'Grangeclare West',odds:'12/1',  dec:13.0, trainer:'W P Mullins 🇮🇪', conf:55,
+           reason:"3rd in the 2025 National at 33/1. Already proven over these fences and likely to appreciate the trip. Progressive and well-handicapped — excellent each-way value at double-figure odds." },
+  },
+  '17:00-2': {
+    nap: { horse:'TBC', odds:'0/1', dec:1.0, trainer:'TBC', conf:0, reason:"Tips to be added — Maghull Novices' Chase 2026." }
+  },
+  '17:35-2': {
+    nap: { horse:'TBC', odds:'0/1', dec:1.0, trainer:'TBC', conf:0, reason:'Tips to be added — NH Flat Race 2026.' }
+  },
+};
+
+// ════════════════════════════════════════════════════════════════
+// DATA — CONFIRMED RESULTS
+// ════════════════════════════════════════════════════════════════
+const RESULTS = {
+  '13:45-0': { winner: null, second: null, third: null },
+  '14:20-0': { winner: null, second: null, third: null },
+  '14:55-0': { winner: null, second: null, third: null },
+  '15:30-0': { winner: null, second: null, third: null },
+  '16:05-0': { winner: null, second: null, third: null },
+  '16:40-0': { winner: null, second: null, third: null },
+  '17:15-0': { winner: null, second: null, third: null },
+  '13:45-1': { winner: null, second: null, third: null },
+  '14:20-1': { winner: null, second: null, third: null },
+  '14:55-1': { winner: null, second: null, third: null },
+  '15:30-1': { winner: null, second: null, third: null },
+  '16:05-1': { winner: null, second: null, third: null },
+  '16:40-1': { winner: null, second: null, third: null },
+  '17:15-1': { winner: null, second: null, third: null },
+  '13:20-2': { winner: null, second: null, third: null },
+  '13:55-2': { winner: null, second: null, third: null },
+  '14:30-2': { winner: null, second: null, third: null },
+  '15:05-2': { winner: null, second: null, third: null },
+  '16:00-2': { winner: null, second: null, third: null },
+  '17:00-2': { winner: null, second: null, third: null },
+  '17:35-2': { winner: null, second: null, third: null },
+};
+
+// ════════════════════════════════════════════════════════════════
+// DATA — GRAND NATIONAL RUNNERS
+// ════════════════════════════════════════════════════════════════
+const GN_RUNNERS = [
+  { name:'I Am Maximus',      odds:'10/1',  trainer:'W P Mullins 🇮🇪',  country:'ireland', tag:'prev',  note:'2024 National winner. 2nd in 2025 carrying top weight. Has run in two Nationals and placed both times. The quality horse in the field.' },
+  { name:'Iroko',             odds:'12/1',  trainer:'Greenall/Guerriero', country:'britain', tag:'brit',  note:'4th as favourite in 2025. Only 8. Bypassed Kelso to go straight to Cheltenham then the National. Course experience counts.' },
+  { name:'Grangeclare West',  odds:'12/1',  trainer:'W P Mullins 🇮🇪',  country:'ireland', tag:'prev',  note:'3rd in the 2025 National at 33/1. Already proven over these fences. Each-way banker at 12/1.' },
+  { name:'Jagwar',            odds:'14/1',  trainer:'O Greenall / J Guerriero', country:'britain', tag:'dark', note:"Won the Ultima at Cheltenham 2026. Progressive 7-year-old chaser. Connections targeting the National — could be the year's surprise." },
+  { name:'Johnnywho',         odds:'16/1',  trainer:"Jonjo O'Neill",      country:'britain', tag:'dark',  note:'Won the Ultima Handicap at Cheltenham 2026 at 18/1. Stamina in abundance. Old-fashioned National type.' },
+  { name:'Nick Rockett',      odds:'25/1',  trainer:'W P Mullins 🇮🇪',  country:'ireland', tag:'prev',  note:'2025 National winner at 33/1 for Patrick Mullins. Defending champion — has not run since Aintree. Fitness is the question.' },
+  { name:'Haiti Couleurs',    odds:'25/1',  trainer:'R Curtis 🏴󠁧󠁢󠁷󠁬󠁿',   country:'britain', tag:'dark',  note:'Won both the 2025 Irish and Welsh Grand Nationals. Disappointing 2026 Gold Cup dampens enthusiasm but the staying form is there.' },
+  { name:'Monty\'s Star',     odds:'20/1',  trainer:'TBC',                country:'ireland', tag:'dark',  note:"One of the 'Five To Follow' for 2026. Progressive staying chaser with improving profile. Could make the frame." },
+  { name:'Favori De Champdou',odds:'33/1',  trainer:'G Elliott 🇮🇪',     country:'ireland', tag:'irish', note:"2nd in the 2026 Cross Country at Cheltenham. Proven stayer who loves a trip. Elliott's best National hope." },
+  { name:'Gerri Colombe',     odds:'33/1',  trainer:'G Elliott 🇮🇪',     country:'ireland', tag:'irish', note:'Talented chaser who has run well at Grade 1 level. Elliott hoping he can translate that ability to the unique National test.' },
+  { name:'Final Orders',      odds:'25/1',  trainer:'G Cromwell 🇮🇪',    country:'ireland', tag:'irish', note:'Won the 2026 Cross Country Chase at Cheltenham at 7/1. Proven stamina and jumping. Cromwell regularly targets Aintree.' },
+  { name:'Spillane\'s Tower', odds:'33/1',  trainer:'J J Mangan 🇮🇪',    country:'ireland', tag:'dark',  note:'Won the 2026 Cotswold Chase and is entered in the Gold Cup. JP McManus horse — if he runs in the National, respect him.' },
+];
+
+// ════════════════════════════════════════════════════════════════
+// DATA — FENCES
+// ════════════════════════════════════════════════════════════════
+const FENCES = [
+  { num:1,  name:'Fence 1',       note:'Plain — 4ft 6in' },
+  { num:2,  name:'Fence 2',       note:'Plain — 4ft 7in' },
+  { num:3,  name:'Fence 3',       note:'Open ditch — 5ft 2in' },
+  { num:4,  name:'Fence 4 / The Chair (2nd circuit)', note:'4ft 6in, ditch, approached from the water jump' },
+  { num:5,  name:'Becher\'s Brook', note:'The most famous — severe landing drop, 6ft 2in' },
+  { num:6,  name:'Foinavon',      note:'Named after the 100/1 1967 winner. Notorious pile-up fence.' },
+  { num:7,  name:'Canal Turn',    note:'90° left turn immediately on landing. Very technical.' },
+  { num:8,  name:'Valentine\'s Brook', note:'Brook on landing side — named after Valentine, 1840' },
+  { num:9,  name:'Fence 9–14',    note:'Plain fences building toward the stand' },
+  { num:15, name:'The Chair',     note:'Tallest fence at 5ft 2in with a 6ft ditch. Only jumped once.' },
+  { num:16, name:'Water Jump',    note:'12ft wide water. Only jumped once, in front of the stands.' },
+  { num:17, name:'Back to Becher\'s', note:'2nd circuit begins — fences 1–16 repeated' },
+  { num:30, name:'The Elbow',     note:'Final bend — horses swing right with just 1f to the finish' },
+];
+
+// ════════════════════════════════════════════════════════════════
+// STATE
+// ════════════════════════════════════════════════════════════════
+let currentDay = 0;
+let oddsMode = 'frac';
+let tracker = JSON.parse(localStorage.getItem('gnTracker') || '[]');
+
+// ════════════════════════════════════════════════════════════════
+// INIT
+// ════════════════════════════════════════════════════════════════
+document.addEventListener('DOMContentLoaded', () => {
+  startCountdown();
+  renderAllDays();
+  renderResults();
+  renderTracker();
+  renderGNRunners();
+  renderFences();
+  showDayTips(0);
+});
+
+// ════════════════════════════════════════════════════════════════
+// COUNTDOWN
+// ════════════════════════════════════════════════════════════════
+function startCountdown() {
+  const gnDate = new Date('2026-04-11T16:00:00');
+  function update() {
+    const now = new Date();
+    const diff = gnDate - now;
+    if (diff <= 0) { document.getElementById('gn-countdown').textContent = 'RACE IS ON! 🏇'; return; }
+    const d = Math.floor(diff / 86400000);
+    const h = Math.floor((diff % 86400000) / 3600000);
+    const m = Math.floor((diff % 3600000) / 60000);
+    document.getElementById('gn-countdown').textContent = `${d}d ${h}h ${m}m`;
+  }
+  update();
+  setInterval(update, 60000);
+}
+
+// ════════════════════════════════════════════════════════════════
+// RENDER TIPS
+// ════════════════════════════════════════════════════════════════
+function renderAllDays() {
+  const dayRanges = [[0,6],[7,13],[14,20]];
+  dayRanges.forEach((range, di) => {
+    const container = document.getElementById(`tips-day-${di}`);
+    const dayNames = ['Thursday 9 April — Opening Day','Friday 10 April — Ladies Day','Saturday 11 April — Grand National Day'];
+    let html = `<div class="day-label">${dayNames[di]}</div>`;
+    for (let i = range[0]; i <= range[1]; i++) {
+      const race = RACE_SCHEDULE[i];
+      const key = `${race.time}-${di}`;
+      const tips = TIPS[key] || {};
+      const isFeature = race.type === 'feature';
+      const cardClass = isFeature ? 'race-card feature' : race.type === 'grade1' ? 'race-card grade1' : race.type === 'handicap' ? 'race-card handicap' : 'race-card';
+      const badgeClass = race.grade.startsWith('Grade 1') ? 'badge badge-g1' : race.grade.startsWith('Grade 2') ? 'badge badge-g2' : race.grade.includes('H\'cap') || race.grade.includes('Handicap') ? 'badge badge-hcap' : 'badge badge-dist';
+      const featureBadge = isFeature ? `<span class="badge badge-feature">⭐ THE NATIONAL</span>` : '';
+
+      html += `<div class="${cardClass}">
+        <div class="race-header">
+          <span class="race-time">${race.time}</span>
+          <span class="race-name">${race.name}</span>
+          <span class="race-meta">
+            ${featureBadge}
+            <span class="${badgeClass}">${race.grade}</span>
+            <span class="badge badge-dist">${race.dist}</span>
+          </span>
+        </div>
+        <div class="race-tips">
+          ${renderTipCard(tips.nap,'nap',key)}
+          ${tips.nb  ? renderTipCard(tips.nb,'nb',key)  : ''}
+          ${tips.ew  ? renderTipCard(tips.ew,'ew',key)  : ''}
+        </div>
+      </div>`;
+    }
+    container.innerHTML = html;
+  });
+}
+
+function renderTipCard(tip, type, key) {
+  if (!tip) return '';
+  const isTbc = tip.horse === 'TBC';
+  const frac = tip.odds;
+  const dec = tip.dec ? tip.dec.toFixed(2) : '—';
+  const oddsDisplay = oddsMode === 'frac' ? frac : dec;
+  const typeLabel = type === 'nap' ? '⭐ NAP' : type === 'nb' ? '🔵 NB' : '💰 E/W';
+  const typeClass = `tip-card tip-${type}`;
+  return `<div class="${typeClass}">
+    ${!isTbc ? `<button class="add-to-tracker ${isTracked(key,tip.horse)?'added':''}" onclick="toggleTrack('${key}','${tip.horse}','${frac}','${type}','${RACE_SCHEDULE.find(r=>r.time===key.split('-')[0])?.name||''}')">
+      ${isTracked(key,tip.horse)?'✓ Added':'+ Track'}
+    </button>` : ''}
+    <div class="tip-type">${typeLabel}</div>
+    <div class="tip-horse">${tip.horse}</div>
+    ${!isTbc ? `<div class="tip-odds">${oddsDisplay} · ${tip.trainer}</div>` : ''}
+    <div class="tip-reason">${tip.reason}</div>
+    ${!isTbc && tip.conf > 0 ? `<div class="conf-bar"><div class="conf-fill" style="width:${tip.conf}%"></div></div>
+    <div class="conf-label">${tip.conf}% confidence</div>` : ''}
+  </div>`;
+}
+
+function setOdds(mode) {
+  oddsMode = mode;
+  document.getElementById('oBtn-frac').classList.toggle('active', mode === 'frac');
+  document.getElementById('oBtn-dec').classList.toggle('active', mode === 'dec');
+  renderAllDays();
+  showDayTips(currentDay);
+}
+
+// ════════════════════════════════════════════════════════════════
+// DAY SWITCHING
+// ════════════════════════════════════════════════════════════════
+function switchDay(dayIdx, btn) {
+  currentDay = dayIdx;
+  document.querySelectorAll('.day-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  showDayTips(dayIdx);
+}
+
+function showDayTips(dayIdx) {
+  [0,1,2].forEach(i => {
+    document.getElementById(`tips-day-${i}`).style.display = i === dayIdx ? 'block' : 'none';
+  });
+}
+
+// ════════════════════════════════════════════════════════════════
+// RESULTS RENDER
+// ════════════════════════════════════════════════════════════════
+function renderResults() {
+  const dayRanges = [[0,6],[7,13],[14,20]];
+  dayRanges.forEach((range, di) => {
+    let html = '';
+    for (let i = range[0]; i <= range[1]; i++) {
+      const race = RACE_SCHEDULE[i];
+      const key = `${race.time}-${di}`;
+      const res = RESULTS[key];
+      const isFeature = race.type === 'feature';
+      html += `<div class="result-row" ${isFeature ? 'style="border-color:rgba(192,57,43,0.4)"' : ''}>
+        <span class="rr-time">${race.time}</span>
+        <span class="rr-race">${race.name}</span>
+        ${res && res.winner
+          ? `<span class="rr-winner">${res.winner}</span>`
+          : `<span class="rr-pending">Pending</span>`
+        }
+        ${res && res.sp ? `<span class="rr-sp">${res.sp}</span>` : ''}
+      </div>`;
+    }
+    document.getElementById(`results-${di}-rows`).innerHTML = html;
+  });
+}
+
+// ════════════════════════════════════════════════════════════════
+// GRAND NATIONAL RUNNERS
+// ════════════════════════════════════════════════════════════════
+function renderGNRunners() {
+  const grid = document.getElementById('gn-runners-grid');
+  grid.innerHTML = GN_RUNNERS.map(r => {
+    const tagMap = { prev:'tag-prev', irish:'tag-irish', brit:'tag-brit', dark:'tag-dark' };
+    const tagLbl = { prev:'Previous Winner', irish:'Irish', brit:'British', dark:'Dark Horse' };
+    return `<div class="runner-card ${r.tag==='prev'?'favourite':''}">
+      <div class="runner-header">
+        <div class="runner-name">${r.name}</div>
+        <div class="runner-odds ${r.odds==='10/1'?'fav':''}">${r.odds}</div>
+      </div>
+      <div class="runner-trainer">${r.trainer}</div>
+      <div class="runner-note">${r.note}</div>
+      <span class="runner-tag ${tagMap[r.tag]}">${tagLbl[r.tag]}</span>
+    </div>`;
+  }).join('');
+}
+
+// ════════════════════════════════════════════════════════════════
+// FENCES
+// ════════════════════════════════════════════════════════════════
+function renderFences() {
+  document.getElementById('fence-list').innerHTML = FENCES.map(f =>
+    `<li class="fence-item">
+      <span class="fence-num">${f.num}</span>
+      <span><span class="fence-name">${f.name}</span><br><span class="fence-note">${f.note}</span></span>
+    </li>`
+  ).join('');
+}
+
+// ════════════════════════════════════════════════════════════════
+// TRACKER
+// ════════════════════════════════════════════════════════════════
+function isTracked(key, horse) {
+  return tracker.some(t => t.key === key && t.horse === horse);
+}
+
+function toggleTrack(key, horse, odds, type, raceName) {
+  const idx = tracker.findIndex(t => t.key === key && t.horse === horse);
+  if (idx >= 0) {
+    tracker.splice(idx, 1);
+  } else {
+    tracker.push({ key, horse, odds, type, raceName });
+  }
+  localStorage.setItem('gnTracker', JSON.stringify(tracker));
+  renderAllDays();
+  renderTracker();
+  showDayTips(currentDay);
+}
+
+function clearTracker() {
+  tracker = [];
+  localStorage.removeItem('gnTracker');
+  renderAllDays();
+  renderTracker();
+  showDayTips(currentDay);
+}
+
+function renderTracker() {
+  const list = document.getElementById('tracker-list');
+  const summary = document.getElementById('tracker-summary');
+  if (!tracker.length) {
+    list.innerHTML = `<div class="tracker-empty">No selections yet.<br><small>Use "+ Track" on any tip card to add selections here.</small></div>`;
+    summary.style.display = 'none';
+    return;
+  }
+  list.innerHTML = tracker.map((t, i) => `
+    <div class="tracker-item">
+      <div>
+        <div class="ti-horse">${t.horse}</div>
+        <div class="ti-race">${t.raceName}</div>
+      </div>
+      <span class="ti-type ti-${t.type}">${t.type.toUpperCase()}</span>
+      <span class="ti-odds">${t.odds}</span>
+      <button class="ti-remove" onclick="removeTrackItem(${i})">✕</button>
+    </div>`
+  ).join('');
+  summary.style.display = 'flex';
+  summary.innerHTML = `
+    <div class="ts-item"><span class="ts-val">${tracker.length}</span><span class="ts-lbl">Selections</span></div>
+    <div class="ts-item"><span class="ts-val">${tracker.filter(t=>t.type==='nap').length}</span><span class="ts-lbl">NAPs</span></div>
+    <div class="ts-item"><span class="ts-val">${tracker.filter(t=>t.type==='ew').length}</span><span class="ts-lbl">E/W Bets</span></div>
+  `;
+}
+
+function removeTrackItem(i) {
+  tracker.splice(i, 1);
+  localStorage.setItem('gnTracker', JSON.stringify(tracker));
+  renderAllDays();
+  renderTracker();
+  showDayTips(currentDay);
+}
+
+// ════════════════════════════════════════════════════════════════
+// PANEL SWITCHING
+// ════════════════════════════════════════════════════════════════
+function showPanel(name) {
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(`panel-${name}`).classList.add('active');
+  const idx = ['tips','national','results','tracker','guide'].indexOf(name);
+  document.querySelectorAll('.nav-btn')[idx]?.classList.add('active');
+}
+</script>
+</body>
+</html>
