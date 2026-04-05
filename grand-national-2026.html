@@ -6,6 +6,7 @@
 <title>🏇 Grand National Festival 2026 – Expert Tips & Guide</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+<script src="js/racing-api.js" defer></script>
 <style>
   /* ── TOKENS ───────────────────────────────────────────── */
   :root {
@@ -760,6 +761,7 @@
   <div class="section-hdr">2026 Ante-Post Market</div>
   <p class="section-sub">Latest ante-post odds. Correct as of mid-March 2026 — will move significantly before declarations.</p>
 
+  <div id="api-runners-banner" style="display:none;margin-bottom:10px"></div>
   <div class="gn-runners-grid" id="gn-runners-grid"></div>
 
   <div class="section-hdr" style="margin-top:24px">Trainer Watch</div>
@@ -814,6 +816,9 @@
 <!-- RESULTS PANEL -->
 <!-- ════════════════════════════════════════════════════════════ -->
 <div id="panel-results" class="panel">
+  <div id="api-results-banner" style="display:none;margin-bottom:10px"></div>
+  <div id="live-results-container"></div>
+
   <div class="results-notice">
     <strong>📅 Results will appear here from Thursday 9 April 2026</strong>
     Results are entered after each race. Check back during and after each day of the Festival.
@@ -1181,6 +1186,7 @@ document.addEventListener('DOMContentLoaded', () => {
   renderGNRunners();
   renderFences();
   showDayTips(0);
+  initRacingAPI();
 });
 
 // ════════════════════════════════════════════════════════════════
@@ -1415,6 +1421,128 @@ function showPanel(name) {
   document.getElementById(`panel-${name}`).classList.add('active');
   const idx = ['tips','national','results','tracker','guide'].indexOf(name);
   document.querySelectorAll('.nav-btn')[idx]?.classList.add('active');
+}
+
+// ════════════════════════════════════════════════════════════════
+// RACING API — LIVE DATA
+// ════════════════════════════════════════════════════════════════
+let _racingAPI = null;
+let _resultsInterval = null;
+
+function showBanner(id, msg, type) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  const colours = {
+    info:    'background:#1a2d55;border:1px solid #243660;color:#a0aec0',
+    success: 'background:#1a3a2a;border:1px solid #27ae60;color:#a0d4b0',
+    warning: 'background:#2a1f0a;border:1px solid #e67e22;color:#f0c86a',
+    error:   'background:#2a0e0e;border:1px solid #c0392b;color:#f08080',
+  };
+  el.style.cssText = `display:block;padding:8px 12px;border-radius:4px;font-size:0.78rem;letter-spacing:0.03em;${colours[type] || colours.info}`;
+  el.textContent = msg;
+}
+
+function hideBanner(id) {
+  const el = document.getElementById(id);
+  if (el) el.style.display = 'none';
+}
+
+async function loadLiveRunners() {
+  if (!_racingAPI) return;
+  try {
+    const races = await _racingAPI.getRacecardsForCourse('Aintree');
+    if (!races || races.length === 0) {
+      showBanner('api-runners-banner', '📡 Live racecard data unavailable — showing ante-post market below.', 'info');
+      return;
+    }
+    // Find the Grand National race (16:00 or name match)
+    const gn = races.find(r =>
+      (r.time || r.off_time || '').includes('16:') ||
+      (r.race_name || r.name || '').toLowerCase().includes('national')
+    );
+    if (!gn) {
+      showBanner('api-runners-banner', '📡 Grand National racecard not yet available — showing ante-post market.', 'info');
+      return;
+    }
+    const runners = (gn.runners || gn.horses || []).map(RacingAPI.formatRunner);
+    if (runners.length === 0) {
+      showBanner('api-runners-banner', '📡 Runners not yet declared — showing ante-post market below.', 'info');
+      return;
+    }
+    // Render live runners into the grid, replacing static content
+    const grid = document.getElementById('gn-runners-grid');
+    if (!grid) return;
+    grid.innerHTML = runners.map(r => `
+      <div class="runner-card">
+        <div class="runner-number">${r.number || '–'}</div>
+        <div class="runner-info">
+          <div class="runner-name">${r.name}</div>
+          <div class="runner-meta">${r.trainer ? `T: ${r.trainer}` : ''}${r.jockey ? ` · J: ${r.jockey}` : ''}</div>
+        </div>
+        <div class="runner-odds">${r.odds || 'TBC'}</div>
+      </div>`).join('');
+    showBanner('api-runners-banner', `✅ Live runners loaded — ${runners.length} declared. Last updated: ${new Date().toLocaleTimeString('en-GB')}.`, 'success');
+  } catch (err) {
+    console.warn('[RacingAPI] loadLiveRunners failed:', err.message);
+    showBanner('api-runners-banner', '📡 Live runner data unavailable — showing ante-post market below.', 'warning');
+  }
+}
+
+async function loadLiveResults() {
+  if (!_racingAPI) return;
+  try {
+    const races = await _racingAPI.getResultsForCourse('Aintree');
+    const container = document.getElementById('live-results-container');
+    if (!container) return;
+    if (!races || races.length === 0) {
+      hideBanner('api-results-banner');
+      container.innerHTML = '';
+      return;
+    }
+    const html = races.map(r => {
+      const formatted = RacingAPI.formatResult(r);
+      const podium = formatted.runners
+        .filter(x => x.position && ['1','2','3'].includes(String(x.position)))
+        .sort((a, b) => Number(a.position) - Number(b.position));
+      return `
+        <div class="result-card" style="margin-bottom:16px;padding:14px;background:var(--navy-card);border-radius:6px;border:1px solid rgba(192,57,43,0.2)">
+          <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px">
+            <span style="font-family:var(--font-display);font-size:0.95rem;color:var(--cream)">${formatted.time} — ${formatted.name}</span>
+            <span style="font-size:0.72rem;color:var(--silver)">${formatted.distance}${formatted.going ? ' · ' + formatted.going : ''}</span>
+          </div>
+          ${podium.map(p => `
+            <div style="display:flex;gap:10px;padding:4px 0;border-bottom:1px solid rgba(255,255,255,0.05)">
+              <span style="width:20px;text-align:center;color:var(--gold);font-weight:700">${p.position}</span>
+              <span style="flex:1;color:var(--cream)">${p.name}</span>
+              <span style="color:var(--silver);font-size:0.8rem">${p.jockey}</span>
+              <span style="color:var(--gold-dim);font-size:0.8rem;min-width:40px;text-align:right">${p.odds}</span>
+            </div>`).join('')}
+        </div>`;
+    }).join('');
+    container.innerHTML = html;
+    showBanner('api-results-banner', `✅ Live results — ${races.length} race(s) complete. Refreshes every 60s. Last updated: ${new Date().toLocaleTimeString('en-GB')}.`, 'success');
+  } catch (err) {
+    console.warn('[RacingAPI] loadLiveResults failed:', err.message);
+    hideBanner('api-results-banner');
+    const container = document.getElementById('live-results-container');
+    if (container) container.innerHTML = '';
+  }
+}
+
+function initRacingAPI() {
+  if (typeof RacingAPI === 'undefined') {
+    console.warn('[RacingAPI] js/racing-api.js not loaded — live data disabled.');
+    return;
+  }
+  try {
+    _racingAPI = new RacingAPI();
+    loadLiveRunners();
+    loadLiveResults();
+    // Auto-refresh results every 60 seconds during the festival
+    _resultsInterval = setInterval(loadLiveResults, 60_000);
+  } catch (err) {
+    console.warn('[RacingAPI] initRacingAPI failed:', err.message);
+  }
 }
 </script>
 </body>
