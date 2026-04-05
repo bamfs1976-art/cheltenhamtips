@@ -6,6 +6,7 @@
 <title>🏇 Grand National Festival 2026 – Expert Tips & Guide</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+<script src="js/racing-api.js" defer></script>
 <style>
   /* ── TOKENS ───────────────────────────────────────────── */
   :root {
@@ -760,6 +761,7 @@
   <div class="section-hdr">2026 Ante-Post Market</div>
   <p class="section-sub">Latest ante-post odds. Correct as of mid-March 2026 — will move significantly before declarations.</p>
 
+  <div id="api-runners-banner" style="display:none;margin-bottom:10px"></div>
   <div class="gn-runners-grid" id="gn-runners-grid"></div>
 
   <div class="section-hdr" style="margin-top:24px">Trainer Watch</div>
@@ -814,6 +816,9 @@
 <!-- RESULTS PANEL -->
 <!-- ════════════════════════════════════════════════════════════ -->
 <div id="panel-results" class="panel">
+  <div id="api-results-banner" style="display:none;margin-bottom:10px"></div>
+  <div id="live-results-container"></div>
+
   <div class="results-notice">
     <strong>📅 Results will appear here from Thursday 9 April 2026</strong>
     Results are entered after each race. Check back during and after each day of the Festival.
@@ -944,40 +949,42 @@ const RACE_SCHEDULE = [
 const TIPS = {
   // ── THURSDAY 9 APRIL ────────────────────────────────────────
   '13:45-0': {
-    nap: { horse:'Handstands',      odds:'2/1',   dec:3.0,  trainer:'P Nicholls',        conf:72,
-           reason:"Unbeaten in three graded novice chases this season, including the Scilly Isles Novices' Chase at Sandown where he gamely held off strong competition. Paul Nicholls has an outstanding record in this race. 2m4f trip is ideal and he travels to Aintree in peak condition." },
-    nb:  { horse:'Kitzbuhel',       odds:'4/1',   dec:5.0,  trainer:'W P Mullins 🇮🇪',   conf:62,
-           reason:"Won the Brown Advisory Novices' Chase at Cheltenham 2026 at 11/1. The 3m Brown Advisory is the natural stepping stone to Aintree novice chases. Mullins' team in brilliant form throughout the spring." },
+    nap: { horse:'Lulamba',         odds:'5/2',   dec:3.5,  trainer:'N Henderson',        conf:73,
+           reason:"Sporting Life selection. Henderson's classy novice hurdler who shapes with significant improvement on each start. Needs to jump better than at Cheltenham but the 2m4f trip at Aintree's flat, galloping track is a major plus — conditions are far more forgiving than Cheltenham's stiff finish. Nicky Henderson is a master at placing horses for races like this." },
+    nb:  { horse:'Jango Baie',      odds:'4/1',   dec:5.0,  trainer:'W P Mullins 🇮🇪',   conf:64,
+           reason:"Ran a cracking race to finish second in the 2026 Cheltenham Gold Cup. Henderson was reported 'keen to run' at Aintree. A dual-purpose entry (also possible Bowl Chase) but has the class to win a novice event. The Gold Cup form is stratospheric." },
   },
   '14:20-0': {
-    nap: { horse:'Maestro Conti',   odds:'5/1',   dec:6.0,  trainer:'W P Mullins 🇮🇪',   conf:62,
-           reason:"Finished a well-backed 2nd in the 2026 Triumph Hurdle behind 50/1 shock Apolon De Charnie. The form horse from that race and expected to be heavily supported here. 4-year-olds with Triumph form dominate this race — eight of the last eleven winners ran in the Triumph." },
-    ew:  { horse:'Apolon De Charnie',odds:'9/2',  dec:5.5,  trainer:'',                   conf:52,
-           reason:"50/1 Triumph Hurdle winner at Cheltenham 2026 — clearly a talented juvenile despite the odds. Could attract a festival double penalty in the market but the raw ability is there. Each-way at a likely shortened price." },
+    nap: { horse:'Apolon De Charnie',odds:'7/2',  dec:4.5,  trainer:'',                   conf:66,
+           reason:"Won the Triumph Hurdle at Cheltenham 2026 at 50/1 — a stunning upset that signalled exceptional talent. The Triumph winner has an excellent record in the Anniversary Juvenile Hurdle: form from Cheltenham's juvenile division reliably translates to Aintree's flat track. Juvenile hurdlers rarely improve as dramatically as this at the Festival without having real ability." },
+    nb:  { horse:'Maestro Conti',   odds:'5/1',   dec:6.0,  trainer:'W P Mullins 🇮🇪',   conf:60,
+           reason:"Finished second in the 2026 Triumph Hurdle — a strong form reference. Mullins' team travel brilliantly from Cheltenham to Aintree and this horse ran a cracking race in defeat. The second string to Apolon De Charnie." },
   },
   '14:55-0': {
-    nap: { horse:'Gaelic Warrior',  odds:'5/2',   dec:3.5,  trainer:'W P Mullins 🇮🇪',   conf:76,
-           reason:"Won the 2026 Cheltenham Gold Cup at 11/4JF and the 2025 Aintree Bowl — a dual Grade 1 performer who already knows this track. Aintree's flat, galloping nature suits his bold jumping style far better than Cheltenham's stiff finish. The outstanding staying chaser heading into the spring." },
-    nb:  { horse:'Heart Wood',      odds:'7/1',   dec:8.0,  trainer:'',                   conf:58,
-           reason:"Won the 2026 Ryanair Chase at Cheltenham at 9/2. Smart 2m5f performer stepping up slightly for the Bowl. If Gaelic Warrior heads straight to Punchestown, Heart Wood becomes the clear favourite and a very strong selection." },
+    nap: { horse:'Jango Baie',      odds:'7/2',   dec:4.5,  trainer:'W P Mullins 🇮🇪',   conf:72,
+           reason:"Sporting Life selection. Ran a superb race to finish runner-up in the 2026 Cheltenham Gold Cup and Nicky Henderson confirmed he was 'keen to run' at Aintree. Has been aimed at this race specifically — connections know the flat, galloping Aintree track suits his jumping style. A Grade 1 horse stepping down from Gold Cup grade is rarely beaten." },
+    nb:  { horse:'Gaelic Warrior',  odds:'5/2',   dec:3.5,  trainer:'W P Mullins 🇮🇪',   conf:68,
+           reason:"Gold Cup winner at 11/4JF and won the 2025 Aintree Bowl — already knows this track. The outstanding staying chaser if he opts to run here rather than head straight to Punchestown. At the shorter price, Jango Baie offers the better value." },
   },
   '15:30-0': {
-    nap: { horse:'Lossiemouth',     odds:'5/4',   dec:2.25, trainer:'W P Mullins 🇮🇪',   conf:84,
-           reason:"Won the 2026 Cheltenham Champion Hurdle at 7/5F and the 2025 Aintree Hurdle. The outstanding hurdler in training over this trip. 14 of the last 15 Aintree Hurdle winners ran at the Cheltenham Festival last time out — Lossiemouth ticks every box. Constitution Hill fell at the Champion Hurdle so the path is clear." },
-    nb:  { horse:'Wodhooh',         odds:'7/1',   dec:8.0,  trainer:'G Elliott 🇮🇪',      conf:60,
-           reason:"Won the Mares' Hurdle at Cheltenham 2026 at 5/6F. Gordon Elliott's unbeaten mare is the main danger — she arrived at Cheltenham unbeaten and left it the same way. Solid each-way claims against the favourite." },
+    nap: { horse:'The New Lion',    odds:'7/2',   dec:4.5,  trainer:'D Skelton',          conf:76,
+           reason:"Sporting Life selection. Finished 3rd in the 2026 Champion Hurdle and is unbeaten over 2m½f — the Aintree Hurdle trip is his optimum distance. Skelton's horse is tailor-made for Aintree's flat, galloping track which rewards strong travellers, and he was never fully tested over that trip at Cheltenham's stiff finish. Fresh, unexposed at this distance, and brilliant value." },
+    nb:  { horse:'Brighterdaysahead',odds:'4/1',  dec:5.0,  trainer:'G Elliott 🇮🇪',      conf:65,
+           reason:"Finished second in the 2026 Champion Hurdle for Gordon Elliott. Solid each-way claims — Elliott's horses travel brilliantly from Cheltenham to Aintree and this horse was only narrowly denied at the Festival. At a bigger price than the winner Lossiemouth, the value is clear." },
+    ew:  { horse:'Lossiemouth',     odds:'5/4',   dec:2.25, trainer:'W P Mullins 🇮🇪',    conf:60,
+           reason:"Champion Hurdle winner and 2025 Aintree Hurdle winner — the class horse in the race. At short odds, NAP value is limited, but if she runs she must be respected. Monitor declarations." },
   },
   '16:05-0': {
-    nap: { horse:'Barton Snow',     odds:'3/1',   dec:4.0,  trainer:'J J O\'Shea 🇮🇪',   conf:74,
-           reason:"Won the Open Hunters' Chase at the 2026 Cheltenham Festival at 9/2. Targeting the Cheltenham/Aintree Hunter Chase double — an historic and highly achievable feat. His jumping was electric at Cheltenham and his jumping is his greatest asset. Early favourite for very good reason." },
+    nap: { horse:'Barton Snow',     odds:'7/2',   dec:4.5,  trainer:'J J O\'Shea 🇮🇪',   conf:77,
+           reason:"Won the Open Hunters' Chase at the 2026 Cheltenham Festival at 9/2 and connections confirmed 'all systems go' for Aintree. The 7/2 market leader targeting the Cheltenham/Aintree Hunter Chase double — a rare and prestigious feat. His jumping was electric at Cheltenham and Aintree's unique fences will suit his bold, front-running style. Strong ante-post favourite for very good reason." },
     ew:  { horse:'Its On The Line', odds:'6/1',   dec:7.0,  trainer:'E Mullins 🇮🇪',      conf:55,
            reason:"Went down by a narrow margin to Barton Snow at Cheltenham. Different ground conditions at Aintree could easily reverse the result — excellent each-way value at 6/1 with four places." },
   },
   '16:40-0': {
-    nap: { horse:'Martator',        odds:'12/1',  dec:13.0, trainer:'W P Mullins 🇮🇪',   conf:54,
-           reason:"Won the Johnny Henderson Grand Annual at Cheltenham 2026 at 66/1 — the biggest surprise of the festival. Proven over 2m and the confidence boost of a Cheltenham win is enormous. An open handicap at Aintree suits a bold-jumping front-runner, and Mullins rarely runs horses without a plan. Each-way interest at 12/1." },
-    ew:  { horse:'Unexpected Party', odds:'14/1', dec:15.0, trainer:'D Skelton',          conf:48,
-           reason:"11-year-old former Grand Annual winner who thrives on spring ground. Won at Haydock in February and has excellent jumping credentials over 2m. Skelton's yard firing on all cylinders — worth each-way at a big price." },
+    nap: { horse:'Stencil',         odds:'8/1',   dec:9.0,  trainer:'',                   conf:60,
+           reason:"Sporting Life selection. Rated 139 and considered 'well treated' by the handicapper ahead of this red rum. A bold-jumping 2m chaser who thrives on fast Aintree-style ground — handlers specifically aimed this horse at this race. The assessor may have underestimated recent form. Strong each-way claims at a fair price." },
+    ew:  { horse:'Downmexicoway',   odds:'12/1',  dec:13.0, trainer:'H de Bromhead 🇮🇪',  conf:52,
+           reason:"De Bromhead's runners at the spring festivals are always dangerous, especially at a price. Consistent jumping performer who handles varying ground conditions. 12/1 represents fair value in an open 2m handicap chase." },
   },
   '17:15-0': {
     nap: { horse:'White Noise',     odds:'5/1',   dec:6.0,  trainer:'W P Mullins 🇮🇪',   conf:64,
@@ -988,10 +995,10 @@ const TIPS = {
 
   // ── FRIDAY 10 APRIL ─────────────────────────────────────────
   '13:45-1': {
-    nap: { horse:'Kitzbuhel',       odds:'5/2',   dec:3.5,  trainer:'W P Mullins 🇮🇪',   conf:71,
-           reason:"Won the Brown Advisory Novices' Chase at Cheltenham 2026 at 11/1 over 3m — the perfect prep for the Mildmay Novices' Chase over the same trip. 12 consecutive Mildmay winners ran at Cheltenham last time, all finishing first or second. Mullins at the peak of his powers. The NAP of the meeting." },
-    nb:  { horse:'The Changing Man', odds:'7/1',  dec:8.0,  trainer:'N Henderson',        conf:55,
-           reason:"Each-way interest at 7/1. Handstands (likely Manifesto-bound) may vacate this race, and The Changing Man could be a different class on better ground. Henderson's horses improving late in the season." },
+    nap: { horse:'Handstands',      odds:'9/4',   dec:3.25, trainer:'P Nicholls',         conf:75,
+           reason:"The dominant betting favourite with over 40% of ante-post market support — the public's banker of Friday. Paul Nicholls' unbeaten novice chaser is the most-backed horse of the Aintree Festival at this stage. Won the Scilly Isles Novices' Chase at Sandown in brilliant style. 3m trip and Aintree's flat track suit perfectly. When over 40% of the money is on one horse, there is usually a very good reason." },
+    nb:  { horse:'Kitzbuhel',       odds:'5/2',   dec:3.5,  trainer:'W P Mullins 🇮🇪',   conf:63,
+           reason:"Won the Brown Advisory Novices' Chase at Cheltenham 2026 at 11/1 over the same 3m trip. The perfect Mildmay prep and Mullins' team travel brilliantly. 12 consecutive Mildmay winners ran at Cheltenham last time — the second string in the market but strong claims." },
   },
   '14:20-1': {
     nap: { horse:'Jingko Blue',     odds:'8/1',   dec:9.0,  trainer:'W P Mullins 🇮🇪',   conf:57,
@@ -1002,16 +1009,16 @@ const TIPS = {
            reason:"Won the Supreme Novices' Hurdle at Cheltenham 2026 at 15/8F. The Supreme winner is the bankers' choice for the Top Novices' Hurdle — 10 of the last 11 winners were in the top three in the betting, and the Cheltenham/Aintree novice hurdle double is well-established. Near impossible to oppose at any price." },
   },
   '15:30-1': {
-    nap: { horse:'Jonbon',          odds:'4/6',   dec:1.67, trainer:'N Henderson',        conf:84,
-           reason:"Won the Melling Chase in both 2024 and 2025 — unbeaten over distances beyond 2m1f. A perfect 2-from-2 record at Aintree in this race. Despite taking on Champion Chase winner Il Etait Temps and Ryanair winner Heart Wood, Jonbon's Grade 1 class over 2m4f is unchallenged. Henderson's yard returning to form at exactly the right moment." },
-    nb:  { horse:'Il Etait Temps',  odds:'5/2',   dec:3.5,  trainer:'W P Mullins 🇮🇪',   conf:63,
-           reason:"Won the Queen Mother Champion Chase at Cheltenham 2026 at 5/2. Stepping up in trip from 2m — the extra half-mile could just catch Jonbon out. The outstanding 2m champion and the race's most likely winner if Jonbon underperforms." },
+    nap: { horse:'Jonbon',          odds:'4/6',   dec:1.67, trainer:'N Henderson',        conf:82,
+           reason:"Won the Melling Chase in both 2024 and 2025 — a perfect 2-from-2 record at Aintree in this race. This year's four-runner field pitches him against El Fabiolo, Matata, and Protektorat. He had a mistake at Cheltenham but stayed on powerfully to finish 2nd — fit, fresh and fully wound up. Henderson's Grade 1 star over 2m4f is unchallenged and he loves this track. A small-field Grade 1 plays to his strengths." },
+    nb:  { horse:'El Fabiolo',      odds:'5/2',   dec:3.5,  trainer:'W P Mullins 🇮🇪',   conf:64,
+           reason:"Another high-class 2m performer stepping up in trip. The four-runner Melling is essentially Jonbon vs El Fabiolo — if the Henderson horse disappoints again over the extra half-mile, El Fabiolo becomes the obvious winner. Strong each-way claims." },
   },
   '16:05-1': {
-    nap: { horse:'Madara',          odds:'10/1',  dec:11.0, trainer:'D Skelton',          conf:67,
-           reason:"Won the Festival Plate Handicap Chase at Cheltenham 2026 at 3/1F — jumped superbly to win by 7.5 lengths. A graded-class performer running off a lenient handicap mark. The form from Cheltenham's Plate regularly translates to Aintree's Topham, which is run over the same Grand National fences. The standout selection at a fair price." },
-    ew:  { horse:'Firefox',         odds:'16/1',  dec:17.0, trainer:'G Elliott 🇮🇪',      conf:48,
-           reason:"Grade 1 experienced chaser adapting to a handicap context over the Grand National fences. Elliott has a superb record in this race and Firefox's jumping over spruce fences could be a huge asset. Each-way value at 16/1." },
+    nap: { horse:'Madara',          odds:'3/1',   dec:4.0,  trainer:'D Skelton',          conf:70,
+           reason:"Won the Festival Plate Handicap Chase at Cheltenham 2026 at 3/1F — the festival favourite jumping superbly to win by 7.5 lengths. The Topham is run over the Grand National fences and Cheltenham Plate form translates directly here. Confirmed as a 3/1 antepost favourite for Aintree. Skelton's bold-jumper is the outstanding selection." },
+    ew:  { horse:'Coming Up Easy',  odds:'10/1',  dec:11.0, trainer:'H de Bromhead 🇮🇪',  conf:56,
+           reason:"Sporting Life selection — de Bromhead's fresh horse who arrives at Aintree without a recent run over the unique spruce fences. Fresh horses with a handler who understands the Grand National course regularly outperform at big odds. De Bromhead has an outstanding record over these fences. Excellent each-way value at 10/1." },
   },
   '16:40-1': {
     nap: { horse:'Johnnys Fury',    odds:'6/1',   dec:7.0,  trainer:'W P Mullins 🇮🇪',   conf:66,
@@ -1048,12 +1055,12 @@ const TIPS = {
            reason:"If the Champion Hurdle winner steps up to 3m for the Liverpool Hurdle (as she did in 2025), she is the class horse in the race. Mullins regularly targets both Grade 1 hurdles at the Festival — a second Aintree Grade 1 would be an outstanding achievement." },
   },
   '16:00-2': {
-    nap: { horse:'I Am Maximus',    odds:'8/1',   dec:9.0,  trainer:'W P Mullins 🇮🇪',   conf:70,
-           reason:"2024 Grand National winner at 7/1, 2nd in 2025. Carries top weight of 11st 12lbs but has the class to defy it. Proven over these fences — the quality horse in the field and deserved market leader." },
-    nb:  { horse:'Jagwar',          odds:'10/1',  dec:11.0, trainer:'O Greenall / J Guerriero', conf:65,
-           reason:"Won the Ultima at Cheltenham 2026, immediately shortening from 40/1 to 10/1. Progressive 7-year-old with stamina to burn. Connections have targeted this race all season — could be the year's big story." },
-    ew:  { horse:'Grangeclare West',odds:'11/1',  dec:12.0, trainer:'W P Mullins 🇮🇪',   conf:58,
-           reason:"3rd in the 2025 National at 33/1, then won the Bobbyjo Chase to confirm his staying credentials. Already proven over these unique fences. Excellent each-way value at double-figure odds." },
+    nap: { horse:'I Am Maximus',    odds:'6/1',   dec:7.0,  trainer:'W P Mullins 🇮🇪',   conf:73,
+           reason:"2024 Grand National winner, 2nd in 2025 — the outstanding performer over these unique Aintree fences. Heavily backed ante-post, shortening from 10/1 to 6/1 as the dominant market mover. Carries top weight but has the class to defy it. When the market moves this aggressively on the same horse that has already won the race, it pays to follow the money. William Hill and Sporting Life's top National selection." },
+    nb:  { horse:'Oscars Brother',  odds:'16/1',  dec:17.0, trainer:'W P Mullins 🇮🇪',   conf:62,
+           reason:"JP McManus-owned and highly regarded by connections — McManus rarely runs horses in the National without serious expectation. 16/1 in an ante-post market that has compressed dramatically is outstanding value. Proven staying credentials and a handler who knows how to prepare horses for these fences." },
+    ew:  { horse:'Nick Rockett',    odds:'20/1',  dec:21.0, trainer:'T Martin 🇮🇪',       conf:55,
+           reason:"William Hill ante-post tip at 20/1. Tony Martin's stamina-packed jumper has the profile to run a big race at a massive price. Excellent each-way value with five places on offer — WH recommended alongside Captain Cody as the big-price angles for the National." },
   },
   '17:00-2': {
     nap: { horse:'Kargese',         odds:'2/1',   dec:3.0,  trainer:'W P Mullins 🇮🇪',   conf:77,
@@ -1181,6 +1188,7 @@ document.addEventListener('DOMContentLoaded', () => {
   renderGNRunners();
   renderFences();
   showDayTips(0);
+  initRacingAPI();
 });
 
 // ════════════════════════════════════════════════════════════════
@@ -1415,6 +1423,128 @@ function showPanel(name) {
   document.getElementById(`panel-${name}`).classList.add('active');
   const idx = ['tips','national','results','tracker','guide'].indexOf(name);
   document.querySelectorAll('.nav-btn')[idx]?.classList.add('active');
+}
+
+// ════════════════════════════════════════════════════════════════
+// RACING API — LIVE DATA
+// ════════════════════════════════════════════════════════════════
+let _racingAPI = null;
+let _resultsInterval = null;
+
+function showBanner(id, msg, type) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  const colours = {
+    info:    'background:#1a2d55;border:1px solid #243660;color:#a0aec0',
+    success: 'background:#1a3a2a;border:1px solid #27ae60;color:#a0d4b0',
+    warning: 'background:#2a1f0a;border:1px solid #e67e22;color:#f0c86a',
+    error:   'background:#2a0e0e;border:1px solid #c0392b;color:#f08080',
+  };
+  el.style.cssText = `display:block;padding:8px 12px;border-radius:4px;font-size:0.78rem;letter-spacing:0.03em;${colours[type] || colours.info}`;
+  el.textContent = msg;
+}
+
+function hideBanner(id) {
+  const el = document.getElementById(id);
+  if (el) el.style.display = 'none';
+}
+
+async function loadLiveRunners() {
+  if (!_racingAPI) return;
+  try {
+    const races = await _racingAPI.getRacecardsForCourse('Aintree');
+    if (!races || races.length === 0) {
+      showBanner('api-runners-banner', '📡 Live racecard data unavailable — showing ante-post market below.', 'info');
+      return;
+    }
+    // Find the Grand National race (16:00 or name match)
+    const gn = races.find(r =>
+      (r.time || r.off_time || '').includes('16:') ||
+      (r.race_name || r.name || '').toLowerCase().includes('national')
+    );
+    if (!gn) {
+      showBanner('api-runners-banner', '📡 Grand National racecard not yet available — showing ante-post market.', 'info');
+      return;
+    }
+    const runners = (gn.runners || gn.horses || []).map(RacingAPI.formatRunner);
+    if (runners.length === 0) {
+      showBanner('api-runners-banner', '📡 Runners not yet declared — showing ante-post market below.', 'info');
+      return;
+    }
+    // Render live runners into the grid, replacing static content
+    const grid = document.getElementById('gn-runners-grid');
+    if (!grid) return;
+    grid.innerHTML = runners.map(r => `
+      <div class="runner-card">
+        <div class="runner-number">${r.number || '–'}</div>
+        <div class="runner-info">
+          <div class="runner-name">${r.name}</div>
+          <div class="runner-meta">${r.trainer ? `T: ${r.trainer}` : ''}${r.jockey ? ` · J: ${r.jockey}` : ''}</div>
+        </div>
+        <div class="runner-odds">${r.odds || 'TBC'}</div>
+      </div>`).join('');
+    showBanner('api-runners-banner', `✅ Live runners loaded — ${runners.length} declared. Last updated: ${new Date().toLocaleTimeString('en-GB')}.`, 'success');
+  } catch (err) {
+    console.warn('[RacingAPI] loadLiveRunners failed:', err.message);
+    showBanner('api-runners-banner', '📡 Live runner data unavailable — showing ante-post market below.', 'warning');
+  }
+}
+
+async function loadLiveResults() {
+  if (!_racingAPI) return;
+  try {
+    const races = await _racingAPI.getResultsForCourse('Aintree');
+    const container = document.getElementById('live-results-container');
+    if (!container) return;
+    if (!races || races.length === 0) {
+      hideBanner('api-results-banner');
+      container.innerHTML = '';
+      return;
+    }
+    const html = races.map(r => {
+      const formatted = RacingAPI.formatResult(r);
+      const podium = formatted.runners
+        .filter(x => x.position && ['1','2','3'].includes(String(x.position)))
+        .sort((a, b) => Number(a.position) - Number(b.position));
+      return `
+        <div class="result-card" style="margin-bottom:16px;padding:14px;background:var(--navy-card);border-radius:6px;border:1px solid rgba(192,57,43,0.2)">
+          <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px">
+            <span style="font-family:var(--font-display);font-size:0.95rem;color:var(--cream)">${formatted.time} — ${formatted.name}</span>
+            <span style="font-size:0.72rem;color:var(--silver)">${formatted.distance}${formatted.going ? ' · ' + formatted.going : ''}</span>
+          </div>
+          ${podium.map(p => `
+            <div style="display:flex;gap:10px;padding:4px 0;border-bottom:1px solid rgba(255,255,255,0.05)">
+              <span style="width:20px;text-align:center;color:var(--gold);font-weight:700">${p.position}</span>
+              <span style="flex:1;color:var(--cream)">${p.name}</span>
+              <span style="color:var(--silver);font-size:0.8rem">${p.jockey}</span>
+              <span style="color:var(--gold-dim);font-size:0.8rem;min-width:40px;text-align:right">${p.odds}</span>
+            </div>`).join('')}
+        </div>`;
+    }).join('');
+    container.innerHTML = html;
+    showBanner('api-results-banner', `✅ Live results — ${races.length} race(s) complete. Refreshes every 60s. Last updated: ${new Date().toLocaleTimeString('en-GB')}.`, 'success');
+  } catch (err) {
+    console.warn('[RacingAPI] loadLiveResults failed:', err.message);
+    hideBanner('api-results-banner');
+    const container = document.getElementById('live-results-container');
+    if (container) container.innerHTML = '';
+  }
+}
+
+function initRacingAPI() {
+  if (typeof RacingAPI === 'undefined') {
+    console.warn('[RacingAPI] js/racing-api.js not loaded — live data disabled.');
+    return;
+  }
+  try {
+    _racingAPI = new RacingAPI();
+    loadLiveRunners();
+    loadLiveResults();
+    // Auto-refresh results every 60 seconds during the festival
+    _resultsInterval = setInterval(loadLiveResults, 60_000);
+  } catch (err) {
+    console.warn('[RacingAPI] initRacingAPI failed:', err.message);
+  }
 }
 </script>
 </body>

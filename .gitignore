@@ -1,0 +1,10 @@
+# Environment / credentials — never commit these
+.env
+.env.local
+.env.*.local
+
+# Netlify local dev cache
+.netlify/
+
+# Node modules (if ever added)
+node_modules/
