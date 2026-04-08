@@ -303,6 +303,67 @@
   .tip-ew .tip-type { color: var(--gold); }
   .tip-longshot .tip-type { color: #fb923c; }
   .tip-irish .tip-type { color: #4ade80; }
+  .tip-wh .tip-type { color: #a78bfa; }
+
+  /* ── BETS PANEL ───────────────────────────────────────── */
+  .bets-day { margin-bottom: 28px; }
+  .bets-day-title {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--gold);
+    border-bottom: 1px solid rgba(212,168,67,0.3);
+    padding-bottom: 8px;
+    margin-bottom: 14px;
+  }
+  .bets-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  @media(max-width:640px) { .bets-grid { grid-template-columns: 1fr; } }
+  .bet-card {
+    background: var(--navy-card);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 8px;
+    padding: 14px 16px;
+  }
+  .bet-card-title {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .bet-card.wh .bet-card-title { color: #a78bfa; }
+  .bet-card.nap .bet-card-title { color: var(--scarlet-b); }
+  .bet-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 5px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    gap: 8px;
+  }
+  .bet-row:last-of-type { border-bottom: none; }
+  .bet-horse { font-weight: 600; font-size: 0.88rem; color: var(--cream); }
+  .bet-race { font-size: 0.72rem; color: var(--silver); }
+  .bet-odds { font-size: 0.82rem; font-weight: 700; color: var(--gold-lt); white-space: nowrap; }
+  .bet-summary {
+    margin-top: 10px;
+    background: rgba(255,255,255,0.04);
+    border-radius: 5px;
+    padding: 8px 10px;
+    font-size: 0.78rem;
+  }
+  .bet-summary-row { display: flex; justify-content: space-between; color: var(--silver); padding: 2px 0; }
+  .bet-summary-row .val { color: var(--cream); font-weight: 600; }
+  .bet-summary-row.highlight .val { color: var(--gold-lt); font-size: 0.9rem; }
+  .bets-note {
+    font-size: 0.72rem;
+    color: var(--silver);
+    background: rgba(255,255,255,0.03);
+    border-left: 3px solid rgba(167,139,250,0.4);
+    padding: 8px 12px;
+    margin-top: 10px;
+    border-radius: 0 4px 4px 0;
+  }
   .tip-horse {
     font-family: var(--font-display);
     font-weight: 700;
@@ -725,6 +786,7 @@
   <button class="nav-btn" onclick="showPanel('results')">✓ Results</button>
   <button class="nav-btn" onclick="showPanel('tracker')">📋 My Tracker</button>
   <button class="nav-btn" onclick="showPanel('guide')">📖 Course Guide</button>
+  <button class="nav-btn" onclick="showPanel('bets')">🎰 Daily Bets</button>
 </nav>
 
 <div class="main-wrap">
@@ -910,6 +972,194 @@
   </div>
 
 </div>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- BETS PANEL -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<div id="panel-bets" class="panel">
+  <div style="margin:16px 0 8px;font-size:0.75rem;color:var(--silver)">
+    William Hill Lucky 15 selections sourced from <strong style="color:var(--cream)">news.williamhill.com</strong> ·
+    NAP Accumulator uses our highest-confidence picks per day ·
+    <em>All odds are ante-post and subject to change — always check latest prices before betting.</em>
+  </div>
+
+  <!-- ── THURSDAY ── -->
+  <div class="bets-day">
+    <div class="bets-day-title">🏇 Thursday 9 April — Opening Day</div>
+    <div class="bets-grid">
+
+      <!-- WH Lucky 15 -->
+      <div class="bet-card wh">
+        <div class="bet-card-title">💜 William Hill Lucky 15 E/W</div>
+        <div class="bet-row">
+          <div><div class="bet-horse">Minella Study</div><div class="bet-race">Anniversary Juvenile Hurdle</div></div>
+          <div class="bet-odds">7/2</div>
+        </div>
+        <div class="bet-row">
+          <div><div class="bet-horse">Impaire Et Passe</div><div class="bet-race">Bowl Chase</div></div>
+          <div class="bet-odds">10/3</div>
+        </div>
+        <div class="bet-row">
+          <div><div class="bet-horse">Brighterdaysahead</div><div class="bet-race">Aintree Hurdle</div></div>
+          <div class="bet-odds">2/1</div>
+        </div>
+        <div class="bet-row">
+          <div><div class="bet-horse">Brookie</div><div class="bet-race">Red Rum Handicap Chase</div></div>
+          <div class="bet-odds">14/1</div>
+        </div>
+        <div class="bet-summary">
+          <div class="bet-summary-row"><span>Stake (£1 E/W L15)</span><span class="val">£30.00</span></div>
+          <div class="bet-summary-row"><span>4-fold if all win</span><span class="val">875/1</span></div>
+          <div class="bet-summary-row highlight"><span>£1 E/W 4-fold return</span><span class="val">~£1,753</span></div>
+        </div>
+      </div>
+
+      <!-- NAP Acca -->
+      <div class="bet-card nap">
+        <div class="bet-card-title">⭐ Our NAP 4-fold Accumulator</div>
+        <div class="bet-row">
+          <div><div class="bet-horse">Lulamba</div><div class="bet-race">Manifesto Novices' Chase</div></div>
+          <div class="bet-odds">4/7</div>
+        </div>
+        <div class="bet-row">
+          <div><div class="bet-horse">Barton Snow</div><div class="bet-race">Foxhunters' Chase</div></div>
+          <div class="bet-odds">7/2</div>
+        </div>
+        <div class="bet-row">
+          <div><div class="bet-horse">Brighterdaysahead</div><div class="bet-race">Aintree Hurdle</div></div>
+          <div class="bet-odds">7/2</div>
+        </div>
+        <div class="bet-row">
+          <div><div class="bet-horse">Sans Bruit</div><div class="bet-race">Red Rum Handicap Chase</div></div>
+          <div class="bet-odds">5/1</div>
+        </div>
+        <div class="bet-summary">
+          <div class="bet-summary-row"><span>Stake</span><span class="val">£1.00</span></div>
+          <div class="bet-summary-row"><span>Acca odds</span><span class="val">~189/1</span></div>
+          <div class="bet-summary-row highlight"><span>£1 return if all win</span><span class="val">~£190.80</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="bets-note">💜 WH Thursday banker: <strong>Brighterdaysahead 2/1</strong> (Aintree Hurdle) · appears in both L15 and NAP acca</div>
+  </div>
+
+  <!-- ── FRIDAY ── -->
+  <div class="bets-day">
+    <div class="bets-day-title">👗 Friday 10 April — Ladies Day</div>
+    <div class="bets-grid">
+
+      <div class="bet-card wh">
+        <div class="bet-card-title">💜 William Hill Lucky 15 E/W</div>
+        <div class="bet-row">
+          <div><div class="bet-horse">Impose Toi</div><div class="bet-race">WH Handicap Hurdle</div></div>
+          <div class="bet-odds">8/1</div>
+        </div>
+        <div class="bet-row">
+          <div><div class="bet-horse">Diva Luna</div><div class="bet-race">Top Novices' Hurdle</div></div>
+          <div class="bet-odds">5/1</div>
+        </div>
+        <div class="bet-row">
+          <div><div class="bet-horse">James Du Berlais</div><div class="bet-race">Topham Chase</div></div>
+          <div class="bet-odds">10/1</div>
+        </div>
+        <div class="bet-row">
+          <div><div class="bet-horse">Mister Meggit</div><div class="bet-race">Sefton Novices' Hurdle</div></div>
+          <div class="bet-odds">10/1</div>
+        </div>
+        <div class="bet-summary">
+          <div class="bet-summary-row"><span>Stake (£1 E/W L15)</span><span class="val">£30.00</span></div>
+          <div class="bet-summary-row"><span>4-fold if all win</span><span class="val">6,533/1</span></div>
+          <div class="bet-summary-row highlight"><span>£1 E/W 4-fold return</span><span class="val">~£13,067</span></div>
+        </div>
+      </div>
+
+      <div class="bet-card nap">
+        <div class="bet-card-title">⭐ Our NAP 4-fold Accumulator</div>
+        <div class="bet-row">
+          <div><div class="bet-horse">Handstands</div><div class="bet-race">Mildmay Novices' Chase</div></div>
+          <div class="bet-odds">9/4</div>
+        </div>
+        <div class="bet-row">
+          <div><div class="bet-horse">Jonbon</div><div class="bet-race">Melling Chase</div></div>
+          <div class="bet-odds">4/6</div>
+        </div>
+        <div class="bet-row">
+          <div><div class="bet-horse">Madara</div><div class="bet-race">Topham Chase</div></div>
+          <div class="bet-odds">3/1</div>
+        </div>
+        <div class="bet-row">
+          <div><div class="bet-horse">Johnnys Fury</div><div class="bet-race">Sefton Novices' Hurdle</div></div>
+          <div class="bet-odds">6/1</div>
+        </div>
+        <div class="bet-summary">
+          <div class="bet-summary-row"><span>Stake</span><span class="val">£1.00</span></div>
+          <div class="bet-summary-row"><span>Acca odds</span><span class="val">~150/1</span></div>
+          <div class="bet-summary-row highlight"><span>£1 return if all win</span><span class="val">~£151.90</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="bets-note">💜 WH Friday banker: <strong>James Du Berlais 10/1</strong> (Topham) — ran 2nd in this race 12 months ago from a similar mark</div>
+  </div>
+
+  <!-- ── SATURDAY ── -->
+  <div class="bets-day">
+    <div class="bets-day-title">🏆 Saturday 11 April — Grand National Day</div>
+    <div class="bets-grid">
+
+      <div class="bet-card wh">
+        <div class="bet-card-title">💜 William Hill Lucky 15 E/W</div>
+        <div class="bet-row">
+          <div><div class="bet-horse">Act of Authority</div><div class="bet-race">WH Top Price Handicap Hurdle</div></div>
+          <div class="bet-odds">10/1</div>
+        </div>
+        <div class="bet-row">
+          <div><div class="bet-horse">Fingle Bridge</div><div class="bet-race">Mersey Novices' Hurdle</div></div>
+          <div class="bet-odds">8/1</div>
+        </div>
+        <div class="bet-row">
+          <div><div class="bet-horse">Iroko</div><div class="bet-race">RANDOX Grand National</div></div>
+          <div class="bet-odds">12/1</div>
+        </div>
+        <div class="bet-row">
+          <div><div class="bet-horse">Mossy Fen Road</div><div class="bet-race">NH Flat Race</div></div>
+          <div class="bet-odds">4/1</div>
+        </div>
+        <div class="bet-summary">
+          <div class="bet-summary-row"><span>Stake (£1 E/W L15)</span><span class="val">£30.00</span></div>
+          <div class="bet-summary-row"><span>4-fold if all win</span><span class="val">6,434/1</span></div>
+          <div class="bet-summary-row highlight"><span>£1 E/W 4-fold return</span><span class="val">~£12,869</span></div>
+        </div>
+      </div>
+
+      <div class="bet-card nap">
+        <div class="bet-card-title">⭐ Our NAP 4-fold Accumulator</div>
+        <div class="bet-row">
+          <div><div class="bet-horse">King Rasko Grey</div><div class="bet-race">Mersey Novices' Hurdle</div></div>
+          <div class="bet-odds">2/1</div>
+        </div>
+        <div class="bet-row">
+          <div><div class="bet-horse">Wodhooh</div><div class="bet-race">Liverpool Hurdle</div></div>
+          <div class="bet-odds">7/4</div>
+        </div>
+        <div class="bet-row">
+          <div><div class="bet-horse">I Am Maximus</div><div class="bet-race">RANDOX Grand National</div></div>
+          <div class="bet-odds">15/2</div>
+        </div>
+        <div class="bet-row">
+          <div><div class="bet-horse">Kargese</div><div class="bet-race">Maghull Novices' Chase</div></div>
+          <div class="bet-odds">2/1</div>
+        </div>
+        <div class="bet-summary">
+          <div class="bet-summary-row"><span>Stake</span><span class="val">£1.00</span></div>
+          <div class="bet-summary-row"><span>Acca odds</span><span class="val">~209/1</span></div>
+          <div class="bet-summary-row highlight"><span>£1 return if all win</span><span class="val">~£210.38</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="bets-note">💜 WH Saturday banker: <strong>Mossy Fen Road 4/1</strong> (NH Flat) · WH Grand National ante-post E/W: <strong>Oscars Brother 14/1</strong> alongside Iroko</div>
+  </div>
+
+</div><!-- /#panel-bets -->
 
 </div><!-- /.main-wrap -->
 
@@ -1167,6 +1417,47 @@ const TIPS = {
 };
 
 // ════════════════════════════════════════════════════════════════
+// WILLIAM HILL TIPS — sourced from news.williamhill.com
+// ════════════════════════════════════════════════════════════════
+const WH_TIPS = {
+  // ── THURSDAY ─────────────────────────────────────────────────
+  '14:20-0': { horse:'Minella Study',      odds:'7/2',   dec:4.5,  trainer:'A Nicholls',          conf:68,
+    reason:"William Hill Day 1 Lucky 15 pick. Put in a huge performance in the Triumph Hurdle last month, finishing third behind Apolon De Charnie. Strong form for the Anniversary Juvenile Hurdle and represents excellent value at 7/2 — a horse with room to improve for this flat, fast Aintree track." },
+  '14:55-0': { horse:'Impaire Et Passe',   odds:'10/3',  dec:4.33, trainer:'W P Mullins 🇮🇪',     conf:66,
+    reason:"William Hill Day 1 Lucky 15 pick. Previously won the Grade 1 Manifesto Novices' Chase at this exact track and trip. The returning Mullins-trained star has beaten Jango Baie before and represents the value angle in the Bowl Chase at 10/3 — WH believe he can reverse that Ryanair form on better Aintree terms." },
+  '15:30-0': { horse:'Brighterdaysahead',  odds:'2/1',   dec:3.0,  trainer:'G Elliott 🇮🇪',       conf:72,
+    reason:"William Hill Day 1 Lucky 15 pick. Finished a valiant second to Lossiemouth in the Champion Hurdle and should improve significantly on a flatter track without the formidable mare. Gordon Elliott's horse is WH's NAP of Thursday — 2/1 looks an outstanding price." },
+  '16:40-0': { horse:'Brookie',            odds:'14/1',  dec:15.0, trainer:'A Honeyball',          conf:54,
+    reason:"William Hill Day 1 Lucky 15 pick — the longshot of the four. Anthony Honeyball's charge thrives on quick ground and boasts eye-catching course and distance form in Grade 1 company. At 14/1 in an open Red Rum handicap, WH see each-way value against the hat-trick-seeking Sans Bruit." },
+
+  // ── FRIDAY ───────────────────────────────────────────────────
+  '14:20-1': { horse:'Impose Toi',         odds:'8/1',   dec:9.0,  trainer:'',                    conf:58,
+    reason:"William Hill Day 2 Lucky 15 pick. An unexposed seven-year-old racing off mark 145, coming off a strong second in the Coral Cup at Cheltenham. Nearly won at the Festival before being caught late — the 2m4f Aintree trip suits better than Cheltenham's brutal finish and WH believe he's well handicapped." },
+  '14:55-1': { horse:'Diva Luna',          odds:'5/1',   dec:6.0,  trainer:'B Pauling',            conf:60,
+    reason:"William Hill Day 2 Lucky 15 pick. Ben Pauling's six-year-old Grade 2 bumper winner finished a solid third in the Mares Novices' Hurdle at Cheltenham. Aintree's flat, galloping track suits her far better than Cheltenham's undulations — WH believe the flat Aintree straight will showcase her true ability." },
+  '16:05-1': { horse:'James Du Berlais',   odds:'10/1',  dec:11.0, trainer:'W P Mullins 🇮🇪',     conf:62,
+    reason:"William Hill Day 2 Lucky 15 pick. Finished second in this exact race last year from just 1lb lower in the ratings. Shaped well at Leopardstown last time. WH note he is the likely market leader for a race in which he ran a blinder 12 months ago — Aintree suits and connections are confident." },
+  '16:40-1': { horse:'Mister Meggit',      odds:'10/1',  dec:11.0, trainer:'J O\'Neill',           conf:58,
+    reason:"William Hill Day 2 Lucky 15 pick. Jonjo O'Neill's seven-year-old comfortably won a novice hurdle at Aintree in November and is progressing to Grade 1 company. WH highlight his 'abundant natural ability' — a step up to 3m and decent ground plays to his strengths in what could be a WH Saturday banker." },
+
+  // ── SATURDAY ─────────────────────────────────────────────────
+  '13:20-2': { horse:'Act of Authority',   odds:'10/1',  dec:11.0, trainer:'O Murphy',             conf:57,
+    reason:"William Hill Day 3 Lucky 15 pick — E/W play. Olly Murphy's seven-pound claimer combination makes this each-way bet highly attractive at 10/1. 'Was last seen running a screamer in the Martin Pipe at the Festival' — WH believe he translates Cheltenham conditional form directly to Aintree." },
+  '13:55-2': { horse:'Fingle Bridge',      odds:'8/1',   dec:9.0,  trainer:'O Murphy',             conf:60,
+    reason:"William Hill Day 3 Lucky 15 pick. Murphy's seven-year-old has gone from strength to strength this season, winning at Exeter. The horse dislikes undulating tracks — a flat Aintree with early spring ground is described by WH as 'just the ticket.' Progressive and improving throughout the campaign." },
+  '14:30-2': { horse:'Docpickedme',        odds:'8/1',   dec:9.0,  trainer:'',                    conf:55,
+    reason:"William Hill Saturday best bet for the Freebooter. Great Yorkshire Chase winner with a high cruising speed in staying races. WH note his ability to sustain a strong gallop over 3m1f on decent ground — the profile fits the Freebooter perfectly at an attractive each-way price." },
+  '15:05-2': { horse:'Jetara',             odds:'7/1',   dec:8.0,  trainer:'J Harrington 🇮🇪',    conf:58,
+    reason:"William Hill Saturday best bet for the Liverpool Hurdle. Jessica Harrington's mare receives a mares' allowance and 'put up a fine performance behind Lossiemouth at Cheltenham.' At 7/1 with allowance claims and a flat Aintree track, WH see this as outstanding each-way value against the odds-on Wodhooh." },
+  '16:00-2': { horse:'Iroko',              odds:'12/1',  dec:13.0, trainer:'O Greenall / J Guerriero', conf:62,
+    reason:"William Hill Day 3 Lucky 15 Grand National pick. JP McManus-owned JP McManus runner trained by Oliver Greenall and Josh Guerriero — connections believe this is his target race all season. Has posted consistent results including multiple second-place finishes. WH's Lucky 15 representative at 12/1." },
+  '17:00-2': { horse:'Kalif Du Berlais',   odds:'5/1',   dec:6.0,  trainer:'P Nicholls',           conf:65,
+    reason:"William Hill Saturday best bet for the Maghull Novices' Chase. Paul Nicholls' five-year-old is expected to 'take top honours' in the 2m Grade 1. WH believe Nicholls has targeted this race and the horse's jumping ability suits the flat Aintree track — an alternative to the short-priced Arkle winner." },
+  '17:35-2': { horse:'Mossy Fen Road',     odds:'4/1',   dec:5.0,  trainer:'H Derham',             conf:63,
+    reason:"William Hill Day 3 Lucky 15 pick for the NH Flat. Harry Derham's five-year-old gelding is related to Grade 1 winner Fury Road — 'a comprehensive scorer at Wetherby, he can progress once more.' WH see him as the banker of their Saturday Lucky 15 with the best profile in an open NH Flat." },
+};
+
+// ════════════════════════════════════════════════════════════════
 // DATA — CONFIRMED RESULTS
 // ════════════════════════════════════════════════════════════════
 const RESULTS = {
@@ -1335,6 +1626,7 @@ function renderAllDays() {
           ${tips.ew       ? renderTipCard(tips.ew,'ew',key)             : ''}
           ${tips.longshot ? renderTipCard(tips.longshot,'longshot',key) : ''}
           ${tips.irish    ? renderTipCard(tips.irish,'irish',key)       : ''}
+          ${WH_TIPS[key]  ? renderTipCard(WH_TIPS[key],'wh',key)       : ''}
         </div>
       </div>`;
     }
@@ -1348,7 +1640,7 @@ function renderTipCard(tip, type, key) {
   const frac = tip.odds;
   const dec = tip.dec ? tip.dec.toFixed(2) : '—';
   const oddsDisplay = oddsMode === 'frac' ? frac : dec;
-  const typeLabel = type === 'nap' ? '⭐ NAP' : type === 'nb' ? '🔵 NB' : type === 'longshot' ? '🎯 Longshot' : type === 'irish' ? '🍀 Best Irish' : '💰 E/W';
+  const typeLabel = type === 'nap' ? '⭐ NAP' : type === 'nb' ? '🔵 NB' : type === 'longshot' ? '🎯 Longshot' : type === 'irish' ? '🍀 Best Irish' : type === 'wh' ? '💜 William Hill' : '💰 E/W';
   const typeClass = `tip-card tip-${type}`;
   return `<div class="${typeClass}">
     ${!isTbc ? `<button class="add-to-tracker ${isTracked(key,tip.horse)?'added':''}" onclick="toggleTrack('${key}','${tip.horse}','${frac}','${type}','${RACE_SCHEDULE.find(r=>r.time===key.split('-')[0])?.name||''}')">
@@ -1515,7 +1807,7 @@ function showPanel(name) {
   document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
   document.getElementById(`panel-${name}`).classList.add('active');
-  const idx = ['tips','national','results','tracker','guide'].indexOf(name);
+  const idx = ['tips','national','results','tracker','guide','bets'].indexOf(name);
   document.querySelectorAll('.nav-btn')[idx]?.classList.add('active');
 }
 
