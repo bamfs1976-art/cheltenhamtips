@@ -304,6 +304,8 @@
   .tip-longshot .tip-type { color: #fb923c; }
   .tip-irish .tip-type { color: #4ade80; }
   .tip-wh .tip-type { color: #a78bfa; }
+  .tip-rc .tip-type  { color: #fb7185; }
+  .tip-rfo .tip-type { color: #fbbf24; }
 
   /* ── BETS PANEL ───────────────────────────────────────── */
   .bets-day { margin-bottom: 28px; }
@@ -1421,14 +1423,20 @@ const TIPS = {
 // ════════════════════════════════════════════════════════════════
 const WH_TIPS = {
   // ── THURSDAY ─────────────────────────────────────────────────
-  '14:20-0': { horse:'Minella Study',      odds:'7/2',   dec:4.5,  trainer:'A Nicholls',          conf:68,
-    reason:"William Hill Day 1 Lucky 15 pick. Put in a huge performance in the Triumph Hurdle last month, finishing third behind Apolon De Charnie. Strong form for the Anniversary Juvenile Hurdle and represents excellent value at 7/2 — a horse with room to improve for this flat, fast Aintree track." },
-  '14:55-0': { horse:'Impaire Et Passe',   odds:'10/3',  dec:4.33, trainer:'W P Mullins 🇮🇪',     conf:66,
-    reason:"William Hill Day 1 Lucky 15 pick. Previously won the Grade 1 Manifesto Novices' Chase at this exact track and trip. The returning Mullins-trained star has beaten Jango Baie before and represents the value angle in the Bowl Chase at 10/3 — WH believe he can reverse that Ryanair form on better Aintree terms." },
-  '15:30-0': { horse:'Brighterdaysahead',  odds:'2/1',   dec:3.0,  trainer:'G Elliott 🇮🇪',       conf:72,
-    reason:"William Hill Day 1 Lucky 15 pick. Finished a valiant second to Lossiemouth in the Champion Hurdle and should improve significantly on a flatter track without the formidable mare. Gordon Elliott's horse is WH's NAP of Thursday — 2/1 looks an outstanding price." },
-  '16:40-0': { horse:'Brookie',            odds:'14/1',  dec:15.0, trainer:'A Honeyball',          conf:54,
-    reason:"William Hill Day 1 Lucky 15 pick — the longshot of the four. Anthony Honeyball's charge thrives on quick ground and boasts eye-catching course and distance form in Grade 1 company. At 14/1 in an open Red Rum handicap, WH see each-way value against the hat-trick-seeking Sans Bruit." },
+  '13:45-0': { horse:'Selma De Vary',      odds:'11/4',  dec:3.75, trainer:'W P Mullins 🇮🇪',     conf:74,
+    reason:"William Hill Best Odds pick — Anniversary 4YO Juvenile Hurdle. Willie Mullins' exciting French recruit carries the famous Gigginstow silks of JP McManus and is ridden by stable jockey Paul Townend. Dominant on the Flat in France before joining Mullins, she's already shown Cheltenham ability and Aintree's flatter track is expected to suit her long stride even better." },
+  '14:20-0': { horse:'Koktail Divin',      odds:'13/5',  dec:3.6,  trainer:'H De Bromhead 🇮🇪',   conf:70,
+    reason:"William Hill Best Odds pick — Manifesto Novices' Chase. Henry De Bromhead's progressive novice chaser, ridden by Darryl O'Keeffe. Produced a career-best in the RSA Insurance Novices' Chase at Cheltenham, powering home to suggest this trip and test are ideal. WH go shortest in the race, seeing him as the benchmark novice against the Mullins string." },
+  '14:55-0': { horse:'Jango Baie',         odds:'11/8',  dec:2.375,trainer:'N Henderson',          conf:78,
+    reason:"William Hill Best Odds NAP — Bowl Chase. Nicky Henderson's superstar, partnered by Nico De Boinville, is the clear WH market leader at 11/8. Won the Ryanair Chase at Cheltenham in commanding fashion and steps up to 3m1f for the first time — Henderson believes the extra trip will bring further improvement. Dominant performance level makes this WH's most confident Thursday pick." },
+  '15:30-0': { horse:'A Moments Madness',  odds:'64/1',  dec:65.0, trainer:"G Elliott 🇮🇪",       conf:38,
+    reason:"William Hill Best Odds — Foxhunters' Chase. Gordon Elliott's amateur-ridden runner partnered by Mr Albi Tufnell. A massive outsider at 64/1, this race is notoriously tricky with amateur jockeys and hunter chasers. WH flag as the each-way longshot of Day 1 — take a small interest at a huge price if you fancy a punt in the amateur riders' feature." },
+  '16:05-0': { horse:'Brighterdaysahead',  odds:'2/1',   dec:3.0,  trainer:'G Elliott 🇮🇪',        conf:72,
+    reason:"William Hill Best Odds NAP — Aintree Hurdle (3m½f). Jack Kennedy takes the ride for Gordon Elliott on the horse who finished a gallant second to Lossiemouth in the Champion Hurdle. Stepping up in trip to 3m½f where his jumping and stamina really come into their own, WH go 2/1 — an outstanding price for a horse of this quality on a flat track he's expected to love." },
+  '16:40-0': { horse:'Sans Bruit',         odds:'16/5',  dec:4.2,  trainer:'P Nicholls',           conf:68,
+    reason:"William Hill Best Odds — Red Rum Handicap Chase. Paul Nicholls' stable star Harry Cobden in the saddle, aiming for a hat-trick of wins in this race. WH shorten from the 5/1 available elsewhere to 16/5, reflecting their confidence. The weight-carrying ability and course record make this a solid each-way bankers in a wide-open sprint handicap over 2m." },
+  '17:15-0': { horse:"Nan's Choice",       odds:'11/2',  dec:6.5,  trainer:'D Skelton',            conf:62,
+    reason:"William Hill Best Odds — Mares' Flat Race. Dan Skelton and son Harry Skelton combine in the bumper. Showed great natural ability in bumpers this season, quickening clear impressively at Warwick. WH make her 11/2 co-favourite, believing Skelton's talent for producing bumper horses at Aintree is a significant edge in a race decided by natural ability and jumping pedigree." },
 
   // ── FRIDAY ───────────────────────────────────────────────────
   '14:20-1': { horse:'Impose Toi',         odds:'8/1',   dec:9.0,  trainer:'',                    conf:58,
@@ -1455,6 +1463,51 @@ const WH_TIPS = {
     reason:"William Hill Saturday best bet for the Maghull Novices' Chase. Paul Nicholls' five-year-old is expected to 'take top honours' in the 2m Grade 1. WH believe Nicholls has targeted this race and the horse's jumping ability suits the flat Aintree track — an alternative to the short-priced Arkle winner." },
   '17:35-2': { horse:'Mossy Fen Road',     odds:'4/1',   dec:5.0,  trainer:'H Derham',             conf:63,
     reason:"William Hill Day 3 Lucky 15 pick for the NH Flat. Harry Derham's five-year-old gelding is related to Grade 1 winner Fury Road — 'a comprehensive scorer at Wetherby, he can progress once more.' WH see him as the banker of their Saturday Lucky 15 with the best profile in an open NH Flat." },
+};
+
+// ════════════════════════════════════════════════════════════════
+// ROAD TO CHELTENHAM TIPS — @RoadCheltenham tipster panel
+// ════════════════════════════════════════════════════════════════
+const RC_TIPS = {
+  // ── THURSDAY ─────────────────────────────────────────────────
+  '13:45-0': { horse:'Winston Junior',     odds:'5/1',   dec:6.0,  trainer:'',                    conf:60,
+    reason:"@RoadCheltenham E/W pick — Anniversary 4YO Juvenile Hurdle. Selected each-way at 5/1 by the Road to Cheltenham tipster panel. An interesting juvenile with the each-way insurance making this a value play in a wide-open race." },
+  '14:20-0': { horse:'Koktail Divin',      odds:'5/2',   dec:3.5,  trainer:'H De Bromhead 🇮🇪',   conf:66,
+    reason:"@RoadCheltenham top pick — Manifesto Novices' Chase. De Bromhead's progressive novice is the Road to Cheltenham panel's most confident Thursday selection. Strong form figures through the novice chase season, with Aintree's flat course expected to showcase his best jumping." },
+  '15:30-0': { horse:'Unexpected Party',   odds:'4/1',   dec:5.0,  trainer:'',                    conf:58,
+    reason:"@RoadCheltenham pick — Foxhunters' Chase. The Road to Cheltenham panel flag Unexpected Party as their Foxhunters' selection at 4/1. A well-fancied hunter chaser whose profile suits the amateur riders' feature over the Grand National fences." },
+};
+
+// ════════════════════════════════════════════════════════════════
+// RACING & FOOTBALL OUTLOOK TIPS — Olly Eden, Tom Park, Sam Hardy,
+// The Cockney Tipster
+// ════════════════════════════════════════════════════════════════
+const RFO_TIPS = {
+  // ── THURSDAY — Olly Eden ─────────────────────────────────────
+  '14:20-0': { horse:'Lulamba',            odds:'4/7',   dec:1.57, trainer:'N Henderson',          conf:80,
+    reason:"R&FO — Olly Eden (Manifesto Novices' Chase). Olly Eden names Lulamba as his banker in the Manifesto, matching our NAP. Henderson's short-priced novice is a thoroughly deserving favourite — dominant all season and Eden sees no reason to oppose on this flat, galloping track that suits his clean jumping style." },
+  '14:55-0': { horse:'Jango Baie',         odds:'7/2',   dec:4.5,  trainer:'N Henderson',          conf:74,
+    reason:"R&FO — Olly Eden (Bowl Chase). Eden goes with Jango Baie in the Bowl, confirming this as the banker selection across multiple tipster sources. The Ryanair Chase winner is expected to relish the step up in trip and the flatter track — Eden makes him the standout bet of Thursday afternoon." },
+  '16:05-0': { horse:'Brighterdaysahead',  odds:'7/2',   dec:4.5,  trainer:'G Elliott 🇮🇪',        conf:72,
+    reason:"R&FO — Olly Eden + Cockney Tipster (Aintree Hurdle). Named by both Olly Eden and The Cockney Tipster in their Top 10. Elliott's horse is the dominant selection at the festival for the 3m½f hurdle — the consensus of expert opinion is firmly behind him stepping up in trip after his Champion Hurdle run." },
+  '16:40-0': { horse:'Sans Bruit',         odds:'5/1',   dec:6.0,  trainer:'P Nicholls',           conf:76,
+    reason:"R&FO — Olly Eden BANKER (Red Rum Handicap Chase). Sans Bruit is Olly Eden's headline banker of Thursday — his strongest selection across the entire festival. Hat-trick-seeking Sans Bruit gets Paul Nicholls' full focus and Eden argues the handicapper has underestimated him despite the penalty. An outstanding bet at any price." },
+
+  // ── FRIDAY — R&FO panel ──────────────────────────────────────
+  '13:45-1': { horse:'Miamee',             odds:'',      dec:0,    trainer:'J P Mullins 🇮🇪',      conf:64,
+    reason:"R&FO — Friday panel (Mildmay Novices' Chase). JP Mullins' unexposed novice is highlighted by the R&FO Friday tipsters as the value bet of the opening race on Day 2. Has been progressive all season and the 2m4f Aintree trip on this flat course is seen as ideal for his long-striding jumping style." },
+  '14:55-1': { horse:'Daslots Lad',        odds:'',      dec:0,    trainer:'G Elliott 🇮🇪',        conf:62,
+    reason:"R&FO — Friday panel (Top Novices' Hurdle). Gordon Elliott's rising star is the R&FO selection for the Top Novices'. A progressive hurdler whose form figures have improved throughout the season, Elliott's big-day record at Aintree makes this selection particularly compelling for the Friday tipsters." },
+  '16:05-1': { horse:'Gentleman De Mee',   odds:'',      dec:0,    trainer:'W P Mullins 🇮🇪',      conf:60,
+    reason:"R&FO — Friday panel (Topham Chase). Willie Mullins' Topham pick from the R&FO Friday selection. Gentleman De Mee has plenty of experience over big fences and the stamina test of the Grand National course is seen as playing to his strengths — the R&FO panel flag as each-way value in an open handicap." },
+  '16:40-1': { horse:'Fortune Tommy',      odds:'',      dec:0,    trainer:'',                    conf:58,
+    reason:"R&FO — Friday panel (Sefton Novices' Hurdle). Fortune Tommy is highlighted by the R&FO Friday tipsters for the long-distance novice hurdle. A stayer of the highest order whose stamina comes fully into play over the 3m½f Sefton trip — the R&FO team see him as the value pick in an open novice contest." },
+
+  // ── SATURDAY — Tom Park, Sam Hardy, Cockney Tipster ──────────
+  '15:05-2': { horse:'Wodhooh',            odds:'7/4',   dec:2.75, trainer:'G Elliott 🇮🇪',        conf:76,
+    reason:"R&FO — Sam Hardy + Cockney Tipster Top 10 (Liverpool Hurdle). Named by both Sam Hardy and The Cockney Tipster as the standout Saturday selection. Gordon Elliott's strong stayer matches our NAP — consensus across R&FO panel and independent tipsters is firmly behind Wodhooh in the Grade 1 Liverpool Hurdle." },
+  '16:00-2': { horse:'Grangeclare West',   odds:'11/1',  dec:12.0, trainer:'W P Mullins 🇮🇪',      conf:70,
+    reason:"R&FO — Tom Park's No.1 Grand National fancy. Tom Park makes Grangeclare West his headline pick for the National, matching our NB. Third in the 2025 National and winner of the Bobbyjo Chase, Park believes Mullins will have him in peak condition and his proven Aintree form makes him the value play at double-figures against the 8/1 favourite I Am Maximus." },
 };
 
 // ════════════════════════════════════════════════════════════════
@@ -1627,6 +1680,8 @@ function renderAllDays() {
           ${tips.longshot ? renderTipCard(tips.longshot,'longshot',key) : ''}
           ${tips.irish    ? renderTipCard(tips.irish,'irish',key)       : ''}
           ${WH_TIPS[key]  ? renderTipCard(WH_TIPS[key],'wh',key)       : ''}
+          ${RC_TIPS[key]  ? renderTipCard(RC_TIPS[key],'rc',key)       : ''}
+          ${RFO_TIPS[key] ? renderTipCard(RFO_TIPS[key],'rfo',key)     : ''}
         </div>
       </div>`;
     }
@@ -1640,7 +1695,7 @@ function renderTipCard(tip, type, key) {
   const frac = tip.odds;
   const dec = tip.dec ? tip.dec.toFixed(2) : '—';
   const oddsDisplay = oddsMode === 'frac' ? frac : dec;
-  const typeLabel = type === 'nap' ? '⭐ NAP' : type === 'nb' ? '🔵 NB' : type === 'longshot' ? '🎯 Longshot' : type === 'irish' ? '🍀 Best Irish' : type === 'wh' ? '💜 William Hill' : '💰 E/W';
+  const typeLabel = type === 'nap' ? '⭐ NAP' : type === 'nb' ? '🔵 NB' : type === 'longshot' ? '🎯 Longshot' : type === 'irish' ? '🍀 Best Irish' : type === 'wh' ? '💜 William Hill' : type === 'rc' ? '🏇 Road to Cheltenham' : type === 'rfo' ? '📰 R&FO Tip' : '💰 E/W';
   const typeClass = `tip-card tip-${type}`;
   return `<div class="${typeClass}">
     ${!isTbc ? `<button class="add-to-tracker ${isTracked(key,tip.horse)?'added':''}" onclick="toggleTrack('${key}','${tip.horse}','${frac}','${type}','${RACE_SCHEDULE.find(r=>r.time===key.split('-')[0])?.name||''}')">
