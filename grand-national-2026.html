@@ -304,8 +304,9 @@
   .tip-longshot .tip-type { color: #fb923c; }
   .tip-irish .tip-type { color: #4ade80; }
   .tip-wh .tip-type { color: #a78bfa; }
-  .tip-whe .tip-type { color: #c4b5fd; }
-  .tip-rc .tip-type  { color: #fb7185; }
+  .tip-whe .tip-type  { color: #c4b5fd; }
+  .tip-mull .tip-type { color: #818cf8; }
+  .tip-rc .tip-type   { color: #fb7185; }
   .tip-rfo .tip-type { color: #fbbf24; }
 
   /* ── BETS PANEL ───────────────────────────────────────── */
@@ -1467,6 +1468,27 @@ const WH_TIPS = {
 };
 
 // ════════════════════════════════════════════════════════════════
+// STEVE MULLINGTON TIPS — news.williamhill.com/aintree-day-1-tips-2026
+// ════════════════════════════════════════════════════════════════
+const MULL_TIPS = {
+  // ── THURSDAY — all 7 races ────────────────────────────────────
+  '13:45-0': { horse:'Minella Study',       odds:'',      dec:0,    trainer:'',                    conf:66,
+    reason:"💜 Steve Mullington (WH) — Anniversary 4YO Hurdle. Finished third in the Triumph Hurdle at Cheltenham. Mullington highlights his &quot;high cruising speed and tactical versatility&quot; and notes Aintree's flat track suits his running style. His 143 rating is &quot;well justified&quot; — Mullington sees him as the performance horse of the juvenile division who will be different on this flatter, less demanding course." },
+  '14:20-0': { horse:'Lulamba',             odds:'4/7',   dec:1.57, trainer:'N Henderson',          conf:78,
+    reason:"💜 Steve Mullington (WH) NAP — Manifesto Novices' Chase. Mullington calls Lulamba &quot;one of the standout novice chasers of the season&quot; with an unbeaten record before losing to Kargese at Cheltenham. He is &quot;the one to beat here&quot; according to Mullington — the most emphatic selection of his Thursday card, matching our NAP. Henderson's novice is the consensus banker of the day." },
+  '14:55-0': { horse:'Jango Baie',          odds:'11/8',  dec:2.375,trainer:'N Henderson',          conf:76,
+    reason:"💜 Steve Mullington (WH) — Bowl Chase. Gold Cup runner-up steps back to 3m1f in the Bowl. Mullington notes he &quot;has a decent record at this venue, including a Grade 1 success over hurdles.&quot; Course form plus Gold Cup quality — a strong case for the hot favourite who is NAP across multiple tip sources." },
+  '15:30-0': { horse:'Gaboriot',            odds:'20/1',  dec:21.0, trainer:'',                    conf:52,
+    reason:"💜 Steve Mullington (WH) — Foxhunters' Chase. Mullington's interesting longshot: Gaboriot &quot;has a notable affinity for the Grand National course,&quot; having finished second in the Grand Sefton Handicap Chase over the same fences. Will be &quot;rejuvenated by a return to this venue.&quot; At 20/1 each-way, Mullington sees course form as a major edge over the market — each-way value in an unpredictable amateur riders' race." },
+  '16:05-0': { horse:'El Fabiolo',          odds:'5/1',   dec:6.0,  trainer:'W P Mullins 🇮🇪',     conf:72,
+    reason:"💜 Steve Mullington (WH) HEADLINE NAP — Aintree Hurdle. Mullington's most significant Thursday pick: El Fabiolo skipped Cheltenham entirely, running at Leopardstown 38 days ago. Crucially, Mullington notes Willie Mullins &quot;opted for&quot; this specific Grade 1 — &quot;highly significant&quot; stable targeting. Arrives &quot;relatively fresh&quot; against &quot;jaded opposition&quot; from Cheltenham. At 5/1, a compelling case to &quot;brush away&quot; rivals who've already had their big run." },
+  '16:40-0': { horse:'Javert Allen',        odds:'',      dec:0,    trainer:'J Williams',           conf:60,
+    reason:"💜 Steve Mullington (WH) — Red Rum Handicap Chase. Mullington's Red Rum pick is progressive seven-year-old Javert Allen from Jane Williams' yard. Has been &quot;crying out for some better ground&quot; all season, which should be &quot;just perfect for him on Thursday off a nice handicap mark.&quot; One to watch if the spring ground dries out further — Mullington sees significant improvement potential." },
+  '17:15-0': { horse:'Martini Majesty',     odds:'',      dec:0,    trainer:'A King',               conf:62,
+    reason:"💜 Steve Mullington (WH) NB — Mares' Bumper. Mullington's notable bet: Martini Majesty, bought for £9,500 as a yearling and &quot;closely related to the much-lamented Group 1 winning stayer Trueshan.&quot; Trainer Alan King &quot;really rates&quot; the mare and is &quot;hopeful she will prove to be quite smart.&quot; Pedigree class and strong trainer confidence make this an intriguing each-way flutter at a likely big price." },
+};
+
+// ════════════════════════════════════════════════════════════════
 // WH EXPERT PANEL — Jane Mangan · Nick Luck · Barry Geraghty ·
 //                   Gavin Cromwell (news.williamhill.com)
 // ════════════════════════════════════════════════════════════════
@@ -1712,6 +1734,7 @@ function renderAllDays() {
           ${tips.irish    ? renderTipCard(tips.irish,'irish',key)       : ''}
           ${WH_TIPS[key]     ? renderTipCard(WH_TIPS[key],'wh',key)        : ''}
           ${WH_EXPERTS[key]  ? renderTipCard(WH_EXPERTS[key],'whe',key)   : ''}
+          ${MULL_TIPS[key]   ? renderTipCard(MULL_TIPS[key],'mull',key)   : ''}
           ${RC_TIPS[key]     ? renderTipCard(RC_TIPS[key],'rc',key)        : ''}
           ${RFO_TIPS[key]    ? renderTipCard(RFO_TIPS[key],'rfo',key)      : ''}
         </div>
@@ -1727,7 +1750,7 @@ function renderTipCard(tip, type, key) {
   const frac = tip.odds;
   const dec = tip.dec ? tip.dec.toFixed(2) : '—';
   const oddsDisplay = oddsMode === 'frac' ? frac : dec;
-  const typeLabel = type === 'nap' ? '⭐ NAP' : type === 'nb' ? '🔵 NB' : type === 'longshot' ? '🎯 Longshot' : type === 'irish' ? '🍀 Best Irish' : type === 'wh' ? '💜 William Hill' : type === 'whe' ? '🎙️ WH Expert Panel' : type === 'rc' ? '🏇 Road to Cheltenham' : type === 'rfo' ? '📰 R&FO Tip' : '💰 E/W';
+  const typeLabel = type === 'nap' ? '⭐ NAP' : type === 'nb' ? '🔵 NB' : type === 'longshot' ? '🎯 Longshot' : type === 'irish' ? '🍀 Best Irish' : type === 'wh' ? '💜 William Hill' : type === 'whe' ? '🎙️ WH Expert Panel' : type === 'mull' ? '💜 WH: Steve Mullington' : type === 'rc' ? '🏇 Road to Cheltenham' : type === 'rfo' ? '📰 R&FO Tip' : '💰 E/W';
   const typeClass = `tip-card tip-${type}`;
   return `<div class="${typeClass}">
     ${!isTbc ? `<button class="add-to-tracker ${isTracked(key,tip.horse)?'added':''}" onclick="toggleTrack('${key}','${tip.horse}','${frac}','${type}','${RACE_SCHEDULE.find(r=>r.time===key.split('-')[0])?.name||''}')">
