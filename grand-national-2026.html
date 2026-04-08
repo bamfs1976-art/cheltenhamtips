@@ -304,6 +304,7 @@
   .tip-longshot .tip-type { color: #fb923c; }
   .tip-irish .tip-type { color: #4ade80; }
   .tip-wh .tip-type { color: #a78bfa; }
+  .tip-whe .tip-type { color: #c4b5fd; }
   .tip-rc .tip-type  { color: #fb7185; }
   .tip-rfo .tip-type { color: #fbbf24; }
 
@@ -1466,6 +1467,36 @@ const WH_TIPS = {
 };
 
 // ════════════════════════════════════════════════════════════════
+// WH EXPERT PANEL — Jane Mangan · Nick Luck · Barry Geraghty ·
+//                   Gavin Cromwell (news.williamhill.com)
+// ════════════════════════════════════════════════════════════════
+const WH_EXPERTS = {
+  // ── THURSDAY ─────────────────────────────────────────────────
+  '13:45-0': { horse:'Winston Junior',      odds:'5/1',   dec:6.0,  trainer:'',                    conf:68,
+    reason:"🎙️ WH Expert consensus — Jane Mangan &amp; Nick Luck both name Winston Junior for the Anniversary 4YO Hurdle. Mangan notes his strong run in the Fred Winter, while Luck highlights he was &quot;clearly campaigned with the Fred Winter in mind&quot; and &quot;further progress&quot; is expected. Two of four WH experts agree — strong each-way play at 5/1." },
+  '14:20-0': { horse:'Koktail Divin',       odds:'13/5',  dec:3.6,  trainer:'H De Bromhead 🇮🇪',   conf:64,
+    reason:"🎙️ WH Expert — Nick Luck (Manifesto Novices' Chase). Luck takes Koktail Divin each-way against market leader Lulamba, noting Lulamba's jumping concerns at Cheltenham: &quot;can see him being undone again if there's a real swinging gallop.&quot; Koktail Divin &quot;looks to be crying out to come back to their trip&quot; — contrarian play from one of racing's sharpest analysts. N.B. Barry Geraghty tips the favourite Lulamba." },
+  '14:55-0': { horse:"Spillane's Tower",    odds:'9/2',   dec:5.5,  trainer:'W P Mullins 🇮🇪',     conf:66,
+    reason:"🎙️ WH Expert consensus — Jane Mangan &amp; Barry Geraghty both pick Spillane's Tower as the value play in the Bowl Chase against NAP Jango Baie. Mangan says he is &quot;taking an awful lot of beating&quot; given he arrives fresh after skipping the Gold Cup — connections were &quot;very happy with him.&quot; Geraghty notes he is only 3lbs behind Jango Baie on ratings. If Jango Baie underperforms this is the winner." },
+  '15:30-0': { horse:'Barton Snow',         odds:'7/2',   dec:4.5,  trainer:'',                    conf:72,
+    reason:"🎙️ WH Expert consensus — Nick Luck &amp; Barry Geraghty both go with Barton Snow in the Foxhunters'. Luck is emphatic: his Cheltenham run &quot;was ridiculously good&quot; over a trip too long for him and he &quot;will love this drop back in trip&quot; — potentially winning &quot;by quite a long way.&quot; Geraghty agrees the 2m5f suits a horse with plenty of pace. Strong WH expert conviction here." },
+  '16:05-0': { horse:'The New Lion',        odds:'6/1',   dec:7.0,  trainer:'',                    conf:60,
+    reason:"🎙️ WH Expert — Jane Mangan (Aintree Hurdle). Mangan's most interesting Thursday tip: she argues The New Lion &quot;never struck me as a two-miler&quot; and was &quot;got done for pace at Cheltenham by Lossiemouth.&quot; Stepping up to 3m½f in a small field provides &quot;optimum conditions&quot; to &quot;turn the form around with Brighterdaysahead.&quot; Compelling case for the underdog at a big price." },
+  '16:40-0': { horse:'Inthepocket',         odds:'10/1',  dec:11.0, trainer:'H De Bromhead 🇮🇪',   conf:58,
+    reason:"🎙️ WH Expert — Barry Geraghty (Red Rum Handicap Chase). Geraghty keeps faith with Inthepocket despite his Cheltenham fall, noting he &quot;looked to be running like a horse that had a good bit to offer&quot; before departing. Crucially, Geraghty highlights trainer Henry de Bromhead's &quot;fine record in this race.&quot; Each-way value at 10/1 from an expert who knows the horse and trainer well." },
+  '17:15-0': { horse:'Princess Day',        odds:'4/1',   dec:5.0,  trainer:'J Scott',             conf:70,
+    reason:"🎙️ WH Expert consensus — Jane Mangan &amp; Barry Geraghty both back Princess Day in the Mares' Bumper. Mangan highlights her &quot;impressive Newbury victory&quot; over Fairy Park with Lorcan Williams retaining the ride; she is &quot;a mare on the up for Jeremy Scott.&quot; Geraghty concurs — unbeaten in two starts and beat Fairy Park by nearly five lengths. Clear consensus among WH experts." },
+
+  // ── FRIDAY ───────────────────────────────────────────────────
+  '16:05-1': { horse:'Will The Wise',       odds:'10/1',  dec:11.0, trainer:'G Cromwell 🇮🇪',      conf:68,
+    reason:"🎙️ WH Expert — Gavin Cromwell (Topham Chase). Cromwell names Will The Wise as &quot;probably our best chance of the week&quot; — a massive endorsement from the trainer himself. Finished second to Madara in the Plate at Cheltenham and is now 6lbs better off with Madara. &quot;Schooled impressively over Aintree-style fences at the Curragh&quot; — trainer confidence is the ultimate inside information." },
+
+  // ── SATURDAY ─────────────────────────────────────────────────
+  '16:00-2': { horse:'Final Orders',        odds:'20/1',  dec:21.0, trainer:'',                    conf:62,
+    reason:"🎙️ WH Expert — Gavin Cromwell (Grand National). Cromwell highlights Final Orders as his National pick — the recent Cheltenham Festival Cross Country winner who is &quot;well handicapped&quot; on ratings with a light weight assignment. Cross Country winners at Cheltenham translate well to Aintree's unique fencing test, and Cromwell sees ideal ground conditions ahead. A strong each-way play at 20/1." },
+};
+
+// ════════════════════════════════════════════════════════════════
 // ROAD TO CHELTENHAM TIPS — @RoadCheltenham tipster panel
 // ════════════════════════════════════════════════════════════════
 const RC_TIPS = {
@@ -1679,9 +1710,10 @@ function renderAllDays() {
           ${tips.ew       ? renderTipCard(tips.ew,'ew',key)             : ''}
           ${tips.longshot ? renderTipCard(tips.longshot,'longshot',key) : ''}
           ${tips.irish    ? renderTipCard(tips.irish,'irish',key)       : ''}
-          ${WH_TIPS[key]  ? renderTipCard(WH_TIPS[key],'wh',key)       : ''}
-          ${RC_TIPS[key]  ? renderTipCard(RC_TIPS[key],'rc',key)       : ''}
-          ${RFO_TIPS[key] ? renderTipCard(RFO_TIPS[key],'rfo',key)     : ''}
+          ${WH_TIPS[key]     ? renderTipCard(WH_TIPS[key],'wh',key)        : ''}
+          ${WH_EXPERTS[key]  ? renderTipCard(WH_EXPERTS[key],'whe',key)   : ''}
+          ${RC_TIPS[key]     ? renderTipCard(RC_TIPS[key],'rc',key)        : ''}
+          ${RFO_TIPS[key]    ? renderTipCard(RFO_TIPS[key],'rfo',key)      : ''}
         </div>
       </div>`;
     }
@@ -1695,7 +1727,7 @@ function renderTipCard(tip, type, key) {
   const frac = tip.odds;
   const dec = tip.dec ? tip.dec.toFixed(2) : '—';
   const oddsDisplay = oddsMode === 'frac' ? frac : dec;
-  const typeLabel = type === 'nap' ? '⭐ NAP' : type === 'nb' ? '🔵 NB' : type === 'longshot' ? '🎯 Longshot' : type === 'irish' ? '🍀 Best Irish' : type === 'wh' ? '💜 William Hill' : type === 'rc' ? '🏇 Road to Cheltenham' : type === 'rfo' ? '📰 R&FO Tip' : '💰 E/W';
+  const typeLabel = type === 'nap' ? '⭐ NAP' : type === 'nb' ? '🔵 NB' : type === 'longshot' ? '🎯 Longshot' : type === 'irish' ? '🍀 Best Irish' : type === 'wh' ? '💜 William Hill' : type === 'whe' ? '🎙️ WH Expert Panel' : type === 'rc' ? '🏇 Road to Cheltenham' : type === 'rfo' ? '📰 R&FO Tip' : '💰 E/W';
   const typeClass = `tip-card tip-${type}`;
   return `<div class="${typeClass}">
     ${!isTbc ? `<button class="add-to-tracker ${isTracked(key,tip.horse)?'added':''}" onclick="toggleTrack('${key}','${tip.horse}','${frac}','${type}','${RACE_SCHEDULE.find(r=>r.time===key.split('-')[0])?.name||''}')">
