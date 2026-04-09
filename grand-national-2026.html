@@ -889,6 +889,9 @@
   <div id="api-results-banner" style="display:none;margin-bottom:10px"></div>
   <div id="live-results-container"></div>
 
+  <!-- TIPSTER LEADERBOARD -->
+  <div id="gn-scorecard-container" style="margin-bottom:32px"></div>
+
   <div class="results-notice">
     <strong>📅 Results will appear here from Thursday 9 April 2026</strong>
     Results are entered after each race. Check back during and after each day of the Festival.
@@ -1983,6 +1986,332 @@ function removeTrackItem(i) {
 }
 
 // ════════════════════════════════════════════════════════════════
+// TIPSTER SCORECARD — picks & scoring for all 3 days
+// NOTE: Thursday 13:45/14:20 and 15:30/16:05 keys use ACTUAL race
+//       times (not the HTML schedule names which were transposed).
+// ════════════════════════════════════════════════════════════════
+
+const GN_RACE_LABELS = {
+  '13:45-0':'Anniversary', '14:20-0':'Manifesto',  '14:55-0':'Bowl',
+  '15:30-0':'Foxhunters',  '16:05-0':'Aintree H.', '16:40-0':'Red Rum',
+  '17:15-0':'Mares Flat',
+  '13:45-1':'WH Hurdle',   '14:20-1':'Mildmay',    '14:55-1':'Top Nov.',
+  '15:30-1':'Melling',     '16:05-1':'Topham',     '16:40-1':'Sefton',
+  '17:15-1':'Hallgarten',
+  '13:20-2':'Sat H\'cap',  '13:55-2':'Mersey',     '14:30-2':'Freebooter',
+  '15:05-2':'Liverpool H.','16:00-2':'Grand Nat.',  '17:00-2':'Maghull',
+  '17:35-2':'NH Flat',
+};
+
+const GN_TIPSTER_PICKS = {
+  // ── OUR NAP — picks corrected for actual race times on Thursday ──
+  'Our NAP': {
+    label:'Our NAP', color:'#34d399', icon:'⭐',
+    picks: {
+      // Thursday (corrected: HTML had 13:45/14:20 & 15:30/16:05 swapped)
+      '13:45-0':'Apolon De Charnie', '14:20-0':'Lulamba',
+      '14:55-0':'Jango Baie',        '15:30-0':'Barton Snow',
+      '16:05-0':'Brighterdaysahead', '16:40-0':'Sans Bruit',
+      '17:15-0':'White Noise',
+      // Friday
+      '13:45-1':'Handstands',        '14:20-1':'Jingko Blue',
+      '14:55-1':'Old Park Star',     '15:30-1':'Jonbon',
+      '16:05-1':'Madara',            '16:40-1':"Johnnys Fury",
+      '17:15-1':'Air of Entitlement',
+      // Saturday
+      '13:20-2':'Supremely West',    '13:55-2':'King Rasko Grey',
+      '14:30-2':'Ask Brewster',      '15:05-2':'Wodhooh',
+      '16:00-2':'I Am Maximus',      '17:00-2':'Kargese',
+      '17:35-2':'The Mourne Rambler',
+    }
+  },
+  // ── OUR NB — picks corrected for actual race times on Thursday ──
+  'Our NB': {
+    label:'Our NB', color:'#60a5fa', icon:'🔵',
+    picks: {
+      // Thursday (corrected)
+      '13:45-0':'Mange Tout',        '14:20-0':'Koktail Divin',
+      '14:55-0':'Gaelic Warrior',    '15:30-0':'Music Drive',
+      '16:05-0':'The New Lion',      '16:40-0':'Highlands Legacy',
+      '17:15-0':"Ti'mamzel",
+      // Friday
+      '13:45-1':'Kitzbuhel',         '14:20-1':'Stay Away Fay',
+      '14:55-1':'Kopek Des Bordes',  '15:30-1':'El Fabiolo',
+      '16:05-1':'Will The Wise',     '16:40-1':'No Drama This End',
+      '17:15-1':'Lively Citizen',
+      // Saturday
+      '13:20-2':'Jingko Blue',       '13:55-2':'Mystical Power',
+      '14:30-2':'Holloway Queen',    '15:05-2':'Home By The Lee',
+      '16:00-2':'Grangeclare West',  '17:00-2':'Ballyburn',
+      '17:35-2':'Absolute Notions',
+    }
+  },
+  // ── WH RACECARD — Best Odds picks ───────────────────────────────
+  'WH Racecard': {
+    label:'WH Racecard', color:'#a78bfa', icon:'💜',
+    picks: {
+      // Thursday
+      '13:45-0':'Selma De Vary',     '14:20-0':'Koktail Divin',
+      '14:55-0':'Jango Baie',        '15:30-0':'A Moments Madness',
+      '16:05-0':'Brighterdaysahead', '16:40-0':'Sans Bruit',
+      '17:15-0':"Nan's Choice",
+      // Friday
+      '13:45-1':'Wellington Arch',   '14:20-1':'Salver',
+      '14:55-1':'Diva Luna',         '15:30-1': null,
+      '16:05-1':'Addragoole',        '16:40-1':'Mister Meggit',
+      '17:15-1':'Harry Lowes',
+      // Saturday
+      '13:20-2':'Act of Authority',  '13:55-2':'Fingle Bridge',
+      '14:30-2':'Docpickedme',       '15:05-2':'Jetara',
+      '16:00-2':'Iroko',             '17:00-2':'Kalif Du Berlais',
+      '17:35-2':'Mossy Fen Road',
+    }
+  },
+  // ── MULLINGTON (WH) ──────────────────────────────────────────────
+  'Mullington': {
+    label:'Mullington', color:'#fbbf24', icon:'📝',
+    picks: {
+      // Thursday
+      '13:45-0':'Minella Study',     '14:20-0':'Lulamba',
+      '14:55-0':'Jango Baie',        '15:30-0':'Gaboriot',
+      '16:05-0':'El Fabiolo',        '16:40-0':'Javert Allen',
+      '17:15-0':'Martini Majesty',
+      // Friday
+      '13:45-1':'Favour And Fortune','14:20-1':'Miami Magic',
+      '14:55-1':'Starting Fifteen',  '15:30-1':'JPR One',
+      '16:05-1':'Madara',            '16:40-1':"Johnny's Jury",
+      '17:15-1':'Wreckless Eric',
+      // Saturday (not published)
+      '13:20-2':null, '13:55-2':null, '14:30-2':null, '15:05-2':null,
+      '16:00-2':null, '17:00-2':null, '17:35-2':null,
+    }
+  },
+  // ── WH EXPERT PANEL (Mangan/Luck/Geraghty/Cromwell consensus) ───
+  'WH Experts': {
+    label:'WH Experts', color:'#c4b5fd', icon:'🎙️',
+    picks: {
+      // Thursday
+      '13:45-0':'Winston Junior',    '14:20-0':'Koktail Divin',
+      '14:55-0':"Spillane's Tower", '15:30-0':'Barton Snow',
+      '16:05-0':'The New Lion',      '16:40-0':'Inthepocket',
+      '17:15-0':'Princess Day',
+      // Friday
+      '13:45-1':'Jazzy Matty',       '14:20-1':'Salver',
+      '14:55-1':'Sober Glory',       '15:30-1':'Solness',
+      '16:05-1':'Will The Wise',     '16:40-1':"Mondou'boy",
+      '17:15-1':'Harry Lowes',
+      // Saturday (Cromwell National picks)
+      '13:20-2':null, '13:55-2':null, '14:30-2':null, '15:05-2':null,
+      '16:00-2':'Final Orders',      '17:00-2':null, '17:35-2':null,
+    }
+  },
+  // ── BARRY GERAGHTY (WH) ─────────────────────────────────────────
+  'Geraghty': {
+    label:'Geraghty', color:'#fb7185', icon:'🎤',
+    picks: {
+      // Thursday
+      '13:45-0':'Mange Tout',        '14:20-0':'Lulamba',
+      '14:55-0':"Spillane's Tower", '15:30-0':'Barton Snow',
+      '16:05-0':'Brighterdaysahead', '16:40-0':'Inthepocket',
+      '17:15-0':'Princess Day',
+      // Friday
+      '13:45-1':'Trustintimes',      '14:20-1':'Gold Dancer',
+      '14:55-1':'Sober Glory',       '15:30-1':'Solness',
+      '16:05-1':'Will The Wise',     '16:40-1':'Zeus Power',
+      '17:15-1':'Harry Lowes',
+      // Saturday (not published)
+      '13:20-2':null, '13:55-2':null, '14:30-2':null, '15:05-2':null,
+      '16:00-2':null, '17:00-2':null, '17:35-2':null,
+    }
+  },
+  // ── NICK LUCK (WH) ───────────────────────────────────────────────
+  'Nick Luck': {
+    label:'Nick Luck', color:'#67e8f9', icon:'🎤',
+    picks: {
+      // Thursday
+      '13:45-0':'Winston Junior',    '14:20-0':'Koktail Divin',
+      '14:55-0':"Pic d'Orhy",       '15:30-0':'Barton Snow',
+      '16:05-0':'Alexei',            '16:40-0':'Jasko Des Dames',
+      '17:15-0':'Burds Of A Feather',
+      // Friday
+      '13:45-1':'Jazzy Matty',       '14:20-1':'Salver',
+      '14:55-1':'Baron Noir',        '15:30-1':'Gidleigh Park',
+      '16:05-1':'Madara',            '16:40-1':"Mondou'boy",
+      '17:15-1':'Harry Lowes',
+      // Saturday (not published)
+      '13:20-2':null, '13:55-2':null, '14:30-2':null, '15:05-2':null,
+      '16:00-2':null, '17:00-2':null, '17:35-2':null,
+    }
+  },
+  // ── JANE MANGAN (WH) ────────────────────────────────────────────
+  'J. Mangan': {
+    label:'J. Mangan', color:'#f9a8d4', icon:'🎤',
+    picks: {
+      // Thursday
+      '13:45-0':'Minella Study',     '14:20-0': null,
+      '14:55-0':"Spillane's Tower", '15:30-0':"It's On The Line",
+      '16:05-0':'The New Lion',      '16:40-0': null,
+      '17:15-0':'Princess Day',
+      // Friday
+      '13:45-1': null,               '14:20-1':"Regent's Stroll",
+      '14:55-1':'Sober Glory',       '15:30-1':'Heart Wood',
+      '16:05-1':'Gentleman De Mee',  '16:40-1':'Dalston Lad',
+      '17:15-1':'Pourquoi Pas Papa',
+      // Saturday (not published)
+      '13:20-2':null, '13:55-2':null, '14:30-2':null, '15:05-2':null,
+      '16:00-2':null, '17:00-2':null, '17:35-2':null,
+    }
+  },
+  // ── BOOM CITY (@boomcitytips) ────────────────────────────────────
+  'Boom City': {
+    label:'Boom City', color:'#f59e0b', icon:'🐝',
+    picks: {
+      // Thursday
+      '13:45-0':'Minella Study',     '14:20-0':'Lulamba',
+      '14:55-0':'Jango Baie',        '15:30-0':'Unexpected Party',
+      '16:05-0':'Brighterdaysahead', '16:40-0':'Stencil',
+      '17:15-0':'Princess Day',
+      // Friday / Saturday (not published)
+      '13:45-1':null, '14:20-1':null, '14:55-1':null, '15:30-1':null,
+      '16:05-1':null, '16:40-1':null, '17:15-1':null,
+      '13:20-2':null, '13:55-2':null, '14:30-2':null, '15:05-2':null,
+      '16:00-2':null, '17:00-2':null, '17:35-2':null,
+    }
+  },
+};
+
+const GN_ALL_KEYS = [
+  '13:45-0','14:20-0','14:55-0','15:30-0','16:05-0','16:40-0','17:15-0',
+  '13:45-1','14:20-1','14:55-1','15:30-1','16:05-1','16:40-1','17:15-1',
+  '13:20-2','13:55-2','14:30-2','15:05-2','16:00-2','17:00-2','17:35-2',
+];
+
+function scoreGNPick(horse, key) {
+  if (!horse) return { pts:0, label:'—', code:'skip' };
+  const res = RESULTS[key];
+  if (!res || res.winner === null) return { pts:0, label:'⏳', code:'pending' };
+  if (res.winner === horse)                               return { pts:3, label:'WIN',    code:'win'   };
+  if (res.second === horse || res.third === horse)        return { pts:1, label:'PLACED', code:'place' };
+  return { pts:0, label:'MISS', code:'miss' };
+}
+
+function buildGNLeaderboard() {
+  const done = GN_ALL_KEYS.filter(k => RESULTS[k] && RESULTS[k].winner !== null);
+  return Object.entries(GN_TIPSTER_PICKS).map(([key, t]) => {
+    let wins=0, places=0, misses=0, skips=0, total=0, raceResults=[];
+    GN_ALL_KEYS.forEach(rk => {
+      const horse = t.picks[rk];
+      if (!horse) { skips++; raceResults.push({raceKey:rk,horse:'—',code:'skip',pts:0}); return; }
+      const s = scoreGNPick(horse, rk);
+      if (s.code==='win') wins++;
+      else if (s.code==='place') places++;
+      else if (s.code==='miss') misses++;
+      total += s.pts;
+      raceResults.push({raceKey:rk, horse, ...s});
+    });
+    return { key, label:t.label, color:t.color, icon:t.icon,
+             wins, places, misses, skips, totalPts:total, raceResults };
+  }).sort((a,b) => b.totalPts - a.totalPts || b.wins - a.wins);
+}
+
+function populateGNScorecard() {
+  const el = document.getElementById('gn-scorecard-container');
+  if (!el || el.innerHTML.trim()) return;
+  const lb = buildGNLeaderboard();
+  const done = GN_ALL_KEYS.filter(k => RESULTS[k] && RESULTS[k].winner !== null);
+  const total = GN_ALL_KEYS.length;
+
+  let h = `
+  <h3 style="font-family:'Playfair Display',serif;font-size:20px;color:var(--gold);margin:0 0 6px">🏆 Tipster Leaderboard</h3>
+  <p style="font-size:12px;color:var(--silver);opacity:0.75;margin-bottom:20px">Scoring: 3pts = winner · 1pt = placed (2nd/3rd). ${done.length} of ${total} races complete.</p>
+  <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:32px">`;
+
+  lb.forEach((t, i) => {
+    const medal = i===0?'🥇':i===1?'🥈':i===2?'🥉':`${i+1}.`;
+    const barW  = Math.round((t.totalPts/(lb[0].totalPts||1))*100);
+    h += `
+    <div style="background:rgba(11,22,40,0.8);border:1px solid ${i<3?t.color:'rgba(255,255,255,0.07)'};border-radius:10px;padding:12px 16px;">
+      <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+        <span style="font-size:20px;min-width:28px">${medal}</span>
+        <span style="font-size:11px;padding:2px 8px;border-radius:4px;background:rgba(0,0,0,0.4);color:${t.color};border:1px solid ${t.color};font-weight:600">${t.icon} ${t.label}</span>
+        <span style="font-family:'DM Mono',monospace;font-size:20px;font-weight:700;color:${t.color}">${t.totalPts}pts</span>
+        <div style="display:flex;gap:12px;margin-left:auto;font-size:12px;flex-wrap:wrap;">
+          <span style="color:#34d399">✓ ${t.wins} win${t.wins!==1?'s':''}</span>
+          <span style="color:#fbbf24">↑ ${t.places} placed</span>
+          <span style="color:#f87171">✗ ${t.misses} miss${t.misses!==1?'es':''}</span>
+          ${t.skips?`<span style="color:#94a3b8;opacity:0.6">— ${t.skips} n/a</span>`:''}
+        </div>
+      </div>
+      <div style="margin-top:8px;height:4px;background:rgba(255,255,255,0.06);border-radius:2px;">
+        <div style="height:100%;width:${barW}%;background:${t.color};border-radius:2px"></div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:5px;margin-top:10px;">
+        ${t.raceResults.filter(r=>r.code!=='skip').map(r => {
+          const col = r.code==='win'?'#34d399':r.code==='place'?'#fbbf24':r.code==='miss'?'#f87171':r.code==='pending'?'#94a3b8':'#4b5563';
+          const bg  = r.code==='win'?'rgba(52,211,153,0.15)':r.code==='place'?'rgba(251,191,36,0.12)':r.code==='miss'?'rgba(248,113,113,0.1)':r.code==='pending'?'rgba(148,163,184,0.06)':'transparent';
+          return `<div title="${GN_RACE_LABELS[r.raceKey]}: ${r.horse}" style="font-size:10px;padding:3px 7px;border-radius:4px;background:${bg};border:1px solid ${col};color:${col};white-space:nowrap;cursor:default">${GN_RACE_LABELS[r.raceKey]} <span style="opacity:0.7">${r.horse.length>12?r.horse.slice(0,11)+'…':r.horse}</span></div>`;
+        }).join('')}
+      </div>
+    </div>`;
+  });
+  h += `</div>`;
+
+  // Race-by-race comparison table
+  h += `
+  <h3 style="font-family:'Playfair Display',serif;font-size:18px;color:var(--gold);margin:0 0 4px">📋 Race-by-Race Comparison</h3>
+  <p style="font-size:12px;color:var(--silver);opacity:0.7;margin-bottom:14px">Scroll right on mobile. ✓ win · ↑ placed · ✗ miss · ⏳ pending</p>
+  <div style="overflow-x:auto;margin-bottom:32px">
+  <table style="width:100%;border-collapse:collapse;min-width:800px;font-size:11px">
+    <thead><tr style="background:rgba(255,255,255,0.04)">
+      <th style="padding:7px 10px;text-align:left;color:var(--silver);border-bottom:1px solid rgba(255,255,255,0.1)">Race</th>
+      <th style="padding:7px 8px;text-align:left;color:#34d399;border-bottom:1px solid rgba(255,255,255,0.1)">Winner</th>
+      ${lb.map(t=>`<th style="padding:7px 5px;text-align:center;color:${t.color};font-weight:600;border-bottom:1px solid rgba(255,255,255,0.1);white-space:nowrap">${t.icon}<br>${t.label}</th>`).join('')}
+    </tr></thead>
+    <tbody>`;
+
+  const DAY_LABELS = {'0':'📅 Thu','1':'📅 Fri','2':'📅 Sat'};
+  let lastDay = null;
+  GN_ALL_KEYS.forEach((rk, ri) => {
+    const day = rk.split('-')[1];
+    if (day !== lastDay) {
+      h += `<tr><td colspan="${lb.length+2}" style="padding:8px 10px;background:rgba(212,175,55,0.1);color:var(--gold);font-weight:700;font-size:12px;border-bottom:1px solid rgba(212,175,55,0.2)">${DAY_LABELS[day]}</td></tr>`;
+      lastDay = day;
+    }
+    const res = RESULTS[rk];
+    const isPending = !res || res.winner === null;
+    h += `<tr style="background:${ri%2===0?'rgba(255,255,255,0.01)':'transparent'}">
+      <td style="padding:6px 10px;color:var(--white);font-weight:600;border-bottom:1px solid rgba(255,255,255,0.05);white-space:nowrap">${GN_RACE_LABELS[rk]}</td>
+      <td style="padding:6px 8px;color:#34d399;font-family:'Playfair Display',serif;font-size:10px;border-bottom:1px solid rgba(255,255,255,0.05)">${isPending?'⏳':res.winner}</td>
+      ${lb.map(t => {
+        const horse = t.picks[rk];
+        if (!horse) return `<td style="padding:6px 5px;text-align:center;color:#4b5563;border-bottom:1px solid rgba(255,255,255,0.05)">—</td>`;
+        const s = scoreGNPick(horse, rk);
+        const bg = s.code==='win'?'rgba(52,211,153,0.2)':s.code==='place'?'rgba(251,191,36,0.15)':s.code==='miss'?'rgba(248,113,113,0.08)':'transparent';
+        const col = s.code==='win'?'#34d399':s.code==='place'?'#fbbf24':s.code==='miss'?'#f87171':'#94a3b8';
+        const icon = s.code==='win'?'✓':s.code==='place'?'↑':s.code==='miss'?'✗':'⏳';
+        return `<td style="padding:6px 5px;text-align:center;background:${bg};border-bottom:1px solid rgba(255,255,255,0.05)">
+          <div style="color:${col};font-weight:700;font-size:11px">${icon}</div>
+          <div style="color:${col};opacity:0.75;font-size:9px;white-space:nowrap;overflow:hidden;max-width:62px;margin:0 auto" title="${horse}">${horse.length>9?horse.slice(0,8)+'…':horse}</div>
+        </td>`;
+      }).join('')}
+    </tr>`;
+  });
+
+  h += `<tr style="background:rgba(212,175,55,0.06);border-top:2px solid rgba(212,175,55,0.3)">
+    <td style="padding:10px 10px;color:var(--gold);font-weight:700;font-size:13px">TOTAL</td>
+    <td style="padding:10px 8px;color:var(--silver);font-size:11px">${done.length}/${total} done</td>
+    ${lb.map(t=>`<td style="padding:10px 5px;text-align:center;font-weight:700;font-size:14px;color:${t.color}">${t.totalPts}</td>`).join('')}
+  </tr>`;
+  h += `</tbody></table></div>
+
+  <div style="padding:12px 16px;background:rgba(148,163,184,0.06);border:1px solid rgba(148,163,184,0.15);border-radius:10px;margin-bottom:8px">
+    <p style="font-size:12px;color:var(--silver);opacity:0.8;margin:0">⏳ <strong>Friday &amp; Saturday</strong> still to run — leaderboard updates live as results are entered.</p>
+  </div>`;
+
+  el.innerHTML = h;
+}
+
+// ════════════════════════════════════════════════════════════════
 // PANEL SWITCHING
 // ════════════════════════════════════════════════════════════════
 function showPanel(name) {
@@ -1991,6 +2320,7 @@ function showPanel(name) {
   document.getElementById(`panel-${name}`).classList.add('active');
   const idx = ['tips','national','results','tracker','guide','bets'].indexOf(name);
   document.querySelectorAll('.nav-btn')[idx]?.classList.add('active');
+  if (name === 'results') populateGNScorecard();
 }
 
 // ════════════════════════════════════════════════════════════════
