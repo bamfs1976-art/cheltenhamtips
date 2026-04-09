@@ -304,10 +304,12 @@
   .tip-longshot .tip-type { color: #fb923c; }
   .tip-irish .tip-type { color: #4ade80; }
   .tip-wh .tip-type { color: #a78bfa; }
-  .tip-whe .tip-type  { color: #c4b5fd; }
-  .tip-mull .tip-type { color: #818cf8; }
-  .tip-rc .tip-type   { color: #fb7185; }
-  .tip-rfo .tip-type { color: #fbbf24; }
+  .tip-whe .tip-type   { color: #c4b5fd; }
+  .tip-mull .tip-type  { color: #818cf8; }
+  .tip-boom .tip-type  { color: #f59e0b; }
+  .tip-racer .tip-type { color: #34d399; }
+  .tip-rc .tip-type    { color: #fb7185; }
+  .tip-rfo .tip-type   { color: #fbbf24; }
 
   /* ── BETS PANEL ───────────────────────────────────────── */
   .bets-day { margin-bottom: 28px; }
@@ -1468,6 +1470,42 @@ const WH_TIPS = {
 };
 
 // ════════════════════════════════════════════════════════════════
+// BOOM CITY TIPS — @boomcitytips on X (Twitter)
+// ════════════════════════════════════════════════════════════════
+const BOOM_TIPS = {
+  '13:45-0': { horse:'Minella Study',      odds:'7/2',   dec:4.5,  trainer:'',                    conf:64,
+    reason:"🐝 Boom City (@boomcitytips) — Anniversary 4YO Hurdle. Boom City go each-way on Minella Study at 7/2 for Day 1's opener. Third in the Triumph Hurdle at Cheltenham, he catches the eye as the EW value play in what looks a wide-open juvenile hurdle at Aintree." },
+  '14:20-0': { horse:'Lulamba',            odds:'4/7',   dec:1.57, trainer:'N Henderson',          conf:80,
+    reason:"🐝 Boom City (@boomcitytips) — Manifesto Novices' Chase. No bet from Boom City but they are emphatic: &quot;Lulamba should win comfortably.&quot; Strong endorsement of our NAP — when a tipster declines to bet only because the price is too short, that is the strongest possible confidence signal." },
+  '14:55-0': { horse:'Jango Baie',         odds:'11/8',  dec:2.375,trainer:'N Henderson',          conf:78,
+    reason:"🐝 Boom City (@boomcitytips) NAP — Bowl Chase. Jango Baie is Boom City's NAP of the day at 11/8. Gold Cup runner-up, course winner, Henderson in top form — Boom City align with the majority of expert tipsters in making him the standout bet of Thursday afternoon." },
+  '15:30-0': { horse:'Unexpected Party',   odds:'5/1',   dec:6.0,  trainer:'',                    conf:60,
+    reason:"🐝 Boom City (@boomcitytips) EW — Foxhunters' Chase. Each-way on Unexpected Party at 5/1. Boom City flag this as the value play in the amateur riders' race, with the horse boasting strong hunter chase form ahead of the Grand National fences test. Also flagged by @RoadCheltenham at the same price." },
+  '16:05-0': { horse:'Brighterdaysahead',  odds:'2/1',   dec:3.0,  trainer:'G Elliott 🇮🇪',        conf:72,
+    reason:"🐝 Boom City (@boomcitytips) — Aintree Hurdle. Brighterdaysahead at 2/1 is Boom City's selection for the Grade 1 Aintree Hurdle. Elliott's horse who ran Lossiemouth to a length in the Champion Hurdle now steps up to 3m½f — Boom City join the consensus view that the extra trip transforms her chance." },
+  '16:40-0': { horse:'Stencil',            odds:'13/2',  dec:7.5,  trainer:'',                    conf:58,
+    reason:"🐝 Boom City (@boomcitytips) EW — Red Rum Handicap Chase. Stencil each-way at 13/2. Boom City's most interesting Thursday call — they swerve the market principals (Sans Bruit, Inthepocket) for a mid-priced each-way play. Look for a progressive horse well-handicapped on a flat, fast track that rewards jumping fluency." },
+  '17:15-0': { horse:'Princess Day',       odds:'7/2',   dec:4.5,  trainer:'J Scott',              conf:68,
+    reason:"🐝 Boom City (@boomcitytips) EW — Mares' Bumper. Princess Day each-way at 7/2 — Boom City's fourth EW play of the day. Joins Jane Mangan and Barry Geraghty in backing Princess Day; the unbeaten Jeremy Scott mare who beat Fairy Park by nearly five lengths at Newbury is the clear form choice in the bumper." },
+};
+
+// ════════════════════════════════════════════════════════════════
+// RACEOLLY TIPS — EW value picks across Thursday races
+// ════════════════════════════════════════════════════════════════
+const RACEOLLY_TIPS = {
+  '13:45-0': { horse:'Wolf Rayet',         odds:'33/1',  dec:34.0, trainer:'',                    conf:42,
+    reason:"🎯 Raceolly EW — Anniversary 4YO Hurdle. Wolf Rayet at 33/1 each-way. Raceolly's longshot play in the juvenile hurdle — a big-priced outsider with a place payout that makes him worth a small each-way interest in what can be an unpredictable juvenile race. Also note bet365's Biggest Priced Naps flag Aqua Bleu at 50/1 in the same race." },
+  '15:30-0': { horse:'Willewonga',         odds:'40/1',  dec:41.0, trainer:'',                    conf:36,
+    reason:"🎯 Raceolly EW — Foxhunters' Chase. Willewonga at 40/1 each-way is Raceolly's Foxhunters longshot. The amateur riders' race over National fences can throw up huge-priced winners, making place terms attractive at these odds. bet365's Biggest Priced Naps also flag Java Point 50/1, Take All 28/1, Gaboriot 20/1 and Thunder Rock 16/1 — a truly open race where course form matters most." },
+  '16:05-0': { horse:'Golden Ace',         odds:'14/1',  dec:15.0, trainer:'',                    conf:48,
+    reason:"🎯 Raceolly EW — Aintree Hurdle. Golden Ace at 14/1 each-way. Raceolly's value play against the market in the Grade 1 Aintree Hurdle — a race where Steve Mullington also departs from the consensus by tipping El Fabiolo at 5/1. Golden Ace at 14/1 provides maximum each-way payout if the market leaders underperform." },
+  '16:40-0': { horse:'Palamon',            odds:'14/1',  dec:15.0, trainer:'',                    conf:46,
+    reason:"🎯 Raceolly EW — Red Rum Handicap Chase. Palamon each-way at 14/1. Raceolly's pick in the Red Rum sprint — a race already generating disagreement between Sans Bruit (our NAP, Geraghty's Inthepocket, Nick Luck's Jasko Des Dames, Mullington's Javert Allen). Palamon at 14/1 adds another angle in a wide-open handicap." },
+  '17:15-0': { horse:'Kiltybo',            odds:'14/1',  dec:15.0, trainer:'',                    conf:46,
+    reason:"🎯 Raceolly EW — Mares' Bumper. Kiltybo each-way at 14/1. Raceolly's longshot bumper play against the market leaders Princess Day (our consensus) and Martini Majesty (Mullington's NB). bet365's Biggest Priced Tips also flag Divine Diva at 22/1 and It Would Be You at 25/1 — plenty of each-way interest at big prices in an open mares' bumper." },
+};
+
+// ════════════════════════════════════════════════════════════════
 // STEVE MULLINGTON TIPS — news.williamhill.com/aintree-day-1-tips-2026
 // ════════════════════════════════════════════════════════════════
 const MULL_TIPS = {
@@ -1735,6 +1773,8 @@ function renderAllDays() {
           ${WH_TIPS[key]     ? renderTipCard(WH_TIPS[key],'wh',key)        : ''}
           ${WH_EXPERTS[key]  ? renderTipCard(WH_EXPERTS[key],'whe',key)   : ''}
           ${MULL_TIPS[key]   ? renderTipCard(MULL_TIPS[key],'mull',key)   : ''}
+          ${BOOM_TIPS[key]    ? renderTipCard(BOOM_TIPS[key],'boom',key)     : ''}
+          ${RACEOLLY_TIPS[key]? renderTipCard(RACEOLLY_TIPS[key],'racer',key): ''}
           ${RC_TIPS[key]     ? renderTipCard(RC_TIPS[key],'rc',key)        : ''}
           ${RFO_TIPS[key]    ? renderTipCard(RFO_TIPS[key],'rfo',key)      : ''}
         </div>
@@ -1750,7 +1790,7 @@ function renderTipCard(tip, type, key) {
   const frac = tip.odds;
   const dec = tip.dec ? tip.dec.toFixed(2) : '—';
   const oddsDisplay = oddsMode === 'frac' ? frac : dec;
-  const typeLabel = type === 'nap' ? '⭐ NAP' : type === 'nb' ? '🔵 NB' : type === 'longshot' ? '🎯 Longshot' : type === 'irish' ? '🍀 Best Irish' : type === 'wh' ? '💜 William Hill' : type === 'whe' ? '🎙️ WH Expert Panel' : type === 'mull' ? '💜 WH: Steve Mullington' : type === 'rc' ? '🏇 Road to Cheltenham' : type === 'rfo' ? '📰 R&FO Tip' : '💰 E/W';
+  const typeLabel = type === 'nap' ? '⭐ NAP' : type === 'nb' ? '🔵 NB' : type === 'longshot' ? '🎯 Longshot' : type === 'irish' ? '🍀 Best Irish' : type === 'wh' ? '💜 William Hill' : type === 'whe' ? '🎙️ WH Expert Panel' : type === 'mull' ? '💜 WH: Steve Mullington' : type === 'boom' ? '🐝 Boom City Tips' : type === 'racer' ? '🎯 Raceolly EW' : type === 'rc' ? '🏇 Road to Cheltenham' : type === 'rfo' ? '📰 R&FO Tip' : '💰 E/W';
   const typeClass = `tip-card tip-${type}`;
   return `<div class="${typeClass}">
     ${!isTbc ? `<button class="add-to-tracker ${isTracked(key,tip.horse)?'added':''}" onclick="toggleTrack('${key}','${tip.horse}','${frac}','${type}','${RACE_SCHEDULE.find(r=>r.time===key.split('-')[0])?.name||''}')">
