@@ -2210,7 +2210,8 @@ function buildGNLeaderboard() {
       raceResults.push({raceKey:rk, horse, ...s});
     });
     return { key, label:t.label, color:t.color, icon:t.icon,
-             wins, places, misses, skips, totalPts:total, raceResults };
+             wins, places, misses, skips, totalPts:total, raceResults,
+             picks: t.picks };
   }).sort((a,b) => b.totalPts - a.totalPts || b.wins - a.wins);
 }
 
