@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🏴󠁧󠁢󠁳󠁣󠁴󠁿 Scottish Grand National 2026 – Tips, Runners & Guide | Ayr</title>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self' 'unsafe-inline';">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  /* ── TOKENS ── */
+  :root {
+    --navy:      #0b1628;
+    --navy-mid:  #132040;
+    --navy-card: #1a2d55;
+    --navy-lit:  #243660;
+    --green:     #1a5c2a;
+    --green-b:   #28a349;
+    --green-d:   #134521;
+    --gold:      #d4a843;
+    --gold-dim:  #a07830;
+    --gold-lt:   #f0c86a;
+    --cream:     #f5f0e8;
+    --cream-dim: #e8e0d0;
+    --silver:    #a0aec0;
+    --white:     #ffffff;
+    --green-win: #27ae60;
+    --amber:     #e67e22;
+    --red:       #c0392b;
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-body:    'Source Serif 4', Georgia, serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--navy);
+    color: var(--cream);
+    font-family: var(--font-body);
+    font-size: 15px;
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  /* ── HEADER ── */
+  .site-header {
+    background: linear-gradient(160deg, var(--navy) 0%, var(--navy-mid) 55%, var(--green-d) 100%);
+    border-bottom: 3px solid var(--green-b);
+    padding: 28px 20px 24px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .site-header::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: repeating-linear-gradient(
+      45deg,
+      transparent, transparent 20px,
+      rgba(40,163,73,0.03) 20px, rgba(40,163,73,0.03) 21px
+    );
+    pointer-events: none;
+  }
+  .header-badge {
+    display: inline-block;
+    background: var(--green-d);
+    border: 1px solid var(--green-b);
+    color: #86efac;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 3px 14px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+  }
+  .site-header h1 {
+    font-family: var(--font-display);
+    font-size: clamp(1.7rem, 5vw, 2.9rem);
+    color: var(--cream);
+    line-height: 1.1;
+    margin-bottom: 6px;
+  }
+  .site-header h1 span { color: var(--green-b); }
+  .hero-dates { color: var(--silver); font-size: 0.88rem; margin-bottom: 16px; letter-spacing: 0.04em; }
+  .hero-meta { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin: 14px 0 16px; }
+  .hero-stat { text-align: center; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 8px 16px; }
+  .hero-stat-val { display: block; font-family: var(--font-display); font-size: 1.4rem; color: var(--gold); font-weight: 700; line-height: 1; }
+  .hero-stat-lbl { display: block; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--silver); margin-top: 2px; }
+  .header-link {
+    display: inline-block;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    color: var(--cream);
+    text-decoration: none;
+    font-size: 0.78rem;
+    padding: 5px 14px;
+    border-radius: 20px;
+    margin: 0 4px;
+    transition: background 0.2s;
+  }
+  .header-link:hover { background: rgba(255,255,255,0.15); }
+
+  /* ── COUNTDOWN ── */
+  .countdown-bar {
+    background: var(--green-d);
+    border-bottom: 2px solid var(--green-b);
+    padding: 9px 20px;
+    text-align: center;
+    font-size: 0.83rem;
+    color: var(--cream);
+    letter-spacing: 0.03em;
+  }
+  .countdown-bar span { color: var(--gold-lt); font-weight: 700; }
+  #sgn-countdown { color: var(--green-b); font-weight: 700; font-size: 0.95rem; }
+
+  /* ── NAV ── */
+  .main-nav {
+    background: var(--navy-mid);
+    border-bottom: 2px solid rgba(40,163,73,0.3);
+    padding: 0 16px;
+    display: flex;
+    gap: 4px;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .main-nav::-webkit-scrollbar { display: none; }
+  .nav-btn {
+    background: none;
+    border: none;
+    color: var(--silver);
+    font-family: var(--font-body);
+    font-size: 0.82rem;
+    padding: 12px 14px;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px;
+    white-space: nowrap;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .nav-btn:hover { color: var(--cream); }
+  .nav-btn.active { color: var(--green-b); border-bottom-color: var(--green-b); }
+
+  /* ── PANELS ── */
+  .main-wrap { max-width: 960px; margin: 0 auto; padding: 24px 16px 60px; }
+  .panel { display: none; }
+  .panel.active { display: block; }
+
+  /* ── DAY TABS ── */
+  .day-tabs { display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; }
+  .day-tab {
+    background: var(--navy-card);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: var(--silver);
+    font-family: var(--font-body);
+    font-size: 0.82rem;
+    padding: 8px 18px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .day-tab.active { background: var(--green-d); border-color: var(--green-b); color: #86efac; }
+
+  /* ── RACE CARD ── */
+  .race-card {
+    background: var(--navy-card);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 10px;
+    margin-bottom: 16px;
+    overflow: hidden;
+  }
+  .race-header {
+    background: linear-gradient(90deg, var(--green-d), var(--navy-mid));
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 1px solid rgba(40,163,73,0.3);
+  }
+  .race-time {
+    background: var(--green-b);
+    color: var(--navy);
+    font-size: 0.78rem;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 12px;
+    white-space: nowrap;
+  }
+  .race-name { font-family: var(--font-display); font-size: 1rem; color: var(--cream); }
+  .race-meta { font-size: 0.72rem; color: var(--silver); }
+  .race-prize { margin-left: auto; font-size: 0.78rem; color: var(--gold); font-weight: 600; white-space: nowrap; }
+  .race-body { padding: 12px 16px; display: flex; flex-wrap: wrap; gap: 8px; }
+
+  /* ── TIP CARD ── */
+  .tip-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 8px;
+    padding: 10px 14px;
+    flex: 1 1 220px;
+  }
+  .tip-type { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700; margin-bottom: 4px; }
+  .tip-horse { font-family: var(--font-display); font-size: 1.05rem; color: var(--cream); }
+  .tip-odds { font-size: 0.78rem; color: var(--gold); }
+  .tip-reason { font-size: 0.73rem; color: var(--silver); margin-top: 4px; line-height: 1.4; }
+  .tip-result { font-size: 0.72rem; font-weight: 700; margin-top: 6px; padding: 2px 8px; border-radius: 10px; display: inline-block; }
+  .result-win    { background: rgba(39,174,96,0.2);  color: #4ade80; border: 1px solid rgba(39,174,96,0.3); }
+  .result-place  { background: rgba(212,168,67,0.2); color: var(--gold-lt); border: 1px solid rgba(212,168,67,0.3); }
+  .result-miss   { background: rgba(192,57,43,0.2);  color: #f87171; border: 1px solid rgba(192,57,43,0.3); }
+  .result-pending{ background: rgba(160,174,192,0.15); color: var(--silver); border: 1px solid rgba(160,174,192,0.2); }
+
+  /* tip type colours */
+  .tip-nap  .tip-type { color: var(--gold-lt); }
+  .tip-nb   .tip-type { color: #93c5fd; }
+  .tip-ew   .tip-type { color: #c4b5fd; }
+  .tip-wh   .tip-type { color: #a78bfa; }
+  .tip-whe  .tip-type { color: #c4b5fd; }
+
+  /* ── RUNNERS TABLE ── */
+  .runners-section { margin-bottom: 32px; }
+  .section-title {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    color: var(--gold);
+    border-bottom: 1px solid rgba(212,168,67,0.3);
+    padding-bottom: 8px;
+    margin-bottom: 16px;
+  }
+  .runners-grid { display: flex; flex-direction: column; gap: 8px; }
+  .runner-card {
+    background: var(--navy-card);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 8px;
+    padding: 12px 16px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    transition: border-color 0.2s;
+  }
+  .runner-card:hover { border-color: rgba(40,163,73,0.3); }
+  .runner-card.highlight { border-color: rgba(40,163,73,0.5); background: rgba(40,163,73,0.05); }
+  .runner-num {
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    background: var(--navy-lit);
+    color: var(--silver);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.72rem; font-weight: 700;
+    flex-shrink: 0;
+  }
+  .runner-info { flex: 1; min-width: 0; }
+  .runner-name { font-family: var(--font-display); font-size: 1rem; color: var(--cream); margin-bottom: 2px; }
+  .runner-name .runner-tag {
+    font-family: var(--font-body);
+    font-size: 0.65rem;
+    background: var(--green-d);
+    border: 1px solid var(--green-b);
+    color: #86efac;
+    padding: 1px 7px;
+    border-radius: 10px;
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+  .runner-name .runner-tag.prev { background: rgba(212,168,67,0.15); border-color: rgba(212,168,67,0.4); color: var(--gold-lt); }
+  .runner-meta { font-size: 0.73rem; color: var(--silver); line-height: 1.5; }
+  .runner-meta strong { color: var(--cream); }
+  .runner-note { font-size: 0.72rem; color: var(--silver); margin-top: 4px; line-height: 1.4; }
+  .runner-odds { text-align: right; flex-shrink: 0; }
+  .runner-price { font-family: var(--font-display); font-size: 1.2rem; color: var(--gold); font-weight: 700; }
+  .runner-weight { font-size: 0.72rem; color: var(--silver); }
+  .runner-jockey { font-size: 0.72rem; color: #86efac; }
+  .fav-badge { font-size: 0.62rem; background: rgba(212,168,67,0.2); color: var(--gold); border: 1px solid rgba(212,168,67,0.3); padding: 1px 6px; border-radius: 8px; }
+
+  /* ── FILTER PILLS ── */
+  .filter-bar { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+  .filter-pill {
+    background: var(--navy-card);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: var(--silver);
+    font-size: 0.75rem;
+    padding: 5px 14px;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .filter-pill.active { background: var(--green-d); border-color: var(--green-b); color: #86efac; }
+
+  /* ── TRENDS BOX ── */
+  .trends-box {
+    background: var(--navy-card);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin-bottom: 20px;
+  }
+  .trends-box h3 { font-family: var(--font-display); font-size: 1rem; color: var(--gold); margin-bottom: 12px; }
+  .trends-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; }
+  .trend-item { font-size: 0.78rem; color: var(--silver); padding-left: 14px; position: relative; line-height: 1.4; }
+  .trend-item::before { content: '✓'; position: absolute; left: 0; color: var(--green-b); font-size: 0.65rem; top: 1px; }
+  .trend-item.neg::before { content: '✗'; color: #f87171; }
+  .trend-item strong { color: var(--cream); }
+
+  /* ── COURSE GUIDE ── */
+  .guide-block {
+    background: var(--navy-card);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 10px;
+    padding: 18px 20px;
+    margin-bottom: 16px;
+  }
+  .guide-block h3 { font-family: var(--font-display); font-size: 1rem; color: var(--green-b); margin-bottom: 10px; }
+  .guide-block p { font-size: 0.83rem; color: var(--silver); line-height: 1.7; margin-bottom: 8px; }
+  .guide-block p:last-child { margin-bottom: 0; }
+  .stat-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 10px; }
+  .stat-chip { background: var(--navy-lit); border-radius: 8px; padding: 8px 14px; font-size: 0.78rem; }
+  .stat-chip .val { display: block; font-family: var(--font-display); color: var(--gold); font-size: 1rem; font-weight: 700; }
+  .stat-chip .lbl { color: var(--silver); font-size: 0.68rem; }
+
+  /* ── WINNERS TABLE ── */
+  .winners-table { width: 100%; border-collapse: collapse; font-size: 0.8rem; }
+  .winners-table th {
+    background: var(--navy-mid);
+    color: var(--gold);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 8px 12px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .winners-table td { padding: 8px 12px; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--cream); }
+  .winners-table tr:hover td { background: rgba(255,255,255,0.03); }
+  .winners-table .sp { color: var(--gold); font-weight: 600; }
+  .winners-table .year { color: var(--silver); }
+  .winners-table .trainer { color: var(--silver); font-size: 0.75rem; }
+
+  /* ── RESULTS TAB ── */
+  .results-day { margin-bottom: 28px; }
+  .results-day-title {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    color: var(--green-b);
+    margin-bottom: 12px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid rgba(40,163,73,0.2);
+  }
+  .result-row {
+    background: var(--navy-card);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-bottom: 8px;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  .result-time { color: var(--silver); font-size: 0.78rem; white-space: nowrap; padding-top: 2px; min-width: 50px; }
+  .result-race { flex: 1; }
+  .result-race-name { font-size: 0.82rem; color: var(--cream); margin-bottom: 4px; }
+  .podium { font-size: 0.78rem; color: var(--silver); }
+  .podium span { margin-right: 12px; }
+  .podium .w { color: var(--green-b); font-weight: 700; }
+  .podium .p { color: var(--gold); }
+  .podium .t { color: var(--silver); }
+  .result-pending-lbl { font-size: 0.75rem; color: var(--silver); font-style: italic; }
+
+  /* ── LEADERBOARD ── */
+  .lb-card {
+    background: var(--navy-card);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 10px;
+    padding: 16px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .lb-rank {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-display);
+    font-size: 1rem; font-weight: 700;
+    flex-shrink: 0;
+    background: var(--navy-lit); color: var(--silver);
+  }
+  .lb-rank.r1 { background: linear-gradient(135deg,#b8860b,#f0c86a); color: #0b1628; }
+  .lb-rank.r2 { background: linear-gradient(135deg,#708090,#c0c0c0); color: #0b1628; }
+  .lb-rank.r3 { background: linear-gradient(135deg,#8b4513,#cd7f32); color: #fff; }
+  .lb-icon { width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0; }
+  .lb-name { font-family: var(--font-display); font-size: 1rem; flex: 1; }
+  .lb-stats { display: flex; gap: 16px; font-size: 0.78rem; }
+  .lb-pts { font-family: var(--font-display); font-size: 1.5rem; color: var(--gold); font-weight: 700; }
+  .score-win   { color: #4ade80; }
+  .score-place { color: var(--gold-lt); }
+  .score-miss  { color: #f87171; }
+
+  /* ── BETS TAB ── */
+  .bet-card {
+    background: var(--navy-card);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin-bottom: 16px;
+  }
+  .bet-card h3 { font-family: var(--font-display); color: var(--gold); margin-bottom: 12px; font-size: 1rem; }
+  .bet-row { font-size: 0.82rem; padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.05); display: flex; gap: 10px; align-items: flex-start; }
+  .bet-row:last-child { border-bottom: none; }
+  .bet-race { color: var(--silver); min-width: 80px; font-size: 0.75rem; padding-top: 1px; }
+  .bet-sel { color: var(--cream); }
+  .bet-odds { color: var(--gold); font-weight: 600; margin-left: auto; white-space: nowrap; }
+
+  /* ── MISC ── */
+  .no-pick { color: var(--silver); font-style: italic; font-size: 0.82rem; padding: 12px; }
+  .section-note { font-size: 0.75rem; color: var(--silver); margin-bottom: 16px; line-height: 1.5; }
+
+  @media (max-width: 600px) {
+    .runner-card { flex-wrap: wrap; }
+    .runner-odds { text-align: left; }
+    .lb-stats { gap: 8px; font-size: 0.72rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── HEADER ── -->
+<div class="site-header">
+  <div class="header-badge">🏴󠁧󠁢󠁳󠁣󠁴󠁿 Ayr Racecourse · Ayrshire · Scotland</div>
+  <h1>🏇 Coral <span>Scottish Grand National</span> Festival</h1>
+  <p class="hero-dates">17 – 18 April 2026 · Ladies Day · Scottish Grand National Day</p>
+  <div class="hero-meta">
+    <div class="hero-stat"><span class="hero-stat-val">14</span><span class="hero-stat-lbl">Races</span></div>
+    <div class="hero-stat"><span class="hero-stat-val">2</span><span class="hero-stat-lbl">Days</span></div>
+    <div class="hero-stat"><span class="hero-stat-val">3:35pm Sat</span><span class="hero-stat-lbl">The National</span></div>
+    <div class="hero-stat"><span class="hero-stat-val">£200k</span><span class="hero-stat-lbl">Prize Fund</span></div>
+    <div class="hero-stat"><span class="hero-stat-val">27</span><span class="hero-stat-lbl">Fences</span></div>
+  </div>
+  <a href="grand-national-2026.html" class="header-link">📁 Aintree GN 2026 Archive →</a>
+  <a href="season-2026.html" class="header-link">📊 Season Leaderboard →</a>
+</div>
+
+<!-- ── COUNTDOWN ── -->
+<div class="countdown-bar">
+  Scottish Grand National: <span id="sgn-countdown">—</span> &nbsp;|&nbsp; Saturday 18 April 2026 · 3:35pm · ITV1
+</div>
+
+<!-- ── NAV ── -->
+<nav class="main-nav">
+  <button class="nav-btn active" onclick="showPanel('tips')">🏇 Tips</button>
+  <button class="nav-btn" onclick="showPanel('national')">🏆 The National</button>
+  <button class="nav-btn" onclick="showPanel('results')">✓ Results</button>
+  <button class="nav-btn" onclick="showPanel('tracker')">📋 Scorecard</button>
+  <button class="nav-btn" onclick="showPanel('guide')">📖 Course Guide</button>
+  <button class="nav-btn" onclick="showPanel('bets')">🎰 Daily Bets</button>
+</nav>
+
+<div class="main-wrap">
+
+  <!-- ══════════════════════════════════════════════════════════════
+       PANEL: TIPS
+  ══════════════════════════════════════════════════════════════ -->
+  <div class="panel active" id="panel-tips">
+    <div class="day-tabs">
+      <button class="day-tab active" onclick="showDay(0, this)">📅 Friday 17 Apr — Ladies Day</button>
+      <button class="day-tab" onclick="showDay(1, this)">🏆 Saturday 18 Apr — National Day</button>
+    </div>
+    <div id="tips-container"></div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       PANEL: NATIONAL
+  ══════════════════════════════════════════════════════════════ -->
+  <div class="panel" id="panel-national">
+    <div class="section-title">🏆 Coral Scottish Grand National — Runners & Riders</div>
+    <p class="section-note">
+      Saturday 18 April 2026 · 3:35pm · Ayr · 3m 7f 176y · 27 fences · Class 1 Handicap Chase · £200,000 guaranteed<br>
+      Broadcast live on ITV1. Jockeys confirmed at 48hr declaration stage (16 April).
+    </p>
+
+    <div class="filter-bar" id="runner-filters">
+      <button class="filter-pill active" onclick="filterRunners('all', this)">All Runners</button>
+      <button class="filter-pill" onclick="filterRunners('fav', this)">Fancies ≤14/1</button>
+      <button class="filter-pill" onclick="filterRunners('mullins', this)">Mullins</button>
+      <button class="filter-pill" onclick="filterRunners('british', this)">British Trainers</button>
+      <button class="filter-pill" onclick="filterRunners('prev', this)">Previous Winners</button>
+    </div>
+
+    <div class="runners-grid" id="sgn-runners"></div>
+
+    <div class="trends-box" style="margin-top:24px;">
+      <h3>📊 Key Trends (Last 11 Renewals)</h3>
+      <div class="trends-grid">
+        <div class="trend-item"><strong>Age 7–10</strong> — 9 of last 11 winners</div>
+        <div class="trend-item"><strong>10st–11st 3lb</strong> — 9 of last 11 winners' weights</div>
+        <div class="trend-item"><strong>Rating 135+</strong> — all 11 recent winners</div>
+        <div class="trend-item"><strong>Won last run</strong> — 5 of last 11 winners</div>
+        <div class="trend-item"><strong>Run in last 35 days</strong> — 10 of last 11 winners</div>
+        <div class="trend-item"><strong>5+ runs that season</strong> — 9 of last 11 winners</div>
+        <div class="trend-item"><strong>7+ runs over 3m+</strong> — 8 of last 11 winners</div>
+        <div class="trend-item"><strong>5+ chase runs</strong> — 10 of last 11 winners</div>
+        <div class="trend-item"><strong>Previous Ayr form</strong> — 5 of last 11 winners</div>
+        <div class="trend-item"><strong>Top 3 in market</strong> — 5 of last 11 winners</div>
+        <div class="trend-item neg"><strong>Sue Smith</strong> — 0 from 23 runners (avoid)</div>
+        <div class="trend-item neg"><strong>Nicky Henderson</strong> — 0 from 14 runners (avoid)</div>
+        <div class="trend-item neg"><strong>Last run 18/1+</strong> — 0 from 133 runners</div>
+        <div class="trend-item neg"><strong>David Pipe</strong> — 0 from 18 runners (avoid)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       PANEL: RESULTS
+  ══════════════════════════════════════════════════════════════ -->
+  <div class="panel" id="panel-results">
+    <div id="results-container"></div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       PANEL: SCORECARD / LEADERBOARD
+  ══════════════════════════════════════════════════════════════ -->
+  <div class="panel" id="panel-tracker">
+    <div class="section-title">📋 Tipster Scorecard</div>
+    <p class="section-note">3pts = Win · 1pt = Placed (top 3) · 0pts = Miss. Updated after each race.</p>
+    <div id="lb-container"></div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       PANEL: COURSE GUIDE
+  ══════════════════════════════════════════════════════════════ -->
+  <div class="panel" id="panel-guide">
+    <div class="section-title">📖 Ayr Racecourse Guide</div>
+
+    <div class="guide-block">
+      <h3>🏟️ The Circuit</h3>
+      <p>Ayr is a left-handed oval track with a circumference of approximately 1½ miles on the jumps course. The circuit is largely flat with a gentle downhill run approaching the home turn and a slight rise to the finish. The run-in measures 210 yards — shorter than Cheltenham but longer than Aintree.</p>
+      <p>The Scottish Grand National covers 3 miles 7 furlongs 176 yards with 27 fences over multiple circuits. Ayr's fences are notably straightforward — well-built and fair — with no Aintree-style open ditches or Canal Turn equivalent. The course rewards bold, accurate jumping and genuine staying ability above all else.</p>
+      <div class="stat-row">
+        <div class="stat-chip"><span class="val">1½m</span><span class="lbl">Circuit length</span></div>
+        <div class="stat-chip"><span class="val">27</span><span class="lbl">Fences (SGN)</span></div>
+        <div class="stat-chip"><span class="val">210y</span><span class="lbl">Run-in</span></div>
+        <div class="stat-chip"><span class="val">3m 7f 176y</span><span class="lbl">SGN distance</span></div>
+        <div class="stat-chip"><span class="val">Left-handed</span><span class="lbl">Direction</span></div>
+      </div>
+    </div>
+
+    <div class="guide-block">
+      <h3>🌧️ Going & Ground</h3>
+      <p>Ayrshire springs are notoriously wet. The going at the Scottish Grand National is frequently Good to Soft or Soft. The track drains reasonably well for its coastal location but heavy rain in the week before can produce deep going that suits proven stayers over speedier types.</p>
+      <p>On soft or heavy ground the race becomes a real test of stamina — the field can string out early and come home in ones and twos. On good ground the race is run at a stronger gallop; jumping becomes a premium and the race can turn into a sprint from the home straight.</p>
+      <div class="stat-row">
+        <div class="stat-chip"><span class="val">7:55.10</span><span class="lbl">Course record (Good · 2007)</span></div>
+        <div class="stat-chip"><span class="val">8:35.70</span><span class="lbl">Slowest (Heavy · 2014)</span></div>
+      </div>
+    </div>
+
+    <div class="guide-block">
+      <h3>🎯 Trainer Records (Scottish Grand National)</h3>
+      <p>Willie Mullins dominates modern renewals — back-to-back wins in 2024 (Macdermott) and 2025 (Captain Cody). He has 5–6 entries in the 2026 race and is the form yard to oppose at your peril.</p>
+      <p>Paul Nicholls won back-to-back with Vicente in 2016–17. Christian Williams won back-to-back in 2022–23 and has Ask Brewster entered for 2026. Lucinda Russell and Nicky Richards represent the best of the local Northern/Scottish stables.</p>
+      <p><strong>Trainers to note in 2026:</strong> Mullins (Chosen Witness, Olympic Man, Captain Cody, Macdermott, Spanish Harlem), Nicholls (Quebecois, Isaac Des Obeaux), Richards (Famous Bridge), Russell (King Of Answers), Twiston-Davies (The Kniphand).</p>
+    </div>
+
+    <div class="section-title" style="margin-top:28px;">🏆 Past Winners (2006–2025)</div>
+    <div class="guide-block" style="padding:0;overflow:hidden;">
+      <table class="winners-table">
+        <thead>
+          <tr>
+            <th>Year</th>
+            <th>Winner</th>
+            <th>SP</th>
+            <th>Trainer</th>
+            <th>Jockey</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="year">2025</td><td>Captain Cody</td><td class="sp">9/1</td><td class="trainer">W P Mullins</td><td>H Cobden</td></tr>
+          <tr><td class="year">2024</td><td>Macdermott</td><td class="sp">18/1</td><td class="trainer">W P Mullins</td><td>D E Mullins</td></tr>
+          <tr><td class="year">2023</td><td>Kitty's Light</td><td class="sp">4/1 F</td><td class="trainer">Christian Williams</td><td>Jack Tudor</td></tr>
+          <tr><td class="year">2022</td><td>Win My Wings</td><td class="sp">13/2 F</td><td class="trainer">Christian Williams</td><td>Rob James</td></tr>
+          <tr><td class="year">2021</td><td>Mighty Thunder</td><td class="sp">8/1</td><td class="trainer">Lucinda Russell</td><td>Tom Scudamore</td></tr>
+          <tr><td class="year">2020</td><td colspan="4" style="color:var(--silver);font-style:italic;">Abandoned — COVID-19</td></tr>
+          <tr><td class="year">2019</td><td>Takingrisks</td><td class="sp">25/1</td><td class="trainer">Nicky Richards</td><td>Sean Quinlan</td></tr>
+          <tr><td class="year">2018</td><td>Joe Farrell</td><td class="sp">33/1</td><td class="trainer">Rebecca Curtis</td><td>Adam Wedge</td></tr>
+          <tr><td class="year">2017</td><td>Vicente</td><td class="sp">9/1</td><td class="trainer">Paul Nicholls</td><td>Sam Twiston-Davies</td></tr>
+          <tr><td class="year">2016</td><td>Vicente</td><td class="sp">14/1</td><td class="trainer">Paul Nicholls</td><td>Sam Twiston-Davies</td></tr>
+          <tr><td class="year">2015</td><td>Wayward Prince</td><td class="sp">25/1</td><td class="trainer">Hilary Parrott</td><td>Robbie Dunne</td></tr>
+          <tr><td class="year">2014</td><td>Al Co</td><td class="sp">40/1</td><td class="trainer">Peter Bowen</td><td>Jamie Moore</td></tr>
+          <tr><td class="year">2013</td><td>Godsmejudge</td><td class="sp">12/1</td><td class="trainer">Alan King</td><td>Wayne Hutchinson</td></tr>
+          <tr><td class="year">2012</td><td>Merigo</td><td class="sp">15/2</td><td class="trainer">Andrew Parker</td><td>Timmy Murphy</td></tr>
+          <tr><td class="year">2011</td><td>Beshabar</td><td class="sp">15/2</td><td class="trainer">Tim Vaughan</td><td>Richard Johnson</td></tr>
+          <tr><td class="year">2010</td><td>Merigo</td><td class="sp">18/1</td><td class="trainer">Andrew Parker</td><td>Timmy Murphy</td></tr>
+          <tr><td class="year">2009</td><td>Hello Bud</td><td class="sp">12/1</td><td class="trainer">N Twiston-Davies</td><td>Paddy Brennan</td></tr>
+          <tr><td class="year">2008</td><td>Iris De Balme</td><td class="sp">66/1</td><td class="trainer">Sean Curran</td><td>Charlie Huxley</td></tr>
+          <tr><td class="year">2007</td><td>Hot Weld</td><td class="sp">14/1</td><td class="trainer">Ferdy Murphy</td><td>P J McDonald</td></tr>
+          <tr><td class="year">2006</td><td>Run For Paddy</td><td class="sp">33/1</td><td class="trainer">Carl Llewellyn</td><td>Carl Llewellyn</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="guide-block" style="margin-top:16px;">
+      <h3>🔴 Red Rum — The Ayr Legend</h3>
+      <p>In 1974, Red Rum became the only horse in history to win both the Scottish Grand National and the Aintree Grand National in the same season. Trained by Ginger McCain and ridden by Brian Fletcher, Red Rum won the Aintree race in record time before returning to Ayr to complete the double. He remains the greatest National horse of all time — winner at Aintree three times (1973, 1974, 1977) and runner-up twice.</p>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       PANEL: DAILY BETS
+  ══════════════════════════════════════════════════════════════ -->
+  <div class="panel" id="panel-bets">
+    <div class="section-title">🎰 Daily Bets</div>
+    <div class="bet-card">
+      <h3>📅 Friday 17 April — Ladies Day Selections</h3>
+      <div id="friday-bets">
+        <p class="no-pick">Selections will be added closer to racing. Check back on Friday morning.</p>
+      </div>
+    </div>
+    <div class="bet-card">
+      <h3>🏆 Saturday 18 April — Scottish Grand National Day</h3>
+      <div id="saturday-bets">
+        <div class="bet-row">
+          <span class="bet-race">15:35 SGN</span>
+          <span class="bet-sel">NAP: Famous Bridge EW</span>
+          <span class="bet-odds">14/1</span>
+        </div>
+        <div class="bet-row">
+          <span class="bet-race">15:35 SGN</span>
+          <span class="bet-sel">NB: The Kniphand EW</span>
+          <span class="bet-odds">10/1</span>
+        </div>
+        <div class="bet-row">
+          <span class="bet-race">15:35 SGN</span>
+          <span class="bet-sel">Longshot EW: Rock My Way</span>
+          <span class="bet-odds">10/1</span>
+        </div>
+        <p style="font-size:0.75rem;color:var(--silver);margin-top:10px;">Saturday race bets will be updated after Friday declarations. Scottish Champion Hurdle and Scotty Brand Chase tips added day of race.</p>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /main-wrap -->
+
+<script>
+// ════════════════════════════════════════════════════════════════
+// RACE SCHEDULE
+// ════════════════════════════════════════════════════════════════
+const RACE_DAYS = [
+  {
+    label: 'Friday 17 April — Ladies Day',
+    dayIdx: 0,
+    races: [
+      { key:'13:45-0', time:'1:45pm', name:'Slater Menswear Handicap Hurdle', dist:'2m', type:'Handicap Hurdle', cls:'Class 3', prize:'£18,000' },
+      { key:'14:20-0', time:'2:20pm', name:'Irish TB Marketing Novices\' Handicap Chase', dist:'2m 4f', type:'Nov Hdcp Chase', cls:'Class 3', prize:'£15,500' },
+      { key:'14:55-0', time:'2:55pm', name:'Abbott Risk Consulting Maiden Hurdle', dist:'2m', type:'Maiden Hurdle', cls:'Class 4', prize:'£10,000' },
+      { key:'15:30-0', time:'3:30pm', name:'Hillhouse Quarry Handicap Chase', dist:'2m 4f', type:'Handicap Chase', cls:'Class 2', prize:'£50,000', feature:true },
+      { key:'16:05-0', time:'4:05pm', name:'Coral Handicap Hurdle', dist:'2m', type:'Handicap Hurdle', cls:'Class 2', prize:'£30,000', feature:true },
+      { key:'16:43-0', time:'4:43pm', name:'Get Home Safe Thistle Cabs Handicap Hurdle', dist:'2m 4f', type:'Handicap Hurdle', cls:'Class 3', prize:'£16,000' },
+      { key:'17:15-0', time:'5:15pm', name:'Jardine Utilities Hands & Heels Handicap Hurdle', dist:'2m', type:'Handicap Hurdle', cls:'Class 4', prize:'£10,000' },
+    ]
+  },
+  {
+    label: 'Saturday 18 April — Scottish Grand National Day',
+    dayIdx: 1,
+    races: [
+      { key:'13:10-1', time:'1:10pm', name:'Scotty Brand Handicap Chase', dist:'2m 4f', type:'Listed Chase', cls:'Listed', prize:'£75,000', feature:true },
+      { key:'13:45-1', time:'1:45pm', name:'CPMS Novices\' Champion Handicap Chase', dist:'2m 4f', type:'Nov Hdcp Chase', cls:'Class 2', prize:'£50,000', feature:true },
+      { key:'14:20-1', time:'2:20pm', name:'Coral Scottish Champion Hurdle', dist:'2m', type:'Grade 2 Hurdle', cls:'Grade 2', prize:'£100,000', feature:true },
+      { key:'14:55-1', time:'2:55pm', name:'Jordan Electrics Seafield Trophy Mares\' Hurdle', dist:'2m 4f', type:'Mares\' Hdcp Hurdle', cls:'Class 2', prize:'£45,000' },
+      { key:'15:35-1', time:'3:35pm', name:'Coral Scottish Grand National', dist:'3m 7f 176y', type:'Handicap Chase', cls:'Class 1', prize:'£200,000', feature:true, isMain:true },
+      { key:'16:15-1', time:'4:15pm', name:'Stagecoach We\'ve Got You Novices\' Hurdle', dist:'2m', type:'Novices\' Hurdle', cls:'Class 2', prize:'£20,000' },
+      { key:'16:50-1', time:'4:50pm', name:'Golf Inn Prestwick NH Flat Race', dist:'2m', type:'NH Flat', cls:'Class 2', prize:'£16,500' },
+    ]
+  }
+];
+
+// ════════════════════════════════════════════════════════════════
+// TIPS — Our NAP / NB + Other tipster picks
+// ════════════════════════════════════════════════════════════════
+// format: { nap: {horse, odds, reason}, nb: {...}, ew: {...}, longshot: {...} }
+const TIPS = {
+  // ── FRIDAY ────────────────────────────────────────────────────
+  '13:45-0': { nap: null, nb: null },
+  '14:20-0': { nap: null, nb: null },
+  '14:55-0': { nap: null, nb: null },
+  '15:30-0': { nap: null, nb: null },
+  '16:05-0': { nap: null, nb: null },
+  '16:43-0': { nap: null, nb: null },
+  '17:15-0': { nap: null, nb: null },
+  // ── SATURDAY ──────────────────────────────────────────────────
+  '13:10-1': { nap: null, nb: null },
+  '13:45-1': { nap: null, nb: null },
+  '14:20-1': { nap: null, nb: null },
+  '14:55-1': { nap: null, nb: null },
+  '15:35-1': {
+    nap: { horse:'Famous Bridge', odds:'14/1 EW', reason:'Grand National Trial winner (Haydock). Ran 6th in Cheltenham Ultima. Proven 4m stamina. Sean Quinlan trained himself to win this in 2019 (Takingrisks) — knows what it takes. Nicky Richards yard in flying form.' },
+    nb:  { horse:'The Kniphand', odds:'10/1 EW', reason:'Two 3m+ handicap chase wins this season. Grimthorpe runner-up at Doncaster. Sam Twiston-Davies — joint-most successful jockey in recent renewals with 2 wins from 14 rides. Well-handicapped on 10-05.' },
+    ew:  { horse:'Rock My Way', odds:'10/1 EW', reason:'Cheltenham National Hunt Chase runner-up on chasing debut. Only 1lb rise. Joe Tizzard yard improving. Big stamina test likely to suit this progressive type.' },
+    longshot: { horse:'Chosen Witness', odds:'15/2', reason:'Mullins handicap debutant. Won a 3m hurdle at Ayr last spring — course winner. Unexposed and likely well handicapped on 11-12. If the weight doesn\'t anchor him, watch out.' },
+  },
+  '16:15-1': { nap: null, nb: null },
+  '16:50-1': { nap: null, nb: null },
+};
+
+// ════════════════════════════════════════════════════════════════
+// RESULTS
+// ════════════════════════════════════════════════════════════════
+const RESULTS = {
+  '13:45-0': { winner:null, second:null, third:null },
+  '14:20-0': { winner:null, second:null, third:null },
+  '14:55-0': { winner:null, second:null, third:null },
+  '15:30-0': { winner:null, second:null, third:null },
+  '16:05-0': { winner:null, second:null, third:null },
+  '16:43-0': { winner:null, second:null, third:null },
+  '17:15-0': { winner:null, second:null, third:null },
+  '13:10-1': { winner:null, second:null, third:null },
+  '13:45-1': { winner:null, second:null, third:null },
+  '14:20-1': { winner:null, second:null, third:null },
+  '14:55-1': { winner:null, second:null, third:null },
+  '15:35-1': { winner:null, second:null, third:null },
+  '16:15-1': { winner:null, second:null, third:null },
+  '16:50-1': { winner:null, second:null, third:null },
+};
+
+// ════════════════════════════════════════════════════════════════
+// SCOTTISH GRAND NATIONAL RUNNERS
+// ════════════════════════════════════════════════════════════════
+const SGN_RUNNERS = [
+  // Market leaders — weights & jockeys confirmed
+  { name:'Chosen Witness',    odds:'15/2',  weight:'11-12', trainer:'W P Mullins 🇮🇪',          jockey:'S F O\'Keeffe',    country:'ireland', tag:'fav',  note:'Market favourite. Won a 3m hurdle at Ayr last spring — proven course winner. Mullins handicap debutant. Unexposed and potentially well-treated. Top weight but has the class to carry it.' },
+  { name:'Olympic Man',       odds:'17/2',  weight:'11-06', trainer:'W P Mullins 🇮🇪',          jockey:'Patrick Mullins',  country:'ireland', tag:'hot',  note:'Only third career chase run — raw but enormously talented. Patrick Mullins, the trainer\'s son, takes the ride. Huge upside if this trip and the fences suit. Watch market moves.' },
+  { name:'Surrey Quest',      odds:'10/1',  weight:'11-03', trainer:'Toby Lawes',               jockey:'Kevin Brogan',     country:'britain', tag:'brit', note:'Consistent performer. 11st 3lb weight suggests the handicapper rates him highly. Kevin Brogan claiming 5lb — effective weight is lower. Stays well.' },
+  { name:'Rock My Way',       odds:'10/1',  weight:'10-11', trainer:'Joe Tizzard',              jockey:'Brendan Powell',   country:'britain', tag:'brit', note:'Cheltenham NH Chase runner-up on chasing debut — showed class under match conditions. Only 1lb rise in the weights. Progressive young chaser from the improving Tizzard yard. Big each-way chance.' },
+  { name:'The Kniphand',      odds:'10/1',  weight:'10-05', trainer:'N Twiston-Davies',         jockey:'S Twiston-Davies', country:'britain', tag:'brit', note:'Two 3m+ handicap chase wins this season and Grimthorpe runner-up at Doncaster. Sam Twiston-Davies has won this race twice (2016, 2017) from 14 rides. Favourable weight at 10-05. Strongly fancied.' },
+  { name:'Spanish Harlem',    odds:'10/1',  weight:'11-00', trainer:'W P Mullins 🇮🇪',          jockey:'B Hayes',          country:'ireland', tag:'hot',  note:'Mullins third string but could easily be the best of the trio. 11st dead weight. Bryan Hayes partnered with promising chasers this term. Keep onside.' },
+  { name:'Captain Cody',      odds:'12/1',  weight:'11-04', trainer:'W P Mullins 🇮🇪',          jockey:'H Cobden',         country:'ireland', tag:'prev', note:'2025 Scottish Grand National winner. Harry Cobden retains the ride. Last year\'s win came under 11-04 — same weight this time. Ran at Aintree Grand National 2026. Higher in the weights is the concern but Cobden knows every fence on this track.' },
+  { name:'Hasthing',          odds:'12/1',  weight:'10-11', trainer:'Jonjo & AJ O\'Neill',      jockey:'Jonjo O\'Neill Jr', country:'britain', tag:'brit', note:'Father-and-son combination. 10st 11lb is a workable weight. Jonjo Jr\'s claiming allowance brings it down further. O\'Neill yard capable of big-race performances at good prices.' },
+  { name:'Macdermott',        odds:'14/1',  weight:'11-06', trainer:'W P Mullins 🇮🇪',          jockey:'D E Mullins',      country:'ireland', tag:'prev', note:'2024 Scottish Grand National winner. Danny Mullins up. Yet to fire at full potential this season — connections believe the Ayr trip brings out the best in him. Two-time winner of this course and distance effectively.' },
+  { name:'Famous Bridge',     odds:'14/1',  weight:'11-05', trainer:'Nicky Richards',           jockey:'Sean Quinlan',     country:'britain', tag:'brit', note:'Grand National Trial winner at Haydock. Ran 6th in Cheltenham Ultima 2026. Proven 4m stamina. Sean Quinlan was partnered with Takingrisks when that 25/1 shot won this race in 2019 — a jockey who knows Ayr well. Richards\' yard excels in staying chases.' },
+  { name:'Sail Away',         odds:'14/1',  weight:'10-10', trainer:'Dan Skelton',              jockey:'Harry Skelton',    country:'britain', tag:'brit', note:'Harry Skelton takes on his brother\'s Snipe in the same race. Skelton pair are formidable. Sail Away stays all day and 10st 10lb is the sort of weight that makes handicappers vulnerable. Must go close.' },
+  { name:'Brandt',            odds:'14/1',  weight:'10-02', trainer:'Cian Collins',             country:'ireland', tag:'hot',  note:'Low weight of 10-02 gives a big pull in the conditions. Irish entry — Cian Collins a progressive handler. Jockey TBC at declaration stage. Unexposed at this trip.' },
+  { name:'Henry\'s Friend',   odds:'14/1',  weight:'11-08', trainer:'Ben Pauling',              country:'britain', tag:'brit', note:'Top weight contender at 11st 8lb. Pauling horses carry big weights well and arrive fit. History shows this weight is not a barrier here — it indicates a well-rated horse who\'s earned their chance.' },
+  { name:'Wiseguy',           odds:'20/1',  weight:'10-10', trainer:'Nicky Henderson',          country:'britain', tag:'brit', note:'Nicky Henderson has a poor record in this race (0 from 14 runners) — a significant negative trend. However Wiseguy has staying form and 10-10 gives him a chance on paper. Jockey TBC.' },
+  { name:'Flash De Touzaine', odds:'22/1',  weight:'10-07', trainer:'Liz Doyle 🇮🇪',            country:'ireland', tag:'hot',  note:'Irish raider from Liz Doyle\'s yard. 10st 7lb brings her into calculations for the each-way market. Stays well on soft ground. Jockey TBC.' },
+  { name:'Klarc Kent',        odds:'22/1',  weight:'10-02', trainer:'W P Mullins 🇮🇪',          country:'ireland', tag:'hot',  note:'Sixth Mullins entry in the race — the yard\'s outsider but even their outsiders can win. Lowest weight in the Mullins string at 10-02. Jockey TBC.' },
+  { name:'Walking On Air',    odds:'25/1',  weight:'10-06', trainer:'Faye Bramley',             country:'britain', tag:'brit', note:'Training debut for new young handler Faye Bramley. 10st 6lb workable weight. An outsider to consider each-way at the price if the jockey booking inspires confidence.' },
+  { name:'Our Power',         odds:'28/1',  weight:'11-07', trainer:'Sam Thomas',               country:'britain', tag:'brit', note:'High weight of 11-07 at 28/1 means he needs to be appreciably better than his mark to land this. Has winning form over this sort of trip but has it all to prove.' },
+  { name:'Magna Sam',         odds:'20/1',  weight:'10-02', trainer:'Alastair Ralph',           country:'britain', tag:'brit', note:'Veteran campaigner at 12 years old. Has been a place-getter in big chases. Ultra low weight of 10-02 makes him a live outsider for each-way money. Doesn\'t win easily but keeps coming.' },
+  { name:'Snipe',             odds:'33/1',  weight:'10-04', trainer:'Dan Skelton',              jockey:'Harry Skelton',    country:'britain', tag:'brit', note:'Skelton\'s second string alongside Sail Away. 10-04 light weight. Could benefit if the pace is strong and things fall for him at the business end.' },
+  { name:'Grozni',            odds:'40/1',  weight:'10-05', trainer:'James Owen',               country:'britain', tag:'brit', note:'40/1 outsider. Capable of placing in staying chases on his day. Each-way at this price is a flutter not a bet.' },
+  { name:'Dom of Mary',       odds:'50/1',  weight:'10-04', trainer:'David Bridgwater',         country:'britain', tag:'brit', note:'Ultra outsider. 10-04 light weight. No win form at this level to justify confidence but could fill a place at a monster price.' },
+  { name:'Mr Incredible',     odds:'66/1',  weight:'12-00', trainer:'Sandy Thomson 🏴󠁧󠁢󠁳󠁣󠁴󠁿',        country:'scotland', tag:'scott', note:'Local Scottish handler Sandy Thomson. 12st top weight — the heaviest in the field. A 66/1 shot carrying 12 stone has never won this race in modern times. Sentimental local interest.' },
+  // Additional entries from the wider market
+  { name:'Ask Brewster',      odds:'14/1',  weight:'TBC',   trainer:'Christian Williams',       country:'britain', tag:'brit', note:'Christian Williams won back-to-back with Kitty\'s Light (2023) and Win My Wings (2022). Ask Brewster is his stable\'s main hope — ran in Cheltenham amateur races this season. Williams knows how to target this race.' },
+  { name:'Famous Bridge',     skip:true },  // already listed — skip duplicate
+  { name:'Isaac Des Obeaux',  odds:'14/1',  weight:'TBC',   trainer:'Paul Nicholls',            country:'britain', tag:'brit', note:'Midlands National winner this season. Paul Nicholls won back-to-back here with Vicente in 2016–17. Isaac Des Obeaux has the pedigree and staying profile to go well.' },
+  { name:'King Of Answers',   odds:'14/1',  weight:'TBC',   trainer:'Lucinda Russell 🏴󠁧󠁢󠁳󠁣󠁴󠁿',   jockey:'Mike Scudamore',  country:'scotland', tag:'scott', note:'Local Scottish-trained entry from Lucinda Russell, who won this race in 2021 with Mighty Thunder. King Of Answers is a genuine stayer with course-applicable form. Home advantage.' },
+  { name:'Road To Home',      odds:'14/1',  weight:'TBC',   trainer:'W P Mullins 🇮🇪',          country:'ireland', tag:'hot',  note:'Willie Mullins entry not in the grandnational.fans final list — possibly entered as a reserve. Confirms the depth of the Mullins team targeting this prize.' },
+];
+// Filter out skip duplicates
+const SGN_RUNNERS_FILTERED = SGN_RUNNERS.filter(r => !r.skip);
+
+// ════════════════════════════════════════════════════════════════
+// TIPSTER PICKS — for leaderboard scoring
+// ════════════════════════════════════════════════════════════════
+const SGN_TIPSTER_PICKS = {
+  'Our NAP': {
+    label:'Our NAP', color:'#34d399', icon:'⭐',
+    picks: {
+      '13:45-0':null, '14:20-0':null, '14:55-0':null, '15:30-0':null,
+      '16:05-0':null, '16:43-0':null, '17:15-0':null,
+      '13:10-1':null, '13:45-1':null, '14:20-1':null, '14:55-1':null,
+      '15:35-1':'Famous Bridge',
+      '16:15-1':null, '16:50-1':null,
+    }
+  },
+  'Our NB': {
+    label:'Our NB', color:'#60a5fa', icon:'🔵',
+    picks: {
+      '13:45-0':null, '14:20-0':null, '14:55-0':null, '15:30-0':null,
+      '16:05-0':null, '16:43-0':null, '17:15-0':null,
+      '13:10-1':null, '13:45-1':null, '14:20-1':null, '14:55-1':null,
+      '15:35-1':'The Kniphand',
+      '16:15-1':null, '16:50-1':null,
+    }
+  },
+};
+
+// All race keys in order
+const ALL_KEYS = [
+  '13:45-0','14:20-0','14:55-0','15:30-0','16:05-0','16:43-0','17:15-0',
+  '13:10-1','13:45-1','14:20-1','14:55-1','15:35-1','16:15-1','16:50-1',
+];
+
+// ════════════════════════════════════════════════════════════════
+// PANEL + DAY NAVIGATION
+// ════════════════════════════════════════════════════════════════
+function showPanel(id) {
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('panel-' + id).classList.add('active');
+  event.currentTarget.classList.add('active');
+  if (id === 'tracker') buildLeaderboard();
+  if (id === 'results') buildResults();
+}
+
+let currentDay = 0;
+function showDay(idx, btn) {
+  currentDay = idx;
+  document.querySelectorAll('.day-tab').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderTipsDay(idx);
+}
+
+// ════════════════════════════════════════════════════════════════
+// RENDER TIPS
+// ════════════════════════════════════════════════════════════════
+function scoreLabel(horse, key) {
+  if (!horse) return '';
+  const res = RESULTS[key];
+  if (!res || !res.winner) return '<span class="tip-result result-pending">Pending</span>';
+  const h = horse.toLowerCase().trim();
+  if (h === (res.winner||'').toLowerCase().trim()) return '<span class="tip-result result-win">✓ WIN</span>';
+  if (h === (res.second||'').toLowerCase().trim() || h === (res.third||'').toLowerCase().trim()) return '<span class="tip-result result-place">↑ PLACED</span>';
+  return '<span class="tip-result result-miss">✗ MISS</span>';
+}
+
+function renderTipCard(tip, type, key) {
+  if (!tip || !tip.horse) return '';
+  const typeLabel = type === 'nap' ? '⭐ NAP' : type === 'nb' ? '🔵 NB' :
+    type === 'ew' ? '💚 Each Way' : type === 'longshot' ? '🎯 Longshot' :
+    type === 'wh' ? '💚 WH Pick' : '💰 E/W';
+  return `
+    <div class="tip-card tip-${type}">
+      <div class="tip-type">${typeLabel}</div>
+      <div class="tip-horse">${escHtml(tip.horse)}</div>
+      ${tip.odds ? `<div class="tip-odds">${escHtml(tip.odds)}</div>` : ''}
+      ${tip.reason ? `<div class="tip-reason">${escHtml(tip.reason)}</div>` : ''}
+      ${scoreLabel(tip.horse, key)}
+    </div>`;
+}
+
+function renderTipsDay(dayIdx) {
+  const day = RACE_DAYS[dayIdx];
+  const container = document.getElementById('tips-container');
+  const rows = day.races.map(race => {
+    const tips = TIPS[race.key] || {};
+    const hasTips = tips.nap || tips.nb || tips.ew || tips.longshot;
+    return `
+      <div class="race-card">
+        <div class="race-header">
+          <span class="race-time">${race.time}</span>
+          <div>
+            <div class="race-name">${race.isMain ? '🏆 ' : ''}${escHtml(race.name)}</div>
+            <div class="race-meta">${race.dist} · ${race.type} · ${race.cls} · ${race.prize}</div>
+          </div>
+          <span class="race-prize">${race.prize}</span>
+        </div>
+        <div class="race-body">
+          ${hasTips ? [
+            tips.nap      ? renderTipCard(tips.nap, 'nap', race.key) : '',
+            tips.nb       ? renderTipCard(tips.nb,  'nb',  race.key) : '',
+            tips.ew       ? renderTipCard(tips.ew,  'ew',  race.key) : '',
+            tips.longshot ? renderTipCard(tips.longshot, 'longshot', race.key) : '',
+          ].join('') : `<p class="no-pick">Tips will be added closer to raceday. Check back on the morning of the meeting.</p>`}
+        </div>
+      </div>`;
+  }).join('');
+  container.innerHTML = rows;
+}
+
+// ════════════════════════════════════════════════════════════════
+// RENDER RESULTS
+// ════════════════════════════════════════════════════════════════
+function buildResults() {
+  const container = document.getElementById('results-container');
+  let html = '';
+  RACE_DAYS.forEach(day => {
+    html += `<div class="results-day"><div class="results-day-title">${escHtml(day.label)}</div>`;
+    day.races.forEach(race => {
+      const res = RESULTS[race.key];
+      const hasPodium = res && res.winner;
+      html += `
+        <div class="result-row">
+          <div class="result-time">${race.time}</div>
+          <div class="result-race">
+            <div class="result-race-name">${race.isMain ? '🏆 ' : ''}${escHtml(race.name)} <span style="font-size:0.72rem;color:var(--silver);">${race.dist} · ${race.cls}</span></div>
+            ${hasPodium ? `
+              <div class="podium">
+                <span class="w">🥇 ${escHtml(res.winner)}</span>
+                ${res.second ? `<span class="p">🥈 ${escHtml(res.second)}</span>` : ''}
+                ${res.third  ? `<span class="t">🥉 ${escHtml(res.third)}</span>` : ''}
+              </div>` : `<div class="result-pending-lbl">Result pending</div>`}
+          </div>
+        </div>`;
+    });
+    html += '</div>';
+  });
+  container.innerHTML = html;
+}
+
+// ════════════════════════════════════════════════════════════════
+// LEADERBOARD
+// ════════════════════════════════════════════════════════════════
+function scorePickLB(horse, key) {
+  if (!horse) return { pts:0, code:'skip' };
+  const res = RESULTS[key];
+  if (!res || !res.winner) return { pts:0, code:'pending' };
+  const h = horse.toLowerCase().trim();
+  if (h === (res.winner||'').toLowerCase().trim()) return { pts:3, code:'win' };
+  if (h === (res.second||'').toLowerCase().trim() || h === (res.third||'').toLowerCase().trim()) return { pts:1, code:'place' };
+  return { pts:0, code:'miss' };
+}
+
+function buildLeaderboard() {
+  const confirmedKeys = ALL_KEYS.filter(k => RESULTS[k] && RESULTS[k].winner);
+  const scored = Object.entries(SGN_TIPSTER_PICKS).map(([id, t]) => {
+    let wins=0, places=0, misses=0, pts=0;
+    confirmedKeys.forEach(k => {
+      const r = scorePickLB(t.picks[k], k);
+      if (r.code==='win')   { wins++;   pts+=3; }
+      else if (r.code==='place') { places++; pts+=1; }
+      else if (r.code==='miss')  { misses++; }
+    });
+    return { ...t, wins, places, misses, pts };
+  }).sort((a,b) => b.pts - a.pts);
+
+  const container = document.getElementById('lb-container');
+  if (confirmedKeys.length === 0) {
+    container.innerHTML = '<p class="no-pick">The leaderboard will populate once results are confirmed. Check back during raceday.</p>';
+    return;
+  }
+  container.innerHTML = scored.map((t, i) => {
+    const rankClass = i===0?'r1':i===1?'r2':i===2?'r3':'';
+    return `
+      <div class="lb-card">
+        <div class="lb-rank ${rankClass}">${i+1}</div>
+        <div class="lb-icon" style="background:${t.color}22;border:1px solid ${t.color}44;">${t.icon}</div>
+        <div class="lb-name" style="color:${t.color}">${escHtml(t.label)}</div>
+        <div class="lb-stats">
+          <span class="score-win">W:${t.wins}</span>
+          <span class="score-place">P:${t.places}</span>
+          <span class="score-miss">M:${t.misses}</span>
+        </div>
+        <div class="lb-pts">${t.pts}</div>
+      </div>`;
+  }).join('');
+}
+
+// ════════════════════════════════════════════════════════════════
+// RUNNERS RENDER
+// ════════════════════════════════════════════════════════════════
+function filterRunners(filter, btn) {
+  document.querySelectorAll('.filter-pill').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderRunners(filter);
+}
+
+function renderRunners(filter) {
+  const container = document.getElementById('sgn-runners');
+  let runners = SGN_RUNNERS_FILTERED;
+  if (filter === 'fav')     runners = runners.filter(r => parseFloat(r.odds) <= 14);
+  if (filter === 'mullins') runners = runners.filter(r => r.trainer && r.trainer.includes('Mullins'));
+  if (filter === 'british') runners = runners.filter(r => r.country === 'britain' || r.country === 'scotland');
+  if (filter === 'prev')    runners = runners.filter(r => r.tag === 'prev');
+
+  if (runners.length === 0) {
+    container.innerHTML = '<p class="no-pick">No runners match this filter.</p>';
+    return;
+  }
+
+  container.innerHTML = runners.map((r, i) => {
+    const isFav = r.tag === 'fav';
+    const isPrev = r.tag === 'prev';
+    const isScot = r.country === 'scotland';
+    let tagHtml = '';
+    if (isPrev) tagHtml = '<span class="runner-tag prev">⭐ Prev Winner</span>';
+    else if (isScot) tagHtml = '<span class="runner-tag">🏴󠁧󠁢󠁳󠁣󠁴󠁿 Scottish</span>';
+    else if (r.tag === 'hot') tagHtml = '<span class="runner-tag">🇮🇪 Irish</span>';
+    return `
+      <div class="runner-card ${isFav ? 'highlight' : ''}">
+        <div class="runner-num">${i + 1}</div>
+        <div class="runner-info">
+          <div class="runner-name">
+            ${escHtml(r.name)}${tagHtml}
+            ${isFav ? '<span class="fav-badge">FAV</span>' : ''}
+          </div>
+          <div class="runner-meta">
+            <strong>Trainer:</strong> ${escHtml(r.trainer || 'TBC')}
+            ${r.jockey ? ` · <strong>Jockey:</strong> ${escHtml(r.jockey)}` : ' · <strong>Jockey:</strong> TBC (16 Apr)'}
+          </div>
+          ${r.note ? `<div class="runner-note">${escHtml(r.note)}</div>` : ''}
+        </div>
+        <div class="runner-odds">
+          <div class="runner-price">${escHtml(r.odds)}</div>
+          ${r.weight ? `<div class="runner-weight">${escHtml(r.weight)}</div>` : ''}
+          ${r.jockey ? `<div class="runner-jockey">${escHtml(r.jockey)}</div>` : ''}
+        </div>
+      </div>`;
+  }).join('');
+}
+
+// ════════════════════════════════════════════════════════════════
+// COUNTDOWN
+// ════════════════════════════════════════════════════════════════
+function startCountdown() {
+  const target = new Date('2026-04-18T15:35:00');
+  function update() {
+    const now = new Date();
+    const diff = target - now;
+    const el = document.getElementById('sgn-countdown');
+    if (!el) return;
+    if (diff <= 0) { el.textContent = 'RACE IS ON! 🏇'; return; }
+    const d = Math.floor(diff / 86400000);
+    const h = Math.floor((diff % 86400000) / 3600000);
+    const m = Math.floor((diff % 3600000) / 60000);
+    el.textContent = `${d}d ${h}h ${m}m`;
+  }
+  update();
+  setInterval(update, 60000);
+}
+
+function escHtml(str) {
+  if (!str) return '';
+  return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+// ════════════════════════════════════════════════════════════════
+// INIT
+// ════════════════════════════════════════════════════════════════
+document.addEventListener('DOMContentLoaded', () => {
+  renderTipsDay(0);
+  renderRunners('all');
+  startCountdown();
+});
+</script>
+</body>
+</html>
