@@ -310,6 +310,7 @@
   .tip-racer .tip-type { color: #34d399; }
   .tip-rc .tip-type    { color: #fb7185; }
   .tip-rfo .tip-type   { color: #fbbf24; }
+  .tip-frick .tip-type { color: #e879f9; }
 
   /* ── BETS PANEL ───────────────────────────────────────── */
   .bets-day { margin-bottom: 28px; }
@@ -1756,6 +1757,40 @@ const RFO_TIPS = {
 };
 
 // ════════════════════════════════════════════════════════════════
+// FRICK'S TIPS — @frickstips on X (Twitter)
+// Aintree Friday + Grand National Day picks
+// ════════════════════════════════════════════════════════════════
+const FRICK_TIPS = {
+  // ── FRIDAY (retrospective) ───────────────────────────────────
+  '13:45-1': { horse:'Top Jimmy',        odds:'16/1',  dec:17.0, trainer:'',                    conf:56,
+    reason:"🦆 @frickstips EW — WH Handicap Hurdle. Top Jimmy at 16/1 EW. Frick also mentions Trustintimes at 16/1 EW in the same race — both each-way plays in the 1:45 opener on Ladies Day." },
+  '14:20-1': { horse:'Salver',           odds:'4/1',   dec:5.0,  trainer:'',                    conf:68,
+    reason:"🦆 @frickstips — Mildmay Novices' Chase. Salver at 4/1 (starred pick — high confidence). Frick joins WH Best Odds, Nick Luck and the L15 in backing Salver — one of the most-tipped horses of Friday." },
+  '14:55-1': { horse:'Sober Glory',      odds:'2/3',   dec:1.67, trainer:'',                    conf:74,
+    reason:"🦆 @frickstips — Top Novices' Hurdle. Sober Glory at 2/3 (starred pick — high confidence). Frick, Jane Mangan, Barry Geraghty and the WH Best Odds all back Sober Glory as the odds-on favourite. Starred selection indicates Frick's highest Friday conviction." },
+  '15:30-1': { horse:'Heart Wood',       odds:'11/8',  dec:2.375,trainer:'',                    conf:70,
+    reason:"🦆 @frickstips — Melling Chase (Grade 1). Heart Wood at 11/8 (starred pick). Frick joins @RoadCheltenham and Jane Mangan in backing Heart Wood for the Grade 1. A starred selection indicating strong conviction — the market leader in the Melling Chase." },
+  '16:05-1': { horse:'Lisnamult Lad',    odds:'16/1',  dec:17.0, trainer:'',                    conf:52,
+    reason:"🦆 @frickstips EW — Topham Chase. Lisnamult Lad at 16/1 EW, also mentions Prairie Wolf at 18/1 EW. Both each-way plays in the Topham over Grand National fences — Frick departs from the Will The Wise consensus to take a bigger-priced angle." },
+  '17:15-1': { horse:'Star Of Guiting',  odds:'33/1',  dec:34.0, trainer:'',                    conf:46,
+    reason:"🦆 @frickstips EW — Hallgarten Handicap Hurdle. Star Of Guiting at 33/1 EW, also Last Kingdom at 33/1. Two longshot EW plays to close Friday — both at the same price, seeking place returns in an open handicap hurdle. bet365 also flagged Star Of Guiting as a Biggest Priced NAP in the Hallgarten." },
+
+  // ── SATURDAY ─────────────────────────────────────────────────
+  '17:00-2': { horse:'Salvator Mundi',   odds:'1/1',   dec:2.0,  trainer:'',                    conf:80,
+    reason:"🦆 @frickstips — Maghull Novices' Chase (Grade 1). Salvator Mundi at evens (1/1). Frick's most confident Saturday pick — Salvator Mundi as favourite for the Grade 1 opener. Third independent source after Geraghty (NAP of week) and @RoadCheltenham all backing the same horse at the same price point." },
+  '13:20-2': { horse:'Quantum Quest',    odds:'20/1',  dec:21.0, trainer:'',                    conf:52,
+    reason:"🦆 @frickstips EW — WH Handicap Hurdle (3m). Quantum Quest at 20/1 each-way. Frick's Saturday opener longshot — an each-way play at a double-figure price in the 3m handicap hurdle. The WH L15 goes with Hold The Serve 11/2 while Frick takes the bigger-priced angle with Quantum Quest." },
+  '13:55-2': { horse:'Scorpio Rising',   odds:'10/1',  dec:11.0, trainer:'',                    conf:60,
+    reason:"🦆 @frickstips — Mersey Novices' Hurdle (Grade 1). Scorpio Rising at 10/1. Frick's Mersey selection — departs from Mullington (Montemares), Geraghty (Bossman Jack) and Mangan (Masked Man) to take the 10/1 angle in an open Grade 1 novice hurdle. Independent contrarian pick at an attractive price." },
+  '14:30-2': { horse:'Cruz Control',     odds:'8/1',   dec:9.0,  trainer:'',                    conf:64,
+    reason:"🦆 @frickstips — Freebooter Handicap Chase (3m1f). Cruz Control at 8/1, also Deep Cave at 11/1. Cruz Control bids for a hat-trick in this race — Geraghty noted he &quot;looks to be on a reasonable mark&quot; for his three-peat attempt. Deep Cave is also flagged as Mullington's Freebooter pick. Two horses to follow in the same race." },
+  '15:05-2': { horse:'Impose Toi',       odds:'8/1',   dec:9.0,  trainer:'',                    conf:62,
+    reason:"🦆 @frickstips — Liverpool Hurdle (Grade 1, 3m). Impose Toi at 8/1. Frick's Liverpool pick — departing from Honesty Policy (Mangan, WH L15) and Hiddenvalley Lake (Geraghty) for the 8/1 shot. An interesting dissenting view in the Grade 1 hurdle after Wodhooh's late withdrawal." },
+  '16:00-2': { horse:'I Am Maximus',     odds:'15/2',  dec:8.5,  trainer:'W P Mullins 🇮🇪',     conf:72,
+    reason:"🦆 @frickstips — Grand National (4m2f). I Am Maximus at 15/2 as Frick's primary pick, backed up by Captain Cody 20/1 EW and Lecky Watson 40/1 EW as additional each-way plays. Triple selection for the National — Frick aligns with Geraghty on I Am Maximus (Paul Townend) as the main selection, with Lecky Watson also flagged by bet365's Biggest Priced NAPs." },
+};
+
+// ════════════════════════════════════════════════════════════════
 // DATA — CONFIRMED RESULTS
 // ════════════════════════════════════════════════════════════════
 const RESULTS = {
@@ -1931,6 +1966,7 @@ function renderAllDays() {
           ${RACEOLLY_TIPS[key]? renderTipCard(RACEOLLY_TIPS[key],'racer',key): ''}
           ${RC_TIPS[key]     ? renderTipCard(RC_TIPS[key],'rc',key)        : ''}
           ${RFO_TIPS[key]    ? renderTipCard(RFO_TIPS[key],'rfo',key)      : ''}
+          ${FRICK_TIPS[key]  ? renderTipCard(FRICK_TIPS[key],'frick',key)  : ''}
         </div>
       </div>`;
     }
@@ -1944,7 +1980,7 @@ function renderTipCard(tip, type, key) {
   const frac = tip.odds;
   const dec = tip.dec ? tip.dec.toFixed(2) : '—';
   const oddsDisplay = oddsMode === 'frac' ? frac : dec;
-  const typeLabel = type === 'nap' ? '⭐ NAP' : type === 'nb' ? '🔵 NB' : type === 'longshot' ? '🎯 Longshot' : type === 'irish' ? '🍀 Best Irish' : type === 'wh' ? '💜 William Hill' : type === 'whe' ? '🎙️ WH Expert Panel' : type === 'mull' ? '💜 WH: Steve Mullington' : type === 'boom' ? '🐝 Boom City Tips' : type === 'racer' ? '🎯 Raceolly EW' : type === 'rc' ? '🏇 Road to Cheltenham' : type === 'rfo' ? '📰 R&FO Tip' : '💰 E/W';
+  const typeLabel = type === 'nap' ? '⭐ NAP' : type === 'nb' ? '🔵 NB' : type === 'longshot' ? '🎯 Longshot' : type === 'irish' ? '🍀 Best Irish' : type === 'wh' ? '💜 William Hill' : type === 'whe' ? '🎙️ WH Expert Panel' : type === 'mull' ? '💜 WH: Steve Mullington' : type === 'boom' ? '🐝 Boom City Tips' : type === 'racer' ? '🎯 Raceolly EW' : type === 'rc' ? '🏇 Road to Cheltenham' : type === 'rfo' ? '📰 R&FO Tip' : type === 'frick' ? '🦆 @frickstips' : '💰 E/W';
   const typeClass = `tip-card tip-${type}`;
   return `<div class="${typeClass}">
     ${!isTbc ? `<button class="add-to-tracker ${isTracked(key,tip.horse)?'added':''}" onclick="toggleTrack('${key}','${tip.horse}','${frac}','${type}','${RACE_SCHEDULE.find(r=>r.time===key.split('-')[0])?.name||''}')">
@@ -2303,6 +2339,25 @@ const GN_TIPSTER_PICKS = {
       '16:05-1':null, '16:40-1':null, '17:15-1':null,
       '13:20-2':null, '13:55-2':null, '14:30-2':null, '15:05-2':null,
       '16:00-2':null, '17:00-2':null, '17:35-2':null,
+    }
+  },
+  // ── FRICK'S TIPS (@frickstips) ──────────────────────────────────
+  'Frick': {
+    label:"Frick's Tips", color:'#e879f9', icon:'🦆',
+    picks: {
+      // Thursday (not published)
+      '13:45-0':null, '14:20-0':null, '14:55-0':null, '15:30-0':null,
+      '16:05-0':null, '16:40-0':null, '17:15-0':null,
+      // Friday
+      '13:45-1':'Top Jimmy',      '14:20-1':'Salver',
+      '14:55-1':'Sober Glory',    '15:30-1':'Heart Wood',
+      '16:05-1':'Lisnamult Lad',  '16:40-1':null,
+      '17:15-1':'Star Of Guiting',
+      // Saturday
+      '13:20-2':'Quantum Quest',  '13:55-2':'Scorpio Rising',
+      '14:30-2':'Cruz Control',   '15:05-2':'Impose Toi',
+      '16:00-2':'I Am Maximus',   '17:00-2':'Salvator Mundi',
+      '17:35-2':null,
     }
   },
   // ── ROAD TO CHELTENHAM (@RoadCheltenham) ────────────────────────
