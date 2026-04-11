@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>📊 2025/26 Racing Season – Tipster Leaderboard</title>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self' 'unsafe-inline';">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy:      #0b1628;
+    --navy-mid:  #132040;
+    --navy-card: #1a2d55;
+    --navy-lit:  #243660;
+    --gold:      #d4a843;
+    --gold-lt:   #f0c86a;
+    --gold-dim:  #a07830;
+    --scarlet:   #c0392b;
+    --scarlet-b: #e74c3c;
+    --cream:     #f5f0e8;
+    --silver:    #a0aec0;
+    --green-win: #27ae60;
+    --amber:     #e67e22;
+    --blue-chelt: #3b82f6;
+    --green-gn:  #10b981;
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-body:    'Source Serif 4', Georgia, serif;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--navy);
+    color: var(--cream);
+    font-family: var(--font-body);
+    font-size: 15px;
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  /* ── HEADER ── */
+  .site-header {
+    background: linear-gradient(160deg, var(--navy) 0%, var(--navy-mid) 60%, #1a3a1a 100%);
+    border-bottom: 3px solid var(--gold);
+    padding: 28px 20px 24px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .site-header::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: repeating-linear-gradient(90deg, transparent, transparent 40px, rgba(212,168,67,0.04) 40px, rgba(212,168,67,0.04) 41px);
+    pointer-events: none;
+  }
+  .header-badge {
+    display: inline-block;
+    background: var(--gold-dim);
+    color: var(--navy);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 3px 12px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+  }
+  .site-header h1 {
+    font-family: var(--font-display);
+    font-size: clamp(1.6rem, 5vw, 2.8rem);
+    color: var(--cream);
+    line-height: 1.1;
+    margin-bottom: 6px;
+  }
+  .site-header h1 span { color: var(--gold); }
+  .hero-dates {
+    color: var(--silver);
+    font-size: 0.88rem;
+    margin-bottom: 16px;
+    letter-spacing: 0.04em;
+  }
+  .header-links { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 12px; }
+  .header-link {
+    display: inline-block;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    color: var(--cream);
+    text-decoration: none;
+    font-size: 0.78rem;
+    padding: 5px 14px;
+    border-radius: 20px;
+    transition: background 0.2s;
+  }
+  .header-link:hover { background: rgba(255,255,255,0.15); }
+
+  /* ── SUMMARY BAR ── */
+  .summary-bar {
+    background: var(--navy-mid);
+    border-bottom: 1px solid rgba(212,168,67,0.2);
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 0.82rem;
+    color: var(--silver);
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .summary-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .summary-pill .dot {
+    width: 10px; height: 10px; border-radius: 50%;
+  }
+  .dot-chelt { background: var(--blue-chelt); }
+  .dot-gn    { background: var(--green-gn); }
+
+  /* ── MAIN WRAP ── */
+  .main-wrap { max-width: 900px; margin: 0 auto; padding: 24px 16px 60px; }
+
+  /* ── SECTION TITLE ── */
+  .section-title {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    color: var(--gold);
+    border-bottom: 1px solid rgba(212,168,67,0.3);
+    padding-bottom: 8px;
+    margin: 32px 0 16px;
+  }
+  .section-title:first-of-type { margin-top: 0; }
+
+  /* ── LEADERBOARD TABLE ── */
+  .lb-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+  }
+  .lb-table thead th {
+    background: var(--navy-mid);
+    color: var(--gold);
+    font-family: var(--font-display);
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 10px 12px;
+    text-align: left;
+    border-bottom: 2px solid rgba(212,168,67,0.3);
+  }
+  .lb-table thead th.num { text-align: center; }
+  .lb-table tbody tr {
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    transition: background 0.15s;
+  }
+  .lb-table tbody tr:hover { background: rgba(255,255,255,0.04); }
+  .lb-table tbody td {
+    padding: 11px 12px;
+    vertical-align: middle;
+  }
+  .lb-table tbody td.num { text-align: center; }
+
+  /* rank badge */
+  .rank-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    font-size: 0.75rem;
+    font-weight: 700;
+    background: var(--navy-lit);
+    color: var(--silver);
+  }
+  .rank-1 { background: linear-gradient(135deg,#b8860b,#f0c86a); color: #0b1628; }
+  .rank-2 { background: linear-gradient(135deg,#708090,#c0c0c0); color: #0b1628; }
+  .rank-3 { background: linear-gradient(135deg,#8b4513,#cd7f32); color: #fff; }
+
+  /* tipster cell */
+  .tipster-cell {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .tipster-icon {
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem;
+    flex-shrink: 0;
+  }
+  .tipster-name { font-weight: 600; color: var(--cream); }
+  .tipster-events { font-size: 0.72rem; color: var(--silver); }
+
+  /* score pills */
+  .score-pill {
+    display: inline-block;
+    padding: 2px 9px;
+    border-radius: 12px;
+    font-size: 0.78rem;
+    font-weight: 700;
+  }
+  .score-chelt { background: rgba(59,130,246,0.2); color: #93c5fd; border: 1px solid rgba(59,130,246,0.3); }
+  .score-gn    { background: rgba(16,185,129,0.2); color: #6ee7b7; border: 1px solid rgba(16,185,129,0.3); }
+  .score-none  { background: rgba(255,255,255,0.05); color: var(--silver); border: 1px solid rgba(255,255,255,0.1); }
+
+  .total-pts {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    color: var(--gold);
+    font-weight: 700;
+  }
+
+  /* ── EVENT BREAKDOWN ── */
+  .event-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 28px 0 12px;
+    padding: 10px 16px;
+    border-radius: 8px;
+  }
+  .event-header.chelt { background: linear-gradient(90deg, rgba(59,130,246,0.15), transparent); border-left: 3px solid #3b82f6; }
+  .event-header.gn    { background: linear-gradient(90deg, rgba(16,185,129,0.15), transparent); border-left: 3px solid #10b981; }
+  .event-header h2 {
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    margin: 0;
+  }
+  .event-header.chelt h2 { color: #93c5fd; }
+  .event-header.gn h2    { color: #6ee7b7; }
+  .event-meta { font-size: 0.78rem; color: var(--silver); }
+
+  .breakdown-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.82rem;
+    margin-bottom: 4px;
+  }
+  .breakdown-table th {
+    background: var(--navy-mid);
+    color: var(--silver);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 7px 10px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .breakdown-table th.num { text-align: center; }
+  .breakdown-table td {
+    padding: 8px 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    vertical-align: middle;
+  }
+  .breakdown-table td.num { text-align: center; }
+  .breakdown-table tr:hover td { background: rgba(255,255,255,0.03); }
+
+  .stat-wins   { color: #4ade80; }
+  .stat-places { color: var(--gold); }
+  .stat-misses { color: #f87171; }
+
+  .bar-container {
+    width: 100%;
+    height: 6px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .bar-fill {
+    height: 100%;
+    border-radius: 3px;
+  }
+
+  /* ── FOOTER ── */
+  .page-footer {
+    text-align: center;
+    padding: 24px;
+    border-top: 1px solid rgba(212,168,67,0.2);
+    color: var(--silver);
+    font-size: 0.78rem;
+    margin-top: 40px;
+  }
+  .page-footer a { color: var(--gold); text-decoration: none; }
+
+  /* ── LOADING ── */
+  .loading {
+    text-align: center;
+    padding: 40px;
+    color: var(--silver);
+  }
+</style>
+</head>
+<body>
+
+<div class="site-header">
+  <div class="header-badge">2025 / 26 National Hunt Season</div>
+  <h1>📊 Tipster <span>Season Leaderboard</span></h1>
+  <p class="hero-dates">Cheltenham Festival · Grand National Festival · Combined Standings</p>
+  <div class="header-links">
+    <a href="cheltenham-2026.html" class="header-link">📁 Cheltenham 2026 →</a>
+    <a href="grand-national-2026.html" class="header-link">🏇 Grand National 2026 →</a>
+  </div>
+</div>
+
+<div class="summary-bar">
+  <span class="summary-pill"><span class="dot dot-chelt"></span>Cheltenham — 28 races · 4 days</span>
+  <span class="summary-pill"><span class="dot dot-gn"></span>Grand National — 21 races · 3 days</span>
+  <span class="summary-pill">Scoring: 3pts Win · 1pt Placed</span>
+</div>
+
+<div class="main-wrap">
+  <div id="loading" class="loading">Computing season scores…</div>
+  <div id="content" style="display:none;">
+    <div class="section-title">🏆 Season Combined Leaderboard</div>
+    <table class="lb-table" id="season-table">
+      <thead>
+        <tr>
+          <th style="width:40px;" class="num">#</th>
+          <th>Tipster</th>
+          <th class="num">Cheltenham</th>
+          <th class="num">Grand National</th>
+          <th class="num">Season Total</th>
+        </tr>
+      </thead>
+      <tbody id="season-body"></tbody>
+    </table>
+
+    <div class="event-header chelt" style="margin-top:40px;">
+      <div>
+        <h2>Cheltenham Festival 2026</h2>
+        <div class="event-meta">11–14 March 2026 · Cheltenham Racecourse</div>
+      </div>
+    </div>
+    <table class="breakdown-table" id="chelt-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Tipster</th>
+          <th class="num">Wins</th>
+          <th class="num">Placed</th>
+          <th class="num">Missed</th>
+          <th class="num">Pts</th>
+          <th style="width:100px;">Score</th>
+        </tr>
+      </thead>
+      <tbody id="chelt-body"></tbody>
+    </table>
+
+    <div class="event-header gn" style="margin-top:32px;">
+      <div>
+        <h2>Grand National Festival 2026</h2>
+        <div class="event-meta">9–11 April 2026 · Aintree Racecourse</div>
+      </div>
+    </div>
+    <table class="breakdown-table" id="gn-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Tipster</th>
+          <th class="num">Wins</th>
+          <th class="num">Placed</th>
+          <th class="num">Missed</th>
+          <th class="num">Pts</th>
+          <th style="width:100px;">Score</th>
+        </tr>
+      </thead>
+      <tbody id="gn-body"></tbody>
+    </table>
+  </div>
+</div>
+
+<div class="page-footer">
+  Scores: 3pts = Win · 1pt = Placed (top 3) · 0pts = Miss or no pick<br>
+  <a href="cheltenham-2026.html">Cheltenham 2026</a> · <a href="grand-national-2026.html">Grand National 2026</a>
+</div>
+
+<script>
+// ════════════════════════════════════════════════════════════════
+// CHELTENHAM 2026 DATA
+// ════════════════════════════════════════════════════════════════
+const CHELT_RESULTS = {
+  '13:20-0': { winner:'Old Park Star',      second:'Sober Glory',          third:'Mydaddypaddy' },
+  '14:00-0': { winner:'Kargese',            second:'Kopek Des Bordes',     third:'Lulamba' },
+  '14:40-0': { winner:'Saratoga',           second:'Winston Junior',       third:'Klycot' },
+  '15:20-0': { winner:'Johnnywho',          second:'Jagwar',               third:'Quebecois' },
+  '16:00-0': { winner:'Lossiemouth',        second:'Brighterdaysahead',    third:'The New Lion' },
+  '16:40-0': { winner:'Madara',             second:'Will The Wise',        third:"Moon D'Orange" },
+  '17:20-0': { winner:'Holloway Queen',     second:'King Of Answers',      third:'One Big Bang' },
+  '13:20-1': { winner:'King Rasko Grey',    second:'Act Of Innocence',     third:'Zeus Power' },
+  '14:00-1': { winner:'Kitzbuhel',          second:'Final Demand',         third:'Salver' },
+  '14:40-1': { winner:'Jingko Blue',        second:'Franciscan Rock',      third:'Storm Heart' },
+  '15:20-1': { winner:'Final Orders',       second:'Favori De Champdou',   third:'Vanillier' },
+  '16:00-1': { winner:'Il Etait Temps',     second:'Libberty Hunter',      third:"L'Eau Du Sud" },
+  '16:40-1': { winner:'Martator',           second:'Jazzy Matty',          third:'Break My Soul' },
+  '17:20-1': { winner:'The Mourne Rambler', second:'Mets Ta Ceinture',     third:'Bass Hunter' },
+  '13:20-2': { winner:'White Noise',        second:'Old School Outlaw',    third:'Place De La Nation' },
+  '14:00-2': { winner:'Meetmebythesea',     second:'Gold Dancer',          third:"Regent's Stroll" },
+  '14:40-2': { winner:'Wodhooh',            second:'Jade De Grugy',        third:null },
+  '15:20-2': { winner:'Home By The Lee',    second:'Ballyburn',            third:'Bob Olinger' },
+  '16:00-2': { winner:'Heart Wood',         second:'Jonbon',               third:null },
+  '16:40-2': { winner:'Supremely West',     second:'Lavida Adiva',         third:'Ikarak' },
+  '17:20-2': { winner:'Ask Brewster',       second:'Road To Home',         third:'Monbeg Genius' },
+  '13:20-3': { winner:'Apolon De Charnie',  second:'Maestro Conti',        third:'Minella Study' },
+  '14:00-3': { winner:'Wilful',             second:'Sticktotheplan',       third:'Joyeuse' },
+  '14:40-3': { winner:'Dinoblue',           second:'Only By Night',        third:'Panic Attack' },
+  '15:20-3': { winner:"Johnny's Jury",      second:'Fruit De Mer',         third:'The Passing Wife' },
+  '16:00-3': { winner:'Gaelic Warrior',     second:'Jango Baie',           third:'Inothewayurthinkin' },
+  '16:40-3': { winner:'Barton Snow',        second:'Its On The Line',      third:'Music Drive' },
+  '17:20-3': { winner:'Air Of Entitlement', second:'Hot Fuss',             third:'Jump Allen' },
+};
+
+const CHELT_PICKS = {
+  'Our NAP': {
+    label:'Our NAP', color:'#34d399', icon:'⭐',
+    picks: {
+      '13:20-0':'Talk The Talk',       '14:00-0':'Lulamba',
+      '14:40-0':'Kripticjim',          '15:20-0':'Handstands',
+      '16:00-0':'The New Lion',        '16:40-0':'Madara',
+      '17:20-0':'Grande Geste',        '13:20-1':'No Drama This End',
+      '14:00-1':'Final Demand',        '14:40-1':'Iberico Lord',
+      '15:20-1':'Favori De Champdou',  '16:00-1':'Majborough',
+      '16:40-1':'Thistle Ask',         '17:20-1':'Keep Him Company',
+      '13:20-2':'Bambino Fever',       '14:00-2':"Regent's Stroll",
+      '14:40-2':'Lossiemouth',         '15:20-2':'Teahupoo',
+      '16:00-2':'Fact To File',        '16:40-2':'Sire Du Berlais',
+      '17:20-2':'Jeriko Du Reponet',   '13:20-3':'Selma De Vary',
+      '14:00-3':'Anzadam',             '14:40-3':'Dinoblue',
+      '15:20-3':'Doctor Steinberg',    '16:00-3':'Jango Baie',
+      '16:40-3':'Bob And Co',          '17:20-3':'Son Of Anarchy',
+    }
+  },
+  'Our NB': {
+    label:'Our NB', color:'#60a5fa', icon:'🔵',
+    picks: {
+      '13:20-0':'Old Park Star',       '14:00-0':'Kopek Des Bordes',
+      '14:40-0':'Winston Junior',      '15:20-0':'Jagwar',
+      '16:00-0':'Brighterdaysahead',   '16:40-0':'Captain Guinness',
+      '17:20-0':'Backmersackme',       '13:20-1':'Mighty Park',
+      '14:00-1':'Wendigo',             '14:40-1':'Skylight Hustle',
+      '15:20-1':'Any Second Now',      '16:00-1':"L'Eau Du Sud",
+      '16:40-1':'Be Aware',            '17:20-1':'Old School Outlaw',
+      '13:20-2':'Old School Outlaw',   '14:00-2':'Backmersackme',
+      '14:40-2':'Wodhooh',             '15:20-2':'Ma Shantou',
+      '16:00-2':'Gaelic Warrior',      '16:40-2':'Ma Shantou',
+      '17:20-2':"Paddy's Poem",        '13:20-3':'Mon Creuset',
+      '14:00-3':'Good Land',           '14:40-3':'Panic Attack',
+      '15:20-3':'Espresso Milan',      '16:00-3':'Gaelic Warrior',
+      '16:40-3':'Its On The Line',     '17:20-3':"Paddy's Poem",
+    }
+  },
+  'Playle (RP)': {
+    label:'Playle (RP)', color:'#f472b6', icon:'📰',
+    picks: {
+      '13:20-0':'Old Park Star',       '14:00-0':'Lulamba',
+      '14:40-0':'Winston Junior',      '15:20-0':'Myretown',
+      '16:00-0':'Lossiemouth',         '16:40-0':'Madara',
+      '17:20-0':'Newton Tornado',      '13:20-1':'Skylight Hustle',
+      '14:00-1':'Wendigo',             '14:40-1':'Indeevar Bleu',
+      '15:20-1':'Stumptown',           '16:00-1':"L'Eau Du Sud",
+      '16:40-1':"Ryan's Rocket",       '17:20-1':'Bambino Fever',
+      '13:20-2':null,'14:00-2':null,'14:40-2':null,'15:20-2':null,
+      '16:00-2':null,'16:40-2':null,'17:20-2':null,
+      '13:20-3':null,'14:00-3':null,'14:40-3':null,'15:20-3':null,
+      '16:00-3':null,'16:40-3':null,'17:20-3':null,
+    }
+  },
+  'Kealy (RP)': {
+    label:'Kealy (RP)', color:'#f472b6', icon:'📰',
+    picks: {
+      '13:20-0':"Leader D'Allier",     '14:00-0':'Lulamba',
+      '14:40-0':'Winston Junior',      '15:20-0':'Jagwar',
+      '16:00-0':'Golden Ace',          '16:40-0':'Donnacha',
+      '17:20-0':'Brave Fortune',       '13:20-1':'Mighty Park',
+      '14:00-1':'Wendigo',             '14:40-1':'Jingko Blue',
+      '15:20-1':'Favori De Champdou',  '16:00-1':'Majborough',
+      '16:40-1':'Golden Joy',          '17:20-1':'Bambino Fever',
+      '13:20-2':null,'14:00-2':null,'14:40-2':null,'15:20-2':null,
+      '16:00-2':null,'16:40-2':null,'17:20-2':null,
+      '13:20-3':null,'14:00-3':null,'14:40-3':null,'15:20-3':null,
+      '16:00-3':null,'16:40-3':null,'17:20-3':null,
+    }
+  },
+  'Dineen (RP)': {
+    label:'Dineen (RP)', color:'#f472b6', icon:'📰',
+    picks: {
+      '13:20-0':"Leader D'Allier",     '14:00-0':'Lulamba',
+      '14:40-0':'Secret Force',        '15:20-0':'Jagwar',
+      '16:00-0':'The New Lion',        '16:40-0':'McLaurey',
+      '17:20-0':'One Big Bang',        '13:20-1':'Mighty Park',
+      '14:00-1':'Wendigo',             '14:40-1':'Jump Allen',
+      '15:20-1':'Favori De Champdou',  '16:00-1':'Majborough',
+      '16:40-1':'Inthepocket',         '17:20-1':'Carrigmoornaspruce',
+      '13:20-2':null,'14:00-2':null,'14:40-2':null,'15:20-2':null,
+      '16:00-2':null,'16:40-2':null,'17:20-2':null,
+      '13:20-3':null,'14:00-3':null,'14:40-3':null,'15:20-3':null,
+      '16:00-3':null,'16:40-3':null,'17:20-3':null,
+    }
+  },
+  'Wilson (RP)': {
+    label:'Wilson (RP)', color:'#f472b6', icon:'📰',
+    picks: {
+      '13:20-0':'Sober Glory',         '14:00-0':'Lulamba',
+      '14:40-0':'Ammes',               '15:20-0':"In D'Or",
+      '16:00-0':'Anzadam',             '16:40-0':'Madara',
+      '17:20-0':'Backmersackme',       '13:20-1':'Mighty Park',
+      '14:00-1':'Wendigo',             '14:40-1':'Indeevar Bleu',
+      '15:20-1':'Favori De Champdou',  '16:00-1':'Majborough',
+      '16:40-1':'Be Aware',            '17:20-1':'Keep Him Company',
+      '13:20-2':null,'14:00-2':null,'14:40-2':null,'15:20-2':null,
+      '16:00-2':null,'16:40-2':null,'17:20-2':null,
+      '13:20-3':null,'14:00-3':null,'14:40-3':null,'15:20-3':null,
+      '16:00-3':null,'16:40-3':null,'17:20-3':null,
+    }
+  },
+  'Segal (RP)': {
+    label:'Segal (RP)', color:'#c084fc', icon:'📰',
+    picks: {
+      '13:20-0':'Idaho Sun',           '14:00-0':'Kargese',
+      '14:40-0':'La Luna Artista',     '15:20-0':null,
+      '16:00-0':'Golden Ace',          '16:40-0':null,
+      '17:20-0':null,                  '13:20-1':'Shuttle Diplomacy',
+      '14:00-1':'Sixmilebridge',       '14:40-1':'Storm Heart',
+      '15:20-1':null,                  '16:00-1':"L'Eau Du Sud",
+      '16:40-1':'Ballysax Hank',       '17:20-1':'The Mourne Rambler',
+      '13:20-2':null,'14:00-2':null,'14:40-2':null,'15:20-2':null,
+      '16:00-2':null,'16:40-2':null,'17:20-2':null,
+      '13:20-3':null,'14:00-3':null,'14:40-3':null,'15:20-3':null,
+      '16:00-3':null,'16:40-3':null,'17:20-3':null,
+    }
+  },
+  'Park (RP)': {
+    label:'Tom Park (RP)', color:'#6ee7b7', icon:'📰',
+    picks: {
+      '13:20-0':'Old Park Star',       '14:00-0':'Kopek Des Bordes',
+      '14:40-0':null,'15:20-0':null,'16:00-0':null,'16:40-0':null,'17:20-0':null,
+      '13:20-1':null,'14:00-1':null,'14:40-1':null,'15:20-1':null,
+      '16:00-1':null,'16:40-1':null,'17:20-1':null,
+      '13:20-2':null,'14:00-2':null,'14:40-2':null,'15:20-2':null,
+      '16:00-2':null,'16:40-2':null,'17:20-2':null,
+      '13:20-3':null,'14:00-3':null,'14:40-3':null,'15:20-3':null,
+      '16:00-3':null,'16:40-3':null,'17:20-3':null,
+    }
+  },
+  'Grimshaw (HRN)': {
+    label:'Grimshaw (HRN)', color:'#67e8f9', icon:'🌐',
+    picks: {
+      '13:20-0':'Old Park Star',       '14:00-0':'Kopek Des Bordes',
+      '14:40-0':'Manlaga',             '15:20-0':'Handstands',
+      '16:00-0':'Poniros',             '16:40-0':'Madara',
+      '17:20-0':'Wade Out',            '13:20-1':'Talk The Talk',
+      '14:00-1':'Kitzbuhel',           '14:40-1':'Storm Heart',
+      '15:20-1':'Desertmore House',    '16:00-1':'Majborough',
+      '16:40-1':null,                  '17:20-1':'Quiryn',
+      '13:20-2':null,'14:00-2':null,'14:40-2':null,'15:20-2':null,
+      '16:00-2':null,'16:40-2':null,'17:20-2':null,
+      '13:20-3':null,'14:00-3':null,'14:40-3':null,'15:20-3':null,
+      '16:00-3':null,'16:40-3':null,'17:20-3':null,
+    }
+  },
+  'Mullington (WH)': {
+    label:'Mullington (WH)', color:'#fbbf24', icon:'📝',
+    picks: {
+      '13:20-0':'Mydaddypaddy',        '14:00-0':'Kawaboomga',
+      '14:40-0':'One Horse Town',      '15:20-0':'Resplendent Grey',
+      '16:00-0':'The New Lion',        '16:40-0':'Jagwar',
+      '17:20-0':'Deep Cave',           '13:20-1':'Doctor Du Mesnil',
+      '14:00-1':'Sixmilebridge',       '14:40-1':'East India Express',
+      '15:20-1':'Stumptown',           '16:00-1':'Marine Nationale',
+      '16:40-1':'Unexpected Party',    '17:20-1':'Bentraghhill',
+      '13:20-2':'Wodhooh',             '14:00-2':'No Drama This End',
+      '14:40-2':'Il Etait Temps',      '15:20-2':'The Yellow Clay',
+      '16:00-2':'Electric Mason',      '16:40-2':'Bambino Fever',
+      '17:20-2':'Koktail Divin',       '13:20-3':'Proactif',
+      '14:00-3':'Anzadam',             '14:40-3':'July Flower',
+      '15:20-3':'No Drama This End',   '16:00-3':'Fact To File',
+      '16:40-3':'Good Boy Bobby',      '17:20-3':'Son Of Anarchy',
+    }
+  },
+};
+
+// ════════════════════════════════════════════════════════════════
+// GRAND NATIONAL 2026 DATA
+// ════════════════════════════════════════════════════════════════
+const GN_RESULTS = {
+  '13:45-0': { winner:'Mange Tout',         second:'Selma De Vary',     third:'Indian River' },
+  '14:20-0': { winner:'Koktail Divin',      second:"Blueking d'Oroux",  third:'Mambonumberfive' },
+  '14:55-0': { winner:'Jango Baie',         second:'Protektorat',       third:"Pic d'Orhy" },
+  '15:30-0': { winner:'Barton Snow',        second:'Lets Go Champ',     third:'Take All' },
+  '16:05-0': { winner:'Brighterdaysahead',  second:'The New Lion',      third:'Alexei' },
+  '16:40-0': { winner:"Ryan's Rocket",      second:'Highlands Legacy',  third:'Sans Bruit' },
+  '17:15-0': { winner:"Nan's Choice",       second:'Lennon Grove',      third:'Fairy Park' },
+  '13:45-1': { winner:'Wellington Arch',    second:'Ike Sport',         third:'Favour And Fortune' },
+  '14:20-1': { winner:'Gold Dancer',        second:"Regent's Stroll",   third:'Salver' },
+  '14:55-1': { winner:'Storming George',    second:'Sinnatra',          third:'Baron Noir' },
+  '15:30-1': { winner:'Grey Dawning',       second:'Solness',           third:'Heart Wood' },
+  '16:05-1': { winner:'Will The Wise',      second:'Ile Atlantique',    third:'Madara' },
+  '16:40-1': { winner:'Zeus Power',         second:'Catchintsavo',      third:"Johnny's Jury" },
+  '17:15-1': { winner:'Laafi',              second:'Melon',             third:'Harry Lowes' },
+  '13:20-2': { winner:'Wade Out',           second:'Eagle Fang',        third:'Chart Topper' },
+  '13:55-2': { winner:'Bossman Jack',       second:'Soldier Reeves',    third:'Ballyfad' },
+  '14:30-2': { winner:'Mr Hope Street',     second:'Lookaway',          third:'Konfusion' },
+  '15:05-2': { winner:'Home By The Lee',    second:'Take No Chances',   third:'Honesty Policy' },
+  '16:00-2': { winner:'I Am Maximus',       second:'Iroko',             third:'Jordans' },
+  '17:00-2': { winner:'Mirabad',            second:'Salvator Mundi',    third:'Be Aware' },
+  '17:35-2': { winner:'Forthfactor',        second:'Look Me',           third:'Merlin Allen' },
+};
+
+const GN_PICKS = {
+  'Our NAP': {
+    label:'Our NAP', color:'#34d399', icon:'⭐',
+    picks: {
+      '13:45-0':'Apolon De Charnie','14:20-0':'Lulamba',
+      '14:55-0':'Jango Baie',       '15:30-0':'Barton Snow',
+      '16:05-0':'Brighterdaysahead','16:40-0':'Sans Bruit',
+      '17:15-0':'White Noise',
+      '13:45-1':'Handstands',       '14:20-1':'Jingko Blue',
+      '14:55-1':'Old Park Star',    '15:30-1':'Jonbon',
+      '16:05-1':'Madara',           '16:40-1':"Johnnys Fury",
+      '17:15-1':'Air of Entitlement',
+      '13:20-2':'Supremely West',   '13:55-2':'King Rasko Grey',
+      '14:30-2':'Ask Brewster',     '15:05-2':'Wodhooh',
+      '16:00-2':'I Am Maximus',     '17:00-2':'Kargese',
+      '17:35-2':'The Mourne Rambler',
+    }
+  },
+  'Our NB': {
+    label:'Our NB', color:'#60a5fa', icon:'🔵',
+    picks: {
+      '13:45-0':'Mange Tout',       '14:20-0':'Koktail Divin',
+      '14:55-0':'Gaelic Warrior',   '15:30-0':'Music Drive',
+      '16:05-0':'The New Lion',     '16:40-0':'Highlands Legacy',
+      '17:15-0':"Ti'mamzel",
+      '13:45-1':'Kitzbuhel',        '14:20-1':'Stay Away Fay',
+      '14:55-1':'Kopek Des Bordes', '15:30-1':'El Fabiolo',
+      '16:05-1':'Will The Wise',    '16:40-1':'No Drama This End',
+      '17:15-1':'Lively Citizen',
+      '13:20-2':'Jingko Blue',      '13:55-2':'Mystical Power',
+      '14:30-2':'Holloway Queen',   '15:05-2':'Home By The Lee',
+      '16:00-2':'Grangeclare West', '17:00-2':'Ballyburn',
+      '17:35-2':'Absolute Notions',
+    }
+  },
+  'WH Racecard': {
+    label:'WH Racecard', color:'#a78bfa', icon:'💜',
+    picks: {
+      '13:45-0':'Selma De Vary',    '14:20-0':'Koktail Divin',
+      '14:55-0':'Jango Baie',       '15:30-0':'A Moments Madness',
+      '16:05-0':'Brighterdaysahead','16:40-0':'Sans Bruit',
+      '17:15-0':"Nan's Choice",
+      '13:45-1':'Indeevar Bleu',    '14:20-1':'Salver',
+      '14:55-1':'Sober Glory',      '15:30-1':'Solness',
+      '16:05-1':'Boombawn',         '16:40-1':"Mondoui'boy",
+      '17:15-1':'Pourquoi Pas Papa',
+      '13:20-2':'Hold The Serve',   '13:55-2':'Fingle Bridge',
+      '14:30-2':'Glengouly',        '15:05-2':'Honesty Policy',
+      '16:00-2':'Captain Cody',     '17:00-2':'Kalif Du Berlais',
+      '17:35-2':'Mossy Fen Road',
+    }
+  },
+  'Mullington': {
+    label:'Mullington (WH)', color:'#fbbf24', icon:'📝',
+    picks: {
+      '13:45-0':'Minella Study',    '14:20-0':'Lulamba',
+      '14:55-0':'Jango Baie',       '15:30-0':'Gaboriot',
+      '16:05-0':'El Fabiolo',       '16:40-0':'Javert Allen',
+      '17:15-0':'Martini Majesty',
+      '13:45-1':'Favour And Fortune','14:20-1':'Miami Magic',
+      '14:55-1':'Starting Fifteen', '15:30-1':'JPR One',
+      '16:05-1':'Madara',           '16:40-1':"Johnny's Jury",
+      '17:15-1':'Wreckless Eric',
+      '13:20-2':'Harbour Lake',     '13:55-2':'Montemares',
+      '14:30-2':'Deep Cave',        '15:05-2':'Lavida Adiva',
+      '16:00-2':'Captain Cody',     '17:00-2':'Kala Conti',
+      '17:35-2':'Merry Away',
+    }
+  },
+  'WH Experts': {
+    label:'WH Experts', color:'#c4b5fd', icon:'🎙️',
+    picks: {
+      '13:45-0':'Winston Junior',   '14:20-0':'Koktail Divin',
+      '14:55-0':"Spillane's Tower",'15:30-0':'Barton Snow',
+      '16:05-0':'The New Lion',     '16:40-0':'Inthepocket',
+      '17:15-0':'Princess Day',
+      '13:45-1':'Jazzy Matty',      '14:20-1':'Salver',
+      '14:55-1':'Sober Glory',      '15:30-1':'Solness',
+      '16:05-1':'Will The Wise',    '16:40-1':"Mondou'boy",
+      '17:15-1':'Harry Lowes',
+      '13:20-2':'Supremely West',   '13:55-2':'Bossman Jack',
+      '14:30-2':'Brave Fortune',    '15:05-2':'Honesty Policy',
+      '16:00-2':'I Am Maximus',     '17:00-2':'Salvator Mundi',
+      '17:35-2':'Bass Hunter',
+    }
+  },
+  'Geraghty': {
+    label:'Barry Geraghty', color:'#fb7185', icon:'🎤',
+    picks: {
+      '13:45-0':'Mange Tout',       '14:20-0':'Lulamba',
+      '14:55-0':"Spillane's Tower",'15:30-0':'Barton Snow',
+      '16:05-0':'Brighterdaysahead','16:40-0':'Inthepocket',
+      '17:15-0':'Princess Day',
+      '13:45-1':'Trustintimes',     '14:20-1':'Gold Dancer',
+      '14:55-1':'Sober Glory',      '15:30-1':'Solness',
+      '16:05-1':'Will The Wise',    '16:40-1':'Zeus Power',
+      '17:15-1':'Harry Lowes',
+      '13:20-2':'Supremely West',   '13:55-2':'Bossman Jack',
+      '14:30-2':'Brave Fortune',    '15:05-2':'Hiddenvalley Lake',
+      '16:00-2':'I Am Maximus',     '17:00-2':'Salvator Mundi',
+      '17:35-2':'Bass Hunter',
+    }
+  },
+  'Nick Luck': {
+    label:'Nick Luck', color:'#67e8f9', icon:'🎤',
+    picks: {
+      '13:45-0':'Winston Junior',   '14:20-0':'Koktail Divin',
+      '14:55-0':"Pic d'Orhy",       '15:30-0':'Barton Snow',
+      '16:05-0':'Alexei',           '16:40-0':'Jasko Des Dames',
+      '17:15-0':'Burds Of A Feather',
+      '13:45-1':'Jazzy Matty',      '14:20-1':'Salver',
+      '14:55-1':'Baron Noir',       '15:30-1':'Gidleigh Park',
+      '16:05-1':'Madara',           '16:40-1':"Mondou'boy",
+      '17:15-1':'Harry Lowes',
+      '13:20-2':null,'13:55-2':null,'14:30-2':null,'15:05-2':null,
+      '16:00-2':null,'17:00-2':null,'17:35-2':null,
+    }
+  },
+  'J. Mangan': {
+    label:'Jane Mangan', color:'#f9a8d4', icon:'🎤',
+    picks: {
+      '13:45-0':'Minella Study',    '14:20-0':null,
+      '14:55-0':"Spillane's Tower",'15:30-0':"It's On The Line",
+      '16:05-0':'The New Lion',     '16:40-0':null,
+      '17:15-0':'Princess Day',
+      '13:45-1':null,               '14:20-1':"Regent's Stroll",
+      '14:55-1':'Sober Glory',      '15:30-1':'Heart Wood',
+      '16:05-1':'Gentleman De Mee', '16:40-1':'Dalston Lad',
+      '17:15-1':'Pourquoi Pas Papa',
+      '13:20-2':'Supremely West',   '13:55-2':'Masked Man',
+      '14:30-2':'Chance Another One','15:05-2':'Honesty Policy',
+      '16:00-2':"Monty's Star",     '17:00-2':null,
+      '17:35-2':null,
+    }
+  },
+  'Boom City': {
+    label:'Boom City', color:'#f59e0b', icon:'🐝',
+    picks: {
+      '13:45-0':'Minella Study',    '14:20-0':'Lulamba',
+      '14:55-0':'Jango Baie',       '15:30-0':'Unexpected Party',
+      '16:05-0':'Brighterdaysahead','16:40-0':'Stencil',
+      '17:15-0':'Princess Day',
+      '13:45-1':'Joyeuse',          '14:20-1':"Regent's Stroll",
+      '14:55-1':null,               '15:30-1':'Heart Wood',
+      '16:05-1':'Madara',           '16:40-1':'No Drama This End',
+      '17:15-1':'Harry Lowes',
+      '13:20-2':null,'13:55-2':null,'14:30-2':null,'15:05-2':null,
+      '16:00-2':'Grangeclare West', '17:00-2':null,'17:35-2':null,
+    }
+  },
+  'Frick': {
+    label:"Frick's Tips", color:'#e879f9', icon:'🦆',
+    picks: {
+      '13:45-0':null,'14:20-0':null,'14:55-0':null,'15:30-0':null,
+      '16:05-0':null,'16:40-0':null,'17:15-0':null,
+      '13:45-1':'Top Jimmy',        '14:20-1':'Salver',
+      '14:55-1':'Sober Glory',      '15:30-1':'Heart Wood',
+      '16:05-1':'Lisnamult Lad',    '16:40-1':null,
+      '17:15-1':'Star Of Guiting',
+      '13:20-2':'Quantum Quest',    '13:55-2':'Scorpio Rising',
+      '14:30-2':'Cruz Control',     '15:05-2':'Impose Toi',
+      '16:00-2':'I Am Maximus',     '17:00-2':'Salvator Mundi',
+      '17:35-2':null,
+    }
+  },
+  'RoadCheltenham': {
+    label:'RoadCheltenham', color:'#f97316', icon:'🏇',
+    picks: {
+      '13:45-0':'Winston Junior',   '14:20-0':'Koktail Divin',
+      '14:55-0':null,               '15:30-0':'Unexpected Party',
+      '16:05-0':null,               '16:40-0':null,
+      '17:15-0':null,
+      '13:45-1':'Hot Fuss',         '14:20-1':null,
+      '14:55-1':null,               '15:30-1':'Heart Wood',
+      '16:05-1':'Gentleman De Mee', '16:40-1':null,
+      '17:15-1':null,
+      '13:20-2':null,'13:55-2':null,'14:30-2':null,'15:05-2':null,
+      '16:00-2':'Jagwar',           '17:00-2':'Salvator Mundi',
+      '17:35-2':'Look Me',
+    }
+  },
+  'Raceolly': {
+    label:'Raceolly', color:'#34d399', icon:'🎯',
+    picks: {
+      '13:45-0':'Wolf Rayet',       '14:20-0':null,
+      '14:55-0':null,               '15:30-0':'Willewonga',
+      '16:05-0':'Golden Ace',       '16:40-0':'Palamon',
+      '17:15-0':'Kiltybo',
+      '13:45-1':'Ballykinlar',      '14:20-1':null,
+      '14:55-1':null,               '15:30-1':null,
+      '16:05-1':'Boombawn',         '16:40-1':'Shadow Paddy',
+      '17:15-1':'Last Kingdom',
+      '13:20-2':'Eagle Fang',       '13:55-2':null,
+      '14:30-2':'Josh The Boss',    '15:05-2':null,
+      '16:00-2':'Imperial Saint',   '17:00-2':null,
+      '17:35-2':'Moments Away',
+    }
+  },
+};
+
+// ════════════════════════════════════════════════════════════════
+// SCORING
+// ════════════════════════════════════════════════════════════════
+function scorePick(horse, results, raceKey) {
+  if (!horse) return { pts: 0, code: 'skip' };
+  const res = results[raceKey];
+  if (!res || res.winner === null) return { pts: 0, code: 'pending' };
+  const h = horse.toLowerCase().trim();
+  const w = (res.winner  || '').toLowerCase().trim();
+  const s = (res.second  || '').toLowerCase().trim();
+  const t = (res.third   || '').toLowerCase().trim();
+  if (h === w) return { pts: 3, code: 'win' };
+  if (h === s || h === t) return { pts: 1, code: 'place' };
+  return { pts: 0, code: 'miss' };
+}
+
+function scoreEvent(tipsterPicks, results) {
+  let wins = 0, places = 0, misses = 0, pts = 0, raced = 0;
+  const allKeys = Object.keys(results);
+  allKeys.forEach(k => {
+    const horse = tipsterPicks[k];
+    if (!horse) return;
+    const r = scorePick(horse, results, k);
+    raced++;
+    if (r.code === 'win')   { wins++;   pts += 3; }
+    else if (r.code === 'place') { places++; pts += 1; }
+    else if (r.code === 'miss')  { misses++; }
+  });
+  return { wins, places, misses, pts, raced };
+}
+
+// ════════════════════════════════════════════════════════════════
+// SEASON MAP — links Cheltenham key → GN key for same tipster
+// ════════════════════════════════════════════════════════════════
+const SEASON_MAP = [
+  { id:'Our NAP',         cKey:'Our NAP',         gnKey:'Our NAP',         label:'Our NAP',         color:'#34d399', icon:'⭐' },
+  { id:'Our NB',          cKey:'Our NB',          gnKey:'Our NB',          label:'Our NB',          color:'#60a5fa', icon:'🔵' },
+  { id:'Mullington',      cKey:'Mullington (WH)', gnKey:'Mullington',      label:'Mullington (WH)', color:'#fbbf24', icon:'📝' },
+  // GN-only
+  { id:'WH Racecard',     cKey:null,              gnKey:'WH Racecard',     label:'WH Racecard',     color:'#a78bfa', icon:'💜' },
+  { id:'WH Experts',      cKey:null,              gnKey:'WH Experts',      label:'WH Experts',      color:'#c4b5fd', icon:'🎙️' },
+  { id:'Geraghty',        cKey:null,              gnKey:'Geraghty',        label:'Barry Geraghty',  color:'#fb7185', icon:'🎤' },
+  { id:'Nick Luck',       cKey:null,              gnKey:'Nick Luck',       label:'Nick Luck',       color:'#67e8f9', icon:'🎤' },
+  { id:'J. Mangan',       cKey:null,              gnKey:'J. Mangan',       label:'Jane Mangan',     color:'#f9a8d4', icon:'🎤' },
+  { id:'Boom City',       cKey:null,              gnKey:'Boom City',       label:'Boom City',       color:'#f59e0b', icon:'🐝' },
+  { id:'Frick',           cKey:null,              gnKey:'Frick',           label:"Frick's Tips",    color:'#e879f9', icon:'🦆' },
+  { id:'RoadCheltenham',  cKey:null,              gnKey:'RoadCheltenham',  label:'RoadCheltenham',  color:'#f97316', icon:'🏇' },
+  { id:'Raceolly',        cKey:null,              gnKey:'Raceolly',        label:'Raceolly',        color:'#34d399', icon:'🎯' },
+  // Cheltenham-only
+  { id:'Playle (RP)',      cKey:'Playle (RP)',      gnKey:null,              label:'Playle (RP)',     color:'#f472b6', icon:'📰' },
+  { id:'Kealy (RP)',       cKey:'Kealy (RP)',       gnKey:null,              label:'Kealy (RP)',      color:'#f472b6', icon:'📰' },
+  { id:'Dineen (RP)',      cKey:'Dineen (RP)',      gnKey:null,              label:'Dineen (RP)',     color:'#f472b6', icon:'📰' },
+  { id:'Wilson (RP)',      cKey:'Wilson (RP)',      gnKey:null,              label:'Wilson (RP)',     color:'#f472b6', icon:'📰' },
+  { id:'Segal (RP)',       cKey:'Segal (RP)',       gnKey:null,              label:'Segal (RP)',      color:'#c084fc', icon:'📰' },
+  { id:'Park (RP)',        cKey:'Park (RP)',        gnKey:null,              label:'Tom Park (RP)',   color:'#6ee7b7', icon:'📰' },
+  { id:'Grimshaw (HRN)',   cKey:'Grimshaw (HRN)',   gnKey:null,              label:'Grimshaw (HRN)', color:'#67e8f9', icon:'🌐' },
+];
+
+// ════════════════════════════════════════════════════════════════
+// BUILD + RENDER
+// ════════════════════════════════════════════════════════════════
+function build() {
+  // Score each entry
+  const scored = SEASON_MAP.map(t => {
+    const cScore = t.cKey ? scoreEvent(CHELT_PICKS[t.cKey].picks, CHELT_RESULTS) : null;
+    const gnScore = t.gnKey ? scoreEvent(GN_PICKS[t.gnKey].picks, GN_RESULTS) : null;
+    const cPts  = cScore  ? cScore.pts  : 0;
+    const gnPts = gnScore ? gnScore.pts : 0;
+    const total = cPts + gnPts;
+    return { ...t, cScore, gnScore, cPts, gnPts, total };
+  });
+
+  // Sort by total desc, then GN pts desc
+  scored.sort((a, b) => b.total - a.total || b.gnPts - a.gnPts);
+
+  // ── Season leaderboard ──
+  const maxTotal = scored[0]?.total || 1;
+  const body = document.getElementById('season-body');
+  scored.forEach((t, i) => {
+    const rank = i + 1;
+    const events = [t.cKey ? 'Cheltenham' : null, t.gnKey ? 'GN' : null].filter(Boolean).join(' · ');
+    const cCell = t.cScore
+      ? `<span class="score-pill score-chelt">${t.cPts} pts</span>`
+      : `<span class="score-pill score-none">—</span>`;
+    const gnCell = t.gnScore
+      ? `<span class="score-pill score-gn">${t.gnPts} pts</span>`
+      : `<span class="score-pill score-none">—</span>`;
+    const rankClass = rank === 1 ? 'rank-1' : rank === 2 ? 'rank-2' : rank === 3 ? 'rank-3' : '';
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td class="num"><span class="rank-badge ${rankClass}">${rank}</span></td>
+      <td>
+        <div class="tipster-cell">
+          <div class="tipster-icon" style="background:${t.color}22;border:1px solid ${t.color}44;">${t.icon}</div>
+          <div>
+            <div class="tipster-name" style="color:${t.color}">${escHtml(t.label)}</div>
+            <div class="tipster-events">${events}</div>
+          </div>
+        </div>
+      </td>
+      <td class="num">${cCell}</td>
+      <td class="num">${gnCell}</td>
+      <td class="num"><span class="total-pts">${t.total}</span></td>
+    `;
+    body.appendChild(tr);
+  });
+
+  // ── Cheltenham breakdown ──
+  const cScored = SEASON_MAP
+    .filter(t => t.cKey)
+    .map(t => ({ ...t, sc: scoreEvent(CHELT_PICKS[t.cKey].picks, CHELT_RESULTS) }))
+    .sort((a, b) => b.sc.pts - a.sc.pts);
+  const maxC = cScored[0]?.sc.pts || 1;
+  const cBody = document.getElementById('chelt-body');
+  cScored.forEach((t, i) => {
+    const { wins, places, misses, pts } = t.sc;
+    const pct = Math.round(pts / maxC * 100);
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td>${i + 1}</td>
+      <td>
+        <div class="tipster-cell">
+          <div class="tipster-icon" style="background:${t.color}22;border:1px solid ${t.color}44;">${t.icon}</div>
+          <span class="tipster-name" style="color:${t.color}">${escHtml(t.label)}</span>
+        </div>
+      </td>
+      <td class="num stat-wins">${wins}</td>
+      <td class="num stat-places">${places}</td>
+      <td class="num stat-misses">${misses}</td>
+      <td class="num" style="font-weight:700;color:var(--cream)">${pts}</td>
+      <td>
+        <div class="bar-container">
+          <div class="bar-fill" style="width:${pct}%;background:var(--blue-chelt);"></div>
+        </div>
+      </td>
+    `;
+    cBody.appendChild(tr);
+  });
+
+  // ── GN breakdown ──
+  const gnScored = SEASON_MAP
+    .filter(t => t.gnKey)
+    .map(t => ({ ...t, sc: scoreEvent(GN_PICKS[t.gnKey].picks, GN_RESULTS) }))
+    .sort((a, b) => b.sc.pts - a.sc.pts);
+  const maxGN = gnScored[0]?.sc.pts || 1;
+  const gnBody = document.getElementById('gn-body');
+  gnScored.forEach((t, i) => {
+    const { wins, places, misses, pts } = t.sc;
+    const pct = Math.round(pts / maxGN * 100);
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td>${i + 1}</td>
+      <td>
+        <div class="tipster-cell">
+          <div class="tipster-icon" style="background:${t.color}22;border:1px solid ${t.color}44;">${t.icon}</div>
+          <span class="tipster-name" style="color:${t.color}">${escHtml(t.label)}</span>
+        </div>
+      </td>
+      <td class="num stat-wins">${wins}</td>
+      <td class="num stat-places">${places}</td>
+      <td class="num stat-misses">${misses}</td>
+      <td class="num" style="font-weight:700;color:var(--cream)">${pts}</td>
+      <td>
+        <div class="bar-container">
+          <div class="bar-fill" style="width:${pct}%;background:var(--green-gn);"></div>
+        </div>
+      </td>
+    `;
+    gnBody.appendChild(tr);
+  });
+
+  document.getElementById('loading').style.display = 'none';
+  document.getElementById('content').style.display = 'block';
+}
+
+function escHtml(str) {
+  return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+document.addEventListener('DOMContentLoaded', build);
+</script>
+</body>
+</html>
