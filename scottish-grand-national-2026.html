@@ -462,8 +462,8 @@
   ══════════════════════════════════════════════════════════════ -->
   <div class="panel active" id="panel-tips">
     <div class="day-tabs">
-      <button class="day-tab active" onclick="showDay(0, this)">📅 Friday 17 Apr — Ladies Day</button>
-      <button class="day-tab" onclick="showDay(1, this)">🏆 Saturday 18 Apr — National Day</button>
+      <button class="day-tab" onclick="showDay(0, this)">📅 Friday 17 Apr — Ladies Day</button>
+      <button class="day-tab active" onclick="showDay(1, this)">🏆 Saturday 18 Apr — National Day</button>
     </div>
     <div id="tips-container"></div>
   </div>
@@ -1070,7 +1070,7 @@ function escHtml(str) {
 // INIT
 // ════════════════════════════════════════════════════════════════
 document.addEventListener('DOMContentLoaded', () => {
-  renderTipsDay(0);
+  renderTipsDay(1);
   renderRunners('all');
   startCountdown();
 });
