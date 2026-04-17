@@ -688,21 +688,33 @@ const TIPS = {
   '16:43-0': { nap: null, nb: null },
   '17:15-0': { nap: null, nb: null },
   // ── SATURDAY ──────────────────────────────────────────────────
-  '13:10-1': { nap: { horse:'Sans Bruit', odds:'', reason:'Newsboy tip for the Scotty Brand Listed Chase.' } },
-  '13:45-1': { nap: { horse:'Big John Wayne', odds:'', reason:'Newsboy selection for the CPMS Novices\' Chase.' } },
+  '13:10-1': {
+    nap: { horse:'Le Nez Creux', odds:'', reason:'Two-tip consensus. Geraghty (WH): "offers value" — Cromwell runner from France. Gavin Cromwell (trainer blog): "has won a few over there, much lower mark in UK than in Ireland, jumps really well — expect a nice race." Strong each-way case.' },
+    nb:  { horse:'Sans Bruit', odds:'', reason:'Newsboy tip for the Scotty Brand Listed Chase.' },
+  },
+  '13:45-1': {
+    nap: { horse:'Blakey Boy', odds:'', reason:'Geraghty (WH): "big price but potentially overpriced — recent impressive win at Kelso makes the odds look generous." Lightly-raced novice whose Kelso form could be well ahead of the handicapper.' },
+    nb:  { horse:'Big John Wayne', odds:'', reason:'Newsboy selection for the CPMS Novices\' Chase. Promising profile in staying novice company.' },
+  },
   '14:20-1': {
-    nap: { horse:'Tutti Quanti', odds:'8/1', reason:'Newsboy tip for the Scottish Champion Hurdle. Paul Nicholls / Harry Cobden, in excellent form. Top weight at 11-12 but a classy performer. Captain Hugo the danger if bypassing Cheltenham has left him fresher.' },
-    nb:  { horse:'Tellherthename', odds:'3/1 F', reason:'Market favourite — Dan Skelton / Harry Skelton. 12th in Cheltenham County Hurdle was below par. Regarded as unlucky. Skelton pair always dangerous at Ayr.' },
+    nap: { horse:'Tutti Quanti', odds:'8/1', reason:'Newsboy tip. Paul Nicholls / Harry Cobden, in excellent form. Top weight at 11-12 but a classy performer. Captain Hugo the danger if bypassing Cheltenham has left him fresher.' },
+    nb:  { horse:'Tellherthename', odds:'3/1 F', reason:'Market favourite — Barry Geraghty (WH) calls this "the standout." Dan Skelton / Harry Skelton. 12th in the Cheltenham County Hurdle was regarded as below par and unlucky. Skelton pair always dangerous at Ayr. Best price available.' },
   },
-  '14:55-1': { nap: { horse:'Holly Hartingo', odds:'', reason:'Newsboy tip for the Seafield Trophy Mares\' Hurdle. First-time blinkers — watch the market.' } },
+  '14:55-1': {
+    nap: { horse:'Twistthenightaway', odds:'', reason:'Geraghty (WH) tip for the Seafield Trophy Mares\' Hurdle. The WH podcast selection — Geraghty is strong on this one.' },
+    nb:  { horse:'Holly Hartingo', odds:'', reason:'Newsboy tip. First-time blinkers — watch the market for a significant move.' },
+  },
   '15:35-1': {
-    nap: { horse:'King Of Answers', odds:'6/1 EW', reason:'Barry Geraghty (WH) NAP. Derek Fox up for Lucinda Russell & Michael Scudamore — local Scottish yard who won this with Mighty Thunder in 2021. Ran second at Cheltenham NH Chase. Proven stayer, well drawn at No.3. Geraghty\'s strongest conviction of the week.' },
-    nb:  { horse:'Chasingouttheblues', odds:'12/1 EW', reason:'Racing Post NAP (Richard Austen). Three wins from last four starts. Progressive 7yo staying chaser. Jamie Hamilton, who knows Ayr well, takes the ride. Soft ground suits — record is better when conditions test stamina.' },
+    nap: { horse:'King Of Answers', odds:'6/1 EW', reason:'Barry Geraghty (WH) NAP. Derek Fox up for Lucinda Russell — local Scottish yard who won this with Mighty Thunder in 2021. Ran second at Cheltenham NH Chase behind Holloway Queen. Geraghty: "was doing his best work at the finish there — should appreciate the four-mile distance." Proven stayer, strong finishing profile.' },
+    nb:  { horse:'Chasingouttheblues', odds:'12/1 EW', reason:'Racing Post NAP (Richard Austen). WH Experts rank 2nd. Three wins from last four starts. Progressive 7yo staying chaser. Jamie Hamilton, who knows Ayr well, takes the ride. Soft ground suits — record is better when conditions test stamina.' },
     ew:  { horse:'Montregard', odds:'10/1 EW', reason:'Newsboy / Mirror NAP. Won Grade 3 Swinley Chase at Ascot (3m) last time in style. Half-brother to Protektorat — stamina inheritance looks solid. Stan Sheppard rides. Tom Lacey in fine form. The 4m trip is untested but profile screams stayer.' },
-    longshot: { horse:'Road To Home', odds:'15/2 EW', reason:'Willie Mullins\' sole runner — notable as he ran 6 horses last two years (winning both). Patrick Mullins up. Came a neck second to Ask Brewster in the Kim Muir at Cheltenham. Rachael Blackmore\'s selection. If Mullins trusts this horse enough to bring just one, he must fancy his chances.' },
+    longshot: { horse:'Road To Home', odds:'15/2 EW', reason:'Willie Mullins\' sole runner — notable as he ran 6 horses in each of the last two years (winning both). Patrick Mullins up. Came a neck second to Ask Brewster in the Kim Muir at Cheltenham. WH Experts rank 4th. If Mullins only brings one, he must be extremely confident.' },
   },
-  '16:15-1': { nap: { horse:'Apache Tribe', odds:'', reason:'Newsboy tip for the Stagecoach Novices\' Hurdle.' } },
-  '16:50-1': { nap: { horse:'Brady Hartsfield', odds:'', reason:'Newsboy tip for the Golf Inn NH Flat Race.' } },
+  '16:15-1': {
+    nap: { horse:'West Hill Verde', odds:'', reason:'Geraghty (WH) tip for the Novices\' Handicap Hurdle. Geraghty flags this as one of his stronger fancies on the card.' },
+    nb:  { horse:'Apache Tribe', odds:'', reason:'Newsboy tip for the Stagecoach Novices\' Hurdle.' },
+  },
+  '16:50-1': { nap: { horse:'Brady Hartsfield', odds:'', reason:'Consensus pick — Geraghty (WH) and Newsboy both tip Brady Hartsfield for the Golf Inn NH Flat Race. Two-source agreement in the bumper is as solid as it gets.' } },
 };
 
 // ════════════════════════════════════════════════════════════════
@@ -735,9 +747,9 @@ const RESULTS = {
 const SGN_RUNNERS = [
   { name:'Kim Roque',           odds:'5/1',   weight:'TBC', trainer:'Joseph O\'Brien 🇮🇪',              jockey:'JJ Slevin',          country:'ireland', tag:'hot',  note:'Joint market leader. Joseph O\'Brien entry with JJ Slevin aboard — one of Ireland\'s leading jockeys. Won the Kim Muir at Cheltenham Festival this season. Proven form at the top level. Biggest danger to the home team.' },
   { name:'King Of Answers',     odds:'6/1',   weight:'TBC', trainer:'Lucinda Russell 🏴󠁧󠁢󠁳󠁣󠁴󠁿',          jockey:'Derek Fox',          country:'scotland', tag:'fav',  note:'Barry Geraghty NAP (WH). Local Scottish handler Lucinda Russell, who won this race with Mighty Thunder in 2021. Derek Fox rides. Ran second at Cheltenham NH Chase — proven stamina. Home advantage, ideal conditions. One of the most credible winning profiles in the field.' },
-  { name:'Quebecois',           odds:'7/1',   weight:'TBC', trainer:'Paul Nicholls',                   jockey:'Harry Cobden',       country:'britain', tag:'brit', note:'Harry Cobden rides Nicholls\' leading contender rather than Captain Cody (scratched). Ran in Cheltenham Ultima this season. Nicholls won back-to-back here with Vicente in 2016–17. Cobden is a proven big-race jockey.' },
+  { name:'Quebecois',           odds:'7/1',   weight:'TBC', trainer:'Paul Nicholls',                   jockey:'Harry Cobden',       country:'britain', tag:'brit', note:'Harry Cobden rides Nicholls\' leading contender. Ran in the Cheltenham Ultima this season. WH Experts rate him highly for a podium finish with "extremely high" claims. Nicholls won back-to-back here with Vicente in 2016–17. Cobden is a proven big-race jockey.' },
   { name:'Road To Home',        odds:'15/2',  weight:'TBC', trainer:'W P Mullins 🇮🇪',                jockey:'Patrick Mullins',    country:'ireland', tag:'hot',  note:'Willie Mullins\' SOLE entry — a dramatic change from his 6-runner teams that won the last two renewals. Patrick Mullins up. Came a neck second to Ask Brewster in the Kim Muir at Cheltenham. Rachael Blackmore\'s selection. If Mullins only brings one, he must be confident.' },
-  { name:'Isaac Des Obeaux',    odds:'9/1',   weight:'TBC', trainer:'Paul Nicholls',                   jockey:'Sam Twiston-Davies', country:'britain', tag:'brit', note:'Midlands National winner this season — proven over marathon trips. Sam Twiston-Davies, who has won this race twice, knows Ayr well. Nicholls\' second string but arguably better suited to soft ground than Quebecois.' },
+  { name:'Isaac Des Obeaux',    odds:'9/1',   weight:'TBC', trainer:'Paul Nicholls',                   jockey:'Sam Twiston-Davies', country:'britain', tag:'brit', note:'Won the Midlands National one month ago — proven over marathon trips. WH Experts identify him as "a big player" — won\'t lack stamina. Sam Twiston-Davies, who has won this race twice, knows Ayr well. Arguably better suited to soft ground than Quebecois.' },
   { name:'Montregard',          odds:'10/1',  weight:'TBC', trainer:'Tom Lacey',                       jockey:'Stan Sheppard',      country:'britain', tag:'brit', note:'Newsboy / Mirror NAP. Won Grade 3 Swinley Handicap Chase at Ascot (3m) last time in style. Half-brother to Protektorat — stamina inheritance credible. Progressive second season over fences. Tom Lacey yard improving rapidly. 4m is unknown but everything points to staying further.' },
   { name:'Ask Brewster',        odds:'11/1',  weight:'TBC', trainer:'Cath Williams',                   jockey:'Shane Cotter (7lb)', country:'britain', tag:'brit', note:'Trainer Christian Williams\' horse (now listed as Cath Williams). Won 2022–23 renewals with back-to-back winners. Ask Brewster ran in Cheltenham amateur races this season. Shane Cotter takes 7lb — significant weight relief. Ground concern: all 5 chase wins on good or firmer.' },
   { name:'Chasingouttheblues',  odds:'12/1',  weight:'TBC', trainer:'Mark Walford',                    jockey:'Jamie Hamilton',     country:'britain', tag:'brit', note:'Racing Post NAP (Richard Austen). Progressive 7yo — three wins from last four starts. Jamie Hamilton, who knows Ayr well, rides. Soft ground suits. Trend: 9 of 11 winners aged 7–10 ✓. Still on a workable mark. The underrated selection of the race.' },
@@ -746,7 +758,7 @@ const SGN_RUNNERS = [
   { name:'Git Maker',           odds:'18/1',  weight:'TBC', trainer:'Jamie Snowden',                   jockey:'Jonathan Burke',     country:'britain', tag:'brit', note:'Jonathan Burke rides. Useful staying chaser at handicap level. Mullington (WH) included this in his top five. Goes on soft ground. Dark horse at the price.' },
   { name:'Kap Vert',            odds:'18/1',  weight:'TBC', trainer:'Philip Hobbs & Johnson White',    jockey:'Sean Houlihan',      country:'britain', tag:'brit', note:'Hobbs & White entry. Sean Houlihan up. Won at Cheltenham last season — Festival form a positive. 18/1 offers each-way value in a wide-open race.' },
   { name:'Herakles Westwood',   odds:'20/1',  weight:'TBC', trainer:'Warren Greatrex',                 jockey:'James Bowen',        country:'britain', tag:'brit', note:'James Bowen takes the ride for Greatrex. Has shown ability in staying chases. 20/1 each-way is speculative but the profile doesn\'t entirely rule him out.' },
-  { name:'Promontory',          odds:'20/1',  weight:'TBC', trainer:'Sarah Connell',                   jockey:'Donagh Meyler',      country:'britain', tag:'brit', note:'William Hill (Mullington) first selection — included Promontory as his headline tip at 20/1. Won the Dublin Chase at Leopardstown (3m4f) last time. Donagh Meyler up. Strong each-way claims at the price for connections who know how to get horses ready for big days.' },
+  { name:'Promontory',          odds:'20/1',  weight:'TBC', trainer:'Sarah Connell',                   jockey:'Donagh Meyler',      country:'britain', tag:'brit', note:'WH Experts #1 selection — top of the William Hill editorial team\'s rankings. Mullington (WH) also leads with this horse. Won the Dublin Chase at Leopardstown (3m4f) last time. Donagh Meyler up. Strong each-way claims at the price for a horse two separate WH sources both flag as their headline tip.' },
   { name:'Our Power',           odds:'25/1',  weight:'11-07', trainer:'Sam Thomas',                    jockey:'Danny Gilligan',     country:'britain', tag:'brit', note:'High weight of 11-07 is a challenge but Sam Thomas has his horses sharp at this time of year. Danny Gilligan takes the ride. Long-priced each-way flutter territory.' },
   { name:'Maximilian',          odds:'33/1',  weight:'TBC', trainer:'Donald McCain',                   jockey:'William Maggs (3lb)',country:'britain', tag:'brit', note:'Donald McCain yard targets Ayr regularly. William Maggs claims 3lb — effective weight reduced. 33/1 outsider but McCain knows these tracks.' },
   { name:'Famous Bridge',       odds:'33/1',  weight:'11-05', trainer:'Nicky Richards',               jockey:'Sean Quinlan',       country:'britain', tag:'brit', note:'Our original NAP has drifted significantly from 14/1 to 33/1 — the market has spoken. Sean Quinlan, who won this race in 2019, keeps the ride. Nicky Richards yard. Proven stamina but must be taken on at this price. Ground soft — he\'s better on good.' },
@@ -800,8 +812,19 @@ const SGN_TIPSTER_PICKS = {
     picks: {
       '13:45-0':null, '14:20-0':null, '14:55-0':null, '15:30-0':null,
       '16:05-0':null, '16:43-0':null, '17:15-0':null,
-      '13:10-1':null, '13:45-1':null, '14:20-1':null, '14:55-1':null,
+      '13:10-1':'Le Nez Creux',    '13:45-1':'Blakey Boy',
+      '14:20-1':'Tellherthename',  '14:55-1':'Twistthenightaway',
       '15:35-1':'King Of Answers',
+      '16:15-1':'West Hill Verde', '16:50-1':'Brady Hartsfield',
+    }
+  },
+  'WH Experts': {
+    label:'WH Experts', color:'#a3e635', icon:'🏆',
+    picks: {
+      '13:45-0':null, '14:20-0':null, '14:55-0':null, '15:30-0':null,
+      '16:05-0':null, '16:43-0':null, '17:15-0':null,
+      '13:10-1':null, '13:45-1':null, '14:20-1':null, '14:55-1':null,
+      '15:35-1':'Promontory',
       '16:15-1':null, '16:50-1':null,
     }
   },
