@@ -695,20 +695,21 @@ const TIPS = {
   '13:45-1': {
     nap: { horse:'Blakey Boy', odds:'', reason:'Geraghty (WH): "big price but potentially overpriced — recent impressive win at Kelso makes the odds look generous." Lightly-raced novice whose Kelso form could be well ahead of the handicapper.' },
     nb:  { horse:'Big John Wayne', odds:'', reason:'Newsboy selection for the CPMS Novices\' Chase. Promising profile in staying novice company.' },
+    ew:  { horse:'Ayiko', odds:'28/1 EW', reason:'Raceolly (horseracing.net) each-way pick at 28/1. Big-price each-way interest in this novice chase.' },
   },
   '14:20-1': {
-    nap: { horse:'Tutti Quanti', odds:'8/1', reason:'Newsboy tip. Paul Nicholls / Harry Cobden, in excellent form. Top weight at 11-12 but a classy performer. Captain Hugo the danger if bypassing Cheltenham has left him fresher.' },
-    nb:  { horse:'Tellherthename', odds:'3/1 F', reason:'Market favourite — Barry Geraghty (WH) calls this "the standout." Dan Skelton / Harry Skelton. 12th in the Cheltenham County Hurdle was regarded as below par and unlucky. Skelton pair always dangerous at Ayr. Best price available.' },
+    nap: { horse:'Tutti Quanti', odds:'5/2', reason:'Newsboy AND Billy Grimshaw (HRN) both tip Tutti Quanti — two independent sources agree. Grimshaw tipped at 9/2 on 17 Apr, now a best-priced 5/2 after market confidence. Paul Nicholls / Harry Cobden in excellent form. Top weight but a classy performer who demands respect.' },
+    nb:  { horse:'Tellherthename', odds:'5/2 F', reason:'Market favourite and Barry Geraghty (WH) calls it "the standout." Dan Skelton / Harry Skelton. Regarded as unlucky at Cheltenham. Skelton pair always dangerous at Ayr. Shares favouritism with Tutti Quanti.' },
   },
   '14:55-1': {
     nap: { horse:'Twistthenightaway', odds:'', reason:'Geraghty (WH) tip for the Seafield Trophy Mares\' Hurdle. The WH podcast selection — Geraghty is strong on this one.' },
-    nb:  { horse:'Holly Hartingo', odds:'', reason:'Newsboy tip. First-time blinkers — watch the market for a significant move.' },
+    nb:  { horse:'Holly Hartingo', odds:'22/1 EW', reason:'Newsboy tip + biggest-priced tips list (horseracing.net). Alastair Ralph / Ciaran Gethings. First-time blinkers — a market move would signal strong stable confidence at 22/1.' },
   },
   '15:35-1': {
     nap: { horse:'King Of Answers', odds:'6/1 EW', reason:'Barry Geraghty (WH) NAP. Derek Fox up for Lucinda Russell — local Scottish yard who won this with Mighty Thunder in 2021. Ran second at Cheltenham NH Chase behind Holloway Queen. Geraghty: "was doing his best work at the finish there — should appreciate the four-mile distance." Proven stayer, strong finishing profile.' },
-    nb:  { horse:'Chasingouttheblues', odds:'12/1 EW', reason:'Racing Post NAP (Richard Austen). WH Experts rank 2nd. Three wins from last four starts. Progressive 7yo staying chaser. Jamie Hamilton, who knows Ayr well, takes the ride. Soft ground suits — record is better when conditions test stamina.' },
-    ew:  { horse:'Montregard', odds:'10/1 EW', reason:'Newsboy / Mirror NAP. Won Grade 3 Swinley Chase at Ascot (3m) last time in style. Half-brother to Protektorat — stamina inheritance looks solid. Stan Sheppard rides. Tom Lacey in fine form. The 4m trip is untested but profile screams stayer.' },
-    longshot: { horse:'Road To Home', odds:'15/2 EW', reason:'Willie Mullins\' sole runner — notable as he ran 6 horses in each of the last two years (winning both). Patrick Mullins up. Came a neck second to Ask Brewster in the Kim Muir at Cheltenham. WH Experts rank 4th. If Mullins only brings one, he must be extremely confident.' },
+    nb:  { horse:'Kim Roque', odds:'4/1 EW', reason:'Billy Grimshaw (HRN) NAP — tipped at 5/1 on 17 Apr, now the 4/1 clear market leader after overnight confidence. Joseph O\'Brien / JJ Slevin. Won the Kim Muir at Cheltenham. WH Experts rank 3rd. The market is firmly in his corner.' },
+    ew:  { horse:'Chasingouttheblues', odds:'12/1 EW', reason:'Racing Post NAP (Richard Austen). WH Experts rank 2nd. Three wins from last four starts. Progressive 7yo staying chaser. Jamie Hamilton, who knows Ayr well, takes the ride. Soft ground suits.' },
+    longshot: { horse:'Montregard', odds:'10/1 EW', reason:'Newsboy / Mirror NAP. Won Grade 3 Swinley Chase at Ascot (3m) last time in style. Half-brother to Protektorat. Stan Sheppard / Tom Lacey in fine form. 4m is untested but the profile screams stayer. Road To Home (15/2, Mullins sole runner) is the other longshot play.' },
   },
   '16:15-1': {
     nap: { horse:'West Hill Verde', odds:'', reason:'Geraghty (WH) tip for the Novices\' Handicap Hurdle. Geraghty flags this as one of his stronger fancies on the card.' },
@@ -845,6 +846,28 @@ const SGN_TIPSTER_PICKS = {
       '16:05-0':null, '16:43-0':null, '17:15-0':null,
       '13:10-1':null, '13:45-1':null, '14:20-1':null, '14:55-1':null,
       '15:35-1':'Chasingouttheblues',
+      '16:15-1':null, '16:50-1':null,
+    }
+  },
+  'Grimshaw (HRN)': {
+    label:'Billy Grimshaw (HRN)', color:'#c084fc', icon:'📺',
+    picks: {
+      '13:45-0':null, '14:20-0':null, '14:55-0':null, '15:30-0':null,
+      '16:05-0':null, '16:43-0':null, '17:15-0':null,
+      '13:10-1':null, '13:45-1':null,
+      '14:20-1':'Tutti Quanti',     '14:55-1':null,
+      '15:35-1':'Kim Roque',
+      '16:15-1':null, '16:50-1':null,
+    }
+  },
+  'Raceolly': {
+    label:'Raceolly', color:'#f97316', icon:'📱',
+    picks: {
+      '13:45-0':null, '14:20-0':null, '14:55-0':null, '15:30-0':null,
+      '16:05-0':null, '16:43-0':null, '17:15-0':null,
+      '13:10-1':null, '13:45-1':'Ayiko',
+      '14:20-1':null, '14:55-1':null,
+      '15:35-1':'Collectors Item',
       '16:15-1':null, '16:50-1':null,
     }
   },
