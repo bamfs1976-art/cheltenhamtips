@@ -24,6 +24,7 @@
     --amber:     #e67e22;
     --blue-chelt: #3b82f6;
     --green-gn:  #10b981;
+    --green-sgn: #28a349;
     --font-display: 'Playfair Display', Georgia, serif;
     --font-body:    'Source Serif 4', Georgia, serif;
   }
@@ -203,6 +204,7 @@
   .score-chelt { background: rgba(59,130,246,0.2); color: #93c5fd; border: 1px solid rgba(59,130,246,0.3); }
   .score-gn    { background: rgba(16,185,129,0.2); color: #6ee7b7; border: 1px solid rgba(16,185,129,0.3); }
   .score-none  { background: rgba(255,255,255,0.05); color: var(--silver); border: 1px solid rgba(255,255,255,0.1); }
+  .score-sgn   { background: rgba(40,163,73,0.2); color: #86efac; border: 1px solid rgba(40,163,73,0.4); }
 
   .total-pts {
     font-family: var(--font-display);
@@ -307,6 +309,7 @@
 <div class="summary-bar">
   <span class="summary-pill"><span class="dot dot-chelt"></span>Cheltenham — 28 races · 4 days</span>
   <span class="summary-pill"><span class="dot dot-gn"></span>Grand National — 21 races · 3 days</span>
+  <span class="summary-pill"><span class="dot" style="background:#28a349"></span>Scottish GN — 7 races · 1 day</span>
   <span class="summary-pill">Scoring: 3pts Win · 1pt Placed</span>
 </div>
 
@@ -321,6 +324,7 @@
           <th>Tipster</th>
           <th class="num">Cheltenham</th>
           <th class="num">Grand National</th>
+          <th class="num">Scottish GN</th>
           <th class="num">Season Total</th>
         </tr>
       </thead>
@@ -368,12 +372,23 @@
       </thead>
       <tbody id="gn-body"></tbody>
     </table>
+
+    <div class="event-header" style="background:linear-gradient(135deg,#134521,#28a349);margin-top:32px;">
+      <div>
+        <h2>Scottish Grand National 2026</h2>
+        <div class="event-meta">18 April 2026 · Ayr Racecourse · Winner: Kap Vert (20/1)</div>
+      </div>
+    </div>
+    <table class="breakdown-table" id="sgn-table">
+      <thead><tr><th>#</th><th>Tipster</th><th class="num">Wins</th><th class="num">Placed</th><th class="num">Missed</th><th class="num">Pts</th><th style="width:100px;">Score</th></tr></thead>
+      <tbody id="sgn-body"></tbody>
+    </table>
   </div>
 </div>
 
 <div class="page-footer">
   Scores: 3pts = Win · 1pt = Placed (top 3) · 0pts = Miss or no pick<br>
-  <a href="cheltenham-2026.html">Cheltenham 2026</a> · <a href="grand-national-2026.html">Grand National 2026</a>
+  <a href="cheltenham-2026.html">Cheltenham 2026</a> · <a href="grand-national-2026.html">Grand National 2026</a> · <a href="scottish-grand-national-2026.html">Scottish GN 2026</a>
 </div>
 
 <script>
@@ -808,6 +823,32 @@ const GN_PICKS = {
 };
 
 // ════════════════════════════════════════════════════════════════
+// SCOTTISH GRAND NATIONAL 2026 DATA
+// ════════════════════════════════════════════════════════════════
+const SGN_RESULTS = {
+  '13:10-1': { winner:'Moudan',         second:'Le Nez Creux',      third:'Traprain Law' },
+  '13:45-1': { winner:'Pounding Poet',  second:'Big John Wayne',    third:'I Wish You' },
+  '14:20-1': { winner:'Dedicated Hero', second:'Captain Hugo',      third:'Ooh Betty' },
+  '14:55-1': { winner:'Game Colours',   second:'World Of Fortunes', third:'Love Of Neymore' },
+  '15:35-1': { winner:'Kap Vert',       second:'Git Maker',         third:'Kim Roque' },
+  '16:15-1': { winner:'Apache Tribe',   second:'Stride On',         third:'West Hill Verde' },
+  '16:50-1': { winner:'Skerry Hill',    second:'Old Habits',        third:'Close House' },
+};
+
+const SGN_PICKS = {
+  'Our NAP':        { picks: { '13:10-1':'Sans Bruit','13:45-1':'Big John Wayne','14:20-1':'Tutti Quanti','14:55-1':'Holly Hartingo','15:35-1':'King Of Answers','16:15-1':'Apache Tribe','16:50-1':'Brady Hartsfield' }},
+  'Our NB':         { picks: { '14:20-1':'Tellherthename','15:35-1':'Chasingouttheblues' }},
+  'Newsboy':        { picks: { '13:10-1':'Sans Bruit','13:45-1':'Big John Wayne','14:20-1':'Tutti Quanti','14:55-1':'Holly Hartingo','15:35-1':'Montregard','16:15-1':'Apache Tribe','16:50-1':'Brady Hartsfield' }},
+  'Geraghty (WH)':  { picks: { '13:10-1':'Le Nez Creux','13:45-1':'Blakey Boy','14:20-1':'Tellherthename','14:55-1':'Twistthenightaway','15:35-1':'King Of Answers','16:15-1':'West Hill Verde','16:50-1':'Brady Hartsfield' }},
+  'WH Experts':     { picks: { '15:35-1':'Promontory' }},
+  'Mullington (WH)':{ picks: { '13:10-1':'Moudan','13:45-1':'Milcree','14:20-1':'Ooh Betty','14:55-1':"Fox's Fancy",'15:35-1':'Promontory','16:15-1':'Stride On','16:50-1':'Old Habits' }},
+  'Racing Post':    { picks: { '15:35-1':'Chasingouttheblues' }},
+  'Grimshaw (HRN)': { picks: { '14:20-1':'Tutti Quanti','15:35-1':'Kim Roque' }},
+  'Nick Luck (WH)': { picks: { '13:10-1':'Le Nez Creux','13:45-1':'Kdeux Saint Fray','14:20-1':'All In You','14:55-1':'Game Colours','15:35-1':'Kim Roque' }},
+  'Raceolly':       { picks: { '13:45-1':'Ayiko','15:35-1':'Collectors Item' }},
+};
+
+// ════════════════════════════════════════════════════════════════
 // SCORING
 // ════════════════════════════════════════════════════════════════
 function scorePick(horse, results, raceKey) {
@@ -842,27 +883,27 @@ function scoreEvent(tipsterPicks, results) {
 // SEASON MAP — links Cheltenham key → GN key for same tipster
 // ════════════════════════════════════════════════════════════════
 const SEASON_MAP = [
-  { id:'Our NAP',         cKey:'Our NAP',         gnKey:'Our NAP',         label:'Our NAP',         color:'#34d399', icon:'⭐' },
-  { id:'Our NB',          cKey:'Our NB',          gnKey:'Our NB',          label:'Our NB',          color:'#60a5fa', icon:'🔵' },
-  { id:'Mullington',      cKey:'Mullington (WH)', gnKey:'Mullington',      label:'Mullington (WH)', color:'#fbbf24', icon:'📝' },
-  // GN-only
-  { id:'WH Racecard',     cKey:null,              gnKey:'WH Racecard',     label:'WH Racecard',     color:'#a78bfa', icon:'💜' },
-  { id:'WH Experts',      cKey:null,              gnKey:'WH Experts',      label:'WH Experts',      color:'#c4b5fd', icon:'🎙️' },
-  { id:'Geraghty',        cKey:null,              gnKey:'Geraghty',        label:'Barry Geraghty',  color:'#fb7185', icon:'🎤' },
-  { id:'Nick Luck',       cKey:null,              gnKey:'Nick Luck',       label:'Nick Luck',       color:'#67e8f9', icon:'🎤' },
-  { id:'J. Mangan',       cKey:null,              gnKey:'J. Mangan',       label:'Jane Mangan',     color:'#f9a8d4', icon:'🎤' },
-  { id:'Boom City',       cKey:null,              gnKey:'Boom City',       label:'Boom City',       color:'#f59e0b', icon:'🐝' },
-  { id:'Frick',           cKey:null,              gnKey:'Frick',           label:"Frick's Tips",    color:'#e879f9', icon:'🦆' },
-  { id:'RoadCheltenham',  cKey:null,              gnKey:'RoadCheltenham',  label:'RoadCheltenham',  color:'#f97316', icon:'🏇' },
-  { id:'Raceolly',        cKey:null,              gnKey:'Raceolly',        label:'Raceolly',        color:'#34d399', icon:'🎯' },
-  // Cheltenham-only
-  { id:'Playle (RP)',      cKey:'Playle (RP)',      gnKey:null,              label:'Playle (RP)',     color:'#f472b6', icon:'📰' },
-  { id:'Kealy (RP)',       cKey:'Kealy (RP)',       gnKey:null,              label:'Kealy (RP)',      color:'#f472b6', icon:'📰' },
-  { id:'Dineen (RP)',      cKey:'Dineen (RP)',      gnKey:null,              label:'Dineen (RP)',     color:'#f472b6', icon:'📰' },
-  { id:'Wilson (RP)',      cKey:'Wilson (RP)',      gnKey:null,              label:'Wilson (RP)',     color:'#f472b6', icon:'📰' },
-  { id:'Segal (RP)',       cKey:'Segal (RP)',       gnKey:null,              label:'Segal (RP)',      color:'#c084fc', icon:'📰' },
-  { id:'Park (RP)',        cKey:'Park (RP)',        gnKey:null,              label:'Tom Park (RP)',   color:'#6ee7b7', icon:'📰' },
-  { id:'Grimshaw (HRN)',   cKey:'Grimshaw (HRN)',   gnKey:null,              label:'Grimshaw (HRN)', color:'#67e8f9', icon:'🌐' },
+  { id:'Our NAP',       cKey:'Our NAP',        gnKey:'Our NAP',       sgnKey:'Our NAP',         label:'Our NAP',          color:'#34d399', icon:'⭐' },
+  { id:'Our NB',        cKey:'Our NB',          gnKey:'Our NB',        sgnKey:'Our NB',           label:'Our NB',           color:'#60a5fa', icon:'🔵' },
+  { id:'Mullington',    cKey:'Mullington (WH)', gnKey:'Mullington',    sgnKey:'Mullington (WH)', label:'Mullington (WH)', color:'#fbbf24', icon:'📝' },
+  { id:'WH Experts',    cKey:null,              gnKey:'WH Experts',    sgnKey:'WH Experts',       label:'WH Experts',       color:'#a3e635', icon:'🏆' },
+  { id:'Geraghty',      cKey:null,              gnKey:'Geraghty',      sgnKey:'Geraghty (WH)',    label:'Barry Geraghty',   color:'#fb7185', icon:'🎤' },
+  { id:'Nick Luck',     cKey:null,              gnKey:'Nick Luck',     sgnKey:'Nick Luck (WH)',   label:'Nick Luck',        color:'#38bdf8', icon:'🎙️' },
+  { id:'Raceolly',      cKey:null,              gnKey:'Raceolly',      sgnKey:'Raceolly',         label:'Raceolly',         color:'#f97316', icon:'📱' },
+  { id:'WH Racecard',   cKey:null,              gnKey:'WH Racecard',   sgnKey:null,               label:'WH Racecard',      color:'#a78bfa', icon:'💜' },
+  { id:'J. Mangan',     cKey:null,              gnKey:'J. Mangan',     sgnKey:null,               label:'Jane Mangan',      color:'#f9a8d4', icon:'🎤' },
+  { id:'Boom City',     cKey:null,              gnKey:'Boom City',     sgnKey:null,               label:'Boom City',        color:'#f59e0b', icon:'🐝' },
+  { id:'Frick',         cKey:null,              gnKey:'Frick',         sgnKey:null,               label:"Frick's Tips",     color:'#e879f9', icon:'🦆' },
+  { id:'RoadCheltenham',cKey:null,              gnKey:'RoadCheltenham',sgnKey:null,               label:'RoadCheltenham',   color:'#f97316', icon:'🏇' },
+  { id:'Newsboy',       cKey:null,              gnKey:null,            sgnKey:'Newsboy',          label:'Newsboy (Mirror)', color:'#f472b6', icon:'📰' },
+  { id:'Racing Post',   cKey:null,              gnKey:null,            sgnKey:'Racing Post',      label:'Racing Post',      color:'#a78bfa', icon:'🗞️' },
+  { id:'Grimshaw (HRN)',cKey:'Grimshaw (HRN)',  gnKey:null,            sgnKey:'Grimshaw (HRN)',   label:'Grimshaw (HRN)',   color:'#c084fc', icon:'📺' },
+  { id:'Playle (RP)',   cKey:'Playle (RP)',     gnKey:null,            sgnKey:null,               label:'Playle (RP)',      color:'#f472b6', icon:'📰' },
+  { id:'Kealy (RP)',    cKey:'Kealy (RP)',      gnKey:null,            sgnKey:null,               label:'Kealy (RP)',       color:'#f472b6', icon:'📰' },
+  { id:'Dineen (RP)',   cKey:'Dineen (RP)',     gnKey:null,            sgnKey:null,               label:'Dineen (RP)',      color:'#f472b6', icon:'📰' },
+  { id:'Wilson (RP)',   cKey:'Wilson (RP)',     gnKey:null,            sgnKey:null,               label:'Wilson (RP)',      color:'#f472b6', icon:'📰' },
+  { id:'Segal (RP)',    cKey:'Segal (RP)',      gnKey:null,            sgnKey:null,               label:'Segal (RP)',       color:'#c084fc', icon:'📰' },
+  { id:'Park (RP)',     cKey:'Park (RP)',       gnKey:null,            sgnKey:null,               label:'Tom Park (RP)',    color:'#6ee7b7', icon:'📰' },
 ];
 
 // ════════════════════════════════════════════════════════════════
@@ -871,28 +912,33 @@ const SEASON_MAP = [
 function build() {
   // Score each entry
   const scored = SEASON_MAP.map(t => {
-    const cScore = t.cKey ? scoreEvent(CHELT_PICKS[t.cKey].picks, CHELT_RESULTS) : null;
-    const gnScore = t.gnKey ? scoreEvent(GN_PICKS[t.gnKey].picks, GN_RESULTS) : null;
-    const cPts  = cScore  ? cScore.pts  : 0;
-    const gnPts = gnScore ? gnScore.pts : 0;
-    const total = cPts + gnPts;
-    return { ...t, cScore, gnScore, cPts, gnPts, total };
+    const cScore   = t.cKey   ? scoreEvent(CHELT_PICKS[t.cKey].picks, CHELT_RESULTS)     : null;
+    const gnScore  = t.gnKey  ? scoreEvent(GN_PICKS[t.gnKey].picks,   GN_RESULTS)        : null;
+    const sgnScore = t.sgnKey ? scoreEvent(SGN_PICKS[t.sgnKey].picks,  SGN_RESULTS)      : null;
+    const cPts   = cScore   ? cScore.pts   : 0;
+    const gnPts  = gnScore  ? gnScore.pts  : 0;
+    const sgnPts = sgnScore ? sgnScore.pts : 0;
+    const total = cPts + gnPts + sgnPts;
+    return { ...t, cScore, gnScore, sgnScore, cPts, gnPts, sgnPts, total };
   });
 
-  // Sort by total desc, then GN pts desc
-  scored.sort((a, b) => b.total - a.total || b.gnPts - a.gnPts);
+  // Sort by total desc, then GN pts desc, then SGN pts desc
+  scored.sort((a, b) => b.total - a.total || b.gnPts - a.gnPts || b.sgnPts - a.sgnPts);
 
   // ── Season leaderboard ──
   const maxTotal = scored[0]?.total || 1;
   const body = document.getElementById('season-body');
   scored.forEach((t, i) => {
     const rank = i + 1;
-    const events = [t.cKey ? 'Cheltenham' : null, t.gnKey ? 'GN' : null].filter(Boolean).join(' · ');
+    const events = [t.cKey ? 'Cheltenham' : null, t.gnKey ? 'GN' : null, t.sgnKey ? 'Scottish GN' : null].filter(Boolean).join(' · ');
     const cCell = t.cScore
       ? `<span class="score-pill score-chelt">${t.cPts} pts</span>`
       : `<span class="score-pill score-none">—</span>`;
     const gnCell = t.gnScore
       ? `<span class="score-pill score-gn">${t.gnPts} pts</span>`
+      : `<span class="score-pill score-none">—</span>`;
+    const sgnCell = t.sgnScore
+      ? `<span class="score-pill score-sgn">${t.sgnPts} pts</span>`
       : `<span class="score-pill score-none">—</span>`;
     const rankClass = rank === 1 ? 'rank-1' : rank === 2 ? 'rank-2' : rank === 3 ? 'rank-3' : '';
     const tr = document.createElement('tr');
@@ -909,6 +955,7 @@ function build() {
       </td>
       <td class="num">${cCell}</td>
       <td class="num">${gnCell}</td>
+      <td class="num">${sgnCell}</td>
       <td class="num"><span class="total-pts">${t.total}</span></td>
     `;
     body.appendChild(tr);
@@ -976,6 +1023,38 @@ function build() {
       </td>
     `;
     gnBody.appendChild(tr);
+  });
+
+  // ── SGN breakdown ──
+  const sgnScored = SEASON_MAP
+    .filter(t => t.sgnKey)
+    .map(t => ({ ...t, sc: scoreEvent(SGN_PICKS[t.sgnKey].picks, SGN_RESULTS) }))
+    .sort((a, b) => b.sc.pts - a.sc.pts);
+  const maxSGN = sgnScored[0]?.sc.pts || 1;
+  const sgnBody = document.getElementById('sgn-body');
+  sgnScored.forEach((t, i) => {
+    const { wins, places, misses, pts } = t.sc;
+    const pct = Math.round(pts / maxSGN * 100);
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td>${i + 1}</td>
+      <td>
+        <div class="tipster-cell">
+          <div class="tipster-icon" style="background:${t.color}22;border:1px solid ${t.color}44;">${t.icon}</div>
+          <span class="tipster-name" style="color:${t.color}">${escHtml(t.label)}</span>
+        </div>
+      </td>
+      <td class="num stat-wins">${wins}</td>
+      <td class="num stat-places">${places}</td>
+      <td class="num stat-misses">${misses}</td>
+      <td class="num" style="font-weight:700;color:var(--cream)">${pts}</td>
+      <td>
+        <div class="bar-container">
+          <div class="bar-fill" style="width:${pct}%;background:var(--green-sgn);"></div>
+        </div>
+      </td>
+    `;
+    sgnBody.appendChild(tr);
   });
 
   document.getElementById('loading').style.display = 'none';

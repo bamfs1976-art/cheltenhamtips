@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🌿 Qipco Guineas Festival 2026 – Tips, Runners & Guide | Newmarket</title>
+<meta name="description" content="Qipco Guineas Festival 2026 tips, runners and race guide. 2000 Guineas Saturday 2 May, 1000 Guineas Sunday 3 May. Newmarket Rowley Mile.">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self' 'unsafe-inline';">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  /* ── TOKENS ── */
+  :root {
+    --navy:      #0c1730;
+    --navy-mid:  #112044;
+    --navy-card: #192d5a;
+    --navy-lit:  #203670;
+    --blue:      #1a4a9f;
+    --blue-b:    #2563eb;
+    --blue-d:    #0f2d6b;
+    --gold:      #d4a843;
+    --gold-dim:  #a07830;
+    --gold-lt:   #f0c86a;
+    --cream:     #f5f0e8;
+    --cream-dim: #e8e0d0;
+    --silver:    #a0aec0;
+    --white:     #ffffff;
+    --green-win: #27ae60;
+    --amber:     #e67e22;
+    --red:       #c0392b;
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-body:    'Source Serif 4', Georgia, serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--navy);
+    color: var(--cream);
+    font-family: var(--font-body);
+    font-size: 15px;
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  /* ── HEADER ── */
+  .site-header {
+    background: linear-gradient(160deg, var(--navy) 0%, var(--navy-mid) 55%, var(--blue-d) 100%);
+    border-bottom: 3px solid var(--blue-b);
+    padding: 28px 20px 24px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .site-header::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: repeating-linear-gradient(
+      45deg,
+      transparent, transparent 20px,
+      rgba(37,99,235,0.03) 20px, rgba(37,99,235,0.03) 21px
+    );
+    pointer-events: none;
+  }
+  .header-badge {
+    display: inline-block;
+    background: var(--blue-d);
+    border: 1px solid var(--blue-b);
+    color: #93c5fd;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 3px 14px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+  }
+  .site-header h1 {
+    font-family: var(--font-display);
+    font-size: clamp(1.7rem, 5vw, 2.9rem);
+    color: var(--cream);
+    line-height: 1.1;
+    margin-bottom: 6px;
+  }
+  .site-header h1 span { color: #60a5fa; }
+  .hero-dates { color: var(--silver); font-size: 0.88rem; margin-bottom: 16px; letter-spacing: 0.04em; }
+  .hero-meta { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin: 14px 0 16px; }
+  .hero-stat { text-align: center; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 8px 16px; }
+  .hero-stat-val { display: block; font-family: var(--font-display); font-size: 1.4rem; color: var(--gold); font-weight: 700; line-height: 1; }
+  .hero-stat-lbl { display: block; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--silver); margin-top: 2px; }
+  .header-link {
+    display: inline-block;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    color: var(--cream);
+    text-decoration: none;
+    font-size: 0.78rem;
+    padding: 5px 14px;
+    border-radius: 20px;
+    margin: 0 4px;
+    transition: background 0.2s;
+  }
+  .header-link:hover { background: rgba(255,255,255,0.15); }
+
+  /* ── COUNTDOWN BAR ── */
+  .countdown-bar {
+    background: var(--blue-d);
+    border-bottom: 2px solid var(--blue-b);
+    padding: 9px 20px;
+    text-align: center;
+    font-size: 0.83rem;
+    color: var(--cream);
+    letter-spacing: 0.03em;
+  }
+  .countdown-bar span { color: var(--gold-lt); font-weight: 700; }
+  #guin-countdown { color: #60a5fa; font-weight: 700; font-size: 0.95rem; }
+
+  /* ── GLOBAL NAV ── */
+  .global-nav {
+    background: rgba(12,23,48,0.97);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(37,99,235,0.25);
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    gap: 0;
+    height: 44px;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .global-nav::-webkit-scrollbar { display: none; }
+  .gnav-brand {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--gold);
+    text-decoration: none;
+    white-space: nowrap;
+    padding-right: 16px;
+    border-right: 1px solid rgba(255,255,255,0.08);
+    margin-right: 10px;
+    flex-shrink: 0;
+  }
+  .gnav-link {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 0 10px;
+    height: 44px;
+    color: var(--silver);
+    text-decoration: none;
+    font-size: 0.73rem;
+    font-weight: 500;
+    white-space: nowrap;
+    border-bottom: 2px solid transparent;
+    transition: color 0.15s;
+  }
+  .gnav-link:hover { color: var(--cream); }
+  .gnav-link.active { color: #60a5fa; border-bottom-color: #60a5fa; }
+  .dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+  .dot-upcoming { background: #38bdf8; }
+  .dot-archive { background: var(--silver); }
+  .dot-gold { background: var(--gold); }
+
+  /* ── MAIN NAV ── */
+  .main-nav {
+    background: var(--navy-mid);
+    border-bottom: 2px solid rgba(37,99,235,0.3);
+    padding: 0 16px;
+    display: flex;
+    gap: 4px;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .main-nav::-webkit-scrollbar { display: none; }
+  .nav-btn {
+    background: none;
+    border: none;
+    color: var(--silver);
+    font-family: var(--font-body);
+    font-size: 0.82rem;
+    padding: 12px 14px;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px;
+    white-space: nowrap;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .nav-btn:hover { color: var(--cream); }
+  .nav-btn.active { color: #60a5fa; border-bottom-color: #60a5fa; }
+
+  /* ── PANELS ── */
+  .main-wrap { max-width: 960px; margin: 0 auto; padding: 24px 16px 60px; }
+  .panel { display: none; }
+  .panel.active { display: block; }
+
+  /* ── DAY TABS ── */
+  .day-tabs { display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; }
+  .day-tab {
+    background: var(--navy-card);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: var(--silver);
+    font-family: var(--font-body);
+    font-size: 0.82rem;
+    padding: 8px 18px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .day-tab.active { background: var(--blue-d); border-color: var(--blue-b); color: #93c5fd; }
+
+  /* ── RACE CARD ── */
+  .race-card {
+    background: var(--navy-card);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 10px;
+    margin-bottom: 16px;
+    overflow: hidden;
+  }
+  .race-card.headline-race { border-color: rgba(37,99,235,0.5); }
+  .race-header {
+    background: linear-gradient(90deg, var(--blue-d), var(--navy-mid));
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 1px solid rgba(37,99,235,0.3);
+  }
+  .race-card.headline-race .race-header {
+    background: linear-gradient(90deg, #0d2260, var(--blue-d));
+    border-bottom-color: rgba(37,99,235,0.5);
+  }
+  .race-time {
+    background: var(--blue-b);
+    color: #fff;
+    font-size: 0.78rem;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 12px;
+    white-space: nowrap;
+  }
+  .race-name { font-family: var(--font-display); font-size: 1rem; color: var(--cream); }
+  .race-badge {
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 2px 8px;
+    border-radius: 10px;
+    white-space: nowrap;
+  }
+  .badge-g1 { background: rgba(212,168,67,0.2); color: var(--gold-lt); border: 1px solid rgba(212,168,67,0.4); }
+  .badge-g2 { background: rgba(160,174,192,0.15); color: #cbd5e0; border: 1px solid rgba(160,174,192,0.25); }
+  .badge-g3 { background: rgba(37,99,235,0.15); color: #93c5fd; border: 1px solid rgba(37,99,235,0.25); }
+  .badge-listed { background: rgba(139,92,246,0.15); color: #c4b5fd; border: 1px solid rgba(139,92,246,0.25); }
+  .badge-hcap { background: rgba(160,174,192,0.1); color: var(--silver); border: 1px solid rgba(160,174,192,0.15); }
+  .race-meta { font-size: 0.72rem; color: var(--silver); }
+  .race-prize { margin-left: auto; font-size: 0.78rem; color: var(--gold); font-weight: 600; white-space: nowrap; }
+  .race-body { padding: 14px 16px; }
+
+  /* ── TIP CARD ── */
+  .tips-grid { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tip-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 8px;
+    padding: 10px 14px;
+    flex: 1 1 220px;
+  }
+  .tip-type { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700; margin-bottom: 4px; }
+  .tip-horse { font-family: var(--font-display); font-size: 1.05rem; color: var(--cream); }
+  .tip-odds { font-size: 0.78rem; color: var(--gold); }
+  .tip-reason { font-size: 0.73rem; color: var(--silver); margin-top: 4px; line-height: 1.4; }
+  .tip-result { font-size: 0.72rem; font-weight: 700; margin-top: 6px; padding: 2px 8px; border-radius: 10px; display: inline-block; }
+  .result-win    { background: rgba(39,174,96,0.2);  color: #4ade80; border: 1px solid rgba(39,174,96,0.3); }
+  .result-place  { background: rgba(212,168,67,0.2); color: var(--gold-lt); border: 1px solid rgba(212,168,67,0.3); }
+  .result-miss   { background: rgba(192,57,43,0.2);  color: #f87171; border: 1px solid rgba(192,57,43,0.3); }
+  .result-pending{ background: rgba(160,174,192,0.15); color: var(--silver); border: 1px solid rgba(160,174,192,0.2); }
+  .tip-nap .tip-type      { color: var(--gold-lt); }
+  .tip-nb  .tip-type      { color: #93c5fd; }
+  .tip-ew  .tip-type      { color: #86efac; }
+  .tip-longshot .tip-type { color: #fcd34d; }
+
+  .coming-soon-box {
+    background: rgba(37,99,235,0.08);
+    border: 1px solid rgba(37,99,235,0.25);
+    border-radius: 8px;
+    padding: 16px 20px;
+    text-align: center;
+    color: var(--silver);
+    font-size: 0.83rem;
+  }
+  .coming-soon-box strong { color: #93c5fd; display: block; margin-bottom: 4px; font-size: 0.9rem; }
+
+  /* ── RUNNERS ── */
+  .runners-section { margin-bottom: 32px; }
+  .section-title {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    color: var(--gold);
+    border-bottom: 1px solid rgba(212,168,67,0.3);
+    padding-bottom: 8px;
+    margin-bottom: 16px;
+  }
+  .runners-grid { display: flex; flex-direction: column; gap: 8px; }
+  .runner-card {
+    background: var(--navy-card);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 8px;
+    padding: 12px 16px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    transition: border-color 0.2s;
+  }
+  .runner-card:hover { border-color: rgba(37,99,235,0.3); }
+  .runner-card.highlight { border-color: rgba(37,99,235,0.5); background: rgba(37,99,235,0.05); }
+  .runner-num {
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    background: var(--navy-lit);
+    color: var(--silver);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.72rem; font-weight: 700;
+    flex-shrink: 0;
+  }
+  .runner-info { flex: 1; min-width: 0; }
+  .runner-name { font-family: var(--font-display); font-size: 1rem; color: var(--cream); margin-bottom: 2px; }
+  .runner-name .runner-tag {
+    font-family: var(--font-body);
+    font-size: 0.65rem;
+    background: var(--blue-d);
+    border: 1px solid var(--blue-b);
+    color: #93c5fd;
+    padding: 1px 7px;
+    border-radius: 10px;
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+  .runner-name .runner-tag.prev { background: rgba(212,168,67,0.15); border-color: rgba(212,168,67,0.4); color: var(--gold-lt); }
+  .runner-meta { font-size: 0.73rem; color: var(--silver); line-height: 1.5; }
+  .runner-meta strong { color: var(--cream); }
+  .runner-note { font-size: 0.72rem; color: var(--silver); margin-top: 4px; line-height: 1.4; font-style: italic; }
+  .runner-odds { text-align: right; flex-shrink: 0; }
+  .runner-price { font-family: var(--font-display); font-size: 1.2rem; color: var(--gold); font-weight: 700; }
+  .runner-weight { font-size: 0.72rem; color: var(--silver); }
+  .runner-trainer { font-size: 0.72rem; color: #93c5fd; }
+  .fav-badge { font-size: 0.62rem; background: rgba(212,168,67,0.2); color: var(--gold); border: 1px solid rgba(212,168,67,0.3); padding: 1px 6px; border-radius: 8px; }
+
+  /* ── TRENDS BOX ── */
+  .trends-box {
+    background: var(--navy-card);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin-bottom: 20px;
+  }
+  .trends-box h3 { font-family: var(--font-display); font-size: 1rem; color: var(--gold); margin-bottom: 12px; }
+  .trends-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; }
+  .trend-item { font-size: 0.78rem; color: var(--silver); padding-left: 14px; position: relative; line-height: 1.4; }
+  .trend-item::before { content: '✓'; position: absolute; left: 0; color: var(--blue-b); font-size: 0.65rem; top: 1px; }
+  .trend-item.neg::before { content: '✗'; color: #f87171; }
+  .trend-item strong { color: var(--cream); }
+
+  /* ── COURSE GUIDE ── */
+  .guide-block {
+    background: var(--navy-card);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 10px;
+    padding: 18px 20px;
+    margin-bottom: 16px;
+  }
+  .guide-block h3 { font-family: var(--font-display); font-size: 1rem; color: #60a5fa; margin-bottom: 10px; }
+  .guide-block p { font-size: 0.83rem; color: var(--silver); line-height: 1.7; margin-bottom: 8px; }
+  .guide-block p:last-child { margin-bottom: 0; }
+  .stat-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 10px; }
+  .stat-chip { background: var(--navy-lit); border-radius: 8px; padding: 8px 14px; font-size: 0.78rem; }
+  .stat-chip .val { display: block; font-family: var(--font-display); color: var(--gold); font-size: 1rem; font-weight: 700; }
+  .stat-chip .lbl { color: var(--silver); font-size: 0.68rem; }
+
+  /* ── TIPSTER SCORECARD ── */
+  .score-table-wrap { overflow-x: auto; }
+  .score-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.82rem;
+    min-width: 480px;
+  }
+  .score-table th {
+    background: var(--navy-lit);
+    color: var(--silver);
+    font-weight: 600;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 8px 12px;
+    text-align: left;
+    white-space: nowrap;
+  }
+  .score-table th.num { text-align: center; }
+  .score-table td { padding: 10px 12px; border-bottom: 1px solid rgba(255,255,255,0.05); vertical-align: middle; }
+  .score-table td.num { text-align: center; }
+  .score-table tbody tr:hover { background: rgba(255,255,255,0.03); }
+  .tipster-name { font-weight: 600; color: var(--cream); }
+  .tipster-icon { margin-right: 5px; }
+  .score-pill {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 0.72rem;
+    font-weight: 700;
+  }
+  .score-win  { background: rgba(39,174,96,0.2); color: #4ade80; border: 1px solid rgba(39,174,96,0.3); }
+  .score-place{ background: rgba(212,168,67,0.2); color: var(--gold-lt); border: 1px solid rgba(212,168,67,0.3); }
+  .score-pts  { background: rgba(37,99,235,0.2); color: #93c5fd; border: 1px solid rgba(37,99,235,0.3); }
+  .score-tbc  { background: rgba(160,174,192,0.1); color: var(--silver); border: 1px solid rgba(160,174,192,0.2); }
+  .rank-badge {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 22px; height: 22px; border-radius: 50%;
+    font-size: 0.72rem; font-weight: 700;
+    background: var(--navy-lit); color: var(--silver);
+  }
+  .rank-badge.gold   { background: rgba(212,168,67,0.25); color: var(--gold-lt); }
+  .rank-badge.silver { background: rgba(160,174,192,0.2); color: #cbd5e0; }
+  .rank-badge.bronze { background: rgba(205,127,50,0.2); color: #c8956c; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--navy-mid);
+    border-top: 1px solid rgba(37,99,235,0.2);
+    padding: 24px 20px;
+    text-align: center;
+  }
+  .footer-brand { font-family: var(--font-display); font-size: 1rem; color: var(--gold); margin-bottom: 6px; }
+  .footer-links { display: flex; flex-wrap: wrap; gap: 6px 16px; justify-content: center; margin: 10px 0; }
+  .footer-links a { color: var(--silver); text-decoration: none; font-size: 0.78rem; }
+  .footer-links a:hover { color: var(--cream); }
+  .gamble-warn { font-size: 0.72rem; color: var(--silver); margin-top: 8px; }
+  .gamble-warn a { color: var(--silver); }
+
+  /* ── UTILS ── */
+  .info-banner {
+    background: rgba(37,99,235,0.1);
+    border: 1px solid rgba(37,99,235,0.3);
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 0.82rem;
+    color: #93c5fd;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .info-banner .icon { flex-shrink: 0; margin-top: 1px; }
+
+  @media (max-width: 600px) {
+    .hero-meta { gap: 8px; }
+    .hero-stat { padding: 7px 12px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- GLOBAL NAV -->
+<nav class="global-nav" aria-label="Site navigation">
+  <a href="index.html" class="gnav-brand">🏇 Festival Form Book</a>
+  <a href="guineas-2026.html" class="gnav-link active"><span class="dot dot-upcoming"></span>Guineas 2026</a>
+  <a href="scottish-grand-national-2026.html" class="gnav-link"><span class="dot dot-archive"></span>Scottish GN 2026</a>
+  <a href="cheltenham-2026.html" class="gnav-link"><span class="dot dot-archive"></span>Cheltenham 2026</a>
+  <a href="grand-national-2026.html" class="gnav-link"><span class="dot dot-archive"></span>Aintree GN 2026</a>
+  <a href="season-2026.html" class="gnav-link"><span class="dot dot-gold"></span>Season Leaderboard</a>
+</nav>
+
+<!-- COUNTDOWN BAR -->
+<div class="countdown-bar" role="status" aria-live="polite">
+  🗓️ <span>Qipco Guineas Festival</span> — 1–3 May 2026 · Newmarket Rowley Mile &nbsp;|&nbsp; <span id="guin-countdown">Loading…</span>
+</div>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-badge">🌿 Qipco Guineas Festival 2026</div>
+  <h1><em>Guineas</em> Festival <span>2026</span></h1>
+  <p class="hero-dates">📍 Newmarket Rowley Mile &nbsp;·&nbsp; 1–3 May 2026</p>
+  <div class="hero-meta">
+    <div class="hero-stat"><span class="hero-stat-val">3:35</span><span class="hero-stat-lbl">2000 Guineas (Sat)</span></div>
+    <div class="hero-stat"><span class="hero-stat-val">3:35</span><span class="hero-stat-lbl">1000 Guineas (Sun)</span></div>
+    <div class="hero-stat"><span class="hero-stat-val">1m</span><span class="hero-stat-lbl">Rowley Mile</span></div>
+    <div class="hero-stat"><span class="hero-stat-val">3</span><span class="hero-stat-lbl">Days Racing</span></div>
+  </div>
+  <div>
+    <a href="season-2026.html" class="header-link">📊 Season Leaderboard</a>
+    <a href="index.html" class="header-link">🏇 Hub</a>
+  </div>
+</header>
+
+<!-- MAIN NAV -->
+<nav class="main-nav" aria-label="Section navigation">
+  <button class="nav-btn active" onclick="showPanel('tips')" aria-pressed="true">💡 Tips</button>
+  <button class="nav-btn" onclick="showPanel('runners')" aria-pressed="false">🐎 Runners</button>
+  <button class="nav-btn" onclick="showPanel('guide')" aria-pressed="false">📋 Course Guide</button>
+  <button class="nav-btn" onclick="showPanel('scorecard')" aria-pressed="false">📊 Scorecard</button>
+</nav>
+
+<main class="main-wrap">
+
+  <!-- ═══════════════════════════════════════════ TIPS ═══ -->
+  <section id="panel-tips" class="panel active" aria-label="Tips">
+    <div class="info-banner">
+      <span class="icon">📅</span>
+      <span>Tips will be published daily as race day approaches. Check back from <strong>28 April</strong> for the first Guineas selections.</span>
+    </div>
+
+    <div class="day-tabs" role="tablist">
+      <button class="day-tab active" onclick="renderTipsDay(0,this)" role="tab" aria-selected="true">Fri 1 May</button>
+      <button class="day-tab" onclick="renderTipsDay(1,this)" role="tab" aria-selected="false">Sat 2 May · 2000 Guineas</button>
+      <button class="day-tab" onclick="renderTipsDay(2,this)" role="tab" aria-selected="false">Sun 3 May · 1000 Guineas</button>
+    </div>
+    <div id="tips-container"></div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ RUNNERS ═══ -->
+  <section id="panel-runners" class="panel" aria-label="Runners">
+    <div class="info-banner">
+      <span class="icon">📋</span>
+      <span>Declarations are published by the BHA approximately 5 days before each race. Full runner lists will appear here once confirmed.</span>
+    </div>
+
+    <div class="day-tabs" role="tablist">
+      <button class="day-tab active" onclick="showRunners(0,this)" role="tab" aria-selected="true">Fri 1 May</button>
+      <button class="day-tab" onclick="showRunners(1,this)" role="tab" aria-selected="false">Sat 2 May · 2000 Guineas</button>
+      <button class="day-tab" onclick="showRunners(2,this)" role="tab" aria-selected="false">Sun 3 May · 1000 Guineas</button>
+    </div>
+    <div id="runners-container"></div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ COURSE GUIDE ═══ -->
+  <section id="panel-guide" class="panel" aria-label="Course guide">
+
+    <div class="guide-block">
+      <h3>The Rowley Mile</h3>
+      <p>Newmarket's Rowley Mile is the home of British Classic racing. A wide, straight, right-handed track running into the Dip before rising sharply to the finish. The straight mile is unforgiving — there is nowhere to hide, no bends to shelter behind, and pace is relentless from the off.</p>
+      <p>The camber favours those drawn in higher stalls for the mile Classics. Big-field, fast-ground races at the Rowley Mile have historically rewarded high draws — this is a significant factor in the Guineas and must be considered when assessing each-way chances.</p>
+      <div class="stat-row">
+        <div class="stat-chip"><span class="val">Straight</span><span class="lbl">Course shape</span></div>
+        <div class="stat-chip"><span class="val">High</span><span class="lbl">Draw advantage (1m)</span></div>
+        <div class="stat-chip"><span class="val">Rowley</span><span class="lbl">Course name</span></div>
+        <div class="stat-chip"><span class="val">Good</span><span class="lbl">Typical going (May)</span></div>
+      </div>
+    </div>
+
+    <div class="guide-block">
+      <h3>2000 Guineas — Race Trends</h3>
+      <p>The 2000 Guineas is the first Classic of the flat season for 3yo colts (and fillies can run). Run over one straight mile, it rewards sharp, high-class horses with natural pace rather than out-and-out stayers.</p>
+      <div class="trends-grid">
+        <div class="trend-item"><strong>Last ran in a Classic trial</strong> — winners almost always ran in either the Craven, Greenham or Dewhurst</div>
+        <div class="trend-item"><strong>High draw</strong> — stalls 8+ have a strong advantage in fields over 10 runners</div>
+        <div class="trend-item"><strong>Racing Post Rating 115+</strong> as a juvenile is a reliable qualifier</div>
+        <div class="trend-item"><strong>1 or 2 runs at 3</strong> before the Guineas — too many runs a flag</div>
+        <div class="trend-item"><strong>Irish-trained horses</strong> — Aidan O'Brien has dominated in recent decades</div>
+        <div class="trend-item"><strong>Unbeaten juveniles</strong> — often trade short but sometimes find the step up too much</div>
+        <div class="trend-item neg"><strong>Single-figure odds winners</strong> — the Guineas regularly produces a 12/1+ winner</div>
+        <div class="trend-item neg"><strong>Heavy or soft going</strong> — alters the form book significantly; pace horses can struggle</div>
+      </div>
+    </div>
+
+    <div class="guide-block">
+      <h3>1000 Guineas — Race Trends</h3>
+      <p>The 1000 Guineas is restricted to 3yo fillies and is run on the same straight mile as the 2000 Guineas. It is Ireland's and France's first opportunity to claim a British Classic, and Irish-trained fillies frequently dominate.</p>
+      <div class="trends-grid">
+        <div class="trend-item"><strong>Fillies' Classic trial</strong> — the Nell Gwyn (7f, Newmarket) and the Fred Darling (7f, Newbury) are the key prep races</div>
+        <div class="trend-item"><strong>Aidan O'Brien</strong> has trained more 1000 Guineas winners than any other trainer in recent history</div>
+        <div class="trend-item"><strong>High draw holds</strong> — same camber advantage as the 2000 Guineas</div>
+        <div class="trend-item"><strong>Previous Group 1 win</strong> as a juvenile strongly preferred</div>
+        <div class="trend-item"><strong>2yo RPR of 110+</strong> is the typical benchmark for a winner</div>
+        <div class="trend-item neg"><strong>Unbeaten favourites</strong> — several have been beaten at short prices</div>
+      </div>
+    </div>
+
+    <div class="guide-block">
+      <h3>Festival Overview</h3>
+      <p>The Qipco Guineas Festival spans three days at Newmarket's Rowley Mile in early May. It is the centrepiece of British Classic season, with Friday's supporting card typically featuring key trials and Group races, Saturday building to the 2000 Guineas, and Sunday closing with the 1000 Guineas.</p>
+      <p>Prize money for each Classic is typically in excess of £500,000 — attracting the best 3yo talent from Britain, Ireland and France. The festival also features Group 2 and Group 3 races including the Dahlia Stakes, Palace House Stakes and the Abernant Stakes.</p>
+    </div>
+
+  </section>
+
+  <!-- ═══════════════════════════════════════════ SCORECARD ═══ -->
+  <section id="panel-scorecard" class="panel" aria-label="Tipster scorecard">
+    <div class="coming-soon-box" style="margin-bottom:20px">
+      <strong>📊 Scorecard — Tips Pending</strong>
+      Tipster selections will appear here once tips are published. Check back from late April.
+    </div>
+
+    <div class="score-table-wrap">
+      <table class="score-table" id="scorecard-table" aria-label="Tipster scorecard">
+        <thead>
+          <tr>
+            <th style="width:28px">#</th>
+            <th>Tipster</th>
+            <th class="num">W</th>
+            <th class="num">P</th>
+            <th class="num">M</th>
+            <th class="num">Pts</th>
+          </tr>
+        </thead>
+        <tbody id="scorecard-body">
+          <!-- populated by JS -->
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-brand">🏇 The Festival Form Book</div>
+  <p style="font-size:.76rem;color:var(--silver);margin-top:4px">Expert tips, guides and results — the complete British racing calendar 2026</p>
+  <div class="footer-links">
+    <a href="guineas-2026.html">Guineas 2026</a>
+    <a href="scottish-grand-national-2026.html">Scottish GN 2026</a>
+    <a href="cheltenham-2026.html">Cheltenham 2026</a>
+    <a href="grand-national-2026.html">Grand National 2026</a>
+    <a href="season-2026.html">Season Leaderboard</a>
+    <a href="index.html">Hub</a>
+  </div>
+  <div class="gamble-warn">18+ · Please gamble responsibly · <a href="https://www.begambleaware.org" target="_blank" rel="noopener">BeGambleAware.org</a> · <a href="https://www.gamcare.org.uk" target="_blank" rel="noopener">GamCare</a> · Helpline: 0808 8020 133</div>
+  <p style="font-size:.72rem;color:var(--silver);margin-top:8px">Tips are for entertainment only. Always bet within your means. Odds correct at time of publication.</p>
+</footer>
+
+<script>
+/* ── DATA ──────────────────────────────────────────────────── */
+
+// Day index: 0 = Fri 1 May, 1 = Sat 2 May, 2 = Sun 3 May
+const DAYS = [
+  { label:'Friday 1 May 2026', short:'Fri 1 May' },
+  { label:'Saturday 2 May 2026 · 2000 Guineas Day', short:'Sat 2 May' },
+  { label:'Sunday 3 May 2026 · 1000 Guineas Day', short:'Sun 3 May' },
+];
+
+// Race schedule — key format: 'HH:MM-dayIndex'
+const RACES = {
+  /* ── Friday 1 May ── */
+  '13:55-0': { name:'Qipco Nell Gwyn Stakes', grade:'Listed', dist:'7f', type:'3yo Fillies', prize:'£40,000',
+    info:'Key Classic trial for the 1000 Guineas. Seven furlongs for fillies — winner traditionally goes straight to the 1000 Guineas.' },
+  '14:30-0': { name:'Craven Stakes', grade:'G3', dist:'1m', type:'3yo', prize:'£50,000',
+    info:'The most important 2000 Guineas trial run at Newmarket itself over the Classic course. Often thrown up several Guineas winners.' },
+  '15:05-0': { name:'Free Handicap', grade:'Listed', dist:'1m', type:'3yo', prize:'£30,000',
+    info:'Rated race for three-year-olds over the Guineas course.' },
+  '15:40-0': { name:'Jockey Club Stakes', grade:'G2', dist:'1m4f', type:'4yo+', prize:'£75,000',
+    info:'Important early-season test for older stayers. Often a pointer towards the Coronation Cup.' },
+  '16:20-0': { name:'Earl of Sefton Stakes', grade:'G3', dist:'1m1f', type:'4yo+', prize:'£40,000',
+    info:'One mile and one furlong Group 3 for older horses on the first day of the festival.' },
+  '17:00-0': { name:'Newmarket Supporting Race', grade:'Hcap', dist:'6f', type:'3yo+', prize:'£12,000',
+    info:'Six-furlong handicap to close the opening day card.' },
+
+  /* ── Saturday 2 May — 2000 Guineas Day ── */
+  '13:50-1': { name:'Qipco 2000 Guineas', grade:'G1', dist:'1m', type:'3yo Colts & Fillies', prize:'£500,000+',
+    info:'The first British Classic of the season. One straight mile on the Rowley Mile. Pace, a high draw and Group 1 form as a juvenile are the three key factors.', headline:true },
+  '14:25-1': { name:'Palace House Stakes', grade:'G3', dist:'5f', type:'3yo+', prize:'£40,000',
+    info:'Five-furlong sprint showpiece on Guineas day. Five-furlong specialists only need apply.' },
+  '15:00-1': { name:'Newmarket Stakes', grade:'Listed', dist:'1m2f', type:'3yo', prize:'£35,000',
+    info:'One mile and two furlongs for 3yo. Often a Derby trial for horses that want a longer trip.' },
+  '15:35-1': { name:'Lanwades Stud Handicap', grade:'Hcap', dist:'7f', type:'3yo+', prize:'£15,000',
+    info:'Seven-furlong handicap mid-card on 2000 Guineas day.' },
+  '16:10-1': { name:'Newmarket Classic Trial', grade:'Listed', dist:'1m', type:'3yo', prize:'£25,000',
+    info:'Listed mile for Classic generation. Potential Guineas pointer.' },
+  '16:45-1': { name:'Closing Sprint Handicap', grade:'Hcap', dist:'6f', type:'3yo+', prize:'£12,000',
+    info:'Six-furlong handicap to close 2000 Guineas day.' },
+
+  /* ── Sunday 3 May — 1000 Guineas Day ── */
+  '13:50-2': { name:'Qipco 1000 Guineas', grade:'G1', dist:'1m', type:'3yo Fillies', prize:'£500,000+',
+    info:'The first British Classic for fillies. Run over the same straight mile as the 2000 Guineas — the same draw, pace and Class advantages apply.', headline:true },
+  '14:25-2': { name:'Dahlia Stakes', grade:'G2', dist:'1m1f', type:'4yo+ Fillies & Mares', prize:'£65,000',
+    info:'Group 2 for older fillies and mares over one mile and one furlong. High-class older fillies programme.' },
+  '15:00-2': { name:'Abernant Stakes', grade:'G3', dist:'6f', type:'3yo+', prize:'£40,000',
+    info:'Six-furlong Group 3 sprint for older horses on the final day of the Guineas Festival.' },
+  '15:35-2': { name:'Criterion Stakes', grade:'G3', dist:'7f', type:'3yo+', prize:'£40,000',
+    info:'Seven-furlong Group 3 on closing day of the festival.' },
+  '16:10-2': { name:'Newmarket Handicap', grade:'Hcap', dist:'1m', type:'3yo+', prize:'£15,000',
+    info:'Mile handicap to close the Guineas Festival.' },
+};
+
+// Tips — to be populated as race day approaches
+// Format: { nap:{horse,odds,reason}, nb:{...}, ew:{...}, longshot:{...} }
+const TIPS = {
+  /* Will be added from late April */
+};
+
+// Results — to be populated after racing
+const RESULTS = {
+  /* '13:50-1': { winner:'', second:'', third:'' }, etc. */
+};
+
+// Tipster picks — to be populated when tips are added
+const GUIN_TIPSTER_PICKS = {
+  /* e.g. 'Our NAP': { color:'#34d399', icon:'⭐', picks:[ {key:'13:50-1', horse:'',type:'nap'}, ... ] } */
+};
+
+/* ── COUNTDOWN ──────────────────────────────────────────────── */
+function updateCountdown() {
+  const target = new Date('2026-05-01T00:00:00');
+  const now = new Date();
+  const diff = target - now;
+  const el = document.getElementById('guin-countdown');
+  if (!el) return;
+  if (diff <= 0) {
+    el.textContent = '🏇 Festival is underway!';
+    return;
+  }
+  const days  = Math.floor(diff / 86400000);
+  const hrs   = Math.floor((diff % 86400000) / 3600000);
+  const mins  = Math.floor((diff % 3600000) / 60000);
+  const secs  = Math.floor((diff % 60000) / 1000);
+  el.textContent = days > 0
+    ? `${days}d ${hrs}h ${mins}m until Day 1`
+    : `${hrs}h ${mins}m ${secs}s`;
+}
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+/* ── PANEL SWITCHING ───────────────────────────────────────── */
+function showPanel(id) {
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-pressed','false'); });
+  document.getElementById('panel-' + id).classList.add('active');
+  event.currentTarget.classList.add('active');
+  event.currentTarget.setAttribute('aria-pressed','true');
+}
+
+/* ── GRADE BADGE ───────────────────────────────────────────── */
+function gradeBadge(grade) {
+  const map = { G1:'badge-g1', G2:'badge-g2', G3:'badge-g3', Listed:'badge-listed', Hcap:'badge-hcap' };
+  const cls = map[grade] || 'badge-hcap';
+  const label = grade === 'Hcap' ? 'Handicap' : grade === 'Listed' ? 'Listed' : grade;
+  return `<span class="race-badge ${cls}">${label}</span>`;
+}
+
+/* ── TIPS PANEL ────────────────────────────────────────────── */
+function renderTipsDay(dayIdx, tabEl) {
+  // Update tab active state
+  document.querySelectorAll('#panel-tips .day-tab').forEach(t => {
+    t.classList.remove('active'); t.setAttribute('aria-selected','false');
+  });
+  if (tabEl) { tabEl.classList.add('active'); tabEl.setAttribute('aria-selected','true'); }
+
+  const container = document.getElementById('tips-container');
+  const dayRaces = Object.entries(RACES).filter(([k]) => k.endsWith('-' + dayIdx));
+  dayRaces.sort(([a],[b]) => a.localeCompare(b));
+
+  if (dayRaces.length === 0) {
+    container.innerHTML = '<div class="coming-soon-box"><strong>No races scheduled for this day.</strong></div>';
+    return;
+  }
+
+  let html = '';
+  dayRaces.forEach(([key, race]) => {
+    const time = key.split('-')[0];
+    const tips = TIPS[key] || {};
+    const result = RESULTS[key] || null;
+    const isHeadline = race.headline;
+
+    html += `<div class="race-card${isHeadline ? ' headline-race' : ''}">
+      <div class="race-header">
+        <span class="race-time">${time}</span>
+        ${gradeBadge(race.grade)}
+        <div>
+          <div class="race-name">${race.name}</div>
+          <div class="race-meta">${race.dist} · ${race.type}</div>
+        </div>
+        <span class="race-prize">${race.prize}</span>
+      </div>
+      <div class="race-body">`;
+
+    const tipKeys = ['nap','nb','ew','longshot'];
+    const tipLabels = { nap:'⭐ NAP', nb:'🔵 NB', ew:'🟢 E/W', longshot:'💛 Longshot' };
+    let anyTip = false;
+    tipKeys.forEach(t => {
+      if (!tips[t]) return;
+      anyTip = true;
+      const tip = tips[t];
+      let resultHtml = '';
+      if (result) {
+        const h = tip.horse.toLowerCase().trim();
+        if (result.winner && result.winner.toLowerCase().trim() === h) {
+          resultHtml = '<span class="tip-result result-win">✓ Won</span>';
+        } else if ([result.second, result.third].some(x => x && x.toLowerCase().trim() === h)) {
+          resultHtml = '<span class="tip-result result-place">▲ Placed</span>';
+        } else {
+          resultHtml = '<span class="tip-result result-miss">✗ Miss</span>';
+        }
+      }
+      html += `<div class="tip-card tip-${t}">
+        <div class="tip-type">${tipLabels[t]}</div>
+        <div class="tip-horse">${escHtml(tip.horse)}</div>
+        ${tip.odds ? `<div class="tip-odds">${escHtml(tip.odds)}</div>` : ''}
+        ${tip.reason ? `<div class="tip-reason">${escHtml(tip.reason)}</div>` : ''}
+        ${result ? resultHtml : '<span class="tip-result result-pending">Pending</span>'}
+      </div>`;
+    });
+
+    if (!anyTip) {
+      html += `<div class="coming-soon-box" style="flex:1"><strong>Tips Coming Soon</strong>${race.info ? escHtml(race.info) : 'Check back closer to race day.'}</div>`;
+    }
+
+    html += `</div></div>`; // close race-body, race-card
+  });
+
+  container.innerHTML = html;
+}
+
+/* ── RUNNERS PANEL ─────────────────────────────────────────── */
+// Runners data — will be populated when declarations are made
+const RUNNERS = {
+  /* Format: '13:50-1': [ {num:1, name:'', trainer:'', jockey:'', weight:'', odds:'', note:''}, ... ] */
+};
+
+function showRunners(dayIdx, tabEl) {
+  document.querySelectorAll('#panel-runners .day-tab').forEach(t => {
+    t.classList.remove('active'); t.setAttribute('aria-selected','false');
+  });
+  if (tabEl) { tabEl.classList.add('active'); tabEl.setAttribute('aria-selected','true'); }
+
+  const container = document.getElementById('runners-container');
+  const dayRaces = Object.entries(RACES).filter(([k]) => k.endsWith('-' + dayIdx));
+  dayRaces.sort(([a],[b]) => a.localeCompare(b));
+
+  let html = '';
+  dayRaces.forEach(([key, race]) => {
+    const time = key.split('-')[0];
+    const runners = RUNNERS[key] || [];
+    const isHeadline = race.headline;
+
+    html += `<div class="runners-section">
+      <div class="race-card${isHeadline ? ' headline-race' : ''}" style="margin-bottom:10px">
+        <div class="race-header">
+          <span class="race-time">${time}</span>
+          ${gradeBadge(race.grade)}
+          <div>
+            <div class="race-name">${race.name}</div>
+            <div class="race-meta">${race.dist} · ${race.type} · ${race.prize}</div>
+          </div>
+        </div>
+      </div>`;
+
+    if (runners.length === 0) {
+      html += `<div class="coming-soon-box"><strong>Declarations Pending</strong>${escHtml(race.info)}</div>`;
+    } else {
+      html += `<div class="runners-grid">`;
+      runners.forEach(r => {
+        html += `<div class="runner-card${r.highlight ? ' highlight' : ''}">
+          <div class="runner-num">${r.num}</div>
+          <div class="runner-info">
+            <div class="runner-name">${escHtml(r.name)}${r.tag ? `<span class="runner-tag">${escHtml(r.tag)}</span>` : ''}</div>
+            <div class="runner-meta"><strong>${escHtml(r.trainer||'')}</strong>${r.jockey ? ` · ${escHtml(r.jockey)}` : ''} · ${escHtml(r.weight||'')}</div>
+            ${r.note ? `<div class="runner-note">${escHtml(r.note)}</div>` : ''}
+          </div>
+          <div class="runner-odds">
+            <div class="runner-price">${escHtml(r.odds||'TBC')}</div>
+            ${r.fav ? '<div class="fav-badge">FAV</div>' : ''}
+          </div>
+        </div>`;
+      });
+      html += `</div>`;
+    }
+    html += `</div>`;
+  });
+
+  container.innerHTML = html || '<div class="coming-soon-box"><strong>No races on this day.</strong></div>';
+}
+
+/* ── SCORECARD ─────────────────────────────────────────────── */
+function scoreEvent(picks, results) {
+  let wins = 0, places = 0, misses = 0;
+  picks.forEach(p => {
+    const r = results[p.key];
+    if (!r) return;
+    const h = p.horse.toLowerCase().trim();
+    if (r.winner && r.winner.toLowerCase().trim() === h) wins++;
+    else if ([r.second, r.third].some(x => x && x.toLowerCase().trim() === h)) places++;
+    else misses++;
+  });
+  return { wins, places, misses, pts: wins * 3 + places };
+}
+
+function buildScorecard() {
+  const tbody = document.getElementById('scorecard-body');
+  if (!tbody) return;
+
+  const tipsters = Object.entries(GUIN_TIPSTER_PICKS);
+  if (tipsters.length === 0) {
+    tbody.innerHTML = `<tr><td colspan="6" style="text-align:center;color:var(--silver);padding:20px">Tips not yet added — check back from late April.</td></tr>`;
+    return;
+  }
+
+  const scored = tipsters.map(([name, data]) => {
+    const sc = scoreEvent(data.picks || [], RESULTS);
+    return { name, color: data.color, icon: data.icon, ...sc };
+  }).sort((a, b) => b.pts - a.pts || b.wins - a.wins);
+
+  const rankIcons = ['gold','silver','bronze'];
+  scored.forEach((t, i) => {
+    const rank = i < 3 ? `<span class="rank-badge ${rankIcons[i]}">${i+1}</span>` : `<span class="rank-badge">${i+1}</span>`;
+    tbody.innerHTML += `<tr>
+      <td class="num">${rank}</td>
+      <td><span class="tipster-icon">${t.icon||''}</span><span class="tipster-name" style="color:${t.color||'inherit'}">${escHtml(t.name)}</span></td>
+      <td class="num"><span class="score-pill score-win">${t.wins}</span></td>
+      <td class="num"><span class="score-pill score-place">${t.places}</span></td>
+      <td class="num">${t.misses}</td>
+      <td class="num"><strong><span class="score-pill score-pts">${t.pts}pts</span></strong></td>
+    </tr>`;
+  });
+}
+
+/* ── UTIL ──────────────────────────────────────────────────── */
+function escHtml(str) {
+  if (!str) return '';
+  return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+/* ── INIT ──────────────────────────────────────────────────── */
+document.addEventListener('DOMContentLoaded', () => {
+  renderTipsDay(0, document.querySelector('#panel-tips .day-tab'));
+  showRunners(0, document.querySelector('#panel-runners .day-tab'));
+  buildScorecard();
+});
+</script>
+</body>
+</html>
