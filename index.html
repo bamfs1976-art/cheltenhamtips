@@ -3,55 +3,70 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Expert tips, race guides and results for Britain and Ireland's biggest horse racing festivals — Cheltenham, Grand National, Royal Ascot and more.">
+<meta name="description" content="Expert tips, race guides and results for Britain's biggest horse racing festivals — Cheltenham, Grand National, Royal Ascot and more.">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self' 'unsafe-inline';">
 <title>🏇 The Festival Form Book — Racing Tips Hub</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-/* ── TOKENS ─────────────────────────────────────────────── */
+/* ── DESIGN TOKENS ───────────────────────────────────────── */
 :root {
-  --ink:       #0d0f14;
-  --ink-mid:   #161b27;
-  --ink-card:  #1c2333;
-  --ink-lit:   #252f45;
-  --ink-hover: #2e3a52;
+  --bg:        #0f1117;
+  --bg-mid:    #131720;
+  --card:      #1a1d26;
+  --card-b:    #2a2d36;
+  --card-hover:#22263a;
   --gold:      #d4a843;
   --gold-lt:   #f0c86a;
   --gold-dim:  #a07830;
-  --cream:     #f5f0e8;
-  --cream-dim: #c8c0b0;
-  --silver:    #8898aa;
+  --cream:     #e0e0e0;
+  --cream-dim: #b0b8c8;
+  --muted:     #888;
   --white:     #ffffff;
+  --nh-green:  #00a651;
+  --flat-gold: #f5c842;
+  --danger:    #ef4444;
+  --win-green: #22c55e;
   /* Festival accent colours */
-  --chelt:     #2d7a4f;   /* racing green */
-  --gn:        #c0392b;   /* aintree scarlet */
-  --ascot:     #1a3a6b;   /* royal blue */
-  --epsom:     #6b2fa0;   /* derby purple */
-  --goodwood:  #1a5276;   /* goodwood navy */
-  --ledger:    #7b3f00;   /* doncaster bronze */
-  --upcoming:  #155e75;
-  --live:      #14532d;
-  --archive:   #374151;
-  --tbc:       #292524;
+  --c-green:   #2d7a4f;
+  --c-red:     #c0392b;
+  --c-blue:    #1a3a6b;
+  --c-purple:  #6b2fa0;
+  --c-navy:    #1a5276;
+  --c-bronze:  #7b3f00;
+  --c-indigo:  #3730a3;
+  --c-sage:    #3d6e58;
+  --c-amber:   #92400e;
+  --c-violet:  #6d28d9;
+  --c-teal:    #0f766e;
+  --c-orange:  #c2410c;
+  --c-gold-h:  #b45309;
+  --c-rose:    #9f1239;
+  --c-crimson: #991b1b;
+  --c-lime:    #3f6212;
+  --c-slate:   #334155;
 
   --font-display: 'Playfair Display', Georgia, serif;
   --font-body:    'DM Sans', system-ui, sans-serif;
+
+  --radius: 8px;
+  --radius-sm: 4px;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body {
-  background: var(--ink);
+  background: var(--bg);
   color: var(--cream);
   font-family: var(--font-body);
-  font-size: 15px;
+  font-size: 14px;
   line-height: 1.6;
   min-height: 100vh;
 }
 
-/* ── GLOBAL NAV ─────────────────────────────────────────── */
+/* ── GLOBAL NAV ──────────────────────────────────────────── */
 .global-nav {
-  background: rgba(13,15,20,0.96);
+  background: rgba(15,17,23,0.96);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid rgba(212,168,67,0.2);
   padding: 0 20px;
@@ -60,26 +75,25 @@ body {
   z-index: 200;
   display: flex;
   align-items: center;
-  gap: 0;
   height: 48px;
 }
 .gnav-brand {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: var(--gold);
   text-decoration: none;
   white-space: nowrap;
-  padding-right: 20px;
+  padding-right: 18px;
   border-right: 1px solid rgba(255,255,255,0.08);
   margin-right: 12px;
   letter-spacing: -0.01em;
+  flex-shrink: 0;
 }
 .gnav-links {
   display: flex;
   gap: 0;
   overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
   flex: 1;
 }
@@ -90,30 +104,64 @@ body {
   gap: 5px;
   padding: 0 12px;
   height: 48px;
-  color: var(--silver);
+  color: var(--muted);
   text-decoration: none;
   font-size: 0.75rem;
   font-weight: 500;
   white-space: nowrap;
   border-bottom: 2px solid transparent;
   transition: color 0.15s, border-color 0.15s;
+  min-height: 44px;
 }
 .gnav-link:hover { color: var(--cream); }
 .gnav-link.active { color: var(--gold); border-bottom-color: var(--gold); }
-.gnav-link .dot {
-  width: 6px; height: 6px;
+.dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+.dot-live     { background: var(--win-green); box-shadow: 0 0 6px var(--win-green); animation: pulse 1.5s infinite; }
+.dot-upcoming { background: #38bdf8; }
+.dot-archive  { background: var(--muted); }
+.dot-tbc      { background: var(--card-b); border: 1px solid var(--muted); }
+@keyframes pulse { 0%,100%{ opacity:1; } 50%{ opacity:0.5; } }
+
+/* ── LIVE BANNER ─────────────────────────────────────────── */
+.live-banner {
+  background: linear-gradient(90deg, rgba(0,166,81,0.12), rgba(0,166,81,0.04));
+  border-bottom: 1px solid rgba(0,166,81,0.25);
+  padding: 8px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.live-banner-dot {
+  width: 8px; height: 8px;
   border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 8px #22c55e;
+  animation: pulse 1.2s infinite;
   flex-shrink: 0;
 }
-.dot-live     { background: #22c55e; box-shadow: 0 0 6px #22c55e; }
-.dot-upcoming { background: #38bdf8; }
-.dot-archive  { background: var(--silver); }
-.dot-tbc      { background: var(--ink-lit); border: 1px solid var(--silver); }
+.live-banner-text { font-size: 0.82rem; color: #4ade80; font-weight: 600; }
+.live-banner-sub  { font-size: 0.76rem; color: var(--muted); }
+.live-banner-cta  {
+  margin-left: auto;
+  background: rgba(0,166,81,0.15);
+  border: 1px solid rgba(0,166,81,0.3);
+  color: #4ade80;
+  text-decoration: none;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: var(--radius-sm);
+  min-height: 32px;
+  display: flex;
+  align-items: center;
+}
+.live-banner-cta:hover { background: rgba(0,166,81,0.25); }
 
-/* ── HERO ────────────────────────────────────────────────── */
+/* ── HERO ─────────────────────────────────────────────────── */
 .hero {
-  background: linear-gradient(160deg, var(--ink) 0%, var(--ink-mid) 50%, #1a2212 100%);
-  padding: 60px 20px 48px;
+  background: linear-gradient(160deg, var(--bg) 0%, var(--bg-mid) 50%, #111a12 100%);
+  padding: 52px 20px 44px;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -122,21 +170,21 @@ body {
   content: '';
   position: absolute; inset: 0;
   background:
-    radial-gradient(ellipse 600px 300px at 50% 120%, rgba(212,168,67,0.06), transparent),
-    repeating-linear-gradient(0deg, transparent, transparent 60px, rgba(255,255,255,0.015) 60px, rgba(255,255,255,0.015) 61px);
+    radial-gradient(ellipse 600px 300px at 50% 120%, rgba(212,168,67,0.05), transparent),
+    repeating-linear-gradient(0deg, transparent, transparent 60px, rgba(255,255,255,0.012) 60px, rgba(255,255,255,0.012) 61px);
   pointer-events: none;
 }
 .hero-eyebrow {
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   font-weight: 600;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--gold-dim);
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 .hero h1 {
   font-family: var(--font-display);
-  font-size: clamp(2rem, 6vw, 3.6rem);
+  font-size: clamp(2rem, 6vw, 3.4rem);
   font-weight: 900;
   color: var(--white);
   line-height: 1.05;
@@ -145,78 +193,90 @@ body {
 .hero h1 em { color: var(--gold); font-style: normal; }
 .hero-sub {
   color: var(--cream-dim);
-  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  font-size: clamp(0.85rem, 2vw, 1rem);
   font-weight: 300;
-  margin-top: 14px;
-  max-width: 520px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-top: 12px;
+  max-width: 500px;
+  margin-left: auto; margin-right: auto;
 }
 .hero-stats {
   display: flex;
   justify-content: center;
-  gap: 32px;
-  margin-top: 32px;
+  gap: 28px;
+  margin-top: 28px;
   flex-wrap: wrap;
 }
 .hero-stat-val {
   display: block;
   font-family: var(--font-display);
-  font-size: 2rem;
+  font-size: 1.9rem;
   font-weight: 700;
   color: var(--gold-lt);
   line-height: 1;
 }
 .hero-stat-lbl {
-  font-size: 0.68rem;
+  font-size: 0.66rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--silver);
-  margin-top: 3px;
+  color: var(--muted);
+  margin-top: 2px;
 }
 
-/* ── SECTION ─────────────────────────────────────────────── */
-.section {
-  max-width: 980px;
-  margin: 0 auto;
-  padding: 0 16px;
+/* Countdown */
+.countdown-strip {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  background: rgba(212,168,67,0.06);
+  border: 1px solid rgba(212,168,67,0.15);
+  border-radius: 50px;
+  padding: 10px 22px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
+.cd-label { font-size: 0.72rem; color: var(--muted); letter-spacing: 0.06em; }
+.cd-name  { font-size: 0.82rem; color: var(--gold-lt); font-weight: 600; }
+.cd-units { display: flex; gap: 12px; }
+.cd-unit  { text-align: center; min-width: 36px; }
+.cd-num   { font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; color: var(--gold); display: block; line-height: 1; }
+.cd-lbl   { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); }
+
+/* ── SECTION ──────────────────────────────────────────────── */
+.section { max-width: 980px; margin: 0 auto; padding: 0 16px; }
 .section-hdr {
   display: flex;
   align-items: baseline;
   gap: 12px;
-  margin: 40px 0 8px;
+  margin: 40px 0 6px;
 }
 .section-hdr h2 {
   font-family: var(--font-display);
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: 700;
   color: var(--white);
+  white-space: nowrap;
 }
 .section-hdr-line {
   flex: 1;
   height: 1px;
-  background: linear-gradient(90deg, rgba(212,168,67,0.3), transparent);
+  background: linear-gradient(90deg, rgba(212,168,67,0.25), transparent);
 }
-.section-sub {
-  font-size: 0.8rem;
-  color: var(--silver);
-  margin-bottom: 18px;
-}
+.section-sub { font-size: 0.78rem; color: var(--muted); margin-bottom: 16px; }
 
-/* ── FESTIVAL GRID ───────────────────────────────────────── */
+/* ── FESTIVAL GRID ────────────────────────────────────────── */
 .festival-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 14px;
-  margin-bottom: 12px;
+  gap: 12px;
+  margin-bottom: 10px;
 }
 
-/* ── FESTIVAL CARD ───────────────────────────────────────── */
+/* ── FESTIVAL CARD ────────────────────────────────────────── */
 .fest-card {
-  background: var(--ink-card);
-  border: 1px solid rgba(255,255,255,0.06);
-  border-radius: 8px;
+  background: var(--card);
+  border: 1px solid var(--card-b);
+  border-radius: var(--radius);
   overflow: hidden;
   text-decoration: none;
   display: flex;
@@ -226,107 +286,86 @@ body {
 }
 .fest-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+  box-shadow: 0 8px 28px rgba(0,0,0,0.45);
 }
-.fest-card.tbc { opacity: 0.55; pointer-events: none; cursor: default; }
+.fest-card.tbc { opacity: 0.5; pointer-events: none; cursor: default; }
 .fest-card.tbc:hover { transform: none; box-shadow: none; }
-
-/* Colour stripe at top of card */
 .fest-card::before {
-  content: '';
-  display: block;
-  height: 4px;
+  content: ''; display: block; height: 4px;
   background: var(--card-accent, var(--gold-dim));
 }
-.fest-card.theme-green  { --card-accent: var(--chelt); }
-.fest-card.theme-red    { --card-accent: var(--gn); }
-.fest-card.theme-blue   { --card-accent: var(--ascot); }
-.fest-card.theme-purple { --card-accent: var(--epsom); }
-.fest-card.theme-navy   { --card-accent: var(--goodwood); }
-.fest-card.theme-bronze { --card-accent: var(--ledger); }
-.fest-card.theme-tbc    { --card-accent: var(--ink-lit); }
-.theme-indigo {--card-accent:var(--c-indigo)}
-.theme-sage   {--card-accent:var(--c-sage)}
-.theme-amber  {--card-accent:var(--c-amber)}
-.theme-violet {--card-accent:var(--c-violet)}
-.theme-teal   {--card-accent:var(--c-teal)}
-.theme-orange {--card-accent:var(--c-orange)}
-.theme-gold   {--card-accent:var(--c-gold-h)}
-.theme-rose   {--card-accent:var(--c-rose)}
-.theme-crimson{--card-accent:var(--c-crimson)}
-.theme-lime   {--card-accent:var(--c-lime)}
-.theme-slate  {--card-accent:var(--c-slate)}
+.fest-card.theme-green   { --card-accent: var(--c-green); }
+.fest-card.theme-red     { --card-accent: var(--c-red); }
+.fest-card.theme-blue    { --card-accent: var(--c-blue); }
+.fest-card.theme-purple  { --card-accent: var(--c-purple); }
+.fest-card.theme-navy    { --card-accent: var(--c-navy); }
+.fest-card.theme-bronze  { --card-accent: var(--c-bronze); }
+.fest-card.theme-indigo  { --card-accent: var(--c-indigo); }
+.fest-card.theme-sage    { --card-accent: var(--c-sage); }
+.fest-card.theme-amber   { --card-accent: var(--c-amber); }
+.fest-card.theme-violet  { --card-accent: var(--c-violet); }
+.fest-card.theme-teal    { --card-accent: var(--c-teal); }
+.fest-card.theme-orange  { --card-accent: var(--c-orange); }
+.fest-card.theme-gold    { --card-accent: var(--c-gold-h); }
+.fest-card.theme-rose    { --card-accent: var(--c-rose); }
+.fest-card.theme-crimson { --card-accent: var(--c-crimson); }
+.fest-card.theme-lime    { --card-accent: var(--c-lime); }
+.fest-card.theme-slate   { --card-accent: var(--c-slate); }
 .fest-card:hover { border-color: var(--card-accent, var(--gold-dim)); }
 
-.fest-card-body { padding: 16px 18px 14px; flex: 1; }
-.fest-card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; margin-bottom: 6px; }
-.fest-icon { font-size: 1.6rem; line-height: 1; }
-.status-badge {
-  font-size: 0.6rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  padding: 2px 8px;
-  border-radius: 2px;
-  white-space: nowrap;
-}
-.status-live     { background: rgba(34,197,94,0.2);  color: #4ade80; border: 1px solid rgba(34,197,94,0.4); }
-.status-upcoming { background: rgba(56,189,248,0.15); color: #7dd3fc; border: 1px solid rgba(56,189,248,0.3); }
-.status-archive  { background: rgba(107,114,128,0.2); color: #9ca3af; border: 1px solid rgba(107,114,128,0.3); }
-.status-tbc      { background: rgba(255,255,255,0.04); color: var(--silver); border: 1px solid rgba(255,255,255,0.1); }
+.fest-card-body { padding: 14px 16px 12px; flex: 1; }
+.fest-card-top  { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; margin-bottom: 6px; }
+.fest-icon      { font-size: 1.5rem; line-height: 1; }
+.fest-badges    { display: flex; gap: 4px; flex-wrap: wrap; justify-content: flex-end; }
 
-.fest-name {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 1.05rem;
-  color: var(--white);
-  line-height: 1.2;
-  margin-bottom: 4px;
+.status-badge {
+  font-size: 0.58rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 2px 7px; border-radius: var(--radius-sm); white-space: nowrap;
 }
-.fest-dates { font-size: 0.72rem; color: var(--gold); font-weight: 500; margin-bottom: 6px; }
-.fest-desc  { font-size: 0.78rem; color: var(--cream-dim); line-height: 1.4; }
-.fest-result {
-  font-size: 0.72rem;
-  color: #4ade80;
-  margin-top: 6px;
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
+.status-live     { background: rgba(34,197,94,0.18);  color: #4ade80; border: 1px solid rgba(34,197,94,0.35); }
+.status-upcoming { background: rgba(56,189,248,0.12); color: #7dd3fc; border: 1px solid rgba(56,189,248,0.25); }
+.status-archive  { background: rgba(107,114,128,0.15); color: #9ca3af; border: 1px solid rgba(107,114,128,0.25); }
+.status-tbc      { background: rgba(255,255,255,0.04); color: var(--muted); border: 1px solid rgba(255,255,255,0.08); }
+
+.type-badge { font-size: 0.55rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; padding: 2px 6px; border-radius: var(--radius-sm); }
+.type-jumps  { background: rgba(45,122,79,0.18); color: #6ee7b7; border: 1px solid rgba(45,122,79,0.3); }
+.type-flat   { background: rgba(26,58,107,0.22); color: #93c5fd; border: 1px solid rgba(26,58,107,0.35); }
+.type-mixed  { background: rgba(180,83,9,0.18);  color: #fcd34d; border: 1px solid rgba(180,83,9,0.3); }
+
+.fest-name   { font-family: var(--font-display); font-weight: 700; font-size: 1rem; color: var(--white); line-height: 1.2; margin-bottom: 3px; }
+.fest-dates  { font-size: 0.7rem; color: var(--gold); font-weight: 500; margin-bottom: 5px; }
+.fest-desc   { font-size: 0.76rem; color: var(--cream-dim); line-height: 1.4; }
+.fest-meta   { display: flex; align-items: center; gap: 10px; margin-top: 6px; flex-wrap: wrap; }
+.fest-race-count { font-size: 0.68rem; color: var(--muted); display: flex; align-items: center; gap: 3px; }
+.fest-result { font-size: 0.7rem; color: #4ade80; margin-top: 5px; display: flex; align-items: center; gap: 4px; }
 .fest-result::before { content: '✓'; }
 
 .fest-card-footer {
-  padding: 10px 18px;
+  padding: 9px 16px;
   border-top: 1px solid rgba(255,255,255,0.05);
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.fest-venue { font-size: 0.68rem; color: var(--silver); letter-spacing: 0.06em; text-transform: uppercase; }
-.fest-cta {
-  font-size: 0.72rem;
-  font-weight: 600;
-  color: var(--card-accent, var(--gold));
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
+.fest-venue { font-size: 0.66rem; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; }
+.fest-cta   { font-size: 0.7rem; font-weight: 600; color: var(--card-accent, var(--gold)); display: flex; align-items: center; gap: 3px; }
 .fest-cta::after { content: '→'; }
 
-/* ── FEATURED (wide card) ────────────────────────────────── */
+/* Featured (wide) card */
 .fest-card.featured {
   grid-column: 1 / -1;
   flex-direction: row;
   align-items: stretch;
 }
 .fest-card.featured::before { width: 6px; height: auto; display: block; flex-shrink: 0; }
-.fest-card.featured .fest-card-body { display: flex; align-items: center; gap: 20px; padding: 20px 22px; flex-wrap: wrap; }
-.fest-card.featured .fest-name { font-size: 1.3rem; }
+.fest-card.featured .fest-card-body { display: flex; align-items: center; gap: 20px; padding: 18px 20px; flex-wrap: wrap; }
+.fest-card.featured .fest-name { font-size: 1.2rem; }
 .fest-card.featured .fest-desc { max-width: 340px; }
-.fest-card.featured .fest-card-footer { flex-direction: column; align-items: flex-end; justify-content: center; padding: 20px; min-width: 140px; border-top: none; border-left: 1px solid rgba(255,255,255,0.05); }
-.fest-featured-stat { text-align: right; margin-bottom: 8px; }
-.fest-featured-stat-val { font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; color: var(--gold-lt); }
-.fest-featured-stat-lbl { font-size: 0.65rem; color: var(--silver); text-transform: uppercase; letter-spacing: 0.08em; }
+.fest-card.featured .fest-card-footer { flex-direction: column; align-items: flex-end; justify-content: center; padding: 18px; min-width: 130px; border-top: none; border-left: 1px solid rgba(255,255,255,0.05); }
+.feat-stats { display: flex; flex-direction: column; gap: 7px; min-width: 100px; flex-shrink: 0; }
+.feat-stat  { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-sm); padding: 7px 10px; text-align: center; }
+.feat-stat-val { font-family: var(--font-display); font-size: 1.2rem; font-weight: 700; color: var(--gold-lt); }
+.feat-stat-lbl { font-size: 0.58rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
 
 @media (max-width: 620px) {
   .fest-card.featured { flex-direction: column; }
@@ -334,195 +373,240 @@ body {
   .fest-card.featured .fest-card-footer { border-left: none; border-top: 1px solid rgba(255,255,255,0.05); flex-direction: row; min-width: unset; }
 }
 
-/* ── CALENDAR STRIP ──────────────────────────────────────── */
-.cal-strip {
-  display: flex;
-  gap: 8px;
-  overflow-x: auto;
-  padding: 4px 0 12px;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-}
-.cal-strip::-webkit-scrollbar { display: none; }
-.cal-item {
+/* ── RECENT RESULTS STRIP ──────────────────────────────────── */
+.results-strip { display: flex; gap: 8px; overflow-x: auto; padding: 4px 0 10px; scrollbar-width: none; }
+.results-strip::-webkit-scrollbar { display: none; }
+.result-pill {
   flex-shrink: 0;
-  background: var(--ink-card);
-  border: 1px solid rgba(255,255,255,0.06);
+  background: var(--card);
+  border: 1px solid var(--card-b);
   border-radius: 6px;
   padding: 10px 14px;
+  min-width: 160px;
+  position: relative;
+  overflow: hidden;
+}
+.result-pill::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: var(--win-green);
+}
+.result-win   { font-size: 0.62rem; font-weight: 700; color: var(--win-green); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 2px; }
+.result-horse { font-family: var(--font-display); font-size: 0.9rem; font-weight: 700; color: var(--white); line-height: 1.2; }
+.result-meta  { font-size: 0.68rem; color: var(--muted); margin-top: 3px; }
+.result-fest  { font-size: 0.62rem; color: var(--gold); font-weight: 500; }
+
+/* ── CALENDAR GRID ───────────────────────────────────────── */
+.cal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(108px, 1fr));
+  gap: 6px;
+  margin-bottom: 10px;
+}
+.cal-item {
+  background: var(--card);
+  border: 1px solid var(--card-b);
+  border-radius: 5px;
+  padding: 8px 10px;
   text-align: center;
-  min-width: 110px;
-  text-decoration: none;
   transition: border-color 0.2s;
 }
-.cal-item:hover { border-color: var(--gold-dim); }
-.cal-item.passed { opacity: 0.5; }
-.cal-month { font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--silver); }
-.cal-dates { font-family: var(--font-display); font-size: 1rem; font-weight: 700; color: var(--white); margin: 2px 0; }
-.cal-name  { font-size: 0.68rem; color: var(--cream-dim); line-height: 1.3; }
-.cal-dot   { width: 5px; height: 5px; border-radius: 50%; margin: 5px auto 0; }
+.cal-item.has-link { cursor: pointer; }
+.cal-item.has-link:hover { border-color: var(--ci-accent, var(--gold-dim)); }
+.cal-item.passed  { opacity: 0.42; }
+.cal-item.cal-live { border-color: rgba(34,197,94,0.4); background: rgba(34,197,94,0.05); }
+.cal-month { font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+.cal-dates { font-family: var(--font-display); font-size: 0.88rem; font-weight: 700; color: var(--white); margin: 1px 0; }
+.cal-name  { font-size: 0.63rem; color: var(--cream-dim); line-height: 1.3; }
+.cal-type  { font-size: 0.54rem; padding: 1px 5px; border-radius: 2px; display: inline-block; margin-top: 3px; }
 
-/* ── TIPSTER LEAGUE ──────────────────────────────────────── */
-.league-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
-.league-table th { background: var(--ink-mid); color: var(--gold); font-weight: 600; font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 9px 12px; text-align: left; border-bottom: 2px solid rgba(212,168,67,0.25); }
-.league-table td { padding: 9px 12px; border-bottom: 1px solid rgba(255,255,255,0.04); color: var(--cream-dim); }
-.league-table tr:nth-child(odd) td { background: rgba(255,255,255,0.015); }
-.league-table tr:hover td { background: rgba(212,168,67,0.04); }
-.lt-pos { color: var(--silver); font-weight: 700; text-align: center; }
-.lt-pos.top3 { color: var(--gold-lt); }
-.lt-name { color: var(--white); font-weight: 600; }
-.lt-fest { font-size: 0.7rem; color: var(--silver); }
-.lt-pts  { font-family: var(--font-display); font-size: 1rem; font-weight: 700; color: var(--gold-lt); text-align: right; }
-.lt-bar  { width: 80px; background: rgba(255,255,255,0.06); border-radius: 2px; height: 5px; display: inline-block; vertical-align: middle; overflow: hidden; }
+/* ── SEASON LEAGUE ────────────────────────────────────────── */
+.league-wrap { overflow-x: auto; margin-bottom: 40px; -webkit-overflow-scrolling: touch; }
+.league-table { width: 100%; border-collapse: collapse; font-size: 0.8rem; min-width: 580px; }
+.league-table th {
+  background: var(--bg-mid);
+  color: var(--gold);
+  font-weight: 600;
+  font-size: 0.66rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 9px 10px;
+  text-align: left;
+  border-bottom: 2px solid rgba(212,168,67,0.2);
+}
+.league-table th.num { text-align: right; }
+.league-table td { padding: 9px 10px; border-bottom: 1px solid rgba(255,255,255,0.04); color: var(--cream-dim); vertical-align: middle; }
+.league-table td.num { text-align: right; }
+.league-table tr:hover td { background: rgba(212,168,67,0.03); }
+.lt-rank { width: 32px; text-align: center; }
+.rank-badge {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 26px; height: 26px; border-radius: 50%;
+  font-size: 0.72rem; font-weight: 700;
+  background: var(--card-b); color: var(--muted);
+}
+.rank-1 { background: linear-gradient(135deg,#b8860b,#f0c86a); color: #0d0f14; }
+.rank-2 { background: linear-gradient(135deg,#708090,#d0d0d0); color: #0d0f14; }
+.rank-3 { background: linear-gradient(135deg,#8b4513,#cd7f32); color: #fff; }
+.tipster-cell { display: flex; align-items: center; gap: 8px; }
+.tipster-icon {
+  width: 28px; height: 28px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.9rem; flex-shrink: 0;
+}
+.tipster-name  { font-weight: 600; font-size: 0.82rem; }
+.tipster-events{ font-size: 0.68rem; color: var(--muted); }
+.lt-pts { font-family: var(--font-display); font-size: 1rem; font-weight: 700; color: var(--gold-lt); }
+.lt-bar { width: 64px; background: rgba(255,255,255,0.06); border-radius: 2px; height: 5px; display: inline-block; vertical-align: middle; overflow: hidden; }
 .lt-fill { height: 100%; border-radius: 2px; background: linear-gradient(90deg, var(--gold-dim), var(--gold)); }
+.lt-sr  { color: var(--win-green); font-weight: 600; }
+.lt-eff { color: var(--flat-gold); font-size: 0.76rem; }
+.league-note { font-size: 0.72rem; color: var(--muted); margin-top: 8px; margin-bottom: 32px; }
 
-/* ── HOW IT WORKS ────────────────────────────────────────── */
+/* ── HOW IT WORKS ─────────────────────────────────────────── */
 .how-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 12px;
+  gap: 10px;
   margin-bottom: 40px;
 }
 .how-card {
-  background: var(--ink-card);
-  border: 1px solid rgba(255,255,255,0.06);
-  border-radius: 7px;
-  padding: 16px;
+  background: var(--card);
+  border: 1px solid var(--card-b);
+  border-radius: var(--radius);
+  padding: 14px;
 }
-.how-num {
-  font-family: var(--font-display);
-  font-size: 1.8rem;
-  font-weight: 900;
-  color: rgba(212,168,67,0.2);
-  line-height: 1;
-  margin-bottom: 6px;
-}
-.how-title { font-weight: 600; color: var(--white); font-size: 0.88rem; margin-bottom: 4px; }
-.how-body  { font-size: 0.76rem; color: var(--silver); line-height: 1.5; }
+.how-num   { font-family: var(--font-display); font-size: 1.7rem; font-weight: 900; color: rgba(212,168,67,0.15); line-height: 1; margin-bottom: 5px; }
+.how-title { font-weight: 600; color: var(--white); font-size: 0.86rem; margin-bottom: 3px; }
+.how-body  { font-size: 0.74rem; color: var(--muted); line-height: 1.5; }
 
-/* ── FOOTER ──────────────────────────────────────────────── */
+/* ── FOOTER ───────────────────────────────────────────────── */
 footer {
-  background: var(--ink-mid);
+  background: var(--bg-mid);
   border-top: 1px solid rgba(255,255,255,0.05);
-  padding: 32px 20px;
+  padding: 28px 20px;
   text-align: center;
   margin-top: 60px;
 }
-.footer-brand {
-  font-family: var(--font-display);
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: var(--gold);
-  margin-bottom: 6px;
-}
-.footer-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin: 12px 0; }
-.footer-links a { font-size: 0.78rem; color: var(--silver); text-decoration: none; }
+.footer-brand { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; color: var(--gold); margin-bottom: 5px; }
+.footer-links { display: flex; justify-content: center; gap: 18px; flex-wrap: wrap; margin: 10px 0; }
+.footer-links a { font-size: 0.76rem; color: var(--muted); text-decoration: none; }
 .footer-links a:hover { color: var(--cream); }
-.footer-small { font-size: 0.72rem; color: var(--silver); line-height: 1.6; margin-top: 8px; }
-.footer-small a { color: var(--silver); }
 .gamble-warn {
   display: inline-block;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 4px;
-  font-size: 0.68rem;
-  color: var(--silver);
-  padding: 6px 14px;
-  margin-top: 12px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: var(--radius-sm);
+  font-size: 0.67rem;
+  color: var(--muted);
+  padding: 5px 12px;
+  margin-top: 10px;
 }
+.gamble-warn a { color: var(--muted); }
 
-/* ── RESPONSIVE ──────────────────────────────────────────── */
+/* ── RESPONSIVE ───────────────────────────────────────────── */
 @media (max-width: 600px) {
-  .hero-stats { gap: 20px; }
+  .hero-stats { gap: 18px; }
   .festival-grid { grid-template-columns: 1fr; }
   .how-grid { grid-template-columns: 1fr 1fr; }
+  .countdown-strip { gap: 10px; padding: 8px 16px; }
 }
 @media (max-width: 400px) {
   .how-grid { grid-template-columns: 1fr; }
 }
 ::-webkit-scrollbar { width: 5px; height: 5px; }
-::-webkit-scrollbar-track { background: var(--ink); }
-::-webkit-scrollbar-thumb { background: var(--ink-lit); border-radius: 3px; }
-
-/* ── CALENDAR GRID ──────────────────────────────────────── */
-.cal-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:6px;margin-bottom:10px}
-.cal-item{background:var(--ink-card);border:1px solid rgba(255,255,255,.06);border-radius:5px;padding:8px 10px;text-align:center;transition:border-color .2s}
-.cal-item.has-link{cursor:pointer}
-.cal-item.has-link:hover{border-color:var(--ci-accent,var(--gold-dim))}
-.cal-item.passed{opacity:.42}
-.cal-month{font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--silver)}
-.cal-dates{font-family:var(--font-display);font-size:.9rem;font-weight:700;color:var(--white);margin:1px 0}
-.cal-name{font-size:.64rem;color:var(--cream-dim);line-height:1.3}
-.cal-type{font-size:.55rem;padding:1px 5px;border-radius:2px;display:inline-block;margin-top:3px}
-
-
-.type-badge{font-size:.56rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:2px 6px;border-radius:2px}
-.type-jumps{background:rgba(45,122,79,.2);color:#6ee7b7;border:1px solid rgba(45,122,79,.3)}
-.type-flat{background:rgba(26,58,107,.25);color:#93c5fd;border:1px solid rgba(26,58,107,.4)}
-.type-mixed{background:rgba(180,83,9,.2);color:#fcd34d;border:1px solid rgba(180,83,9,.3)}
-.fest-badges{display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end}
-
-
-.feat-stats{display:flex;flex-direction:column;gap:8px;min-width:110px;flex-shrink:0}
-.feat-stat{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:4px;padding:8px 12px;text-align:center}
-.feat-stat-val{font-family:var(--font-display);font-size:1.3rem;font-weight:700;color:var(--gold-lt)}
-.feat-stat-lbl{font-size:.6rem;color:var(--silver);text-transform:uppercase;letter-spacing:.08em}
-
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--card-b); border-radius: 3px; }
 </style>
 </head>
 <body>
+
 <!-- ── GLOBAL NAV ─────────────────────────────────────────── -->
-<nav class="global-nav">
+<nav class="global-nav" aria-label="Site navigation">
   <a href="index.html" class="gnav-brand">🏇 Festival Form Book</a>
   <div class="gnav-links">
-    <a href="index.html" class="gnav-link active"><span class="dot dot-home"></span>Hub</a>
-    <a href="guineas-2026.html" class="gnav-link"><span class="dot dot-upcoming"></span>Guineas 2026</a>
+    <a href="index.html" class="gnav-link active" aria-current="page"><span class="dot" style="background:var(--gold)"></span>Hub</a>
+    <a href="guineas-2026.html" class="gnav-link"><span class="dot dot-live"></span>Guineas 2026</a>
     <a href="scottish-grand-national-2026.html" class="gnav-link"><span class="dot dot-archive"></span>Scottish GN 2026</a>
     <a href="cheltenham-2026.html" class="gnav-link"><span class="dot dot-archive"></span>Cheltenham 2026</a>
     <a href="grand-national-2026.html" class="gnav-link"><span class="dot dot-archive"></span>Aintree GN 2026</a>
-    <a href="season-2026.html" class="gnav-link"><span class="dot" style="background:#d4a843;"></span>Season Leaderboard</a>
+    <a href="season-2026.html" class="gnav-link"><span class="dot" style="background:var(--gold)"></span>Season Leaderboard</a>
     <a href="cheltenham-2027.html" class="gnav-link"><span class="dot dot-tbc"></span>Cheltenham 2027</a>
   </div>
 </nav>
+
+<!-- Live banner — shown by JS when a festival is active -->
+<div id="live-banner" class="live-banner" style="display:none" role="status" aria-live="polite">
+  <div class="live-banner-dot" aria-hidden="true"></div>
+  <span class="live-banner-text" id="live-banner-title"></span>
+  <span class="live-banner-sub" id="live-banner-sub"></span>
+  <a href="#" id="live-banner-cta" class="live-banner-cta">View tips →</a>
+</div>
 
 <!-- ── HERO ────────────────────────────────────────────────── -->
 <section class="hero">
   <p class="hero-eyebrow">Britain's Complete Racing Calendar</p>
   <h1>The <em>Festival</em><br>Form Book</h1>
-  <p class="hero-sub">Expert tips, race guides and live results for every major jump and flat racing festival in 2026 — from Cheltenham in March to Tingle Creek in December.</p>
+  <p class="hero-sub">Expert tips, race guides and live results for every major jump and flat racing festival — from Cheltenham to British Champions Day.</p>
   <div class="hero-stats">
     <div><span class="hero-stat-val">21</span><span class="hero-stat-lbl">Festivals in 2026</span></div>
-    <div><span class="hero-stat-val">49+</span><span class="hero-stat-lbl">Races tracked</span></div>
-    <div><span class="hero-stat-val">9</span><span class="hero-stat-lbl">Tipsters scored</span></div>
+    <div><span class="hero-stat-val" id="stat-races">64+</span><span class="hero-stat-lbl">Races tracked</span></div>
+    <div><span class="hero-stat-val" id="stat-tipsters">21</span><span class="hero-stat-lbl">Tipsters scored</span></div>
     <div><span class="hero-stat-val">Mar–Dec</span><span class="hero-stat-lbl">Full season</span></div>
+  </div>
+  <div class="countdown-strip" id="countdown-strip" aria-label="Next festival countdown">
+    <span class="cd-label">NEXT UP</span>
+    <span class="cd-name" id="cd-name">Loading…</span>
+    <div class="cd-units" id="cd-units" aria-live="polite"></div>
   </div>
 </section>
 
 <div class="section">
 
-  <!-- ── NEXT UP ──────────────────────────────────────────── -->
-  <div class="section-hdr"><h2>Next Up</h2><div class="section-hdr-line"></div></div>
-  <p class="section-sub">The next festival on the calendar — tips page coming soon.</p>
+  <!-- ── NEXT UP / LIVE ──────────────────────────────────── -->
+  <div class="section-hdr"><h2>Featured</h2><div class="section-hdr-line"></div></div>
+  <p class="section-sub" id="featured-sub">The next festival on the calendar.</p>
   <div class="festival-grid">
-    <a href="guineas-2026.html" class="fest-card theme-blue featured">
+    <a href="guineas-2026.html" class="fest-card theme-blue featured" id="featured-card">
       <div class="fest-card-body">
         <div>
-          <div class="fest-card-top"><span class="fest-icon">🌿</span><div class="fest-badges"><span class="status-badge status-upcoming">Upcoming</span><span class="type-badge type-flat">Flat</span></div></div>
+          <div class="fest-card-top">
+            <span class="fest-icon">🌿</span>
+            <div class="fest-badges">
+              <span class="status-badge status-live" id="featured-badge">🔴 Live</span>
+              <span class="type-badge type-flat">Flat</span>
+            </div>
+          </div>
           <div class="fest-name">Qipco Guineas Festival 2026</div>
           <div class="fest-dates">1–3 May 2026 · Newmarket</div>
-          <div class="fest-desc">Three days on the Rowley Mile. 2000 Guineas on Saturday, 1000 Guineas on Sunday — the first two Classics of the season. Britain's most eagerly anticipated flat racing weekend.</div>
+          <div class="fest-desc">Three days on the Rowley Mile. 2000 Guineas on Saturday, 1000 Guineas on Sunday — the first two Classics of the season.</div>
+          <div class="fest-meta">
+            <span class="fest-race-count">🏁 21 races over 3 days</span>
+          </div>
         </div>
         <div class="feat-stats">
-          <div class="feat-stat"><div class="feat-stat-val">3:35</div><div class="feat-stat-lbl">Sat Guineas</div></div>
-          <div class="feat-stat"><div class="feat-stat-val">14</div><div class="feat-stat-lbl">Races</div></div>
+          <div class="feat-stat"><div class="feat-stat-val">15:35</div><div class="feat-stat-lbl">Sat Guineas</div></div>
+          <div class="feat-stat"><div class="feat-stat-val">21</div><div class="feat-stat-lbl">Races</div></div>
           <div class="feat-stat"><div class="feat-stat-val">Gr 1</div><div class="feat-stat-lbl">Classic</div></div>
         </div>
       </div>
-      <div class="fest-card-footer"><span class="fest-venue">📍 Newmarket Racecourse</span><span class="fest-cta">Preview →</span></div>
+      <div class="fest-card-footer">
+        <span class="fest-venue">📍 Newmarket Racecourse</span>
+        <span class="fest-cta">View tips</span>
+      </div>
     </a>
   </div>
 
-  <!-- ── COMPLETED ────────────────────────────────────────── -->
+  <!-- ── RECENT RESULTS ──────────────────────────────────── -->
+  <div class="section-hdr" style="margin-top:32px"><h2>Recent Winners</h2><div class="section-hdr-line"></div></div>
+  <p class="section-sub">Latest winning selections from our tracked tipsters.</p>
+  <div class="results-strip" id="results-strip" role="list">
+    <!-- populated by JS -->
+  </div>
+
+  <!-- ── COMPLETED ───────────────────────────────────────── -->
   <div class="section-hdr"><h2>Completed</h2><div class="section-hdr-line"></div></div>
   <p class="section-sub">Full results, tipster analysis and archive available.</p>
   <div class="festival-grid">
@@ -531,34 +615,62 @@ footer {
         <div class="fest-card-top"><span class="fest-icon">🏆</span><div class="fest-badges"><span class="status-badge status-archive">Archive</span><span class="type-badge type-jumps">Jumps</span></div></div>
         <div class="fest-name">Cheltenham Festival 2026</div>
         <div class="fest-dates">10–13 Mar 2026 · Cheltenham</div>
-        <div class="fest-desc">28 races. Gold Cup, Champion Hurdle, Queen Mother Champion Chase.</div>
+        <div class="fest-desc">28 races across four days. Gold Cup, Champion Hurdle, Queen Mother Champion Chase.</div>
+        <div class="fest-meta"><span class="fest-race-count">🏁 28 races</span></div>
         <div class="fest-result">Gaelic Warrior wins the Gold Cup</div>
       </div>
-      <div class="fest-card-footer"><span class="fest-venue">📍 Cheltenham</span><span class="fest-cta">View archive →</span></div>
+      <div class="fest-card-footer"><span class="fest-venue">📍 Cheltenham</span><span class="fest-cta">View archive</span></div>
     </a>
     <a href="grand-national-2026.html" class="fest-card theme-red">
       <div class="fest-card-body">
         <div class="fest-card-top"><span class="fest-icon">🏇</span><div class="fest-badges"><span class="status-badge status-archive">Archive</span><span class="type-badge type-jumps">Jumps</span></div></div>
         <div class="fest-name">Randox Grand National Festival 2026</div>
         <div class="fest-dates">9–11 Apr 2026 · Aintree, Liverpool</div>
-        <div class="fest-desc">21 races over three days. The world's most famous steeplechase. Full results and tipster scorecard.</div>
+        <div class="fest-desc">21 races over three days. Full results, tipster scorecard and race-by-race analysis.</div>
+        <div class="fest-meta"><span class="fest-race-count">🏁 21 races</span></div>
         <div class="fest-result">Mirabad wins the Grand National</div>
       </div>
-      <div class="fest-card-footer"><span class="fest-venue">📍 Aintree Racecourse</span><span class="fest-cta">View archive →</span></div>
+      <div class="fest-card-footer"><span class="fest-venue">📍 Aintree Racecourse</span><span class="fest-cta">View archive</span></div>
     </a>
     <a href="scottish-grand-national-2026.html" class="fest-card theme-indigo">
       <div class="fest-card-body">
         <div class="fest-card-top"><span class="fest-icon">🏴󠁧󠁢󠁳󠁣󠁴󠁿</span><div class="fest-badges"><span class="status-badge status-archive">Archive</span><span class="type-badge type-jumps">Jumps</span></div></div>
         <div class="fest-name">Scottish Grand National 2026</div>
         <div class="fest-dates">17–18 Apr 2026 · Ayr, Scotland</div>
-        <div class="fest-desc">14 races over two days. Full results and tipster scorecard — Mullington top scorer with 6pts.</div>
-        <div class="fest-result">Kap Vert wins the Scottish Grand National (20/1)</div>
+        <div class="fest-desc">14 races over two days. Mullington top scorer with 6 pts. Full tipster scorecard.</div>
+        <div class="fest-meta"><span class="fest-race-count">🏁 14 races</span></div>
+        <div class="fest-result">Kap Vert (20/1) wins the Scottish Grand National</div>
       </div>
-      <div class="fest-card-footer"><span class="fest-venue">📍 Ayr Racecourse</span><span class="fest-cta">View archive →</span></div>
+      <div class="fest-card-footer"><span class="fest-venue">📍 Ayr Racecourse</span><span class="fest-cta">View archive</span></div>
     </a>
   </div>
 
-  <!-- ── JUMP RACING ───────────────────────────────────────── -->
+  <!-- ── SEASON LEAGUE ────────────────────────────────────── -->
+  <div class="section-hdr" style="margin-top:40px"><h2>Season Leaderboard</h2><div class="section-hdr-line"></div></div>
+  <p class="section-sub">All tipsters scored across every completed festival. Win = 3 pts · Placed = 1 pt.</p>
+  <div class="league-wrap">
+    <table class="league-table" id="season-table" aria-label="Season tipster leaderboard">
+      <thead>
+        <tr>
+          <th class="lt-rank">#</th>
+          <th>Tipster</th>
+          <th class="num">W</th>
+          <th class="num">P</th>
+          <th class="num">M</th>
+          <th class="num">SR%</th>
+          <th class="num">Pts</th>
+          <th class="num">Eff</th>
+          <th style="min-width:70px"></th>
+        </tr>
+      </thead>
+      <tbody id="season-body">
+        <!-- populated by JS -->
+      </tbody>
+    </table>
+  </div>
+  <p class="league-note">SR% = strike rate (wins / picks). Eff = pts per pick. <a href="season-2026.html" style="color:var(--gold)">Full season breakdown →</a></p>
+
+  <!-- ── JUMP RACING 2026 ──────────────────────────────────── -->
   <div class="section-hdr"><h2>Jump Racing 2026</h2><div class="section-hdr-line"></div></div>
   <p class="section-sub">National Hunt festivals from Aintree in April through to Sandown in December.</p>
   <div class="festival-grid">
@@ -568,18 +680,18 @@ footer {
         <div class="fest-name">Scottish Grand National 2026</div>
         <div class="fest-dates">17–18 Apr 2026 · Ayr</div>
         <div class="fest-desc">Two days at Ayr. Winner: Kap Vert (20/1). Sean Houlihan / Philip Hobbs &amp; Johnson White.</div>
+        <div class="fest-meta"><span class="fest-race-count">🏁 14 races</span></div>
       </div>
-      <div class="fest-card-footer"><span class="fest-venue">📍 Ayr</span><span class="fest-cta">View archive →</span></div>
+      <div class="fest-card-footer"><span class="fest-venue">📍 Ayr</span><span class="fest-cta">View archive</span></div>
     </a>
     <div class="fest-card theme-green tbc">
       <div class="fest-card-body">
         <div class="fest-card-top"><span class="fest-icon">🍁</span><div class="fest-badges"><span class="status-badge status-tbc">Coming Soon</span><span class="type-badge type-jumps">Jumps</span></div></div>
         <div class="fest-name">Cheltenham November Meeting 2026</div>
         <div class="fest-dates">13–15 Nov 2026 · Cheltenham</div>
-        <div class="fest-desc">Three days. Unofficial start of the jumps season. Paddy Power Gold Cup.</div>
-        
+        <div class="fest-desc">Three days. Paddy Power Gold Cup — unofficial start of the jumps season.</div>
       </div>
-      <div class="fest-card-footer"><span class="fest-venue">📍 Cheltenham</span><span class="fest-cta" style="color:var(--silver)">Tips coming soon </span></div>
+      <div class="fest-card-footer"><span class="fest-venue">📍 Cheltenham</span><span class="fest-cta" style="color:var(--muted)">Tips coming soon</span></div>
     </div>
     <div class="fest-card theme-violet tbc">
       <div class="fest-card-body">
@@ -587,184 +699,124 @@ footer {
         <div class="fest-name">Tingle Creek Festival 2026</div>
         <div class="fest-dates">4–5 Dec 2026 · Sandown Park</div>
         <div class="fest-desc">Two days. Tingle Creek Chase — the leading two-mile chase of the winter.</div>
-        
       </div>
-      <div class="fest-card-footer"><span class="fest-venue">📍 Sandown Park</span><span class="fest-cta" style="color:var(--silver)">Tips coming soon </span></div>
+      <div class="fest-card-footer"><span class="fest-venue">📍 Sandown Park</span><span class="fest-cta" style="color:var(--muted)">Tips coming soon</span></div>
     </div>
   </div>
 
-  <!-- ── FLAT RACING ───────────────────────────────────────── -->
+  <!-- ── FLAT RACING 2026 ──────────────────────────────────── -->
   <div class="section-hdr"><h2>Flat Racing 2026</h2><div class="section-hdr-line"></div></div>
   <p class="section-sub">The complete flat season — 15 festivals from the Guineas in May to British Champions Day in October.</p>
   <div class="festival-grid">
     <a href="guineas-2026.html" class="fest-card theme-sage">
       <div class="fest-card-body">
-        <div class="fest-card-top"><span class="fest-icon">🌿</span><div class="fest-badges"><span class="status-badge status-upcoming">Upcoming</span><span class="type-badge type-flat">Flat</span></div></div>
+        <div class="fest-card-top"><span class="fest-icon">🌿</span><div class="fest-badges"><span class="status-badge status-live">🔴 Live</span><span class="type-badge type-flat">Flat</span></div></div>
         <div class="fest-name">Guineas Festival 2026</div>
         <div class="fest-dates">1–3 May 2026 · Newmarket</div>
         <div class="fest-desc">Three days on the Rowley Mile. 2000 Guineas (Sat) and 1000 Guineas (Sun) — the first two Classics.</div>
+        <div class="fest-meta"><span class="fest-race-count">🏁 21 races</span></div>
       </div>
-      <div class="fest-card-footer"><span class="fest-venue">📍 Newmarket</span><span class="fest-cta">View tips →</span></div>
+      <div class="fest-card-footer"><span class="fest-venue">📍 Newmarket</span><span class="fest-cta">View tips</span></div>
     </a>
     <div class="fest-card theme-amber tbc">
-      <div class="fest-card-body">
-        <div class="fest-card-top"><span class="fest-icon">⭕</span><div class="fest-badges"><span class="status-badge status-tbc">Coming Soon</span><span class="type-badge type-flat">Flat</span></div></div>
-        <div class="fest-name">Chester May Festival 2026</div>
-        <div class="fest-dates">6–8 May 2026 · Chester</div>
-        <div class="fest-desc">Three days at Chester's tight circular track. Chester Cup the headline race.</div>
-        
-      </div>
-      <div class="fest-card-footer"><span class="fest-venue">📍 Chester</span><span class="fest-cta" style="color:var(--silver)">Tips coming soon </span></div>
+      <div class="fest-card-body"><div class="fest-card-top"><span class="fest-icon">⭕</span><div class="fest-badges"><span class="status-badge status-tbc">Coming Soon</span><span class="type-badge type-flat">Flat</span></div></div>
+        <div class="fest-name">Chester May Festival 2026</div><div class="fest-dates">6–8 May 2026 · Chester</div>
+        <div class="fest-desc">Three days at Chester's tight circular track. Chester Cup the headline race.</div></div>
+      <div class="fest-card-footer"><span class="fest-venue">📍 Chester</span><span class="fest-cta" style="color:var(--muted)">Tips coming soon</span></div>
     </div>
     <div class="fest-card theme-violet tbc">
-      <div class="fest-card-body">
-        <div class="fest-card-top"><span class="fest-icon">⚔️</span><div class="fest-badges"><span class="status-badge status-tbc">Coming Soon</span><span class="type-badge type-flat">Flat</span></div></div>
-        <div class="fest-name">Dante Festival 2026</div>
-        <div class="fest-dates">13–15 May 2026 · York</div>
-        <div class="fest-desc">Three days at the Knavesmire. Dante Stakes is the key Derby trial.</div>
-        
-      </div>
-      <div class="fest-card-footer"><span class="fest-venue">📍 York</span><span class="fest-cta" style="color:var(--silver)">Tips coming soon </span></div>
+      <div class="fest-card-body"><div class="fest-card-top"><span class="fest-icon">⚔️</span><div class="fest-badges"><span class="status-badge status-tbc">Coming Soon</span><span class="type-badge type-flat">Flat</span></div></div>
+        <div class="fest-name">Dante Festival 2026</div><div class="fest-dates">13–15 May 2026 · York</div>
+        <div class="fest-desc">Three days at the Knavesmire. Dante Stakes is the key Derby trial.</div></div>
+      <div class="fest-card-footer"><span class="fest-venue">📍 York</span><span class="fest-cta" style="color:var(--muted)">Tips coming soon</span></div>
     </div>
     <div class="fest-card theme-purple tbc">
-      <div class="fest-card-body">
-        <div class="fest-card-top"><span class="fest-icon">🐎</span><div class="fest-badges"><span class="status-badge status-tbc">Coming Soon</span><span class="type-badge type-flat">Flat</span></div></div>
-        <div class="fest-name">Derby Festival 2026</div>
-        <div class="fest-dates">5–6 Jun 2026 · Epsom</div>
-        <div class="fest-desc">Two days. The Derby and The Oaks — Britain's most prestigious flat Classics.</div>
-        
-      </div>
-      <div class="fest-card-footer"><span class="fest-venue">📍 Epsom</span><span class="fest-cta" style="color:var(--silver)">Tips coming soon </span></div>
+      <div class="fest-card-body"><div class="fest-card-top"><span class="fest-icon">🐎</span><div class="fest-badges"><span class="status-badge status-tbc">Coming Soon</span><span class="type-badge type-flat">Flat</span></div></div>
+        <div class="fest-name">Derby Festival 2026</div><div class="fest-dates">5–6 Jun 2026 · Epsom</div>
+        <div class="fest-desc">Two days. The Derby and The Oaks — Britain's most prestigious flat Classics.</div></div>
+      <div class="fest-card-footer"><span class="fest-venue">📍 Epsom</span><span class="fest-cta" style="color:var(--muted)">Tips coming soon</span></div>
     </div>
     <div class="fest-card theme-blue tbc">
-      <div class="fest-card-body">
-        <div class="fest-card-top"><span class="fest-icon">👑</span><div class="fest-badges"><span class="status-badge status-tbc">Coming Soon</span><span class="type-badge type-flat">Flat</span></div></div>
-        <div class="fest-name">Royal Ascot 2026</div>
-        <div class="fest-dates">16–20 Jun 2026 · Ascot</div>
-        <div class="fest-desc">Five days, 35 races. Gold Cup, Queen Anne Stakes, King Charles III Stakes.</div>
-        
-      </div>
-      <div class="fest-card-footer"><span class="fest-venue">📍 Ascot</span><span class="fest-cta" style="color:var(--silver)">Tips coming soon </span></div>
+      <div class="fest-card-body"><div class="fest-card-top"><span class="fest-icon">👑</span><div class="fest-badges"><span class="status-badge status-tbc">Coming Soon</span><span class="type-badge type-flat">Flat</span></div></div>
+        <div class="fest-name">Royal Ascot 2026</div><div class="fest-dates">16–20 Jun 2026 · Ascot</div>
+        <div class="fest-desc">Five days, 35 races. Gold Cup, Queen Anne Stakes, King Charles III Stakes.</div></div>
+      <div class="fest-card-footer"><span class="fest-venue">📍 Ascot</span><span class="fest-cta" style="color:var(--muted)">Tips coming soon</span></div>
     </div>
     <div class="fest-card theme-teal tbc">
-      <div class="fest-card-body">
-        <div class="fest-card-top"><span class="fest-icon">⚓</span><div class="fest-badges"><span class="status-badge status-tbc">Coming Soon</span><span class="type-badge type-flat">Flat</span></div></div>
-        <div class="fest-name">Northumberland Plate Festival 2026</div>
-        <div class="fest-dates">25–27 Jun 2026 · Newcastle</div>
-        <div class="fest-desc">Three days. Britain's oldest flat handicap — the Pitmen's Derby.</div>
-        
-      </div>
-      <div class="fest-card-footer"><span class="fest-venue">📍 Newcastle</span><span class="fest-cta" style="color:var(--silver)">Tips coming soon </span></div>
+      <div class="fest-card-body"><div class="fest-card-top"><span class="fest-icon">⚓</span><div class="fest-badges"><span class="status-badge status-tbc">Coming Soon</span><span class="type-badge type-flat">Flat</span></div></div>
+        <div class="fest-name">Northumberland Plate Festival 2026</div><div class="fest-dates">25–27 Jun 2026 · Newcastle</div>
+        <div class="fest-desc">Three days. Britain's oldest flat handicap — the Pitmen's Derby.</div></div>
+      <div class="fest-card-footer"><span class="fest-venue">📍 Newcastle</span><span class="fest-cta" style="color:var(--muted)">Tips coming soon</span></div>
     </div>
     <div class="fest-card theme-gold tbc">
-      <div class="fest-card-body">
-        <div class="fest-card-top"><span class="fest-icon">🌞</span><div class="fest-badges"><span class="status-badge status-tbc">Coming Soon</span><span class="type-badge type-flat">Flat</span></div></div>
-        <div class="fest-name">July Festival 2026</div>
-        <div class="fest-dates">9–11 Jul 2026 · Newmarket</div>
-        <div class="fest-desc">Three days. July Cup and Falmouth Stakes among the top Group prizes.</div>
-        
-      </div>
-      <div class="fest-card-footer"><span class="fest-venue">📍 Newmarket</span><span class="fest-cta" style="color:var(--silver)">Tips coming soon </span></div>
+      <div class="fest-card-body"><div class="fest-card-top"><span class="fest-icon">🌞</span><div class="fest-badges"><span class="status-badge status-tbc">Coming Soon</span><span class="type-badge type-flat">Flat</span></div></div>
+        <div class="fest-name">July Festival 2026</div><div class="fest-dates">9–11 Jul 2026 · Newmarket</div>
+        <div class="fest-desc">Three days. July Cup and Falmouth Stakes among the top Group prizes.</div></div>
+      <div class="fest-card-footer"><span class="fest-venue">📍 Newmarket</span><span class="fest-cta" style="color:var(--muted)">Tips coming soon</span></div>
     </div>
     <div class="fest-card theme-rose tbc">
-      <div class="fest-card-body">
-        <div class="fest-card-top"><span class="fest-icon">👑</span><div class="fest-badges"><span class="status-badge status-tbc">Coming Soon</span><span class="type-badge type-flat">Flat</span></div></div>
-        <div class="fest-name">King George Weekend 2026</div>
-        <div class="fest-dates">24–25 Jul 2026 · Ascot</div>
-        <div class="fest-desc">Two days. King George VI and Queen Elizabeth Stakes — mid-season championship.</div>
-        
-      </div>
-      <div class="fest-card-footer"><span class="fest-venue">📍 Ascot</span><span class="fest-cta" style="color:var(--silver)">Tips coming soon </span></div>
+      <div class="fest-card-body"><div class="fest-card-top"><span class="fest-icon">👑</span><div class="fest-badges"><span class="status-badge status-tbc">Coming Soon</span><span class="type-badge type-flat">Flat</span></div></div>
+        <div class="fest-name">King George Weekend 2026</div><div class="fest-dates">24–25 Jul 2026 · Ascot</div>
+        <div class="fest-desc">Two days. King George VI and Queen Elizabeth Stakes — mid-season championship.</div></div>
+      <div class="fest-card-footer"><span class="fest-venue">📍 Ascot</span><span class="fest-cta" style="color:var(--muted)">Tips coming soon</span></div>
     </div>
     <div class="fest-card theme-navy tbc">
-      <div class="fest-card-body">
-        <div class="fest-card-top"><span class="fest-icon">🌹</span><div class="fest-badges"><span class="status-badge status-tbc">Coming Soon</span><span class="type-badge type-flat">Flat</span></div></div>
-        <div class="fest-name">Glorious Goodwood 2026</div>
-        <div class="fest-dates">28 Jul–1 Aug 2026 · Goodwood</div>
-        <div class="fest-desc">Five days on the Sussex Downs. Goodwood Cup, Nassau Stakes, Stewards' Cup.</div>
-        
-      </div>
-      <div class="fest-card-footer"><span class="fest-venue">📍 Goodwood</span><span class="fest-cta" style="color:var(--silver)">Tips coming soon </span></div>
+      <div class="fest-card-body"><div class="fest-card-top"><span class="fest-icon">🌹</span><div class="fest-badges"><span class="status-badge status-tbc">Coming Soon</span><span class="type-badge type-flat">Flat</span></div></div>
+        <div class="fest-name">Glorious Goodwood 2026</div><div class="fest-dates">28 Jul–1 Aug 2026 · Goodwood</div>
+        <div class="fest-desc">Five days on the Sussex Downs. Goodwood Cup, Nassau Stakes, Stewards' Cup.</div></div>
+      <div class="fest-card-footer"><span class="fest-venue">📍 Goodwood</span><span class="fest-cta" style="color:var(--muted)">Tips coming soon</span></div>
     </div>
     <div class="fest-card theme-crimson tbc">
-      <div class="fest-card-body">
-        <div class="fest-card-top"><span class="fest-icon">🎯</span><div class="fest-badges"><span class="status-badge status-tbc">Coming Soon</span><span class="type-badge type-flat">Flat</span></div></div>
-        <div class="fest-name">Ebor Festival 2026</div>
-        <div class="fest-dates">19–22 Aug 2026 · York</div>
-        <div class="fest-desc">Four days. Yorkshire Oaks, Juddmonte International, the Ebor Handicap.</div>
-        
-      </div>
-      <div class="fest-card-footer"><span class="fest-venue">📍 York</span><span class="fest-cta" style="color:var(--silver)">Tips coming soon </span></div>
+      <div class="fest-card-body"><div class="fest-card-top"><span class="fest-icon">🎯</span><div class="fest-badges"><span class="status-badge status-tbc">Coming Soon</span><span class="type-badge type-flat">Flat</span></div></div>
+        <div class="fest-name">Ebor Festival 2026</div><div class="fest-dates">19–22 Aug 2026 · York</div>
+        <div class="fest-desc">Four days. Yorkshire Oaks, Juddmonte International, the Ebor Handicap.</div></div>
+      <div class="fest-card-footer"><span class="fest-venue">📍 York</span><span class="fest-cta" style="color:var(--muted)">Tips coming soon</span></div>
     </div>
     <div class="fest-card theme-lime tbc">
-      <div class="fest-card-body">
-        <div class="fest-card-top"><span class="fest-icon">⚡</span><div class="fest-badges"><span class="status-badge status-tbc">Coming Soon</span><span class="type-badge type-flat">Flat</span></div></div>
-        <div class="fest-name">Sprint Cup Festival 2026</div>
-        <div class="fest-dates">3–5 Sep 2026 · Haydock</div>
-        <div class="fest-desc">Three days. Sprint Cup — Britain's top Group 1 sprint championship.</div>
-        
-      </div>
-      <div class="fest-card-footer"><span class="fest-venue">📍 Haydock</span><span class="fest-cta" style="color:var(--silver)">Tips coming soon </span></div>
+      <div class="fest-card-body"><div class="fest-card-top"><span class="fest-icon">⚡</span><div class="fest-badges"><span class="status-badge status-tbc">Coming Soon</span><span class="type-badge type-flat">Flat</span></div></div>
+        <div class="fest-name">Sprint Cup Festival 2026</div><div class="fest-dates">3–5 Sep 2026 · Haydock</div>
+        <div class="fest-desc">Three days. Sprint Cup — Britain's top Group 1 sprint championship.</div></div>
+      <div class="fest-card-footer"><span class="fest-venue">📍 Haydock</span><span class="fest-cta" style="color:var(--muted)">Tips coming soon</span></div>
     </div>
     <div class="fest-card theme-bronze tbc">
-      <div class="fest-card-body">
-        <div class="fest-card-top"><span class="fest-icon">🎖️</span><div class="fest-badges"><span class="status-badge status-tbc">Coming Soon</span><span class="type-badge type-flat">Flat</span></div></div>
-        <div class="fest-name">St Leger Festival 2026</div>
-        <div class="fest-dates">10–13 Sep 2026 · Doncaster</div>
-        <div class="fest-desc">Four days. Britain's oldest Classic — the final Triple Crown leg.</div>
-        
-      </div>
-      <div class="fest-card-footer"><span class="fest-venue">📍 Doncaster</span><span class="fest-cta" style="color:var(--silver)">Tips coming soon </span></div>
+      <div class="fest-card-body"><div class="fest-card-top"><span class="fest-icon">🎖️</span><div class="fest-badges"><span class="status-badge status-tbc">Coming Soon</span><span class="type-badge type-flat">Flat</span></div></div>
+        <div class="fest-name">St Leger Festival 2026</div><div class="fest-dates">10–13 Sep 2026 · Doncaster</div>
+        <div class="fest-desc">Four days. Britain's oldest Classic — the final Triple Crown leg.</div></div>
+      <div class="fest-card-footer"><span class="fest-venue">📍 Doncaster</span><span class="fest-cta" style="color:var(--muted)">Tips coming soon</span></div>
     </div>
     <div class="fest-card theme-slate tbc">
-      <div class="fest-card-body">
-        <div class="fest-card-top"><span class="fest-icon">🍂</span><div class="fest-badges"><span class="status-badge status-tbc">Coming Soon</span><span class="type-badge type-flat">Flat</span></div></div>
-        <div class="fest-name">Cambridgeshire Meeting 2026</div>
-        <div class="fest-dates">24–26 Sep 2026 · Newmarket</div>
-        <div class="fest-desc">Three days. Cambridgeshire and Cesarewitch — the autumn handicap double.</div>
-        
-      </div>
-      <div class="fest-card-footer"><span class="fest-venue">📍 Newmarket</span><span class="fest-cta" style="color:var(--silver)">Tips coming soon </span></div>
+      <div class="fest-card-body"><div class="fest-card-top"><span class="fest-icon">🍂</span><div class="fest-badges"><span class="status-badge status-tbc">Coming Soon</span><span class="type-badge type-flat">Flat</span></div></div>
+        <div class="fest-name">Cambridgeshire Meeting 2026</div><div class="fest-dates">24–26 Sep 2026 · Newmarket</div>
+        <div class="fest-desc">Three days. Cambridgeshire and Cesarewitch — the autumn handicap double.</div></div>
+      <div class="fest-card-footer"><span class="fest-venue">📍 Newmarket</span><span class="fest-cta" style="color:var(--muted)">Tips coming soon</span></div>
     </div>
     <div class="fest-card theme-gold tbc">
-      <div class="fest-card-body">
-        <div class="fest-card-top"><span class="fest-icon">⭐</span><div class="fest-badges"><span class="status-badge status-tbc">Coming Soon</span><span class="type-badge type-flat">Flat</span></div></div>
-        <div class="fest-name">Future Champions Festival 2026</div>
-        <div class="fest-dates">9–10 Oct 2026 · Newmarket</div>
-        <div class="fest-desc">Two days. Fillies' Mile, Dewhurst Stakes — the season's top juvenile form.</div>
-        
-      </div>
-      <div class="fest-card-footer"><span class="fest-venue">📍 Newmarket</span><span class="fest-cta" style="color:var(--silver)">Tips coming soon </span></div>
+      <div class="fest-card-body"><div class="fest-card-top"><span class="fest-icon">⭐</span><div class="fest-badges"><span class="status-badge status-tbc">Coming Soon</span><span class="type-badge type-flat">Flat</span></div></div>
+        <div class="fest-name">Future Champions Festival 2026</div><div class="fest-dates">9–10 Oct 2026 · Newmarket</div>
+        <div class="fest-desc">Two days. Fillies' Mile, Dewhurst Stakes — the season's top juvenile form.</div></div>
+      <div class="fest-card-footer"><span class="fest-venue">📍 Newmarket</span><span class="fest-cta" style="color:var(--muted)">Tips coming soon</span></div>
     </div>
     <div class="fest-card theme-blue tbc">
-      <div class="fest-card-body">
-        <div class="fest-card-top"><span class="fest-icon">🏅</span><div class="fest-badges"><span class="status-badge status-tbc">Coming Soon</span><span class="type-badge type-flat">Flat</span></div></div>
-        <div class="fest-name">British Champions Day 2026</div>
-        <div class="fest-dates">17 Oct 2026 · Ascot</div>
-        <div class="fest-desc">One day, six Champions races. Champion Stakes, British Champions Sprint.</div>
-        
-      </div>
-      <div class="fest-card-footer"><span class="fest-venue">📍 Ascot</span><span class="fest-cta" style="color:var(--silver)">Tips coming soon </span></div>
+      <div class="fest-card-body"><div class="fest-card-top"><span class="fest-icon">🏅</span><div class="fest-badges"><span class="status-badge status-tbc">Coming Soon</span><span class="type-badge type-flat">Flat</span></div></div>
+        <div class="fest-name">British Champions Day 2026</div><div class="fest-dates">17 Oct 2026 · Ascot</div>
+        <div class="fest-desc">One day, six Champions races. Champion Stakes, British Champions Sprint.</div></div>
+      <div class="fest-card-footer"><span class="fest-venue">📍 Ascot</span><span class="fest-cta" style="color:var(--muted)">Tips coming soon</span></div>
     </div>
   </div>
 
-  <!-- ── MIXED ─────────────────────────────────────────────── -->
+  <!-- ── MIXED FIXTURE ────────────────────────────────────── -->
   <div class="section-hdr"><h2>Mixed Fixture</h2><div class="section-hdr-line"></div></div>
   <p class="section-sub">Jump and flat on the same card.</p>
   <div class="festival-grid">
     <div class="fest-card theme-orange tbc">
-      <div class="fest-card-body">
-        <div class="fest-card-top"><span class="fest-icon">☀️</span><div class="fest-badges"><span class="status-badge status-tbc">Coming Soon</span><span class="type-badge type-mixed">Mixed</span></div></div>
-        <div class="fest-name">Sandown Summer Festival 2026</div>
-        <div class="fest-dates">3–4 Jul 2026 · Sandown Park</div>
-        <div class="fest-desc">Two days of mixed jump and flat racing. Eclipse Stakes the headline.</div>
-        
-      </div>
-      <div class="fest-card-footer"><span class="fest-venue">📍 Sandown Park</span><span class="fest-cta" style="color:var(--silver)">Tips coming soon </span></div>
+      <div class="fest-card-body"><div class="fest-card-top"><span class="fest-icon">☀️</span><div class="fest-badges"><span class="status-badge status-tbc">Coming Soon</span><span class="type-badge type-mixed">Mixed</span></div></div>
+        <div class="fest-name">Sandown Summer Festival 2026</div><div class="fest-dates">3–4 Jul 2026 · Sandown Park</div>
+        <div class="fest-desc">Two days of mixed jump and flat racing. Eclipse Stakes the headline.</div></div>
+      <div class="fest-card-footer"><span class="fest-venue">📍 Sandown Park</span><span class="fest-cta" style="color:var(--muted)">Tips coming soon</span></div>
     </div>
   </div>
 
-  <!-- ── 2027 ─────────────────────────────────────────────── -->
+  <!-- ── 2027 ───────────────────────────────────────────────── -->
   <div class="section-hdr"><h2>Looking Ahead — 2027</h2><div class="section-hdr-line"></div></div>
   <p class="section-sub">Shells ready — tips and race data added closer to each festival.</p>
   <div class="festival-grid">
@@ -773,187 +825,71 @@ footer {
         <div class="fest-card-top"><span class="fest-icon">🏆</span><div class="fest-badges"><span class="status-badge status-tbc">Shell Ready</span><span class="type-badge type-jumps">Jumps</span></div></div>
         <div class="fest-name">Cheltenham Festival 2027</div>
         <div class="fest-dates">9–12 March 2027 · Cheltenham</div>
-        <div class="fest-desc">App structure ready — tips and picks populated from February 2027. Full 28-race coverage.</div>
+        <div class="fest-desc">Full structure ready — tips and picks populated from February 2027. All 28 races covered.</div>
+        <div class="fest-meta"><span class="fest-race-count">🏁 28 races planned</span></div>
       </div>
-      <div class="fest-card-footer"><span class="fest-venue">📍 Prestbury Park</span><span class="fest-cta">Preview shell →</span></div>
+      <div class="fest-card-footer"><span class="fest-venue">📍 Prestbury Park</span><span class="fest-cta">Preview shell</span></div>
     </a>
     <div class="fest-card theme-red tbc">
       <div class="fest-card-body">
         <div class="fest-card-top"><span class="fest-icon">🏇</span><div class="fest-badges"><span class="status-badge status-tbc">Coming Soon</span><span class="type-badge type-jumps">Jumps</span></div></div>
         <div class="fest-name">Grand National Festival 2027</div>
         <div class="fest-dates">April 2027 · Aintree</div>
-        <div class="fest-desc">Full tips, race guide and results app — to be built in spring 2027 using the same structure as 2026.</div>
+        <div class="fest-desc">Tips app built in spring 2027 using the festival template system.</div>
       </div>
-      <div class="fest-card-footer"><span class="fest-venue">📍 Aintree Racecourse</span><span class="fest-cta" style="color:var(--silver)">Tips coming 2027</span></div>
+      <div class="fest-card-footer"><span class="fest-venue">📍 Aintree Racecourse</span><span class="fest-cta" style="color:var(--muted)">Tips coming 2027</span></div>
     </div>
   </div>
 
-  <!-- ── CALENDAR ─────────────────────────────────────────── -->
+  <!-- ── 2026 RACE CALENDAR ────────────────────────────────── -->
   <div class="section-hdr" style="margin-top:40px"><h2>2026 Race Calendar</h2><div class="section-hdr-line"></div></div>
   <p class="section-sub">All 21 festivals March–December. Click any linked card to jump to that festival.</p>
   <div class="cal-grid">
-    <div class="cal-item passed has-link" style="--ci-accent:var(--c-green)" onclick="location.href='cheltenham-2026.html'">
-      <div class="cal-month">Mar</div>
-      <div class="cal-dates">10–13</div>
-      <div class="cal-name">Cheltenham Festival</div>
-      <span class="cal-type type-jumps">Jumps</span>
+    <div class="cal-item passed has-link" style="--ci-accent:var(--c-green)" onclick="location.href='cheltenham-2026.html'" tabindex="0" role="link" aria-label="Cheltenham Festival March 10-13">
+      <div class="cal-month">Mar</div><div class="cal-dates">10–13</div><div class="cal-name">Cheltenham Festival</div><span class="cal-type type-jumps">Jumps</span>
     </div>
-    <div class="cal-item passed has-link" style="--ci-accent:var(--c-red)" onclick="location.href='grand-national-2026.html'">
-      <div class="cal-month">Apr</div>
-      <div class="cal-dates">9–11</div>
-      <div class="cal-name">Grand National</div>
-      <span class="cal-type type-jumps">Jumps</span>
+    <div class="cal-item passed has-link" style="--ci-accent:var(--c-red)" onclick="location.href='grand-national-2026.html'" tabindex="0" role="link" aria-label="Grand National April 9-11">
+      <div class="cal-month">Apr</div><div class="cal-dates">9–11</div><div class="cal-name">Grand National</div><span class="cal-type type-jumps">Jumps</span>
     </div>
-    <div class="cal-item passed has-link" style="--ci-accent:var(--c-indigo)" onclick="location.href='scottish-grand-national-2026.html'">
-      <div class="cal-month">Apr</div>
-      <div class="cal-dates">17–18</div>
-      <div class="cal-name">Scottish Grand National</div>
-      <span class="cal-type type-jumps">Jumps</span>
+    <div class="cal-item passed has-link" style="--ci-accent:var(--c-indigo)" onclick="location.href='scottish-grand-national-2026.html'" tabindex="0" role="link" aria-label="Scottish Grand National April 17-18">
+      <div class="cal-month">Apr</div><div class="cal-dates">17–18</div><div class="cal-name">Scottish Grand National</div><span class="cal-type type-jumps">Jumps</span>
     </div>
-    <div class="cal-item has-link" style="--ci-accent:var(--c-sage)" onclick="location.href='guineas-2026.html'">
-      <div class="cal-month">May</div>
-      <div class="cal-dates">1–3</div>
-      <div class="cal-name">Guineas Festival</div>
-      <span class="cal-type type-flat">Flat</span>
+    <div class="cal-item cal-live has-link" style="--ci-accent:var(--c-sage)" onclick="location.href='guineas-2026.html'" tabindex="0" role="link" aria-label="Guineas Festival May 1-3 — Live now">
+      <div class="cal-month">May</div><div class="cal-dates">1–3</div><div class="cal-name">Guineas Festival</div><span class="cal-type type-flat">Flat</span>
     </div>
-    <div class="cal-item" style="--ci-accent:var(--c-amber)">
-      <div class="cal-month">May</div>
-      <div class="cal-dates">6–8</div>
-      <div class="cal-name">Chester May Festival</div>
-      <span class="cal-type type-flat">Flat</span>
-    </div>
-    <div class="cal-item" style="--ci-accent:var(--c-violet)">
-      <div class="cal-month">May</div>
-      <div class="cal-dates">13–15</div>
-      <div class="cal-name">Dante Festival</div>
-      <span class="cal-type type-flat">Flat</span>
-    </div>
-    <div class="cal-item" style="--ci-accent:var(--c-purple)">
-      <div class="cal-month">Jun</div>
-      <div class="cal-dates">5–6</div>
-      <div class="cal-name">Derby Festival</div>
-      <span class="cal-type type-flat">Flat</span>
-    </div>
-    <div class="cal-item" style="--ci-accent:var(--c-blue)">
-      <div class="cal-month">Jun</div>
-      <div class="cal-dates">16–20</div>
-      <div class="cal-name">Royal Ascot</div>
-      <span class="cal-type type-flat">Flat</span>
-    </div>
-    <div class="cal-item" style="--ci-accent:var(--c-teal)">
-      <div class="cal-month">Jun</div>
-      <div class="cal-dates">25–27</div>
-      <div class="cal-name">Northumberland Plate</div>
-      <span class="cal-type type-flat">Flat</span>
-    </div>
-    <div class="cal-item" style="--ci-accent:var(--c-orange)">
-      <div class="cal-month">Jul</div>
-      <div class="cal-dates">3–4</div>
-      <div class="cal-name">Sandown Summer</div>
-      <span class="cal-type type-mixed">Mixed</span>
-    </div>
-    <div class="cal-item" style="--ci-accent:var(--c-gold-h)">
-      <div class="cal-month">Jul</div>
-      <div class="cal-dates">9–11</div>
-      <div class="cal-name">July Festival</div>
-      <span class="cal-type type-flat">Flat</span>
-    </div>
-    <div class="cal-item" style="--ci-accent:var(--c-rose)">
-      <div class="cal-month">Jul</div>
-      <div class="cal-dates">24–25</div>
-      <div class="cal-name">King George Weekend</div>
-      <span class="cal-type type-flat">Flat</span>
-    </div>
-    <div class="cal-item" style="--ci-accent:var(--c-navy)">
-      <div class="cal-month">Jul 28</div>
-      <div class="cal-dates">–Aug 1</div>
-      <div class="cal-name">Glorious Goodwood</div>
-      <span class="cal-type type-flat">Flat</span>
-    </div>
-    <div class="cal-item" style="--ci-accent:var(--c-crimson)">
-      <div class="cal-month">Aug</div>
-      <div class="cal-dates">19–22</div>
-      <div class="cal-name">Ebor Festival</div>
-      <span class="cal-type type-flat">Flat</span>
-    </div>
-    <div class="cal-item" style="--ci-accent:var(--c-lime)">
-      <div class="cal-month">Sep</div>
-      <div class="cal-dates">3–5</div>
-      <div class="cal-name">Sprint Cup Festival</div>
-      <span class="cal-type type-flat">Flat</span>
-    </div>
-    <div class="cal-item" style="--ci-accent:var(--c-bronze)">
-      <div class="cal-month">Sep</div>
-      <div class="cal-dates">10–13</div>
-      <div class="cal-name">St Leger Festival</div>
-      <span class="cal-type type-flat">Flat</span>
-    </div>
-    <div class="cal-item" style="--ci-accent:var(--c-slate)">
-      <div class="cal-month">Sep</div>
-      <div class="cal-dates">24–26</div>
-      <div class="cal-name">Cambridgeshire Meeting</div>
-      <span class="cal-type type-flat">Flat</span>
-    </div>
-    <div class="cal-item" style="--ci-accent:var(--c-gold-h)">
-      <div class="cal-month">Oct</div>
-      <div class="cal-dates">9–10</div>
-      <div class="cal-name">Future Champions Festival</div>
-      <span class="cal-type type-flat">Flat</span>
-    </div>
-    <div class="cal-item" style="--ci-accent:var(--c-blue)">
-      <div class="cal-month">Oct</div>
-      <div class="cal-dates">17</div>
-      <div class="cal-name">British Champions Day</div>
-      <span class="cal-type type-flat">Flat</span>
-    </div>
-    <div class="cal-item" style="--ci-accent:var(--c-green)">
-      <div class="cal-month">Nov</div>
-      <div class="cal-dates">13–15</div>
-      <div class="cal-name">Cheltenham Nov Meeting</div>
-      <span class="cal-type type-jumps">Jumps</span>
-    </div>
-    <div class="cal-item" style="--ci-accent:var(--c-violet)">
-      <div class="cal-month">Dec</div>
-      <div class="cal-dates">4–5</div>
-      <div class="cal-name">Tingle Creek Festival</div>
-      <span class="cal-type type-jumps">Jumps</span>
-    </div>
-  </div>
-
-  <!-- ── TIPSTER LEAGUE ───────────────────────────────────── -->
-  <div class="section-hdr" style="margin-top:40px"><h2>All-Time Tipster League</h2><div class="section-hdr-line"></div></div>
-  <p class="section-sub">Running totals across all scored festivals. Win = 3pts, Placed = 1pt. Table grows as each festival is completed.</p>
-  <div style="overflow-x:auto;margin-bottom:40px">
-    <table class="league-table">
-      <thead><tr><th style="width:32px">#</th><th>Tipster</th><th>Festivals Scored</th><th style="text-align:center">Wins</th><th style="text-align:center">Plcd</th><th style="text-align:center">Picks</th><th style="text-align:right">Pts</th><th style="min-width:70px"></th></tr></thead>
-      <tbody>
-        <tr><td class="lt-pos top3">1</td><td class="lt-name">Our NB</td><td class="lt-fest">Cheltenham 2026</td><td style="text-align:center">3</td><td style="text-align:center">8</td><td style="text-align:center">28</td><td class="lt-pts">17</td><td><div class="lt-bar"><div class="lt-fill" style="width:100%"></div></div></td></tr>
-        <tr><td class="lt-pos top3">2</td><td class="lt-name">Our NAP</td><td class="lt-fest">Cheltenham 2026</td><td style="text-align:center">2</td><td style="text-align:center">6</td><td style="text-align:center">28</td><td class="lt-pts">12</td><td><div class="lt-bar"><div class="lt-fill" style="width:71%"></div></div></td></tr>
-        <tr><td class="lt-pos top3">2</td><td class="lt-name">Playle (RP)</td><td class="lt-fest">Cheltenham 2026 D1–2</td><td style="text-align:center">3</td><td style="text-align:center">3</td><td style="text-align:center">14</td><td class="lt-pts">12</td><td><div class="lt-bar"><div class="lt-fill" style="width:71%"></div></div></td></tr>
-        <tr><td class="lt-pos">4</td><td class="lt-name">Grimshaw (HRN)</td><td class="lt-fest">Cheltenham 2026 D1–2</td><td style="text-align:center">3</td><td style="text-align:center">2</td><td style="text-align:center">13</td><td class="lt-pts">11</td><td><div class="lt-bar"><div class="lt-fill" style="width:65%"></div></div></td></tr>
-        <tr><td class="lt-pos">5</td><td class="lt-name">Segal (RP)</td><td class="lt-fest">Cheltenham 2026 D1–2</td><td style="text-align:center">2</td><td style="text-align:center">2</td><td style="text-align:center">10</td><td class="lt-pts">8</td><td><div class="lt-bar"><div class="lt-fill" style="width:47%"></div></div></td></tr>
-        <tr><td class="lt-pos">6</td><td class="lt-name">Kealy (RP)</td><td class="lt-fest">Cheltenham 2026 D1–2</td><td style="text-align:center">1</td><td style="text-align:center">4</td><td style="text-align:center">14</td><td class="lt-pts">7</td><td><div class="lt-bar"><div class="lt-fill" style="width:41%"></div></div></td></tr>
-        <tr><td class="lt-pos">7</td><td class="lt-name">Wilson (RP)</td><td class="lt-fest">Cheltenham 2026 D1–2</td><td style="text-align:center">1</td><td style="text-align:center">3</td><td style="text-align:center">14</td><td class="lt-pts">6</td><td><div class="lt-bar"><div class="lt-fill" style="width:35%"></div></div></td></tr>
-        <tr><td class="lt-pos">8</td><td class="lt-name">Dineen (RP)</td><td class="lt-fest">Cheltenham 2026 D1–2</td><td style="text-align:center">0</td><td style="text-align:center">5</td><td style="text-align:center">14</td><td class="lt-pts">5</td><td><div class="lt-bar"><div class="lt-fill" style="width:29%"></div></div></td></tr>
-        <tr><td class="lt-pos">9</td><td class="lt-name">Mullington (WH)</td><td class="lt-fest">Cheltenham 2026</td><td style="text-align:center">0</td><td style="text-align:center">2</td><td style="text-align:center">28</td><td class="lt-pts">2</td><td><div class="lt-bar"><div class="lt-fill" style="width:12%"></div></div></td></tr>
-      </tbody>
-    </table>
+    <div class="cal-item" style="--ci-accent:var(--c-amber)"><div class="cal-month">May</div><div class="cal-dates">6–8</div><div class="cal-name">Chester May Festival</div><span class="cal-type type-flat">Flat</span></div>
+    <div class="cal-item" style="--ci-accent:var(--c-violet)"><div class="cal-month">May</div><div class="cal-dates">13–15</div><div class="cal-name">Dante Festival</div><span class="cal-type type-flat">Flat</span></div>
+    <div class="cal-item" style="--ci-accent:var(--c-purple)"><div class="cal-month">Jun</div><div class="cal-dates">5–6</div><div class="cal-name">Derby Festival</div><span class="cal-type type-flat">Flat</span></div>
+    <div class="cal-item" style="--ci-accent:var(--c-blue)"><div class="cal-month">Jun</div><div class="cal-dates">16–20</div><div class="cal-name">Royal Ascot</div><span class="cal-type type-flat">Flat</span></div>
+    <div class="cal-item" style="--ci-accent:var(--c-teal)"><div class="cal-month">Jun</div><div class="cal-dates">25–27</div><div class="cal-name">Northumberland Plate</div><span class="cal-type type-flat">Flat</span></div>
+    <div class="cal-item" style="--ci-accent:var(--c-orange)"><div class="cal-month">Jul</div><div class="cal-dates">3–4</div><div class="cal-name">Sandown Summer</div><span class="cal-type type-mixed">Mixed</span></div>
+    <div class="cal-item" style="--ci-accent:var(--c-gold-h)"><div class="cal-month">Jul</div><div class="cal-dates">9–11</div><div class="cal-name">July Festival</div><span class="cal-type type-flat">Flat</span></div>
+    <div class="cal-item" style="--ci-accent:var(--c-rose)"><div class="cal-month">Jul</div><div class="cal-dates">24–25</div><div class="cal-name">King George Weekend</div><span class="cal-type type-flat">Flat</span></div>
+    <div class="cal-item" style="--ci-accent:var(--c-navy)"><div class="cal-month">Jul–Aug</div><div class="cal-dates">28–1</div><div class="cal-name">Glorious Goodwood</div><span class="cal-type type-flat">Flat</span></div>
+    <div class="cal-item" style="--ci-accent:var(--c-crimson)"><div class="cal-month">Aug</div><div class="cal-dates">19–22</div><div class="cal-name">Ebor Festival</div><span class="cal-type type-flat">Flat</span></div>
+    <div class="cal-item" style="--ci-accent:var(--c-lime)"><div class="cal-month">Sep</div><div class="cal-dates">3–5</div><div class="cal-name">Sprint Cup Festival</div><span class="cal-type type-flat">Flat</span></div>
+    <div class="cal-item" style="--ci-accent:var(--c-bronze)"><div class="cal-month">Sep</div><div class="cal-dates">10–13</div><div class="cal-name">St Leger Festival</div><span class="cal-type type-flat">Flat</span></div>
+    <div class="cal-item" style="--ci-accent:var(--c-slate)"><div class="cal-month">Sep</div><div class="cal-dates">24–26</div><div class="cal-name">Cambridgeshire Meeting</div><span class="cal-type type-flat">Flat</span></div>
+    <div class="cal-item" style="--ci-accent:var(--c-gold-h)"><div class="cal-month">Oct</div><div class="cal-dates">9–10</div><div class="cal-name">Future Champions Festival</div><span class="cal-type type-flat">Flat</span></div>
+    <div class="cal-item" style="--ci-accent:var(--c-blue)"><div class="cal-month">Oct</div><div class="cal-dates">17</div><div class="cal-name">British Champions Day</div><span class="cal-type type-flat">Flat</span></div>
+    <div class="cal-item" style="--ci-accent:var(--c-green)"><div class="cal-month">Nov</div><div class="cal-dates">13–15</div><div class="cal-name">Cheltenham Nov Meeting</div><span class="cal-type type-jumps">Jumps</span></div>
+    <div class="cal-item" style="--ci-accent:var(--c-violet)"><div class="cal-month">Dec</div><div class="cal-dates">4–5</div><div class="cal-name">Tingle Creek Festival</div><span class="cal-type type-jumps">Jumps</span></div>
   </div>
 
   <!-- ── HOW IT WORKS ──────────────────────────────────────── -->
   <div class="section-hdr"><h2>How It Works</h2><div class="section-hdr-line"></div></div>
   <div class="how-grid">
-    <div class="how-card"><div class="how-num">01</div><div class="how-title">Expert Tips</div><div class="how-body">Each festival gets NAP, NB and each-way picks from Racing Post tipsters, Oddschecker consensus, HRN and specialist ante-post sources.</div></div>
+    <div class="how-card"><div class="how-num">01</div><div class="how-title">Expert Tips</div><div class="how-body">Each festival gets NAP, NB and each-way picks from Racing Post tipsters, William Hill, HRN and specialist ante-post sources.</div></div>
     <div class="how-card"><div class="how-num">02</div><div class="how-title">Live Results</div><div class="how-body">Results entered race by race. Winners, SPs and placings captured and scored automatically in the tipster leaderboard.</div></div>
-    <div class="how-card"><div class="how-num">03</div><div class="how-title">Tipster Scoring</div><div class="how-body">Win = 3pts, Placed = 1pt. The all-time league table grows with every scored festival throughout the year.</div></div>
-    <div class="how-card"><div class="how-num">04</div><div class="how-title">My Tracker</div><div class="how-body">Add selections to your personal tracker inside each festival app. Picks saved in your browser so you can review them on the day.</div></div>
+    <div class="how-card"><div class="how-num">03</div><div class="how-title">Tipster Scoring</div><div class="how-body">Win = 3 pts, Placed = 1 pt. The all-time league table grows with every completed festival throughout the year.</div></div>
+    <div class="how-card"><div class="how-num">04</div><div class="how-title">My Tracker</div><div class="how-body">Add selections to your tracker inside each festival app. Picks saved in your browser so you can review them on the day.</div></div>
   </div>
 
 </div><!-- /.section -->
 
 <footer>
   <div class="footer-brand">🏇 The Festival Form Book</div>
-  <p style="font-size:.76rem;color:var(--silver);margin-top:4px">Expert tips, guides and results — the complete British racing calendar 2026</p>
+  <p style="font-size:.74rem;color:var(--muted);margin-top:4px">Expert tips, guides and results — the complete British racing calendar 2026</p>
   <div class="footer-links">
     <a href="guineas-2026.html">Guineas 2026</a>
     <a href="scottish-grand-national-2026.html">Scottish GN 2026</a>
@@ -963,8 +899,173 @@ footer {
     <a href="cheltenham-2027.html">Cheltenham 2027</a>
   </div>
   <div class="gamble-warn">18+ · Please gamble responsibly · <a href="https://www.begambleaware.org" target="_blank" rel="noopener">BeGambleAware.org</a> · <a href="https://www.gamcare.org.uk" target="_blank" rel="noopener">GamCare</a> · Helpline: 0808 8020 133</div>
-  <p class="footer-small" style="margin-top:10px">Tips are for entertainment only. Always bet within your means. Odds correct at time of publication.</p>
+  <p style="font-size:.7rem;color:var(--muted);margin-top:8px">Tips are for entertainment only. Always bet within your means. Odds correct at time of publication.</p>
 </footer>
 
+<script src="/js/season-data-2026.js"></script>
+<script>
+'use strict';
+// ── Festival status helpers ────────────────────────────────────
+function festivalStatus(fest) {
+  const today = new Date();
+  today.setHours(0,0,0,0);
+  const start = new Date(fest.dates[0]);
+  const end   = new Date(fest.dates[fest.dates.length - 1]);
+  if (today > end)   return 'archive';
+  if (today >= start) return 'live';
+  return 'upcoming';
+}
+
+function daysUntil(dateStr) {
+  const today = new Date(); today.setHours(0,0,0,0);
+  const d = new Date(dateStr);
+  return Math.ceil((d - today) / 86400000);
+}
+
+// ── Live banner ────────────────────────────────────────────────
+function initLiveBanner() {
+  const active = FESTIVALS_2026.find(f => festivalStatus(f) === 'live');
+  if (!active) return;
+  const banner = document.getElementById('live-banner');
+  const today  = new Date(); today.setHours(0,0,0,0);
+  const dayNum = Math.floor((today - new Date(active.dates[0])) / 86400000) + 1;
+  document.getElementById('live-banner-title').textContent = active.name + ' — Day ' + dayNum;
+  document.getElementById('live-banner-sub').textContent   = 'Live racing today at ' + active.venue;
+  const cta = document.getElementById('live-banner-cta');
+  cta.href = active.url;
+  cta.textContent = 'View tips →';
+  banner.style.display = 'flex';
+}
+
+// ── Countdown ──────────────────────────────────────────────────
+function initCountdown() {
+  // Find next festival that hasn't started
+  const next = FESTIVALS_2026
+    .filter(f => festivalStatus(f) === 'upcoming')
+    .sort((a,b) => new Date(a.dates[0]) - new Date(b.dates[0]))[0];
+
+  const cdName  = document.getElementById('cd-name');
+  const cdUnits = document.getElementById('cd-units');
+
+  if (!next) {
+    // Check if something is live
+    const live = FESTIVALS_2026.find(f => festivalStatus(f) === 'live');
+    if (live) {
+      cdName.textContent = live.shortName + ' is ON now';
+      cdUnits.innerHTML = '<a href="' + escHtml(live.url) + '" style="color:var(--win-green);font-weight:600;font-size:0.82rem">View tips →</a>';
+    } else {
+      cdName.textContent = 'Next festival TBC';
+      cdUnits.textContent = '';
+    }
+    return;
+  }
+
+  // Next upcoming festival after Guineas = Chester 6 May
+  // We hard-code additional upcoming festivals beyond those in FESTIVALS_2026
+  const upcoming2026 = [
+    { name: 'Chester May Festival', date: '2026-05-06', url: 'index.html' },
+    { name: 'Dante Festival',        date: '2026-05-13', url: 'index.html' },
+    { name: 'Derby Festival',        date: '2026-06-05', url: 'index.html' },
+    { name: 'Royal Ascot',           date: '2026-06-16', url: 'index.html' },
+  ];
+
+  const today = new Date(); today.setHours(0,0,0,0);
+  const allUpcoming = upcoming2026.filter(f => new Date(f.date) > today)
+    .sort((a,b) => new Date(a.date) - new Date(b.date));
+
+  const nextAny = allUpcoming[0];
+  if (!nextAny) { cdName.textContent = next.shortName; return; }
+
+  const days = daysUntil(nextAny.date);
+  cdName.textContent = nextAny.name;
+
+  if (days <= 0) {
+    cdUnits.innerHTML = '<span style="color:var(--win-green);font-size:0.82rem;font-weight:600">Starting today!</span>';
+  } else {
+    const wks = Math.floor(days / 7);
+    const ds  = days % 7;
+    let html = '';
+    if (wks > 0) html += `<div class="cd-unit"><span class="cd-num">${wks}</span><span class="cd-lbl">wk${wks!==1?'s':''}</span></div>`;
+    html += `<div class="cd-unit"><span class="cd-num">${ds}</span><span class="cd-lbl">day${ds!==1?'s':''}</span></div>`;
+    cdUnits.innerHTML = html;
+  }
+}
+
+// ── Recent results strip ───────────────────────────────────────
+function initRecentResults() {
+  const strip = document.getElementById('results-strip');
+  if (!strip || typeof RECENT_WINS === 'undefined') return;
+  strip.innerHTML = RECENT_WINS.map(r => `
+    <div class="result-pill" role="listitem">
+      <div class="result-win">✓ Win</div>
+      <div class="result-horse">${escHtml(r.horse)}</div>
+      <div class="result-meta">${escHtml(r.tipster)} · ${escHtml(r.race)}</div>
+      <div class="result-fest">${escHtml(r.festival)} · ${escHtml(r.date)}</div>
+    </div>
+  `).join('');
+}
+
+// ── Season league table ────────────────────────────────────────
+function initLeagueTable() {
+  const tbody = document.getElementById('season-body');
+  if (!tbody || typeof computeSeasonScores === 'undefined') return;
+
+  const scored = computeSeasonScores().filter(t => t.totalPicks > 0);
+  const maxPts = scored[0]?.total || 1;
+
+  scored.forEach((t, i) => {
+    const rank = i + 1;
+    const rankClass = rank === 1 ? 'rank-1' : rank === 2 ? 'rank-2' : rank === 3 ? 'rank-3' : '';
+    const pct = Math.round(t.total / maxPts * 100);
+    const festivals = [
+      t.cKey    ? 'Cheltenham' : null,
+      t.gnKey   ? 'GN' : null,
+      t.sgnKey  ? 'Scottish GN' : null,
+      t.guinKey ? 'Guineas' : null,
+    ].filter(Boolean).join(' · ');
+
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td class="lt-rank"><span class="rank-badge ${rankClass}">${rank}</span></td>
+      <td>
+        <div class="tipster-cell">
+          <div class="tipster-icon" style="background:${t.color}20;border:1px solid ${t.color}40;">${t.icon}</div>
+          <div>
+            <div class="tipster-name" style="color:${t.color}">${escHtml(t.label)}</div>
+            <div class="tipster-events">${escHtml(festivals)}</div>
+          </div>
+        </div>
+      </td>
+      <td class="num" style="color:#4ade80">${t.totalWins}</td>
+      <td class="num" style="color:var(--gold)">${t.totalPlace}</td>
+      <td class="num" style="color:#f87171">${t.totalMiss}</td>
+      <td class="num lt-sr">${t.strikeRate}%</td>
+      <td class="num lt-pts">${t.total}</td>
+      <td class="num lt-eff">${t.ptsPerPick}</td>
+      <td><div class="lt-bar"><div class="lt-fill" style="width:${pct}%"></div></div></td>
+    `;
+    tbody.appendChild(tr);
+  });
+
+  // Update hero stat
+  const tipsterCount = document.getElementById('stat-tipsters');
+  if (tipsterCount) tipsterCount.textContent = scored.length;
+}
+
+// ── Calendar keyboard nav ──────────────────────────────────────
+document.querySelectorAll('.cal-item[role="link"]').forEach(el => {
+  el.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); el.click(); }
+  });
+});
+
+// ── Init ───────────────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', () => {
+  initLiveBanner();
+  initCountdown();
+  initRecentResults();
+  initLeagueTable();
+});
+</script>
 </body>
 </html>

@@ -3,269 +3,346 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>📊 2025/26 Racing Season – Tipster Leaderboard</title>
+<title>2025/26 Season Leaderboard | Festival Form Book</title>
+<meta name="description" content="Combined tipster standings across Cheltenham, Grand National, Scottish Grand National and Guineas Festival 2026.">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self' 'unsafe-inline';">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --navy:      #0b1628;
-    --navy-mid:  #132040;
-    --navy-card: #1a2d55;
-    --navy-lit:  #243660;
-    --gold:      #d4a843;
-    --gold-lt:   #f0c86a;
-    --gold-dim:  #a07830;
-    --scarlet:   #c0392b;
-    --scarlet-b: #e74c3c;
-    --cream:     #f5f0e8;
-    --silver:    #a0aec0;
-    --green-win: #27ae60;
-    --amber:     #e67e22;
-    --blue-chelt: #3b82f6;
-    --green-gn:  #10b981;
-    --green-sgn: #28a349;
-    --font-display: 'Playfair Display', Georgia, serif;
-    --font-body:    'Source Serif 4', Georgia, serif;
+    --bg:      #0f1117;
+    --card:    #1a1d26;
+    --border:  #2a2d36;
+    --green:   #00a651;
+    --gold:    #f5c842;
+    --text:    #e0e0e0;
+    --muted:   #888888;
+    --win:     #4ade80;
+    --place:   #f5c842;
+    --miss:    #f87171;
+    --chelt:   #3b82f6;
+    --gn:      #10b981;
+    --sgn:     #28a349;
+    --guin:    #a78bfa;
   }
+
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
+
   body {
-    background: var(--navy);
-    color: var(--cream);
-    font-family: var(--font-body);
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
     font-size: 15px;
-    line-height: 1.6;
+    line-height: 1.5;
     min-height: 100vh;
   }
 
-  /* ── HEADER ── */
+  /* ── Back link ── */
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 14px 20px 0;
+    transition: color 0.2s;
+    min-height: 44px;
+  }
+  .back-link:hover { color: var(--green); }
+  .back-link:focus-visible { outline: 2px solid var(--green); outline-offset: 2px; border-radius: 4px; }
+
+  /* ── Header ── */
   .site-header {
-    background: linear-gradient(160deg, var(--navy) 0%, var(--navy-mid) 60%, #1a3a1a 100%);
-    border-bottom: 3px solid var(--gold);
-    padding: 28px 20px 24px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
+    padding: 12px 20px 24px;
+    border-bottom: 1px solid var(--border);
   }
-  .site-header::before {
-    content: '';
-    position: absolute; inset: 0;
-    background: repeating-linear-gradient(90deg, transparent, transparent 40px, rgba(212,168,67,0.04) 40px, rgba(212,168,67,0.04) 41px);
-    pointer-events: none;
-  }
+  .header-inner { max-width: 1100px; margin: 0 auto; }
+
   .header-badge {
     display: inline-block;
-    background: var(--gold-dim);
-    color: var(--navy);
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 0.12em;
+    background: rgba(0,166,81,0.12);
+    border: 1px solid rgba(0,166,81,0.3);
+    color: var(--green);
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
-    padding: 3px 12px;
+    padding: 3px 10px;
     border-radius: 20px;
     margin-bottom: 10px;
   }
-  .site-header h1 {
-    font-family: var(--font-display);
-    font-size: clamp(1.6rem, 5vw, 2.8rem);
-    color: var(--cream);
-    line-height: 1.1;
-    margin-bottom: 6px;
-  }
-  .site-header h1 span { color: var(--gold); }
-  .hero-dates {
-    color: var(--silver);
-    font-size: 0.88rem;
-    margin-bottom: 16px;
-    letter-spacing: 0.04em;
-  }
-  .header-links { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 12px; }
-  .header-link {
-    display: inline-block;
-    background: rgba(255,255,255,0.08);
-    border: 1px solid rgba(255,255,255,0.15);
-    color: var(--cream);
-    text-decoration: none;
-    font-size: 0.78rem;
-    padding: 5px 14px;
-    border-radius: 20px;
-    transition: background 0.2s;
-  }
-  .header-link:hover { background: rgba(255,255,255,0.15); }
 
-  /* ── SUMMARY BAR ── */
-  .summary-bar {
-    background: var(--navy-mid);
-    border-bottom: 1px solid rgba(212,168,67,0.2);
-    padding: 10px 20px;
-    text-align: center;
-    font-size: 0.82rem;
-    color: var(--silver);
+  .site-header h1 {
+    font-size: clamp(1.5rem, 4vw, 2.2rem);
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.15;
+    margin-bottom: 4px;
+  }
+  .site-header h1 .gold { color: var(--gold); }
+
+  .header-sub {
+    color: var(--muted);
+    font-size: 0.83rem;
+    margin-bottom: 18px;
+  }
+
+  .festival-nav {
     display: flex;
-    gap: 24px;
-    justify-content: center;
+    gap: 8px;
     flex-wrap: wrap;
   }
-  .summary-pill {
+  .festival-nav a {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    color: var(--text);
+    text-decoration: none;
+    font-size: 0.78rem;
+    font-weight: 500;
+    padding: 6px 14px;
+    border-radius: 6px;
+    transition: border-color 0.2s, color 0.2s;
+    min-height: 36px;
+  }
+  .festival-nav a:hover { border-color: var(--green); color: var(--green); }
+  .festival-nav a:focus-visible { outline: 2px solid var(--green); outline-offset: 2px; border-radius: 6px; }
+
+  /* ── Summary bar ── */
+  .summary-bar {
+    background: var(--card);
+    border-bottom: 1px solid var(--border);
+    padding: 10px 20px;
+  }
+  .summary-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+    align-items: center;
+    font-size: 0.78rem;
+    color: var(--muted);
+  }
+  .s-dot {
     display: inline-flex;
     align-items: center;
     gap: 6px;
   }
-  .summary-pill .dot {
-    width: 10px; height: 10px; border-radius: 50%;
+  .dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
   }
-  .dot-chelt { background: var(--blue-chelt); }
-  .dot-gn    { background: var(--green-gn); }
-
-  /* ── MAIN WRAP ── */
-  .main-wrap { max-width: 900px; margin: 0 auto; padding: 24px 16px 60px; }
-
-  /* ── SECTION TITLE ── */
-  .section-title {
-    font-family: var(--font-display);
-    font-size: 1.3rem;
-    color: var(--gold);
-    border-bottom: 1px solid rgba(212,168,67,0.3);
-    padding-bottom: 8px;
-    margin: 32px 0 16px;
+  .scoring-note {
+    margin-left: auto;
+    font-size: 0.73rem;
   }
-  .section-title:first-of-type { margin-top: 0; }
 
-  /* ── LEADERBOARD TABLE ── */
+  /* ── Main wrap ── */
+  .main-wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 28px 16px 60px;
+  }
+
+  /* ── Section heading ── */
+  .section-hd {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0 0 14px;
+  }
+  .section-hd h2 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text);
+    white-space: nowrap;
+  }
+  .section-line {
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  /* ── Event header strip ── */
+  .event-hd {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 40px 0 14px;
+    padding: 13px 16px;
+    border-radius: 8px;
+    border-left: 3px solid transparent;
+  }
+  .event-hd.ev-chelt { background: rgba(59,130,246,0.07); border-left-color: var(--chelt); }
+  .event-hd.ev-gn    { background: rgba(16,185,129,0.07); border-left-color: var(--gn); }
+  .event-hd.ev-sgn   { background: rgba(40,163,73,0.07);  border-left-color: var(--sgn); }
+  .event-hd.ev-guin  { background: rgba(167,139,250,0.07);border-left-color: var(--guin); }
+
+  .ev-icon { font-size: 1.3rem; flex-shrink: 0; }
+  .ev-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+  }
+  .ev-meta {
+    font-size: 0.75rem;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+  .ev-badge {
+    margin-left: auto;
+    flex-shrink: 0;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 20px;
+  }
+  .ev-badge.archive  { background: rgba(255,255,255,0.05); color: var(--muted); }
+  .ev-badge.live     { background: rgba(0,166,81,0.18); color: var(--green); border: 1px solid rgba(0,166,81,0.35); }
+  .ev-badge.upcoming { background: rgba(245,200,66,0.1); color: var(--gold); border: 1px solid rgba(245,200,66,0.25); }
+
+  /* ── Table wrapper (scroll on mobile) ── */
+  .tbl-wrap {
+    overflow-x: auto;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* ── Season leaderboard ── */
   .lb-table {
     width: 100%;
     border-collapse: collapse;
-    font-size: 0.88rem;
+    font-size: 0.84rem;
+    min-width: 680px;
   }
   .lb-table thead th {
-    background: var(--navy-mid);
-    color: var(--gold);
-    font-family: var(--font-display);
-    font-size: 0.78rem;
-    letter-spacing: 0.06em;
+    background: #161921;
+    color: var(--muted);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.07em;
     text-transform: uppercase;
-    padding: 10px 12px;
+    padding: 10px 14px;
     text-align: left;
-    border-bottom: 2px solid rgba(212,168,67,0.3);
+    border-bottom: 1px solid var(--border);
+    white-space: nowrap;
   }
   .lb-table thead th.num { text-align: center; }
-  .lb-table tbody tr {
-    border-bottom: 1px solid rgba(255,255,255,0.06);
-    transition: background 0.15s;
-  }
-  .lb-table tbody tr:hover { background: rgba(255,255,255,0.04); }
-  .lb-table tbody td {
-    padding: 11px 12px;
-    vertical-align: middle;
-  }
+  .lb-table tbody tr { border-bottom: 1px solid rgba(42,45,54,0.7); transition: background 0.12s; }
+  .lb-table tbody tr:last-child { border-bottom: none; }
+  .lb-table tbody tr:hover { background: rgba(255,255,255,0.025); }
+  .lb-table tbody td { padding: 10px 14px; vertical-align: middle; }
   .lb-table tbody td.num { text-align: center; }
 
-  /* rank badge */
+  /* ── Rank badge ── */
   .rank-badge {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     width: 28px; height: 28px;
     border-radius: 50%;
-    font-size: 0.75rem;
+    font-size: 0.72rem;
     font-weight: 700;
-    background: var(--navy-lit);
-    color: var(--silver);
+    background: var(--border);
+    color: var(--muted);
+    flex-shrink: 0;
   }
-  .rank-1 { background: linear-gradient(135deg,#b8860b,#f0c86a); color: #0b1628; }
-  .rank-2 { background: linear-gradient(135deg,#708090,#c0c0c0); color: #0b1628; }
-  .rank-3 { background: linear-gradient(135deg,#8b4513,#cd7f32); color: #fff; }
+  .rank-1 { background: linear-gradient(135deg,#b8860b,#f5c842); color: #0f1117; }
+  .rank-2 { background: linear-gradient(135deg,#708090,#c0c0c0); color: #0f1117; }
+  .rank-3 { background: linear-gradient(135deg,#8b4513,#cd7f32); color: #f0e0d0; }
 
-  /* tipster cell */
+  /* ── Tipster cell ── */
   .tipster-cell {
     display: flex;
     align-items: center;
     gap: 10px;
   }
-  .tipster-icon {
-    width: 32px; height: 32px;
+  .t-avatar {
+    width: 32px; height: 32px; min-width: 32px;
     border-radius: 50%;
     display: flex; align-items: center; justify-content: center;
-    font-size: 1rem;
+    font-size: 0.95rem;
     flex-shrink: 0;
   }
-  .tipster-name { font-weight: 600; color: var(--cream); }
-  .tipster-events { font-size: 0.72rem; color: var(--silver); }
-
-  /* score pills */
-  .score-pill {
-    display: inline-block;
-    padding: 2px 9px;
-    border-radius: 12px;
-    font-size: 0.78rem;
-    font-weight: 700;
+  .t-name {
+    font-weight: 600;
+    font-size: 0.86rem;
+    white-space: nowrap;
   }
-  .score-chelt { background: rgba(59,130,246,0.2); color: #93c5fd; border: 1px solid rgba(59,130,246,0.3); }
-  .score-gn    { background: rgba(16,185,129,0.2); color: #6ee7b7; border: 1px solid rgba(16,185,129,0.3); }
-  .score-none  { background: rgba(255,255,255,0.05); color: var(--silver); border: 1px solid rgba(255,255,255,0.1); }
-  .score-sgn   { background: rgba(40,163,73,0.2); color: #86efac; border: 1px solid rgba(40,163,73,0.4); }
+  .t-events {
+    font-size: 0.68rem;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+
+  /* ── Score pills ── */
+  .pill {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 0.73rem;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+  .pill-chelt { background: rgba(59,130,246,0.14); color: #93c5fd; border: 1px solid rgba(59,130,246,0.22); }
+  .pill-gn    { background: rgba(16,185,129,0.14); color: #6ee7b7; border: 1px solid rgba(16,185,129,0.22); }
+  .pill-sgn   { background: rgba(40,163,73,0.14);  color: #86efac; border: 1px solid rgba(40,163,73,0.28); }
+  .pill-guin  { background: rgba(167,139,250,0.14);color: #c4b5fd; border: 1px solid rgba(167,139,250,0.28); }
+  .pill-none  { background: rgba(255,255,255,0.04);color: var(--muted); border: 1px solid rgba(255,255,255,0.06); }
 
   .total-pts {
-    font-family: var(--font-display);
-    font-size: 1.2rem;
-    color: var(--gold);
-    font-weight: 700;
-  }
-
-  /* ── EVENT BREAKDOWN ── */
-  .event-header {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin: 28px 0 12px;
-    padding: 10px 16px;
-    border-radius: 8px;
-  }
-  .event-header.chelt { background: linear-gradient(90deg, rgba(59,130,246,0.15), transparent); border-left: 3px solid #3b82f6; }
-  .event-header.gn    { background: linear-gradient(90deg, rgba(16,185,129,0.15), transparent); border-left: 3px solid #10b981; }
-  .event-header h2 {
-    font-family: var(--font-display);
     font-size: 1.05rem;
-    margin: 0;
+    font-weight: 700;
+    color: var(--gold);
   }
-  .event-header.chelt h2 { color: #93c5fd; }
-  .event-header.gn h2    { color: #6ee7b7; }
-  .event-meta { font-size: 0.78rem; color: var(--silver); }
 
-  .breakdown-table {
+  /* ── Breakdown table ── */
+  .bd-table {
     width: 100%;
     border-collapse: collapse;
     font-size: 0.82rem;
-    margin-bottom: 4px;
+    min-width: 500px;
   }
-  .breakdown-table th {
-    background: var(--navy-mid);
-    color: var(--silver);
-    font-size: 0.72rem;
+  .bd-table thead th {
+    background: #161921;
+    color: var(--muted);
+    font-size: 0.68rem;
+    font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.06em;
-    padding: 7px 10px;
+    letter-spacing: 0.07em;
+    padding: 8px 12px;
     text-align: left;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
+    border-bottom: 1px solid var(--border);
+    white-space: nowrap;
   }
-  .breakdown-table th.num { text-align: center; }
-  .breakdown-table td {
-    padding: 8px 10px;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
+  .bd-table thead th.num { text-align: center; }
+  .bd-table tbody td {
+    padding: 9px 12px;
+    border-bottom: 1px solid rgba(42,45,54,0.5);
     vertical-align: middle;
   }
-  .breakdown-table td.num { text-align: center; }
-  .breakdown-table tr:hover td { background: rgba(255,255,255,0.03); }
+  .bd-table tbody tr:last-child td { border-bottom: none; }
+  .bd-table tbody td.num { text-align: center; }
+  .bd-table tbody tr:hover td { background: rgba(255,255,255,0.02); }
 
-  .stat-wins   { color: #4ade80; }
-  .stat-places { color: var(--gold); }
-  .stat-misses { color: #f87171; }
+  .s-w { color: var(--win);   font-weight: 600; }
+  .s-p { color: var(--place); font-weight: 600; }
+  .s-m { color: var(--miss); }
+  .s-eff { color: var(--muted); font-size: 0.73rem; }
 
-  .bar-container {
-    width: 100%;
-    height: 6px;
-    background: rgba(255,255,255,0.08);
+  .bar-wrap {
+    width: 72px;
+    height: 5px;
+    background: rgba(255,255,255,0.07);
     border-radius: 3px;
     overflow: hidden;
   }
@@ -274,798 +351,437 @@
     border-radius: 3px;
   }
 
-  /* ── FOOTER ── */
-  .page-footer {
-    text-align: center;
-    padding: 24px;
-    border-top: 1px solid rgba(212,168,67,0.2);
-    color: var(--silver);
-    font-size: 0.78rem;
-    margin-top: 40px;
-  }
-  .page-footer a { color: var(--gold); text-decoration: none; }
-
-  /* ── LOADING ── */
+  /* ── Loading ── */
   .loading {
     text-align: center;
-    padding: 40px;
-    color: var(--silver);
+    padding: 60px 20px;
+    color: var(--muted);
+    font-size: 0.88rem;
+  }
+
+  /* ── Footer ── */
+  .site-footer {
+    border-top: 1px solid var(--border);
+    padding: 28px 20px 32px;
+  }
+  .footer-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    text-align: center;
+  }
+  .rg-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(0,166,81,0.08);
+    border: 1px solid rgba(0,166,81,0.2);
+    color: var(--green);
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 7px 16px;
+    border-radius: 6px;
+  }
+  .rg-links {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-size: 0.78rem;
+    color: var(--muted);
+  }
+  .rg-links a { color: var(--green); text-decoration: none; }
+  .rg-links a:hover { text-decoration: underline; }
+  .rg-links a:focus-visible { outline: 2px solid var(--green); border-radius: 2px; }
+  .rg-note {
+    font-size: 0.75rem;
+    color: var(--muted);
+    max-width: 600px;
+    line-height: 1.6;
+  }
+  .footer-nav {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 6px;
+    font-size: 0.75rem;
+  }
+  .footer-nav a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
+  .footer-nav a:hover { color: var(--green); }
+  .footer-nav a:focus-visible { outline: 2px solid var(--green); border-radius: 2px; }
+
+  /* ── Responsive ── */
+  @media (max-width: 600px) {
+    .scoring-note { display: none; }
+    .bar-wrap { width: 50px; }
+    .t-events { display: none; }
+    .s-eff { display: none; }
+  }
+  @media (max-width: 480px) {
+    .bar-wrap { display: none; }
+    .event-hd { flex-wrap: wrap; }
+    .ev-badge { margin-left: 0; }
   }
 </style>
 </head>
 <body>
 
-<div class="site-header">
-  <div class="header-badge">2025 / 26 National Hunt Season</div>
-  <h1>📊 Tipster <span>Season Leaderboard</span></h1>
-  <p class="hero-dates">Cheltenham Festival · Grand National Festival · Combined Standings</p>
-  <div class="header-links">
-    <a href="cheltenham-2026.html" class="header-link">📁 Cheltenham 2026 →</a>
-    <a href="grand-national-2026.html" class="header-link">🏇 Aintree GN 2026 →</a>
-    <a href="scottish-grand-national-2026.html" class="header-link">🏴󠁧󠁢󠁳󠁣󠁴󠁿 Scottish GN 2026 →</a>
+<!-- Skip to main content -->
+<a href="#main-content" class="back-link" style="position:absolute;left:-9999px;top:0;" onfocus="this.style.left='0'">Skip to main content</a>
+
+<!-- Back to hub -->
+<a href="index.html" class="back-link" aria-label="Back to Festival Hub">← Hub</a>
+
+<!-- ── Header ─────────────────────────────────────────────────── -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-badge">2025 / 26 National Hunt Season</div>
+    <h1>Tipster <span class="gold">Season Leaderboard</span></h1>
+    <p class="header-sub">Cheltenham · Grand National · Scottish GN · Guineas Festival — combined standings</p>
+    <nav class="festival-nav" aria-label="Festival pages">
+      <a href="cheltenham-2026.html">🏆 Cheltenham 2026</a>
+      <a href="grand-national-2026.html">🏇 Grand National 2026</a>
+      <a href="scottish-grand-national-2026.html">🏴󠁧󠁢󠁳󠁣󠁴󠁿 Scottish GN 2026</a>
+      <a href="guineas-2026.html">🌿 Guineas 2026</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ── Summary bar ──────────────────────────────────────────── -->
+<div class="summary-bar" role="complementary" aria-label="Season overview">
+  <div class="summary-inner">
+    <span class="s-dot"><span class="dot" style="background:var(--chelt)" aria-hidden="true"></span>Cheltenham — 28 races, 4 days</span>
+    <span class="s-dot"><span class="dot" style="background:var(--gn)" aria-hidden="true"></span>Grand National — 21 races, 3 days</span>
+    <span class="s-dot"><span class="dot" style="background:var(--sgn)" aria-hidden="true"></span>Scottish GN — 7 races, 1 day</span>
+    <span class="s-dot"><span class="dot" style="background:var(--guin)" aria-hidden="true"></span>Guineas — 21 races, 3 days</span>
+    <span class="scoring-note">Scoring: Win = 3pts · Placed = 1pt · Miss = 0pts</span>
   </div>
 </div>
 
-<div class="summary-bar">
-  <span class="summary-pill"><span class="dot dot-chelt"></span>Cheltenham — 28 races · 4 days</span>
-  <span class="summary-pill"><span class="dot dot-gn"></span>Grand National — 21 races · 3 days</span>
-  <span class="summary-pill"><span class="dot" style="background:#28a349"></span>Scottish GN — 7 races · 1 day</span>
-  <span class="summary-pill">Scoring: 3pts Win · 1pt Placed</span>
-</div>
-
-<div class="main-wrap">
-  <div id="loading" class="loading">Computing season scores…</div>
-  <div id="content" style="display:none;">
-    <div class="section-title">🏆 Season Combined Leaderboard</div>
-    <table class="lb-table" id="season-table">
-      <thead>
-        <tr>
-          <th style="width:40px;" class="num">#</th>
-          <th>Tipster</th>
-          <th class="num">Cheltenham</th>
-          <th class="num">Grand National</th>
-          <th class="num">Scottish GN</th>
-          <th class="num">Season Total</th>
-        </tr>
-      </thead>
-      <tbody id="season-body"></tbody>
-    </table>
-
-    <div class="event-header chelt" style="margin-top:40px;">
-      <div>
-        <h2>Cheltenham Festival 2026</h2>
-        <div class="event-meta">11–14 March 2026 · Cheltenham Racecourse</div>
-      </div>
-    </div>
-    <table class="breakdown-table" id="chelt-table">
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Tipster</th>
-          <th class="num">Wins</th>
-          <th class="num">Placed</th>
-          <th class="num">Missed</th>
-          <th class="num">Pts</th>
-          <th style="width:100px;">Score</th>
-        </tr>
-      </thead>
-      <tbody id="chelt-body"></tbody>
-    </table>
-
-    <div class="event-header gn" style="margin-top:32px;">
-      <div>
-        <h2>Grand National Festival 2026</h2>
-        <div class="event-meta">9–11 April 2026 · Aintree Racecourse</div>
-      </div>
-    </div>
-    <table class="breakdown-table" id="gn-table">
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Tipster</th>
-          <th class="num">Wins</th>
-          <th class="num">Placed</th>
-          <th class="num">Missed</th>
-          <th class="num">Pts</th>
-          <th style="width:100px;">Score</th>
-        </tr>
-      </thead>
-      <tbody id="gn-body"></tbody>
-    </table>
-
-    <div class="event-header" style="background:linear-gradient(135deg,#134521,#28a349);margin-top:32px;">
-      <div>
-        <h2>Scottish Grand National 2026</h2>
-        <div class="event-meta">18 April 2026 · Ayr Racecourse · Winner: Kap Vert (20/1)</div>
-      </div>
-    </div>
-    <table class="breakdown-table" id="sgn-table">
-      <thead><tr><th>#</th><th>Tipster</th><th class="num">Wins</th><th class="num">Placed</th><th class="num">Missed</th><th class="num">Pts</th><th style="width:100px;">Score</th></tr></thead>
-      <tbody id="sgn-body"></tbody>
-    </table>
+<!-- ── Main content ─────────────────────────────────────────── -->
+<main class="main-wrap" id="main-content">
+  <div id="loading" class="loading" role="status" aria-live="polite">
+    <span>Computing season scores…</span>
   </div>
-</div>
 
-<div class="page-footer">
-  Scores: 3pts = Win · 1pt = Placed (top 3) · 0pts = Miss or no pick<br>
-  <a href="cheltenham-2026.html">Cheltenham 2026</a> · <a href="grand-national-2026.html">Grand National 2026</a> · <a href="scottish-grand-national-2026.html">Scottish GN 2026</a>
-</div>
+  <div id="content" style="display:none;" aria-live="polite">
 
+    <!-- Season combined leaderboard -->
+    <div class="section-hd">
+      <h2>🏆 Season Combined Leaderboard</h2>
+      <div class="section-line" aria-hidden="true"></div>
+    </div>
+
+    <div class="tbl-wrap" role="region" aria-label="Season combined leaderboard — scroll horizontally if needed">
+      <table class="lb-table" id="season-table">
+        <thead>
+          <tr>
+            <th scope="col" class="num" style="width:46px;">#</th>
+            <th scope="col">Tipster</th>
+            <th scope="col" class="num">Cheltenham</th>
+            <th scope="col" class="num">Grand National</th>
+            <th scope="col" class="num">Scottish GN</th>
+            <th scope="col" class="num">Guineas</th>
+            <th scope="col" class="num">Total</th>
+          </tr>
+        </thead>
+        <tbody id="season-body"></tbody>
+      </table>
+    </div>
+
+    <!-- ── Cheltenham breakdown ── -->
+    <div class="event-hd ev-chelt" id="cheltenham-section">
+      <span class="ev-icon" aria-hidden="true">🏆</span>
+      <div>
+        <div class="ev-title" style="color:#93c5fd">Cheltenham Festival 2026</div>
+        <div class="ev-meta">10–13 March 2026 · Cheltenham Racecourse · 28 races</div>
+      </div>
+      <span class="ev-badge archive" aria-label="Status: Archive">Archive</span>
+    </div>
+
+    <div class="tbl-wrap" role="region" aria-label="Cheltenham 2026 tipster scores">
+      <table class="bd-table">
+        <thead>
+          <tr>
+            <th scope="col" style="width:36px;">#</th>
+            <th scope="col">Tipster</th>
+            <th scope="col" class="num">W</th>
+            <th scope="col" class="num">P</th>
+            <th scope="col" class="num">M</th>
+            <th scope="col" class="num">Pts</th>
+            <th scope="col" class="num">Eff</th>
+            <th scope="col" style="width:90px;">Score</th>
+          </tr>
+        </thead>
+        <tbody id="chelt-body"></tbody>
+      </table>
+    </div>
+
+    <!-- ── Grand National breakdown ── -->
+    <div class="event-hd ev-gn" id="gn-section">
+      <span class="ev-icon" aria-hidden="true">🏇</span>
+      <div>
+        <div class="ev-title" style="color:#6ee7b7">Randox Grand National Festival 2026</div>
+        <div class="ev-meta">9–11 April 2026 · Aintree Racecourse · 21 races · I Am Maximus wins the National</div>
+      </div>
+      <span class="ev-badge archive" aria-label="Status: Archive">Archive</span>
+    </div>
+
+    <div class="tbl-wrap" role="region" aria-label="Grand National 2026 tipster scores">
+      <table class="bd-table">
+        <thead>
+          <tr>
+            <th scope="col" style="width:36px;">#</th>
+            <th scope="col">Tipster</th>
+            <th scope="col" class="num">W</th>
+            <th scope="col" class="num">P</th>
+            <th scope="col" class="num">M</th>
+            <th scope="col" class="num">Pts</th>
+            <th scope="col" class="num">Eff</th>
+            <th scope="col" style="width:90px;">Score</th>
+          </tr>
+        </thead>
+        <tbody id="gn-body"></tbody>
+      </table>
+    </div>
+
+    <!-- ── Scottish GN breakdown ── -->
+    <div class="event-hd ev-sgn" id="sgn-section">
+      <span class="ev-icon" aria-hidden="true">🏴󠁧󠁢󠁳󠁣󠁴󠁿</span>
+      <div>
+        <div class="ev-title" style="color:#86efac">Scottish Grand National 2026</div>
+        <div class="ev-meta">18 April 2026 · Ayr Racecourse · Winner: Kap Vert (20/1)</div>
+      </div>
+      <span class="ev-badge archive" aria-label="Status: Archive">Archive</span>
+    </div>
+
+    <div class="tbl-wrap" role="region" aria-label="Scottish Grand National 2026 tipster scores">
+      <table class="bd-table">
+        <thead>
+          <tr>
+            <th scope="col" style="width:36px;">#</th>
+            <th scope="col">Tipster</th>
+            <th scope="col" class="num">W</th>
+            <th scope="col" class="num">P</th>
+            <th scope="col" class="num">M</th>
+            <th scope="col" class="num">Pts</th>
+            <th scope="col" class="num">Eff</th>
+            <th scope="col" style="width:90px;">Score</th>
+          </tr>
+        </thead>
+        <tbody id="sgn-body"></tbody>
+      </table>
+    </div>
+
+    <!-- ── Guineas breakdown ── -->
+    <div class="event-hd ev-guin" id="guineas-section">
+      <span class="ev-icon" aria-hidden="true">🌿</span>
+      <div>
+        <div class="ev-title" style="color:#c4b5fd">Qipco Guineas Festival 2026</div>
+        <div class="ev-meta" id="guin-meta">1–3 May 2026 · Newmarket · Flat racing</div>
+      </div>
+      <span class="ev-badge live" id="guin-badge" aria-label="Status: In progress">In Progress</span>
+    </div>
+
+    <div class="tbl-wrap" role="region" aria-label="Guineas 2026 tipster scores — in progress">
+      <table class="bd-table">
+        <thead>
+          <tr>
+            <th scope="col" style="width:36px;">#</th>
+            <th scope="col">Tipster</th>
+            <th scope="col" class="num">W</th>
+            <th scope="col" class="num">P</th>
+            <th scope="col" class="num">M</th>
+            <th scope="col" class="num">Pts</th>
+            <th scope="col" class="num">Eff</th>
+            <th scope="col" style="width:90px;">Score</th>
+          </tr>
+        </thead>
+        <tbody id="guin-body"></tbody>
+      </table>
+    </div>
+
+  </div><!-- /content -->
+</main>
+
+<!-- ── Footer ──────────────────────────────────────────────── -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="rg-badge" role="note">
+      🛡️ Bet Responsibly — for information and entertainment only
+    </div>
+    <p class="rg-note">
+      Scoring: 3pts = Win · 1pt = Placed (top 3) · 0pts = Miss or no pick.<br>
+      Efficiency (Eff) = points per pick — a fairer measure when tipsters cover different numbers of races.
+    </p>
+    <div class="rg-links" role="list" aria-label="Responsible gambling resources">
+      <a href="https://www.begambleaware.org" target="_blank" rel="noopener noreferrer" role="listitem">BeGambleAware.org</a>
+      <a href="https://www.gamstop.co.uk" target="_blank" rel="noopener noreferrer" role="listitem">GamStop</a>
+      <a href="https://www.gamblingtherapy.org" target="_blank" rel="noopener noreferrer" role="listitem">Gambling Therapy</a>
+      <span role="listitem">National Helpline: <strong>0808 8020 133</strong> (free, 24/7)</span>
+    </div>
+    <nav class="footer-nav" aria-label="Site navigation">
+      <a href="index.html">← Hub</a>
+      <a href="cheltenham-2026.html">Cheltenham 2026</a>
+      <a href="grand-national-2026.html">Grand National 2026</a>
+      <a href="scottish-grand-national-2026.html">Scottish GN 2026</a>
+      <a href="guineas-2026.html">Guineas 2026</a>
+      <a href="cheltenham-2027.html">Cheltenham 2027 →</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="/js/season-data-2026.js"></script>
 <script>
-// ════════════════════════════════════════════════════════════════
-// CHELTENHAM 2026 DATA
-// ════════════════════════════════════════════════════════════════
-const CHELT_RESULTS = {
-  '13:20-0': { winner:'Old Park Star',      second:'Sober Glory',          third:'Mydaddypaddy' },
-  '14:00-0': { winner:'Kargese',            second:'Kopek Des Bordes',     third:'Lulamba' },
-  '14:40-0': { winner:'Saratoga',           second:'Winston Junior',       third:'Klycot' },
-  '15:20-0': { winner:'Johnnywho',          second:'Jagwar',               third:'Quebecois' },
-  '16:00-0': { winner:'Lossiemouth',        second:'Brighterdaysahead',    third:'The New Lion' },
-  '16:40-0': { winner:'Madara',             second:'Will The Wise',        third:"Moon D'Orange" },
-  '17:20-0': { winner:'Holloway Queen',     second:'King Of Answers',      third:'One Big Bang' },
-  '13:20-1': { winner:'King Rasko Grey',    second:'Act Of Innocence',     third:'Zeus Power' },
-  '14:00-1': { winner:'Kitzbuhel',          second:'Final Demand',         third:'Salver' },
-  '14:40-1': { winner:'Jingko Blue',        second:'Franciscan Rock',      third:'Storm Heart' },
-  '15:20-1': { winner:'Final Orders',       second:'Favori De Champdou',   third:'Vanillier' },
-  '16:00-1': { winner:'Il Etait Temps',     second:'Libberty Hunter',      third:"L'Eau Du Sud" },
-  '16:40-1': { winner:'Martator',           second:'Jazzy Matty',          third:'Break My Soul' },
-  '17:20-1': { winner:'The Mourne Rambler', second:'Mets Ta Ceinture',     third:'Bass Hunter' },
-  '13:20-2': { winner:'White Noise',        second:'Old School Outlaw',    third:'Place De La Nation' },
-  '14:00-2': { winner:'Meetmebythesea',     second:'Gold Dancer',          third:"Regent's Stroll" },
-  '14:40-2': { winner:'Wodhooh',            second:'Jade De Grugy',        third:null },
-  '15:20-2': { winner:'Home By The Lee',    second:'Ballyburn',            third:'Bob Olinger' },
-  '16:00-2': { winner:'Heart Wood',         second:'Jonbon',               third:null },
-  '16:40-2': { winner:'Supremely West',     second:'Lavida Adiva',         third:'Ikarak' },
-  '17:20-2': { winner:'Ask Brewster',       second:'Road To Home',         third:'Monbeg Genius' },
-  '13:20-3': { winner:'Apolon De Charnie',  second:'Maestro Conti',        third:'Minella Study' },
-  '14:00-3': { winner:'Wilful',             second:'Sticktotheplan',       third:'Joyeuse' },
-  '14:40-3': { winner:'Dinoblue',           second:'Only By Night',        third:'Panic Attack' },
-  '15:20-3': { winner:"Johnny's Jury",      second:'Fruit De Mer',         third:'The Passing Wife' },
-  '16:00-3': { winner:'Gaelic Warrior',     second:'Jango Baie',           third:'Inothewayurthinkin' },
-  '16:40-3': { winner:'Barton Snow',        second:'Its On The Line',      third:'Music Drive' },
-  '17:20-3': { winner:'Air Of Entitlement', second:'Hot Fuss',             third:'Jump Allen' },
-};
+'use strict';
 
-const CHELT_PICKS = {
-  'Our NAP': {
-    label:'Our NAP', color:'#34d399', icon:'⭐',
-    picks: {
-      '13:20-0':'Talk The Talk',       '14:00-0':'Lulamba',
-      '14:40-0':'Kripticjim',          '15:20-0':'Handstands',
-      '16:00-0':'The New Lion',        '16:40-0':'Madara',
-      '17:20-0':'Grande Geste',        '13:20-1':'No Drama This End',
-      '14:00-1':'Final Demand',        '14:40-1':'Iberico Lord',
-      '15:20-1':'Favori De Champdou',  '16:00-1':'Majborough',
-      '16:40-1':'Thistle Ask',         '17:20-1':'Keep Him Company',
-      '13:20-2':'Bambino Fever',       '14:00-2':"Regent's Stroll",
-      '14:40-2':'Lossiemouth',         '15:20-2':'Teahupoo',
-      '16:00-2':'Fact To File',        '16:40-2':'Sire Du Berlais',
-      '17:20-2':'Jeriko Du Reponet',   '13:20-3':'Selma De Vary',
-      '14:00-3':'Anzadam',             '14:40-3':'Dinoblue',
-      '15:20-3':'Doctor Steinberg',    '16:00-3':'Jango Baie',
-      '16:40-3':'Bob And Co',          '17:20-3':'Son Of Anarchy',
-    }
-  },
-  'Our NB': {
-    label:'Our NB', color:'#60a5fa', icon:'🔵',
-    picks: {
-      '13:20-0':'Old Park Star',       '14:00-0':'Kopek Des Bordes',
-      '14:40-0':'Winston Junior',      '15:20-0':'Jagwar',
-      '16:00-0':'Brighterdaysahead',   '16:40-0':'Captain Guinness',
-      '17:20-0':'Backmersackme',       '13:20-1':'Mighty Park',
-      '14:00-1':'Wendigo',             '14:40-1':'Skylight Hustle',
-      '15:20-1':'Any Second Now',      '16:00-1':"L'Eau Du Sud",
-      '16:40-1':'Be Aware',            '17:20-1':'Old School Outlaw',
-      '13:20-2':'Old School Outlaw',   '14:00-2':'Backmersackme',
-      '14:40-2':'Wodhooh',             '15:20-2':'Ma Shantou',
-      '16:00-2':'Gaelic Warrior',      '16:40-2':'Ma Shantou',
-      '17:20-2':"Paddy's Poem",        '13:20-3':'Mon Creuset',
-      '14:00-3':'Good Land',           '14:40-3':'Panic Attack',
-      '15:20-3':'Espresso Milan',      '16:00-3':'Gaelic Warrior',
-      '16:40-3':'Its On The Line',     '17:20-3':"Paddy's Poem",
-    }
-  },
-  'Playle (RP)': {
-    label:'Playle (RP)', color:'#f472b6', icon:'📰',
-    picks: {
-      '13:20-0':'Old Park Star',       '14:00-0':'Lulamba',
-      '14:40-0':'Winston Junior',      '15:20-0':'Myretown',
-      '16:00-0':'Lossiemouth',         '16:40-0':'Madara',
-      '17:20-0':'Newton Tornado',      '13:20-1':'Skylight Hustle',
-      '14:00-1':'Wendigo',             '14:40-1':'Indeevar Bleu',
-      '15:20-1':'Stumptown',           '16:00-1':"L'Eau Du Sud",
-      '16:40-1':"Ryan's Rocket",       '17:20-1':'Bambino Fever',
-      '13:20-2':null,'14:00-2':null,'14:40-2':null,'15:20-2':null,
-      '16:00-2':null,'16:40-2':null,'17:20-2':null,
-      '13:20-3':null,'14:00-3':null,'14:40-3':null,'15:20-3':null,
-      '16:00-3':null,'16:40-3':null,'17:20-3':null,
-    }
-  },
-  'Kealy (RP)': {
-    label:'Kealy (RP)', color:'#f472b6', icon:'📰',
-    picks: {
-      '13:20-0':"Leader D'Allier",     '14:00-0':'Lulamba',
-      '14:40-0':'Winston Junior',      '15:20-0':'Jagwar',
-      '16:00-0':'Golden Ace',          '16:40-0':'Donnacha',
-      '17:20-0':'Brave Fortune',       '13:20-1':'Mighty Park',
-      '14:00-1':'Wendigo',             '14:40-1':'Jingko Blue',
-      '15:20-1':'Favori De Champdou',  '16:00-1':'Majborough',
-      '16:40-1':'Golden Joy',          '17:20-1':'Bambino Fever',
-      '13:20-2':null,'14:00-2':null,'14:40-2':null,'15:20-2':null,
-      '16:00-2':null,'16:40-2':null,'17:20-2':null,
-      '13:20-3':null,'14:00-3':null,'14:40-3':null,'15:20-3':null,
-      '16:00-3':null,'16:40-3':null,'17:20-3':null,
-    }
-  },
-  'Dineen (RP)': {
-    label:'Dineen (RP)', color:'#f472b6', icon:'📰',
-    picks: {
-      '13:20-0':"Leader D'Allier",     '14:00-0':'Lulamba',
-      '14:40-0':'Secret Force',        '15:20-0':'Jagwar',
-      '16:00-0':'The New Lion',        '16:40-0':'McLaurey',
-      '17:20-0':'One Big Bang',        '13:20-1':'Mighty Park',
-      '14:00-1':'Wendigo',             '14:40-1':'Jump Allen',
-      '15:20-1':'Favori De Champdou',  '16:00-1':'Majborough',
-      '16:40-1':'Inthepocket',         '17:20-1':'Carrigmoornaspruce',
-      '13:20-2':null,'14:00-2':null,'14:40-2':null,'15:20-2':null,
-      '16:00-2':null,'16:40-2':null,'17:20-2':null,
-      '13:20-3':null,'14:00-3':null,'14:40-3':null,'15:20-3':null,
-      '16:00-3':null,'16:40-3':null,'17:20-3':null,
-    }
-  },
-  'Wilson (RP)': {
-    label:'Wilson (RP)', color:'#f472b6', icon:'📰',
-    picks: {
-      '13:20-0':'Sober Glory',         '14:00-0':'Lulamba',
-      '14:40-0':'Ammes',               '15:20-0':"In D'Or",
-      '16:00-0':'Anzadam',             '16:40-0':'Madara',
-      '17:20-0':'Backmersackme',       '13:20-1':'Mighty Park',
-      '14:00-1':'Wendigo',             '14:40-1':'Indeevar Bleu',
-      '15:20-1':'Favori De Champdou',  '16:00-1':'Majborough',
-      '16:40-1':'Be Aware',            '17:20-1':'Keep Him Company',
-      '13:20-2':null,'14:00-2':null,'14:40-2':null,'15:20-2':null,
-      '16:00-2':null,'16:40-2':null,'17:20-2':null,
-      '13:20-3':null,'14:00-3':null,'14:40-3':null,'15:20-3':null,
-      '16:00-3':null,'16:40-3':null,'17:20-3':null,
-    }
-  },
-  'Segal (RP)': {
-    label:'Segal (RP)', color:'#c084fc', icon:'📰',
-    picks: {
-      '13:20-0':'Idaho Sun',           '14:00-0':'Kargese',
-      '14:40-0':'La Luna Artista',     '15:20-0':null,
-      '16:00-0':'Golden Ace',          '16:40-0':null,
-      '17:20-0':null,                  '13:20-1':'Shuttle Diplomacy',
-      '14:00-1':'Sixmilebridge',       '14:40-1':'Storm Heart',
-      '15:20-1':null,                  '16:00-1':"L'Eau Du Sud",
-      '16:40-1':'Ballysax Hank',       '17:20-1':'The Mourne Rambler',
-      '13:20-2':null,'14:00-2':null,'14:40-2':null,'15:20-2':null,
-      '16:00-2':null,'16:40-2':null,'17:20-2':null,
-      '13:20-3':null,'14:00-3':null,'14:40-3':null,'15:20-3':null,
-      '16:00-3':null,'16:40-3':null,'17:20-3':null,
-    }
-  },
-  'Park (RP)': {
-    label:'Tom Park (RP)', color:'#6ee7b7', icon:'📰',
-    picks: {
-      '13:20-0':'Old Park Star',       '14:00-0':'Kopek Des Bordes',
-      '14:40-0':null,'15:20-0':null,'16:00-0':null,'16:40-0':null,'17:20-0':null,
-      '13:20-1':null,'14:00-1':null,'14:40-1':null,'15:20-1':null,
-      '16:00-1':null,'16:40-1':null,'17:20-1':null,
-      '13:20-2':null,'14:00-2':null,'14:40-2':null,'15:20-2':null,
-      '16:00-2':null,'16:40-2':null,'17:20-2':null,
-      '13:20-3':null,'14:00-3':null,'14:40-3':null,'15:20-3':null,
-      '16:00-3':null,'16:40-3':null,'17:20-3':null,
-    }
-  },
-  'Grimshaw (HRN)': {
-    label:'Grimshaw (HRN)', color:'#67e8f9', icon:'🌐',
-    picks: {
-      '13:20-0':'Old Park Star',       '14:00-0':'Kopek Des Bordes',
-      '14:40-0':'Manlaga',             '15:20-0':'Handstands',
-      '16:00-0':'Poniros',             '16:40-0':'Madara',
-      '17:20-0':'Wade Out',            '13:20-1':'Talk The Talk',
-      '14:00-1':'Kitzbuhel',           '14:40-1':'Storm Heart',
-      '15:20-1':'Desertmore House',    '16:00-1':'Majborough',
-      '16:40-1':null,                  '17:20-1':'Quiryn',
-      '13:20-2':null,'14:00-2':null,'14:40-2':null,'15:20-2':null,
-      '16:00-2':null,'16:40-2':null,'17:20-2':null,
-      '13:20-3':null,'14:00-3':null,'14:40-3':null,'15:20-3':null,
-      '16:00-3':null,'16:40-3':null,'17:20-3':null,
-    }
-  },
-  'Mullington (WH)': {
-    label:'Mullington (WH)', color:'#fbbf24', icon:'📝',
-    picks: {
-      '13:20-0':'Mydaddypaddy',        '14:00-0':'Kawaboomga',
-      '14:40-0':'One Horse Town',      '15:20-0':'Resplendent Grey',
-      '16:00-0':'The New Lion',        '16:40-0':'Jagwar',
-      '17:20-0':'Deep Cave',           '13:20-1':'Doctor Du Mesnil',
-      '14:00-1':'Sixmilebridge',       '14:40-1':'East India Express',
-      '15:20-1':'Stumptown',           '16:00-1':'Marine Nationale',
-      '16:40-1':'Unexpected Party',    '17:20-1':'Bentraghhill',
-      '13:20-2':'Wodhooh',             '14:00-2':'No Drama This End',
-      '14:40-2':'Il Etait Temps',      '15:20-2':'The Yellow Clay',
-      '16:00-2':'Electric Mason',      '16:40-2':'Bambino Fever',
-      '17:20-2':'Koktail Divin',       '13:20-3':'Proactif',
-      '14:00-3':'Anzadam',             '14:40-3':'July Flower',
-      '15:20-3':'No Drama This End',   '16:00-3':'Fact To File',
-      '16:40-3':'Good Boy Bobby',      '17:20-3':'Son Of Anarchy',
-    }
-  },
-};
+document.addEventListener('DOMContentLoaded', build);
 
-// ════════════════════════════════════════════════════════════════
-// GRAND NATIONAL 2026 DATA
-// ════════════════════════════════════════════════════════════════
-const GN_RESULTS = {
-  '13:45-0': { winner:'Mange Tout',         second:'Selma De Vary',     third:'Indian River' },
-  '14:20-0': { winner:'Koktail Divin',      second:"Blueking d'Oroux",  third:'Mambonumberfive' },
-  '14:55-0': { winner:'Jango Baie',         second:'Protektorat',       third:"Pic d'Orhy" },
-  '15:30-0': { winner:'Barton Snow',        second:'Lets Go Champ',     third:'Take All' },
-  '16:05-0': { winner:'Brighterdaysahead',  second:'The New Lion',      third:'Alexei' },
-  '16:40-0': { winner:"Ryan's Rocket",      second:'Highlands Legacy',  third:'Sans Bruit' },
-  '17:15-0': { winner:"Nan's Choice",       second:'Lennon Grove',      third:'Fairy Park' },
-  '13:45-1': { winner:'Wellington Arch',    second:'Ike Sport',         third:'Favour And Fortune' },
-  '14:20-1': { winner:'Gold Dancer',        second:"Regent's Stroll",   third:'Salver' },
-  '14:55-1': { winner:'Storming George',    second:'Sinnatra',          third:'Baron Noir' },
-  '15:30-1': { winner:'Grey Dawning',       second:'Solness',           third:'Heart Wood' },
-  '16:05-1': { winner:'Will The Wise',      second:'Ile Atlantique',    third:'Madara' },
-  '16:40-1': { winner:'Zeus Power',         second:'Catchintsavo',      third:"Johnny's Jury" },
-  '17:15-1': { winner:'Laafi',              second:'Melon',             third:'Harry Lowes' },
-  '13:20-2': { winner:'Wade Out',           second:'Eagle Fang',        third:'Chart Topper' },
-  '13:55-2': { winner:'Bossman Jack',       second:'Soldier Reeves',    third:'Ballyfad' },
-  '14:30-2': { winner:'Mr Hope Street',     second:'Lookaway',          third:'Konfusion' },
-  '15:05-2': { winner:'Home By The Lee',    second:'Take No Chances',   third:'Honesty Policy' },
-  '16:00-2': { winner:'I Am Maximus',       second:'Iroko',             third:'Jordans' },
-  '17:00-2': { winner:'Mirabad',            second:'Salvator Mundi',    third:'Be Aware' },
-  '17:35-2': { winner:'Forthfactor',        second:'Look Me',           third:'Merlin Allen' },
-};
-
-const GN_PICKS = {
-  'Our NAP': {
-    label:'Our NAP', color:'#34d399', icon:'⭐',
-    picks: {
-      '13:45-0':'Apolon De Charnie','14:20-0':'Lulamba',
-      '14:55-0':'Jango Baie',       '15:30-0':'Barton Snow',
-      '16:05-0':'Brighterdaysahead','16:40-0':'Sans Bruit',
-      '17:15-0':'White Noise',
-      '13:45-1':'Handstands',       '14:20-1':'Jingko Blue',
-      '14:55-1':'Old Park Star',    '15:30-1':'Jonbon',
-      '16:05-1':'Madara',           '16:40-1':"Johnnys Fury",
-      '17:15-1':'Air of Entitlement',
-      '13:20-2':'Supremely West',   '13:55-2':'King Rasko Grey',
-      '14:30-2':'Ask Brewster',     '15:05-2':'Wodhooh',
-      '16:00-2':'I Am Maximus',     '17:00-2':'Kargese',
-      '17:35-2':'The Mourne Rambler',
-    }
-  },
-  'Our NB': {
-    label:'Our NB', color:'#60a5fa', icon:'🔵',
-    picks: {
-      '13:45-0':'Mange Tout',       '14:20-0':'Koktail Divin',
-      '14:55-0':'Gaelic Warrior',   '15:30-0':'Music Drive',
-      '16:05-0':'The New Lion',     '16:40-0':'Highlands Legacy',
-      '17:15-0':"Ti'mamzel",
-      '13:45-1':'Kitzbuhel',        '14:20-1':'Stay Away Fay',
-      '14:55-1':'Kopek Des Bordes', '15:30-1':'El Fabiolo',
-      '16:05-1':'Will The Wise',    '16:40-1':'No Drama This End',
-      '17:15-1':'Lively Citizen',
-      '13:20-2':'Jingko Blue',      '13:55-2':'Mystical Power',
-      '14:30-2':'Holloway Queen',   '15:05-2':'Home By The Lee',
-      '16:00-2':'Grangeclare West', '17:00-2':'Ballyburn',
-      '17:35-2':'Absolute Notions',
-    }
-  },
-  'WH Racecard': {
-    label:'WH Racecard', color:'#a78bfa', icon:'💜',
-    picks: {
-      '13:45-0':'Selma De Vary',    '14:20-0':'Koktail Divin',
-      '14:55-0':'Jango Baie',       '15:30-0':'A Moments Madness',
-      '16:05-0':'Brighterdaysahead','16:40-0':'Sans Bruit',
-      '17:15-0':"Nan's Choice",
-      '13:45-1':'Indeevar Bleu',    '14:20-1':'Salver',
-      '14:55-1':'Sober Glory',      '15:30-1':'Solness',
-      '16:05-1':'Boombawn',         '16:40-1':"Mondoui'boy",
-      '17:15-1':'Pourquoi Pas Papa',
-      '13:20-2':'Hold The Serve',   '13:55-2':'Fingle Bridge',
-      '14:30-2':'Glengouly',        '15:05-2':'Honesty Policy',
-      '16:00-2':'Captain Cody',     '17:00-2':'Kalif Du Berlais',
-      '17:35-2':'Mossy Fen Road',
-    }
-  },
-  'Mullington': {
-    label:'Mullington (WH)', color:'#fbbf24', icon:'📝',
-    picks: {
-      '13:45-0':'Minella Study',    '14:20-0':'Lulamba',
-      '14:55-0':'Jango Baie',       '15:30-0':'Gaboriot',
-      '16:05-0':'El Fabiolo',       '16:40-0':'Javert Allen',
-      '17:15-0':'Martini Majesty',
-      '13:45-1':'Favour And Fortune','14:20-1':'Miami Magic',
-      '14:55-1':'Starting Fifteen', '15:30-1':'JPR One',
-      '16:05-1':'Madara',           '16:40-1':"Johnny's Jury",
-      '17:15-1':'Wreckless Eric',
-      '13:20-2':'Harbour Lake',     '13:55-2':'Montemares',
-      '14:30-2':'Deep Cave',        '15:05-2':'Lavida Adiva',
-      '16:00-2':'Captain Cody',     '17:00-2':'Kala Conti',
-      '17:35-2':'Merry Away',
-    }
-  },
-  'WH Experts': {
-    label:'WH Experts', color:'#c4b5fd', icon:'🎙️',
-    picks: {
-      '13:45-0':'Winston Junior',   '14:20-0':'Koktail Divin',
-      '14:55-0':"Spillane's Tower",'15:30-0':'Barton Snow',
-      '16:05-0':'The New Lion',     '16:40-0':'Inthepocket',
-      '17:15-0':'Princess Day',
-      '13:45-1':'Jazzy Matty',      '14:20-1':'Salver',
-      '14:55-1':'Sober Glory',      '15:30-1':'Solness',
-      '16:05-1':'Will The Wise',    '16:40-1':"Mondou'boy",
-      '17:15-1':'Harry Lowes',
-      '13:20-2':'Supremely West',   '13:55-2':'Bossman Jack',
-      '14:30-2':'Brave Fortune',    '15:05-2':'Honesty Policy',
-      '16:00-2':'I Am Maximus',     '17:00-2':'Salvator Mundi',
-      '17:35-2':'Bass Hunter',
-    }
-  },
-  'Geraghty': {
-    label:'Barry Geraghty', color:'#fb7185', icon:'🎤',
-    picks: {
-      '13:45-0':'Mange Tout',       '14:20-0':'Lulamba',
-      '14:55-0':"Spillane's Tower",'15:30-0':'Barton Snow',
-      '16:05-0':'Brighterdaysahead','16:40-0':'Inthepocket',
-      '17:15-0':'Princess Day',
-      '13:45-1':'Trustintimes',     '14:20-1':'Gold Dancer',
-      '14:55-1':'Sober Glory',      '15:30-1':'Solness',
-      '16:05-1':'Will The Wise',    '16:40-1':'Zeus Power',
-      '17:15-1':'Harry Lowes',
-      '13:20-2':'Supremely West',   '13:55-2':'Bossman Jack',
-      '14:30-2':'Brave Fortune',    '15:05-2':'Hiddenvalley Lake',
-      '16:00-2':'I Am Maximus',     '17:00-2':'Salvator Mundi',
-      '17:35-2':'Bass Hunter',
-    }
-  },
-  'Nick Luck': {
-    label:'Nick Luck', color:'#67e8f9', icon:'🎤',
-    picks: {
-      '13:45-0':'Winston Junior',   '14:20-0':'Koktail Divin',
-      '14:55-0':"Pic d'Orhy",       '15:30-0':'Barton Snow',
-      '16:05-0':'Alexei',           '16:40-0':'Jasko Des Dames',
-      '17:15-0':'Burds Of A Feather',
-      '13:45-1':'Jazzy Matty',      '14:20-1':'Salver',
-      '14:55-1':'Baron Noir',       '15:30-1':'Gidleigh Park',
-      '16:05-1':'Madara',           '16:40-1':"Mondou'boy",
-      '17:15-1':'Harry Lowes',
-      '13:20-2':null,'13:55-2':null,'14:30-2':null,'15:05-2':null,
-      '16:00-2':null,'17:00-2':null,'17:35-2':null,
-    }
-  },
-  'J. Mangan': {
-    label:'Jane Mangan', color:'#f9a8d4', icon:'🎤',
-    picks: {
-      '13:45-0':'Minella Study',    '14:20-0':null,
-      '14:55-0':"Spillane's Tower",'15:30-0':"It's On The Line",
-      '16:05-0':'The New Lion',     '16:40-0':null,
-      '17:15-0':'Princess Day',
-      '13:45-1':null,               '14:20-1':"Regent's Stroll",
-      '14:55-1':'Sober Glory',      '15:30-1':'Heart Wood',
-      '16:05-1':'Gentleman De Mee', '16:40-1':'Dalston Lad',
-      '17:15-1':'Pourquoi Pas Papa',
-      '13:20-2':'Supremely West',   '13:55-2':'Masked Man',
-      '14:30-2':'Chance Another One','15:05-2':'Honesty Policy',
-      '16:00-2':"Monty's Star",     '17:00-2':null,
-      '17:35-2':null,
-    }
-  },
-  'Boom City': {
-    label:'Boom City', color:'#f59e0b', icon:'🐝',
-    picks: {
-      '13:45-0':'Minella Study',    '14:20-0':'Lulamba',
-      '14:55-0':'Jango Baie',       '15:30-0':'Unexpected Party',
-      '16:05-0':'Brighterdaysahead','16:40-0':'Stencil',
-      '17:15-0':'Princess Day',
-      '13:45-1':'Joyeuse',          '14:20-1':"Regent's Stroll",
-      '14:55-1':null,               '15:30-1':'Heart Wood',
-      '16:05-1':'Madara',           '16:40-1':'No Drama This End',
-      '17:15-1':'Harry Lowes',
-      '13:20-2':null,'13:55-2':null,'14:30-2':null,'15:05-2':null,
-      '16:00-2':'Grangeclare West', '17:00-2':null,'17:35-2':null,
-    }
-  },
-  'Frick': {
-    label:"Frick's Tips", color:'#e879f9', icon:'🦆',
-    picks: {
-      '13:45-0':null,'14:20-0':null,'14:55-0':null,'15:30-0':null,
-      '16:05-0':null,'16:40-0':null,'17:15-0':null,
-      '13:45-1':'Top Jimmy',        '14:20-1':'Salver',
-      '14:55-1':'Sober Glory',      '15:30-1':'Heart Wood',
-      '16:05-1':'Lisnamult Lad',    '16:40-1':null,
-      '17:15-1':'Star Of Guiting',
-      '13:20-2':'Quantum Quest',    '13:55-2':'Scorpio Rising',
-      '14:30-2':'Cruz Control',     '15:05-2':'Impose Toi',
-      '16:00-2':'I Am Maximus',     '17:00-2':'Salvator Mundi',
-      '17:35-2':null,
-    }
-  },
-  'RoadCheltenham': {
-    label:'RoadCheltenham', color:'#f97316', icon:'🏇',
-    picks: {
-      '13:45-0':'Winston Junior',   '14:20-0':'Koktail Divin',
-      '14:55-0':null,               '15:30-0':'Unexpected Party',
-      '16:05-0':null,               '16:40-0':null,
-      '17:15-0':null,
-      '13:45-1':'Hot Fuss',         '14:20-1':null,
-      '14:55-1':null,               '15:30-1':'Heart Wood',
-      '16:05-1':'Gentleman De Mee', '16:40-1':null,
-      '17:15-1':null,
-      '13:20-2':null,'13:55-2':null,'14:30-2':null,'15:05-2':null,
-      '16:00-2':'Jagwar',           '17:00-2':'Salvator Mundi',
-      '17:35-2':'Look Me',
-    }
-  },
-  'Raceolly': {
-    label:'Raceolly', color:'#34d399', icon:'🎯',
-    picks: {
-      '13:45-0':'Wolf Rayet',       '14:20-0':null,
-      '14:55-0':null,               '15:30-0':'Willewonga',
-      '16:05-0':'Golden Ace',       '16:40-0':'Palamon',
-      '17:15-0':'Kiltybo',
-      '13:45-1':'Ballykinlar',      '14:20-1':null,
-      '14:55-1':null,               '15:30-1':null,
-      '16:05-1':'Boombawn',         '16:40-1':'Shadow Paddy',
-      '17:15-1':'Last Kingdom',
-      '13:20-2':'Eagle Fang',       '13:55-2':null,
-      '14:30-2':'Josh The Boss',    '15:05-2':null,
-      '16:00-2':'Imperial Saint',   '17:00-2':null,
-      '17:35-2':'Moments Away',
-    }
-  },
-};
-
-// ════════════════════════════════════════════════════════════════
-// SCOTTISH GRAND NATIONAL 2026 DATA
-// ════════════════════════════════════════════════════════════════
-const SGN_RESULTS = {
-  '13:10-1': { winner:'Moudan',         second:'Le Nez Creux',      third:'Traprain Law' },
-  '13:45-1': { winner:'Pounding Poet',  second:'Big John Wayne',    third:'I Wish You' },
-  '14:20-1': { winner:'Dedicated Hero', second:'Captain Hugo',      third:'Ooh Betty' },
-  '14:55-1': { winner:'Game Colours',   second:'World Of Fortunes', third:'Love Of Neymore' },
-  '15:35-1': { winner:'Kap Vert',       second:'Git Maker',         third:'Kim Roque' },
-  '16:15-1': { winner:'Apache Tribe',   second:'Stride On',         third:'West Hill Verde' },
-  '16:50-1': { winner:'Skerry Hill',    second:'Old Habits',        third:'Close House' },
-};
-
-const SGN_PICKS = {
-  'Our NAP':        { picks: { '13:10-1':'Sans Bruit','13:45-1':'Big John Wayne','14:20-1':'Tutti Quanti','14:55-1':'Holly Hartingo','15:35-1':'King Of Answers','16:15-1':'Apache Tribe','16:50-1':'Brady Hartsfield' }},
-  'Our NB':         { picks: { '14:20-1':'Tellherthename','15:35-1':'Chasingouttheblues' }},
-  'Newsboy':        { picks: { '13:10-1':'Sans Bruit','13:45-1':'Big John Wayne','14:20-1':'Tutti Quanti','14:55-1':'Holly Hartingo','15:35-1':'Montregard','16:15-1':'Apache Tribe','16:50-1':'Brady Hartsfield' }},
-  'Geraghty (WH)':  { picks: { '13:10-1':'Le Nez Creux','13:45-1':'Blakey Boy','14:20-1':'Tellherthename','14:55-1':'Twistthenightaway','15:35-1':'King Of Answers','16:15-1':'West Hill Verde','16:50-1':'Brady Hartsfield' }},
-  'WH Experts':     { picks: { '15:35-1':'Promontory' }},
-  'Mullington (WH)':{ picks: { '13:10-1':'Moudan','13:45-1':'Milcree','14:20-1':'Ooh Betty','14:55-1':"Fox's Fancy",'15:35-1':'Promontory','16:15-1':'Stride On','16:50-1':'Old Habits' }},
-  'Racing Post':    { picks: { '15:35-1':'Chasingouttheblues' }},
-  'Grimshaw (HRN)': { picks: { '14:20-1':'Tutti Quanti','15:35-1':'Kim Roque' }},
-  'Nick Luck (WH)': { picks: { '13:10-1':'Le Nez Creux','13:45-1':'Kdeux Saint Fray','14:20-1':'All In You','14:55-1':'Game Colours','15:35-1':'Kim Roque' }},
-  'Raceolly':       { picks: { '13:45-1':'Ayiko','15:35-1':'Collectors Item' }},
-};
-
-// ════════════════════════════════════════════════════════════════
-// SCORING
-// ════════════════════════════════════════════════════════════════
-function scorePick(horse, results, raceKey) {
-  if (!horse) return { pts: 0, code: 'skip' };
-  const res = results[raceKey];
-  if (!res || res.winner === null) return { pts: 0, code: 'pending' };
-  const h = horse.toLowerCase().trim();
-  const w = (res.winner  || '').toLowerCase().trim();
-  const s = (res.second  || '').toLowerCase().trim();
-  const t = (res.third   || '').toLowerCase().trim();
-  if (h === w) return { pts: 3, code: 'win' };
-  if (h === s || h === t) return { pts: 1, code: 'place' };
-  return { pts: 0, code: 'miss' };
+// ── Festival status helper ─────────────────────────────────────
+function festivalStatus(startDateStr, endDateStr) {
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  const start = new Date(startDateStr);
+  const end   = new Date(endDateStr);
+  if (today > end)    return 'archive';
+  if (today >= start) return 'live';
+  return 'upcoming';
 }
 
-function scoreEvent(tipsterPicks, results) {
-  let wins = 0, places = 0, misses = 0, pts = 0, raced = 0;
-  const allKeys = Object.keys(results);
-  allKeys.forEach(k => {
-    const horse = tipsterPicks[k];
-    if (!horse) return;
-    const r = scorePick(horse, results, k);
-    raced++;
-    if (r.code === 'win')   { wins++;   pts += 3; }
-    else if (r.code === 'place') { places++; pts += 1; }
-    else if (r.code === 'miss')  { misses++; }
-  });
-  return { wins, places, misses, pts, raced };
-}
-
-// ════════════════════════════════════════════════════════════════
-// SEASON MAP — links Cheltenham key → GN key for same tipster
-// ════════════════════════════════════════════════════════════════
-const SEASON_MAP = [
-  { id:'Our NAP',       cKey:'Our NAP',        gnKey:'Our NAP',       sgnKey:'Our NAP',         label:'Our NAP',          color:'#34d399', icon:'⭐' },
-  { id:'Our NB',        cKey:'Our NB',          gnKey:'Our NB',        sgnKey:'Our NB',           label:'Our NB',           color:'#60a5fa', icon:'🔵' },
-  { id:'Mullington',    cKey:'Mullington (WH)', gnKey:'Mullington',    sgnKey:'Mullington (WH)', label:'Mullington (WH)', color:'#fbbf24', icon:'📝' },
-  { id:'WH Experts',    cKey:null,              gnKey:'WH Experts',    sgnKey:'WH Experts',       label:'WH Experts',       color:'#a3e635', icon:'🏆' },
-  { id:'Geraghty',      cKey:null,              gnKey:'Geraghty',      sgnKey:'Geraghty (WH)',    label:'Barry Geraghty',   color:'#fb7185', icon:'🎤' },
-  { id:'Nick Luck',     cKey:null,              gnKey:'Nick Luck',     sgnKey:'Nick Luck (WH)',   label:'Nick Luck',        color:'#38bdf8', icon:'🎙️' },
-  { id:'Raceolly',      cKey:null,              gnKey:'Raceolly',      sgnKey:'Raceolly',         label:'Raceolly',         color:'#f97316', icon:'📱' },
-  { id:'WH Racecard',   cKey:null,              gnKey:'WH Racecard',   sgnKey:null,               label:'WH Racecard',      color:'#a78bfa', icon:'💜' },
-  { id:'J. Mangan',     cKey:null,              gnKey:'J. Mangan',     sgnKey:null,               label:'Jane Mangan',      color:'#f9a8d4', icon:'🎤' },
-  { id:'Boom City',     cKey:null,              gnKey:'Boom City',     sgnKey:null,               label:'Boom City',        color:'#f59e0b', icon:'🐝' },
-  { id:'Frick',         cKey:null,              gnKey:'Frick',         sgnKey:null,               label:"Frick's Tips",     color:'#e879f9', icon:'🦆' },
-  { id:'RoadCheltenham',cKey:null,              gnKey:'RoadCheltenham',sgnKey:null,               label:'RoadCheltenham',   color:'#f97316', icon:'🏇' },
-  { id:'Newsboy',       cKey:null,              gnKey:null,            sgnKey:'Newsboy',          label:'Newsboy (Mirror)', color:'#f472b6', icon:'📰' },
-  { id:'Racing Post',   cKey:null,              gnKey:null,            sgnKey:'Racing Post',      label:'Racing Post',      color:'#a78bfa', icon:'🗞️' },
-  { id:'Grimshaw (HRN)',cKey:'Grimshaw (HRN)',  gnKey:null,            sgnKey:'Grimshaw (HRN)',   label:'Grimshaw (HRN)',   color:'#c084fc', icon:'📺' },
-  { id:'Playle (RP)',   cKey:'Playle (RP)',     gnKey:null,            sgnKey:null,               label:'Playle (RP)',      color:'#f472b6', icon:'📰' },
-  { id:'Kealy (RP)',    cKey:'Kealy (RP)',      gnKey:null,            sgnKey:null,               label:'Kealy (RP)',       color:'#f472b6', icon:'📰' },
-  { id:'Dineen (RP)',   cKey:'Dineen (RP)',     gnKey:null,            sgnKey:null,               label:'Dineen (RP)',      color:'#f472b6', icon:'📰' },
-  { id:'Wilson (RP)',   cKey:'Wilson (RP)',     gnKey:null,            sgnKey:null,               label:'Wilson (RP)',      color:'#f472b6', icon:'📰' },
-  { id:'Segal (RP)',    cKey:'Segal (RP)',      gnKey:null,            sgnKey:null,               label:'Segal (RP)',       color:'#c084fc', icon:'📰' },
-  { id:'Park (RP)',     cKey:'Park (RP)',       gnKey:null,            sgnKey:null,               label:'Tom Park (RP)',    color:'#6ee7b7', icon:'📰' },
-];
-
-// ════════════════════════════════════════════════════════════════
-// BUILD + RENDER
-// ════════════════════════════════════════════════════════════════
+// ── Main build ────────────────────────────────────────────────
 function build() {
-  // Score each entry
-  const scored = SEASON_MAP.map(t => {
-    const cScore   = t.cKey   ? scoreEvent(CHELT_PICKS[t.cKey].picks, CHELT_RESULTS)     : null;
-    const gnScore  = t.gnKey  ? scoreEvent(GN_PICKS[t.gnKey].picks,   GN_RESULTS)        : null;
-    const sgnScore = t.sgnKey ? scoreEvent(SGN_PICKS[t.sgnKey].picks,  SGN_RESULTS)      : null;
-    const cPts   = cScore   ? cScore.pts   : 0;
-    const gnPts  = gnScore  ? gnScore.pts  : 0;
-    const sgnPts = sgnScore ? sgnScore.pts : 0;
-    const total = cPts + gnPts + sgnPts;
-    return { ...t, cScore, gnScore, sgnScore, cPts, gnPts, sgnPts, total };
-  });
+  // Update Guineas status badge dynamically
+  updateGuineasBadge();
 
-  // Sort by total desc, then GN pts desc, then SGN pts desc
-  scored.sort((a, b) => b.total - a.total || b.gnPts - a.gnPts || b.sgnPts - a.sgnPts);
+  // Render season table
+  const scores = computeSeasonScores();
+  renderSeasonTable(scores);
 
-  // ── Season leaderboard ──
-  const maxTotal = scored[0]?.total || 1;
+  // Render per-event breakdowns
+  renderBreakdown('chelt-body', 'cKey', CHELT_PICKS, CHELT_RESULTS, '#3b82f6');
+  renderBreakdown('gn-body',   'gnKey',  GN_PICKS,   GN_RESULTS,   '#10b981');
+  renderBreakdown('sgn-body',  'sgnKey', SGN_PICKS,  SGN_RESULTS,  '#28a349');
+  renderBreakdown('guin-body', 'guinKey',GUINEAS_PICKS, GUINEAS_RESULTS, '#a78bfa');
+
+  document.getElementById('loading').style.display = 'none';
+  document.getElementById('content').style.display = '';
+}
+
+function updateGuineasBadge() {
+  const guin = FESTIVALS_2026.find(f => f.slug === 'guineas-2026');
+  if (!guin) return;
+  const status = festivalStatus(guin.dates[0], guin.dates[guin.dates.length - 1]);
+  const badge = document.getElementById('guin-badge');
+  const meta  = document.getElementById('guin-meta');
+  if (status === 'archive') {
+    badge.textContent = 'Archive';
+    badge.className   = 'ev-badge archive';
+    badge.setAttribute('aria-label', 'Status: Archive');
+    meta.textContent  = '1–3 May 2026 · Newmarket · Festival complete';
+  } else if (status === 'live') {
+    badge.textContent = 'In Progress';
+    badge.className   = 'ev-badge live';
+    badge.setAttribute('aria-label', 'Status: In progress');
+    meta.textContent  = '1–3 May 2026 · Newmarket · Day 1 complete — Days 2 & 3 pending';
+  } else {
+    badge.textContent = 'Upcoming';
+    badge.className   = 'ev-badge upcoming';
+    badge.setAttribute('aria-label', 'Status: Upcoming');
+  }
+}
+
+// ── Season leaderboard ────────────────────────────────────────
+function renderSeasonTable(scores) {
   const body = document.getElementById('season-body');
-  scored.forEach((t, i) => {
-    const rank = i + 1;
-    const events = [t.cKey ? 'Cheltenham' : null, t.gnKey ? 'GN' : null, t.sgnKey ? 'Scottish GN' : null].filter(Boolean).join(' · ');
-    const cCell = t.cScore
-      ? `<span class="score-pill score-chelt">${t.cPts} pts</span>`
-      : `<span class="score-pill score-none">—</span>`;
-    const gnCell = t.gnScore
-      ? `<span class="score-pill score-gn">${t.gnPts} pts</span>`
-      : `<span class="score-pill score-none">—</span>`;
-    const sgnCell = t.sgnScore
-      ? `<span class="score-pill score-sgn">${t.sgnPts} pts</span>`
-      : `<span class="score-pill score-none">—</span>`;
-    const rankClass = rank === 1 ? 'rank-1' : rank === 2 ? 'rank-2' : rank === 3 ? 'rank-3' : '';
+  scores.forEach((t, i) => {
+    const rank  = i + 1;
+    const rankCls = rank === 1 ? 'rank-1' : rank === 2 ? 'rank-2' : rank === 3 ? 'rank-3' : '';
+    const events  = [
+      t.cKey    ? 'Chelt'   : null,
+      t.gnKey   ? 'GN'      : null,
+      t.sgnKey  ? 'SGN'     : null,
+      t.guinKey ? 'Guineas' : null,
+    ].filter(Boolean).join(' · ');
+
+    const cCell   = t.cSc   ? `<span class="pill pill-chelt">${t.cSc.pts}pts</span>`   : `<span class="pill pill-none">—</span>`;
+    const gnCell  = t.gnSc  ? `<span class="pill pill-gn">${t.gnSc.pts}pts</span>`     : `<span class="pill pill-none">—</span>`;
+    const sgnCell = t.sgnSc ? `<span class="pill pill-sgn">${t.sgnSc.pts}pts</span>`   : `<span class="pill pill-none">—</span>`;
+    const guinCell= t.guinSc? `<span class="pill pill-guin">${t.guinSc.pts}pts</span>` : `<span class="pill pill-none">—</span>`;
+
     const tr = document.createElement('tr');
     tr.innerHTML = `
-      <td class="num"><span class="rank-badge ${rankClass}">${rank}</span></td>
+      <td class="num">
+        <span class="rank-badge ${rankCls}" aria-label="Rank ${rank}">${rank}</span>
+      </td>
       <td>
         <div class="tipster-cell">
-          <div class="tipster-icon" style="background:${t.color}22;border:1px solid ${t.color}44;">${t.icon}</div>
+          <div class="t-avatar" style="background:${t.color}1a;border:1px solid ${t.color}33;" aria-hidden="true">${t.icon}</div>
           <div>
-            <div class="tipster-name" style="color:${t.color}">${escHtml(t.label)}</div>
-            <div class="tipster-events">${events}</div>
+            <div class="t-name" style="color:${t.color}">${escHtml(t.label)}</div>
+            <div class="t-events">${escHtml(events)}</div>
           </div>
         </div>
       </td>
       <td class="num">${cCell}</td>
       <td class="num">${gnCell}</td>
       <td class="num">${sgnCell}</td>
-      <td class="num"><span class="total-pts">${t.total}</span></td>
+      <td class="num">${guinCell}</td>
+      <td class="num">
+        <span class="total-pts" aria-label="${t.total} points total">${t.total}</span>
+      </td>
     `;
     body.appendChild(tr);
   });
-
-  // ── Cheltenham breakdown ──
-  const cScored = SEASON_MAP
-    .filter(t => t.cKey)
-    .map(t => ({ ...t, sc: scoreEvent(CHELT_PICKS[t.cKey].picks, CHELT_RESULTS) }))
-    .sort((a, b) => b.sc.pts - a.sc.pts);
-  const maxC = cScored[0]?.sc.pts || 1;
-  const cBody = document.getElementById('chelt-body');
-  cScored.forEach((t, i) => {
-    const { wins, places, misses, pts } = t.sc;
-    const pct = Math.round(pts / maxC * 100);
-    const tr = document.createElement('tr');
-    tr.innerHTML = `
-      <td>${i + 1}</td>
-      <td>
-        <div class="tipster-cell">
-          <div class="tipster-icon" style="background:${t.color}22;border:1px solid ${t.color}44;">${t.icon}</div>
-          <span class="tipster-name" style="color:${t.color}">${escHtml(t.label)}</span>
-        </div>
-      </td>
-      <td class="num stat-wins">${wins}</td>
-      <td class="num stat-places">${places}</td>
-      <td class="num stat-misses">${misses}</td>
-      <td class="num" style="font-weight:700;color:var(--cream)">${pts}</td>
-      <td>
-        <div class="bar-container">
-          <div class="bar-fill" style="width:${pct}%;background:var(--blue-chelt);"></div>
-        </div>
-      </td>
-    `;
-    cBody.appendChild(tr);
-  });
-
-  // ── GN breakdown ──
-  const gnScored = SEASON_MAP
-    .filter(t => t.gnKey)
-    .map(t => ({ ...t, sc: scoreEvent(GN_PICKS[t.gnKey].picks, GN_RESULTS) }))
-    .sort((a, b) => b.sc.pts - a.sc.pts);
-  const maxGN = gnScored[0]?.sc.pts || 1;
-  const gnBody = document.getElementById('gn-body');
-  gnScored.forEach((t, i) => {
-    const { wins, places, misses, pts } = t.sc;
-    const pct = Math.round(pts / maxGN * 100);
-    const tr = document.createElement('tr');
-    tr.innerHTML = `
-      <td>${i + 1}</td>
-      <td>
-        <div class="tipster-cell">
-          <div class="tipster-icon" style="background:${t.color}22;border:1px solid ${t.color}44;">${t.icon}</div>
-          <span class="tipster-name" style="color:${t.color}">${escHtml(t.label)}</span>
-        </div>
-      </td>
-      <td class="num stat-wins">${wins}</td>
-      <td class="num stat-places">${places}</td>
-      <td class="num stat-misses">${misses}</td>
-      <td class="num" style="font-weight:700;color:var(--cream)">${pts}</td>
-      <td>
-        <div class="bar-container">
-          <div class="bar-fill" style="width:${pct}%;background:var(--green-gn);"></div>
-        </div>
-      </td>
-    `;
-    gnBody.appendChild(tr);
-  });
-
-  // ── SGN breakdown ──
-  const sgnScored = SEASON_MAP
-    .filter(t => t.sgnKey)
-    .map(t => ({ ...t, sc: scoreEvent(SGN_PICKS[t.sgnKey].picks, SGN_RESULTS) }))
-    .sort((a, b) => b.sc.pts - a.sc.pts);
-  const maxSGN = sgnScored[0]?.sc.pts || 1;
-  const sgnBody = document.getElementById('sgn-body');
-  sgnScored.forEach((t, i) => {
-    const { wins, places, misses, pts } = t.sc;
-    const pct = Math.round(pts / maxSGN * 100);
-    const tr = document.createElement('tr');
-    tr.innerHTML = `
-      <td>${i + 1}</td>
-      <td>
-        <div class="tipster-cell">
-          <div class="tipster-icon" style="background:${t.color}22;border:1px solid ${t.color}44;">${t.icon}</div>
-          <span class="tipster-name" style="color:${t.color}">${escHtml(t.label)}</span>
-        </div>
-      </td>
-      <td class="num stat-wins">${wins}</td>
-      <td class="num stat-places">${places}</td>
-      <td class="num stat-misses">${misses}</td>
-      <td class="num" style="font-weight:700;color:var(--cream)">${pts}</td>
-      <td>
-        <div class="bar-container">
-          <div class="bar-fill" style="width:${pct}%;background:var(--green-sgn);"></div>
-        </div>
-      </td>
-    `;
-    sgnBody.appendChild(tr);
-  });
-
-  document.getElementById('loading').style.display = 'none';
-  document.getElementById('content').style.display = 'block';
 }
 
-function escHtml(str) {
-  return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-}
+// ── Per-event breakdown ────────────────────────────────────────
+function renderBreakdown(bodyId, keyField, picksObj, resultsObj, barColor) {
+  const list = SEASON_MAP
+    .filter(t => t[keyField])
+    .map(t => {
+      const entry = picksObj[t[keyField]];
+      if (!entry) return null;
+      const sc = scoreEvent(entry.picks, resultsObj);
+      return { ...t, sc };
+    })
+    .filter(Boolean)
+    .sort((a, b) => b.sc.pts - a.sc.pts || b.sc.wins - a.sc.wins || b.sc.places - a.sc.places);
 
-document.addEventListener('DOMContentLoaded', build);
+  if (!list.length) return;
+
+  const maxPts = list[0].sc.pts || 1;
+  const body   = document.getElementById(bodyId);
+
+  list.forEach((t, i) => {
+    const { wins, places, misses, pts, ptsPerPick } = t.sc;
+    const pct  = Math.round(pts / maxPts * 100);
+    const tr   = document.createElement('tr');
+    tr.innerHTML = `
+      <td style="color:var(--muted);font-size:0.78rem;font-weight:500;">${i + 1}</td>
+      <td>
+        <div class="tipster-cell">
+          <div class="t-avatar" style="background:${t.color}1a;border:1px solid ${t.color}33;" aria-hidden="true">${t.icon}</div>
+          <span class="t-name" style="color:${t.color}">${escHtml(t.label)}</span>
+        </div>
+      </td>
+      <td class="num s-w" aria-label="${wins} wins">${wins}</td>
+      <td class="num s-p" aria-label="${places} placed">${places}</td>
+      <td class="num s-m" aria-label="${misses} misses">${misses}</td>
+      <td class="num" style="font-weight:700;color:var(--text)">${pts}</td>
+      <td class="num s-eff" aria-label="Efficiency: ${ptsPerPick} points per pick">${ptsPerPick}</td>
+      <td>
+        <div class="bar-wrap" aria-hidden="true">
+          <div class="bar-fill" style="width:${pct}%;background:${barColor};"></div>
+        </div>
+      </td>
+    `;
+    body.appendChild(tr);
+  });
+}
 </script>
 </body>
 </html>

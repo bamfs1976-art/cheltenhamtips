@@ -31,6 +31,12 @@
   [headers.values]
     Cache-Control = "public, max-age=300, stale-while-revalidate=60"
 
+# ── Cache: JS modules (short TTL — updated during festivals) ─
+[[headers]]
+  for = "/js/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=300, stale-while-revalidate=60"
+
 # ── Redirects ──────────────────────────────────────────────
 # Clean URL: /cheltenham-2026 → /cheltenham-2026.html
 [[redirects]]
@@ -46,6 +52,11 @@
 [[redirects]]
   from = "/cheltenham-2027"
   to   = "/cheltenham-2027.html"
+  status = 200
+
+[[redirects]]
+  from = "/season-2026"
+  to   = "/season-2026.html"
   status = 200
 
 # Future festivals — add a redirect here each time you add a new file
