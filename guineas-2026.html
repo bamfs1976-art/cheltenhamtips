@@ -638,18 +638,20 @@ const DAYS = [
 // Race schedule — key format: 'HH:MM-dayIndex'
 const RACES = {
   /* ── Friday 1 May ── */
-  '13:55-0': { name:'Qipco Nell Gwyn Stakes', grade:'Listed', dist:'7f', type:'3yo Fillies', prize:'£40,000',
-    info:'Key Classic trial for the 1000 Guineas. Seven furlongs for fillies — winner traditionally goes straight to the 1000 Guineas.' },
-  '14:30-0': { name:'Craven Stakes', grade:'G3', dist:'1m', type:'3yo', prize:'£50,000',
-    info:'The most important 2000 Guineas trial run at Newmarket itself over the Classic course. Often thrown up several Guineas winners.' },
-  '15:05-0': { name:'Free Handicap', grade:'Listed', dist:'1m', type:'3yo', prize:'£30,000',
-    info:'Rated race for three-year-olds over the Guineas course.' },
-  '15:40-0': { name:'Jockey Club Stakes', grade:'G2', dist:'1m4f', type:'4yo+', prize:'£75,000',
-    info:'Important early-season test for older stayers. Often a pointer towards the Coronation Cup.' },
-  '16:20-0': { name:'Earl of Sefton Stakes', grade:'G3', dist:'1m1f', type:'4yo+', prize:'£40,000',
-    info:'One mile and one furlong Group 3 for older horses on the first day of the festival.' },
-  '17:00-0': { name:'Newmarket Supporting Race', grade:'Hcap', dist:'6f', type:'3yo+', prize:'£12,000',
-    info:'Six-furlong handicap to close the opening day card.' },
+  '13:45-0': { name:'Darley EBF Maiden Fillies\' Stakes', grade:'Mdn', dist:'7f', type:'3yo Fillies', prize:'~£10,000',
+    info:'Seven-furlong maiden for fillies to open the Guineas Festival.' },
+  '14:20-0': { name:'JCB Newmarket Stakes', grade:'Listed', dist:'1m2f', type:'3yo', prize:'~£35,000',
+    info:'Listed race over a mile and two furlongs for the Classic generation.' },
+  '14:55-0': { name:'Betfred "The Classic Bookmaker" Handicap', grade:'Hcap', dist:'1m', type:'3yo+', prize:'~£25,000',
+    info:'Mile handicap on the Rowley Mile.' },
+  '15:30-0': { name:'Betfred Jockey Club Stakes', grade:'G2', dist:'1m4f', type:'4yo+', prize:'~£75,000',
+    info:'Group 2 for older stayers — key early-season pointer for the staying ranks.' },
+  '16:05-0': { name:'Betfred "Nifty 50" Handicap', grade:'Hcap', dist:'6f', type:'3yo+', prize:'~£25,000',
+    info:'Six-furlong handicap sprint.' },
+  '16:40-0': { name:'Pertemps Network King Charles II Stakes', grade:'Listed', dist:'7f', type:'3yo+', prize:'~£40,000',
+    info:'Seven-furlong Listed sprint to close the main Friday card.' },
+  '17:15-0': { name:'Close Brothers Fillies\' Handicap', grade:'Hcap', dist:'7f', type:'3yo+ Fillies', prize:'~£12,000',
+    info:'Fillies-only handicap over seven furlongs.' },
 
   /* ── Saturday 2 May — 2000 Guineas Day ── */
   '13:10-1': { name:'Oddschecker Ellen Chaloner Stakes', grade:'Listed', dist:'6f', type:'3yo+ Fillies & Mares', prize:'£34,026',
@@ -718,9 +720,16 @@ const TIPS = {
   },
 };
 
-// Results — to be populated after racing
+// Results
 const RESULTS = {
-  /* '13:50-1': { winner:'', second:'', third:'' }, etc. */
+  // ── Friday 1 May ──
+  '13:45-0': { winner:'Earth Shot',     second:'Velvet Vega',       third:'Wild Violet'   },
+  '14:20-0': { winner:'Ancient Egypt',  second:'My Love Is King',   third:'Archers Bay'   },
+  '14:55-0': { winner:'St Anton',       second:'Comic Hero',        third:'Fort Rock'      },
+  '15:30-0': { winner:'Santorini Star', second:'Eydon',             third:'French Master'  },
+  '16:05-0': { winner:'Billyjoh',       second:'Golden Redemption', third:'Silver Ghost'   },
+  '16:40-0': { winner:'Saber Strike',   second:'Cerro Blanco',      third:'Stellar Sunrise'},
+  '17:15-0': { winner:'Cinque Verde',   second:'Lady Kodiac',       third:'Powdering'      },
 };
 
 // Tipster picks for scorecard
@@ -749,6 +758,12 @@ const GUIN_TIPSTER_PICKS = {
   ]},
   'Raceolly': { color:'#a78bfa', icon:'📱', picks:[
     { key:'14:55-1', horse:'Miss Attitude',    type:'ew'  },
+  ]},
+  'Nick Luck (WH)': { color:'#38bdf8', icon:'🎙️', picks:[
+    { key:'14:20-0', horse:'My Love Is King',   type:'win' },
+    { key:'14:55-0', horse:'St Anton',          type:'win' },
+    { key:'15:30-0', horse:'Bay City Roller',   type:'win' },
+    { key:'16:05-0', horse:'Golden Redemption', type:'win' },
   ]},
 };
 
@@ -855,7 +870,16 @@ function renderTipsDay(dayIdx, tabEl) {
     });
 
     if (!anyTip) {
-      html += `<div class="coming-soon-box" style="flex:1"><strong>Tips Coming Soon</strong>${race.info ? escHtml(race.info) : 'Check back closer to race day.'}</div>`;
+      if (result) {
+        html += `<div class="coming-soon-box" style="flex:1;background:rgba(39,174,96,0.08);border-color:rgba(39,174,96,0.3);text-align:left">
+          <strong style="color:#4ade80;display:block;margin-bottom:6px">🏁 Result</strong>
+          <div style="color:var(--cream)">🥇 <strong>${escHtml(result.winner)}</strong></div>
+          ${result.second ? `<div style="color:var(--silver);font-size:0.78rem;margin-top:2px">🥈 ${escHtml(result.second)}</div>` : ''}
+          ${result.third  ? `<div style="color:var(--silver);font-size:0.78rem;margin-top:2px">🥉 ${escHtml(result.third)}</div>`  : ''}
+        </div>`;
+      } else {
+        html += `<div class="coming-soon-box" style="flex:1"><strong>Tips Coming Soon</strong>${race.info ? escHtml(race.info) : 'Check back closer to race day.'}</div>`;
+      }
     }
 
     html += `</div></div>`; // close race-body, race-card
