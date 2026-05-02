@@ -280,6 +280,9 @@
   .tip-nb  .tip-type      { color: #93c5fd; }
   .tip-ew  .tip-type      { color: #86efac; }
   .tip-longshot .tip-type { color: #fcd34d; }
+  .tip-wh  .tip-type      { color: #a78bfa; }
+  .tip-ew2 .tip-type      { color: #fb923c; }
+  .tip-ew3 .tip-type      { color: #38bdf8; }
 
   .coming-soon-box {
     background: rgba(37,99,235,0.08);
@@ -505,11 +508,6 @@
 
   <!-- ═══════════════════════════════════════════ TIPS ═══ -->
   <section id="panel-tips" class="panel active" aria-label="Tips">
-    <div class="info-banner">
-      <span class="icon">📅</span>
-      <span>Tips will be published daily as race day approaches. Check back from <strong>28 April</strong> for the first Guineas selections.</span>
-    </div>
-
     <div class="day-tabs" role="tablist">
       <button class="day-tab" onclick="renderTipsDay(0,this)" role="tab" aria-selected="false">Fri 1 May</button>
       <button class="day-tab active" onclick="renderTipsDay(1,this)" role="tab" aria-selected="true">Sat 2 May · 2000 Guineas</button>
@@ -687,27 +685,36 @@ const RACES = {
 const TIPS = {
   // ── Saturday 2 May ──
   '13:10-1': {
-    nap: { horse:'Flora Of Bermuda', odds:'2/1', reason:'Market leader from A M Balding, James Doyle up. Has the Group 2 form and the draw to dominate this Listed sprint.' }
+    nap: { horse:'Flora Of Bermuda', odds:'2/1',  reason:'Market leader from A M Balding, James Doyle up. Has the Group 2 form and the draw to dominate this Listed sprint.' },
+    wh:  { horse:'Celandine',        odds:'10/1', reason:'Mullington (WH) — seasonal debutante, good third to Sayidah Dariyan in a York Group 3 on her 2025 reappearance.' },
   },
   '13:45-1': {
-    nb: { horse:'Double Rush', odds:'Evens', reason:'Favourite from A M Balding, Shane Foley rides. Well-handicapped sprinter. Balding yard in strong form at this meeting.' }
+    nb:  { horse:'Double Rush',   odds:'Evens', reason:'Favourite from A M Balding, Shane Foley rides. Well-handicapped sprinter. Balding yard in strong form at this meeting.' },
+    wh:  { horse:'Invictus Gold', odds:'10/1',  reason:'Mullington (WH) — Tom Clover yard, Billy Loughnane up.' },
   },
   '14:20-1': {
-    ew: { horse:'Bullet Point', odds:'5/1', reason:'W J Haggas / Tom Marquand — a trainer-jockey combination to respect. Progressive profile over 1m1f, stall 6 suits.' }
+    ew:  { horse:'Bullet Point', odds:'5/1',  reason:'W J Haggas / Tom Marquand — a trainer-jockey combination to respect. Progressive profile over 1m1f, stall 6 suits.' },
+    wh:  { horse:'Botanical',    odds:'13/2', reason:'Mullington (WH) — K R Burke / C Lee, stall 5.' },
   },
   '14:55-1': {
-    nap: { horse:'Asfoora', odds:'9/2', reason:'Multiple Group 1 sprint winner at the highest level. Five furlongs on the Rowley Mile suits perfectly. Value at the price against a field with questions to answer.' }
+    nap: { horse:'Asfoora',      odds:'9/2',  reason:'Multiple Group 1 sprint winner at the highest level. Five furlongs on the Rowley Mile suits perfectly. Value at the price.' },
+    wh:  { horse:'JM Jungle',    odds:'10/1', reason:'Mullington (WH) — Jason Hart up, stall 4.' },
+    ew2: { horse:'Quinault',     odds:'8/1',  reason:'Grimshaw (HRN) EW — tipped at 7/1, now 8/1. Consistent sprint form, stall 6.' },
+    ew3: { horse:'Miss Attitude',odds:'31/1', reason:'Raceolly EW — big-priced each-way shot in a wide-open sprint.' },
   },
   '15:35-1': {
-    nap:      { horse:'Gstaad',     odds:'3/1',  reason:"Highest RPR in the field (119). Breeders' Cup Juvenile Turf winner. Supplemented at £30,000 showing Ballydoyle maximum confidence. Stall 7 — good draw for the Rowley Mile. Ryan Moore, the big-race jockey. The form choice." },
-    ew:       { horse:'Oxagon',     odds:'10/1', reason:"Craven winner at Newmarket — proven over the course and distance. Progressive profile with Gosden/Murphy, the best British Classic combination. Stall 10 gives the high-draw advantage. Each-way value at the price." },
-    longshot: { horse:"King's Trail", odds:'7/1', reason:"Unbeaten record and Appleby's improving second string — James Doyle in stall 13. Two wins at a mile on Kempton. High draw, powerful stable, potential for big improvement at Newmarket." }
+    nap:      { horse:'Gstaad',       odds:'3/1',  reason:"Highest RPR in the field (119). Breeders' Cup Juvenile Turf winner. Supplemented at £30,000 showing Ballydoyle maximum confidence. Stall 7 — good draw for the Rowley Mile. Ryan Moore, the big-race jockey. The form choice." },
+    ew:       { horse:'Oxagon',       odds:'10/1', reason:"Craven winner at Newmarket — proven over the course and distance. Progressive profile with Gosden/Murphy, the best British Classic combination. Stall 10 gives the high-draw advantage. Each-way value at the price." },
+    wh:       { horse:'Bow Echo',     odds:'10/3', reason:"Mullington (WH) NAP — Unbeaten in all three starts. Royal Lodge winner over this course and distance. British-trained favourite. Stall 15, Billy Loughnane." },
+    longshot: { horse:"King's Trail", odds:'7/1',  reason:"Unbeaten record and Appleby's improving second string — James Doyle in stall 13. Two wins at a mile on Kempton. High draw, powerful stable, potential for big improvement at Newmarket." },
   },
   '16:10-1': {
-    nb: { horse:'Sovereign Spell', odds:'4/1', reason:'Favourite for the three-year-old handicap. D Egan rides, good stall 5 draw.' }
+    nb:  { horse:'Sovereign Spell', odds:'4/1', reason:'Favourite for the three-year-old handicap. D Egan rides, good stall 5 draw.' },
+    wh:  { horse:'Comical Point',   odds:'6/1', reason:'Mullington (WH) — Oisin Murphy up, stall 3.' },
   },
   '16:45-1': {
-    nap: { horse:'Gamrai', odds:'2/1', reason:'Market leader with Oisin Murphy. Should have too much class for this handicap field over 1m4f.' }
+    nap: { horse:'Gamrai',          odds:'2/1', reason:'Market leader with Oisin Murphy. Should have too much class for this handicap field over 1m4f.' },
+    wh:  { horse:'Nightime Dancer', odds:'8/1', reason:'Mullington (WH) — S M Levey up, stall 2.' },
   },
 };
 
@@ -716,9 +723,33 @@ const RESULTS = {
   /* '13:50-1': { winner:'', second:'', third:'' }, etc. */
 };
 
-// Tipster picks — to be populated when tips are added
+// Tipster picks for scorecard
 const GUIN_TIPSTER_PICKS = {
-  /* e.g. 'Our NAP': { color:'#34d399', icon:'⭐', picks:[ {key:'13:50-1', horse:'',type:'nap'}, ... ] } */
+  'Our NAP': { color:'#34d399', icon:'⭐', picks:[
+    { key:'13:10-1', horse:'Flora Of Bermuda', type:'nap' },
+    { key:'13:45-1', horse:'Double Rush',      type:'nb'  },
+    { key:'14:20-1', horse:'Bullet Point',     type:'ew'  },
+    { key:'14:55-1', horse:'Asfoora',          type:'nap' },
+    { key:'15:35-1', horse:'Gstaad',           type:'nap' },
+    { key:'16:10-1', horse:'Sovereign Spell',  type:'nb'  },
+    { key:'16:45-1', horse:'Gamrai',           type:'nap' },
+  ]},
+  'Mullington (WH)': { color:'#fbbf24', icon:'📝', picks:[
+    { key:'13:10-1', horse:'Celandine',        type:'win' },
+    { key:'13:45-1', horse:'Invictus Gold',    type:'win' },
+    { key:'14:20-1', horse:'Botanical',        type:'win' },
+    { key:'14:55-1', horse:'JM Jungle',        type:'win' },
+    { key:'15:35-1', horse:'Bow Echo',         type:'nap' },
+    { key:'16:10-1', horse:'Comical Point',    type:'win' },
+    { key:'16:45-1', horse:'Nightime Dancer',  type:'win' },
+  ]},
+  'Grimshaw (HRN)': { color:'#f97316', icon:'📰', picks:[
+    { key:'14:55-1', horse:'Quinault',         type:'ew'  },
+    { key:'15:35-1', horse:'Into The Sky',     type:'ew'  },
+  ]},
+  'Raceolly': { color:'#a78bfa', icon:'📱', picks:[
+    { key:'14:55-1', horse:'Miss Attitude',    type:'ew'  },
+  ]},
 };
 
 /* ── COUNTDOWN ──────────────────────────────────────────────── */
@@ -796,8 +827,8 @@ function renderTipsDay(dayIdx, tabEl) {
       </div>
       <div class="race-body">`;
 
-    const tipKeys = ['nap','nb','ew','longshot'];
-    const tipLabels = { nap:'⭐ NAP', nb:'🔵 NB', ew:'🟢 E/W', longshot:'💛 Longshot' };
+    const tipKeys = ['nap','nb','ew','wh','ew2','ew3','longshot'];
+    const tipLabels = { nap:'⭐ NAP', nb:'🔵 NB', ew:'🟢 E/W', wh:'🟣 WH Pick', ew2:'🟠 E/W', ew3:'🔷 E/W', longshot:'💛 Longshot' };
     let anyTip = false;
     tipKeys.forEach(t => {
       if (!tips[t]) return;
