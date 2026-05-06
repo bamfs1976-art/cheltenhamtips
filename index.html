@@ -718,12 +718,13 @@ footer {
       </div>
       <div class="fest-card-footer"><span class="fest-venue">📍 Newmarket</span><span class="fest-cta">View tips</span></div>
     </a>
-    <div class="fest-card theme-amber tbc">
-      <div class="fest-card-body"><div class="fest-card-top"><span class="fest-icon">⭕</span><div class="fest-badges"><span class="status-badge status-tbc">Coming Soon</span><span class="type-badge type-flat">Flat</span></div></div>
+    <a href="chester-2026.html" class="fest-card theme-amber">
+      <div class="fest-card-body"><div class="fest-card-top"><span class="fest-icon">🟡</span><div class="fest-badges"><span class="status-badge status-live">🔴 Live</span><span class="type-badge type-flat">Flat</span></div></div>
         <div class="fest-name">Chester May Festival 2026</div><div class="fest-dates">6–8 May 2026 · Chester</div>
-        <div class="fest-desc">Three days at Chester's tight circular track. Chester Cup the headline race.</div></div>
-      <div class="fest-card-footer"><span class="fest-venue">📍 Chester</span><span class="fest-cta" style="color:var(--muted)">Tips coming soon</span></div>
-    </div>
+        <div class="fest-desc">Three days at the Roodee, Britain's tightest track. Nap, NB and Longshot for every race — Chester Cup the headline.</div>
+        <div class="fest-meta"><span class="fest-race-count">🏁 21 races</span></div></div>
+      <div class="fest-card-footer"><span class="fest-venue">📍 Chester</span><span class="fest-cta">View tips</span></div>
+    </a>
     <div class="fest-card theme-violet tbc">
       <div class="fest-card-body"><div class="fest-card-top"><span class="fest-icon">⚔️</span><div class="fest-badges"><span class="status-badge status-tbc">Coming Soon</span><span class="type-badge type-flat">Flat</span></div></div>
         <div class="fest-name">Dante Festival 2026</div><div class="fest-dates">13–15 May 2026 · York</div>
@@ -960,10 +961,10 @@ function initCountdown() {
     return;
   }
 
-  // Next upcoming festival after Guineas = Chester 6 May
+  // Next upcoming festival after Chester = Dante 13 May
   // We hard-code additional upcoming festivals beyond those in FESTIVALS_2026
   const upcoming2026 = [
-    { name: 'Chester May Festival', date: '2026-05-06', url: 'index.html' },
+    { name: 'Chester May Festival', date: '2026-05-06', url: 'chester-2026.html' },
     { name: 'Dante Festival',        date: '2026-05-13', url: 'index.html' },
     { name: 'Derby Festival',        date: '2026-06-05', url: 'index.html' },
     { name: 'Royal Ascot',           date: '2026-06-16', url: 'index.html' },
