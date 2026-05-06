@@ -271,7 +271,7 @@
   .src-big    { background: rgba(239,68,68,0.18);  border: 1px solid rgba(239,68,68,0.5);  color: #fca5a5; }
 
   /* Tipster dissent row — shown below the 3 main picks where a tipster's
-     selection differs from Claude's NAP/NB/LONG */
+     selection differs from Claude's NAP/NB/LONG. Colour key per source. */
   .tipster-extra-row {
     display: grid;
     grid-template-columns: 56px 1fr auto;
@@ -281,7 +281,12 @@
     align-items: start;
     background: rgba(20,184,166,0.04);
   }
-  .tipster-extra-row .tip-tag { color: #5eead4; }
+  .tipster-extra-row.source-nl { background: rgba(20,184,166,0.04); }
+  .tipster-extra-row.source-nl .tip-tag { color: #5eead4; }
+  .tipster-extra-row.source-sm { background: rgba(22,163,74,0.05); }
+  .tipster-extra-row.source-sm .tip-tag { color: var(--green-lt); }
+  .tipster-extra-row.source-bg { background: rgba(234,88,12,0.05); }
+  .tipster-extra-row.source-bg .tip-tag { color: #fdba74; }
   .tipster-extra-row .tip-horse { font-size: 0.95rem; }
 
   .tip-meta-row {
@@ -719,19 +724,88 @@
 
   </section>
 
-  <!-- ═══════════════ DAY 2 (Thu 7 May) ═══════════════ -->
+  <!-- ═══════════════ DAY 2 (Thu 7 May, Ladies Day) ═══════════════ -->
   <section id="day-1" class="panel" aria-label="Day 2 tips">
 
     <div class="page-title-bar">
       <h2>chester-day2-tips · Thursday 7 May 2026 · Ladies Day</h2>
-      <div class="subtitle">7 races · Ormonde Stakes (G3, 15:05) · Dee Stakes (Listed, 14:35)</div>
+      <div class="subtitle">7 races · 4-pick Lucky 15 · Mullington (WH) 7-of-7 · 6 crossover signals</div>
     </div>
 
     <div id="day-1-races"></div>
 
-    <div class="placeholder-block">
-      <h3>Day 2 picks confirm Wed evening</h3>
-      <p>Mullington's WH column, Grimshaw's HRN tips and Best-Odds longshots for the Ormonde Stakes (G3, £140k), the Dee Stakes (Listed) and the supporting card publish overnight. Crossover signals computed once all sources are in.</p>
+    <!-- LUCKY 15 -->
+    <div class="panel-block l15">
+      <div class="panel-head">Lucky 15 (50p lines = £7.50)</div>
+      <div class="panel-body">
+        <div class="l15-row">
+          <span class="l15-pick">Roman Dragon</span><span class="l15-tag">| R1 5/2</span>
+          <span class="l15-pick">Mcmurray</span><span class="l15-tag">| R5 11/4</span>
+          <span class="l15-pick">Lets Dream</span><span class="l15-tag">| R6 5/1</span>
+          <span class="l15-pick">Galilean Quality</span><span class="l15-tag">| R7 5/1</span>
+        </div>
+        <div class="l15-totals">
+          <span>21 bets × £1 = <strong>£21.00</strong> (All 50p EW)</span>
+          <span>Total outlay: <strong>£28.50</strong> · Tips + Lucky 15</span>
+        </div>
+        <p style="font-size:0.74rem;color:var(--silver);margin-top:6px;line-height:1.45">Bankers below evens are kept out of the L15 per the engine: <strong>R3 Constitution River 5/6</strong> (Ballydoyle/Moore) and <strong>R4 Jan Brueghel 5/6</strong> (Ballydoyle/Moore) are NAP picks but not L15-eligible. Mythical Bay 9/4 (R7) loses out to Galilean Quality on value.</p>
+      </div>
+    </div>
+
+    <!-- EXTERNAL TIPSTERS -->
+    <div class="panel-block tipsters">
+      <div class="panel-head blue">External tipster picks</div>
+      <div class="panel-body">
+
+        <div class="tipster-block">
+          <div class="tipster-head">
+            <div class="tipster-icon icon-sm">SM</div>
+            <span class="tipster-name">Steve Mullington, William Hill</span>
+            <span class="tipster-count">(7 tips)</span>
+          </div>
+          <div class="tipster-picks">
+            <span class="label">R1</span> <span class="horse">Vintage Clarets</span> (E/W) ·
+            <span class="label">R2</span> <span class="horse">Koodini</span> ·
+            <span class="label">R3</span> <span class="horse">Golden Story</span> (NAP) ·
+            <span class="label">R4</span> <span class="horse">Al Qareem</span> ·
+            <span class="label">R5</span> <span class="horse">King Of Thunder</span> ·
+            <span class="label">R6</span> <span class="horse">Hamadhan</span> ·
+            <span class="label">R7</span> <span class="horse">Galilean Quality</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- CROSSOVER SIGNALS -->
+    <div class="panel-block crossover">
+      <div class="panel-head blue">Crossover signals (2+ sources agree)</div>
+      <div class="panel-body">
+        <ul class="crossover-list">
+          <li><span class="cx-horse">Galilean Quality</span> <span class="cx-race">R7</span> <span class="cx-odds">5/1</span> <span class="cx-tag">Claude NAP + Mullington · D winner</span></li>
+          <li><span class="cx-horse">Golden Story</span> <span class="cx-race">R3</span> <span class="cx-odds">10/1</span> <span class="cx-tag">Claude LONG + Mullington NAP (value angle)</span></li>
+          <li><span class="cx-horse">Al Qareem</span> <span class="cx-race">R4</span> <span class="cx-odds">10/1</span> <span class="cx-tag">Claude NB + Mullington · CD winner, won last</span></li>
+          <li><span class="cx-horse">King Of Thunder</span> <span class="cx-race">R5</span> <span class="cx-odds">8/1</span> <span class="cx-tag">Claude NB + Mullington · draw 4, H.Palmer</span></li>
+          <li><span class="cx-horse">Hamadhan</span> <span class="cx-race">R6</span> <span class="cx-odds">11/1</span> <span class="cx-tag">Claude LONG + Mullington · recent 3rd off break</span></li>
+          <li><span class="cx-horse">Koodini</span> <span class="cx-race">R2</span> <span class="cx-odds">15/2</span> <span class="cx-tag">Claude NB + Mullington · H.Palmer debutante draw 2</span></li>
+        </ul>
+        <p style="margin-top:10px;font-size:0.78rem;color:var(--silver)"><strong style="color:var(--green-lt)">Mullington dissents on R1 only:</strong> <strong>Vintage Clarets EW 20/1</strong> (CD, draw 11). His angle is purely value — "no way should be a 40/1 shot in a Chester handicap" — shown as a green strip beneath R1's main picks.</p>
+      </div>
+    </div>
+
+    <!-- KEY SIGNALS -->
+    <div class="panel-block signals">
+      <div class="panel-head">Key signals</div>
+      <div class="panel-body">
+        <ul class="signals-list">
+          <li><strong>Mullington alignment holds at 6-of-7.</strong> Only R1 Vintage Clarets is a Mullington-only call. Five Claude picks plus the R7 NAP merge with his column.</li>
+          <li><strong>Two Ballydoyle bankers below evens.</strong> R3 Constitution River 5/6 and R4 Jan Brueghel 5/6 — Moore on both. Both are NAPs on form but neither qualifies for the Lucky 15. Singles only on the win, or fold them into a double.</li>
+          <li><strong>Andrew Balding × Oisin Murphy fires four.</strong> Factual (R5), Jupiter Ammon (R6), Mythical Bay (R7) and Mount Atlas (R4). The track combination — worth tracking even when not the top pick.</li>
+          <li><strong>Hugo Palmer (local) saddles five.</strong> Roman Dragon NAP R1, Stratusnine R1, Dubai Bling R1, Koodini NB R2, Donegal Rose R2, Im Just Ken R5, Seagolazo R6, Be The Standard LONG R7, plus King Of Thunder NB R5 — real Roodee specialist firepower.</li>
+          <li><strong>K.R. Burke's 3yo handicappers go close at festival meetings.</strong> Three Burke runners on the card: Strength of Spirit R5 (CD), Golden Story R3 (Mullington NAP, Claude LONG), Galilean Quality R7 (Claude NAP, D winner, won last, 9-0 weight) — the R7 angle is the strongest of the three.</li>
+          <li><strong>Vintage Clarets R1 is the dissent angle.</strong> Mullington flags 20/1 as a value-priced CD profile — high draw 11 keeps him EW only, but his angle is purely the price misalignment.</li>
+        </ul>
+      </div>
     </div>
 
   </section>
@@ -865,15 +939,69 @@ const DAY1_RACES = [
   },
 ];
 
-// Day 2 / Day 3 race shells — confirmed times + races, tips TBC
+// Day 2 — Thu 7 May, Ladies Day (race times + tips confirmed from
+// Sky Bet declarations and Steve Mullington's WH Day-2 column)
 const DAY2_RACES = [
-  { n:1, time:'13:30', title:'R1 13:30 Boodles Maiden', meta:'5f · 2yo' },
-  { n:2, time:'14:05', title:'R2 14:05 Boodles Handicap', meta:'7½f · 14 rnrs' },
-  { n:3, time:'14:35', title:'R3 14:35 Boodles Raindance Dee Stakes (Listed)', meta:'1m2f70y · 3yo C&G · 6 rnrs', headline:true },
-  { n:4, time:'15:05', title:'R4 15:05 Ladbrokes Ormonde Stakes (G3)', meta:'1m5f84y · 4yo+ · 8 rnrs · £140k' },
-  { n:5, time:'15:40', title:'R5 15:40 Xenon Workplace Handicap', meta:'7½f · 3yo only' },
-  { n:6, time:'16:15', title:'R6 16:15 Boodles Ladies Day Handicap', meta:'1m4½f · 4yo+' },
-  { n:7, time:'16:50', title:'R7 16:50 Boodles Stayers\' Handicap', meta:'2m2f75y · 4yo+ · Cup pointer' },
+  {
+    n:1, time:'13:30', title:'R1 13:30 CAA Stellar Handicap', meta:'5f | 13 rnrs | C2',
+    tips:[
+      { tag:'NAP',  horse:'Roman Dragon',   sources:['CD'],         draw:3,  jockey:'O.Murphy',    trainer:'H.Palmer',          form:'602-05870',  age:'7yo', wt:'9-7',  odds:'5/2',  place:'1/5 4pl' },
+      { tag:'NB',   horse:'Seven Questions',sources:['D'],          draw:1,  jockey:'T.Marquand',  trainer:'R.Cowell',          form:'460700-36',  age:'5yo', wt:'9-1',  odds:'11/2', place:'' },
+      { tag:'LONG', horse:'Dapper Valley',  sources:['CD'],         draw:9,  jockey:'C.Howarth(3)',trainer:'J.Owen',            form:'18-870311',  age:'5yo', wt:'9-2',  odds:'15/2', place:'' },
+    ],
+    tipsterRows:[
+      { code:'SM EW', tipster:'Mullington (WH)', horse:'Vintage Clarets', label:'SM EW', odds:'20/1',
+        note:'CD winner · "no way should be a 40/1 shot in a Chester handicap" · draw 11 high but value angle' },
+    ],
+  },
+  {
+    n:2, time:'14:05', title:'R2 14:05 British Stallion Studs EBF Maiden Stakes', meta:'6f | 11 rnrs | C2',
+    tips:[
+      { tag:'NAP',  horse:'Caturra Lights',                          draw:6,  jockey:'M.P.Sheehy',  trainer:'A.Keatley',         form:'3',          age:'2yo', wt:'9-7',  odds:'11/4', place:'1/5 4pl' },
+      { tag:'NB',   horse:'Koodini',         sources:['SM','2x'],    draw:2,  jockey:'J.Watson',    trainer:'H.Palmer',          form:'-',          age:'2yo', wt:'9-7',  odds:'15/2', place:'' },
+      { tag:'LONG', horse:'Furturra',                                 draw:4,  jockey:'D.Fentiman',  trainer:'Tim Easterby',      form:'64',         age:'2yo', wt:'9-7',  odds:'18/1', place:'' },
+    ],
+  },
+  {
+    n:3, time:'14:35', title:'R3 14:35 Boodles Raindance Dee Stakes (Listed)', meta:'1m2f | 6 rnrs | C1', headline:true,
+    tips:[
+      { tag:'NAP',  horse:'Morshdi',                                  draw:1,  jockey:'T.Marquand',  trainer:'W.Haggas',          form:'21-1',       age:'3yo', wt:'9-5', odds:'11/4', place:'1/4 2pl' },
+      { tag:'NB',   horse:'Constitution River',                       draw:4,  jockey:'R.Moore',     trainer:"A.O'Brien",         form:'211-',       age:'3yo', wt:'9-2', odds:'5/6',  place:'(banker — below evens)' },
+      { tag:'LONG', horse:'Golden Story',    sources:['SM NAP','2x'], draw:5,  jockey:'C.Lee',       trainer:'K.R.Burke',         form:'1-',         age:'3yo', wt:'9-2', odds:'10/1', place:'1/4 2pl' },
+    ],
+  },
+  {
+    n:4, time:'15:05', title:'R4 15:05 Ladbrokes Ormonde Stakes (Grp 3)', meta:'1m5f | 8 rnrs | C1',
+    tips:[
+      { tag:'NAP',  horse:'Jan Brueghel',                             draw:4,  jockey:'R.Moore',     trainer:"A.O'Brien",         form:'1111/214-', age:'5yo', wt:'9-2', odds:'5/6',  place:'(banker — below evens)' },
+      { tag:'NB',   horse:'Al Qareem',       sources:['SM','CD','2x'],draw:8,  jockey:'C.Lee',       trainer:'K.R.Burke',         form:'2114313-1', age:'7yo', wt:'9-5', odds:'10/1', place:'1/5 3pl' },
+      { tag:'LONG', horse:'Mount Atlas',                              draw:7,  jockey:'O.Murphy',    trainer:'A.Balding',         form:'4551924-2', age:'5yo', wt:'9-2', odds:'28/1', place:'1/5 3pl' },
+    ],
+  },
+  {
+    n:5, time:'15:40', title:'R5 15:40 Xenon Workplace Handicap', meta:'1m | 14 rnrs | C2',
+    tips:[
+      { tag:'NAP',  horse:'Mcmurray',        sources:['D'],          draw:5,  jockey:'B.Loughnane', trainer:'G.Boughey',         form:'62111-',     age:'3yo', wt:'9-1', odds:'11/4', place:'1/5 5pl' },
+      { tag:'NB',   horse:'King Of Thunder', sources:['SM','2x'],    draw:4,  jockey:'R.Dawson',    trainer:'H.Palmer',          form:'4601-',     age:'3yo', wt:'8-5', odds:'8/1',  place:'1/5 5pl' },
+      { tag:'LONG', horse:'Caballo Grande',  sources:['D'],          draw:1,  jockey:'H.Crouch',    trainer:'M.Bell',            form:'31-10',     age:'3yo', wt:'9-6', odds:'25/1', place:'1/5 5pl' },
+    ],
+  },
+  {
+    n:6, time:'16:10', title:'R6 16:10 Halliwell Jones Handicap', meta:'1m2f | 14 rnrs | C3',
+    tips:[
+      { tag:'NAP',  horse:'Lets Dream',      sources:['CD'],         draw:2,  jockey:'H.Crouch',    trainer:'M.Bell',            form:'3/1782381-',age:'5yo', wt:'9-8', odds:'5/1',  place:'1/5 5pl' },
+      { tag:'NB',   horse:'Jupiter Ammon',                            draw:4,  jockey:'O.Murphy',    trainer:'A.Balding',         form:'226225-34', age:'4yo', wt:'9-1', odds:'7/2',  place:'' },
+      { tag:'LONG', horse:'Hamadhan',        sources:['SM','2x'],    draw:7,  jockey:'D.Keenan',    trainer:'J.Candlish',        form:'9/663-',    age:'4yo', wt:'9-2', odds:'11/1', place:'1/5 5pl' },
+    ],
+  },
+  {
+    n:7, time:'16:45', title:'R7 16:45 Chester Handicap', meta:'1m4f | 9 rnrs | C3',
+    tips:[
+      { tag:'NAP',  horse:'Galilean Quality',sources:['SM','D','2x'],draw:5,  jockey:'C.Lee',       trainer:'K.R.Burke',         form:'641-1',     age:'3yo', wt:'9-0', odds:'5/1',  place:'1/5 3pl' },
+      { tag:'NB',   horse:'Mythical Bay',                             draw:6,  jockey:'O.Murphy',    trainer:'A.Balding',         form:'472-1',     age:'3yo', wt:'8-10',odds:'9/4',  place:'' },
+      { tag:'LONG', horse:'Be The Standard',                          draw:2,  jockey:'J.Watson',    trainer:'H.Palmer',          form:'3214-',     age:'3yo', wt:'9-1', odds:'11/1', place:'1/5 3pl' },
+    ],
+  },
 ];
 
 const DAY3_RACES = [
@@ -943,9 +1071,15 @@ function renderRichRace(race) {
   });
 
   // Tipster dissent rows — extra picks from tipsters whose selection differs
-  // from Claude's NAP/NB/LONG. Shown on a teal-tinted strip beneath the main picks.
+  // from Claude's NAP/NB/LONG. Strip colour follows the source code.
   (race.tipsterRows || []).forEach(tr => {
-    html += `<div class="tipster-extra-row">
+    const sourceClass = (tr.code || '').toLowerCase().includes('sm') ? 'source-sm'
+      : (tr.code || '').toLowerCase().includes('bg') ? 'source-bg'
+      : 'source-nl';
+    const tipsterColour = sourceClass === 'source-sm' ? 'var(--green-lt)'
+      : sourceClass === 'source-bg' ? '#fdba74'
+      : '#5eead4';
+    html += `<div class="tipster-extra-row ${sourceClass}">
       <div class="tip-tag">${escHtml(tr.code)}</div>
       <div class="tip-body">
         <div class="tip-horse-row">
@@ -953,12 +1087,12 @@ function renderRichRace(race) {
           ${tr.label ? `<span class="tip-source ${srcBadgeClass(tr.label)}">${escHtml(tr.label)}</span>` : ''}
         </div>
         <div class="tip-meta-row">
-          <span class="tip-detail" style="color:#5eead4">${escHtml(tr.tipster)}</span>
+          <span class="tip-detail" style="color:${tipsterColour}">${escHtml(tr.tipster)}</span>
           ${tr.note ? `<span class="tip-detail">· ${escHtml(tr.note)}</span>` : ''}
         </div>
       </div>
       <div class="tip-odds-cell">
-        <div class="tip-odds" style="color:#5eead4">${escHtml(tr.odds || '')}</div>
+        <div class="tip-odds" style="color:${tipsterColour}">${escHtml(tr.odds || '')}</div>
       </div>
     </div>`;
   });
@@ -993,7 +1127,7 @@ function renderDay1() {
 }
 
 function renderDay2() {
-  document.getElementById('day-1-races').innerHTML = DAY2_RACES.map(renderShellRace).join('');
+  document.getElementById('day-1-races').innerHTML = DAY2_RACES.map(renderRichRace).join('');
 }
 
 function renderDay3() {
