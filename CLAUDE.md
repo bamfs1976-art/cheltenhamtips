@@ -105,10 +105,10 @@ When the user provides external tipster picks:
 | SM | Steve Mullington (William Hill) | green |
 | BG | Barry Geraghty (William Hill) | green |
 | BG | Billy Grimshaw (HRN) | orange |
+| NL | Nick Luck (William Hill ITV ambassador) | teal (#5eead4) |
 | HRN | horseracing.net main tips | blue |
 | RO | Raceolly | purple |
 | HRN BIG / BIG | HRN Biggest Priced Naps | red |
-| NL | Nick Luck | as needed |
 
 New tipsters: assign a 2-3 letter code and a distinct badge colour. Keep
 the system extensible.

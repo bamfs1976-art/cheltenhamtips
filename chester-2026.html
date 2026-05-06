@@ -263,9 +263,26 @@
   .src-sm-ew  { background: rgba(22,163,74,0.18); border: 1px solid rgba(22,163,74,0.4); color: var(--green-lt); }
   .src-sm-nap { background: rgba(22,163,74,0.18); border: 1px solid rgba(22,163,74,0.4); color: var(--green-lt); }
   .src-bg     { background: rgba(234,88,12,0.18);  border: 1px solid rgba(234,88,12,0.45); color: #fdba74; }
+  .src-nl     { background: rgba(20,184,166,0.18); border: 1px solid rgba(20,184,166,0.5);  color: #5eead4; }
+  .src-nl-ew  { background: rgba(20,184,166,0.18); border: 1px solid rgba(20,184,166,0.5);  color: #5eead4; }
   .src-2x     { background: rgba(202,138,4,0.18);  border: 1px solid rgba(202,138,4,0.5);  color: var(--gold-lt); }
+  .src-3x     { background: rgba(202,138,4,0.28);  border: 1px solid rgba(202,138,4,0.7);  color: var(--gold); font-weight: 800; }
   .src-cd     { background: rgba(96,165,250,0.18); border: 1px solid rgba(96,165,250,0.45); color: var(--blue-l); }
   .src-big    { background: rgba(239,68,68,0.18);  border: 1px solid rgba(239,68,68,0.5);  color: #fca5a5; }
+
+  /* Tipster dissent row — shown below the 3 main picks where a tipster's
+     selection differs from Claude's NAP/NB/LONG */
+  .tipster-extra-row {
+    display: grid;
+    grid-template-columns: 56px 1fr auto;
+    gap: 10px;
+    padding: 10px 14px;
+    border-top: 1px dashed rgba(255,255,255,0.08);
+    align-items: start;
+    background: rgba(20,184,166,0.04);
+  }
+  .tipster-extra-row .tip-tag { color: #5eead4; }
+  .tipster-extra-row .tip-horse { font-size: 0.95rem; }
 
   .tip-meta-row {
     display: flex;
@@ -388,6 +405,7 @@
   }
   .icon-sm  { background: rgba(22,163,74,0.18); border: 1px solid rgba(22,163,74,0.45); color: var(--green-lt); }
   .icon-bg  { background: rgba(234,88,12,0.18); border: 1px solid rgba(234,88,12,0.5);  color: #fdba74; }
+  .icon-nl  { background: rgba(20,184,166,0.18); border: 1px solid rgba(20,184,166,0.55); color: #5eead4; }
   .icon-big { background: rgba(239,68,68,0.18); border: 1px solid rgba(239,68,68,0.55); color: #fca5a5; }
 
   .tipster-name { font-weight: 700; color: var(--cream); }
@@ -574,7 +592,7 @@
 
     <div class="page-title-bar">
       <h2>chester-day1-tips · Wednesday 6 May 2026</h2>
-      <div class="subtitle">7 races · 4-pick Lucky 15 · 9 crossover signals</div>
+      <div class="subtitle">7 races · 4-pick Lucky 15 · 4 sources · 11 crossover signals</div>
     </div>
 
     <div id="day-0-races"></div>
@@ -632,6 +650,21 @@
 
         <div class="tipster-block">
           <div class="tipster-head">
+            <div class="tipster-icon icon-nl">NL</div>
+            <span class="tipster-name">Nick Luck, William Hill</span>
+            <span class="tipster-count">(5 ITV tips · R1–R5)</span>
+          </div>
+          <div class="tipster-picks">
+            <span class="label">R1</span> <span class="horse">Wait Geordie</span> ·
+            <span class="label">R2</span> <span class="horse">Supido</span> ·
+            <span class="label">R3</span> <span class="horse">Sugar Island</span> ·
+            <span class="label">R4</span> <span class="horse">Proposition</span> ·
+            <span class="label">R5</span> <span class="horse">Star Material</span> (EW)
+          </div>
+        </div>
+
+        <div class="tipster-block">
+          <div class="tipster-head">
             <div class="tipster-icon icon-big">BIG</div>
             <span class="tipster-name">HRN Biggest Priced Naps</span>
             <span class="tipster-count">(4 Chester)</span>
@@ -652,16 +685,18 @@
       <div class="panel-head blue">Crossover signals (2+ sources agree)</div>
       <div class="panel-body">
         <ul class="crossover-list">
+          <li><span class="cx-horse">Wait Geordie</span> <span class="cx-race">R1</span> <span class="cx-odds">6/4</span> <span class="cx-tag" style="color:var(--gold);font-weight:700">3-way: Claude NB + Grimshaw + Nick Luck</span></li>
           <li><span class="cx-horse">Adonius</span> <span class="cx-race">R1</span> <span class="cx-odds">9/2</span> <span class="cx-tag">Claude NAP + Mullington NAP</span></li>
-          <li><span class="cx-horse">Wait Geordie</span> <span class="cx-race">R1</span> <span class="cx-odds">6/4</span> <span class="cx-tag">Claude NB + Grimshaw</span></li>
           <li><span class="cx-horse">Partisan Hero</span> <span class="cx-race">R2</span> <span class="cx-odds">10/3</span> <span class="cx-tag">Claude NAP + Mullington EW</span></li>
           <li><span class="cx-horse">Im The One</span> <span class="cx-race">R3</span> <span class="cx-odds">4/5</span> <span class="cx-tag">Claude NAP + Mullington</span></li>
+          <li><span class="cx-horse">Sugar Island</span> <span class="cx-race">R3</span> <span class="cx-odds">15/2</span> <span class="cx-tag">Claude LONG + Nick Luck (top pick)</span></li>
           <li><span class="cx-horse">Benvenuto Cellini</span> <span class="cx-race">R4</span> <span class="cx-odds">2/5</span> <span class="cx-tag">Claude NAP + Mullington</span></li>
           <li><span class="cx-horse">Del Maro</span> <span class="cx-race">R4</span> <span class="cx-odds">9/2</span> <span class="cx-tag">Claude NB + Grimshaw</span></li>
           <li><span class="cx-horse">Rubys Angel</span> <span class="cx-race">R5</span> <span class="cx-odds">5/1</span> <span class="cx-tag">Claude NAP + Mullington</span></li>
           <li><span class="cx-horse">Norman Invasion</span> <span class="cx-race">R6</span> <span class="cx-odds">6/1</span> <span class="cx-tag">Claude NAP + Mullington</span></li>
           <li><span class="cx-horse">Pietro</span> <span class="cx-race">R7</span> <span class="cx-odds">11/2</span> <span class="cx-tag">Claude NAP + Mullington EW</span></li>
         </ul>
+        <p style="margin-top:10px;font-size:0.78rem;color:var(--silver)"><strong style="color:#5eead4">Nick Luck dissents:</strong> R2 Supido (vs Partisan Hero), R4 Proposition (vs Benvenuto Cellini), R5 Star Material EW (vs Temple Of Athena). All shown as teal rows beneath the relevant race card.</p>
       </div>
     </div>
 
@@ -670,8 +705,10 @@
       <div class="panel-head">Key signals</div>
       <div class="panel-body">
         <ul class="signals-list">
+          <li><strong>R1 Wait Geordie is a 3-way crossover</strong> — Claude NB, Grimshaw and Nick Luck all on. Strongest signal of the card. Luck explicitly notes "the receipt of the penalty may well tilt the scales in his favour" over Adonius.</li>
           <li><strong>Draw is king at Chester.</strong> NAPs in R1 (draw 1), R2 (draw 1), R5 (draw 1) and R6 (draw 2) all have low stalls. This is the single biggest edge on this card.</li>
           <li><strong>Mullington alignment is strong.</strong> 7 of 7 Mullington picks match a Claude selection. Highest crossover rate of any card so far.</li>
+          <li><strong>Nick Luck takes a contrarian line on the headline races.</strong> Backs O'Brien second-strings — Sugar Island over I'm The One in the Cheshire Oaks, and Proposition over Benvenuto Cellini in the Vase ("Frankel half-brother to Magical, cheekpieces 1st time"). Worth covering with EW on Sugar Island.</li>
           <li><strong>Oisin Murphy rides 4 times</strong> — Wait Geordie (R1), Snow Master (R2), Dance In The Storm (R7) plus a spare ride. Track specialist at Chester.</li>
           <li><strong>Ryan Moore rides Amelia Earhart (R3) and Benvenuto Cellini (R4)</strong> — two O'Brien Group runners back to back.</li>
           <li><strong>Three short-priced bankers in R3 (4/5), R4 (2/5) and R6 (11/10).</strong> These compress returns. The Lucky 15 avoids all three, focusing on value NAPs.</li>
@@ -760,7 +797,7 @@ const DAY1_RACES = [
     n:1, time:'13:30', title:'R1 13:30 Lily Agnes EBF Cond Stks', meta:'5f | 7 rnrs | C2',
     tips:[
       { tag:'NAP',  horse:'Adonius',      sources:['SM NAP','2x'], draw:1, jockey:'K.Fraser',  trainer:'R.Menzies', form:'11',         age:'2yo', wt:'9-9',  odds:'9/2',   place:'1/4 2pl' },
-      { tag:'NB',   horse:'Wait Geordie', sources:['BG','2x'],     draw:3, jockey:'O.Murphy',  trainer:'H.Palmer',  form:'1',          age:'2yo', wt:'9-4',  odds:'6/4',   place:'' },
+      { tag:'NB',   horse:'Wait Geordie', sources:['BG','NL','3x'],draw:3, jockey:'O.Murphy',  trainer:'H.Palmer',  form:'1',          age:'2yo', wt:'9-4',  odds:'6/4',   place:'' },
       { tag:'LONG', horse:'Final Appeal',                          draw:4, jockey:'C.Lee',     trainer:'K.R.Burke', form:'21',         age:'2yo', wt:'9-4',  odds:'13/2',  place:'' },
     ],
   },
@@ -771,6 +808,10 @@ const DAY1_RACES = [
       { tag:'NB',   horse:'Snow Master',                            draw:7, jockey:'O.Murphy',   trainer:'A.Balding',   form:'1/166-',    age:'4yo', wt:'9-9',  odds:'15/8',  place:'' },
       { tag:'LONG', horse:'Percys Lad',  sources:['CD'],            draw:6, jockey:'T.Marquand', trainer:'Kubler',      form:'21004/0',   age:'8yo', wt:'8-13', odds:'11/2',  place:'' },
     ],
+    tipsterRows: [
+      { code:'NL', tipster:'Nick Luck (WH)', horse:'Supido', label:'NL', odds:'',
+        note:'8lb below last year\'s mark · well drawn · Loughnane riding' },
+    ],
     bigNaps:'The Angel King 74/1 | Brighton Boy 64/1 | Bellarchi 22/1 (no crossovers)',
   },
   {
@@ -778,7 +819,7 @@ const DAY1_RACES = [
     tips:[
       { tag:'NAP',  horse:'Im The One',     sources:['SM','2x'], draw:4, jockey:'W.Buick',     trainer:'Gosden',     form:'1',       age:'3yo', wt:'9-2', odds:'4/5',  place:'1/4 2pl' },
       { tag:'NB',   horse:'Amelia Earhart',                       draw:2, jockey:'R.Moore',     trainer:"A.O'Brien",  form:'32241-',  age:'3yo', wt:'9-2', odds:'9/4',  place:'' },
-      { tag:'LONG', horse:'Sugar Island',                         draw:5, jockey:'W.M.Lordan',  trainer:"A.O'Brien",  form:'15391-',  age:'3yo', wt:'9-7', odds:'15/2', place:'' },
+      { tag:'LONG', horse:'Sugar Island',   sources:['NL','2x'],  draw:5, jockey:'W.M.Lordan',  trainer:"A.O'Brien",  form:'15391-',  age:'3yo', wt:'9-7', odds:'15/2', place:'' },
     ],
   },
   {
@@ -788,6 +829,10 @@ const DAY1_RACES = [
       { tag:'NB',   horse:'Del Maro',          sources:['BG','2x'], draw:2, jockey:'W.Buick',     trainer:'C.Appleby', form:'2323-1', age:'3yo', wt:'9-2', odds:'9/2',  place:'' },
       { tag:'LONG', horse:'Mr Vettori',                              draw:3, jockey:'S.Foley',     trainer:'Harrington',form:'021-2',  age:'3yo', wt:'9-2', odds:'14/1', place:'' },
     ],
+    tipsterRows: [
+      { code:'NL', tipster:'Nick Luck (WH)', horse:'Proposition', label:'NL', odds:'',
+        note:"O'Brien second string · Frankel half-bro to Magical · cheekpieces 1st time" },
+    ],
   },
   {
     n:5, time:'15:40', title:'R5 15:40 American Holidays Hcap', meta:'6f | 12 rnrs | C3',
@@ -795,6 +840,10 @@ const DAY1_RACES = [
       { tag:'NAP',  horse:'Rubys Angel',      sources:['SM','2x'], draw:1, jockey:'T.Marquand',  trainer:'H.Palmer',  form:'233414-',     age:'3yo', wt:'9-0', odds:'5/1',  place:'1/5 5pl' },
       { tag:'NB',   horse:'Alaminos',                              draw:4, jockey:'K.Stott',     trainer:'K.Ryan',    form:'14-2',        age:'3yo', wt:'9-5', odds:'5/2',  place:'' },
       { tag:'LONG', horse:'Temple Of Athena',                      draw:2, jockey:'B.Robinson',  trainer:'B.Ellison', form:'305163-17',   age:'3yo', wt:'9-9', odds:'4/1',  place:'' },
+    ],
+    tipsterRows: [
+      { code:'NL', tipster:'Nick Luck (WH)', horse:'Star Material', label:'NL EW', odds:'',
+        note:'Up a furlong · 1st-time visor for stalls · come down weights · "perfectly good each-way price"' },
     ],
   },
   {
@@ -852,7 +901,10 @@ function srcBadgeClass(label) {
   if (l === 'sm-ew')  return 'src-sm-ew';
   if (l === 'sm')     return 'src-sm';
   if (l === 'bg')     return 'src-bg';
+  if (l === 'nl-ew')  return 'src-nl-ew';
+  if (l === 'nl')     return 'src-nl';
   if (l === '2x')     return 'src-2x';
+  if (l === '3x')     return 'src-3x';
   if (l === 'cd')     return 'src-cd';
   if (l === 'big')    return 'src-big';
   return 'src-2x';
@@ -886,6 +938,27 @@ function renderRichRace(race) {
       <div class="tip-odds-cell">
         <div class="tip-odds">${escHtml(t.odds)}</div>
         ${t.place ? `<div class="tip-place">${escHtml(t.place)}</div>` : ''}
+      </div>
+    </div>`;
+  });
+
+  // Tipster dissent rows — extra picks from tipsters whose selection differs
+  // from Claude's NAP/NB/LONG. Shown on a teal-tinted strip beneath the main picks.
+  (race.tipsterRows || []).forEach(tr => {
+    html += `<div class="tipster-extra-row">
+      <div class="tip-tag">${escHtml(tr.code)}</div>
+      <div class="tip-body">
+        <div class="tip-horse-row">
+          <span class="tip-horse">${escHtml(tr.horse)}</span>
+          ${tr.label ? `<span class="tip-source ${srcBadgeClass(tr.label)}">${escHtml(tr.label)}</span>` : ''}
+        </div>
+        <div class="tip-meta-row">
+          <span class="tip-detail" style="color:#5eead4">${escHtml(tr.tipster)}</span>
+          ${tr.note ? `<span class="tip-detail">· ${escHtml(tr.note)}</span>` : ''}
+        </div>
+      </div>
+      <div class="tip-odds-cell">
+        <div class="tip-odds" style="color:#5eead4">${escHtml(tr.odds || '')}</div>
       </div>
     </div>`;
   });
