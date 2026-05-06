@@ -6,6 +6,11 @@ Expert tips, race guides and live results for Britain and Ireland's biggest hors
 
 Deploy to Netlify and access at your custom URL. Each festival is a standalone HTML page linked from the hub homepage.
 
+> **🤖 Working with Claude on this repo?** Read [`CLAUDE.md`](./CLAUDE.md) first — it
+> defines the **tips engine** (workflow, tipster registry, staking) and the
+> **display contract** every daily race day card must follow. The reference
+> implementation is `chester-2026.html` Day 1.
+
 ---
 
 ## 📁 File Structure
@@ -13,11 +18,19 @@ Deploy to Netlify and access at your custom URL. Each festival is a standalone H
 ```
 /
 ├── index.html                  ← Hub homepage (festival grid, tipster league, calendar)
+├── chester-2026.html           ← Chester May Festival 2026 (LIVE — reference implementation
+│                                  for the rich daily tips card design)
 ├── cheltenham-2026.html        ← Cheltenham Festival 2026 (ARCHIVE — fully completed)
-├── grand-national-2026.html    ← Grand National Festival 2026 (UPCOMING — tips live)
-├── cheltenham-2027.html        ← Cheltenham Festival 2027 (SHELL — tips coming Feb 2027)
-├── cheltenham-2026-analytics.docx ← Post-festival analytics report
-├── netlify.toml                ← Netlify deployment config
+├── grand-national-2026.html    ← Grand National Festival 2026 (ARCHIVE)
+├── scottish-grand-national-2026.html ← Scottish GN 2026 (ARCHIVE)
+├── guineas-2026.html           ← Qipco Guineas Festival 2026 (ARCHIVE)
+├── cheltenham-2027.html        ← Cheltenham Festival 2027 (SHELL)
+├── season-2026.html            ← Season tipster leaderboard
+├── js/
+│   ├── season-data-2026.js     ← FESTIVALS_2026 registry (live-banner source of truth)
+│   └── festival-template.js    ← Shared festival template engine
+├── netlify.toml                ← Netlify config + redirects
+├── CLAUDE.md                   ← Tips engine + display contract for Claude sessions
 └── README.md                   ← This file
 ```
 
@@ -92,22 +105,85 @@ Update as each race is run. The leaderboard and results panel update automatical
 
 ---
 
-## 🖊️ Adding Tips
+## 🖊️ Adding Tips — the daily card engine
 
-Each festival file has a `STATIC_TIPS` (Cheltenham) or `TIPS` (Grand National) object. Each race key maps to an object with `nap`, `nb`, and optionally `ew` (each-way) picks.
+**Read [`CLAUDE.md`](./CLAUDE.md) for the full tips engine.** The short version:
+
+### Workflow per race day
+
+1. **Course profile first.** Before any selections, recall the course
+   (direction, shape, draw bias, going, key trainer/jockey stats).
+2. **Extract the racecard** from Sky Bet screenshots: time, race name,
+   distance, class, runners, EW terms; per runner — cloth no, draw,
+   jockey/claim, trainer, form figures, age, weight, odds, market moves,
+   CD/C/D flags.
+3. **Form analysis** — recent form, course form, distance, going, trainer,
+   jockey, weight & class, draw, market moves, pace.
+4. **Three picks per race**: NAP (strongest), NB (next best), LONGSHOT
+   (value at bigger odds, must have a credible chance). 1-2 sentences each,
+   leading with the angle.
+5. **Lucky 15** — pick the 4 strongest NAPs from across the card,
+   avoiding bankers below 2/1. £7.50 (15 × 50p).
+6. **External tipster integration** — badges inline next to matching
+   horses, **2x** badge on crossover horses, tipster summary box,
+   crossover signals box, key signals box (4-6 bullets).
+
+### Display contract (every page must match)
+
+The reference implementation is `chester-2026.html` Day 1. Every daily card
+on the hub follows the same structure:
+
+```
+Live strip (when live today)
+Header (gold accent, hero stats)
+Day tabs (Wed / Thu / Fri)
+Page title bar  ──  "chester-day1-tips · Wednesday 6 May 2026"
+Race blocks (one per race)
+   ├ NAP row  (tag · horse + source badges · draw + jockey | trainer | F:form | age wt · odds · place terms)
+   ├ NB row
+   ├ LONG row
+   └ BIG naps row (red, optional — biggest-priced naps with no crossover)
+Lucky 15 box (gold border)
+External tipster picks (blue left border)
+Crossover signals (blue top border)
+Key signals (gold top border, 4-6 bullets)
+Course guide block
+Footer (BeGambleAware)
+```
+
+Tip-row grid: `[TYPE 56px] [BODY 1fr] [ODDS auto]`. On flat racing every
+pick MUST show the draw badge.
+
+### Source/tipster code registry
+
+| Code | Tipster | Badge |
+|---|---|---|
+| SM | Steve Mullington (William Hill) | green |
+| BG | Billy Grimshaw (HRN) | orange |
+| HRN | horseracing.net main tips | blue |
+| RO | Raceolly | purple |
+| BIG | HRN Biggest Priced Naps | red |
+| NL | Nick Luck | as needed |
+| 2x | Two or more sources agree (computed) | gold |
+| CD / C / D | Course-and-distance / course / distance winner | gold |
+
+### Race key format
+
+`'HH:MM-dayIdx'` where `dayIdx` is 0 = first day, 1 = second day, etc. Used
+across all festival files for both `RESULTS` and tip data.
 
 ```javascript
-'16:00-0': {
-  nap: {
-    horse:   'Horse Name',
-    odds:    '9/2',
-    dec:     5.5,
-    trainer: 'W P Mullins',
-    conf:    78,    // confidence 0-100
-    reason:  'Why this horse wins...'
-  },
-  nb: { ... },
-  ew: { ... }
+'13:30-0': {
+  tips: [
+    { tag:'NAP',  horse:'Adonius', sources:['SM NAP','2x'],
+      draw:1, jockey:'K.Fraser', trainer:'R.Menzies',
+      form:'11', age:'2yo', wt:'9-9',
+      odds:'9/2', place:'1/4 2pl' },
+    { tag:'NB',   horse:'Wait Geordie', sources:['BG','2x'],
+      draw:3, jockey:'O.Murphy', trainer:'H.Palmer', /* ... */ },
+    { tag:'LONG', horse:'Final Appeal', /* ... */ },
+  ],
+  bigNaps:'…',  // optional red banner
 }
 ```
 
@@ -151,9 +227,13 @@ Example: `festivalformbook.co.uk`
 
 | Festival | Dates | Status |
 |---|---|---|
-| Cheltenham Festival 2026 | 10–13 March 2026 | ✅ Complete |
-| Grand National Festival 2026 | 9–11 April 2026 | 🔜 Upcoming |
-| Epsom Derby 2026 | 6–7 June 2026 | 🔲 Shell needed |
+| Cheltenham Festival 2026 | 10–13 March 2026 | ✅ Archive |
+| Grand National Festival 2026 | 9–11 April 2026 | ✅ Archive |
+| Scottish Grand National 2026 | 17–18 April 2026 | ✅ Archive |
+| Qipco Guineas Festival 2026 | 1–3 May 2026 | ✅ Archive |
+| **Boodles Chester May Festival 2026** | **6–8 May 2026** | **🔴 Live (rich tips engine)** |
+| Dante Festival 2026 | 13–15 May 2026 | 🔲 Shell needed |
+| Epsom Derby 2026 | 5–6 June 2026 | 🔲 Shell needed |
 | Royal Ascot 2026 | 16–20 June 2026 | 🔲 Shell needed |
 | Glorious Goodwood 2026 | 28 Jul – 1 Aug 2026 | 🔲 Shell needed |
 | St Leger Festival 2026 | 9–12 September 2026 | 🔲 Shell needed |

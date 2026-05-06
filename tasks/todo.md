@@ -136,3 +136,53 @@ Phases 1 and 2 can partly overlap (template engine informs what live data the hu
 - [x] Saturday 2 May race card and tips populated in guineas-2026.html
 - [x] Nick Luck (WH) tipster picks added to scorecard
 - [x] Deployed to cheltenhamtips.netlify.app
+- [x] Chester 2026 page built and registered as live festival (2026-05-06)
+- [x] Chester Day 1 published in rich-card format (Nap/NB/Long with draw,
+      jockey/trainer, form, weight, odds, place terms; Lucky 15; external
+      tipster integration; crossover signals; key signals)
+- [x] Tips engine + display contract captured in CLAUDE.md (2026-05-06)
+
+---
+
+## Phase 7 — Tips Engine + Display Contract (NEW · 2026-05-06)
+
+The Chester 2026 Day 1 build set the standard. From now on every daily
+race day card on the hub follows the same engine and the same display
+contract, both documented in `CLAUDE.md`.
+
+### Done in this phase
+
+- [x] `CLAUDE.md`: workflow, tipster registry, staking, design tokens,
+      mobile breakpoint, project rules, pre-ship checklist
+- [x] `README.md` updated with engine summary + race-key data shape
+- [x] Chester 2026 reference implementation deployed and live
+
+### Roll-out tasks
+
+- [ ] 7a. Extract the rich race-card renderer from `chester-2026.html`
+      into `js/festival-template.js` so future festival pages can drop
+      it in via `renderFestivalPage(config)` with no copy-paste of the
+      grid CSS or render logic
+- [ ] 7b. Update `cheltenham-2027.html` shell to use the rich card
+      renderer (currently uses the older `STATIC_TIPS` shape)
+- [ ] 7c. Build Dante Festival 2026 (13-15 May) using the engine —
+      first new festival born under the contract
+- [ ] 7d. Build Epsom Derby 2026 (5-6 June) using the engine
+- [ ] 7e. Backfill: revisit Cheltenham 2027 SHELL once Dante and Derby
+      have proven the renderer in production
+- [ ] 7f. Add a P/L module: when `RESULTS` is filled in for a race day,
+      the page renders win/place returns per pick, total staked, total
+      returned, net P/L, plus Lucky 15 combinations
+
+### Acceptance criteria for an "engine-compliant" daily card
+
+- Every NAP / NB / LONG has a stated angle (no fabricated picks)
+- Every flat-racing pick shows the draw badge
+- CD / C / D flags applied where relevant
+- Lucky 15 picked and totalled (avoiding bankers below 2/1)
+- External tipster picks integrated with badges + crossover signals
+- Key signals section written (4-6 bullets)
+- Festival registered in `FESTIVALS_2026[]` in `js/season-data-2026.js`
+- `netlify.toml` redirect added for the clean URL
+- BeGambleAware footer present
+- Mobile renders cleanly at 375px
