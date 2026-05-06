@@ -279,6 +279,8 @@
   .tip-nap .tip-type      { color: var(--gold-lt); }
   .tip-nb  .tip-type      { color: var(--amber-b); }
   .tip-longshot .tip-type { color: #fde047; }
+  .tip-wh  .tip-type      { color: #c4b5fd; }
+  .tip-wh                 { background: rgba(139,92,246,0.06); border-color: rgba(139,92,246,0.18); }
 
   .info-banner {
     background: rgba(245,158,11,0.1);
@@ -411,7 +413,7 @@
   <section id="panel-tips" class="panel active" aria-label="Tips">
     <div class="info-banner">
       <span class="icon">⭐</span>
-      <span><strong>Each race gets three picks:</strong> <strong style="color:var(--gold-lt)">NAP</strong> = strongest fancy · <strong style="color:var(--amber-b)">NB</strong> = next best · <strong style="color:#fde047">Longshot</strong> = each-way at a price. <strong>Day 1</strong> tips are sourced from horseracing.net Biggest-Priced Naps, Billy Grimshaw, Andy Newton (ITV), Timeform and William Hill News. <strong>Days 2 &amp; 3</strong> picks fill in the night before each card.</span>
+      <span><strong>Each race gets four columns:</strong> <strong style="color:var(--gold-lt)">NAP</strong> = strongest fancy · <strong style="color:var(--amber-b)">NB</strong> = next best · <strong style="color:#fde047">Longshot</strong> = each-way at a price · <strong style="color:#c4b5fd">Mullington (WH)</strong> = Steve Mullington's William Hill column pick. <strong>Day 1</strong> sourced from horseracing.net Biggest-Priced Naps, Billy Grimshaw, Andy Newton (ITV), William Hill News (Mullington) and Timeform. <strong>Days 2 &amp; 3</strong> fill in the night before each card.</span>
     </div>
 
     <div class="day-tabs" role="tablist">
@@ -561,39 +563,46 @@ const RACES = {
 const TIPS = {
   /* ═══ Wed 6 May — Trials Day ═══ */
   '13:30-0': {
-    nap:      { horse:'Wait Geordie',   connections:'Karl Burke · Oisin Murphy',       odds:'85/40', reason:'Billy Grimshaw NAP, tipped at 9/4 and shortening. Drawn 3, winning Bath debutant whose form has worked out — pinpointed for the Lily Agnes long before he ran.' },
-    nb:       { horse:'Final Appeal',   connections:'Karl Burke · Clifford Lee',       odds:'3/1',   reason:'Burke\'s second string and arguably the form pick. The yard could land back-to-back Lily Agnes wins.' },
-    longshot: { horse:'I\'m The One Too',connections:'TBC',                              odds:'10/1+', reason:'Each-way longshot from the wider field — confirmed Best-Odds longshot to follow at off-time.' },
+    nap:      { horse:'Wait Geordie',   connections:'Hugo Palmer · Oisin Murphy',      odds:'85/40', reason:'Billy Grimshaw NAP, tipped at 9/4 and shortening. Drawn 3, Bath debut winner who has been pinpointed for the Lily Agnes since long before his run.' },
+    nb:       { horse:'Final Appeal',   connections:'Karl Burke · Clifford Lee',       odds:'3/1',   reason:'Burke\'s smart juvenile whose Wolverhampton finishing effort suggests all the speed required. The yard could land back-to-back Lily Agnes wins.' },
+    longshot: { horse:'',                connections:'',                                 odds:'',      reason:'Small Listed conditions race — 7 runners. No genuine 10/1+ each-way longshot stands out. Skipped.' },
+    wh:       { horse:'Final Appeal',   connections:'Karl Burke · Clifford Lee',       odds:'3/1',   reason:'Mullington (WH) — flagged as a key pick for trainer Karl Burke; speed shown at Wolverhampton ideal for the 5f Roodee opener.' },
   },
   '14:05-0': {
-    nap:      { horse:'Adonius',         connections:'TBC · drawn stall 1',             odds:'5/1',   reason:'Andy Newton\'s NAP (Read Horse Racing / ITV Racing tips). Soldier\'s Call gelding has scored twice at Musselburgh this season — despite a 5lb penalty, the plum draw stall 1 makes him.' },
+    nap:      { horse:'Adonius',         connections:'Rebecca Menzies · stall 1',       odds:'5/1',   reason:'Andy Newton\'s NAP and Mullington\'s NAP. Soldier\'s Call gelding has scored twice at Musselburgh this season — despite a 5lb penalty, the plum draw makes him.' },
     nb:       { horse:'The Angel King',  connections:'Ian Williams · Edward Greatrex',  odds:'74/1',  reason:'Biggest-priced NAP on horseracing.net at 74/1. Williams enjoys a strong Chester record and the gelding is feasibly handicapped on his best efforts — outside place chance.' },
     longshot: { horse:'Bellarchi',       connections:'Grant Tuer · Oliver Stammers',    odds:'22/1',  reason:'Tipped NAP at 22/1 (horseracing.net). Stammers riding well; Tuer\'s improver has each-way claims in a wide-open 14-runner handicap. Brighton Boy (Easterby/Fentiman) 64/1 also live each-way.' },
+    wh:       { horse:'Adonius',         connections:'Rebecca Menzies · stall 1',       odds:'5/1',   reason:'Mullington (WH) NAP — "can storm home from stall one" despite a 5lb penalty. The plum draw is the angle.' },
   },
   '14:35-0': {
     nap:      { horse:"I'm The One",     connections:'J & T Gosden',                    odds:'5/2',   reason:'Sea The Stars filly, propping up the Epsom Oaks market after a clear-cut Newbury debut win. Stays unbeaten if the step up to 1m3½f delivers as expected.' },
-    nb:       { horse:'TBC',             connections:'',                                 odds:'',      reason:'Cheshire Oaks NB confirmed once final field is published — likely a Stoute or O\'Brien filly given the small-field profile.' },
-    longshot: { horse:'TBC',             connections:'',                                 odds:'',      reason:'Listed Cheshire Oaks fields rarely produce a true longshot — only 5 runners declared. EW value pick added if a 6/1+ runner emerges.' },
+    nb:       { horse:'Amelia Earhart',  connections:"A P O'Brien",                     odds:'',      reason:'Ballydoyle\'s Listed-class filly is the chief market alternative — "watch out for" call from Sportinglife/ATR.' },
+    longshot: { horse:'',                connections:'',                                 odds:'',      reason:'Just five declared for the Listed Cheshire Oaks — no realistic 6/1+ runner. EW skipped.' },
+    wh:       { horse:"I'm The One",     connections:'J & T Gosden',                    odds:'5/2',   reason:'Mullington (WH) sides with the Gosdens\' Sea The Stars filly — the Epsom Oaks favourite is preferred over O\'Brien\'s Amelia Earhart.' },
   },
   '15:05-0': {
-    nap:      { horse:'Benvenuto Cellini',connections:"A P O'Brien",                    odds:'odds-on',reason:'ITV Racing NB (Will Hayler / Paddy Power) elevated to NAP here. Frankel colt, won the Champions Juvenile at Leopardstown, third in the Futurity G1. O\'Brien\'s Chester Vase record is unmatched.', headline:true },
-    nb:       { horse:'Del Maro',        connections:'TBC',                              odds:'5/1',   reason:'Billy Grimshaw NB, tipped at 10/1 and shortening to 5/1. The market suggests genuine potential to the Ballydoyle favourite.' },
-    longshot: { horse:'TBC',             connections:'',                                 odds:'',      reason:'Vase longshot to be confirmed when final field declared — typically an Appleby second string at double-figure odds.' },
+    nap:      { horse:'Benvenuto Cellini',connections:"A P O'Brien · R L Moore",        odds:'odds-on',reason:'Mullington (WH) NB and ITV Racing pick. Frankel colt, won the Champions Juvenile at Leopardstown, third in the Futurity G1. O\'Brien\'s Chester Vase record is unmatched.', headline:true },
+    nb:       { horse:'Del Maro',        connections:'',                                 odds:'5/1',   reason:'Billy Grimshaw NB, tipped at 10/1 and shortening to 5/1. The market is suggesting genuine potential to the Ballydoyle favourite.' },
+    longshot: { horse:'',                connections:'',                                 odds:'',      reason:'Vase longshot — typically an Appleby second string. Confirmed pick added when fields fill out at off-time.' },
+    wh:       { horse:'Benvenuto Cellini',connections:"A P O'Brien · R L Moore",        odds:'odds-on',reason:'Mullington (WH) NB — "can give Aidan O\'Brien another victory in the Chester Vase before going on to greater things in the Epsom Derby".' },
   },
   '15:40-0': {
-    nap:      { horse:'Star Material',   connections:'Mikey Sheehy',                    odds:'TBC',   reason:'Timeform Wednesday wager (Paddy Power). Off mark of 84, race fitness from a recent run, fitted with first-time visor that could spark improvement.' },
-    nb:       { horse:'TBC',             connections:'',                                 odds:'',      reason:'Confirmed NB for the 12-runner 3yo handicap added once the final declarations and tipster columns publish.' },
-    longshot: { horse:'TBC',             connections:'',                                 odds:'10/1+', reason:'Big-priced each-way pick added when ITV / Racing Post columnists confirm overnight selections.' },
+    nap:      { horse:'Star Material',   connections:'Mikey Sheehy',                    odds:'25/1',  reason:'Timeform Wednesday wager (Paddy Power). Off mark of 84, race fitness from a recent run, fitted with first-time visor that could spark improvement.' },
+    nb:       { horse:'',                connections:'',                                 odds:'',      reason:'NB confirmed as overnight markets settle.' },
+    longshot: { horse:'Star Material',   connections:'Mikey Sheehy',                    odds:'25/1',  reason:'Each-way value at 25/1 in a 12-runner 3yo handicap. Sheehy claim plus first-time visor — value play.' },
+    wh:       { horse:'TBC',             connections:'',                                 odds:'',      reason:'Mullington (WH) pick to follow — to be added when sourced from his column.' },
   },
   '16:10-0': {
-    nap:      { horse:'TBC',             connections:'',                                 odds:'',      reason:'Six-runner 1m 2½f handicap — small-field tactical contest. Tip added once trainer/jockey bookings are confirmed.' },
-    nb:       { horse:'TBC',             connections:'',                                 odds:'',      reason:'NB to follow.' },
-    longshot: { horse:'TBC',             connections:'',                                 odds:'',      reason:'Longshot to follow — small fields rarely produce a real EW longshot, may be skipped.' },
+    nap:      { horse:'Partisan Hero',   connections:'',                                 odds:'',      reason:'Mullington (WH) NB selection elevated. Consistent in top handicaps — runner-up at the 2025 Chester May meeting and a recent second-place in Bahrain.' },
+    nb:       { horse:'',                connections:'',                                 odds:'',      reason:'Six-runner tactical handicap — small field, NB optional. Confirmed pick if a clear contender emerges from the market.' },
+    longshot: { horse:'',                connections:'',                                 odds:'',      reason:'Small field, no realistic each-way longshot. Skipped.' },
+    wh:       { horse:'Partisan Hero',   connections:'',                                 odds:'',      reason:'Mullington (WH) — "consistent performer in these top-level handicaps including a runner-up at the 2025 Chester May meeting and a recent second in Bahrain".' },
   },
   '16:45-0': {
     nap:      { horse:'Spangled Mac',    connections:'George Boughey · Billy Loughnane',odds:'28/1',  reason:'Best-priced NAP from horseracing.net at 28/1. Boughey/Loughnane both in red-hot form, runs over his optimum 7f — a big-priced festival nap to take to.' },
-    nb:       { horse:'TBC',             connections:'',                                 odds:'',      reason:'14-runner finale — confirmed NB to follow as overnight markets settle.' },
-    longshot: { horse:'TBC',             connections:'',                                 odds:'',      reason:'Big-field 7f handicap typically delivers a 14/1+ longshot from a low draw.' },
+    nb:       { horse:'Pietro',          connections:'',                                 odds:'',      reason:'Mullington (WH) each-way pick. Four-time winner carrying minimal weight — the kind of profile that lands a big-field 14-runner handicap on the Roodee.' },
+    longshot: { horse:'Spangled Mac',    connections:'George Boughey · Billy Loughnane',odds:'28/1',  reason:'Big-field 7f handicap finale — Spangled Mac at 28/1 doubles up as the each-way longshot from horseracing.net.' },
+    wh:       { horse:'Pietro',          connections:'',                                 odds:'',      reason:'Mullington (WH) each-way — "four-time winner carrying minimal weight" call him as the value play in the finale.' },
   },
 
   /* ═══ Thu 7 May — Ladies Day (tips published night before) ═══ */
@@ -759,8 +768,8 @@ function renderTipsDay(dayIdx, tabEl) {
       <div class="race-body">
         <div class="tips-grid">`;
 
-    const tipKeys = ['nap','nb','longshot'];
-    const tipLabels = { nap:'⭐ NAP', nb:'🔵 NB', longshot:'💛 Longshot' };
+    const tipKeys = ['nap','nb','longshot','wh'];
+    const tipLabels = { nap:'⭐ NAP', nb:'🔵 NB', longshot:'💛 Longshot', wh:'🟣 Mullington (WH)' };
 
     tipKeys.forEach(t => {
       const tip = tips[t];
@@ -810,19 +819,23 @@ function renderSummary() {
     dayRaces.sort(([a],[b]) => a.localeCompare(b));
     html += `<h2 style="font-family:var(--font-display);color:var(--gold);font-size:1.1rem;margin:18px 0 10px">${escHtml(DAYS[d].label)}</h2>`;
     html += `<div class="summary-table-wrap"><table class="summary-table">
-      <thead><tr><th>Time</th><th>Race</th><th>NAP</th><th>NB</th><th>Longshot</th></tr></thead><tbody>`;
+      <thead><tr><th>Time</th><th>Race</th><th>NAP</th><th>NB</th><th>Longshot</th><th>Mullington (WH)</th></tr></thead><tbody>`;
     dayRaces.forEach(([key, race]) => {
       const time = key.split('-')[0];
       const tips = TIPS[key] || {};
-      const fmtTip = t => t
-        ? `<div class="col-horse">${escHtml(t.horse)}</div><div class="col-odds">${escHtml(t.odds||'')}</div>`
-        : '<span style="color:var(--silver)">TBC</span>';
+      const fmtTip = t => {
+        if (!t || !t.horse || t.horse.toUpperCase() === 'TBC') {
+          return '<span style="color:var(--silver)">TBC</span>';
+        }
+        return `<div class="col-horse">${escHtml(t.horse)}</div><div class="col-odds">${escHtml(t.odds||'')}</div>`;
+      };
       html += `<tr>
         <td class="col-time">${time}</td>
         <td>${escHtml(race.name)}</td>
         <td>${fmtTip(tips.nap)}</td>
         <td>${fmtTip(tips.nb)}</td>
         <td>${fmtTip(tips.longshot)}</td>
+        <td>${fmtTip(tips.wh)}</td>
       </tr>`;
     });
     html += '</tbody></table></div>';
