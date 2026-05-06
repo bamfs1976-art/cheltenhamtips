@@ -72,6 +72,13 @@ const FESTIVALS_2026 = [
     theme:'theme-blue', accentColor:'#1d4ed8', url:'guineas-2026.html',
     races:21, headline:null, headlineRace:'2000 Guineas',
   },
+  {
+    slug:'chester-2026', name:'Boodles Chester May Festival 2026', shortName:'Chester',
+    icon:'🟡', dates:['2026-05-06','2026-05-07','2026-05-08'],
+    dateLabel:'6–8 May 2026', venue:'Chester (Roodee)', type:'Flat',
+    theme:'theme-amber', accentColor:'#d97706', url:'chester-2026.html',
+    races:21, headline:null, headlineRace:'Chester Cup',
+  },
 ];
 
 // ════════════════════════════════════════════════════════════════════════════

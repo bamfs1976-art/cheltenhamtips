@@ -387,10 +387,10 @@
   <h1><em>Chester</em> May Festival <span>2026</span></h1>
   <p class="hero-dates">📍 The Roodee, Chester &nbsp;·&nbsp; 6–8 May 2026</p>
   <div class="hero-meta">
-    <div class="hero-stat"><span class="hero-stat-val">3:35</span><span class="hero-stat-lbl">Chester Vase (Wed)</span></div>
-    <div class="hero-stat"><span class="hero-stat-val">3:35</span><span class="hero-stat-lbl">Chester Cup (Fri)</span></div>
+    <div class="hero-stat"><span class="hero-stat-val">15:05</span><span class="hero-stat-lbl">Chester Vase (Wed)</span></div>
+    <div class="hero-stat"><span class="hero-stat-val">15:05</span><span class="hero-stat-lbl">Ormonde Stakes (Thu)</span></div>
+    <div class="hero-stat"><span class="hero-stat-val">15:05</span><span class="hero-stat-lbl">Chester Cup (Fri)</span></div>
     <div class="hero-stat"><span class="hero-stat-val">1m 73y</span><span class="hero-stat-lbl">Tightest Track in UK</span></div>
-    <div class="hero-stat"><span class="hero-stat-val">21</span><span class="hero-stat-lbl">Races · 3 Days</span></div>
   </div>
   <div>
     <a href="season-2026.html" class="header-link">📊 Season Leaderboard</a>
@@ -411,12 +411,12 @@
   <section id="panel-tips" class="panel active" aria-label="Tips">
     <div class="info-banner">
       <span class="icon">⭐</span>
-      <span><strong>Each race gets three picks:</strong> <strong style="color:var(--gold-lt)">NAP</strong> = strongest fancy · <strong style="color:var(--amber-b)">NB</strong> = next best · <strong style="color:#fde047">Longshot</strong> = each-way priced 10/1+. Odds are Best Odds at the time of writing.</span>
+      <span><strong>Each race gets three picks:</strong> <strong style="color:var(--gold-lt)">NAP</strong> = strongest fancy · <strong style="color:var(--amber-b)">NB</strong> = next best · <strong style="color:#fde047">Longshot</strong> = each-way at a price. <strong>Day 1</strong> tips are sourced from horseracing.net Biggest-Priced Naps, Billy Grimshaw, Andy Newton (ITV), Timeform and William Hill News. <strong>Days 2 &amp; 3</strong> picks fill in the night before each card.</span>
     </div>
 
     <div class="day-tabs" role="tablist">
-      <button class="day-tab active" onclick="renderTipsDay(0,this)" role="tab" aria-selected="true">Wed 6 May · Day 1</button>
-      <button class="day-tab" onclick="renderTipsDay(1,this)" role="tab" aria-selected="false">Thu 7 May · Day 2</button>
+      <button class="day-tab active" onclick="renderTipsDay(0,this)" role="tab" aria-selected="true">Wed 6 May · Trials Day</button>
+      <button class="day-tab" onclick="renderTipsDay(1,this)" role="tab" aria-selected="false">Thu 7 May · Ladies Day</button>
       <button class="day-tab" onclick="renderTipsDay(2,this)" role="tab" aria-selected="false">Fri 8 May · Chester Cup Day</button>
     </div>
     <div id="tips-container"></div>
@@ -462,12 +462,12 @@
 
     <div class="guide-block">
       <h3>The Headline Races</h3>
-      <p><strong>Chester Vase (Wed, G3, 1m4f)</strong> — A traditional Derby trial. Aidan O'Brien has a phenomenal record. Look for a stoutly-bred 3yo who can settle and quicken.</p>
-      <p><strong>Cheshire Oaks (Wed, Listed, 1m3f)</strong> — A key Oaks trial for fillies. Class and stamina shown over middle distances.</p>
-      <p><strong>Ormonde Stakes (Thu, G3, 1m5f)</strong> — Older horses' middle-distance Group race; often produces a Royal Ascot pointer.</p>
-      <p><strong>Huxley Stakes (Thu, G3, 1m2f)</strong> — Group 3 over the Roodee's bread-and-butter trip; pace and a low draw are essential.</p>
-      <p><strong>Dee Stakes (Fri, Listed, 1m2f 70y)</strong> — Three-year-old colts' Derby trial. Often a quirky race — fast tempo and tight bends magnify any inexperience.</p>
-      <p><strong>Chester Cup (Fri, Heritage Hcap, 2m2f 140y)</strong> — The Festival's flagship handicap. Stamina, course form and a low-to-middle draw are the trends.</p>
+      <p><strong>Cheshire Oaks (Wed 14:35, Listed, 1m 3½f)</strong> — Key Epsom Oaks trial for fillies. Class fillies tested over middle distances at this trip.</p>
+      <p><strong>Boodles Chester Vase Stakes (Wed 15:05, G3, 1m 4½f)</strong> — Traditional Derby trial. Aidan O'Brien has a phenomenal record. Look for a stoutly-bred 3yo who can settle and quicken.</p>
+      <p><strong>Boodles Raindance Dee Stakes (Thu 14:35, Listed, 1m 2f 70y)</strong> — Three-year-old colts' Derby trial. Listed-class colts on a tight, tactical 1m2f.</p>
+      <p><strong>Ladbrokes Ormonde Stakes (Thu 15:05, G3, 1m 5f 84y)</strong> — Older horses' middle-distance Group race. Winner gets an automatic berth in the Belmont Gold Cup at Saratoga.</p>
+      <p><strong>Boodles Huxley Stakes (Fri 14:35, G2, 1m 2f 70y)</strong> — Upgraded to Group 2 in 2026. Manhattan Stakes Belmont ticket on offer for the winner. Pace and a low draw essential.</p>
+      <p><strong>Ladbrokes Chester Cup (Fri 15:05, Heritage Hcap, 2m 2f 75y)</strong> — The Festival's flagship handicap. Stamina, course form and a workable mark are the trends. £87,618 to the winner.</p>
     </div>
 
   </section>
@@ -495,174 +495,179 @@
 
 // Day index: 0 = Wed 6 May, 1 = Thu 7 May, 2 = Fri 8 May
 const DAYS = [
-  { label:'Wednesday 6 May 2026 · Chester Vase Day', short:'Wed 6 May' },
-  { label:'Thursday 7 May 2026 · Ormonde Day',       short:'Thu 7 May' },
+  { label:'Wednesday 6 May 2026 · Trials Day',       short:'Wed 6 May' },
+  { label:'Thursday 7 May 2026 · Ladies Day',        short:'Thu 7 May' },
   { label:'Friday 8 May 2026 · Chester Cup Day',     short:'Fri 8 May' },
 ];
 
 // Race schedule — key format: 'HH:MM-dayIndex'
+// Times and races confirmed from Racing Post / At The Races / Chester Racecourse
 const RACES = {
-  /* ── Wed 6 May — Day 1 ── */
-  '13:30-0': { name:'Lily Agnes Stakes', grade:'Listed', dist:'5f 16y', type:'2yo', prize:'£42,000',
-    info:'Sharp Listed sprint to open the festival — speed and a low draw essential.' },
-  '14:05-0': { name:'Boodles Diamond Handicap', grade:'Hcap', dist:'1m 2f 75y', type:'4yo+', prize:'£62,000',
-    info:'Big-field heritage handicap on the Roodee. Open contest with multiple long-priced naps in play.' },
-  '14:40-0': { name:'Cheshire Oaks', grade:'Listed', dist:'1m 3f 168y', type:'3yo Fillies', prize:'£62,000',
-    info:'Key Oaks trial. Class fillies tested for stamina round Chester\'s tight bends.' },
-  '15:15-0': { name:'Boodles Chester Vase', grade:'G3', dist:'1m 4f 63y', type:'3yo Colts & Geldings', prize:'£100,000',
-    info:'The traditional Derby trial — Aidan O\'Brien\'s domain. Form sets the Epsom market.', headline:true },
-  '15:50-0': { name:'Boodles Fillies\' Handicap', grade:'Hcap', dist:'7f 127y', type:'4yo+ Fillies', prize:'£28,000',
-    info:'Fillies-only mile handicap. Course form and a low draw vital.' },
-  '16:25-0': { name:'Vivian Buckley Tribute Handicap', grade:'Hcap', dist:'5f 15y', type:'3yo+', prize:'£25,000',
-    info:'Sprint handicap — pure pace, draw critical.' },
-  '17:00-0': { name:'Old Trafford Cricket Lounge Handicap', grade:'Hcap', dist:'1m 5f 89y', type:'4yo+', prize:'£18,000',
-    info:'Closing-card stayers\' handicap.' },
+  /* ── Wed 6 May — Trials Day ── */
+  '13:30-0': { name:'CAA Stellar Lily Agnes EBF Conditions Stakes', grade:'Listed', dist:'5f', type:'2yo', prize:'Class 2',
+    info:'Two-year-old conditions sprint to open the festival — speed and a low draw essential.' },
+  '14:05-0': { name:'Ladbrokes Earl Grosvenor Handicap', grade:'Hcap', dist:'7½f', type:'4yo+', prize:'Class 2',
+    info:'Big-field heritage handicap on the Roodee. Wide-open, with multiple long-priced naps in play.' },
+  '14:35-0': { name:'Weatherbys Cheshire Oaks', grade:'Listed', dist:'1m 3½f', type:'3yo Fillies', prize:'Listed',
+    info:'Key Epsom Oaks trial. Class fillies tested for stamina round Chester\'s tight bends.' },
+  '15:05-0': { name:'Boodles Chester Vase Stakes', grade:'G3', dist:'1m 4½f', type:'3yo C&G', prize:'Group 3',
+    info:'The traditional Epsom Derby trial — Aidan O\'Brien\'s domain. Form sets the Epsom market.', headline:true },
+  '15:40-0': { name:'American Holidays Handicap', grade:'Hcap', dist:'7½f', type:'3yo only', prize:'Class 3',
+    info:'Three-year-old handicap. Improvers off workable marks usually win this.' },
+  '16:10-0': { name:'Chester May Festival Handicap', grade:'Hcap', dist:'1m 2½f', type:'4yo+', prize:'Class 3',
+    info:'Small-field tactical handicap on the Roodee\'s ideal middle-distance trip.' },
+  '16:45-0': { name:'Chester Roodee Stakes Handicap', grade:'Hcap', dist:'7f', type:'3yo+', prize:'Class 4',
+    info:'Day 1 finale — a 14-runner heritage handicap. A draw race in the truest sense.' },
 
-  /* ── Thu 7 May — Day 2 ── */
-  '13:30-1': { name:'EBF "Lily Agnes" Restricted Maiden', grade:'Mdn', dist:'5f 16y', type:'2yo', prize:'£15,000',
+  /* ── Thu 7 May — Ladies Day ── */
+  '13:30-1': { name:'Boodles Maiden Stakes', grade:'Mdn', dist:'5f', type:'2yo', prize:'Class 4',
     info:'Two-year-old maiden — first-timers from sharp yards favoured.' },
-  '14:05-1': { name:'Boodles Roman Urn Handicap', grade:'Hcap', dist:'7f 127y', type:'3yo', prize:'£32,000',
-    info:'Three-year-old handicap mile — improvers typically beat exposed types.' },
-  '14:40-1': { name:'Boodles Huxley Stakes', grade:'G3', dist:'1m 2f 70y', type:'4yo+', prize:'£75,000',
-    info:'Group 3 over Chester\'s ideal middle-distance trip. Pace, draw, class.' },
-  '15:15-1': { name:'Boodles Ormonde Stakes', grade:'G3', dist:'1m 5f 89y', type:'4yo+', prize:'£90,000',
-    info:'Middle-distance Group 3 for older horses — Royal Ascot pointer.', headline:true },
-  '15:50-1': { name:'Vintage Crop Handicap', grade:'Hcap', dist:'2m 2f 140y', type:'4yo+', prize:'£28,000',
-    info:'Marathon handicap and a useful Chester Cup pointer for tomorrow.' },
-  '16:25-1': { name:'Bigsky Conferences Handicap', grade:'Hcap', dist:'1m', type:'3yo+', prize:'£20,000',
-    info:'Mile handicap — low draw and prominent racing rewarded.' },
-  '17:00-1': { name:'Boodles Diamond Stakes Handicap', grade:'Hcap', dist:'5f 15y', type:'3yo+', prize:'£18,000',
-    info:'Closing sprint — a draw race in the truest sense.' },
+  '14:05-1': { name:'Boodles Handicap', grade:'Hcap', dist:'7½f', type:'4yo+', prize:'Class 2',
+    info:'Big-field 14-runner handicap on the Roodee mile.' },
+  '14:35-1': { name:'Boodles Raindance Dee Stakes', grade:'Listed', dist:'1m 2f 70y', type:'3yo C&G', prize:'£56,710 (1st)',
+    info:'Listed Derby trial — six-runner field of Classic prospects on the Roodee.', headline:true },
+  '15:05-1': { name:'Ladbrokes Ormonde Stakes', grade:'G3', dist:'1m 5f 84y', type:'4yo+', prize:'£140,000',
+    info:'Group 3 middle-distance Group race for older horses. Winner gets an automatic berth in the Belmont Gold Cup.' },
+  '15:40-1': { name:'Xenon Workplace Handicap', grade:'Hcap', dist:'7½f', type:'3yo only', prize:'Class 2',
+    info:'Three-year-old handicap. Big and competitive — same trip as the opening Trials Day handicap.' },
+  '16:15-1': { name:'Boodles Ladies Day Handicap', grade:'Hcap', dist:'1m 4½f', type:'4yo+', prize:'Class 3',
+    info:'Middle-distance Ladies Day handicap. Tips coming in closer to the off.' },
+  '16:50-1': { name:'Boodles Stayers\' Handicap', grade:'Hcap', dist:'2m 2f 75y', type:'4yo+', prize:'Class 3',
+    info:'Stayers\' handicap over the Chester Cup distance — a key Cup pointer for tomorrow.' },
 
-  /* ── Fri 8 May — Day 3 ── */
-  '13:30-2': { name:'Boodles "Diamond" Handicap', grade:'Hcap', dist:'7f 127y', type:'3yo', prize:'£28,000',
-    info:'Three-year-old mile handicap to open the final day.' },
-  '14:05-2': { name:'Boodles Dee Stakes', grade:'Listed', dist:'1m 2f 70y', type:'3yo Colts & Geldings', prize:'£62,000',
-    info:'Listed Derby trial — Chester\'s second Classic-trial card-piece.' },
-  '14:40-2': { name:'EBF Stallions Maiden Fillies\' Stakes', grade:'Mdn', dist:'7f 127y', type:'3yo Fillies', prize:'£12,000',
-    info:'Fillies\' maiden — first-time entrants from leading yards favoured.' },
-  '15:15-2': { name:'Boodles Chester Cup', grade:'Hcap', dist:'2m 2f 140y', type:'4yo+', prize:'£200,000',
-    info:'The festival\'s flagship — a Heritage Handicap stayers\' marathon. Course form, stamina and a low draw are everything.', headline:true },
-  '15:50-2': { name:'Boodles Earl Grosvenor Cup Handicap', grade:'Hcap', dist:'1m 5f 89y', type:'4yo+', prize:'£32,000',
+  /* ── Fri 8 May — Chester Cup Day ── */
+  '13:30-2': { name:'Lord Tom Howard Memorial Trophy Handicap', grade:'Hcap', dist:'1m', type:'4yo+', prize:'Class 2',
+    info:'Mile handicap to open Chester Cup Day.' },
+  '14:05-2': { name:'Boodles Spring Trophy Handicap', grade:'Hcap', dist:'7f', type:'3yo only', prize:'Class 2',
+    info:'Three-year-old sprint handicap — bigger fields favour the low draws.' },
+  '14:35-2': { name:'Boodles Huxley Stakes', grade:'G2', dist:'1m 2f 70y', type:'4yo+', prize:'£130,000',
+    info:'Group 2 over Chester\'s bread-and-butter trip. Pace, low draw, class. Winner gets a Manhattan Stakes berth at Belmont.' },
+  '15:05-2': { name:'Ladbrokes Chester Cup (Heritage Handicap)', grade:'Hcap', dist:'2m 2f 75y', type:'4yo+', prize:'£87,618 (1st)',
+    info:'The festival\'s flagship — a Heritage Handicap stayers\' marathon. Course form, stamina and a workable mark are everything.', headline:true },
+  '15:40-2': { name:'Boodles Earl Grosvenor Cup Handicap', grade:'Hcap', dist:'1m 5f 89y', type:'4yo+', prize:'Class 2',
     info:'Middle-distance handicap — Cup-day support race.' },
-  '16:25-2': { name:'Boodles Boodlesinauguration Stakes', grade:'Listed', dist:'5f 16y', type:'3yo+', prize:'£42,000',
-    info:'Listed sprint — class sprinters; low draw essential.' },
-  '17:00-2': { name:'Boodles Sefton Lodge Handicap', grade:'Hcap', dist:'1m', type:'4yo+', prize:'£18,000',
-    info:'Closing mile handicap to wrap up the festival.' },
+  '16:15-2': { name:'Boodles Maiden Fillies\' Stakes', grade:'Mdn', dist:'7f', type:'3yo Fillies', prize:'Class 5',
+    info:'Fillies\' maiden — debutantes from leading yards favoured.' },
+  '16:50-2': { name:'Boodles Sefton Lodge Handicap', grade:'Hcap', dist:'5f', type:'3yo+', prize:'Class 4',
+    info:'Closing sprint to wrap up the festival — pure pace and a low draw.' },
 };
 
-// Tips — Nap, NB and Longshot for every race
-// Format: { nap:{horse,connections,odds,reason}, nb:{...}, longshot:{...} }
+// Tips — Nap, NB and Longshot per race
+// Day 1 (Wed 6 May) tips sourced from real tipsters: Billy Grimshaw,
+// horseracing.net Biggest-Priced Naps panel, Andy Newton (ITV Racing tips),
+// Read Horse Racing, Timeform / Paddy Power and William Hill News.
+// Days 2 and 3 marked TBC where confirmed tipster picks aren't available yet —
+// they will be filled in as cards are published the night before.
 const TIPS = {
-  /* ═══ Wed 6 May ═══ */
+  /* ═══ Wed 6 May — Trials Day ═══ */
   '13:30-0': {
-    nap:      { horse:'Wait Geordie',   connections:'K Dalgleish · J P Sullivan',     odds:'85/40', reason:'Billy Grimshaw NAP, tipped at 9/4 and shortening. Smart juvenile from a yard in form, drawn low.' },
-    nb:       { horse:'Roodee Rocket',  connections:'R Varian · Tom Marquand',         odds:'5/2',  reason:'Marquand booking always a positive at Chester. Eye-catching Newbury debut behind a Listed-class type.' },
-    longshot: { horse:'Cheshire Cat',   connections:'K A Ryan · K Stott',              odds:'12/1', reason:'Ryan team strikes early at Chester every year — drawn one and bred to be sharp.' },
+    nap:      { horse:'Wait Geordie',   connections:'Karl Burke · Oisin Murphy',       odds:'85/40', reason:'Billy Grimshaw NAP, tipped at 9/4 and shortening. Drawn 3, winning Bath debutant whose form has worked out — pinpointed for the Lily Agnes long before he ran.' },
+    nb:       { horse:'Final Appeal',   connections:'Karl Burke · Clifford Lee',       odds:'3/1',   reason:'Burke\'s second string and arguably the form pick. The yard could land back-to-back Lily Agnes wins.' },
+    longshot: { horse:'I\'m The One Too',connections:'TBC',                              odds:'10/1+', reason:'Each-way longshot from the wider field — confirmed Best-Odds longshot to follow at off-time.' },
   },
   '14:05-0': {
-    nap:      { horse:'The Angel King',  connections:'Ian Williams · Edward Greatrex',  odds:'74/1', reason:'Headline Best Odds NAP from horseracing.net at 74/1. Williams has a strong Chester record and the gelding is well treated on his best efforts.' },
-    nb:       { horse:'Brighton Boy',    connections:'Tim Easterby · Duran Fentiman',   odds:'64/1', reason:'Tipped NAP at 64/1. Easterby loves the Roodee — the yard hits double figures here every year.' },
-    longshot: { horse:'Bellarchi',       connections:'Grant Tuer · Oliver Stammers',    odds:'22/1', reason:'Tipped NAP at 22/1. Stammers riding well; Tuer\'s improver has obvious each-way claims in a wide-open handicap.' },
+    nap:      { horse:'Adonius',         connections:'TBC · drawn stall 1',             odds:'5/1',   reason:'Andy Newton\'s NAP (Read Horse Racing / ITV Racing tips). Soldier\'s Call gelding has scored twice at Musselburgh this season — despite a 5lb penalty, the plum draw stall 1 makes him.' },
+    nb:       { horse:'The Angel King',  connections:'Ian Williams · Edward Greatrex',  odds:'74/1',  reason:'Biggest-priced NAP on horseracing.net at 74/1. Williams enjoys a strong Chester record and the gelding is feasibly handicapped on his best efforts — outside place chance.' },
+    longshot: { horse:'Bellarchi',       connections:'Grant Tuer · Oliver Stammers',    odds:'22/1',  reason:'Tipped NAP at 22/1 (horseracing.net). Stammers riding well; Tuer\'s improver has each-way claims in a wide-open 14-runner handicap. Brighton Boy (Easterby/Fentiman) 64/1 also live each-way.' },
   },
-  '14:40-0': {
-    nap:      { horse:'Roodee Rose',     connections:'A M Balding · Oisin Murphy',      odds:'5/2',  reason:'Balding/Murphy with a Group-class filly stepping into Listed company. Cheshire Oaks profile to a tee.' },
-    nb:       { horse:'Sky Anchor',      connections:'J & T Gosden · Kieran Shoemark',  odds:'7/2',  reason:'Gosden filly with a fluent Newbury maiden win to her name — needs the trip and gets it here.' },
-    longshot: { horse:'Lyric Of Light',  connections:"A P O'Brien · R L Moore",        odds:'10/1', reason:'Ballydoyle\'s third string but Moore stays on board — that booking demands respect at the price.' },
+  '14:35-0': {
+    nap:      { horse:"I'm The One",     connections:'J & T Gosden',                    odds:'5/2',   reason:'Sea The Stars filly, propping up the Epsom Oaks market after a clear-cut Newbury debut win. Stays unbeaten if the step up to 1m3½f delivers as expected.' },
+    nb:       { horse:'TBC',             connections:'',                                 odds:'',      reason:'Cheshire Oaks NB confirmed once final field is published — likely a Stoute or O\'Brien filly given the small-field profile.' },
+    longshot: { horse:'TBC',             connections:'',                                 odds:'',      reason:'Listed Cheshire Oaks fields rarely produce a true longshot — only 5 runners declared. EW value pick added if a 6/1+ runner emerges.' },
   },
-  '15:15-0': {
-    nap:      { horse:'Stone Of Destiny',connections:"A P O'Brien · R L Moore",         odds:'9/4',  reason:'Ballydoyle nap. O\'Brien\'s Chester Vase record is unmatched and Moore steers — the Derby trial picks itself.', headline:true },
-    nb:       { horse:'Ottoman Empire',  connections:'C Appleby · W Buick',             odds:'4/1',  reason:'Appleby/Buick with a Listed-placed colt who promises to relish 1m4f and the tight Roodee turns.' },
-    longshot: { horse:'Roman Aqueduct',  connections:'W J Haggas · Tom Marquand',       odds:'12/1', reason:'Haggas second string — Marquand riding superbly at Chester. Big-priced each-way value.' },
+  '15:05-0': {
+    nap:      { horse:'Benvenuto Cellini',connections:"A P O'Brien",                    odds:'odds-on',reason:'ITV Racing NB (Will Hayler / Paddy Power) elevated to NAP here. Frankel colt, won the Champions Juvenile at Leopardstown, third in the Futurity G1. O\'Brien\'s Chester Vase record is unmatched.', headline:true },
+    nb:       { horse:'Del Maro',        connections:'TBC',                              odds:'5/1',   reason:'Billy Grimshaw NB, tipped at 10/1 and shortening to 5/1. The market suggests genuine potential to the Ballydoyle favourite.' },
+    longshot: { horse:'TBC',             connections:'',                                 odds:'',      reason:'Vase longshot to be confirmed when final field declared — typically an Appleby second string at double-figure odds.' },
   },
-  '15:50-0': {
-    nap:      { horse:'Mostly Cloudy',   connections:'K R Burke · Clifford Lee',        odds:'4/1',  reason:'Burke yard in fine form; consistent course form on the Roodee mile and stalls 2 from the front rank.' },
-    nb:       { horse:'Mademoiselle',    connections:'R Hannon · S M Levey',            odds:'9/2',  reason:'Hannon filly with previous Chester course form. Levey at Chester is a positive booking.' },
-    longshot: { horse:'Roodee Mist',     connections:'D O\'Meara · D Tudhope',          odds:'14/1', reason:'O\'Meara/Tudhope longshot — yard targets these meetings and the mare has been dropped to a workable mark.' },
+  '15:40-0': {
+    nap:      { horse:'Star Material',   connections:'Mikey Sheehy',                    odds:'TBC',   reason:'Timeform Wednesday wager (Paddy Power). Off mark of 84, race fitness from a recent run, fitted with first-time visor that could spark improvement.' },
+    nb:       { horse:'TBC',             connections:'',                                 odds:'',      reason:'Confirmed NB for the 12-runner 3yo handicap added once the final declarations and tipster columns publish.' },
+    longshot: { horse:'TBC',             connections:'',                                 odds:'10/1+', reason:'Big-priced each-way pick added when ITV / Racing Post columnists confirm overnight selections.' },
   },
-  '16:25-0': {
-    nap:      { horse:'Quickfire',       connections:'M Dods · Connor Beasley',         odds:'7/2',  reason:'Genuine front-running 5f sprinter. Dods specialist, low draw, breaks like a flash.' },
-    nb:       { horse:'Roodee Express',  connections:'K A Ryan · Tom Eaves',            odds:'5/1',  reason:'Ryan/Eaves with a sharp sprinter who has run well at Chester before.' },
-    longshot: { horse:'Padre Pio',       connections:'Tim Easterby · Duran Fentiman',   odds:'16/1', reason:'Easterby/Fentiman raider — yard plunders Chester week. Big each-way price for a course-and-distance type.' },
+  '16:10-0': {
+    nap:      { horse:'TBC',             connections:'',                                 odds:'',      reason:'Six-runner 1m 2½f handicap — small-field tactical contest. Tip added once trainer/jockey bookings are confirmed.' },
+    nb:       { horse:'TBC',             connections:'',                                 odds:'',      reason:'NB to follow.' },
+    longshot: { horse:'TBC',             connections:'',                                 odds:'',      reason:'Longshot to follow — small fields rarely produce a real EW longshot, may be skipped.' },
   },
-  '17:00-0': {
-    nap:      { horse:'Spangled Mac',    connections:'George Boughey · Billy Loughnane',odds:'28/1', reason:'Best Odds 28/1 NAP from horseracing.net. Boughey/Loughnane — a stable and rider both in red-hot form. Big-priced festival nap.' },
-    nb:       { horse:'Roodee Champion', connections:'A M Balding · Oisin Murphy',      odds:'7/2',  reason:'Balding/Murphy with a stayer — proven over 1m5f and a respected combination at Chester.' },
-    longshot: { horse:'Curragh Echo',    connections:'I Mohammed · S De Sousa',          odds:'20/1', reason:'Each-way longshot. Mohammed\'s improver looked to need 1m5f when finishing strongly at Doncaster last week.' },
+  '16:45-0': {
+    nap:      { horse:'Spangled Mac',    connections:'George Boughey · Billy Loughnane',odds:'28/1',  reason:'Best-priced NAP from horseracing.net at 28/1. Boughey/Loughnane both in red-hot form, runs over his optimum 7f — a big-priced festival nap to take to.' },
+    nb:       { horse:'TBC',             connections:'',                                 odds:'',      reason:'14-runner finale — confirmed NB to follow as overnight markets settle.' },
+    longshot: { horse:'TBC',             connections:'',                                 odds:'',      reason:'Big-field 7f handicap typically delivers a 14/1+ longshot from a low draw.' },
   },
 
-  /* ═══ Thu 7 May ═══ */
+  /* ═══ Thu 7 May — Ladies Day (tips published night before) ═══ */
   '13:30-1': {
-    nap:      { horse:'Marshland',       connections:'Karl Burke · Sam James',          odds:'7/4',  reason:'Sharp Burke juvenile with a smart Catterick maiden win. Low-draw sprinter cut out for the Roodee.' },
-    nb:       { horse:'Sandy Lane',      connections:'R Hannon · S M Levey',            odds:'4/1',  reason:'Hannon\'s eye-catching Salisbury debutante — the yard\'s best 2yo placed at Chester for two decades.' },
-    longshot: { horse:'Cheshire Sky',    connections:'M Johnston · Joe Fanning',        odds:'12/1', reason:'Johnston/Fanning longshot — the master at picking up valuable Chester juvenile pots.' },
+    nap:      { horse:'TBC',             connections:'',                                 odds:'',      reason:'Day 2 NAP added once tipster columns publish on Wednesday evening.' },
+    nb:       { horse:'TBC',             connections:'',                                 odds:'',      reason:'Day 2 NB to follow.' },
+    longshot: { horse:'TBC',             connections:'',                                 odds:'',      reason:'Day 2 Longshot to follow.' },
   },
   '14:05-1': {
-    nap:      { horse:'Trafalgar Square',connections:'C Hills · Kieran Shoemark',       odds:'5/2',  reason:'Hills 3yo with a Newmarket maiden win and Listed third — well treated on the second-time runner mark.' },
-    nb:       { horse:'River Rhuddlan',  connections:'A M Balding · Oisin Murphy',      odds:'9/2',  reason:'Balding/Murphy 3yo, drawn 1 — the dream draw for a Roodee mile handicap.' },
-    longshot: { horse:'Ascendency',      connections:'M & D Easterby · D Allan',        odds:'14/1', reason:'Easterby raider who has hinted at more — the yard always lands one at the festival.' },
+    nap:      { horse:'TBC',             connections:'',                                 odds:'',      reason:'Day 2 NAP added once tipster columns publish on Wednesday evening.' },
+    nb:       { horse:'TBC',             connections:'',                                 odds:'',      reason:'Day 2 NB to follow.' },
+    longshot: { horse:'TBC',             connections:'',                                 odds:'',      reason:'Day 2 Longshot to follow.' },
   },
-  '14:40-1': {
-    nap:      { horse:'Israr',           connections:'J & T Gosden · Kieran Shoemark',  odds:'7/4',  reason:'Group 1-placed Gosden horse dropping back to G3. Course-suitable trip and a class drop too.' },
-    nb:       { horse:'Lord Of The Mile',connections:'W J Haggas · Tom Marquand',       odds:'4/1',  reason:'Haggas/Marquand — the festival\'s in-form combination. Won a Listed at Sandown last time.' },
-    longshot: { horse:'Roodee Magic',    connections:"A P O'Brien · R L Moore",        odds:'10/1', reason:'O\'Brien\'s second string here often runs above his market price; Moore booking is a major positive.' },
+  '14:35-1': {
+    nap:      { horse:'TBC',             connections:'',                                 odds:'',      reason:'Dee Stakes NAP — 6-runner Listed Derby trial, NAP added when overnight markets settle.', headline:true },
+    nb:       { horse:'TBC',             connections:'',                                 odds:'',      reason:'NB to follow.' },
+    longshot: { horse:'TBC',             connections:'',                                 odds:'',      reason:'Small-field Listed — longshot may be skipped if no 6/1+ runner.' },
   },
-  '15:15-1': {
-    nap:      { horse:'Iresine',         connections:'J Reynier · Mickael Barzalona',   odds:'5/2',  reason:'French raider. Top-class middle-distance form and proven on a flat track. The class horse.', headline:true },
-    nb:       { horse:'Hamish',          connections:'W J Haggas · Tom Marquand',       odds:'7/2',  reason:'Haggas\' veteran stays well, course-suitable and the Marquand booking is a tick.' },
-    longshot: { horse:'Sober',           connections:'M Botti · Rossa Ryan',            odds:'12/1', reason:'Improver from a yard targeting these handicaps at festival meetings. Each-way value.' },
+  '15:05-1': {
+    nap:      { horse:'TBC',             connections:'',                                 odds:'',      reason:'Ormonde Stakes NAP — G3 over 1m5f84y. Past winners include high-class older middle-distance horses. NAP confirmed Wednesday evening.' },
+    nb:       { horse:'TBC',             connections:'',                                 odds:'',      reason:'NB to follow.' },
+    longshot: { horse:'TBC',             connections:'',                                 odds:'',      reason:'Each-way longshot in 8-runner G3 added if value emerges.' },
   },
-  '15:50-1': {
-    nap:      { horse:'Holy Cross',      connections:'A M Balding · David Probert',     odds:'4/1',  reason:'Balding\'s stayer who relishes deep stamina trips. A Chester Cup prep par excellence.' },
-    nb:       { horse:'Tashkhan',        connections:'B Ellison · Ben Robinson',        odds:'9/2',  reason:'Tashkhan loves a marathon trip; well drawn and respected for the bigger handicap on Friday.' },
-    longshot: { horse:'Coltrane',        connections:'A M Balding · Oisin Murphy',      odds:'11/1', reason:'The 2024 Gold Cup placer back from a break — trial run before Royal Ascot but each-way value.' },
+  '15:40-1': {
+    nap:      { horse:'TBC',             connections:'',                                 odds:'',      reason:'Day 2 NAP added once tipster columns publish on Wednesday evening.' },
+    nb:       { horse:'TBC',             connections:'',                                 odds:'',      reason:'Day 2 NB to follow.' },
+    longshot: { horse:'TBC',             connections:'',                                 odds:'',      reason:'Day 2 Longshot to follow.' },
   },
-  '16:25-1': {
-    nap:      { horse:'Roodee Tycoon',   connections:'R Varian · Tom Marquand',         odds:'3/1',  reason:'Marquand drawn 2 in a tactical mile handicap. Varian\'s 4yo on a fair mark.' },
-    nb:       { horse:'Snipe',           connections:'R Hannon · Rossa Ryan',           odds:'4/1',  reason:'Hannon improver hit the line strongly at Goodwood last time. Race set up for him.' },
-    longshot: { horse:'Watch Me Now',    connections:'D O\'Meara · D Tudhope',          odds:'14/1', reason:'O\'Meara has been planning this run for weeks. Each-way longshot with a small field opportunity.' },
+  '16:15-1': {
+    nap:      { horse:'TBC',             connections:'',                                 odds:'',      reason:'Day 2 NAP added once tipster columns publish on Wednesday evening.' },
+    nb:       { horse:'TBC',             connections:'',                                 odds:'',      reason:'Day 2 NB to follow.' },
+    longshot: { horse:'TBC',             connections:'',                                 odds:'',      reason:'Day 2 Longshot to follow.' },
   },
-  '17:00-1': {
-    nap:      { horse:'Quick Quotation', connections:'K A Ryan · Tom Eaves',            odds:'7/2',  reason:'Drawn 1, gate speed, and Ryan/Eaves — the Chester sprint formula in one runner.' },
-    nb:       { horse:'Mooneista',       connections:'J Murtagh · Ben Coen',            odds:'5/1',  reason:'Irish raider with Group form on her CV; the trip and surface suit well.' },
-    longshot: { horse:'Eagle Day',       connections:'Tim Easterby · Duran Fentiman',   odds:'18/1', reason:'Easterby raider — the trainer\'s strike rate at the festival makes any of his runners playable each-way.' },
+  '16:50-1': {
+    nap:      { horse:'TBC',             connections:'',                                 odds:'',      reason:'Stayers\' handicap over Chester Cup distance — useful Cup pointer. Tip added Wednesday evening.' },
+    nb:       { horse:'TBC',             connections:'',                                 odds:'',      reason:'Day 2 NB to follow.' },
+    longshot: { horse:'TBC',             connections:'',                                 odds:'',      reason:'Day 2 Longshot to follow.' },
   },
 
-  /* ═══ Fri 8 May ═══ */
+  /* ═══ Fri 8 May — Chester Cup Day (tips published Thursday evening) ═══ */
   '13:30-2': {
-    nap:      { horse:'Mile End',        connections:'A M Balding · Oisin Murphy',      odds:'9/4',  reason:'Balding/Murphy 3yo handicapper drawn low. Comes here off a wind operation and a fair mark.' },
-    nb:       { horse:'Brave Knight',    connections:'Sir M Stoute · Ryan Moore',       odds:'4/1',  reason:'Stoute 3yo bred to improve markedly from 7f to a mile; Moore on for the first time.' },
-    longshot: { horse:'Plumette',        connections:'C Hills · Kieran Shoemark',       odds:'12/1', reason:'Big-priced Hills filly with a wind op behind her. Drawn 3 and bred for this trip.' },
+    nap:      { horse:'TBC',             connections:'',                                 odds:'',      reason:'Day 3 NAP added once tipster columns publish Thursday evening.' },
+    nb:       { horse:'TBC',             connections:'',                                 odds:'',      reason:'Day 3 NB to follow.' },
+    longshot: { horse:'TBC',             connections:'',                                 odds:'',      reason:'Day 3 Longshot to follow.' },
   },
   '14:05-2': {
-    nap:      { horse:'Galway Sunset',   connections:"A P O'Brien · R L Moore",         odds:'6/4',  reason:'Ballydoyle Derby trial. Moore booking, O\'Brien Vase machine — Dee Stakes the natural extension.' },
-    nb:       { horse:'Notable Speech II',connections:'C Appleby · W Buick',            odds:'5/2',  reason:'Appleby/Buick second-season type — Listed level looks within range over 1m2f.' },
-    longshot: { horse:'Bermuda',         connections:'J & T Gosden · Kieran Shoemark',  odds:'14/1', reason:'Lightly-raced Gosden colt. The yard plots improvers like this for these middle-distance Listed events.' },
+    nap:      { horse:'TBC',             connections:'',                                 odds:'',      reason:'Day 3 NAP added once tipster columns publish Thursday evening.' },
+    nb:       { horse:'TBC',             connections:'',                                 odds:'',      reason:'Day 3 NB to follow.' },
+    longshot: { horse:'TBC',             connections:'',                                 odds:'',      reason:'Day 3 Longshot to follow.' },
   },
-  '14:40-2': {
-    nap:      { horse:'Lavender Field',  connections:'R Varian · Tom Marquand',         odds:'5/2',  reason:'Varian/Marquand fillies\' maiden — a debutante who has been working with seasoned older horses.' },
-    nb:       { horse:'Spring Dawn',     connections:'J & T Gosden · W Buick',          odds:'3/1',  reason:'Gosden/Buick filly. Chester maidens for fillies routinely fall to a Newmarket Powerhouse type.' },
-    longshot: { horse:'Snowy Owl',       connections:'A M Balding · Oisin Murphy',      odds:'10/1', reason:'Balding\'s second string but Murphy retains the mount — that\'s the each-way alarm bell.' },
+  '14:35-2': {
+    nap:      { horse:'TBC',             connections:'',                                 odds:'',      reason:'Huxley Stakes NAP — G2 over 1m2f. Manhattan Stakes Belmont ticket on offer. NAP confirmed Thursday evening.' },
+    nb:       { horse:'TBC',             connections:'',                                 odds:'',      reason:'Huxley NB to follow.' },
+    longshot: { horse:'TBC',             connections:'',                                 odds:'',      reason:'EW longshot in the G2 added if value emerges.' },
   },
-  '15:15-2': {
-    nap:      { horse:'Trueshan',        connections:'A King · Hollie Doyle',           odds:'5/2',  reason:'The Cup specialist. Trueshan thrives on a stamina test and the soft-side ground forecast plays right into his hands.', headline:true },
-    nb:       { horse:'Coltrane',        connections:'A M Balding · Oisin Murphy',      odds:'4/1',  reason:'2024 Gold Cup placer used to running off these marks. Course-suitable and Murphy is a positive.' },
-    longshot: { horse:'Yashin',          connections:'I Williams · Edward Greatrex',    odds:'20/1', reason:'Williams/Greatrex — the stable behind today\'s 74/1 NAP. Stays all day; place chance at a price in the marathon.' },
+  '15:05-2': {
+    nap:      { horse:'Galileo Dame',     connections:"Joseph O'Brien",                  odds:'8/1',   reason:'Joint Chester Cup favourite (Betfred). Hurdles winner who returned with a Navan 2nd over 1m6f off only +3lb. Stamina pedigree for 2m2½f, Irish raider with serious intentions.', headline:true },
+    nb:       { horse:'Puturhandstogether',connections:"Joseph O'Brien",                  odds:'8/1',   reason:'Joint favourite. Five-year-old with two wins and a top-three finish in five of seven Flat starts. Won at the Curragh on his last Flat outing — a profile that screams more to come.' },
+    longshot: { horse:'Blindedbythelights',connections:'TBC',                             odds:'8/1',   reason:'Joint favourite at 8/1 alongside Galileo Dame, Puturhandstogether and Leinster — historically the 8/1–16/1 band has dominated the Chester Cup over a 10-year sample.' },
   },
-  '15:50-2': {
-    nap:      { horse:'Sweet William',   connections:'J & T Gosden · W Buick',          odds:'7/2',  reason:'Gosden\'s middle-distance handicap improver. Buick books off the back of a fluent Newbury win.' },
-    nb:       { horse:'Roodee Royal',    connections:'A M Balding · David Probert',     odds:'5/1',  reason:'Balding stayer with course form and a low draw — the standing trends for the trip.' },
-    longshot: { horse:'Get Shirty',      connections:'D O\'Meara · D Tudhope',          odds:'12/1', reason:'O\'Meara/Tudhope each-way longshot. Yard hits the boards with this profile of stayer regularly here.' },
+  '15:40-2': {
+    nap:      { horse:'TBC',             connections:'',                                 odds:'',      reason:'Day 3 NAP added once tipster columns publish Thursday evening.' },
+    nb:       { horse:'TBC',             connections:'',                                 odds:'',      reason:'Day 3 NB to follow.' },
+    longshot: { horse:'TBC',             connections:'',                                 odds:'',      reason:'Day 3 Longshot to follow.' },
   },
-  '16:25-2': {
-    nap:      { horse:'Live In The Dream',connections:'A Watson · Sean D Bowen',         odds:'3/1',  reason:'King\'s Stand winner returning to a Listed dropdown. The pace ace — Roodee 5f tailor-made.' },
-    nb:       { horse:'Quinault',        connections:'C Cox · Marco Ghiani',            odds:'4/1',  reason:'Listed-placed sprinter with an obvious chance off a workable mark. Drawn 2.' },
-    longshot: { horse:'Run To Freedom',  connections:'Adrian Murray · Gavin Ryan',      odds:'14/1', reason:'Irish raider, low draw 3, and a yard that targets these. Big each-way price.' },
+  '16:15-2': {
+    nap:      { horse:'TBC',             connections:'',                                 odds:'',      reason:'Day 3 NAP added once tipster columns publish Thursday evening.' },
+    nb:       { horse:'TBC',             connections:'',                                 odds:'',      reason:'Day 3 NB to follow.' },
+    longshot: { horse:'TBC',             connections:'',                                 odds:'',      reason:'Day 3 Longshot to follow.' },
   },
-  '17:00-2': {
-    nap:      { horse:'Diamond Bay',     connections:'K A Ryan · Tom Eaves',            odds:'4/1',  reason:'Ryan/Eaves — the Chester sprint specialists go again. Drawn low, course form, finale fancy.' },
-    nb:       { horse:'Mostly Sunshine', connections:'A M Balding · Oisin Murphy',      odds:'5/1',  reason:'Balding/Murphy mare, course-and-distance proven on the Roodee mile.' },
-    longshot: { horse:'Roman Empire',    connections:'M Botti · Rossa Ryan',            odds:'16/1', reason:'Botti runner has been gelded and freshened — first-time blinkers complete the each-way picture.' },
+  '16:50-2': {
+    nap:      { horse:'TBC',             connections:'',                                 odds:'',      reason:'Day 3 finale NAP — 5f sprint, low-draw specialist. Added Thursday evening.' },
+    nb:       { horse:'TBC',             connections:'',                                 odds:'',      reason:'Day 3 NB to follow.' },
+    longshot: { horse:'TBC',             connections:'',                                 odds:'',      reason:'Day 3 Longshot to follow.' },
   },
 };
 
@@ -759,10 +764,13 @@ function renderTipsDay(dayIdx, tabEl) {
 
     tipKeys.forEach(t => {
       const tip = tips[t];
-      if (!tip) {
-        html += `<div class="tip-card tip-${t}">
+      const isTbc = !tip || !tip.horse || tip.horse.toUpperCase() === 'TBC';
+      if (isTbc) {
+        const tbcReason = tip && tip.reason ? tip.reason : 'Pick coming closer to the off — check back as cards declare.';
+        html += `<div class="tip-card tip-${t}" style="opacity:0.78">
           <div class="tip-type">${tipLabels[t]}</div>
-          <div class="tip-horse" style="color:var(--silver);font-style:italic;font-size:0.9rem">TBC</div>
+          <div class="tip-horse" style="color:var(--silver);font-style:italic;font-size:0.95rem">TBC</div>
+          <div class="tip-reason">${escHtml(tbcReason)}</div>
         </div>`;
         return;
       }
