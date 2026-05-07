@@ -271,6 +271,10 @@
   .src-3x     { background: rgba(202,138,4,0.32);  border: 1px solid rgba(202,138,4,0.85); color: var(--gold); font-weight: 800; box-shadow: 0 0 8px rgba(251,191,36,0.18); }
   .src-cd     { background: rgba(96,165,250,0.18); border: 1px solid rgba(96,165,250,0.45); color: var(--blue-l); }
   .src-big    { background: rgba(239,68,68,0.18);  border: 1px solid rgba(239,68,68,0.5);  color: #fca5a5; }
+  .src-big-ew { background: rgba(239,68,68,0.18);  border: 1px solid rgba(239,68,68,0.5);  color: #fca5a5; }
+  .src-ro     { background: rgba(167,139,250,0.18); border: 1px solid rgba(167,139,250,0.5); color: #c4b5fd; }
+  .src-ro-ew  { background: rgba(167,139,250,0.18); border: 1px solid rgba(167,139,250,0.5); color: #c4b5fd; }
+  .src-nr     { background: rgba(120,120,120,0.2);  border: 1px solid rgba(160,160,160,0.45); color: #d4d4d4; text-decoration: line-through; }
 
   /* Tipster dissent row — shown below the 3 main picks where a tipster's
      selection differs from Claude's NAP/NB/LONG. Colour key per source. */
@@ -291,6 +295,10 @@
   .tipster-extra-row.source-bg .tip-tag { color: #fdba74; }
   .tipster-extra-row.source-hrn { background: rgba(56,189,248,0.05); }
   .tipster-extra-row.source-hrn .tip-tag { color: #7dd3fc; }
+  .tipster-extra-row.source-big { background: rgba(239,68,68,0.05); }
+  .tipster-extra-row.source-big .tip-tag { color: #fca5a5; }
+  .tipster-extra-row.source-ro  { background: rgba(167,139,250,0.05); }
+  .tipster-extra-row.source-ro  .tip-tag { color: #c4b5fd; }
   .tipster-extra-row .tip-horse { font-size: 0.95rem; }
 
   .tip-meta-row {
@@ -416,6 +424,8 @@
   .icon-bg  { background: rgba(234,88,12,0.18); border: 1px solid rgba(234,88,12,0.5);  color: #fdba74; }
   .icon-nl  { background: rgba(20,184,166,0.18); border: 1px solid rgba(20,184,166,0.55); color: #5eead4; }
   .icon-hrn { background: rgba(56,189,248,0.18); border: 1px solid rgba(56,189,248,0.55); color: #7dd3fc; }
+  .icon-big { background: rgba(239,68,68,0.18);  border: 1px solid rgba(239,68,68,0.55);  color: #fca5a5; font-size: 0.62rem; letter-spacing: 0.04em; }
+  .icon-ro  { background: rgba(167,139,250,0.18); border: 1px solid rgba(167,139,250,0.55); color: #c4b5fd; }
   .icon-big { background: rgba(239,68,68,0.18); border: 1px solid rgba(239,68,68,0.55); color: #fca5a5; }
 
   .tipster-name { font-weight: 700; color: var(--cream); }
@@ -743,7 +753,7 @@
 
     <div class="page-title-bar">
       <h2>chester-day2-tips · Thursday 7 May 2026 · Ladies Day</h2>
-      <div class="subtitle">7 races · 4-pick Lucky 15 · 4 sources (SM, NL, HRN, BG) · 12 crossover signals · 3 three-way</div>
+      <div class="subtitle">7 races · 4-pick Lucky 15 · 6 sources (SM, NL, HRN, BG, BIG, RO) · 12 crossover signals · 3 three-way · 2 NRs (Aqua Bear R5, Harvey R6)</div>
     </div>
 
     <div id="day-1-races"></div>
@@ -831,6 +841,37 @@
           </div>
         </div>
 
+        <div class="tipster-block">
+          <div class="tipster-head">
+            <div class="tipster-icon icon-big">BIG</div>
+            <span class="tipster-name">HRN Biggest Priced Tips &amp; Naps</span>
+            <span class="tipster-count">(5 Chester picks · price-driven aggregator)</span>
+          </div>
+          <div class="tipster-picks">
+            <span class="label">R1</span> <span class="horse">Vintage Clarets</span> 25/1 ·
+            <span class="label">R3</span> <span class="horse">Shayem</span> 22/1 ·
+            <span class="label">R3</span> <span class="horse">Generic</span> 37/1 ·
+            <span class="label">R5</span> <span class="horse">Cool Molly</span> 20/1 ·
+            <span class="label">R5</span> <span class="horse" style="text-decoration:line-through;opacity:0.65">Aqua Bear</span> NR ·
+            <span class="label">R6</span> <span class="horse">Dante's Lad</span> 40/1 ·
+            <span class="label">R6</span> <span class="horse" style="text-decoration:line-through;opacity:0.65">Harvey</span> NR
+          </div>
+        </div>
+
+        <div class="tipster-block">
+          <div class="tipster-head">
+            <div class="tipster-icon icon-ro">RO</div>
+            <span class="tipster-name">Raceolly</span>
+            <span class="tipster-count">(3 EW longshots live · 1 NR)</span>
+          </div>
+          <div class="tipster-picks">
+            <span class="label">R1</span> <span class="horse">Roach Power</span> (E/W) 74/1 ·
+            <span class="label">R5</span> <span class="horse" style="text-decoration:line-through;opacity:0.65">Aqua Bear</span> (E/W) NR ·
+            <span class="label">R6</span> <span class="horse">Bravais</span> (E/W) 80/1 ·
+            <span class="label">R7</span> <span class="horse">Carwyn</span> (E/W) 74/1
+          </div>
+        </div>
+
       </div>
     </div>
 
@@ -857,11 +898,18 @@
           <li><span class="cx-horse">Galilean Quality</span> <span class="cx-race">R7</span> <span class="cx-odds">5/1</span> <span class="cx-tag">Claude NAP + Mullington · D winner, 9-0 wt</span></li>
         </ul>
         <p style="margin-top:10px;font-size:0.78rem;color:var(--silver);line-height:1.5"><strong>Tipster dissents:</strong>
-          <strong style="color:var(--green-lt)">Mullington R1</strong> Vintage Clarets EW 20/1 (CD, dr11 — value angle) ·
+          <strong style="color:var(--green-lt)">Mullington + HRN BIG R1</strong> Vintage Clarets EW 20/1 (2-source · CD, dr11 value angle) ·
           <strong style="color:#fdba74">Grimshaw R1</strong> Canon's House EW 9/2 (D winner, dr5) ·
+          <strong style="color:#c4b5fd">Raceolly R1</strong> Roach Power EW 74/1 (contrarian) ·
           <strong style="color:#7dd3fc">HRN R2</strong> Donegal Rose 5/1 (Palmer/Murphy debut F:5) ·
+          <strong style="color:#fca5a5">HRN BIG R3</strong> Generic 37/1 / Shayem 22/1 (longshot pair into the Dee) ·
           <strong style="color:#7dd3fc">HRN R4</strong> Rahiebb 9/2 (Varian dr1 improver) ·
-          <strong style="color:#5eead4">Nick Luck R5</strong> Factual 9/2 (Balding/Murphy stalking trip).</p>
+          <strong style="color:#5eead4">Nick Luck R5</strong> Factual 9/2 (Balding/Murphy stalking trip) ·
+          <strong style="color:#fca5a5">HRN BIG R5</strong> Cool Molly 20/1 ·
+          <strong style="color:#fca5a5">HRN BIG R6</strong> Dante's Lad 40/1 ·
+          <strong style="color:#c4b5fd">Raceolly R6</strong> Bravais EW 80/1 ·
+          <strong style="color:#c4b5fd">Raceolly R7</strong> Carwyn EW 74/1.</p>
+        <p style="margin-top:8px;font-size:0.74rem;color:#a1a1aa;line-height:1.5"><strong style="color:#d4d4d4">Non-runners flagged:</strong> <span style="text-decoration:line-through">Aqua Bear</span> R5 (HRN BIG + Raceolly EW) and <span style="text-decoration:line-through">Harvey</span> R6 (HRN BIG) — stakes returned, no settlement.</p>
       </div>
     </div>
 
@@ -871,7 +919,8 @@
       <div class="panel-body">
         <ul class="signals-list">
           <li><strong>⚡ Three 3-way crossover signals — strongest day of the festival so far.</strong> Morshdi (R3, Claude NAP + NL + HRN), Jan Brueghel (R4, Claude NAP + NL + BG), King Of Thunder (R5, Claude NB + SM + HRN). When three independent sources align, the signal-to-noise is genuinely high.</li>
-          <li><strong>Four-source alignment overall.</strong> Mullington (WH), Nick Luck (WH), HRN main and Billy Grimshaw all in. 12 crossover signals across the seven races — every race has at least one merged pick.</li>
+          <li><strong>Six-source alignment overall.</strong> Mullington (WH), Nick Luck (WH), HRN main, Billy Grimshaw, HRN Biggest Naps and Raceolly all on the board. 12 crossover signals across the seven races — every race has at least one merged pick, plus six longshot dissents and two non-runners (Aqua Bear R5, Harvey R6).</li>
+          <li><strong>R1 Vintage Clarets is now a 2-source dissent.</strong> Mullington's WH 20/1 EW pick and HRN Biggest Naps 25/1 both flag the same CD horse — independent cross-validation of the value angle on Roman Dragon's race. Worth a small saver bet alongside the Roman Dragon NAP.</li>
           <li><strong>Jan Brueghel R4 is now a 3-way NAP</strong> — Claude, Nick Luck and Grimshaw all on Aidan O'Brien's Coronation Cup winner. 5/6 below evens means banker, not L15-eligible — but a strong single win bet, or fold into a double with Constitution River R3.</li>
           <li><strong>R3 Dee Stakes Morshdi is the day's marquee 3-way.</strong> Stall 1, Haggas/Marquand, won last off the Feilden form Luck rates highly. The selection backed by Claude, Nick Luck and HRN against the market favourite Constitution River.</li>
           <li><strong>R5 King Of Thunder 3-way at 8/1.</strong> Claude NB + Mullington + HRN — Hugo Palmer's improver from the plum draw 4. Best value pick of the day from an alignment-vs-price standpoint.</li>
@@ -879,7 +928,8 @@
           <li><strong>Andrew Balding × Oisin Murphy fires four.</strong> Factual (R5, Luck's dissent), Jupiter Ammon (R6 NB), Mythical Bay (R7 NB), Mount Atlas (R4 LONG). The Chester combination — worth tracking even when not top pick.</li>
           <li><strong>Hugo Palmer (local) saddles five.</strong> Roman Dragon NAP R1 (2-source), Koodini NB R2, King Of Thunder NB R5 (3-source), Seagolazo R6, Be The Standard LONG R7. Roodee specialist firepower.</li>
           <li><strong>K.R. Burke 3yo trio:</strong> Strength of Spirit R5 (CD), Golden Story R3 (Mullington NAP / Claude LONG), Galilean Quality R7 (Claude NAP / Mullington — D winner, won last, 9-0 wt). R7 is the value play, anchor of the Lucky 15.</li>
-          <li><strong>Five tipster dissents</strong> — Mullington Vintage Clarets EW (R1, value), Grimshaw Canon's House EW (R1), HRN Donegal Rose (R2) and Rahiebb (R4), Nick Luck Factual (R5). Each shown as a colour-coded strip beneath its race.</li>
+          <li><strong>Eleven tipster dissents — colour-coded strips beneath each race.</strong> Mullington + HRN BIG cross-validated on Vintage Clarets R1 (green/red), Grimshaw Canon's House R1 (orange), Raceolly Roach Power R1 (violet), HRN Donegal Rose R2 (blue), HRN BIG Generic 37/1 + Shayem 22/1 R3 (red), HRN Rahiebb R4 (blue), Nick Luck Factual R5 (teal), HRN BIG Cool Molly R5 (red), HRN BIG Dante's Lad R6 (red), Raceolly Bravais EW R6 (violet), Raceolly Carwyn EW R7 (violet). Strikethrough rows mark the two non-runners (Aqua Bear R5, Harvey R6).</li>
+          <li><strong>Raceolly contrarian profile.</strong> All three live RO picks are 74/1+ EW longshots (Roach Power, Bravais, Carwyn). Different style of signal: explicit value-only, no overlap with consensus picks. Treat as small-stake EW saver bets, not Lucky 15 candidates.</li>
         </ul>
       </div>
     </div>
@@ -1026,10 +1076,12 @@ const DAY2_RACES = [
       { tag:'LONG', horse:'Dapper Valley',  sources:['CD'],         draw:9,  jockey:'C.Howarth(3)',trainer:'J.Owen',            form:'18-870311',  age:'5yo', wt:'9-2',  odds:'15/2', place:'' },
     ],
     tipsterRows:[
-      { code:'SM EW', tipster:'Mullington (WH)', horse:'Vintage Clarets', label:'SM EW', odds:'20/1',
-        note:'CD winner · "no way should be a 40/1 shot in a Chester handicap" · draw 11 high but value angle' },
+      { code:'SM EW', tipster:'Mullington (WH) + HRN BIG (25/1) — 2-source dissent', horse:'Vintage Clarets', label:'SM EW', odds:'20/1',
+        note:'CD winner · "no way should be a 40/1 shot in a Chester handicap" · cross-validated by HRN Biggest Naps · draw 11 high, value angle' },
       { code:'BG EW', tipster:'Grimshaw (HRN)',  horse:"Canon's House",   label:'BG EW', odds:'9/2',
         note:'Easterby raider · draw 5 · D winner · Grimshaw EW pick' },
+      { code:'RO EW', tipster:'Raceolly',        horse:'Roach Power',     label:'RO EW', odds:'74/1',
+        note:'Contrarian outsider · Raceolly value play, no other source on board' },
     ],
   },
   {
@@ -1051,6 +1103,12 @@ const DAY2_RACES = [
       { tag:'NB',   horse:'Constitution River',                       draw:4,  jockey:'R.Moore',     trainer:"A.O'Brien",         form:'211-',       age:'3yo', wt:'9-2', odds:'5/6',  place:'(banker — below evens)' },
       { tag:'LONG', horse:'Golden Story',    sources:['SM NAP','2x'], draw:5,  jockey:'C.Lee',       trainer:'K.R.Burke',         form:'1-',         age:'3yo', wt:'9-2', odds:'10/1', place:'1/4 2pl' },
     ],
+    tipsterRows:[
+      { code:'BIG', tipster:'HRN Biggest Priced Naps', horse:'Generic',  label:'BIG', odds:'37/1',
+        note:'Balding / O.Murphy combo · biggest-priced runner in the race · field-of-6 Listed dissent' },
+      { code:'BIG', tipster:'HRN Biggest Priced Tips', horse:'Shayem',   label:'BIG', odds:'22/1',
+        note:'HRN Biggest Tips longshot · contrarian against Morshdi/Constitution River' },
+    ],
   },
   {
     n:4, time:'15:05', title:'R4 15:05 Ladbrokes Ormonde Stakes (Grp 3)', meta:'1m5f | 8 rnrs | C1',
@@ -1065,7 +1123,7 @@ const DAY2_RACES = [
     ],
   },
   {
-    n:5, time:'15:40', title:'R5 15:40 Xenon Workplace Handicap', meta:'1m | 14 rnrs | C2',
+    n:5, time:'15:40', title:'R5 15:40 Xenon Workplace Handicap', meta:'1m | 13 rnrs (Aqua Bear NR) | C2',
     tips:[
       { tag:'NAP',  horse:'Mcmurray',        sources:['D'],            draw:5,  jockey:'B.Loughnane', trainer:'G.Boughey',         form:'62111-',     age:'3yo', wt:'9-1', odds:'11/4', place:'1/5 5pl' },
       { tag:'NB',   horse:'King Of Thunder', sources:['SM','HRN','3x'],draw:4,  jockey:'R.Dawson',    trainer:'H.Palmer',          form:'4601-',     age:'3yo', wt:'8-5', odds:'8/1',  place:'1/5 5pl' },
@@ -1074,14 +1132,26 @@ const DAY2_RACES = [
     tipsterRows:[
       { code:'NL', tipster:'Nick Luck (WH)', horse:'Factual', label:'NL', odds:'9/2',
         note:'Balding/Murphy · F:1-21 · "useful prospect, might not be all that long in handicaps" · draw 9, stalking trip' },
+      { code:'BIG', tipster:'HRN Biggest Priced Tips', horse:'Cool Molly', label:'BIG', odds:'20/1',
+        note:'HRN Biggest Tips longshot · field-of-13 wide-open handicap · price-driven dissent' },
+      { code:'BIG+RO', tipster:'HRN BIG + Raceolly', horse:'Aqua Bear', label:'NR', odds:'NR',
+        note:'NON-RUNNER · originally tipped by HRN Biggest Naps and Raceolly EW — stake returned, no settlement' },
     ],
   },
   {
-    n:6, time:'16:10', title:'R6 16:10 Halliwell Jones Handicap', meta:'1m2f | 14 rnrs | C3',
+    n:6, time:'16:10', title:'R6 16:10 Halliwell Jones Handicap', meta:'1m2f | 13 rnrs (Harvey NR) | C3',
     tips:[
       { tag:'NAP',  horse:'Lets Dream',      sources:['CD','HRN','2x'],draw:2,  jockey:'H.Crouch',    trainer:'M.Bell',            form:'3/1782381-',age:'5yo', wt:'9-8', odds:'5/1',  place:'1/5 5pl' },
       { tag:'NB',   horse:'Jupiter Ammon',                              draw:4,  jockey:'O.Murphy',    trainer:'A.Balding',         form:'226225-34', age:'4yo', wt:'9-1', odds:'7/2',  place:'' },
       { tag:'LONG', horse:'Hamadhan',        sources:['SM','2x'],      draw:7,  jockey:'D.Keenan',    trainer:'J.Candlish',        form:'9/663-',    age:'4yo', wt:'9-2', odds:'11/1', place:'1/5 5pl' },
+    ],
+    tipsterRows:[
+      { code:'BIG', tipster:'HRN Biggest Priced Naps', horse:"Dante's Lad", label:'BIG', odds:'40/1',
+        note:'Biggest-priced contender of the meeting · price-driven dissent against the Bell/Balding pair' },
+      { code:'RO EW', tipster:'Raceolly',              horse:'Bravais',       label:'RO EW', odds:'80/1',
+        note:'Raceolly EW longshot · 80/1 with 1/5 5pl terms · contrarian value play' },
+      { code:'BIG NR', tipster:'HRN Biggest Priced Naps', horse:'Harvey',     label:'NR', odds:'NR',
+        note:'NON-RUNNER · originally a HRN Biggest Naps tip — stake returned, no settlement' },
     ],
   },
   {
@@ -1090,6 +1160,10 @@ const DAY2_RACES = [
       { tag:'NAP',  horse:'Galilean Quality',sources:['SM','D','2x'],  draw:5,  jockey:'C.Lee',       trainer:'K.R.Burke',         form:'641-1',     age:'3yo', wt:'9-0', odds:'5/1',  place:'1/5 3pl' },
       { tag:'NB',   horse:'Mythical Bay',                               draw:6,  jockey:'O.Murphy',    trainer:'A.Balding',         form:'472-1',     age:'3yo', wt:'8-10',odds:'9/4',  place:'' },
       { tag:'LONG', horse:'Be The Standard',                            draw:2,  jockey:'J.Watson',    trainer:'H.Palmer',          form:'3214-',     age:'3yo', wt:'9-1', odds:'11/1', place:'1/5 3pl' },
+    ],
+    tipsterRows:[
+      { code:'RO EW', tipster:'Raceolly', horse:'Carwyn', label:'RO EW', odds:'74/1',
+        note:'Raceolly EW longshot · 74/1 with 1/5 3pl place terms · contrarian value · 9-rnr finale' },
     ],
   },
 ];
@@ -1115,18 +1189,23 @@ function escHtml(str) {
 
 function srcBadgeClass(label) {
   const l = label.toLowerCase().replace(/\s+/g,'-');
-  if (l === 'sm-nap') return 'src-sm-nap';
-  if (l === 'sm-ew')  return 'src-sm-ew';
-  if (l === 'sm')     return 'src-sm';
-  if (l === 'bg-ew')  return 'src-bg-ew';
-  if (l === 'bg')     return 'src-bg';
-  if (l === 'nl-ew')  return 'src-nl-ew';
-  if (l === 'nl')     return 'src-nl';
-  if (l === 'hrn')    return 'src-hrn';
-  if (l === '2x')     return 'src-2x';
-  if (l === '3x')     return 'src-3x';
-  if (l === 'cd')     return 'src-cd';
-  if (l === 'big')    return 'src-big';
+  if (l === 'sm-nap')   return 'src-sm-nap';
+  if (l === 'sm-ew')    return 'src-sm-ew';
+  if (l === 'sm')       return 'src-sm';
+  if (l === 'bg-ew')    return 'src-bg-ew';
+  if (l === 'bg')       return 'src-bg';
+  if (l === 'nl-ew')    return 'src-nl-ew';
+  if (l === 'nl')       return 'src-nl';
+  if (l === 'hrn')      return 'src-hrn';
+  if (l === '2x')       return 'src-2x';
+  if (l === '3x')       return 'src-3x';
+  if (l === 'cd')       return 'src-cd';
+  if (l === 'big-ew')   return 'src-big-ew';
+  if (l === 'big')      return 'src-big';
+  if (l === 'ro-ew')    return 'src-ro-ew';
+  if (l === 'ro')       return 'src-ro';
+  if (l === 'nr')       return 'src-nr';
+  if (l.startsWith('sm-+-big') || l.includes('+-big')) return 'src-big';
   return 'src-2x';
 }
 
@@ -1166,13 +1245,17 @@ function renderRichRace(race) {
   // from Claude's NAP/NB/LONG. Strip colour follows the source code.
   (race.tipsterRows || []).forEach(tr => {
     const code = (tr.code || '').toLowerCase();
-    const sourceClass = code.includes('sm')  ? 'source-sm'
+    const sourceClass = code.includes('big') ? 'source-big'
+                      : code.includes('ro')  ? 'source-ro'
+                      : code.includes('sm')  ? 'source-sm'
                       : code.includes('bg')  ? 'source-bg'
                       : code.includes('hrn') ? 'source-hrn'
                       : 'source-nl';
     const tipsterColour = sourceClass === 'source-sm'  ? 'var(--green-lt)'
                         : sourceClass === 'source-bg'  ? '#fdba74'
                         : sourceClass === 'source-hrn' ? '#7dd3fc'
+                        : sourceClass === 'source-big' ? '#fca5a5'
+                        : sourceClass === 'source-ro'  ? '#c4b5fd'
                         : '#5eead4';
     html += `<div class="tipster-extra-row ${sourceClass}">
       <div class="tip-tag">${escHtml(tr.code)}</div>
