@@ -77,7 +77,14 @@ const FESTIVALS_2026 = [
     icon:'🟡', dates:['2026-05-06','2026-05-07','2026-05-08'],
     dateLabel:'6–8 May 2026', venue:'Chester (Roodee)', type:'Flat',
     theme:'theme-amber', accentColor:'#d97706', url:'chester-2026.html',
-    races:21, headline:null, headlineRace:'Chester Cup',
+    races:21, headline:'A Piece Of Heaven (7/1) wins the Chester Cup · Engine ROI +47% (£41.59 net on £88.50)', headlineRace:'Chester Cup',
+  },
+  {
+    slug:'dante-2026', name:'Dante Festival 2026', shortName:'Dante',
+    icon:'🐎', dates:['2026-05-13','2026-05-14','2026-05-15'],
+    dateLabel:'13–15 May 2026', venue:'York (Knavesmire)', type:'Flat',
+    theme:'theme-violet', accentColor:'#7c3aed', url:'dante-2026.html',
+    races:21, headline:null, headlineRace:'Dante Stakes (G2) · Friday 15 May',
   },
 ];
 
