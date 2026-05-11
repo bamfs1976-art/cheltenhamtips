@@ -69,6 +69,11 @@
   to   = "/dante-2026.html"
   status = 200
 
+[[redirects]]
+  from = "/ffos-las-2026"
+  to   = "/ffos-las-2026.html"
+  status = 200
+
 # Future festivals — add a redirect here each time you add a new file
 # [[redirects]]
 #   from = "/royal-ascot-2026"
