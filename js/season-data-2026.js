@@ -86,6 +86,15 @@ const FESTIVALS_2026 = [
     theme:'theme-violet', accentColor:'#7c3aed', url:'dante-2026.html',
     races:21, headline:null, headlineRace:'Dante Stakes (G2) · Friday 15 May',
   },
+  {
+    // PLACEHOLDER — fill in dates / dateLabel / races / headlineRace once the
+    // Ffos Las fixture is confirmed. Empty `dates` keeps it off the live banner.
+    slug:'ffos-las-2026', name:'Ffos Las Jump Festival 2026', shortName:'Ffos Las',
+    icon:'🏴󠁧󠁢󠁷󠁬󠁳󠁿', dates:[],
+    dateLabel:'Dates TBC', venue:'Ffos Las (Carmarthenshire)', type:'NH',
+    theme:'theme-emerald', accentColor:'#15803d', url:'ffos-las-2026.html',
+    races:null, headline:null, headlineRace:'TBC',
+  },
 ];
 
 // ════════════════════════════════════════════════════════════════════════════
