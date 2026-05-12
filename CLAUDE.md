@@ -129,8 +129,23 @@ the system extensible.
 ## 4. DISPLAY CONTRACT (the festival hub standard)
 
 Every daily race day card across this hub must follow the same visual and
-structural pattern. The reference implementation is `chester-2026.html`
-(Day 1, Wed 6 May 2026).
+structural pattern. **This is the canonical design for all current and
+future racecards.** Do not use the older v2.0 template engine
+(`js/festival-template.js`) for new pages — that path is superseded by
+the hand-built rich race-card layout described below.
+
+### Reference implementations
+
+- **`chester-2026.html`** — the primary reference (Day 1 Wed 6 May 2026).
+  Race-card blocks, draw badges, source-badge tipster overlay, Lucky 15,
+  external tipsters box, crossover signals box.
+- **`dante-2026.html`** — Wed (Day 1, 13 May 2026) and Thu (Day 2,
+  14 May 2026) cards both follow the contract end-to-end with 21 picks
+  per day. Use as a working example of how to add a second day onto a
+  multi-day festival page once a single day is live.
+
+If a new festival page can't be modelled on one of these two, ask
+before improvising a different layout.
 
 ### File naming
 
