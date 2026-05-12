@@ -70,6 +70,30 @@
   .pick-note { color:var(--silver); font-size:0.78rem; margin-top:2px; line-height:1.5 }
   .pick-odds { color:var(--gold-lt); font-weight:700; font-size:0.85rem }
 
+  /* ── rich race card (engine display contract) ── */
+  .race-card { border:1px solid rgba(255,255,255,0.06); border-radius:10px; background:var(--bg-mid); margin-bottom:14px; overflow:hidden }
+  .race-card.headline { border-color:rgba(251,191,36,0.4) }
+  .race-card-head { padding:10px 14px; background:rgba(167,139,250,0.08); border-bottom:2px solid var(--gold); display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap }
+  .race-card-title { font-weight:700; color:var(--cream); font-size:0.92rem }
+  .race-card-meta { color:var(--silver); font-size:0.74rem }
+  .tip-row { display:grid; grid-template-columns:56px 1fr auto; gap:10px; padding:10px 14px; border-top:1px dashed rgba(255,255,255,0.08); align-items:start }
+  .tip-row:first-of-type { border-top:none }
+  .tip-tag { font-size:0.72rem; font-weight:800; letter-spacing:0.04em; text-transform:uppercase; padding-top:1px }
+  .tip-tag.nap { color:var(--gold) }
+  .tip-tag.nb  { color:var(--blue-l) }
+  .tip-tag.long{ color:var(--pink) }
+  .tip-horse { color:var(--cream); font-weight:700; font-size:0.95rem }
+  .tip-detail-row { margin-top:3px; display:flex; gap:8px; flex-wrap:wrap; align-items:center; font-size:0.74rem; color:var(--silver) }
+  .draw-badge { background:rgba(96,165,250,0.16); border:1px solid rgba(96,165,250,0.35); color:var(--blue-l); font-weight:600; font-size:0.7rem; padding:2px 7px; border-radius:4px }
+  .src-badge { font-size:0.62rem; font-weight:700; padding:2px 7px; border-radius:4px; letter-spacing:0.04em; text-transform:uppercase }
+  .src-cd { background:rgba(202,138,4,0.18); border:1px solid rgba(202,138,4,0.5); color:var(--gold-lt) }
+  .src-bf { background:rgba(160,160,160,0.18); border:1px solid rgba(160,160,160,0.45); color:#d4d4d4 }
+  .tip-odds-cell { text-align:right }
+  .tip-odds { color:var(--gold-lt); font-weight:700; font-size:0.92rem }
+  .tip-place { color:var(--silver); font-size:0.7rem; margin-top:1px }
+  .tip-angle { margin-top:4px; color:var(--silver); font-size:0.78rem; line-height:1.5 }
+  @media (max-width:480px){ .tip-row{grid-template-columns:48px 1fr auto;gap:8px} }
+
   .pending-block { background:rgba(167,139,250,0.05); border:1px dashed rgba(167,139,250,0.3); border-radius:8px; padding:14px 16px; color:var(--violet-lt); font-size:0.82rem; line-height:1.6 }
   .pending-inline { display:block; padding:8px 14px; border-top:1px dashed rgba(255,255,255,0.07); color:var(--silver); font-size:0.76rem; font-style:italic }
 
@@ -94,7 +118,7 @@
   <a href="season-2026.html" class="gnav-link"><span class="dot dot-gold"></span>Season Leaderboard</a>
 </nav>
 
-<div class="live-strip">🔴 Live Festival — starts tomorrow · Dante Festival 2026 · York Knavesmire · 13–15 May · <strong>Race schedule confirmed · full Claude NAP/NB/LONGSHOT cards + Lucky 15 publish on Sky Bet declarations</strong></div>
+<div class="live-strip">🔴 Live Festival — Day 1 tomorrow · Dante Festival 2026 · York Knavesmire · 13–15 May · <strong>Wednesday full card LIVE — 7 races, Nap/NB/Longshot + Lucky 15 · Thu &amp; Fri publish on declaration</strong></div>
 
 <main class="container">
 
@@ -114,8 +138,8 @@
   <section class="panel">
     <h2 class="panel-head">Where this page stands</h2>
     <div class="pending-block">
-      <strong style="color:var(--violet-lt)">Confirmed below:</strong> the full 3-day race schedule (race names, times, distances, classes, ITV/RTV coverage) plus an ante-post preview of the headline Group / Listed races with the current market leaders and the angles behind them.<br><br>
-      <strong style="color:var(--violet-lt)">Coming once Sky Bet declarations go up (overnight before each day):</strong> the engine-compliant card for every race — Claude NAP / NB / LONGSHOT with draw badge, jockey | trainer | F:form | age &amp; weight | odds | place terms; the 4-pick Lucky 15; external tipster integration (Mullington WH, Nick Luck WH ITV, Billy Grimshaw HRN, HRN main, HRN Biggest Naps/Tips, Raceolly) with 2x crossover signals; a key-signals bullet list; and — after racing — a settled-results banner with all placings and the P/L on the engine's 50p-EW staking. <em>Send the Sky Bet declaration screenshots and I'll build the lot, race by race, exactly like Chester 2026.</em>
+      <strong style="color:var(--violet-lt)">Live now:</strong> the full engine card for all 7 Wednesday races (below the schedule) — Claude NAP / NB / LONGSHOT with draw badge, jockey | trainer | F:form | age &amp; weight | odds | place terms, and a stated angle each; plus the Wednesday Lucky 15 and the ante-post preview of the headline Group / Listed races.<br><br>
+      <strong style="color:var(--violet-lt)">Still to come:</strong> Thursday's full card (incl. the Al Basti Equiworld Dubai Dante Stakes G2) and Friday's (incl. the Boodles Yorkshire Cup G2) — published once their Sky Bet declarations go up overnight. External tipster integration (Mullington WH, Nick Luck WH ITV, Billy Grimshaw HRN, HRN main, HRN Biggest Naps/Tips, Raceolly) with 2x crossover signals adds to the Wednesday card as those columns land. After racing each day: a settled-results banner with all placings and the P/L on the engine's 50p-EW staking. <em>Send the Thursday / Friday declaration screenshots (and any tipster columns) and I'll build them the same way.</em>
     </div>
   </section>
 
@@ -154,24 +178,77 @@
 
   <!-- 3-DAY RACE SCHEDULE -->
   <section class="panel">
-    <h2 class="panel-head">3-day race schedule · confirmed</h2>
+    <h2 class="panel-head">3-day card · Wed live · Thu &amp; Fri on declaration</h2>
 
     <div class="day-tabs">
-      <div class="day-tab active">Wed 13 May · Day 1 · Musidora Day</div>
-      <div class="day-tab">Thu 14 May · Day 2 · Dante Day</div>
-      <div class="day-tab">Fri 15 May · Day 3 · Yorkshire Cup Day</div>
+      <div class="day-tab active">Wed 13 May · Day 1 · full card live ✓</div>
+      <div class="day-tab">Thu 14 May · Dante Day · on declaration</div>
+      <div class="day-tab">Fri 15 May · Yorkshire Cup Day · on declaration</div>
     </div>
 
-    <!-- WEDNESDAY -->
+    <!-- WEDNESDAY — full engine cards -->
     <div style="margin-bottom:16px">
-      <p style="font-size:0.78rem;color:var(--gold-lt);font-weight:700;margin-bottom:8px;letter-spacing:0.04em;text-transform:uppercase">Wednesday 13 May · 7 races · going good, good to firm in places (showers forecast)</p>
-      <div class="race-row"><div class="race-time">13:45</div><div><div class="race-name">British Stallion Studs EBF Novice Stakes (Colts &amp; Geldings)</div><div class="race-meta">5f · 2yo · Class 2</div></div><div class="race-flag">RTV</div></div>
-      <div class="race-row"><div class="race-time">14:20</div><div><div class="race-name">Sky Bet Race To The Ebor Jorvik Handicap</div><div class="race-meta">1m4f · 4yo+ · Class 2</div></div><div class="race-flag itv">ITV</div></div>
-      <div class="race-row"><div class="race-time">14:55</div><div><div class="race-name">Churchill Tyres Handicap</div><div class="race-meta">6f · 4yo+ 0-105 · Class 2</div></div><div class="race-flag itv">ITV</div></div>
-      <div class="race-row"><div class="race-time">15:30</div><div><div class="race-name">Go Local Stores Minster Stakes (Group 2)</div><div class="race-meta">6f · 3yo+ · Class 1</div></div><div class="race-flag headline">⭐ G2 sprint · ITV</div></div>
-      <div class="race-row"><div class="race-time">16:05</div><div><div class="race-name">Tattersalls Musidora Stakes (Group 3) (Fillies)</div><div class="race-meta">1m2½f · 3yo · Class 1 · Oaks trial</div></div><div class="race-flag headline">⭐ G3 Oaks trial · ITV</div></div>
-      <div class="race-row"><div class="race-time">16:40</div><div><div class="race-name">Conundrum HR Consulting Handicap</div><div class="race-meta">7f · 3yo 0-95 · Class 3</div></div><div class="race-flag itv">ITV</div></div>
-      <div class="race-row"><div class="race-time">17:15</div><div><div class="race-name">Stuey Weston &amp; Friends Getting Out Handicap</div><div class="race-meta">1m4f · 4yo+ 0-85 · Class 4</div></div><div class="race-flag">RTV</div></div>
+      <p style="font-size:0.78rem;color:var(--gold-lt);font-weight:700;margin-bottom:10px;letter-spacing:0.04em;text-transform:uppercase">⚡ Wednesday 13 May · 7 races · going good, good to firm in places (showers forecast) · Nap / NB / Longshot per race · draws shown · tipster crossover signals add when columns land</p>
+
+      <div class="race-card">
+        <div class="race-card-head"><span class="race-card-title">R1 13:45 British Stallion Studs EBF Novice Stakes</span><span class="race-card-meta">5f Nov Stks | 6 rnrs | C2 · 2yo · EW 1/4 2pl · RTV</span></div>
+        <div class="tip-row"><div class="tip-tag nap">NAP</div><div><div class="tip-horse">Varzi</div><div class="tip-detail-row"><span class="draw-badge">Draw 4</span><span>C.Lee | K.R.Burke | F:debut | 2yo 9-2</span></div><div class="tip-angle">K.R. Burke / Clifford Lee · 11/10 reflects strong home reports — the form yard's representative in a race full of debutants. Banker, not a Lucky 15 pick.</div></div><div class="tip-odds-cell"><div class="tip-odds">11/10</div><div class="tip-place">banker — below 2/1</div></div></div>
+        <div class="tip-row"><div class="tip-tag nb">NB</div><div><div class="tip-horse">Spectacular Diver</div><div class="tip-detail-row"><span class="draw-badge">Draw 2</span><span>D.Allan | Tim Easterby | F:2 | 2yo 9-2</span></div><div class="tip-angle">Tim Easterby / David Allan · the only runner with experience — placed 2nd on debut (F:2). Race-fitness edge over five first-timers; shrewd northern yard.</div></div><div class="tip-odds-cell"><div class="tip-odds">4/1</div><div class="tip-place">1/4 2pl</div></div></div>
+        <div class="tip-row"><div class="tip-tag long">LONG</div><div><div class="tip-horse">Cut A Dash</div><div class="tip-detail-row"><span class="draw-badge">Draw 1</span><span>S.Levey | R.Hannon | F:debut | 2yo 9-2</span></div><div class="tip-angle">Richard Hannon debutant · the master 2yo yard always primes one for York and the stands'-side draw 1 is fine over 5f. Value at 9/2.</div></div><div class="tip-odds-cell"><div class="tip-odds">9/2</div><div class="tip-place">1/4 2pl</div></div></div>
+      </div>
+
+      <div class="race-card">
+        <div class="race-card-head"><span class="race-card-title">R2 14:20 Sky Bet Race To The Ebor Jorvik Handicap</span><span class="race-card-meta">1m4f Hcap | 11 rnrs | C2 · EW 1/5 4pl · ITV</span></div>
+        <div class="tip-row"><div class="tip-tag nap">NAP</div><div><div class="tip-horse">Klassleader <span class="src-badge src-bf">BF</span></div><div class="tip-detail-row"><span class="draw-badge">Draw 5</span><span>T.Marquand | W.Haggas | F:7212- | 4yo 8-13</span></div><div class="tip-angle">Haggas / Marquand · F:7212- = 1st &amp; 2nd in his last two of last season · lightly raced 4yo on the up off a workable 8-13 · the form-and-trainer pick. BF tag the only blot.</div></div><div class="tip-odds-cell"><div class="tip-odds">11/4</div><div class="tip-place">1/5 4pl</div></div></div>
+        <div class="tip-row"><div class="tip-tag nb">NB</div><div><div class="tip-horse">Stressfree <span class="src-badge src-cd">D</span></div><div class="tip-detail-row"><span class="draw-badge">Draw 1</span><span>D.Tudhope | D.O'Meara | F:0594355-2 | 6yo 9-10</span></div><div class="tip-angle">O'Meara / Tudhope · 2nd LTO · distance winner from the plum low draw 1 · consistent yard/jockey combo coming back to form.</div></div><div class="tip-odds-cell"><div class="tip-odds">11/2</div><div class="tip-place">1/5 4pl</div></div></div>
+        <div class="tip-row"><div class="tip-tag long">LONG</div><div><div class="tip-horse">Dark Moon Rising <span class="src-badge src-cd">CD</span></div><div class="tip-detail-row"><span class="draw-badge">Draw 2</span><span>J.Gordon | K.Ryan | F:6372-8524 | 7yo 8-9</span></div><div class="tip-angle">Kevin Ryan · the only course-AND-distance winner in the field · 8-9 well in at the weights · low draw 2 · a 7yo who's won this exact test. Value at 14/1.</div></div><div class="tip-odds-cell"><div class="tip-odds">14/1</div><div class="tip-place">1/5 4pl</div></div></div>
+      </div>
+
+      <div class="race-card">
+        <div class="race-card-head"><span class="race-card-title">R3 14:55 Churchill Tyres Handicap</span><span class="race-card-meta">6f Hcap | 22 rnrs | C2 · EW 1/5 6pl · ITV</span></div>
+        <div class="tip-row"><div class="tip-tag nap">NAP</div><div><div class="tip-horse">Binhareer <span class="src-badge src-cd">CD</span></div><div class="tip-detail-row"><span class="draw-badge">Draw 9</span><span>T.Marquand | W.Haggas | F:14/712361- | 4yo 9-8</span></div><div class="tip-angle">Haggas / Marquand · won LTO · course-AND-distance winner · progressive 4yo from a fair draw 9 mid · the top-yard form pick in a 22-runner cavalry charge.</div></div><div class="tip-odds-cell"><div class="tip-odds">11/2</div><div class="tip-place">1/5 6pl</div></div></div>
+        <div class="tip-row"><div class="tip-tag nb">NB</div><div><div class="tip-horse">Pilgrim <span class="src-badge src-cd">CD</span></div><div class="tip-detail-row"><span class="draw-badge">Draw 3</span><span>W.Pyle | D.&amp;N.Barron | F:000/29-981 | 5yo 9-4</span></div><div class="tip-angle">D. &amp; N. Barron · won LTO · course-AND-distance winner from the low draw 3 · the Barrons are Knavesmire 6f specialists and the horse arrives with the C&amp;D form plus a recent win. Value at 9/1.</div></div><div class="tip-odds-cell"><div class="tip-odds">9/1</div><div class="tip-place">1/5 6pl</div></div></div>
+        <div class="tip-row"><div class="tip-tag long">LONG</div><div><div class="tip-horse">Strike Red <span class="src-badge src-cd">CD</span></div><div class="tip-detail-row"><span class="draw-badge">Draw 17</span><span>B.Garritty | R.&amp;P.Fahey | F:290800-31 | 8yo 8-12</span></div><div class="tip-angle">Fahey / Garritty · won LTO · course-AND-distance winner · 8yo York-sprint veteran from the high draw 17 — if the pace develops stands'-side this is the one, and 8-12 is workable. Big EW play at 14/1 with 6 places.</div></div><div class="tip-odds-cell"><div class="tip-odds">14/1</div><div class="tip-place">1/5 6pl</div></div></div>
+      </div>
+
+      <div class="race-card headline">
+        <div class="race-card-head"><span class="race-card-title">R4 15:30 Go Local Stores Minster Stakes (Group 2)</span><span class="race-card-meta">6f Grp 2 | 13 rnrs | C1 · 3yo+ · EW 1/5 4pl · ITV · ⭐ headline sprint</span></div>
+        <div class="tip-row"><div class="tip-tag nap">NAP</div><div><div class="tip-horse">American Affair <span class="src-badge src-cd">CD</span></div><div class="tip-detail-row"><span class="draw-badge">Draw 12</span><span>P.Mulrennan | Jim Goldie | F:2310/1151- | 6yo 9-10</span></div><div class="tip-angle">Jim Goldie / Mulrennan · won LTO · the only proven course-AND-distance Group performer in the field · draw 12 likely the better side on quick ground in a 13-runner straight-6f Group · hardy 6yo who's run his race here before.</div></div><div class="tip-odds-cell"><div class="tip-odds">6/1</div><div class="tip-place">1/5 4pl</div></div></div>
+        <div class="tip-row"><div class="tip-tag nb">NB</div><div><div class="tip-horse">Cool Hoof Luke <span class="src-badge src-cd">CD</span></div><div class="tip-detail-row"><span class="draw-badge">Draw 11</span><span>O.Murphy | A.Balding | F:1431/31 | 4yo 9-10</span></div><div class="tip-angle">A.Balding / O.Murphy · course-AND-distance winner · F:1431/31 = 1st &amp; 3rd last two · the in-form C&amp;D horse with the meeting's top combo · draw 11 alongside the NAP.</div></div><div class="tip-odds-cell"><div class="tip-odds">8/1</div><div class="tip-place">1/5 4pl</div></div></div>
+        <div class="tip-row"><div class="tip-tag long">LONG</div><div><div class="tip-horse">Quinault <span class="src-badge src-cd">CD</span></div><div class="tip-detail-row"><span class="draw-badge">Draw 13</span><span>M.Ghiani | S.Williams | F:0573-2136 | 6yo 9-10</span></div><div class="tip-angle">Stuart Williams · course-AND-distance winner · F:0573-2136 = 6th LTO but 3rd before that and a string of places · drawn 13 high · a hardy York sprinter at a value 10/1 if the high draws hold up.</div></div><div class="tip-odds-cell"><div class="tip-odds">10/1</div><div class="tip-place">1/5 4pl</div></div></div>
+        <div class="pending-inline">Big Mojo (5/1, dr6, Appleby/Marquand — 10-1 top weight, proven Group horse), Kind Of Blue (5/1, dr2, Fanshawe/Doyle — class on best form, recent form a query) and Time For Sandals (4/1 fav, dr10, Eustace/Moore — D BF) are the others to fear.</div>
+      </div>
+
+      <div class="race-card headline">
+        <div class="race-card-head"><span class="race-card-title">R5 16:05 Tattersalls Musidora Stakes (Group 3)</span><span class="race-card-meta">1m2f Grp 3 | 6 rnrs | C1 · 3yo Fillies · EW 1/4 2pl · ITV · ⭐ Oaks trial</span></div>
+        <div class="tip-row"><div class="tip-tag nap">NAP</div><div><div class="tip-horse">Legacy Link</div><div class="tip-detail-row"><span class="draw-badge">Draw 5</span><span>C.Keane | J.&amp;T.Gosden | F:314- | 3yo 9-2</span></div><div class="tip-angle">J. &amp; T. Gosden / Colin Keane · the Gosden Oaks-trial favourite — 6/5 reflects the home work on a progressive 3yo. Banker, not a Lucky 15 pick — single win bet.</div></div><div class="tip-odds-cell"><div class="tip-odds">6/5</div><div class="tip-place">banker — below 2/1</div></div></div>
+        <div class="tip-row"><div class="tip-tag nb">NB</div><div><div class="tip-horse">Felicitas <span class="src-badge src-cd">D</span></div><div class="tip-detail-row"><span class="draw-badge">Draw 1</span><span>K.Shoemark | Ed Walker | F:1-1 | 3yo 9-2</span></div><div class="tip-angle">Ed Walker / Shoemark · unbeaten in two starts (F:1-1) · distance winner from draw 1 · the unexposed improver who could be the best filly here on raw potential.</div></div><div class="tip-odds-cell"><div class="tip-odds">5/2</div><div class="tip-place">1/4 2pl</div></div></div>
+        <div class="tip-row"><div class="tip-tag long">LONG</div><div><div class="tip-horse">Sea The Storm <span class="src-badge src-cd">D</span></div><div class="tip-detail-row"><span class="draw-badge">Draw 4</span><span>T.Marquand | W.Haggas | F:12-1 | 3yo 9-2</span></div><div class="tip-angle">W.Haggas / Marquand · won LTO (F:12-1) · distance winner · Haggas fillies stepping up to 1m2f for an Oaks trial are always live · best of the bigger-priced trio at 5/1.</div></div><div class="tip-odds-cell"><div class="tip-odds">5/1</div><div class="tip-place">1/4 2pl</div></div></div>
+        <div class="pending-inline">Only 2 places paid (6-runner field) — limited each-way value, treat as win-focused. Moments Of Joy (11/2, Ballydoyle/Moore, F:1325-6) the other to note.</div>
+      </div>
+
+      <div class="race-card">
+        <div class="race-card-head"><span class="race-card-title">R6 16:40 Conundrum HR Consulting Handicap</span><span class="race-card-meta">7f Hcap | 16 rnrs | C3 · 3yo · EW 1/5 5pl · ITV</span></div>
+        <div class="tip-row"><div class="tip-tag nap">NAP</div><div><div class="tip-horse">Al Najashi <span class="src-badge src-cd">D</span></div><div class="tip-detail-row"><span class="draw-badge">Draw 9</span><span>B.Loughnane | O.Sangster | F:044-11111 | 3yo 9-8</span></div><div class="tip-angle">Ollie Sangster / Loughnane · <strong>F:044-11111 — won his last FIVE</strong> · distance winner · the form horse of the festival by a distance — even off 9-8 top weight a five-timer in this kind of heat is the one to beat. Draw 9 mid.</div></div><div class="tip-odds-cell"><div class="tip-odds">4/1</div><div class="tip-place">1/5 5pl</div></div></div>
+        <div class="tip-row"><div class="tip-tag nb">NB</div><div><div class="tip-horse">Startled <span class="src-badge src-cd">D</span></div><div class="tip-detail-row"><span class="draw-badge">Draw 3</span><span>S.Osborne | R.Hughes | F:873341-31 | 3yo 8-6</span></div><div class="tip-angle">Richard Hughes / Saffie Osborne · won LTO (F:873341-31) · distance winner from the low draw 3 · the well-drawn improver with a recent win — value at 8/1 against the top-weighted favourite.</div></div><div class="tip-odds-cell"><div class="tip-odds">8/1</div><div class="tip-place">1/5 5pl</div></div></div>
+        <div class="tip-row"><div class="tip-tag long">LONG</div><div><div class="tip-horse">The Resdev Scholar <span class="src-badge src-cd">D</span></div><div class="tip-detail-row"><span class="draw-badge">Draw 6</span><span>M.Winn | M.&amp;D.Easterby | F:43111-243 | 3yo 8-6</span></div><div class="tip-angle">M. &amp; D. Easterby · F:43111-243 = won three in a row earlier in the season before a 2,4,3 dip · distance winner from draw 6 · the Easterby 3yo who was a winning machine — value at 10/1 if back to that level.</div></div><div class="tip-odds-cell"><div class="tip-odds">10/1</div><div class="tip-place">1/5 5pl</div></div></div>
+      </div>
+
+      <div class="race-card">
+        <div class="race-card-head"><span class="race-card-title">R7 17:15 Stuey Weston &amp; Friends Getting Out Handicap</span><span class="race-card-meta">1m4f Hcap | 17 rnrs | C4 · 4yo+ · EW 1/5 5pl · RTV</span></div>
+        <div class="tip-row"><div class="tip-tag nap">NAP</div><div><div class="tip-horse">Lightening Company <span class="src-badge src-cd">D</span></div><div class="tip-detail-row"><span class="draw-badge">Draw 2</span><span>A.Mullen | Ben Haslam | F:6020-0011 | 8yo 8-10</span></div><div class="tip-angle">Ben Haslam / Mullen · F:6020-0011 = won his last two · distance winner from the plum low draw 2 over 1m4f · 8yo veteran in red-hot form off a workable 8-10 — the in-form pick against a beaten favourite.</div></div><div class="tip-odds-cell"><div class="tip-odds">7/1</div><div class="tip-place">1/5 5pl</div></div></div>
+        <div class="tip-row"><div class="tip-tag nb">NB</div><div><div class="tip-horse">Minhad <span class="src-badge src-cd">D</span></div><div class="tip-detail-row"><span class="draw-badge">Draw 3</span><span>K.McHugh(7) | I.Mohammed | F:5188420-1 | 4yo 9-8</span></div><div class="tip-angle">Ismail Mohammed / McHugh (7lb claim) · won LTO (F:5188420-1) · distance winner from the low draw 3 · 4yo with the claimer's allowance and a recent win from a good draw.</div></div><div class="tip-odds-cell"><div class="tip-odds">6/1</div><div class="tip-place">1/5 5pl</div></div></div>
+        <div class="tip-row"><div class="tip-tag long">LONG</div><div><div class="tip-horse">Hermetic <span class="src-badge src-cd">D</span></div><div class="tip-detail-row"><span class="draw-badge">Draw 10</span><span>C.Lee | I.Williams | F:5114- | 4yo 9-6</span></div><div class="tip-angle">Ian Williams / Clifford Lee · F:5114- = won 2 of his last 3 of last season then put away · only 4 career runs — a lightly raced 4yo back off a break, the classic Williams "improver returning" angle · distance winner · value at 16/1.</div></div><div class="tip-odds-cell"><div class="tip-odds">16/1</div><div class="tip-place">1/5 5pl</div></div></div>
+      </div>
+
+      <!-- WEDNESDAY LUCKY 15 -->
+      <div class="panel gold-top" style="margin-top:8px;margin-bottom:0">
+        <div style="font-family:'Playfair Display',serif;color:var(--gold-lt);font-size:1.1rem;font-weight:700;margin-bottom:8px">Wednesday Lucky 15 (50p lines = £7.50)</div>
+        <div style="font-size:0.82rem;color:var(--cream);line-height:1.7;margin-bottom:8px">
+          <strong>Klassleader</strong> <span style="color:var(--silver)">R2 11/4</span> · <strong>Al Najashi</strong> <span style="color:var(--silver)">R6 4/1</span> · <strong>Lightening Company</strong> <span style="color:var(--silver)">R7 7/1</span> · <strong>American Affair</strong> <span style="color:var(--silver)">R4 6/1</span>
+        </div>
+        <div style="font-size:0.78rem;color:var(--silver);line-height:1.55">Total outlay: <strong>£28.50</strong> · 7 races × £3 (21 picks at 50p EW) + £7.50 Lucky 15. The 4 strongest NAPs avoiding bankers below 2/1 — so Varzi (R1 11/10) and Legacy Link (R5 6/5) are kept out as single win bets. Binhareer (R3 11/2 fav in a 22-runner cavalry charge) edged out by American Affair's Group-2 C&amp;D credentials.</div>
+      </div>
     </div>
 
     <!-- THURSDAY -->
