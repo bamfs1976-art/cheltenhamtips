@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>🐎 Dante Festival 2026 – York · 13–15 May · Tips, Crossover Signals &amp; Lucky 15</title>
-<meta name="description" content="Dante Festival 2026 at York. Three days of Group-class flat racing including the Musidora Stakes (Wed), Middleton Stakes (Thu), Dante Stakes (Fri G2 Derby trial) and Yorkshire Cup (Fri G2). Tips, Lucky 15 and crossover signals once Sky Bet declarations and tipster columns land.">
+<title>🐎 Dante Festival 2026 – York · 13–15 May · Race Cards, Tips, Crossover Signals &amp; Lucky 15</title>
+<meta name="description" content="Dante Festival 2026 at York (the Knavesmire), 13–15 May. Full race schedule for all three days — Musidora Stakes (G3) and Minster Stakes (G2) Wed · Dante Stakes (G2 Derby trial) and Middleton Stakes (G2) Thu · Yorkshire Cup (G2) Fri. Ante-post preview plus Nap, NB and Longshot for every race once Sky Bet declarations land.">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self' 'unsafe-inline';">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -28,6 +28,7 @@
   .dot-live { background:var(--green-lt); box-shadow:0 0 6px rgba(74,222,128,0.6) }
   .dot-archive { background:var(--silver) }
   .dot-gold { background:var(--gold) }
+  .dot-soon { background:#34d399 }
 
   .live-strip { background:linear-gradient(90deg,rgba(124,58,237,0.18),rgba(124,58,237,0.05)); border-bottom:1px solid rgba(124,58,237,0.5); color:var(--violet-lt); font-size:0.78rem; font-weight:700; letter-spacing:0.05em; text-transform:uppercase; padding:8px 16px; text-align:center }
   .live-strip strong { color:var(--cream) }
@@ -41,14 +42,16 @@
   header .hero-dates { color:var(--violet-lt); font-size:0.95rem; margin:0 0 14px; font-weight:500 }
   header .hero-meta { display:grid; grid-template-columns:repeat(auto-fit,minmax(120px,1fr)); gap:12px; margin-top:10px }
   header .hero-stat { background:rgba(167,139,250,0.06); border:1px solid rgba(167,139,250,0.2); border-radius:8px; padding:10px 12px; text-align:center }
-  header .hero-stat-val { display:block; font-family:'Playfair Display',serif; font-size:1.4rem; color:var(--violet-lt); font-weight:700 }
-  header .hero-stat-lbl { display:block; font-size:0.7rem; color:var(--silver); margin-top:2px; letter-spacing:0.04em; text-transform:uppercase }
+  header .hero-stat-val { display:block; font-family:'Playfair Display',serif; font-size:1.35rem; color:var(--violet-lt); font-weight:700 }
+  header .hero-stat-lbl { display:block; font-size:0.68rem; color:var(--silver); margin-top:2px; letter-spacing:0.03em; text-transform:uppercase }
 
   .panel { background:var(--card); border:1px solid rgba(255,255,255,0.06); border-radius:12px; padding:18px 16px; margin-bottom:18px }
   .panel-head { font-family:'Playfair Display',serif; color:var(--violet-lt); font-size:1.3rem; font-weight:700; margin:0 0 12px; padding-bottom:8px; border-bottom:1px solid rgba(167,139,250,0.25) }
+  .panel.gold-top { border-top:2px solid var(--gold) }
+  .panel.blue-left { border-left:3px solid var(--blue-l) }
 
   .day-tabs { display:flex; gap:6px; margin-bottom:14px; flex-wrap:wrap }
-  .day-tab { background:var(--bg-mid); border:1px solid rgba(255,255,255,0.08); color:var(--silver); padding:8px 14px; border-radius:8px; font-size:0.85rem; font-weight:600; cursor:pointer; flex:1; min-width:100px; text-align:center }
+  .day-tab { background:var(--bg-mid); border:1px solid rgba(255,255,255,0.08); color:var(--silver); padding:8px 14px; border-radius:8px; font-size:0.85rem; font-weight:600; flex:1; min-width:120px; text-align:center }
   .day-tab.active { background:var(--violet-deep); color:var(--cream); border-color:var(--violet); box-shadow:0 0 8px rgba(167,139,250,0.25) }
 
   .race-row { display:grid; grid-template-columns:62px 1fr auto; gap:12px; padding:12px 14px; border-top:1px dashed rgba(255,255,255,0.08); align-items:start }
@@ -56,14 +59,24 @@
   .race-time { font-family:'Playfair Display',serif; color:var(--violet-lt); font-size:1rem; font-weight:700 }
   .race-name { color:var(--cream); font-size:0.92rem; font-weight:600; margin-bottom:2px }
   .race-meta { color:var(--silver); font-size:0.74rem }
-  .race-flag { color:var(--gold-lt); font-size:0.7rem; font-weight:700; letter-spacing:0.05em; text-transform:uppercase; align-self:start }
+  .race-flag { color:var(--gold-lt); font-size:0.68rem; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; align-self:start; text-align:right; white-space:nowrap }
   .race-flag.headline { color:var(--violet-lt) }
+  .race-flag.itv { color:#fde68a }
 
-  .pending-block { background:rgba(167,139,250,0.05); border:1px dashed rgba(167,139,250,0.3); border-radius:8px; padding:14px 16px; color:var(--violet-lt); font-size:0.82rem; line-height:1.55 }
+  .pick-row { display:grid; grid-template-columns:56px 1fr; gap:10px; padding:10px 14px; border-top:1px dashed rgba(255,255,255,0.07); align-items:start; background:rgba(167,139,250,0.04) }
+  .pick-tag { font-size:0.7rem; font-weight:800; letter-spacing:0.04em; text-transform:uppercase }
+  .pick-tag.ante { color:var(--violet-lt) }
+  .pick-horse { color:var(--cream); font-weight:600; font-size:0.95rem }
+  .pick-note { color:var(--silver); font-size:0.78rem; margin-top:2px; line-height:1.5 }
+  .pick-odds { color:var(--gold-lt); font-weight:700; font-size:0.85rem }
+
+  .pending-block { background:rgba(167,139,250,0.05); border:1px dashed rgba(167,139,250,0.3); border-radius:8px; padding:14px 16px; color:var(--violet-lt); font-size:0.82rem; line-height:1.6 }
+  .pending-inline { display:block; padding:8px 14px; border-top:1px dashed rgba(255,255,255,0.07); color:var(--silver); font-size:0.76rem; font-style:italic }
 
   .footer { text-align:center; padding:20px 16px; color:var(--silver); font-size:0.74rem; line-height:1.6; border-top:1px solid rgba(255,255,255,0.06); margin-top:30px }
   .footer a { color:var(--violet-lt) }
   .gambleaware { margin-top:8px; font-weight:700; color:var(--gold-lt) }
+  @media (max-width:480px){ .race-row{grid-template-columns:54px 1fr auto;gap:8px} .pick-row{grid-template-columns:48px 1fr} }
 </style>
 </head>
 <body>
@@ -72,6 +85,7 @@
 <nav class="global-nav" aria-label="Site navigation">
   <a href="index.html" class="gnav-brand">🏇 Festival Form Book</a>
   <a href="dante-2026.html" class="gnav-link active"><span class="dot dot-live"></span>Dante 2026</a>
+  <a href="ffos-las-2026.html" class="gnav-link"><span class="dot dot-soon"></span>Ffos Las 2026</a>
   <a href="chester-2026.html" class="gnav-link"><span class="dot dot-archive"></span>Chester 2026</a>
   <a href="guineas-2026.html" class="gnav-link"><span class="dot dot-archive"></span>Guineas 2026</a>
   <a href="scottish-grand-national-2026.html" class="gnav-link"><span class="dot dot-archive"></span>Scottish GN</a>
@@ -80,99 +94,125 @@
   <a href="season-2026.html" class="gnav-link"><span class="dot dot-gold"></span>Season Leaderboard</a>
 </nav>
 
-<div class="live-strip">🔴 Live Festival · Dante Festival 2026 · York Knavesmire · 13–15 May · <strong>Sky Bet declarations + tipster columns drop Tue 12 May evening</strong></div>
+<div class="live-strip">🔴 Live Festival — starts tomorrow · Dante Festival 2026 · York Knavesmire · 13–15 May · <strong>Race schedule confirmed · full Claude NAP/NB/LONGSHOT cards + Lucky 15 publish on Sky Bet declarations</strong></div>
 
 <main class="container">
 
   <header class="site-header">
-    <div class="header-badge">🐎 DANTE FESTIVAL · DERBY TRIALS WEEK</div>
+    <div class="header-badge">🐎 DANTE FESTIVAL · DERBY-TRIALS WEEK</div>
     <h1><em>Dante</em> 2026</h1>
-    <p class="hero-dates">📍 York Racecourse (the Knavesmire) · 13–15 May 2026 · 3-day flat festival</p>
+    <p class="hero-dates">📍 York Racecourse (the Knavesmire) · 13–15 May 2026 · 3-day flat festival · ITV Racing 5 races/day</p>
     <div class="hero-meta">
-      <div class="hero-stat"><span class="hero-stat-val">15:25</span><span class="hero-stat-lbl">Musidora Stakes Wed (G3)</span></div>
-      <div class="hero-stat"><span class="hero-stat-val">15:00</span><span class="hero-stat-lbl">Middleton Stakes Thu (G2)</span></div>
-      <div class="hero-stat"><span class="hero-stat-val">15:00</span><span class="hero-stat-lbl">Dante Stakes Fri (G2)</span></div>
-      <div class="hero-stat"><span class="hero-stat-val">15:35</span><span class="hero-stat-lbl">Yorkshire Cup Fri (G2)</span></div>
+      <div class="hero-stat"><span class="hero-stat-val">15:30</span><span class="hero-stat-lbl">Minster Stakes Wed (G2 · 6f)</span></div>
+      <div class="hero-stat"><span class="hero-stat-val">16:05</span><span class="hero-stat-lbl">Musidora Stakes Wed (G3 · Oaks trial)</span></div>
+      <div class="hero-stat"><span class="hero-stat-val">16:05</span><span class="hero-stat-lbl">Dante Stakes Thu (G2 · Derby trial)</span></div>
+      <div class="hero-stat"><span class="hero-stat-val">16:05</span><span class="hero-stat-lbl">Yorkshire Cup Fri (G2 · 1m6f)</span></div>
     </div>
   </header>
 
-  <!-- TIPS-PENDING NOTICE -->
+  <!-- STATUS NOTICE -->
   <section class="panel">
-    <h2 class="panel-head">Tips publishing schedule</h2>
+    <h2 class="panel-head">Where this page stands</h2>
     <div class="pending-block">
-      <strong style="color:var(--violet-lt)">Day 1 (Wed 13 May):</strong> Sky Bet declarations + Mullington (WH) + HRN main + Grimshaw + HRN BIG + Raceolly columns expected Tue 12 May evening. Nick Luck's WH ITV column drops on race-day morning. Claude NAP / NB / LONG with draws, jockey/trainer, form figures, weights, EW terms and Lucky 15 publishes alongside.<br><br>
-      <strong style="color:var(--violet-lt)">Day 2 (Thu 14 May):</strong> tipster columns Wed evening · Claude card Wed evening / Thu morning.<br><br>
-      <strong style="color:var(--violet-lt)">Day 3 (Fri 15 May):</strong> tipster columns Thu evening · Claude card Thu evening / Fri morning. Dante Stakes (G2) and Yorkshire Cup (G2) the headline Group races.<br><br>
-      Engine-compliant: every NAP / NB / LONG will have a stated angle (no fabricated picks per the engine rule), draw badges on flat picks, CD / C / D flags where relevant, Lucky 15 selected to avoid bankers below 2/1, external tipster integration with badges + 2x crossover signals, key signals bullet list.
+      <strong style="color:var(--violet-lt)">Confirmed below:</strong> the full 3-day race schedule (race names, times, distances, classes, ITV/RTV coverage) plus an ante-post preview of the headline Group / Listed races with the current market leaders and the angles behind them.<br><br>
+      <strong style="color:var(--violet-lt)">Coming once Sky Bet declarations go up (overnight before each day):</strong> the engine-compliant card for every race — Claude NAP / NB / LONGSHOT with draw badge, jockey | trainer | F:form | age &amp; weight | odds | place terms; the 4-pick Lucky 15; external tipster integration (Mullington WH, Nick Luck WH ITV, Billy Grimshaw HRN, HRN main, HRN Biggest Naps/Tips, Raceolly) with 2x crossover signals; a key-signals bullet list; and — after racing — a settled-results banner with all placings and the P/L on the engine's 50p-EW staking. <em>Send the Sky Bet declaration screenshots and I'll build the lot, race by race, exactly like Chester 2026.</em>
     </div>
   </section>
 
-  <!-- DAY TABS -->
-  <section class="panel">
-    <h2 class="panel-head">3-day card · pending Sky Bet decls</h2>
+  <!-- ANTE-POST PREVIEW -->
+  <section class="panel gold-top">
+    <h2 class="panel-head">⚡ Ante-post preview · headline races</h2>
+    <p style="font-size:0.78rem;color:var(--silver);line-height:1.55;margin-bottom:12px">These are pre-declaration market reads — informational, not the final engine picks. Final NAP/NB/LONGSHOT selections (with draws, connections, form and a stated angle) drop once Sky Bet declarations are up. Markets and runner lists will move; treat as a steer, not a bet.</p>
 
-    <div class="day-tabs">
-      <div class="day-tab active">Wed 13 May · Day 1</div>
-      <div class="day-tab">Thu 14 May · Day 2</div>
-      <div class="day-tab">Fri 15 May · Day 3 (Dante Day)</div>
+    <div style="margin-bottom:14px">
+      <p style="font-size:0.78rem;color:var(--violet-lt);font-weight:700;margin-bottom:6px;letter-spacing:0.04em;text-transform:uppercase">Thu 14 May 16:05 · Al Basti Equiworld Dubai Dante Stakes (Group 2) · 3yo · 1m2½f · £102,078 to winner</p>
+      <div class="pick-row"><div class="pick-tag ante">A-P FAV</div><div><span class="pick-horse">Raaheeb</span> <span class="pick-odds">3/1</span><div class="pick-note">Owen Burrows / Rossa Ryan · won the bet365 Classic Trial at Sandown (24 Apr) impressively · ante-post Dante market leader and a live Derby contender. The form pick of the entries.</div></div></div>
+      <div class="pick-row"><div class="pick-tag ante">COOLMORE</div><div><span class="pick-horse">Christmas Day</span> <span class="pick-odds">~5/1</span><div class="pick-note">Aidan O'Brien · the named Coolmore Dante runner — Ballydoyle's Derby-trial representative always demands respect at York. O'Brien also holds Hawk Mountain (~6/1) as a second string.</div></div></div>
+      <div class="pick-row"><div class="pick-tag ante">HAGGAS</div><div><span class="pick-horse">Morshdi</span> <span class="pick-odds">~6/1</span><div class="pick-note">William Haggas · Feilden Stakes winner (Newmarket) · headed the entries on weight-of-form. Tom Marquand likely. Was a leading fancy for Chester's Dee Stakes but routed here instead.</div></div></div>
+      <div class="pick-row"><div class="pick-tag ante">APPLEBY</div><div><span class="pick-horse">Poseidon's Warrior</span> <span class="pick-odds">~7/1</span><div class="pick-note">Charlie Appleby · Godolphin's hand — Appleby's classy 3yos are always primed for these spring Group 2s. One to watch in the betting moves on declaration.</div></div></div>
+      <div class="pending-inline">Full Dante card with draws, jockeys, weights, odds and the Claude NAP/NB/LONGSHOT — on Sky Bet declarations (overnight Wed → Thu).</div>
     </div>
 
-    <p style="font-size:0.78rem;color:var(--silver);margin-bottom:12px">Race times below are York's traditional Dante Festival schedule — to be confirmed by Sky Bet declarations once they go up.</p>
+    <div style="margin-bottom:14px">
+      <p style="font-size:0.78rem;color:var(--violet-lt);font-weight:700;margin-bottom:6px;letter-spacing:0.04em;text-transform:uppercase">Wed 13 May 16:05 · Tattersalls Musidora Stakes (Group 3) · 3yo Fillies · 1m2½f · Oaks trial · 10 declared</p>
+      <div class="pick-row"><div class="pick-tag ante">PREVIEW</div><div><span class="pick-horse">10-runner field: Legacy Link · Felicitas · Moments Of Joy · Sea The Storm · Symbol Of Majesty</span> <span class="pick-odds">+ 5 more</span><div class="pick-note">The Musidora is the strongest Oaks trial outside Cheshire — last year's renewal franked the form at Epsom. The Gosden, Appleby and Ballydoyle Classic-entered fillies head the market; an unexposed maiden winner stepping up to 1m2½f is the dark-horse angle. NAP/NB/LONGSHOT with draws, jockeys, form and weights on declaration.</div></div></div>
+      <div class="pending-inline">Declared field of 10 confirmed · full Claude card — overnight Tue → Wed.</div>
+    </div>
+
+    <div style="margin-bottom:14px">
+      <p style="font-size:0.78rem;color:var(--violet-lt);font-weight:700;margin-bottom:6px;letter-spacing:0.04em;text-transform:uppercase">Wed 13 May 15:30 · Go Local Stores Minster Stakes (Group 2) · 3yo+ · 6f · £165k · 17 declared</p>
+      <div class="pick-row"><div class="pick-tag ante">PREVIEW</div><div><span class="pick-horse">17-runner field: Big Mojo · Powerful Glory among the line-up</span><div class="pick-note">A proper early-season sprint Group 2 down York's straight six — a big field (17) so draw matters: high draws can hold an edge on soft ground, level on good. The season's leading older sprinters plus 3yos on the up. Form, draw and ground decide it; picks on declaration.</div></div></div>
+      <div class="pending-inline">Declared field of 17 confirmed · full Claude card — overnight Tue → Wed.</div>
+    </div>
+
+    <div style="margin-bottom:0">
+      <p style="font-size:0.78rem;color:var(--violet-lt);font-weight:700;margin-bottom:6px;letter-spacing:0.04em;text-transform:uppercase">Fri 15 May 16:05 · Boodles Yorkshire Cup Stakes (Group 2) · 4yo+ · 1m6f</p>
+      <div class="pick-row"><div class="pick-tag ante">PREVIEW</div><div><span class="pick-horse">Established stayers · Gold Cup pointers</span><div class="pick-note">The Yorkshire Cup is the staying division's first Group 2 of the year and a key Royal Ascot Gold Cup trial — quality and stamina outweigh anything fancy. The Middleton Stakes (G2, Thu, fillies &amp; mares, 1m2½f) is the other Group 2 of the meeting. Picks on declaration.</div></div></div>
+      <div class="pending-inline">Declared field + Claude card — overnight Thu → Fri.</div>
+    </div>
+  </section>
+
+  <!-- 3-DAY RACE SCHEDULE -->
+  <section class="panel">
+    <h2 class="panel-head">3-day race schedule · confirmed</h2>
+
+    <div class="day-tabs">
+      <div class="day-tab active">Wed 13 May · Day 1 · Musidora Day</div>
+      <div class="day-tab">Thu 14 May · Day 2 · Dante Day</div>
+      <div class="day-tab">Fri 15 May · Day 3 · Yorkshire Cup Day</div>
+    </div>
 
     <!-- WEDNESDAY -->
     <div style="margin-bottom:16px">
-      <p style="font-size:0.78rem;color:var(--gold-lt);font-weight:700;margin-bottom:8px;letter-spacing:0.04em;text-transform:uppercase">Wednesday 13 May · Opening Day · 7 races</p>
-
-      <div class="race-row"><div class="race-time">13:50</div><div><div class="race-name">Tattersalls Musidora Stakes Filler</div><div class="race-meta">Listed / Hcap · 3yo · tbc</div></div><div class="race-flag">tbc</div></div>
-      <div class="race-row"><div class="race-time">14:25</div><div><div class="race-name">Yorkshire Stallion Studs Hcap</div><div class="race-meta">Mile · 4yo+ · Class 2</div></div><div class="race-flag">tbc</div></div>
-      <div class="race-row"><div class="race-time">15:00</div><div><div class="race-name">Duke of York Clipper Logistics Stakes (G2)</div><div class="race-meta">6f · Sprint · 3yo+</div></div><div class="race-flag headline">G2 sprint</div></div>
-      <div class="race-row"><div class="race-time">15:25</div><div><div class="race-name">Tattersalls Musidora Stakes (G3)</div><div class="race-meta">1m2½f · 3yo Fillies · Oaks trial</div></div><div class="race-flag headline">G3 Oaks trial</div></div>
-      <div class="race-row"><div class="race-time">16:05</div><div><div class="race-name">Hambleton Handicap</div><div class="race-meta">1m · 4yo+ · Hcap</div></div><div class="race-flag">tbc</div></div>
-      <div class="race-row"><div class="race-time">16:40</div><div><div class="race-name">EBF Maiden / Restricted Novice Stakes</div><div class="race-meta">7f · 2yo / 3yo</div></div><div class="race-flag">tbc</div></div>
-      <div class="race-row"><div class="race-time">17:15</div><div><div class="race-name">Bronte Cup Fillies' Hcap (Listed)</div><div class="race-meta">1m6f · 4yo+ Fillies</div></div><div class="race-flag">tbc</div></div>
+      <p style="font-size:0.78rem;color:var(--gold-lt);font-weight:700;margin-bottom:8px;letter-spacing:0.04em;text-transform:uppercase">Wednesday 13 May · 7 races · going good, good to firm in places (showers forecast)</p>
+      <div class="race-row"><div class="race-time">13:45</div><div><div class="race-name">British Stallion Studs EBF Novice Stakes (Colts &amp; Geldings)</div><div class="race-meta">5f · 2yo · Class 2</div></div><div class="race-flag">RTV</div></div>
+      <div class="race-row"><div class="race-time">14:20</div><div><div class="race-name">Sky Bet Race To The Ebor Jorvik Handicap</div><div class="race-meta">1m4f · 4yo+ · Class 2</div></div><div class="race-flag itv">ITV</div></div>
+      <div class="race-row"><div class="race-time">14:55</div><div><div class="race-name">Churchill Tyres Handicap</div><div class="race-meta">6f · 4yo+ 0-105 · Class 2</div></div><div class="race-flag itv">ITV</div></div>
+      <div class="race-row"><div class="race-time">15:30</div><div><div class="race-name">Go Local Stores Minster Stakes (Group 2)</div><div class="race-meta">6f · 3yo+ · Class 1</div></div><div class="race-flag headline">⭐ G2 sprint · ITV</div></div>
+      <div class="race-row"><div class="race-time">16:05</div><div><div class="race-name">Tattersalls Musidora Stakes (Group 3) (Fillies)</div><div class="race-meta">1m2½f · 3yo · Class 1 · Oaks trial</div></div><div class="race-flag headline">⭐ G3 Oaks trial · ITV</div></div>
+      <div class="race-row"><div class="race-time">16:40</div><div><div class="race-name">Conundrum HR Consulting Handicap</div><div class="race-meta">7f · 3yo 0-95 · Class 3</div></div><div class="race-flag itv">ITV</div></div>
+      <div class="race-row"><div class="race-time">17:15</div><div><div class="race-name">Stuey Weston &amp; Friends Getting Out Handicap</div><div class="race-meta">1m4f · 4yo+ 0-85 · Class 4</div></div><div class="race-flag">RTV</div></div>
     </div>
 
     <!-- THURSDAY -->
     <div style="margin-bottom:16px">
-      <p style="font-size:0.78rem;color:var(--gold-lt);font-weight:700;margin-bottom:8px;letter-spacing:0.04em;text-transform:uppercase">Thursday 14 May · Ladies' Day · 7 races</p>
-
-      <div class="race-row"><div class="race-time">13:50</div><div><div class="race-name">EBF Stallions Marygate Fillies' Stakes (Listed)</div><div class="race-meta">5f · 2yo Fillies</div></div><div class="race-flag">tbc</div></div>
-      <div class="race-row"><div class="race-time">14:25</div><div><div class="race-name">Yorkshire Cup Trial / Stayers' Hcap</div><div class="race-meta">1m6f · 4yo+</div></div><div class="race-flag">tbc</div></div>
-      <div class="race-row"><div class="race-time">15:00</div><div><div class="race-name">Tattersalls Middleton Stakes (G2)</div><div class="race-meta">1m2½f · 4yo+ Fillies &amp; Mares</div></div><div class="race-flag headline">G2 Fillies</div></div>
-      <div class="race-row"><div class="race-time">15:35</div><div><div class="race-name">Yorkshire Stakes (G2)</div><div class="race-meta">7f · 3yo+</div></div><div class="race-flag headline">G2</div></div>
-      <div class="race-row"><div class="race-time">16:10</div><div><div class="race-name">Knavesmire Stakes / Sprint Hcap</div><div class="race-meta">5f · 3yo+ · Hcap</div></div><div class="race-flag">tbc</div></div>
-      <div class="race-row"><div class="race-time">16:45</div><div><div class="race-name">Mile Maiden / Conditions Stakes</div><div class="race-meta">1m · 3yo</div></div><div class="race-flag">tbc</div></div>
-      <div class="race-row"><div class="race-time">17:20</div><div><div class="race-name">Closing Hcap</div><div class="race-meta">tbc · 3yo+</div></div><div class="race-flag">tbc</div></div>
+      <p style="font-size:0.78rem;color:var(--gold-lt);font-weight:700;margin-bottom:8px;letter-spacing:0.04em;text-transform:uppercase">Thursday 14 May · 7 races · Dante Day</p>
+      <div class="race-row"><div class="race-time">13:45</div><div><div class="race-name">Sky Bet ebfstallions.com Novice Stakes</div><div class="race-meta">6f · 2yo · Class 2</div></div><div class="race-flag">RTV</div></div>
+      <div class="race-row"><div class="race-time">14:20</div><div><div class="race-name">Lindum York Handicap</div><div class="race-meta">5f · 4yo+ 0-105 · Class 2</div></div><div class="race-flag itv">ITV</div></div>
+      <div class="race-row"><div class="race-time">14:55</div><div><div class="race-name">Tattersalls Middleton Stakes (Group 2)</div><div class="race-meta">1m2½f · 4yo+ Fillies &amp; Mares · Class 1</div></div><div class="race-flag headline">G2 · ITV</div></div>
+      <div class="race-row"><div class="race-time">15:30</div><div><div class="race-name">Group / Listed contest <span style="color:var(--silver);font-weight:400">(name to confirm on declaration)</span></div><div class="race-meta">ITV · racecard pending</div></div><div class="race-flag itv">ITV</div></div>
+      <div class="race-row"><div class="race-time">16:05</div><div><div class="race-name">Al Basti Equiworld Dubai Dante Stakes (Group 2)</div><div class="race-meta">1m2½f · 3yo · Class 1 · Derby trial · £102,078 1st</div></div><div class="race-flag headline">⭐⭐ G2 Derby trial · ITV</div></div>
+      <div class="race-row"><div class="race-time">16:40</div><div><div class="race-name">Handicap <span style="color:var(--silver);font-weight:400">(racecard pending)</span></div><div class="race-meta">ITV · to confirm</div></div><div class="race-flag itv">ITV</div></div>
+      <div class="race-row"><div class="race-time">17:15</div><div><div class="race-name">Closing Handicap <span style="color:var(--silver);font-weight:400">(racecard pending)</span></div><div class="race-meta">RTV · to confirm</div></div><div class="race-flag">RTV</div></div>
+      <div class="pending-inline">Thursday's full card (race names, distances, classes for 15:30 / 16:40 / 17:15) confirms on declaration — Sky Bet decls overnight Wed → Thu.</div>
     </div>
 
     <!-- FRIDAY -->
     <div>
-      <p style="font-size:0.78rem;color:var(--gold-lt);font-weight:700;margin-bottom:8px;letter-spacing:0.04em;text-transform:uppercase">Friday 15 May · Dante Day · 7 races</p>
-
-      <div class="race-row"><div class="race-time">13:50</div><div><div class="race-name">Yorkshire Stallion Studs Hcap</div><div class="race-meta">5f · 3yo+</div></div><div class="race-flag">tbc</div></div>
-      <div class="race-row"><div class="race-time">14:25</div><div><div class="race-name">Mile Maiden Stakes</div><div class="race-meta">1m · 3yo</div></div><div class="race-flag">tbc</div></div>
-      <div class="race-row"><div class="race-time">15:00</div><div><div class="race-name">Tattersalls Dante Stakes (G2)</div><div class="race-meta">1m2½f · 3yo · Derby trial · £200k</div></div><div class="race-flag headline">⭐ G2 Derby trial</div></div>
-      <div class="race-row"><div class="race-time">15:35</div><div><div class="race-name">Yorkshire Cup (G2)</div><div class="race-meta">1m6f · 4yo+ stayers</div></div><div class="race-flag headline">G2 stayers</div></div>
-      <div class="race-row"><div class="race-time">16:10</div><div><div class="race-name">Constantine Hcap / Cammidge-style sprint</div><div class="race-meta">6f · 3yo+ · Hcap</div></div><div class="race-flag">tbc</div></div>
-      <div class="race-row"><div class="race-time">16:45</div><div><div class="race-name">Maiden / Conditions Stakes</div><div class="race-meta">7f · 2yo / 3yo</div></div><div class="race-flag">tbc</div></div>
-      <div class="race-row"><div class="race-time">17:20</div><div><div class="race-name">Festival Closer Hcap</div><div class="race-meta">tbc · 3yo+</div></div><div class="race-flag">tbc</div></div>
+      <p style="font-size:0.78rem;color:var(--gold-lt);font-weight:700;margin-bottom:8px;letter-spacing:0.04em;text-transform:uppercase">Friday 15 May · 6 races confirmed · Yorkshire Cup Day</p>
+      <div class="race-row"><div class="race-time">13:45</div><div><div class="race-name">Yorkshire Equine Practice Handicap</div><div class="race-meta">7f · 4yo+ 0-80 · Class 4</div></div><div class="race-flag">RTV</div></div>
+      <div class="race-row"><div class="race-time">14:20</div><div><div class="race-name">Sky Bet Fillies' Stakes (Michael Seely Memorial) (Listed)</div><div class="race-meta">1m · 3yo · Class 1</div></div><div class="race-flag headline">Listed · ITV</div></div>
+      <div class="race-row"><div class="race-time">14:55</div><div><div class="race-name">Support Macmillan Charity Raceday Handicap</div><div class="race-meta">1m2½f · 4yo+ 0-100 · Class 2</div></div><div class="race-flag itv">ITV</div></div>
+      <div class="race-row"><div class="race-time">15:30</div><div><div class="race-name">EBF Marygate Fillies' Stakes (Listed)</div><div class="race-meta">5f · 2yo · Class 1</div></div><div class="race-flag headline">Listed · ITV</div></div>
+      <div class="race-row"><div class="race-time">16:05</div><div><div class="race-name">Boodles Yorkshire Cup Stakes (Group 2)</div><div class="race-meta">1m6f · 4yo+ · Class 1 · Gold Cup trial</div></div><div class="race-flag headline">⭐ G2 stayers · ITV</div></div>
+      <div class="race-row"><div class="race-time">16:40</div><div><div class="race-name">Irish Thoroughbred Marketing Handicap</div><div class="race-meta">5f · 3yo 0-90 · Class 3</div></div><div class="race-flag itv">ITV</div></div>
+      <div class="pending-inline">If a 7th Friday race (≈17:15 closer) is added it'll appear here on declaration.</div>
     </div>
   </section>
 
   <!-- COURSE GUIDE -->
   <section class="panel">
     <h2 class="panel-head">York · the Knavesmire</h2>
-    <p><strong style="color:var(--violet-lt)">Left-handed.</strong> Wide, galloping, fair. Long straight (~2f for the round course, 5f for the straight). One of Britain's premier flat tracks — rewards quality horses with a strong finish.</p>
-    <p><strong style="color:var(--violet-lt)">Draw bias.</strong> Minimal on the round. Straight track: high draws preferred on soft ground; no bias on good. The Knavesmire's wide turning track is the opposite of Chester — gallopers and big-striding horses thrive here, not the tactical Roodee specialists.</p>
-    <p><strong style="color:var(--violet-lt)">Headline races.</strong> Musidora Stakes (Wed 15:25, G3, 1m2½f, 3yo Fillies — Oaks trial) · Duke of York Stakes (Wed 15:00, G2, 6f sprint) · Middleton Stakes (Thu 15:00, G2, 1m2½f Fillies &amp; Mares) · Yorkshire Stakes (Thu 15:35, G2, 7f) · <strong style="color:var(--gold-lt)">Dante Stakes (Fri 15:00, G2, 1m2½f, 3yo — Derby trial, £200k)</strong> · Yorkshire Cup (Fri 15:35, G2, 1m6f stayers).</p>
-    <p><strong style="color:var(--violet-lt)">Key trainer/jockey angles.</strong> Aidan O'Brien dominates the Dante Stakes (Derby preview · always sends a Ballydoyle representative). John &amp; Thady Gosden, Charlie Appleby and William Haggas the other powerhouses. Ryan Moore, Oisin Murphy and William Buick the jockeys to follow. Quality stakes form usually trumps handicap form.</p>
-    <p><strong style="color:var(--violet-lt)">The Dante Stakes itself</strong> is the most important Derby trial in Europe — winners often go on to Epsom. Recent Dante winners have included Auguste Rodin (2023, won Derby) and Desert Crown (2022, won Derby). Watch the market closely Friday morning.</p>
+    <p><strong style="color:var(--violet-lt)">Left-handed.</strong> Wide, galloping, fair. Long straight (~2f off the round course, 5f on the straight track). One of Britain's premier flat tracks — rewards quality horses with a strong, sustained finish. The opposite of Chester: gallopers and big-striding types thrive here, not the tactical Roodee specialists.</p>
+    <p><strong style="color:var(--violet-lt)">Draw bias.</strong> Minimal on the round course. On the straight (5f / 6f sprints like the Minster Stakes and the Lindum / ITM handicaps): high draws can hold a slight edge on soft ground, level on good. Always check the going first.</p>
+    <p><strong style="color:var(--violet-lt)">Key trainer / jockey angles.</strong> Aidan O'Brien dominates the Dante Stakes (Derby preview — always sends a Ballydoyle representative; Christmas Day named for Coolmore in 2026). John &amp; Thady Gosden, Charlie Appleby and William Haggas the other powerhouses. Ryan Moore, Oisin Murphy, William Buick and Tom Marquand the jockeys to follow. In the Group races, quality stakes form usually trumps handicap form.</p>
+    <p><strong style="color:var(--violet-lt)">The Dante Stakes itself</strong> (Thu 16:05, G2, 1m2½f) is the most important Derby trial in Europe — winners often go on to Epsom (Auguste Rodin 2023 and Desert Crown 2022 both won the Derby after Dante success). Watch the Thursday-morning market moves closely. Raaheeb (Burrows/Ryan) is the ante-post favourite at 3/1 after his Sandown Classic Trial win.</p>
   </section>
 
   <!-- FOOTER -->
   <footer class="footer">
     <div>🐎 <strong>Dante Festival 2026</strong> · York Racecourse · 13–15 May · part of <a href="index.html">The Festival Form Book</a></div>
-    <div style="margin-top:6px">Engine reference: <a href="chester-2026.html">Chester May Festival 2026 (concluded · ROI +47%)</a> · <a href="season-2026.html">Season Leaderboard</a></div>
+    <div style="margin-top:6px">Engine reference: <a href="chester-2026.html">Chester May Festival 2026 (concluded · ROI +47%)</a> · <a href="season-2026.html">Season Leaderboard</a> · next up <a href="ffos-las-2026.html">Ffos Las 2026 (scaffold)</a></div>
     <div class="gambleaware">⚠️ 18+ · BeGambleAware.org · Tips for entertainment only · Always bet responsibly</div>
     <div style="margin-top:6px"><a href="https://www.begambleaware.org">BeGambleAware</a> · <a href="https://www.gamcare.org.uk">GamCare</a> · <a href="https://www.gamstop.co.uk">GamStop</a> · National Gambling Helpline 0808 8020 133</div>
   </footer>
