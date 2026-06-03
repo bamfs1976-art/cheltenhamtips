@@ -8,3 +8,6 @@
 
 # Node modules (if ever added)
 node_modules/
+
+# Local Claude Code preview/launch config (developer-specific)
+.claude/
