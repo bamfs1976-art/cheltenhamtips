@@ -92,7 +92,7 @@ const FESTIVALS_2026 = [
     slug:'epsom-derby-2026', name:'Epsom Derby Festival 2026', shortName:'Epsom Derby',
     icon:'👑', dates:['2026-06-05','2026-06-06'],
     dateLabel:'5–6 June 2026', venue:'Epsom Downs', type:'Flat',
-    theme:'theme-blue', accentColor:'#1d4ed8', url:'index.html',
+    theme:'theme-blue', accentColor:'#1d4ed8', url:'epsom-derby-2026.html',
     races:14, headline:null,
     headlineRace:'Betfred Derby (G1) Sat 6 Jun · Oaks (G1) Fri 5 Jun · Coronation Cup (G1) Sat 6 Jun',
   },
