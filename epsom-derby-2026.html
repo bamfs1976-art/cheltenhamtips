@@ -117,6 +117,30 @@
   .signals-list li::before { content:'\25CF'; color:var(--gold); position:absolute; left:0; top:8px; font-size:0.7rem }
   .signals-list strong { color:var(--cream) }
 
+  /* tipster overlay */
+  .tipster-extra-row { display:grid; grid-template-columns:56px 1fr auto; gap:10px; padding:9px 14px; border-top:1px dashed rgba(255,255,255,0.08); align-items:start; background:rgba(22,163,74,0.06) }
+  .tipster-extra-row .tip-tag { color:#4ade80 }
+  .tipster-extra-row .tip-horse { font-size:0.92rem }
+  @media (max-width:480px){ .tipster-extra-row{grid-template-columns:48px 1fr auto;gap:8px} }
+  .tipster-block { padding:10px 0; border-top:1px solid rgba(255,255,255,0.06) }
+  .tipster-block:first-of-type { border-top:none; padding-top:0 }
+  .tipster-head { display:flex; align-items:center; gap:8px; margin-bottom:5px; font-size:0.85rem; flex-wrap:wrap }
+  .tipster-icon { width:26px; height:26px; border-radius:6px; font-size:0.62rem; font-weight:800; display:flex; align-items:center; justify-content:center; flex-shrink:0 }
+  .icon-sm { background:rgba(22,163,74,0.18); border:1px solid rgba(22,163,74,0.5); color:#4ade80 }
+  .tipster-name { font-weight:700; color:var(--cream) }
+  .tipster-count { color:var(--silver); font-weight:500; font-size:0.78rem }
+  .tipster-picks { font-size:0.8rem; color:var(--silver); padding-left:34px; line-height:1.6 }
+  .tipster-picks .horse { color:var(--cream); font-weight:600 }
+  .tipster-picks .label { color:var(--royal-lt); font-weight:600 }
+  .crossover-list { list-style:none; padding-left:0; margin:0 }
+  .crossover-list li { padding:7px 0; border-top:1px solid rgba(255,255,255,0.05); font-size:0.82rem; line-height:1.45; display:flex; flex-wrap:wrap; gap:4px 8px; align-items:baseline }
+  .crossover-list li:first-child { border-top:none }
+  .crossover-list li::before { content:'\2022'; color:var(--blue-l); margin-right:4px }
+  .cx-horse { color:var(--cream); font-weight:700 }
+  .cx-race { color:var(--silver); font-weight:500 }
+  .cx-odds { color:var(--gold-lt); font-weight:700 }
+  .cx-tag { color:var(--blue-l); font-size:0.76rem; font-weight:500 }
+
   .pending-block { background:rgba(96,165,250,0.05); border:1px dashed rgba(96,165,250,0.3); border-radius:8px; padding:14px 16px; color:var(--royal-lt); font-size:0.82rem; line-height:1.6 }
   .pending-inline { display:block; padding:8px 14px; border-top:1px dashed rgba(255,255,255,0.07); color:var(--silver); font-size:0.76rem; font-style:italic }
 
@@ -174,7 +198,7 @@
 
   <div class="page-title-bar">
     <div class="ptb-title">epsom-2026 · Fri 5 Jun Oaks Day + Sat 6 Jun Derby Day</div>
-    <div class="ptb-sub">16 races over 2 days · 4-pick Lucky 15 each day · external tipster overlay pending · draw stated on every pick · EW terms per race</div>
+    <div class="ptb-sub">16 races over 2 days · 4-pick Lucky 15 each day · Mullington overlaid (Fri ITV) · more tipster sources pending · draw on every pick · EW terms per race</div>
   </div>
 
   <div class="day-tabs">
@@ -191,6 +215,7 @@
     <div class="tip-row"><div class="tip-tag nap">NAP</div><div><div class="tip-horse">Wedonttelllies <span class="src-badge src-cd">D</span></div><div class="tip-detail-row"><span class="draw-badge">Draw 4</span><span>B.Loughnane | R.Hughes | F:8315-041 | 3yo 9-3</span></div><div class="tip-angle">Richard Hughes / Billy Loughnane · won last time (F:…-041) and a proven <strong>distance winner</strong> over this 5f trip. Low-middle draw 4 saves ground round the descent, Loughnane riding out of his skin. The form pick in a hot sprint handicap.</div></div><div class="tip-odds-cell"><div class="tip-odds">9/2</div><div class="tip-place">1/5 5pl</div></div></div>
     <div class="tip-row"><div class="tip-tag nb">NB</div><div><div class="tip-horse">Shes Got A Brother <span class="src-badge src-cd">D</span></div><div class="tip-detail-row"><span class="draw-badge">Draw 15</span><span>B.Garritty | M.&amp;D.Easterby | F:114 | 3yo 9-2</span></div><div class="tip-angle">M. &amp; D. Easterby · unexposed, progressive 3yo (F:114) with only the bare form to go on — the type to keep defying a mark. High draw 15 is no negative over Epsom's 5f if the pace holds stands'-side. Each-way.</div></div><div class="tip-odds-cell"><div class="tip-odds">9/2</div><div class="tip-place">1/5 5pl</div></div></div>
     <div class="tip-row"><div class="tip-tag long">LONG</div><div><div class="tip-horse">Alfa Duplicate <span class="src-badge src-cd">D</span></div><div class="tip-detail-row"><span class="draw-badge">Draw 1</span><span>S.De Sousa | I.Furtado | F:72-671131 | 3yo 8-10</span></div><div class="tip-angle">Ivan Furtado / Silvestre De Sousa · red-hot (F:…1131 — won two of the last three) and drawn 1 on the rail to save every length at a track where that matters. The value each-way play at 12/1.</div></div><div class="tip-odds-cell"><div class="tip-odds">12/1</div><div class="tip-place">1/5 5pl</div></div></div>
+    <div class="tipster-extra-row"><div class="tip-tag">SM</div><div><div class="tip-horse">Riley Rocks <span class="src-badge src-bf">BF</span> <span class="src-badge src-sm">SM</span></div><div class="tip-detail-row"><span class="draw-badge">Draw 14</span><span>R.Dawson | D.Cunha | F:4-116 | 3yo 8-11</span></div><div class="tip-angle" style="color:#86efac">Mullington's ITV pick — outside Claude's trio; a beaten favourite last time (F:4-116) drawn high (14). The dissent in a 16-runner lottery.</div></div><div class="tip-odds-cell"><div class="tip-odds" style="color:#4ade80">8/1</div><div class="tip-place">1/5 5pl</div></div></div>
     <div class="race-note">16-runner sprint handicap — genuinely hard to call. Strictly each-way (5 places). Naanas Shadow (O.Murphy, 6/1, draw 8) the obvious one left out.</div>
   </div>
 
@@ -200,6 +225,7 @@
     <div class="tip-row"><div class="tip-tag nap">NAP</div><div><div class="tip-horse">Possessive <span class="src-badge src-cd">D</span></div><div class="tip-detail-row"><span class="draw-badge">Draw 6</span><span>C.Lee | K.R.Burke | F:1 | 2yo 9-7</span></div><div class="tip-angle">K.R. Burke / Clifford Lee · unbeaten (F:1) and the market head — Burke's juveniles win plenty and 10/3 in a 14-runner conditions race reflects strong home regard. The class call.</div></div><div class="tip-odds-cell"><div class="tip-odds">10/3</div><div class="tip-place">1/5 4pl</div></div></div>
     <div class="tip-row"><div class="tip-tag nb">NB</div><div><div class="tip-horse">Wild Terrain</div><div class="tip-detail-row"><span class="draw-badge">Draw 13</span><span>O.Murphy | H.Palmer | F:1 | 2yo 9-7</span></div><div class="tip-angle">Hugo Palmer · also unbeaten (F:1) and the Oisin Murphy booking signals intent stepping up in grade. One of several once-raced winners, but the jockey clue tips it. Each-way.</div></div><div class="tip-odds-cell"><div class="tip-odds">11/2</div><div class="tip-place">1/5 4pl</div></div></div>
     <div class="tip-row"><div class="tip-tag long">LONG</div><div><div class="tip-horse">Dandyman Dan</div><div class="tip-detail-row"><span class="draw-badge">Draw 7</span><span>S.Osborne | D.Evans | F:15 | 2yo 9-7</span></div><div class="tip-angle">David Evans / Saffie Osborne · a maiden winner (F:15) from the yard that schools sharp, fast, race-hardened 2yo types — exactly the profile that handles a stiff Epsom 6f. Value each-way at 8/1.</div></div><div class="tip-odds-cell"><div class="tip-odds">8/1</div><div class="tip-place">1/5 4pl</div></div></div>
+    <div class="tipster-extra-row"><div class="tip-tag">SM NB</div><div><div class="tip-horse">Ardad Steve <span class="src-badge src-sm">SM</span></div><div class="tip-detail-row"><span class="draw-badge">Draw 14</span><span>C.Bishop | EJ Houghton | F:4 | 2yo 9-2</span></div><div class="tip-angle" style="color:#86efac">Mullington's NB on the day — a 4th on debut (F:4) for Eve Johnson Houghton, outside Claude's Possessive / Wild Terrain / Dandyman Dan. The dissent in a wide-open 2yo race.</div></div><div class="tip-odds-cell"><div class="tip-odds" style="color:#4ade80">12/1</div><div class="tip-place">1/5 4pl</div></div></div>
     <div class="race-note">2yo conditions race — class over a handicap mark. Several unbeaten types (Alpe dHuez, Possessive, Wild Terrain) so the form is hard to split; lean on the strongest yards.</div>
   </div>
 
@@ -209,6 +235,7 @@
     <div class="tip-row"><div class="tip-tag nap">NAP</div><div><div class="tip-horse">Persica <span class="src-badge src-cd">CD</span></div><div class="tip-detail-row"><span class="draw-badge">Draw 1</span><span>S.Levey | R.Hannon | F:1815608-4 | 5yo 9-8</span></div><div class="tip-angle">Richard Hannon / Sean Levey · the only <strong>course-AND-distance winner</strong> in the race — at quirky Epsom that's the single biggest positive, and from the plum draw 1. Solid favourite in an 8-runner Group 3.</div></div><div class="tip-odds-cell"><div class="tip-odds">9/4</div><div class="tip-place">1/5 3pl</div></div></div>
     <div class="tip-row"><div class="tip-tag nb">NB</div><div><div class="tip-horse">Seagulls Eleven</div><div class="tip-detail-row"><span class="draw-badge">Draw 8</span><span>O.Murphy | H.Palmer | F:062180-21 | 4yo 9-8</span></div><div class="tip-angle">Hugo Palmer / Oisin Murphy · won last time (F:…-21) and stepping up to Group company on the upgrade. Murphy booked. High draw 8 the only mild concern. Each-way.</div></div><div class="tip-odds-cell"><div class="tip-odds">7/2</div><div class="tip-place">1/5 3pl</div></div></div>
     <div class="tip-row"><div class="tip-tag long">LONG</div><div><div class="tip-horse">Chancellor <span class="src-badge src-cd">D</span> <span class="src-badge src-bf">BF</span></div><div class="tip-detail-row"><span class="draw-badge">Draw 3</span><span>R.Havlin | J.&amp;T.Gosden | F:1/6712-125 | 4yo 9-8</span></div><div class="tip-angle">J. &amp; T. Gosden · lightly raced 4yo and a distance winner who drops to a level that should suit; the beaten-favourite tag hints at more ability than the form shows. Gosden improver at 14/1.</div></div><div class="tip-odds-cell"><div class="tip-odds">14/1</div><div class="tip-place">1/5 3pl</div></div></div>
+    <div class="tipster-extra-row"><div class="tip-tag">SM</div><div><div class="tip-horse">Skukuza <span class="src-badge src-sm">SM</span></div><div class="tip-detail-row"><span class="draw-badge">Draw 5</span><span>R.Moore | E.Dunlop | F:19343-456 | 5yo 9-8</span></div><div class="tip-angle" style="color:#86efac">Mullington's ITV pick — the Ryan Moore booking is the clue, though he's been below his best (F:…-456). Dissent against Claude's course-and-distance pick Persica.</div></div><div class="tip-odds-cell"><div class="tip-odds" style="color:#4ade80">8/1</div><div class="tip-place">1/5 3pl</div></div></div>
     <div class="race-note">Only 8 runners = 3 places — each-way value is tight; the NAP is a single-win-bet candidate.</div>
   </div>
 
@@ -218,13 +245,14 @@
     <div class="tip-row"><div class="tip-tag nap">NAP</div><div><div class="tip-horse">Hand Of God <span class="src-badge src-cd">D</span></div><div class="tip-detail-row"><span class="draw-badge">Draw 4</span><span>L.Edmunds | H.Charlton | F:11/960-71 | 5yo 9-3</span></div><div class="tip-angle">Harry Charlton · won last time (F:…-71), a distance winner, and crucially drawn <strong>low (4)</strong> to save ground round tight Epsom 1m2f — a real edge over the high-drawn market principals. The combination pick.</div></div><div class="tip-odds-cell"><div class="tip-odds">11/2</div><div class="tip-place">1/5 6pl</div></div></div>
     <div class="tip-row"><div class="tip-tag nb">NB</div><div><div class="tip-horse">Respond <span class="src-badge src-cd">D</span></div><div class="tip-detail-row"><span class="draw-badge">Draw 15</span><span>O.Murphy | A.Balding | F:2135-2131 | 4yo 9-7</span></div><div class="tip-angle">Andrew Balding / Oisin Murphy · won last time and admirably consistent (F:…2131), distance winner with the meeting's in-form combo. High draw 15 a slight worry but class carries it. Each-way.</div></div><div class="tip-odds-cell"><div class="tip-odds">7/2</div><div class="tip-place">1/5 6pl</div></div></div>
     <div class="tip-row"><div class="tip-tag long">LONG</div><div><div class="tip-horse">Liberty Lane <span class="src-badge src-cd">D</span></div><div class="tip-detail-row"><span class="draw-badge">Draw 1</span><span>J.Nicholls(5) | K.R.Burke | F:104341-54 | 6yo 10-1</span></div><div class="tip-angle">K.R. Burke · the plum draw 1 at Epsom plus Jack Nicholls' 5lb claim takes the sting out of the 10-1 top weight. A distance winner who'll get a ground-saving passage. EW value at 11/1.</div></div><div class="tip-odds-cell"><div class="tip-odds">11/1</div><div class="tip-place">1/5 6pl</div></div></div>
+    <div class="tipster-extra-row"><div class="tip-tag">SM</div><div><div class="tip-horse">Spoken Truth <span class="src-badge src-cd">D</span> <span class="src-badge src-sm">SM</span></div><div class="tip-detail-row"><span class="draw-badge">Draw 10</span><span>L.Morris | D.O'Meara | F:83408-422 | 5yo 8-1</span></div><div class="tip-angle" style="color:#86efac">Mullington's pick — a distance winner running into form (F:…-422) off bottom weight, but drawn higher (10) than Claude's low-drawn trio. The O'Meara dissent.</div></div><div class="tip-odds-cell"><div class="tip-odds" style="color:#4ade80">11/1</div><div class="tip-place">1/5 6pl</div></div></div>
     <div class="race-note">Watch Bolster (draw 9, the field's other <strong>CD</strong> winner, 18/1) as a place-only dark horse if returning fresh and well — Epsom course-and-distance form is gold here.</div>
   </div>
 
   <!-- R5 — OAKS -->
   <div class="race-card headline">
     <div class="race-card-head"><span class="race-card-title">R5 16:00 Betfred Oaks (Group 1) ⭐⭐</span><span class="race-card-meta">1m4f Grp 1 | 9 rnrs | C1 · 3yo Fillies' Classic · EW 1/5 3pl · ITV</span></div>
-    <div class="tip-row"><div class="tip-tag nap">NAP</div><div><div class="tip-horse">Amelia Earhart</div><div class="tip-detail-row"><span class="draw-badge">Draw 4</span><span>R.Moore | A.O'Brien | F:32241-1 | 3yo 9-2</span></div><div class="tip-angle">Aidan O'Brien / <strong>Ryan Moore</strong> · the booking of the stable's number one is the strongest Ballydoyle signal, she won last time (F:…-1) and is the 2/1 head of the market. On likely Good to Soft, Coolmore stamina over 1m4f is a plus. Confident — but the Oaks is an open Classic, not a banker.</div></div><div class="tip-odds-cell"><div class="tip-odds">2/1</div><div class="tip-place">1/5 3pl</div></div></div>
+    <div class="tip-row"><div class="tip-tag nap">NAP</div><div><div class="tip-horse">Amelia Earhart <span class="src-badge src-sm">SM NAP</span> <span class="src-badge src-2x">2x</span></div><div class="tip-detail-row"><span class="draw-badge">Draw 4</span><span>R.Moore | A.O'Brien | F:32241-1 | 3yo 9-2</span></div><div class="tip-angle">Aidan O'Brien / <strong>Ryan Moore</strong> · the booking of the stable's number one is the strongest Ballydoyle signal, she won last time (F:…-1) and is the 2/1 head of the market. On likely Good to Soft, Coolmore stamina over 1m4f is a plus. Confident — but the Oaks is an open Classic, not a banker. <strong style="color:#4ade80">Mullington (WH) naps her too</strong> — the card's one crossover (2x).</div></div><div class="tip-odds-cell"><div class="tip-odds">2/1</div><div class="tip-place">1/5 3pl</div></div></div>
     <div class="tip-row"><div class="tip-tag nb">NB</div><div><div class="tip-horse">Legacy Link</div><div class="tip-detail-row"><span class="draw-badge">Draw 1</span><span>C.Keane | J.&amp;T.Gosden | F:314-1 | 3yo 9-2</span></div><div class="tip-angle">J. &amp; T. Gosden / Colin Keane · the York Musidora (G3) winner — the strongest pre-Oaks trial form in the field — from the plum draw 1 to save ground round Tattenham Corner. The obvious threat to the favourite. Each-way / strong.</div></div><div class="tip-odds-cell"><div class="tip-odds">10/3</div><div class="tip-place">1/5 3pl</div></div></div>
     <div class="tip-row"><div class="tip-tag long">LONG</div><div><div class="tip-horse">On Message <span class="src-badge src-cd">C</span></div><div class="tip-detail-row"><span class="draw-badge">Draw 7</span><span>H.Crouch | R.Beckett | F:451-13 | 3yo 9-2</span></div><div class="tip-angle">Ralph Beckett · a proven <strong>Epsom course winner</strong> (the only one in the field) who handles the camber and stays well for soft ground — exactly the profile that outruns its odds here. A big-priced each-way dark horse at 25/1; A La Prochaine (Beckett, draw 2, 15/2) the safer EW alternative.</div></div><div class="tip-odds-cell"><div class="tip-odds">25/1</div><div class="tip-place">1/5 3pl</div></div></div>
     <div class="race-note">9-runner G1, 3 places — the two trial lines collide: Ballydoyle's Amelia Earhart (Moore) v Gosden's Musidora winner Legacy Link. Going is the key variable — softer ground tilts it towards stamina. Three O'Brien runners and three Becketts in the field.</div>
@@ -236,6 +264,7 @@
     <div class="tip-row"><div class="tip-tag nap">NAP</div><div><div class="tip-horse">Celeborn <span class="src-badge src-cd">CD</span></div><div class="tip-detail-row"><span class="draw-badge">Draw 9</span><span>B.Loughnane | G.Boughey | F:132/1-5 | 4yo 9-1</span></div><div class="tip-angle">George Boughey / Billy Loughnane · a <strong>course-AND-distance winner</strong> over this exact 1m1f Epsom test — gold at a track that rewards proven specialists. Fair mid draw 9 and the market head at 4/1.</div></div><div class="tip-odds-cell"><div class="tip-odds">4/1</div><div class="tip-place">1/5 6pl</div></div></div>
     <div class="tip-row"><div class="tip-tag nb">NB</div><div><div class="tip-horse">Man Of La Mancha <span class="src-badge src-cd">D</span></div><div class="tip-detail-row"><span class="draw-badge">Draw 2</span><span>R.Ryan | R.Beckett | F:332411-45 | 4yo 9-1</span></div><div class="tip-angle">Ralph Beckett / Rossa Ryan · drawn <strong>low (2)</strong> for the ground-saving trip, a distance winner and consistent (F:332411-…). The draw edge over a big field makes him the each-way pick.</div></div><div class="tip-odds-cell"><div class="tip-odds">6/1</div><div class="tip-place">1/5 6pl</div></div></div>
     <div class="tip-row"><div class="tip-tag long">LONG</div><div><div class="tip-horse">Sterling Knight</div><div class="tip-detail-row"><span class="draw-badge">Draw 1</span><span>R.Moore | E.Dunlop | F:240-60731 | 7yo 9-4</span></div><div class="tip-angle">Ed Dunlop · the plum draw 1 and a <strong>Ryan Moore</strong> booking on a 7yo at 11/1 is a notable clue; he won last time (F:…-731). Prime each-way at a big price with 6 places.</div></div><div class="tip-odds-cell"><div class="tip-odds">11/1</div><div class="tip-place">1/5 6pl</div></div></div>
+    <div class="tipster-extra-row"><div class="tip-tag">SM</div><div><div class="tip-horse">Asmen Warrior <span class="src-badge src-sm">SM</span></div><div class="tip-detail-row"><span class="draw-badge">Draw 5</span><span>S.De Sousa | J.Owen | F:12262-232 | 4yo 9-0</span></div><div class="tip-angle" style="color:#86efac">Mullington's pick — consistent and low-drawn (5), a solid each-way alternative to Claude's CD pick Celeborn. The dissent worth noting given the draw.</div></div><div class="tip-odds-cell"><div class="tip-odds" style="color:#4ade80">9/1</div><div class="tip-place">1/5 6pl</div></div></div>
     <div class="race-note">18-runner mile handicap — low draws and CD form favoured; 6 places gives plenty of each-way scope.</div>
   </div>
 
@@ -271,7 +300,7 @@
         <span>8 races × £3 (50p EW × 3 picks) = <strong>£24.00</strong></span>
         <span>Lucky 15 = <strong>£7.50</strong> · Total outlay <strong>£31.50</strong></span>
       </div>
-      <p style="margin:10px 0 0;font-size:0.78rem;color:var(--silver);line-height:1.55">Four <strong>value NAPs</strong> (9/4–11/2), all CD- / draw- / form-backed, avoiding short-priced bankers. Amelia Earhart (R5 Oaks, 2/1) and Stellar Sunrise (R7, 9/4) are kept as single win bets, not Lucky 15 legs. <strong style="color:var(--royal-lt)">Provisional</strong> — to be re-validated against 2x+ tipster crossover once the external columns land (Dante lesson: no bare NAPs in the L15).</p>
+      <p style="margin:10px 0 0;font-size:0.78rem;color:var(--silver);line-height:1.55">Four <strong>value NAPs</strong> (9/4–11/2), all CD- / draw- / form-backed, avoiding short-priced bankers. Amelia Earhart (R5 Oaks, 2/1) and Stellar Sunrise (R7, 9/4) are kept as single win bets, not Lucky 15 legs. Mullington's lone crossover is on that Oaks banker (kept out), so these four value legs are still bare. <strong style="color:var(--royal-lt)">Provisional</strong> — if HRN / Nick Luck / Raceolly give a value leg 2x backing it earns its place (Dante lesson: no bare NAPs in the L15).</p>
     </div>
   </div>
 
@@ -279,7 +308,33 @@
   <div class="panel-block tipsters">
     <div class="pb-head blue">External tipster picks</div>
     <div class="pb-body">
-      <div class="pending-block">⏳ <strong style="color:var(--royal-lt)">Overlay pending.</strong> Source badges (Mullington WH · HRN main · Nick Luck WH ITV · Raceolly EW · HRN Biggest Naps) and the crossover-signals box drop in a second pass as soon as the tipster screenshots arrive. Matching horses get inline badges next to the pick, 2+ agreements get a <span class="src-badge src-2x">2x</span> / <span class="src-badge src-3x">3x</span> crossover badge, and the Lucky 15 is re-checked against the crossovers before it locks.</div>
+      <div class="tipster-block">
+        <div class="tipster-head">
+          <div class="tipster-icon icon-sm">SM</div>
+          <span class="tipster-name">Steven Mullington, William Hill</span>
+          <span class="tipster-count">(6 ITV tips · R1–R6 Oaks Day)</span>
+        </div>
+        <div class="tipster-picks">
+          <span class="label">R1</span> <span class="horse">Riley Rocks</span> ·
+          <span class="label">R2</span> <span class="horse">Ardad Steve</span> (NB) ·
+          <span class="label">R3</span> <span class="horse">Skukuza</span> ·
+          <span class="label">R4</span> <span class="horse">Spoken Truth</span> ·
+          <span class="label">R5</span> <span class="horse">Amelia Earhart</span> (NAP) ·
+          <span class="label">R6</span> <span class="horse">Asmen Warrior</span>
+        </div>
+      </div>
+      <p style="margin:10px 0 0;font-size:0.78rem;color:var(--silver);line-height:1.55">Mullington covers the 6 ITV-televised races (R1–R6); R7 Surrey &amp; R8 Debenhams aren't on ITV, so no SM pick there. <strong style="color:var(--royal-lt)">Still pending:</strong> HRN main, Nick Luck (WH ITV), Raceolly EW and HRN Biggest Naps — and the full Saturday overlay — drop in the next pass.</p>
+    </div>
+  </div>
+
+  <!-- CROSSOVER SIGNALS (Friday) -->
+  <div class="panel-block" style="border-top:2px solid var(--royal-lt)">
+    <div class="pb-head blue">Crossover signals · Friday (2+ sources agree)</div>
+    <div class="pb-body">
+      <ul class="crossover-list">
+        <li><span class="cx-horse">Amelia Earhart</span> <span class="cx-race">R5 Oaks</span> <span class="cx-odds">2/1</span> <span class="cx-tag" style="color:var(--gold);font-weight:700">2x: Claude NAP + Mullington NAP</span></li>
+      </ul>
+      <p style="margin:10px 0 0;font-size:0.78rem;color:var(--silver);line-height:1.55">One crossover so far — Mullington's NAP matches Claude's on the Oaks favourite (his "leading fancy"). His other five ITV picks all dissent from Claude's selections (green rows under each race). More may appear once HRN / Nick Luck / Raceolly land.</p>
     </div>
   </div>
 
@@ -293,7 +348,7 @@
         <li><strong>Oaks (R5) is the day.</strong> Ballydoyle's Amelia Earhart (Ryan Moore booked) v Gosden's Musidora winner Legacy Link (plum draw 1). On Message is the course-winner dark horse if the ground goes soft.</li>
         <li><strong>Going watch.</strong> Saturday's Derby is declared <strong>Good to Soft</strong>, so expect Good / Good to Soft on Friday too — softer ground puts a stamina premium on the Oaks (1m4f) and the two staying handicaps. <em>Confirm the official going before locking bets.</em></li>
         <li><strong>Banker discipline (Dante lesson).</strong> No sub-2/1 picks in the Lucky 15; the four legs are 9/4–11/2 value NAPs. Short-priced fancies (Amelia Earhart 2/1, Stellar Sunrise 9/4) stay as single win bets.</li>
-        <li><strong>Tipster overlay still to come.</strong> Crossover signals and source badges drop in a second pass; the L15 is provisional until those land.</li>
+        <li><strong>Mullington overlay in.</strong> Steven Mullington's 6 ITV tips (R1–R6) are overlaid — one crossover, Amelia Earhart (R5 NAP); his other five dissent from Claude's picks (green rows under each race). HRN / Nick Luck / Raceolly still to come; both Lucky 15s stay provisional until then.</li>
       </ul>
     </div>
   </div>
