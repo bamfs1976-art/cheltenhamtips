@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>2025/26 Season Leaderboard | Festival Form Book</title>
-<meta name="description" content="Combined tipster standings across Cheltenham, Grand National, Scottish Grand National, Guineas, Chester and Dante Festival 2026.">
+<meta name="description" content="Combined tipster standings across Cheltenham, Grand National, Scottish Grand National, Guineas, Chester, Dante and Epsom Derby Festival 2026.">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self' 'unsafe-inline';">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -187,6 +187,7 @@
   .event-hd.ev-guin  { background: rgba(167,139,250,0.07);border-left-color: var(--guin); }
   .event-hd.ev-chester { background: rgba(217,119,6,0.07); border-left-color: #d97706; }
   .event-hd.ev-dante { background: rgba(167,139,250,0.07);border-left-color: #a78bfa; }
+  .event-hd.ev-epsom { background: rgba(96,165,250,0.07);border-left-color: #60a5fa; }
 
   .ev-icon { font-size: 1.3rem; flex-shrink: 0; }
   .ev-title {
@@ -302,6 +303,7 @@
   .pill-guin  { background: rgba(167,139,250,0.14);color: #c4b5fd; border: 1px solid rgba(167,139,250,0.28); }
   .pill-chester{background: rgba(217,119,6,0.16);  color: #fcd34d; border: 1px solid rgba(217,119,6,0.32); }
   .pill-dante { background: rgba(167,139,250,0.14);color: #c4b5fd; border: 1px solid rgba(167,139,250,0.32); }
+  .pill-epsom { background: rgba(96,165,250,0.14);color: #93c5fd; border: 1px solid rgba(96,165,250,0.32); }
   .pill-none  { background: rgba(255,255,255,0.04);color: var(--muted); border: 1px solid rgba(255,255,255,0.06); }
 
   .total-pts {
@@ -446,7 +448,7 @@
   <div class="header-inner">
     <div class="header-badge">2025 / 26 National Hunt Season</div>
     <h1>Tipster <span class="gold">Season Leaderboard</span></h1>
-    <p class="header-sub">Cheltenham · Grand National · Scottish GN · Guineas · Chester · Dante — combined standings</p>
+    <p class="header-sub">Cheltenham · Grand National · Scottish GN · Guineas · Chester · Dante · Epsom — combined standings</p>
     <nav class="festival-nav" aria-label="Festival pages">
       <a href="cheltenham-2026.html">🏆 Cheltenham 2026</a>
       <a href="grand-national-2026.html">🏇 Grand National 2026</a>
@@ -454,6 +456,8 @@
       <a href="guineas-2026.html">🌿 Guineas 2026</a>
       <a href="chester-2026.html">🟡 Chester 2026</a>
       <a href="dante-2026.html">🐎 Dante 2026</a>
+      <a href="epsom-derby-2026.html">👑 Epsom Derby 2026</a>
+      <a href="royal-ascot-2026.html">🎩 Royal Ascot 2026</a>
     </nav>
   </div>
 </header>
@@ -467,6 +471,7 @@
     <span class="s-dot"><span class="dot" style="background:var(--guin)" aria-hidden="true"></span>Guineas — 21 races, 3 days</span>
     <span class="s-dot"><span class="dot" style="background:#d97706" aria-hidden="true"></span>Chester — 22 races, 3 days</span>
     <span class="s-dot"><span class="dot" style="background:#a78bfa" aria-hidden="true"></span>Dante — 21 races, 3 days</span>
+    <span class="s-dot"><span class="dot" style="background:#60a5fa" aria-hidden="true"></span>Epsom — 16 races, 2 days</span>
     <span class="scoring-note">Scoring: Win = 3pts · Placed = 1pt · Miss = 0pts</span>
   </div>
 </div>
@@ -497,6 +502,7 @@
             <th scope="col" class="num">Guineas</th>
             <th scope="col" class="num">Chester</th>
             <th scope="col" class="num">Dante</th>
+            <th scope="col" class="num">Epsom</th>
             <th scope="col" class="num">Total</th>
           </tr>
         </thead>
@@ -670,6 +676,33 @@
       </table>
     </div>
 
+    <!-- ── Epsom breakdown ── -->
+    <div class="event-hd ev-epsom" id="epsom-section">
+      <span class="ev-icon" aria-hidden="true">👑</span>
+      <div>
+        <div class="ev-title" style="color:#93c5fd">Epsom Derby Festival 2026</div>
+        <div class="ev-meta">5–6 June 2026 · Epsom Downs · 16 races · Sparks Fly (NAP · 4x crossover) WON · Engine ROI −38%</div>
+      </div>
+      <span class="ev-badge archive" aria-label="Status: Archive">Archive</span>
+    </div>
+    <div class="tbl-wrap" role="region" aria-label="Epsom 2026 tipster scores">
+      <table class="bd-table">
+        <thead>
+          <tr>
+            <th scope="col" style="width:36px;">#</th>
+            <th scope="col">Tipster</th>
+            <th scope="col" class="num">W</th>
+            <th scope="col" class="num">P</th>
+            <th scope="col" class="num">M</th>
+            <th scope="col" class="num">Pts</th>
+            <th scope="col" class="num">Eff</th>
+            <th scope="col" style="width:90px;">Score</th>
+          </tr>
+        </thead>
+        <tbody id="epsom-body"></tbody>
+      </table>
+    </div>
+
   </div><!-- /content -->
 </main>
 
@@ -697,6 +730,8 @@
       <a href="guineas-2026.html">Guineas 2026</a>
       <a href="chester-2026.html">Chester 2026</a>
       <a href="dante-2026.html">Dante 2026</a>
+      <a href="epsom-derby-2026.html">Epsom Derby 2026</a>
+      <a href="royal-ascot-2026.html">Royal Ascot 2026</a>
       <a href="cheltenham-2027.html">Cheltenham 2027 →</a>
     </nav>
   </div>
@@ -735,6 +770,7 @@ function build() {
   renderBreakdown('guin-body',    'guinKey', GUINEAS_PICKS,  GUINEAS_RESULTS, '#a78bfa');
   renderBreakdown('chester-body', 'chKey',   CHESTER_PICKS,  CHESTER_RESULTS, '#d97706');
   renderBreakdown('dante-body',   'dKey',    DANTE_PICKS,    DANTE_RESULTS,   '#a78bfa');
+  renderBreakdown('epsom-body',   'eKey',    EPSOM_PICKS,    EPSOM_RESULTS,   '#60a5fa');
 
   document.getElementById('loading').style.display = 'none';
   document.getElementById('content').style.display = '';
@@ -776,6 +812,7 @@ function renderSeasonTable(scores) {
       t.guinKey ? 'Guineas' : null,
       t.chKey   ? 'Chester' : null,
       t.dKey    ? 'Dante'   : null,
+      t.eKey    ? 'Epsom'   : null,
     ].filter(Boolean).join(' · ');
 
     const cCell   = t.cSc   ? `<span class="pill pill-chelt">${t.cSc.pts}pts</span>`     : `<span class="pill pill-none">—</span>`;
@@ -784,6 +821,7 @@ function renderSeasonTable(scores) {
     const guinCell= t.guinSc? `<span class="pill pill-guin">${t.guinSc.pts}pts</span>`   : `<span class="pill pill-none">—</span>`;
     const chCell  = t.chSc  ? `<span class="pill pill-chester">${t.chSc.pts}pts</span>`  : `<span class="pill pill-none">—</span>`;
     const dCell   = t.dSc   ? `<span class="pill pill-dante">${t.dSc.pts}pts</span>`     : `<span class="pill pill-none">—</span>`;
+    const epCell  = t.eSc   ? `<span class="pill pill-epsom">${t.eSc.pts}pts</span>`     : `<span class="pill pill-none">—</span>`;
 
     const tr = document.createElement('tr');
     tr.innerHTML = `
@@ -805,6 +843,7 @@ function renderSeasonTable(scores) {
       <td class="num">${guinCell}</td>
       <td class="num">${chCell}</td>
       <td class="num">${dCell}</td>
+      <td class="num">${epCell}</td>
       <td class="num">
         <span class="total-pts" aria-label="${t.total} points total">${t.total}</span>
       </td>
