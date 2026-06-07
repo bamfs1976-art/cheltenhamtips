@@ -93,8 +93,17 @@ const FESTIVALS_2026 = [
     icon:'👑', dates:['2026-06-05','2026-06-06'],
     dateLabel:'5–6 June 2026', venue:'Epsom Downs', type:'Flat',
     theme:'theme-blue', accentColor:'#1d4ed8', url:'epsom-derby-2026.html',
-    races:14, headline:null,
-    headlineRace:'Betfred Derby (G1) Sat 6 Jun · Oaks (G1) Fri 5 Jun · Coronation Cup (G1) Sat 6 Jun',
+    races:16, concluded:true,
+    headline:'Christmas Day (7/1) wins the Derby · Thundering On the Oaks · Sparks Fly (NAP · 4x crossover · L15 anchor) WON · 4 winners, Benvenuto Cellini a Derby non-runner · Engine ROI −38% (−£24.10 on £63)',
+    headlineRace:'Betfred Derby (G1) · won by Christmas Day · Sat 6 Jun',
+  },
+  {
+    slug:'royal-ascot-2026', name:'Royal Ascot 2026', shortName:'Royal Ascot',
+    icon:'🎩', dates:['2026-06-16','2026-06-17','2026-06-18','2026-06-19','2026-06-20'],
+    dateLabel:'16–20 June 2026', venue:'Ascot', type:'Flat',
+    theme:'theme-violet', accentColor:'#7c3aed', url:'royal-ascot-2026.html',
+    races:35, headline:null,
+    headlineRace:'Gold Cup (G1) Thu 18 Jun · Prince of Wales’s Stakes (G1) Wed · Queen Anne (G1) Tue · Diamond Jubilee (G1) Sat',
   },
   {
     // PLACEHOLDER — fill in dates / dateLabel / races / headlineRace once the
