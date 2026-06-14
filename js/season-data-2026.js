@@ -415,9 +415,11 @@ const GUINEAS_RESULTS = {
   '17:15-0':{ winner:'Cinque Verde',   second:'Lady Kodiac',       third:'Powdering' },
   // Saturday 2 May — 2000 Guineas day (matches the Saturday '-1' picks)
   '13:10-1':{ winner:'Flora Of Bermuda', second:'Rosy Affair',  third:null },
+  '13:45-1':{ winner:'Double Rush',      second:'Addison Grey', third:'Apollo One' },
   '14:55-1':{ winner:'Night Raider',     second:'Rumstar',      third:'Shagraan' },
   '15:35-1':{ winner:'Bow Echo',         second:'Gstaad',       third:'Distant Storm' },
-  // Sat 1:45 (Double Rush), 2:20 (Bullet Point), 4:10 (Sovereign Spell), 4:45 (Gamrai) — results not yet sourced
+  '16:10-1':{ winner:'Sovereign Spell',  second:null,           third:null },
+  // Sat 2:20 (Bullet Point) & 4:45 (Gamrai — beaten, an A.King runner won) not yet sourced
 };
 
 const GUINEAS_PICKS = {
