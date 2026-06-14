@@ -413,14 +413,22 @@ const GUINEAS_RESULTS = {
   '16:05-0':{ winner:'Billyjoh',       second:'Golden Redemption', third:'Silver Ghost' },
   '16:40-0':{ winner:'Saber Strike',   second:'Cerro Blanco',      third:'Stellar Sunrise' },
   '17:15-0':{ winner:'Cinque Verde',   second:'Lady Kodiac',       third:'Powdering' },
-  // Saturday 2 May — pending
-  // Sunday 3 May — pending
+  // Saturday 2 May — 2000 Guineas day (matches the Saturday '-1' picks)
+  '13:10-1':{ winner:'Flora Of Bermuda', second:'Rosy Affair',  third:null },
+  '14:55-1':{ winner:'Night Raider',     second:'Rumstar',      third:'Shagraan' },
+  '15:35-1':{ winner:'Bow Echo',         second:'Gstaad',       third:'Distant Storm' },
+  // Sat 1:45 (Double Rush), 2:20 (Bullet Point), 4:10 (Sovereign Spell), 4:45 (Gamrai) — results not yet sourced
 };
 
 const GUINEAS_PICKS = {
   'Our NAP':{ label:'Our NAP', color:'#34d399', icon:'⭐', picks:{
-    '13:10-1':'Flora Of Bermuda','13:45-1':'Double Rush','14:20-1':'Bullet Point',
-    '14:55-1':'Asfoora','15:35-1':'Gstaad','16:10-1':'Sovereign Spell','16:45-1':'Gamrai',
+    '13:10-1':'Flora Of Bermuda','14:55-1':'Asfoora','15:35-1':'Gstaad','16:45-1':'Gamrai',
+  }},
+  'Our NB':{ label:'Our NB', color:'#60a5fa', icon:'🔵', picks:{
+    '13:45-1':'Double Rush','16:10-1':'Sovereign Spell',
+  }},
+  'Our LONG':{ label:'Our LONG', color:'#f472b6', icon:'🎯', picks:{
+    '14:20-1':'Bullet Point','15:35-1':"King's Trail",
   }},
   'Mullington (WH)':{ label:'Mullington (WH)', color:'#fbbf24', icon:'📝', picks:{
     '13:10-1':'Celandine','13:45-1':'Invictus Gold','14:20-1':'Botanical',
@@ -739,8 +747,8 @@ const EPSOM_PICKS = {
 // ════════════════════════════════════════════════════════════════════════════
 const SEASON_MAP = [
   { id:'Our NAP',       cKey:'Our NAP',        gnKey:'Our NAP',       sgnKey:'Our NAP',          guinKey:'Our NAP',         chKey:'Our NAP',         dKey:'Our NAP', eKey:'Our NAP',          label:'Our NAP',          color:'#34d399', icon:'⭐' },
-  { id:'Our NB',        cKey:'Our NB',          gnKey:'Our NB',        sgnKey:'Our NB',            guinKey:null,              chKey:'Our NB',          dKey:'Our NB', eKey:'Our NB',           label:'Our NB',           color:'#60a5fa', icon:'🔵' },
-  { id:'Our LONG',      cKey:null,              gnKey:null,            sgnKey:null,                guinKey:null,              chKey:'Our LONG',        dKey:'Our LONG', eKey:'Our LONG',         label:'Our LONG',         color:'#f472b6', icon:'🎯' },
+  { id:'Our NB',        cKey:'Our NB',          gnKey:'Our NB',        sgnKey:'Our NB',            guinKey:'Our NB',              chKey:'Our NB',          dKey:'Our NB', eKey:'Our NB',           label:'Our NB',           color:'#60a5fa', icon:'🔵' },
+  { id:'Our LONG',      cKey:null,              gnKey:null,            sgnKey:null,                guinKey:'Our LONG',              chKey:'Our LONG',        dKey:'Our LONG', eKey:'Our LONG',         label:'Our LONG',         color:'#f472b6', icon:'🎯' },
   { id:'Mullington',    cKey:'Mullington (WH)', gnKey:'Mullington',    sgnKey:'Mullington (WH)',   guinKey:'Mullington (WH)', chKey:'Mullington (WH)', dKey:'Mullington (WH)', eKey:'Mullington (WH)',  label:'Mullington (WH)',  color:'#fbbf24', icon:'📝' },
   { id:'WH Experts',    cKey:null,              gnKey:'WH Experts',    sgnKey:'WH Experts',        guinKey:null,              chKey:null,              dKey:null,               label:'WH Experts',       color:'#a3e635', icon:'🏆' },
   { id:'Geraghty',      cKey:null,              gnKey:'Geraghty',      sgnKey:'Geraghty (WH)',     guinKey:null,              chKey:null,              dKey:null,               label:'Barry Geraghty',   color:'#fb7185', icon:'🎤' },

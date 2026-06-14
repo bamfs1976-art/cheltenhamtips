@@ -510,6 +510,33 @@
       </table>
     </div>
 
+    <!-- Master accuracy ranking -->
+    <div class="section-hd" style="margin-top:32px">
+      <h2>🎯 Most Accurate Tipster — Wins, Places &amp; Strike Rates</h2>
+      <div class="section-line" aria-hidden="true"></div>
+    </div>
+    <p id="accuracy-summary" style="color:var(--muted);font-size:0.85rem;line-height:1.6;margin:0 0 12px;"></p>
+    <div class="tbl-wrap" role="region" aria-label="Master accuracy ranking — wins, places and strike rates">
+      <table class="bd-table" id="accuracy-table">
+        <thead>
+          <tr>
+            <th scope="col" style="width:36px;">#</th>
+            <th scope="col">Tipster</th>
+            <th scope="col" class="num">Fests</th>
+            <th scope="col" class="num">W</th>
+            <th scope="col" class="num">P</th>
+            <th scope="col" class="num">Picks</th>
+            <th scope="col" class="num">Pts</th>
+            <th scope="col" class="num">Win%</th>
+            <th scope="col" class="num">Hit%</th>
+            <th scope="col" class="num">Eff</th>
+          </tr>
+        </thead>
+        <tbody id="accuracy-body"></tbody>
+      </table>
+    </div>
+    <p style="color:var(--muted);font-size:0.76rem;margin-top:8px">Win = finished 1st · Place = finished top‑3 · Pts = 3×Win + 1×Place · Hit% = (Win+Place)/picks · Eff = points per pick. Sorted by total points across the 7 concluded festivals.</p>
+
     <!-- ── Cheltenham breakdown ── -->
     <div class="event-hd ev-chelt" id="cheltenham-section">
       <span class="ev-icon" aria-hidden="true">🏆</span>
@@ -763,6 +790,9 @@ function build() {
   const scores = computeSeasonScores();
   renderSeasonTable(scores);
 
+  // Master accuracy ranking
+  renderAccuracy(scores);
+
   // Render per-event breakdowns
   renderBreakdown('chelt-body',   'cKey',    CHELT_PICKS,    CHELT_RESULTS,   '#3b82f6');
   renderBreakdown('gn-body',      'gnKey',   GN_PICKS,       GN_RESULTS,      '#10b981');
@@ -850,6 +880,53 @@ function renderSeasonTable(scores) {
     `;
     body.appendChild(tr);
   });
+}
+
+// ── Master accuracy ranking ────────────────────────────────────
+function renderAccuracy(scores) {
+  const body = document.getElementById('accuracy-body');
+  const list = scores.filter(t => t.totalPicks > 0);
+  list.forEach((t, i) => {
+    const w = t.totalWins, p = t.totalPlace, pk = t.totalPicks, pts = t.total;
+    const winPct = Math.round(w / pk * 100);
+    const hitPct = Math.round((w + p) / pk * 100);
+    const eff = (pts / pk).toFixed(2);
+    const nf = [t.cKey, t.gnKey, t.sgnKey, t.guinKey, t.chKey, t.dKey, t.eKey].filter(Boolean).length;
+    const rankCls = i === 0 ? 'rank-1' : i === 1 ? 'rank-2' : i === 2 ? 'rank-3' : '';
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td class="num"><span class="rank-badge ${rankCls}">${i + 1}</span></td>
+      <td>
+        <div class="tipster-cell">
+          <div class="t-avatar" style="background:${t.color}1a;border:1px solid ${t.color}33;" aria-hidden="true">${t.icon}</div>
+          <span class="t-name" style="color:${t.color}">${escHtml(t.label)}</span>
+        </div>
+      </td>
+      <td class="num" style="color:var(--muted)">${nf}</td>
+      <td class="num s-w" style="font-weight:700">${w}</td>
+      <td class="num s-p">${p}</td>
+      <td class="num" style="color:var(--muted)">${pk}</td>
+      <td class="num" style="font-weight:700;color:var(--text)">${pts}</td>
+      <td class="num">${winPct}%</td>
+      <td class="num s-eff">${hitPct}%</td>
+      <td class="num">${eff}</td>
+    `;
+    body.appendChild(tr);
+  });
+  // Dynamic summary of the leaders by different metrics
+  const byWins = [...list].sort((a, b) => b.totalWins - a.totalWins)[0];
+  const elig = list.filter(t => t.totalPicks >= 15);
+  const byHit = [...elig].sort((a, b) => (b.totalWins + b.totalPlace) / b.totalPicks - (a.totalWins + a.totalPlace) / a.totalPicks)[0];
+  const byWinPct = [...elig].sort((a, b) => b.totalWins / b.totalPicks - a.totalWins / a.totalPicks)[0];
+  const sumEl = document.getElementById('accuracy-summary');
+  if (sumEl && byWins) {
+    const hp = h => Math.round((h.totalWins + h.totalPlace) / h.totalPicks * 100);
+    const wp = h => Math.round(h.totalWins / h.totalPicks * 100);
+    sumEl.innerHTML =
+      `<strong style="color:${byWins.color}">${escHtml(byWins.label)}</strong> leads on raw output (${byWins.totalWins} wins, ${byWins.total} pts). ` +
+      `Most accurate over a fair sample (≥15 picks): <strong style="color:${byHit.color}">${escHtml(byHit.label)}</strong> — ${wp(byHit)}% win, ${hp(byHit)}% hit. ` +
+      `Highest strike rate: <strong style="color:${byWinPct.color}">${escHtml(byWinPct.label)}</strong> at ${wp(byWinPct)}% winners.`;
+  }
 }
 
 // ── Per-event breakdown ────────────────────────────────────────
