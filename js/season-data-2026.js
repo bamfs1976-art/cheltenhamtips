@@ -562,9 +562,9 @@ const DANTE_RESULTS = {
   // Thu 14 May — Dante Day
   '13:45-1':{ winner:'Persian Spring', second:null,                 third:null },
   '14:20-1':{ winner:null,             second:null,                 third:null },
-  '14:55-1':{ winner:null,             second:'Cerulean Bay',       third:null },
+  '14:55-1':{ winner:'Maybe Not',      second:'Cerulean Bay',       third:'Shout' },
   '15:30-1':{ winner:'See The Fire',   second:'Fallen Angel',       third:null },
-  '16:05-1':{ winner:null,             second:'Action',             third:'Christmas Day' },
+  '16:05-1':{ winner:'Item',           second:'Action',             third:'Christmas Day' },
   '16:40-1':{ winner:'Dickensian',     second:null,                 third:'Aspect Island' },
   '17:15-1':{ winner:'Arc Ole Ole',    second:'Stoneacre Donny',    third:null },
   // Fri 15 May — Yorkshire Cup Day
