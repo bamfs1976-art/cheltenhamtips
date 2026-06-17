@@ -103,7 +103,7 @@ const FESTIVALS_2026 = [
     dateLabel:'16–20 June 2026', venue:'Ascot', type:'Flat',
     theme:'theme-violet', accentColor:'#7c3aed', url:'royal-ascot-2026.html',
     races:35,
-    headline:'Day 1: Bow Echo (NAP · 4x crossover) WON the St James’s Palace · placed in 4 of 7 (Opera Ballo, Rayevka, Overpass, Gstaad) · but 4 naps were beaten favourites · Engine ROI −78% (−£18.68 on £24, Lucky 15 at 10p e/w) · standard-staking card −82%',
+    headline:'Days 1–2: 5 winners — Bow Echo (St James’s Palace), Victorious, Ombudsman (Prince of Wales’s) &amp; Alobayyah, plus NB Blue Bolt · Queen Mary 1-2-3 podium sweep · Day 1 ROI −78%, Day 2 −25% · HRN &amp; Our NAP lead the meeting (4 wins each). Days 3–5 live',
     headlineRace:'Gold Cup (G1) Thu 18 Jun · Prince of Wales’s Stakes (G1) Wed · Queen Anne (G1) Tue · Diamond Jubilee (G1) Sat',
   },
   {
@@ -756,56 +756,76 @@ const RA_RESULTS = {
   '17:00-0':{ winner:'Kizlyar',          second:'Defiantly',          third:'Tim Toe' },             // Ascot Stakes (Hcap)
   '17:35-0':{ winner:'Map Of Stars',     second:'Wimbledon Hawkeye',  third:'Dividend' },            // Wolferton (Listed)
   '18:10-0':{ winner:'Daiquiri Bay',     second:'Gamrai',             third:'Paddy The Squire' },    // Copper Horse (Hcap)
+  // Wed 17 Jun — Day 2
+  '14:30-1':{ winner:'Victorious',       second:'Senorita Bonita',    third:'Ruiva' },               // Queen Mary (G2)
+  '15:05-1':{ winner:'Limestone',        second:'Del Maro',           third:'Ranga Tang' },          // Queen's Vase (G2)
+  '15:40-1':{ winner:'Blue Bolt',        second:'Jancis',             third:'Friendly Soul' },       // Duke of Cambridge (G2)
+  '16:20-1':{ winner:'Ombudsman',        second:'Minnie Hauk',        third:'Daryz' },               // Prince of Wales's (G1)
+  '17:00-1':{ winner:'Rogue Diplomat',   second:'Blue Rc',            third:'Indalo' },              // Royal Hunt Cup (Hcap)
+  '17:35-1':{ winner:'Alobayyah',        second:'Miss Nightfall',     third:'Seren Star' },          // Kensington Palace (Hcap)
+  '18:10-1':{ winner:'King Of Cloughan', second:'Moonrise',           third:'Harlequin Sky' },       // Windsor Castle (Listed)
 };
 
 const RA_PICKS = {
   'Our NAP':{ label:'Our NAP', color:'#34d399', icon:'⭐', picks:{
     '14:30-0':'Notable Speech','15:05-0':'Confucius','15:40-0':'Rayevka','16:20-0':'Bow Echo',
     '17:00-0':'Reaching High','17:35-0':'Haatem','18:10-0':'Ascending',
+    '14:30-1':'Victorious','15:05-1':'Galiyan','15:40-1':'Friendly Soul','16:20-1':'Ombudsman','17:00-1':'Fifth Column','17:35-1':'Alobayyah','18:10-1':'Sergei Diaghilev',
   }},
   'Our NB':{ label:'Our NB', color:'#60a5fa', icon:'🔵', picks:{
     '14:30-0':'Opera Ballo','15:05-0':'Night In Vegas','15:40-0':'Overpass','16:20-0':'Gstaad',
     '17:00-0':'Beylerbeyi','17:35-0':'Nahraan','18:10-0':'Sing Us A Song',
+    '14:30-1':'Senorita Bonita','15:05-1':'Port Of Spain','15:40-1':'Blue Bolt','16:20-1':'Daryz','17:00-1':'Indalo','17:35-1':'Radiant Beauty','18:10-1':'Controlla',
   }},
   'Our LONG':{ label:'Our LONG', color:'#f472b6', icon:'🎯', picks:{
     '14:30-0':'Docklands','15:05-0':'God Given Talent','15:40-0':'Asfoora','16:20-0':'Talk Of New York',
     '17:00-0':'Mordor','17:35-0':'Survie','18:10-0':'Incensed',
+    '14:30-1':'Ruiva','15:05-1':'Asakir','15:40-1':'Catalina Delcarpio','16:20-1':'Almaqam','17:00-1':'Mister Winston','17:35-1':'Zgharta','18:10-1':'Sale Shark',
   }},
   'Mullington (WH)':{ label:'Mullington (WH)', color:'#fbbf24', icon:'📝', picks:{
     '14:30-0':'Notable Speech','15:05-0':'Night In Vegas','15:40-0':'Rayevka','16:20-0':'Bow Echo',
     '17:00-0':'Mordor','17:35-0':'Survie','18:10-0':'Ascending',
+    '14:30-1':'Drazinda','15:05-1':'Galiyan','15:40-1':'Friendly Soul','16:20-1':'Minnie Hauk','17:00-1':'Fifth Column','17:35-1':'Betty Clover','18:10-1':'Sale Shark',
   }},
   'Nick Luck (WH)':{ label:'Nick Luck (WH)', color:'#5eead4', icon:'🎙️', picks:{
     '14:30-0':'Opera Ballo','15:05-0':'Night In Vegas','15:40-0':'Rayevka','16:20-0':'Bow Echo',
     '17:00-0':'Beylerbeyi','17:35-0':'Nahraan','18:10-0':'Sing Us A Song',
+    '14:30-1':'Alta Regina','15:05-1':'Galiyan','15:40-1':'Catalina Delcarpio','16:20-1':'Almaqam','17:00-1':'Jagged Edge','17:35-1':'Zgharta','18:10-1':'Boleto',
   }},
   'Cunningham (GC)':{ label:'Cunningham (Sporting Life)', color:'#22d3ee', icon:'🗞️', picks:{
     '14:30-0':'Notable Speech','15:05-0':'Confucius','15:40-0':'Overpass','16:20-0':'Gstaad',
     '17:00-0':'Reaching High','17:35-0':null,'18:10-0':'Ascending',
+    '14:30-1':null,'15:05-1':'Asakir','15:40-1':'Friendly Soul','16:20-1':'Ombudsman','17:00-1':null,'17:35-1':null,'18:10-1':null,
   }},
   'J. Mangan':{ label:'Jane Mangan (WH)', color:'#f9a8d4', icon:'🎤', picks:{
     '14:30-0':'Notable Speech','15:05-0':'Cut A Dash','15:40-0':'Night Raider','16:20-0':'Bow Echo',
     '17:00-0':'Reaching High','17:35-0':'Haatem','18:10-0':'Valiancy',
+    '14:30-1':'Victorious','15:05-1':'Galiyan','15:40-1':'Catalina Delcarpio','16:20-1':'Daryz','17:00-1':'Indalo','17:35-1':null,'18:10-1':'Sergei Diaghilev',
   }},
   'HRN':{ label:'horseracing.net', color:'#7dd3fc', icon:'📰', picks:{
     '14:30-0':'Zeus Olympios','15:05-0':'Great Barrier Reef','15:40-0':'Overpass','16:20-0':'Bow Echo',
     '17:00-0':'Reaching High','17:35-0':'Haatem','18:10-0':'Aeronautic',
+    '14:30-1':'Celtic Dispute','15:05-1':'Limestone','15:40-1':'Godspeed','16:20-1':'Daryz','17:00-1':'La Botte','17:35-1':'Alobayyah','18:10-1':'One Number',
   }},
   'Frick':{ label:"Frick's Tips", color:'#e879f9', icon:'🦆', picks:{
     '14:30-0':'Opera Ballo','15:05-0':null,'15:40-0':'American Affair','16:20-0':null,
     '17:00-0':'Kizlyar','17:35-0':null,'18:10-0':'Ascending',
+    '14:30-1':null,'15:05-1':'Limestone','15:40-1':null,'16:20-1':null,'17:00-1':'Indalo','17:35-1':null,'18:10-1':null,
   }},
   'Raceolly':{ label:'Raceolly', color:'#c4b5fd', icon:'📱', picks:{
     '14:30-0':"Cicero's Gift",'15:05-0':'God Given Talent','15:40-0':'Heavenly Heather','16:20-0':null,
     '17:00-0':'Mordor','17:35-0':'Persica','18:10-0':'Paddy The Squire',
+    '14:30-1':'Kentucky Rain','15:05-1':null,'15:40-1':null,'16:20-1':null,'17:00-1':'Witch Hunter','17:35-1':'Betty Clover','18:10-1':'Charted Course',
   }},
   'Grimshaw (HRN)':{ label:'Grimshaw (HRN)', color:'#67e8f9', icon:'📺', picks:{
     '14:30-0':'Docklands','15:05-0':'Siouxperb','15:40-0':'Overpass','16:20-0':null,
     '17:00-0':null,'17:35-0':'Ghostwriter','18:10-0':null,
+    '14:30-1':null,'15:05-1':'Limestone','15:40-1':null,'16:20-1':'Daryz','17:00-1':'Skukuza','17:35-1':null,'18:10-1':'Sergei Diaghilev',
   }},
   'HRN BIG':{ label:'HRN BIG (longshots)', color:'#fca5a5', icon:'🔥', picks:{
     '14:30-0':null,'15:05-0':'The Harv','15:40-0':null,'16:20-0':null,
     '17:00-0':'Siempre Arturo','17:35-0':'Dividend','18:10-0':'Hallelujah U',
+    '14:30-1':'Bint Archange','15:05-1':null,'15:40-1':null,'16:20-1':null,'17:00-1':'Urban Lion','17:35-1':'Betty Clover','18:10-1':'Troublesome Guest',
   }},
 };
 
