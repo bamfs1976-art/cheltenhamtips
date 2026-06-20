@@ -102,9 +102,17 @@ const FESTIVALS_2026 = [
     icon:'🎩', dates:['2026-06-16','2026-06-17','2026-06-18','2026-06-19','2026-06-20'],
     dateLabel:'16–20 June 2026', venue:'Ascot', type:'Flat',
     theme:'theme-violet', accentColor:'#7c3aed', url:'royal-ascot-2026.html',
-    races:35,
+    races:35, concluded:true,
     headline:'COMPLETE — 18 winners over 5 days, −24% ROI (−£26.84 / £114). Day 3 was the day of the meeting (6 winners, +60%). ROI D1 −78%, D2 −25%, D3 +60%, D4 −27%, D5 −38% · Our NB tops the RA leaderboard (32 pts), Our NAP most wins (8 from 35); Frick’s the sharpest external tipster (47% strike rate). The short-priced bankers (Saber Strike, Le Destrier) sank the final day.',
     headlineRace:'Gold Cup (G1) Thu 18 Jun · Prince of Wales’s Stakes (G1) Wed · Queen Anne (G1) Tue · Diamond Jubilee (G1) Sat',
+  },
+  {
+    slug:'northumberland-plate-2026', name:'Northumberland Plate Festival 2026', shortName:'Northumberland Plate',
+    icon:'⚓', dates:['2026-06-25','2026-06-26','2026-06-27'],
+    dateLabel:'25–27 June 2026', venue:'Newcastle (Gosforth Park)', type:'Flat',
+    theme:'theme-teal', accentColor:'#0d9488', url:'northumberland-plate-2026.html',
+    races:null, headline:null,
+    headlineRace:'Northumberland Plate (Heritage Handicap, 2m) · Sat 27 Jun — "the Pitmen’s Derby"',
   },
   {
     // PLACEHOLDER — fill in dates / dateLabel / races / headlineRace once the
