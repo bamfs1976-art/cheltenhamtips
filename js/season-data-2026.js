@@ -111,7 +111,8 @@ const FESTIVALS_2026 = [
     icon:'⚓', dates:['2026-06-25','2026-06-26','2026-06-27'],
     dateLabel:'25–27 June 2026', venue:'Newcastle (Gosforth Park)', type:'Flat',
     theme:'theme-teal', accentColor:'#0d9488', url:'northumberland-plate-2026.html',
-    races:null, headline:null,
+    races:null,
+    headline:'Day 1 (Thu 25 June) engine card LIVE — 8 races, NAP/NB/LONG with draws + HRN tips overlaid (7 of 8 HRN tips match our NAP/NB). Features: the Scarborough (Eternal Force) &amp; Kippax Seaton Delaval (Back In Black) Class 2 handicaps. Builds to the Northumberland Plate (2m) on Plate Day, Sat 27 June.',
     headlineRace:'Northumberland Plate (Heritage Handicap, 2m) · Sat 27 Jun — "the Pitmen’s Derby"',
   },
   {
