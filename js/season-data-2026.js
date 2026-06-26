@@ -112,7 +112,7 @@ const FESTIVALS_2026 = [
     dateLabel:'25–27 June 2026', venue:'Newcastle (Gosforth Park)', type:'Flat',
     theme:'theme-teal', accentColor:'#0d9488', url:'northumberland-plate-2026.html',
     races:null,
-    headline:'Day 2 (Fri 26 June) card LIVE — 7 races incl. the Group 3 Hoppings Fillies’ Stakes (Diamond Rain) &amp; the Gosforth Park Cup (Corolla Point). Day 1 settled −41% (3 winners, the ★★★ Im Dan Dare NAP landed). Plate Day (Sat 27, the 2m Pitmen’s Derby) to come.',
+    headline:'PLATE DAY (Sat 27 June) card LIVE — the Northumberland Plate (2m, Circus Of Rome the NAP) &amp; the Vase (Shrimp Shady), 6 races. Day 1 settled −41% (the ★★★ Im Dan Dare NAP landed); Day 2 built incl. the G3 Hoppings &amp; Gosforth Park Cup. The Pitmen’s Derby finale.',
     headlineRace:'Northumberland Plate (Heritage Handicap, 2m) · Sat 27 Jun — "the Pitmen’s Derby"',
   },
   {
