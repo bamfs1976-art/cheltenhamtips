@@ -111,8 +111,9 @@ const FESTIVALS_2026 = [
     icon:'⚓', dates:['2026-06-25','2026-06-26','2026-06-27'],
     dateLabel:'25–27 June 2026', venue:'Newcastle (Gosforth Park)', type:'Flat',
     theme:'theme-teal', accentColor:'#0d9488', url:'northumberland-plate-2026.html',
-    races:null,
-    headline:'PLATE DAY (Sat 27 June) card LIVE — the Northumberland Plate (2m, Circus Of Rome the NAP) &amp; the Vase (Shrimp Shady), 6 races. Day 1 settled −41% (the ★★★ Im Dan Dare NAP landed); Day 2 built incl. the G3 Hoppings &amp; Gosforth Park Cup. The Pitmen’s Derby finale.',
+    races:22,
+    concluded:true,
+    headline:'COMPLETE — 10 winners over 3 days, ~−18%. Align The Stars (10/1) won the Plate; Plate Day’s four winners were ALL our NBs, led by Tuco Salamanca (our NB + Spotlight ★★★ + Nick Luck — the most-backed horse, won 13/2). ROI D1 −41%, D2 ~breakeven (best day, +£0.90 singles), D3 ~−£1.50 (+£1.22 singles). The e/w engine was near flat; the short-priced NAPs &amp; Lucky 15s were the leak.',
     headlineRace:'Northumberland Plate (Heritage Handicap, 2m) · Sat 27 Jun — "the Pitmen’s Derby"',
   },
   {
