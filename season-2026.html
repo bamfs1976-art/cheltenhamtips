@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>2025/26 Season Leaderboard | Festival Form Book</title>
-<meta name="description" content="Combined tipster standings across Cheltenham, Grand National, Scottish Grand National, Guineas, Chester, Dante, Epsom Derby and Royal Ascot 2026.">
+<meta name="description" content="Combined tipster standings across Cheltenham, Grand National, Scottish Grand National, Guineas, Chester, Dante, Epsom Derby, Royal Ascot and the Northumberland Plate 2026.">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self' 'unsafe-inline';">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -189,6 +189,7 @@
   .event-hd.ev-dante { background: rgba(167,139,250,0.07);border-left-color: #a78bfa; }
   .event-hd.ev-epsom { background: rgba(96,165,250,0.07);border-left-color: #60a5fa; }
   .event-hd.ev-royal { background: rgba(167,139,250,0.07);border-left-color: #a78bfa; }
+  .event-hd.ev-np { background: rgba(45,212,191,0.07);border-left-color: #2dd4bf; }
 
   .ev-icon { font-size: 1.3rem; flex-shrink: 0; }
   .ev-title {
@@ -306,6 +307,7 @@
   .pill-dante { background: rgba(167,139,250,0.14);color: #c4b5fd; border: 1px solid rgba(167,139,250,0.32); }
   .pill-epsom { background: rgba(96,165,250,0.14);color: #93c5fd; border: 1px solid rgba(96,165,250,0.32); }
   .pill-royal { background: rgba(167,139,250,0.14);color: #c4b5fd; border: 1px solid rgba(167,139,250,0.32); }
+  .pill-np { background: rgba(45,212,191,0.14);color: #5eead4; border: 1px solid rgba(45,212,191,0.32); }
   .pill-none  { background: rgba(255,255,255,0.04);color: var(--muted); border: 1px solid rgba(255,255,255,0.06); }
 
   .total-pts {
@@ -450,7 +452,7 @@
   <div class="header-inner">
     <div class="header-badge">2025 / 26 National Hunt Season</div>
     <h1>Tipster <span class="gold">Season Leaderboard</span></h1>
-    <p class="header-sub">Cheltenham · Grand National · Scottish GN · Guineas · Chester · Dante · Epsom · Royal Ascot — combined standings</p>
+    <p class="header-sub">Cheltenham · Grand National · Scottish GN · Guineas · Chester · Dante · Epsom · Royal Ascot · Northumberland Plate — combined standings</p>
     <nav class="festival-nav" aria-label="Festival pages">
       <a href="cheltenham-2026.html">🏆 Cheltenham 2026</a>
       <a href="grand-national-2026.html">🏇 Grand National 2026</a>
@@ -460,6 +462,7 @@
       <a href="dante-2026.html">🐎 Dante 2026</a>
       <a href="epsom-derby-2026.html">👑 Epsom Derby 2026</a>
       <a href="royal-ascot-2026.html">🎩 Royal Ascot 2026</a>
+      <a href="northumberland-plate-2026.html">⚓ Northumberland Plate 2026</a>
     </nav>
   </div>
 </header>
@@ -475,6 +478,7 @@
     <span class="s-dot"><span class="dot" style="background:#a78bfa" aria-hidden="true"></span>Dante — 21 races, 3 days</span>
     <span class="s-dot"><span class="dot" style="background:#60a5fa" aria-hidden="true"></span>Epsom — 16 races, 2 days</span>
     <span class="s-dot"><span class="dot" style="background:#a78bfa" aria-hidden="true"></span>Royal Ascot — complete (35 races, 5 days)</span>
+    <span class="s-dot"><span class="dot" style="background:#2dd4bf" aria-hidden="true"></span>Northumberland Plate — complete (22 races, 3 days)</span>
     <span class="scoring-note">Scoring: Win = 3pts · Placed = 1pt · Miss = 0pts</span>
   </div>
 </div>
@@ -507,6 +511,7 @@
             <th scope="col" class="num">Dante</th>
             <th scope="col" class="num">Epsom</th>
             <th scope="col" class="num">Royal Ascot</th>
+            <th scope="col" class="num">N’land Plate</th>
             <th scope="col" class="num">Total</th>
           </tr>
         </thead>
@@ -761,6 +766,33 @@
       </table>
     </div>
 
+    <!-- ── Northumberland Plate breakdown ── -->
+    <div class="event-hd ev-np" id="northumberland-plate-section">
+      <span class="ev-icon" aria-hidden="true">⚓</span>
+      <div>
+        <div class="ev-title" style="color:#2dd4bf">Northumberland Plate 2026 · complete</div>
+        <div class="ev-meta">25–27 June 2026 · Newcastle (Tapeta) · 22 races · 10 winners over 3 days · Align The Stars (10/1) won the Plate · ~−18% (~−£13/£72) · Our NB tops the meeting (27 pts, 8 wins, 40% SR); Plate Day’s four winners were all NBs, led by Tuco Salamanca (our NB + Spotlight ★★★ + Nick Luck)</div>
+      </div>
+      <span class="ev-badge" aria-label="Status: Concluded" style="background:rgba(161,161,170,0.18);border:1px solid rgba(161,161,170,0.4);color:#d4d4d8">Concluded</span>
+    </div>
+    <div class="tbl-wrap" role="region" aria-label="Northumberland Plate 2026 tipster scores">
+      <table class="bd-table">
+        <thead>
+          <tr>
+            <th scope="col" style="width:36px;">#</th>
+            <th scope="col">Tipster</th>
+            <th scope="col" class="num">W</th>
+            <th scope="col" class="num">P</th>
+            <th scope="col" class="num">M</th>
+            <th scope="col" class="num">Pts</th>
+            <th scope="col" class="num">Eff</th>
+            <th scope="col" style="width:90px;">Score</th>
+          </tr>
+        </thead>
+        <tbody id="np-body"></tbody>
+      </table>
+    </div>
+
   </div><!-- /content -->
 </main>
 
@@ -790,6 +822,7 @@
       <a href="dante-2026.html">Dante 2026</a>
       <a href="epsom-derby-2026.html">Epsom Derby 2026</a>
       <a href="royal-ascot-2026.html">Royal Ascot 2026</a>
+      <a href="northumberland-plate-2026.html">Northumberland Plate 2026</a>
       <a href="cheltenham-2027.html">Cheltenham 2027 →</a>
     </nav>
   </div>
@@ -833,6 +866,7 @@ function build() {
   renderBreakdown('dante-body',   'dKey',    DANTE_PICKS,    DANTE_RESULTS,   '#a78bfa');
   renderBreakdown('epsom-body',   'eKey',    EPSOM_PICKS,    EPSOM_RESULTS,   '#60a5fa');
   renderBreakdown('ra-body',      'raKey',   RA_PICKS,       RA_RESULTS,      '#a78bfa');
+  renderBreakdown('np-body',      'npKey',   NP_PICKS,       NP_RESULTS,      '#2dd4bf');
 
   document.getElementById('loading').style.display = 'none';
   document.getElementById('content').style.display = '';
@@ -876,6 +910,7 @@ function renderSeasonTable(scores) {
       t.dKey    ? 'Dante'   : null,
       t.eKey    ? 'Epsom'   : null,
       t.raKey   ? 'Royal Ascot' : null,
+      t.npKey   ? 'Northumberland Plate' : null,
     ].filter(Boolean).join(' · ');
 
     const cCell   = t.cSc   ? `<span class="pill pill-chelt">${t.cSc.pts}pts</span>`     : `<span class="pill pill-none">—</span>`;
@@ -886,6 +921,7 @@ function renderSeasonTable(scores) {
     const dCell   = t.dSc   ? `<span class="pill pill-dante">${t.dSc.pts}pts</span>`     : `<span class="pill pill-none">—</span>`;
     const epCell  = t.eSc   ? `<span class="pill pill-epsom">${t.eSc.pts}pts</span>`     : `<span class="pill pill-none">—</span>`;
     const raCell  = t.raSc  ? `<span class="pill pill-royal">${t.raSc.pts}pts</span>`    : `<span class="pill pill-none">—</span>`;
+    const npCell  = t.npSc  ? `<span class="pill pill-np">${t.npSc.pts}pts</span>`       : `<span class="pill pill-none">—</span>`;
 
     const tr = document.createElement('tr');
     tr.innerHTML = `
@@ -909,6 +945,7 @@ function renderSeasonTable(scores) {
       <td class="num">${dCell}</td>
       <td class="num">${epCell}</td>
       <td class="num">${raCell}</td>
+      <td class="num">${npCell}</td>
       <td class="num">
         <span class="total-pts" aria-label="${t.total} points total">${t.total}</span>
       </td>
