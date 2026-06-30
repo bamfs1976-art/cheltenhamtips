@@ -70,11 +70,6 @@
   status = 200
 
 [[redirects]]
-  from = "/ffos-las-2026"
-  to   = "/ffos-las-2026.html"
-  status = 200
-
-[[redirects]]
   from = "/epsom-derby-2026"
   to   = "/epsom-derby-2026.html"
   status = 200

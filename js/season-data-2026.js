@@ -116,15 +116,6 @@ const FESTIVALS_2026 = [
     headline:'COMPLETE — 10 winners over 3 days, ~−18%. Align The Stars (10/1) won the Plate; Plate Day’s four winners were ALL our NBs, led by Tuco Salamanca (our NB + Spotlight ★★★ + Nick Luck — the most-backed horse, won 13/2). ROI D1 −41%, D2 ~breakeven (best day, +£0.90 singles), D3 ~−£1.50 (+£1.22 singles). The e/w engine was near flat; the short-priced NAPs &amp; Lucky 15s were the leak.',
     headlineRace:'Northumberland Plate (Heritage Handicap, 2m) · Sat 27 Jun — "the Pitmen’s Derby"',
   },
-  {
-    // PLACEHOLDER — fill in dates / dateLabel / races / headlineRace once the
-    // Ffos Las fixture is confirmed. Empty `dates` keeps it off the live banner.
-    slug:'ffos-las-2026', name:'Ffos Las Jump Festival 2026', shortName:'Ffos Las',
-    icon:'🏴󠁧󠁢󠁷󠁬󠁳󠁿', dates:[],
-    dateLabel:'Dates TBC', venue:'Ffos Las (Carmarthenshire)', type:'NH',
-    theme:'theme-emerald', accentColor:'#15803d', url:'ffos-las-2026.html',
-    races:null, headline:null, headlineRace:'TBC',
-  },
 ];
 
 // ════════════════════════════════════════════════════════════════════════════
