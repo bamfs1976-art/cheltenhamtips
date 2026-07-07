@@ -84,6 +84,11 @@
   to   = "/northumberland-plate-2026.html"
   status = 200
 
+[[redirects]]
+  from = "/newmarket-july-2026"
+  to   = "/newmarket-july-2026.html"
+  status = 200
+
 # Future festivals — add a redirect here each time you add a new file
 
 # Fallback: anything unknown → hub homepage

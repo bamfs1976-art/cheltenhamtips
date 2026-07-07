@@ -116,6 +116,15 @@ const FESTIVALS_2026 = [
     headline:'COMPLETE — 10 winners over 3 days, ~−18%. Align The Stars (10/1) won the Plate; Plate Day’s four winners were ALL our NBs, led by Tuco Salamanca (our NB + Spotlight ★★★ + Nick Luck — the most-backed horse, won 13/2). ROI D1 −41%, D2 ~breakeven (best day, +£0.90 singles), D3 ~−£1.50 (+£1.22 singles). The e/w engine was near flat; the short-priced NAPs &amp; Lucky 15s were the leak.',
     headlineRace:'Northumberland Plate (Heritage Handicap, 2m) · Sat 27 Jun — "the Pitmen’s Derby"',
   },
+  {
+    slug:'newmarket-july-2026', name:'Newmarket July Festival 2026', shortName:'July Festival',
+    icon:'☀️', dates:['2026-07-09','2026-07-10','2026-07-11'],
+    dateLabel:'9–11 July 2026', venue:'Newmarket (July Course)', type:'Flat',
+    theme:'theme-lime', accentColor:'#84cc16', url:'newmarket-july-2026.html',
+    races:null,
+    headline:'Day 1 (Thu 9 July) card LIVE — 7 races headlined by the Princess of Wales’s Stakes (G2, Rebel’s Romance) &amp; the July Stakes (G2). Builds to the July Cup (G1) on Saturday. WH (Mullington) tips overlaid.',
+    headlineRace:'July Cup (G1) · Sat 11 Jul — the mid-season sprint championship · Princess of Wales’s Stakes (G2) Thu',
+  },
 ];
 
 // ════════════════════════════════════════════════════════════════════════════
