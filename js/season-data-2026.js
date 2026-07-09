@@ -122,7 +122,7 @@ const FESTIVALS_2026 = [
     dateLabel:'9–11 July 2026', venue:'Newmarket (July Course)', type:'Flat',
     theme:'theme-lime', accentColor:'#84cc16', url:'newmarket-july-2026.html',
     races:null,
-    headline:'Days 1 &amp; 2 cards LIVE — Day 2 (Fri 10 July) headlined by the Falmouth Stakes (G1, Precise) &amp; the Duchess of Cambridge (G2). Day 1 (Thu) by the Princess of Wales’s Stakes (G2, Rebel’s Romance). Builds to the July Cup (G1) on Saturday.',
+    headline:'ALL THREE cards LIVE — the July Cup (G1, NAP Venetian Sun) headlines Saturday, with the Superlative (G2) &amp; Bunbury Cup. Day 2 by the Falmouth Stakes (G1, Precise); Day 1 by the Princess of Wales’s (G2, Rebel’s Romance). Four tipster columns &amp; crossover signals overlaid on Days 1–2.',
     headlineRace:'July Cup (G1) · Sat 11 Jul — the mid-season sprint championship · Princess of Wales’s Stakes (G2) Thu',
   },
 ];
