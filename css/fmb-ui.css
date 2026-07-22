@@ -88,11 +88,14 @@ summary:focus-visible,
 .fmb-num,
 .fmb-nums td.num, .fmb-nums th.num,
 .fmb-nums .lt-pts, .fmb-nums .lt-sr, .fmb-nums .lt-eff,
-.fmb-price, .fmb-sp, .fmb-pl, .fmb-kpi-val,
-.cd-num, .hero-stat-val, .feat-stat-val {
+.fmb-price, .fmb-sp, .fmb-pl, .fmb-kpi__val,
+.cd-num, .hero-stat-val, .feat-stat-val,
+.fest-dates, .result-fest, .fmb-next-date {
   font-variant-numeric: tabular-nums;
   font-feature-settings: "tnum" 1;
 }
+/* Prose / secondary copy width cap (§7) */
+.section-sub, .league-note { max-width: 70ch; }
 
 /* ── §7 INLINE BODY LINKS — distinct from gold headings ───── */
 .fmb-prose a,
