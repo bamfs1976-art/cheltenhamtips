@@ -271,7 +271,42 @@
     return { sortBy: sortBy };
   }
 
+  /* Navbar markup (injected into #fmb-nav-root on pages that opt in) */
+  function navHTML() {
+    return '' +
+'<header class="fmb-navbar"><nav class="fmb-nav" aria-label="Primary">' +
+'<a href="index.html" class="fmb-nav__brand"><span aria-hidden="true">🏇</span> Festival Form Book</a>' +
+'<div class="fmb-nav__center" role="group" aria-label="Festivals by status">' +
+'<button class="fmb-tab" type="button" aria-expanded="false" aria-controls="mega-live" aria-haspopup="true"><span class="fmb-dot fmb-dot--live" aria-hidden="true"></span> Live <span class="fmb-tab__caret" aria-hidden="true">▾</span></button>' +
+'<button class="fmb-tab" type="button" aria-expanded="false" aria-controls="mega-upcoming" aria-haspopup="true"><span class="fmb-dot fmb-dot--upcoming" aria-hidden="true"></span> Upcoming <span class="fmb-tab__caret" aria-hidden="true">▾</span></button>' +
+'<button class="fmb-tab" type="button" aria-expanded="false" aria-controls="mega-archive" aria-haspopup="true"><span class="fmb-dot fmb-dot--archive" aria-hidden="true"></span> Archive <span class="fmb-tab__caret" aria-hidden="true">▾</span></button>' +
+'<span class="fmb-tip" style="margin-left:2px"><button class="fmb-tip__btn" type="button" aria-label="What do Live, Upcoming and Concluded mean?">?</button><span class="fmb-tip__pop" role="tooltip"><b>Live</b> — racing on now.<br><b>Upcoming</b> — scheduled.<br><b>Concluded</b> — results archived.</span></span>' +
+'</div>' +
+'<div class="fmb-nav__right">' +
+'<a class="fmb-next-pill" data-next-pill href="#" aria-label="Featured festival"></a>' +
+'<a class="fmb-nav__link" href="season-2026.html">Leaderboard</a>' +
+'<span class="fmb-search"><button class="fmb-icon-btn" type="button" data-search-toggle aria-expanded="false" aria-controls="fmb-search-pop" aria-label="Search"><span aria-hidden="true">🔍</span></button>' +
+'<span class="fmb-search__pop" id="fmb-search-pop" hidden role="dialog" aria-label="Search festivals"><input class="fmb-input" type="search" placeholder="Search festivals, horses…" aria-label="Search query"><p class="fmb-search__note">Search is coming soon — use the Live / Upcoming / Archive menus.</p></span></span>' +
+'</div>' +
+'<button class="fmb-burger" type="button" aria-expanded="false" aria-controls="fmb-sheet" aria-label="Open menu"><span aria-hidden="true">☰</span></button>' +
+'</nav>' +
+'<div class="fmb-mega" id="mega-live" hidden><div class="fmb-mega__inner"><p class="fmb-mega__head"><span class="fmb-dot fmb-dot--live" aria-hidden="true"></span> Live now</p><div class="fmb-mega__grid" data-mega-list="live"></div></div></div>' +
+'<div class="fmb-mega" id="mega-upcoming" hidden><div class="fmb-mega__inner"><p class="fmb-mega__head"><span class="fmb-dot fmb-dot--upcoming" aria-hidden="true"></span> Upcoming</p><div class="fmb-mega__grid" data-mega-list="upcoming"></div></div></div>' +
+'<div class="fmb-mega" id="mega-archive" hidden><div class="fmb-mega__inner"><p class="fmb-mega__head"><span class="fmb-dot fmb-dot--archive" aria-hidden="true"></span> Concluded · full results archived</p><div class="fmb-mega__grid" data-mega-list="archive"></div></div></div>' +
+'</header>' +
+'<div class="fmb-sheet" id="fmb-sheet" data-open="false" role="dialog" aria-label="Menu">' +
+'<div class="fmb-sheet__top"><a href="index.html" class="fmb-nav__brand"><span aria-hidden="true">🏇</span> Festival Form Book</a><button class="fmb-icon-btn" type="button" data-sheet-close aria-label="Close menu"><span aria-hidden="true">✕</span></button></div>' +
+'<a class="fmb-next-pill" data-next-pill href="#" style="display:inline-flex;margin-bottom:8px"></a>' +
+'<div class="fmb-acc"><button class="fmb-acc__btn" type="button" aria-expanded="true" aria-controls="acc-live"><span class="fmb-dot fmb-dot--live" aria-hidden="true"></span> Live <span class="fmb-tab__caret" aria-hidden="true">▾</span></button><div class="fmb-acc__panel" id="acc-live"><div class="fmb-mega__grid" data-acc-list="live"></div></div></div>' +
+'<div class="fmb-acc"><button class="fmb-acc__btn" type="button" aria-expanded="false" aria-controls="acc-upcoming"><span class="fmb-dot fmb-dot--upcoming" aria-hidden="true"></span> Upcoming <span class="fmb-tab__caret" aria-hidden="true">▾</span></button><div class="fmb-acc__panel" id="acc-upcoming" hidden><div class="fmb-mega__grid" data-acc-list="upcoming"></div></div></div>' +
+'<div class="fmb-acc"><button class="fmb-acc__btn" type="button" aria-expanded="false" aria-controls="acc-archive"><span class="fmb-dot fmb-dot--archive" aria-hidden="true"></span> Archive <span class="fmb-tab__caret" aria-hidden="true">▾</span></button><div class="fmb-acc__panel" id="acc-archive" hidden><div class="fmb-mega__grid" data-acc-list="archive"></div></div></div>' +
+'<div class="fmb-acc" style="border-bottom:1px solid var(--fmb-border)"><a class="fmb-acc__btn" href="season-2026.html" style="text-decoration:none"><span aria-hidden="true">📊</span> Season Leaderboard</a></div>' +
+'</div>';
+  }
+
   function init() {
+    var root = document.getElementById('fmb-nav-root');
+    if (root && !root.querySelector('.fmb-navbar')) root.innerHTML = navHTML();
     buildNav();
     wireMega();
     wireSheet();

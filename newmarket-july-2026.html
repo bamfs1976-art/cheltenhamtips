@@ -8,6 +8,8 @@
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self' 'unsafe-inline';">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/fmb-ui.css">
+<script src="/js/fmb-ui.js" defer></script>
 <style>
   :root {
     --bg:#0a1428; --bg-mid:#0f1d3a; --card:#142747; --lit:#1a3057;
@@ -112,19 +114,14 @@
 </head>
 <body>
 
-<!-- GLOBAL NAV -->
-<nav class="global-nav" aria-label="Site navigation">
-  <a href="index.html" class="gnav-brand">🏇 Festival Form Book</a>
-  <a href="newmarket-july-2026.html" class="gnav-link active"><span class="dot dot-live"></span>Newmarket July</a>
-  <a href="northumberland-plate-2026.html" class="gnav-link"><span class="dot dot-archive"></span>Northumberland Plate</a>
-  <a href="royal-ascot-2026.html" class="gnav-link"><span class="dot dot-archive"></span>Royal Ascot 2026</a>
-  <a href="chester-2026.html" class="gnav-link"><span class="dot dot-archive"></span>Chester 2026</a>
-  <a href="season-2026.html" class="gnav-link"><span class="dot dot-gold"></span>Season Leaderboard</a>
-</nav>
+<a class="fmb-skip" href="#main">Skip to content</a>
+
+<!-- Shared grouped global nav (injected by fmb-ui.js) -->
+<div id="fmb-nav-root"></div>
 
 <div class="live-strip">🏆 Newmarket July Festival · <strong>Days 1 &amp; 2 SETTLED</strong> — 10 winners, 7 of them our NBs; Blue Bolt won the Falmouth (G1) · <strong>July Cup (G1) Saturday</strong> — NAP Venetian Sun</div>
 
-<main class="container">
+<main class="container" id="main" tabindex="-1">
 
   <header class="site-header">
     <div class="header-badge">☀️ NEWMARKET · JULY COURSE · FLAT</div>
@@ -524,6 +521,21 @@
     <p><strong style="color:var(--lime-lt)">Right-handed into the straight, essentially a long galloping test.</strong> The July Course shares Newmarket’s wide, stiff, uphill character — a track that rewards genuine class and stamina and punishes the short-of-run. The round-course routes (Bahrain Trophy 1m5f, Princess of Wales’s 1m4f) are proper staying tests; the straight-course sprints and the mile handicaps put a premium on a good position and a strong finish.</p>
     <p><strong style="color:var(--lime-lt)">Draw &amp; pace.</strong> On the straight 6f a marginal edge can go to one side depending on where the pace lies, but the July Course is rarely a draw graveyard — it’s seldom decisive. Draw analysis is still shown on every flat pick per the display contract; only the big straight-course handicaps are worth any weighting.</p>
     <p><strong style="color:var(--lime-lt)">Angles.</strong> Godolphin/Appleby, the Gosdens, Haggas and Balding dominate the Group and black-type races; the July Course honours-board is a class-horse’s track. Proven form at a mile-plus on a galloping surface is the reliable read. The festival builds to the <strong style="color:var(--gold-lt)">July Cup (G1)</strong>, the mid-season six-furlong sprint championship, on Saturday.</p>
+  </section>
+
+  <!-- §9 TRUST BAND + EMAIL CAPTURE -->
+  <section class="fmb-trust" aria-label="Track record and newsletter signup" style="border-radius:12px;margin:16px 0">
+    <div class="fmb-trust__inner">
+      <p class="fmb-trust__stat">Results tracked since <b>March 2026</b> · <a href="season-2026.html#methodology">Methodology <span aria-hidden="true">→</span></a></p>
+      <div class="fmb-capture">
+        <label class="fmb-capture__label" for="nap-email">Get the Saturday NAP in your inbox by 9am</label>
+        <form class="fmb-capture__form" data-capture novalidate>
+          <input class="fmb-input" id="nap-email" type="email" name="email" placeholder="you@email.com" autocomplete="email" required aria-describedby="nap-email-msg">
+          <button class="fmb-btn fmb-btn--primary" type="submit">Sign up</button>
+        </form>
+        <p class="fmb-capture__msg" id="nap-email-msg" role="status" aria-live="polite"></p>
+      </div>
+    </div>
   </section>
 
   <!-- FOOTER -->

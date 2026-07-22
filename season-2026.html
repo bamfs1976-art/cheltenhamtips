@@ -8,6 +8,8 @@
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self' 'unsafe-inline';">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/fmb-ui.css">
+<script src="/js/fmb-ui.js" defer></script>
 <style>
   :root {
     --bg:      #0f1117;
@@ -441,11 +443,10 @@
 </head>
 <body>
 
-<!-- Skip to main content -->
-<a href="#main-content" class="back-link" style="position:absolute;left:-9999px;top:0;" onfocus="this.style.left='0'">Skip to main content</a>
+<a class="fmb-skip" href="#main-content">Skip to content</a>
 
-<!-- Back to hub -->
-<a href="index.html" class="back-link" aria-label="Back to Festival Hub">← Hub</a>
+<!-- Shared grouped global nav (injected by fmb-ui.js) -->
+<div id="fmb-nav-root"></div>
 
 <!-- ── Header ─────────────────────────────────────────────────── -->
 <header class="site-header">
@@ -479,7 +480,7 @@
     <span class="s-dot"><span class="dot" style="background:#60a5fa" aria-hidden="true"></span>Epsom — 16 races, 2 days</span>
     <span class="s-dot"><span class="dot" style="background:#a78bfa" aria-hidden="true"></span>Royal Ascot — complete (35 races, 5 days)</span>
     <span class="s-dot"><span class="dot" style="background:#2dd4bf" aria-hidden="true"></span>Northumberland Plate — complete (22 races, 3 days)</span>
-    <span class="scoring-note">Scoring: Win = 3pts · Placed = 1pt · Miss = 0pts</span>
+    <span class="scoring-note" id="methodology" style="scroll-margin-top:70px">Scoring: Win = 3pts · Placed = 1pt · Miss = 0pts</span>
   </div>
 </div>
 
@@ -796,6 +797,21 @@
   </div><!-- /content -->
 </main>
 
+<!-- ── §9 TRUST BAND + EMAIL CAPTURE ───────────────────────── -->
+<section class="fmb-trust" aria-label="Track record and newsletter signup">
+  <div class="fmb-trust__inner">
+    <p class="fmb-trust__stat">Results tracked since <b>March 2026</b> · <b id="picks-graded">—</b> picks graded · <a href="#methodology">Methodology <span aria-hidden="true">→</span></a></p>
+    <div class="fmb-capture">
+      <label class="fmb-capture__label" for="nap-email">Get the Saturday NAP in your inbox by 9am</label>
+      <form class="fmb-capture__form" data-capture novalidate>
+        <input class="fmb-input" id="nap-email" type="email" name="email" placeholder="you@email.com" autocomplete="email" required aria-describedby="nap-email-msg">
+        <button class="fmb-btn fmb-btn--primary" type="submit">Sign up</button>
+      </form>
+      <p class="fmb-capture__msg" id="nap-email-msg" role="status" aria-live="polite"></p>
+    </div>
+  </div>
+</section>
+
 <!-- ── Footer ──────────────────────────────────────────────── -->
 <footer class="site-footer">
   <div class="footer-inner">
@@ -867,6 +883,10 @@ function build() {
   renderBreakdown('epsom-body',   'eKey',    EPSOM_PICKS,    EPSOM_RESULTS,   '#60a5fa');
   renderBreakdown('ra-body',      'raKey',   RA_PICKS,       RA_RESULTS,      '#a78bfa');
   renderBreakdown('np-body',      'npKey',   NP_PICKS,       NP_RESULTS,      '#2dd4bf');
+
+  // §9 trust band — total graded picks across the season
+  const gradedEl = document.getElementById('picks-graded');
+  if (gradedEl) gradedEl.textContent = scores.reduce((n, t) => n + (t.totalPicks || 0), 0).toLocaleString('en-GB');
 
   document.getElementById('loading').style.display = 'none';
   document.getElementById('content').style.display = '';
