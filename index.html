@@ -703,40 +703,64 @@ footer {
   <!-- ── COMPLETED ───────────────────────────────────────── -->
   <div class="section-hdr" id="completed" style="scroll-margin-top:64px"><h2>Completed</h2><div class="section-hdr-line"></div></div>
   <p class="section-sub">Full results, tipster analysis and archive available.</p>
+  <!-- Reference implementation of the shared FestivalCard (archive variant):
+       crest hero → status ribbon → title → dates+venue → KPI row (N/A hidden)
+       → Analysis expandable → CTA. Upcoming grid cards below use v-upcoming. -->
   <div class="festival-grid">
-    <a href="cheltenham-2026.html" class="fest-card theme-green">
+    <article class="fest-card theme-green v-archive">
+      <div class="fmb-card-hero"><span class="fmb-card-hero__crest" role="img" aria-label="Cheltenham crest">🏆</span>
+        <span class="fmb-ribbon fmb-ribbon--archive"><span class="fmb-dot fmb-dot--archive" aria-hidden="true"></span> Concluded</span>
+      </div>
       <div class="fest-card-body">
-        <div class="fest-card-top"><span class="fest-icon">🏆</span><div class="fest-badges"><span class="status-badge status-archive">Archive</span><span class="type-badge type-jumps">Jumps</span></div></div>
-        <div class="fest-name">Cheltenham Festival 2026</div>
+        <div class="fest-card-top"><h3 class="fest-name">Cheltenham Festival 2026</h3><span class="type-badge type-jumps">Jumps</span></div>
         <div class="fest-dates">10–13 Mar 2026 · Cheltenham</div>
-        <div class="fest-desc">28 races across four days. Gold Cup, Champion Hurdle, Queen Mother Champion Chase.</div>
-        <div class="fest-meta"><span class="fest-race-count">🏁 28 races</span></div>
-        <div class="fest-result">Gaelic Warrior wins the Gold Cup</div>
+        <div class="fmb-krow">
+          <div class="fmb-kpi"><div class="fmb-kpi__val">28</div><div class="fmb-kpi__lbl">Races</div></div>
+          <div class="fmb-kpi"><div class="fmb-kpi__val" style="font-size:0.8rem">Gaelic Warrior</div><div class="fmb-kpi__lbl">Gold Cup</div></div>
+        </div>
+        <details class="fmb-analysis"><summary>Analysis</summary>
+          <p class="analysis-body">28 races across four days — Gold Cup, Champion Hurdle and the Queen Mother Champion Chase. Full race-by-race tipster scorecard in the archive.</p>
+        </details>
       </div>
-      <div class="fest-card-footer"><span class="fest-venue">📍 Cheltenham</span><span class="fest-cta">View archive</span></div>
-    </a>
-    <a href="grand-national-2026.html" class="fest-card theme-red">
+      <div class="fest-card-footer"><a class="fmb-btn fmb-btn--primary fmb-btn--block" href="cheltenham-2026.html">View archive <span aria-hidden="true">→</span></a></div>
+    </article>
+
+    <article class="fest-card theme-red v-archive">
+      <div class="fmb-card-hero"><span class="fmb-card-hero__crest" role="img" aria-label="Aintree crest">🏇</span>
+        <span class="fmb-ribbon fmb-ribbon--archive"><span class="fmb-dot fmb-dot--archive" aria-hidden="true"></span> Concluded</span>
+      </div>
       <div class="fest-card-body">
-        <div class="fest-card-top"><span class="fest-icon">🏇</span><div class="fest-badges"><span class="status-badge status-archive">Archive</span><span class="type-badge type-jumps">Jumps</span></div></div>
-        <div class="fest-name">Randox Grand National Festival 2026</div>
+        <div class="fest-card-top"><h3 class="fest-name">Randox Grand National Festival 2026</h3><span class="type-badge type-jumps">Jumps</span></div>
         <div class="fest-dates">9–11 Apr 2026 · Aintree, Liverpool</div>
-        <div class="fest-desc">21 races over three days. Full results, tipster scorecard and race-by-race analysis.</div>
-        <div class="fest-meta"><span class="fest-race-count">🏁 21 races</span></div>
-        <div class="fest-result">Mirabad wins the Grand National</div>
+        <div class="fmb-krow">
+          <div class="fmb-kpi"><div class="fmb-kpi__val">21</div><div class="fmb-kpi__lbl">Races</div></div>
+          <div class="fmb-kpi"><div class="fmb-kpi__val" style="font-size:0.8rem">Mirabad</div><div class="fmb-kpi__lbl">Grand National</div></div>
+        </div>
+        <details class="fmb-analysis"><summary>Analysis</summary>
+          <p class="analysis-body">21 races over three days at Aintree. Full results, tipster scorecard and race-by-race analysis in the archive.</p>
+        </details>
       </div>
-      <div class="fest-card-footer"><span class="fest-venue">📍 Aintree Racecourse</span><span class="fest-cta">View archive</span></div>
-    </a>
-    <a href="scottish-grand-national-2026.html" class="fest-card theme-indigo">
+      <div class="fest-card-footer"><a class="fmb-btn fmb-btn--primary fmb-btn--block" href="grand-national-2026.html">View archive <span aria-hidden="true">→</span></a></div>
+    </article>
+
+    <article class="fest-card theme-indigo v-archive">
+      <div class="fmb-card-hero"><span class="fmb-card-hero__crest" role="img" aria-label="Ayr crest">🏴󠁧󠁢󠁳󠁣󠁴󠁿</span>
+        <span class="fmb-ribbon fmb-ribbon--archive"><span class="fmb-dot fmb-dot--archive" aria-hidden="true"></span> Concluded</span>
+      </div>
       <div class="fest-card-body">
-        <div class="fest-card-top"><span class="fest-icon">🏴󠁧󠁢󠁳󠁣󠁴󠁿</span><div class="fest-badges"><span class="status-badge status-archive">Archive</span><span class="type-badge type-jumps">Jumps</span></div></div>
-        <div class="fest-name">Scottish Grand National 2026</div>
+        <div class="fest-card-top"><h3 class="fest-name">Scottish Grand National 2026</h3><span class="type-badge type-jumps">Jumps</span></div>
         <div class="fest-dates">17–18 Apr 2026 · Ayr, Scotland</div>
-        <div class="fest-desc">14 races over two days. Mullington top scorer with 6 pts. Full tipster scorecard.</div>
-        <div class="fest-meta"><span class="fest-race-count">🏁 14 races</span></div>
-        <div class="fest-result">Kap Vert (20/1) wins the Scottish Grand National</div>
+        <div class="fmb-krow">
+          <div class="fmb-kpi"><div class="fmb-kpi__val">14</div><div class="fmb-kpi__lbl">Races</div></div>
+          <div class="fmb-kpi"><div class="fmb-kpi__val" style="font-size:0.8rem">Kap Vert 20/1</div><div class="fmb-kpi__lbl">Winner</div></div>
+          <div class="fmb-kpi"><div class="fmb-kpi__val" style="font-size:0.8rem">Mullington</div><div class="fmb-kpi__lbl">Top tipster</div></div>
+        </div>
+        <details class="fmb-analysis"><summary>Analysis</summary>
+          <p class="analysis-body">14 races over two days at Ayr. Mullington top scorer with 6 pts. Full tipster scorecard in the archive.</p>
+        </details>
       </div>
-      <div class="fest-card-footer"><span class="fest-venue">📍 Ayr Racecourse</span><span class="fest-cta">View archive</span></div>
-    </a>
+      <div class="fest-card-footer"><a class="fmb-btn fmb-btn--primary fmb-btn--block" href="scottish-grand-national-2026.html">View archive <span aria-hidden="true">→</span></a></div>
+    </article>
   </div>
 
   <!-- ── SEASON LEAGUE ────────────────────────────────────── -->
@@ -785,7 +809,7 @@ footer {
       </div>
       <div class="fest-card-footer"><span class="fest-venue">📍 Ayr</span><span class="fest-cta">View archive</span></div>
     </a>
-    <div class="fest-card theme-green tbc">
+    <div class="fest-card theme-green tbc v-upcoming">
       <div class="fest-card-body">
         <div class="fest-card-top"><span class="fest-icon">🍁</span><div class="fest-badges"><span class="status-badge status-tbc">Coming Soon</span><span class="type-badge type-jumps">Jumps</span></div></div>
         <div class="fest-name">Cheltenham November Meeting 2026</div>
@@ -794,7 +818,7 @@ footer {
       </div>
       <div class="fest-card-footer"><span class="fest-venue">📍 Cheltenham</span><span class="fest-cta" style="color:var(--muted)">Tips coming soon</span></div>
     </div>
-    <div class="fest-card theme-violet tbc">
+    <div class="fest-card theme-violet tbc v-upcoming">
       <div class="fest-card-body">
         <div class="fest-card-top"><span class="fest-icon">❄️</span><div class="fest-badges"><span class="status-badge status-tbc">Coming Soon</span><span class="type-badge type-jumps">Jumps</span></div></div>
         <div class="fest-name">Tingle Creek Festival 2026</div>
@@ -861,49 +885,49 @@ footer {
         <div class="fest-meta"><span class="fest-race-count">🏁 Day 1 live · 7 races · 3 Group races · July Cup Saturday</span></div></div>
       <div class="fest-card-footer"><span class="fest-venue">📍 Newmarket</span><span class="fest-cta">View preview →</span></div>
     </a>
-    <div class="fest-card theme-rose tbc">
+    <div class="fest-card theme-rose tbc v-upcoming">
       <div class="fest-card-body"><div class="fest-card-top"><span class="fest-icon">👑</span><div class="fest-badges"><span class="status-badge status-tbc">Coming Soon</span><span class="type-badge type-flat">Flat</span></div></div>
         <div class="fest-name">King George Weekend 2026</div><div class="fest-dates">24–25 Jul 2026 · Ascot</div>
         <div class="fest-desc">Two days. King George VI and Queen Elizabeth Stakes — mid-season championship.</div></div>
       <div class="fest-card-footer"><span class="fest-venue">📍 Ascot</span><span class="fest-cta" style="color:var(--muted)">Tips coming soon</span></div>
     </div>
-    <div class="fest-card theme-navy tbc">
+    <div class="fest-card theme-navy tbc v-upcoming">
       <div class="fest-card-body"><div class="fest-card-top"><span class="fest-icon">🌹</span><div class="fest-badges"><span class="status-badge status-tbc">Coming Soon</span><span class="type-badge type-flat">Flat</span></div></div>
         <div class="fest-name">Glorious Goodwood 2026</div><div class="fest-dates">28 Jul–1 Aug 2026 · Goodwood</div>
         <div class="fest-desc">Five days on the Sussex Downs. Goodwood Cup, Nassau Stakes, Stewards' Cup.</div></div>
       <div class="fest-card-footer"><span class="fest-venue">📍 Goodwood</span><span class="fest-cta" style="color:var(--muted)">Tips coming soon</span></div>
     </div>
-    <div class="fest-card theme-crimson tbc">
+    <div class="fest-card theme-crimson tbc v-upcoming">
       <div class="fest-card-body"><div class="fest-card-top"><span class="fest-icon">🎯</span><div class="fest-badges"><span class="status-badge status-tbc">Coming Soon</span><span class="type-badge type-flat">Flat</span></div></div>
         <div class="fest-name">Ebor Festival 2026</div><div class="fest-dates">19–22 Aug 2026 · York</div>
         <div class="fest-desc">Four days. Yorkshire Oaks, Juddmonte International, the Ebor Handicap.</div></div>
       <div class="fest-card-footer"><span class="fest-venue">📍 York</span><span class="fest-cta" style="color:var(--muted)">Tips coming soon</span></div>
     </div>
-    <div class="fest-card theme-lime tbc">
+    <div class="fest-card theme-lime tbc v-upcoming">
       <div class="fest-card-body"><div class="fest-card-top"><span class="fest-icon">⚡</span><div class="fest-badges"><span class="status-badge status-tbc">Coming Soon</span><span class="type-badge type-flat">Flat</span></div></div>
         <div class="fest-name">Sprint Cup Festival 2026</div><div class="fest-dates">3–5 Sep 2026 · Haydock</div>
         <div class="fest-desc">Three days. Sprint Cup — Britain's top Group 1 sprint championship.</div></div>
       <div class="fest-card-footer"><span class="fest-venue">📍 Haydock</span><span class="fest-cta" style="color:var(--muted)">Tips coming soon</span></div>
     </div>
-    <div class="fest-card theme-bronze tbc">
+    <div class="fest-card theme-bronze tbc v-upcoming">
       <div class="fest-card-body"><div class="fest-card-top"><span class="fest-icon">🎖️</span><div class="fest-badges"><span class="status-badge status-tbc">Coming Soon</span><span class="type-badge type-flat">Flat</span></div></div>
         <div class="fest-name">St Leger Festival 2026</div><div class="fest-dates">10–13 Sep 2026 · Doncaster</div>
         <div class="fest-desc">Four days. Britain's oldest Classic — the final Triple Crown leg.</div></div>
       <div class="fest-card-footer"><span class="fest-venue">📍 Doncaster</span><span class="fest-cta" style="color:var(--muted)">Tips coming soon</span></div>
     </div>
-    <div class="fest-card theme-slate tbc">
+    <div class="fest-card theme-slate tbc v-upcoming">
       <div class="fest-card-body"><div class="fest-card-top"><span class="fest-icon">🍂</span><div class="fest-badges"><span class="status-badge status-tbc">Coming Soon</span><span class="type-badge type-flat">Flat</span></div></div>
         <div class="fest-name">Cambridgeshire Meeting 2026</div><div class="fest-dates">24–26 Sep 2026 · Newmarket</div>
         <div class="fest-desc">Three days. Cambridgeshire and Cesarewitch — the autumn handicap double.</div></div>
       <div class="fest-card-footer"><span class="fest-venue">📍 Newmarket</span><span class="fest-cta" style="color:var(--muted)">Tips coming soon</span></div>
     </div>
-    <div class="fest-card theme-gold tbc">
+    <div class="fest-card theme-gold tbc v-upcoming">
       <div class="fest-card-body"><div class="fest-card-top"><span class="fest-icon">⭐</span><div class="fest-badges"><span class="status-badge status-tbc">Coming Soon</span><span class="type-badge type-flat">Flat</span></div></div>
         <div class="fest-name">Future Champions Festival 2026</div><div class="fest-dates">9–10 Oct 2026 · Newmarket</div>
         <div class="fest-desc">Two days. Fillies' Mile, Dewhurst Stakes — the season's top juvenile form.</div></div>
       <div class="fest-card-footer"><span class="fest-venue">📍 Newmarket</span><span class="fest-cta" style="color:var(--muted)">Tips coming soon</span></div>
     </div>
-    <div class="fest-card theme-blue tbc">
+    <div class="fest-card theme-blue tbc v-upcoming">
       <div class="fest-card-body"><div class="fest-card-top"><span class="fest-icon">🏅</span><div class="fest-badges"><span class="status-badge status-tbc">Coming Soon</span><span class="type-badge type-flat">Flat</span></div></div>
         <div class="fest-name">British Champions Day 2026</div><div class="fest-dates">17 Oct 2026 · Ascot</div>
         <div class="fest-desc">One day, six Champions races. Champion Stakes, British Champions Sprint.</div></div>
@@ -915,7 +939,7 @@ footer {
   <div class="section-hdr"><h2>Mixed Fixture</h2><div class="section-hdr-line"></div></div>
   <p class="section-sub">Jump and flat on the same card.</p>
   <div class="festival-grid">
-    <div class="fest-card theme-orange tbc">
+    <div class="fest-card theme-orange tbc v-upcoming">
       <div class="fest-card-body"><div class="fest-card-top"><span class="fest-icon">☀️</span><div class="fest-badges"><span class="status-badge status-tbc">Coming Soon</span><span class="type-badge type-mixed">Mixed</span></div></div>
         <div class="fest-name">Sandown Summer Festival 2026</div><div class="fest-dates">3–4 Jul 2026 · Sandown Park</div>
         <div class="fest-desc">Two days of mixed jump and flat racing. Eclipse Stakes the headline.</div></div>
@@ -937,7 +961,7 @@ footer {
       </div>
       <div class="fest-card-footer"><span class="fest-venue">📍 Prestbury Park</span><span class="fest-cta">Preview shell</span></div>
     </a>
-    <div class="fest-card theme-red tbc">
+    <div class="fest-card theme-red tbc v-upcoming">
       <div class="fest-card-body">
         <div class="fest-card-top"><span class="fest-icon">🏇</span><div class="fest-badges"><span class="status-badge status-tbc">Coming Soon</span><span class="type-badge type-jumps">Jumps</span></div></div>
         <div class="fest-name">Grand National Festival 2027</div>
