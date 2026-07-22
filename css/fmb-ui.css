@@ -412,13 +412,13 @@ a.hero-stat-link:hover { background: color-mix(in oklch, var(--fmb-surface) 55%,
   padding: 6px 13px; border-radius: 50px; cursor: pointer; min-height: 32px;
 }
 .fmb-chip[aria-pressed="true"] { background: var(--fmb-accent-18); color: var(--fmb-accent-lt); border-color: var(--fmb-accent-40); }
-.league-table th.sortable { cursor: pointer; user-select: none; white-space: nowrap; }
-.league-table th.sortable:hover { color: var(--fmb-accent-lt); }
-.league-table th.sortable .fmb-sort { opacity: 0.4; font-size: 0.7em; margin-left: 3px; }
-.league-table th.sortable[aria-sort="descending"] .fmb-sort,
-.league-table th.sortable[aria-sort="ascending"] .fmb-sort { opacity: 1; color: var(--fmb-accent-lt); }
-.league-table tr.medal-row td { position: relative; }
-.league-table tr.medal-row td:first-child { box-shadow: inset 3px 0 0 var(--fmb-accent); }
+th.sortable { cursor: pointer; user-select: none; white-space: nowrap; }
+th.sortable:hover { color: var(--fmb-accent-lt); }
+th.sortable .fmb-sort { opacity: 0.4; font-size: 0.7em; margin-left: 3px; }
+th.sortable[aria-sort="descending"] .fmb-sort,
+th.sortable[aria-sort="ascending"] .fmb-sort { opacity: 1; color: var(--fmb-accent-lt); }
+tr.medal-row td { position: relative; }
+tr.medal-row td:first-child { box-shadow: inset 3px 0 0 var(--fmb-accent); }
 .fmb-spark { display: inline-block; vertical-align: middle; }
 .fmb-expand-row td { background: color-mix(in oklch, var(--fmb-surface) 55%, transparent); }
 .fmb-expand-row .fmb-fest-list { display: flex; flex-wrap: wrap; gap: 6px; padding: 4px 0; }

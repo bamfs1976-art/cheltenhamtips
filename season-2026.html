@@ -499,21 +499,23 @@
     </div>
 
     <div class="tbl-wrap" role="region" aria-label="Season combined leaderboard — scroll horizontally if needed">
-      <table class="lb-table" id="season-table">
+      <p class="scoring-note" style="margin:0 0 8px">Click a column to sort · Trend = cumulative points across festivals (Mar → Jun).</p>
+      <table class="lb-table fmb-nums" id="season-table">
         <thead>
           <tr>
             <th scope="col" class="num" style="width:46px;">#</th>
             <th scope="col">Tipster</th>
-            <th scope="col" class="num">Cheltenham</th>
-            <th scope="col" class="num">Grand National</th>
-            <th scope="col" class="num">Scottish GN</th>
-            <th scope="col" class="num">Guineas</th>
-            <th scope="col" class="num">Chester</th>
-            <th scope="col" class="num">Dante</th>
-            <th scope="col" class="num">Epsom</th>
-            <th scope="col" class="num">Royal Ascot</th>
-            <th scope="col" class="num">N’land Plate</th>
-            <th scope="col" class="num">Total</th>
+            <th scope="col" class="num sortable" data-col="2" aria-sort="none">Cheltenham <span class="fmb-sort" aria-hidden="true">↕</span></th>
+            <th scope="col" class="num sortable" data-col="3" aria-sort="none">Grand National <span class="fmb-sort" aria-hidden="true">↕</span></th>
+            <th scope="col" class="num sortable" data-col="4" aria-sort="none">Scottish GN <span class="fmb-sort" aria-hidden="true">↕</span></th>
+            <th scope="col" class="num sortable" data-col="5" aria-sort="none">Guineas <span class="fmb-sort" aria-hidden="true">↕</span></th>
+            <th scope="col" class="num sortable" data-col="6" aria-sort="none">Chester <span class="fmb-sort" aria-hidden="true">↕</span></th>
+            <th scope="col" class="num sortable" data-col="7" aria-sort="none">Dante <span class="fmb-sort" aria-hidden="true">↕</span></th>
+            <th scope="col" class="num sortable" data-col="8" aria-sort="none">Epsom <span class="fmb-sort" aria-hidden="true">↕</span></th>
+            <th scope="col" class="num sortable" data-col="9" aria-sort="none">Royal Ascot <span class="fmb-sort" aria-hidden="true">↕</span></th>
+            <th scope="col" class="num sortable" data-col="10" aria-sort="none">N’land Plate <span class="fmb-sort" aria-hidden="true">↕</span></th>
+            <th scope="col" class="num sortable" data-col="11" aria-sort="descending">Total <span class="fmb-sort" aria-hidden="true">↕</span></th>
+            <th scope="col" class="num">Trend</th>
           </tr>
         </thead>
         <tbody id="season-body"></tbody>
@@ -918,9 +920,16 @@ function updateGuineasBadge() {
 // ── Season leaderboard ────────────────────────────────────────
 function renderSeasonTable(scores) {
   const body = document.getElementById('season-body');
+  const CHRONO = ['cSc','gnSc','sgnSc','guinSc','chSc','dSc','eSc','raSc','npSc'];
   scores.forEach((t, i) => {
     const rank  = i + 1;
     const rankCls = rank === 1 ? 'rank-1' : rank === 2 ? 'rank-2' : rank === 3 ? 'rank-3' : '';
+    const medal = rank === 1 ? '🥇' : rank === 2 ? '🥈' : rank === 3 ? '🥉' : '';
+    // cumulative points series (Mar → Jun) for the trend sparkline
+    let cum = 0; const series = [];
+    CHRONO.forEach(k => { if (t[k]) { cum += t[k].pts; series.push(cum); } });
+    const spark = (typeof FMB !== 'undefined' && series.length >= 2)
+      ? FMB.sparkline(series, { stroke: t.color }) : '<span class="pill pill-none">—</span>';
     const events  = [
       t.cKey    ? 'Chelt'   : null,
       t.gnKey   ? 'GN'      : null,
@@ -943,10 +952,13 @@ function renderSeasonTable(scores) {
     const raCell  = t.raSc  ? `<span class="pill pill-royal">${t.raSc.pts}pts</span>`    : `<span class="pill pill-none">—</span>`;
     const npCell  = t.npSc  ? `<span class="pill pill-np">${t.npSc.pts}pts</span>`       : `<span class="pill pill-none">—</span>`;
 
+    const v = k => (t[k] ? t[k].pts : -1); // -1 sorts non-participants below 0-pt entries
     const tr = document.createElement('tr');
+    tr.setAttribute('data-row', '');
+    if (rank <= 3) tr.className = 'medal-row';
     tr.innerHTML = `
       <td class="num">
-        <span class="rank-badge ${rankCls}" aria-label="Rank ${rank}">${rank}</span>
+        <span class="rank-badge ${rankCls}" aria-label="Rank ${rank}">${medal || rank}</span>${medal ? `<span class="sr-only">Rank ${rank}</span>` : ''}
       </td>
       <td>
         <div class="tipster-cell">
@@ -957,21 +969,23 @@ function renderSeasonTable(scores) {
           </div>
         </div>
       </td>
-      <td class="num">${cCell}</td>
-      <td class="num">${gnCell}</td>
-      <td class="num">${sgnCell}</td>
-      <td class="num">${guinCell}</td>
-      <td class="num">${chCell}</td>
-      <td class="num">${dCell}</td>
-      <td class="num">${epCell}</td>
-      <td class="num">${raCell}</td>
-      <td class="num">${npCell}</td>
-      <td class="num">
+      <td class="num" data-val="${v('cSc')}">${cCell}</td>
+      <td class="num" data-val="${v('gnSc')}">${gnCell}</td>
+      <td class="num" data-val="${v('sgnSc')}">${sgnCell}</td>
+      <td class="num" data-val="${v('guinSc')}">${guinCell}</td>
+      <td class="num" data-val="${v('chSc')}">${chCell}</td>
+      <td class="num" data-val="${v('dSc')}">${dCell}</td>
+      <td class="num" data-val="${v('eSc')}">${epCell}</td>
+      <td class="num" data-val="${v('raSc')}">${raCell}</td>
+      <td class="num" data-val="${v('npSc')}">${npCell}</td>
+      <td class="num" data-val="${t.total}">
         <span class="total-pts" aria-label="${t.total} points total">${t.total}</span>
       </td>
+      <td class="num">${spark}</td>
     `;
     body.appendChild(tr);
   });
+  if (typeof FMB !== 'undefined') FMB.makeSortable(document.getElementById('season-table'));
 }
 
 // ── Master accuracy ranking ────────────────────────────────────
