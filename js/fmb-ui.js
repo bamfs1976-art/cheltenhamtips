@@ -64,7 +64,6 @@
       pill.href = feat.url;
       pill.innerHTML =
         '<span class="fmb-dot fmb-dot--' + feat.status + '" aria-hidden="true"></span>' +
-        '<span class="sr-only">' + esc(STATUS_LABEL[feat.status]) + ':</span>' +
         '<span>' + esc(lead) + ': ' + esc(feat.short) + '</span>' +
         '<span class="fmb-next-date">· ' + esc(feat.date) + '</span>';
     });
