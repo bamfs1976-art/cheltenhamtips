@@ -309,7 +309,8 @@ summary:focus-visible,
 }
 
 /* ── §2 HERO ENHANCEMENTS ─────────────────────────────────── */
-.fmb-hero-cap { max-width: 60ch; margin-left: auto; margin-right: auto; }
+.fmb-hero-cap, .hero-sub.fmb-hero-cap { max-width: 60ch; margin-left: auto; margin-right: auto; }
+.section-hdr[id] { scroll-margin-top: 64px; }
 .fmb-nextup {
   display: inline-flex; align-items: center; gap: 8px; flex-wrap: wrap; justify-content: center;
   background: var(--fmb-accent-18);

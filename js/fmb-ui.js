@@ -56,8 +56,22 @@
       if (acc) acc.innerHTML = megaItems(groups[st], st);
     });
 
+    // Hero "Next up" chip(s) + featured CTA links
+    var feat0 = featuredFestival();
+    if (feat0) {
+      var lead0 = feat0.status === 'live' ? 'Live now' : 'Next up';
+      document.querySelectorAll('[data-nextup]').forEach(function (chip) {
+        chip.href = feat0.url;
+        chip.innerHTML =
+          '<span class="fmb-dot fmb-dot--' + feat0.status + '" aria-hidden="true"></span>' +
+          '<span><b>' + esc(lead0) + ':</b> ' + esc(feat0.name) + '</span>' +
+          '<span class="fmb-nextup-meta">· ' + esc(feat0.date) + ' · ' + esc(feat0.venue) + '</span>';
+      });
+      document.querySelectorAll('[data-featured-link]').forEach(function (a) { a.href = feat0.url; });
+    }
+
     // "Next"/"Live" pill
-    var feat = featuredFestival();
+    var feat = feat0;
     document.querySelectorAll('[data-next-pill]').forEach(function (pill) {
       if (!feat) { pill.style.display = 'none'; return; }
       var lead = feat.status === 'live' ? 'Live' : 'Next';

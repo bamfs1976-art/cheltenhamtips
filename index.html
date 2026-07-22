@@ -626,17 +626,20 @@ footer {
 <section class="hero">
   <p class="hero-eyebrow">Britain's Complete Racing Calendar</p>
   <h1>The <em>Festival</em><br>Form Book</h1>
-  <p class="hero-sub">Expert tips, race guides and live results for every major jump and flat racing festival — from Cheltenham to British Champions Day.</p>
-  <div class="hero-stats">
-    <div><span class="hero-stat-val">21</span><span class="hero-stat-lbl">Festivals in 2026</span></div>
-    <div><span class="hero-stat-val" id="stat-races">64+</span><span class="hero-stat-lbl">Races tracked</span></div>
-    <div><span class="hero-stat-val" id="stat-tipsters">21</span><span class="hero-stat-lbl">Tipsters scored</span></div>
-    <div><span class="hero-stat-val">Mar–Dec</span><span class="hero-stat-lbl">Full season</span></div>
+  <p class="hero-sub fmb-hero-cap">Expert tips, race guides and live results for every major jump and flat racing festival — from Cheltenham to British Champions Day.</p>
+
+  <div class="fmb-cta-row">
+    <a class="fmb-btn fmb-btn--primary" data-featured-link href="newmarket-july-2026.html">See today's tips <span aria-hidden="true">→</span></a>
+    <a class="fmb-link-secondary" href="season-2026.html#methodology">How our scoring works</a>
   </div>
-  <div class="countdown-strip" id="countdown-strip" aria-label="Next festival countdown">
-    <span class="cd-label">NEXT UP</span>
-    <span class="cd-name" id="cd-name">Loading…</span>
-    <div class="cd-units" id="cd-units" aria-live="polite"></div>
+
+  <a class="fmb-nextup" data-nextup href="newmarket-july-2026.html" aria-label="Featured festival">Loading…</a>
+
+  <div class="hero-stats">
+    <a class="hero-stat-link" href="#flat-2026"><span class="hero-stat-val">21</span><span class="hero-stat-lbl">Festivals in 2026</span></a>
+    <a class="hero-stat-link" href="#completed"><span class="hero-stat-val" id="stat-races">64+</span><span class="hero-stat-lbl">Races tracked</span></a>
+    <a class="hero-stat-link" href="#leaderboard"><span class="hero-stat-val" id="stat-tipsters">21</span><span class="hero-stat-lbl">Tipsters scored</span></a>
+    <a class="hero-stat-link" href="season-2026.html"><span class="hero-stat-val">Mar–Dec</span><span class="hero-stat-lbl">Full season</span></a>
   </div>
 </section>
 
@@ -684,7 +687,7 @@ footer {
   </div>
 
   <!-- ── COMPLETED ───────────────────────────────────────── -->
-  <div class="section-hdr"><h2>Completed</h2><div class="section-hdr-line"></div></div>
+  <div class="section-hdr" id="completed" style="scroll-margin-top:64px"><h2>Completed</h2><div class="section-hdr-line"></div></div>
   <p class="section-sub">Full results, tipster analysis and archive available.</p>
   <div class="festival-grid">
     <a href="cheltenham-2026.html" class="fest-card theme-green">
@@ -723,7 +726,7 @@ footer {
   </div>
 
   <!-- ── SEASON LEAGUE ────────────────────────────────────── -->
-  <div class="section-hdr" style="margin-top:40px"><h2>Season Leaderboard</h2><div class="section-hdr-line"></div></div>
+  <div class="section-hdr" id="leaderboard" style="margin-top:40px;scroll-margin-top:64px"><h2>Season Leaderboard</h2><div class="section-hdr-line"></div></div>
   <p class="section-sub">All tipsters scored across every completed festival. Win = 3 pts · Placed = 1 pt.</p>
   <div class="league-wrap">
     <table class="league-table" id="season-table" aria-label="Season tipster leaderboard">
@@ -1033,6 +1036,7 @@ function initCountdown() {
 
   const cdName  = document.getElementById('cd-name');
   const cdUnits = document.getElementById('cd-units');
+  if (!cdName || !cdUnits) return; // countdown strip replaced by the Next-up chip (§2)
 
   if (!next) {
     // Check if something is live
