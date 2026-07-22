@@ -239,11 +239,11 @@
     function getRows() {
       return Array.prototype.slice.call(tbody.querySelectorAll('tr[data-row]'));
     }
-    function sortBy(idx, dir) {
+    function sortBy(colIdx, dir, headerEl) {
       var rows = getRows();
       rows.sort(function (a, b) {
-        var av = a.children[idx].getAttribute('data-val');
-        var bv = b.children[idx].getAttribute('data-val');
+        var av = a.children[colIdx].getAttribute('data-val');
+        var bv = b.children[colIdx].getAttribute('data-val');
         var an = parseFloat(av), bn = parseFloat(bv);
         var cmp = (!isNaN(an) && !isNaN(bn)) ? an - bn : String(av).localeCompare(String(bv));
         return dir === 'asc' ? cmp : -cmp;
@@ -254,16 +254,16 @@
         if (ex) { var er = document.getElementById(ex); if (er) tbody.appendChild(er); }
       });
       headers.forEach(function (h) { h.setAttribute('aria-sort', 'none'); });
-      headers[idx] && headers[idx].setAttribute('aria-sort', dir === 'asc' ? 'ascending' : 'descending');
+      if (headerEl) headerEl.setAttribute('aria-sort', dir === 'asc' ? 'ascending' : 'descending');
       if (opts.afterSort) opts.afterSort();
     }
-    headers.forEach(function (h, i) {
+    headers.forEach(function (h) {
       h.tabIndex = 0;
       var colIdx = parseInt(h.getAttribute('data-col'), 10);
       function toggle() {
         var cur = h.getAttribute('aria-sort');
         var dir = cur === 'descending' ? 'asc' : 'desc';
-        sortBy(colIdx, dir);
+        sortBy(colIdx, dir, h);
       }
       h.addEventListener('click', toggle);
       h.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });

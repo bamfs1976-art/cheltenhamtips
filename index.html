@@ -741,20 +741,27 @@ footer {
 
   <!-- ── SEASON LEAGUE ────────────────────────────────────── -->
   <div class="section-hdr" id="leaderboard" style="margin-top:40px;scroll-margin-top:64px"><h2>Season Leaderboard</h2><div class="section-hdr-line"></div></div>
-  <p class="section-sub">All tipsters scored across every completed festival. Win = 3 pts · Placed = 1 pt.</p>
+  <p class="section-sub">All tipsters scored across every completed festival. Win = 3 pts · Placed = 1 pt. Sort any column; tap a row for festivals covered.</p>
+  <div class="fmb-lb-filters" role="group" aria-label="Filter leaderboard">
+    <button type="button" class="fmb-chip" data-lb-filter="all" aria-pressed="true">All</button>
+    <button type="button" class="fmb-chip" data-lb-filter="jumps" aria-pressed="false">Jumps</button>
+    <button type="button" class="fmb-chip" data-lb-filter="flat" aria-pressed="false">Flat</button>
+    <button type="button" class="fmb-chip" data-lb-filter="min20" aria-pressed="false">Min 20 picks</button>
+  </div>
+  <button type="button" class="fmb-more-btn" data-lb-more aria-expanded="false">Show more columns</button>
   <div class="league-wrap">
-    <table class="league-table" id="season-table" aria-label="Season tipster leaderboard">
+    <table class="league-table fmb-lb fmb-nums" id="season-table" aria-label="Season tipster leaderboard">
       <thead>
         <tr>
-          <th class="lt-rank">#</th>
-          <th>Tipster</th>
-          <th class="num">W</th>
-          <th class="num">P</th>
-          <th class="num">M</th>
-          <th class="num">SR%</th>
-          <th class="num">Pts</th>
-          <th class="num">Eff</th>
-          <th style="min-width:70px"></th>
+          <th class="lt-rank" scope="col">#</th>
+          <th class="sticky-left" scope="col">Tipster</th>
+          <th class="num sortable col-more" scope="col" data-col="2" aria-sort="none">W <span class="fmb-sort" aria-hidden="true">↕</span></th>
+          <th class="num sortable col-more" scope="col" data-col="3" aria-sort="none">P <span class="fmb-sort" aria-hidden="true">↕</span></th>
+          <th class="num sortable col-more" scope="col" data-col="4" aria-sort="none">M <span class="fmb-sort" aria-hidden="true">↕</span></th>
+          <th class="num sortable" scope="col" data-col="5" aria-sort="none">SR% <span class="fmb-sort" aria-hidden="true">↕</span></th>
+          <th class="num sortable" scope="col" data-col="6" aria-sort="descending">Pts <span class="fmb-sort" aria-hidden="true">↕</span></th>
+          <th class="num sortable col-more" scope="col" data-col="7" aria-sort="none">Eff <span class="fmb-sort" aria-hidden="true">↕</span></th>
+          <th class="col-more" scope="col">Trend</th>
         </tr>
       </thead>
       <tbody id="season-body">
@@ -762,7 +769,7 @@ footer {
       </tbody>
     </table>
   </div>
-  <p class="league-note">SR% = strike rate (wins / picks). Eff = pts per pick. <a href="season-2026.html" style="color:var(--gold)">Full season breakdown →</a></p>
+  <p class="league-note">SR% = strike rate (wins / picks). Eff = pts per pick. Trend = cumulative points across festivals (Mar → Jun). <a href="season-2026.html#methodology" style="color:var(--gold)">Full season breakdown →</a></p>
 
   <!-- ── JUMP RACING 2026 ──────────────────────────────────── -->
   <div class="section-hdr"><h2>Jump Racing 2026</h2><div class="section-hdr-line"></div></div>
@@ -1165,48 +1172,121 @@ function initRecentResults() {
   });
 }
 
-// ── Season league table ────────────────────────────────────────
+// ── Season league table (§5) ───────────────────────────────────
 function initLeagueTable() {
   const tbody = document.getElementById('season-body');
-  if (!tbody || typeof computeSeasonScores === 'undefined') return;
+  const table = document.getElementById('season-table');
+  if (!tbody || !table || typeof computeSeasonScores === 'undefined') return;
 
   const scored = computeSeasonScores().filter(t => t.totalPicks > 0);
-  const maxPts = scored[0]?.total || 1;
+
+  // Chronological festival order (Mar → Jun) for the cumulative sparkline
+  const CHRONO = ['cSc','gnSc','sgnSc','guinSc','chSc','dSc','eSc','raSc','npSc'];
+  const FEST_LABEL = { cSc:'Cheltenham', gnSc:'Grand National', sgnSc:'Scottish GN', guinSc:'Guineas', chSc:'Chester', dSc:'Dante', eSc:'Epsom', raSc:'Royal Ascot', npSc:'Northumberland Plate' };
+  const JUMPS = ['cSc','gnSc','sgnSc'];
 
   scored.forEach((t, i) => {
     const rank = i + 1;
     const rankClass = rank === 1 ? 'rank-1' : rank === 2 ? 'rank-2' : rank === 3 ? 'rank-3' : '';
-    const pct = Math.round(t.total / maxPts * 100);
-    const festivals = [
-      t.cKey    ? 'Cheltenham' : null,
-      t.gnKey   ? 'GN' : null,
-      t.sgnKey  ? 'Scottish GN' : null,
-      t.guinKey ? 'Guineas' : null,
-      t.chKey   ? 'Chester' : null,
-      t.dKey    ? 'Dante' : null,
-    ].filter(Boolean).join(' · ');
+    const medal = rank === 1 ? '🥇' : rank === 2 ? '🥈' : rank === 3 ? '🥉' : '';
+
+    // cumulative points series + festival list
+    let cum = 0; const series = []; const fests = [];
+    CHRONO.forEach(k => {
+      const sc = t[k];
+      if (sc) { cum += sc.pts; series.push(cum); fests.push(`${FEST_LABEL[k]} · ${sc.pts}pt${sc.pts===1?'':'s'}`); }
+    });
+    const spark = (typeof FMB !== 'undefined' && series.length >= 2)
+      ? FMB.sparkline(series, { stroke: t.color }) : '<span class="tipster-events">—</span>';
+
+    const hasJumps = JUMPS.some(k => t[k]);
+    const hasFlat  = CHRONO.filter(k => !JUMPS.includes(k)).some(k => t[k]);
+    const expId = 'lb-exp-' + i;
 
     const tr = document.createElement('tr');
+    tr.setAttribute('data-row', '');
+    tr.className = 'expandable' + (rank <= 3 ? ' medal-row' : '');
+    tr.setAttribute('data-jumps', hasJumps ? '1' : '0');
+    tr.setAttribute('data-flat', hasFlat ? '1' : '0');
+    tr.setAttribute('data-picks', t.totalPicks);
+    tr.setAttribute('data-expand-id', expId);
+    tr.tabIndex = 0;
+    tr.setAttribute('aria-expanded', 'false');
+    tr.setAttribute('aria-controls', expId);
     tr.innerHTML = `
-      <td class="lt-rank"><span class="rank-badge ${rankClass}">${rank}</span></td>
-      <td>
+      <td class="lt-rank"><span class="rank-badge ${rankClass}">${medal || rank}</span>${medal ? `<span class="sr-only">Rank ${rank}</span>` : ''}</td>
+      <td class="sticky-left">
         <div class="tipster-cell">
-          <div class="tipster-icon" style="background:${t.color}20;border:1px solid ${t.color}40;">${t.icon}</div>
+          <div class="tipster-icon" style="background:${t.color}20;border:1px solid ${t.color}40;" aria-hidden="true">${t.icon}</div>
           <div>
             <div class="tipster-name" style="color:${t.color}">${escHtml(t.label)}</div>
-            <div class="tipster-events">${escHtml(festivals)}</div>
+            <div class="tipster-events">${t.totalPicks} picks<span aria-hidden="true"> · tap for festivals ▾</span></div>
           </div>
         </div>
       </td>
-      <td class="num" style="color:#4ade80">${t.totalWins}</td>
-      <td class="num" style="color:var(--gold)">${t.totalPlace}</td>
-      <td class="num" style="color:#f87171">${t.totalMiss}</td>
-      <td class="num lt-sr">${t.strikeRate}%</td>
-      <td class="num lt-pts">${t.total}</td>
-      <td class="num lt-eff">${t.ptsPerPick}</td>
-      <td><div class="lt-bar"><div class="lt-fill" style="width:${pct}%"></div></div></td>
+      <td class="num col-more" data-val="${t.totalWins}" style="color:#4ade80">${t.totalWins}</td>
+      <td class="num col-more" data-val="${t.totalPlace}" style="color:var(--gold)">${t.totalPlace}</td>
+      <td class="num col-more" data-val="${t.totalMiss}" style="color:#f87171">${t.totalMiss}</td>
+      <td class="num lt-sr" data-val="${t.strikeRate}">${t.strikeRate}%</td>
+      <td class="num lt-pts" data-val="${t.total}">${t.total}</td>
+      <td class="num lt-eff col-more" data-val="${t.ptsPerPick}">${t.ptsPerPick}</td>
+      <td class="col-more">${spark}</td>
     `;
     tbody.appendChild(tr);
+
+    const exp = document.createElement('tr');
+    exp.className = 'fmb-expand-row';
+    exp.id = expId;
+    exp.hidden = true;
+    exp.setAttribute('data-jumps', hasJumps ? '1' : '0');
+    exp.setAttribute('data-flat', hasFlat ? '1' : '0');
+    exp.setAttribute('data-picks', t.totalPicks);
+    exp.innerHTML = `<td colspan="9"><div class="fmb-fest-list">${
+      fests.length ? fests.map(f => `<span class="fmb-fest-tag">${escHtml(f)}</span>`).join('') : '<span class="tipster-events">No graded festivals yet.</span>'
+    }</div></td>`;
+    tbody.appendChild(exp);
+
+    // row expand
+    function toggle() {
+      const open = tr.getAttribute('aria-expanded') === 'true';
+      tr.setAttribute('aria-expanded', open ? 'false' : 'true');
+      exp.hidden = open;
+    }
+    tr.addEventListener('click', toggle);
+    tr.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+  });
+
+  // sortable (default Pts desc = col 6)
+  if (typeof FMB !== 'undefined') FMB.makeSortable(table);
+
+  // filter chips
+  let filter = 'all';
+  function applyFilter() {
+    tbody.querySelectorAll('tr[data-row]').forEach(row => {
+      let show = true;
+      if (filter === 'jumps') show = row.getAttribute('data-jumps') === '1';
+      else if (filter === 'flat') show = row.getAttribute('data-flat') === '1';
+      else if (filter === 'min20') show = parseInt(row.getAttribute('data-picks'), 10) >= 20;
+      row.style.display = show ? '' : 'none';
+      const exp = document.getElementById(row.getAttribute('data-expand-id'));
+      if (exp && !show) exp.style.display = 'none';
+      else if (exp && row.getAttribute('aria-expanded') !== 'true') exp.style.display = '';
+    });
+  }
+  document.querySelectorAll('[data-lb-filter]').forEach(chip => {
+    chip.addEventListener('click', () => {
+      filter = chip.getAttribute('data-lb-filter');
+      document.querySelectorAll('[data-lb-filter]').forEach(c => c.setAttribute('aria-pressed', c === chip ? 'true' : 'false'));
+      applyFilter();
+    });
+  });
+
+  // mobile "More columns"
+  const moreBtn = document.querySelector('[data-lb-more]');
+  if (moreBtn) moreBtn.addEventListener('click', () => {
+    const on = table.classList.toggle('show-more');
+    moreBtn.setAttribute('aria-expanded', on ? 'true' : 'false');
+    moreBtn.textContent = on ? 'Hide extra columns' : 'Show more columns';
   });
 
   // Update hero stat
