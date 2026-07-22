@@ -1020,6 +1020,21 @@ footer {
 </div><!-- /.section -->
 </main>
 
+<!-- ── §9 TRUST BAND + EMAIL CAPTURE ───────────────────────── -->
+<section class="fmb-trust" aria-label="Track record and newsletter signup">
+  <div class="fmb-trust__inner">
+    <p class="fmb-trust__stat">Results tracked since <b>March 2026</b> · <b id="picks-graded">—</b> picks graded · <a href="season-2026.html#methodology">Methodology <span aria-hidden="true">→</span></a></p>
+    <div class="fmb-capture">
+      <label class="fmb-capture__label" for="nap-email">Get the Saturday NAP in your inbox by 9am</label>
+      <form class="fmb-capture__form" data-capture novalidate>
+        <input class="fmb-input" id="nap-email" type="email" name="email" placeholder="you@email.com" autocomplete="email" required aria-describedby="nap-email-msg">
+        <button class="fmb-btn fmb-btn--primary" type="submit">Sign up</button>
+      </form>
+      <p class="fmb-capture__msg" id="nap-email-msg" role="status" aria-live="polite"></p>
+    </div>
+  </div>
+</section>
+
 <footer>
   <div class="footer-brand"><span aria-hidden="true">🏇</span> The Festival Form Book</div>
   <p style="font-size:.74rem;color:var(--muted);margin-top:4px">Expert tips, guides and results — the complete British racing calendar 2026</p>
@@ -1316,6 +1331,11 @@ function initLeagueTable() {
   // Update hero stat
   const tipsterCount = document.getElementById('stat-tipsters');
   if (tipsterCount) tipsterCount.textContent = scored.length;
+
+  // §9 trust band — total graded picks across the season
+  const graded = scored.reduce((n, t) => n + (t.totalPicks || 0), 0);
+  const gradedEl = document.getElementById('picks-graded');
+  if (gradedEl) gradedEl.textContent = graded.toLocaleString('en-GB');
 }
 
 // ── Calendar keyboard nav ──────────────────────────────────────
