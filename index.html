@@ -688,7 +688,14 @@ footer {
 
   <!-- ── RECENT RESULTS ──────────────────────────────────── -->
   <div class="section-hdr" style="margin-top:32px"><h2>Recent Winners</h2><div class="section-hdr-line"></div></div>
-  <p class="section-sub">Latest winning selections from our tracked tipsters.</p>
+  <p class="section-sub">Every graded selection — winners <em>and</em> losers — from our tracked tipsters.</p>
+  <div class="fmb-rw-toolbar">
+    <div class="fmb-toggle" role="group" aria-label="Filter recent results">
+      <button type="button" class="fmb-toggle__btn" data-rw-filter="all" aria-pressed="true">Last 10 (all)</button>
+      <button type="button" class="fmb-toggle__btn" data-rw-filter="wins" aria-pressed="false">Wins only</button>
+    </div>
+    <span class="fmb-rw-note" id="rw-note">Advised price, SP &amp; P/L show as each pick is graded.</span>
+  </div>
   <div class="results-strip" id="results-strip" role="list">
     <!-- populated by JS -->
   </div>
@@ -1087,18 +1094,75 @@ function initCountdown() {
   }
 }
 
-// ── Recent results strip ───────────────────────────────────────
-function initRecentResults() {
+// ── Recent results strip (§4) ──────────────────────────────────
+// Cards render horse · tipster · race · advised price · SP · P/L.
+// P/L is DERIVED from the advised price when present (never fabricated);
+// entries without a price show "n/a" until the graded feed is enriched.
+const FEST_URL = {
+  'Guineas 2026':'guineas-2026.html', 'Scottish GN':'scottish-grand-national-2026.html',
+  'GN Festival':'grand-national-2026.html', 'Grand National':'grand-national-2026.html',
+  'Cheltenham 2026':'cheltenham-2026.html', 'Cheltenham':'cheltenham-2026.html',
+  'Chester 2026':'chester-2026.html', 'Chester':'chester-2026.html',
+  'Dante 2026':'dante-2026.html', 'Dante':'dante-2026.html',
+  'Epsom Derby':'epsom-derby-2026.html', 'Royal Ascot':'royal-ascot-2026.html',
+  'Royal Ascot 2026':'royal-ascot-2026.html', 'Northumberland Plate':'northumberland-plate-2026.html',
+  'Newmarket July':'newmarket-july-2026.html'
+};
+function parseFrac(odds) {
+  if (!odds) return null;
+  const s = String(odds).trim().toLowerCase();
+  if (s === 'evens' || s === 'evs' || s === '1/1') return 1;
+  if (s === 'sp' || s === '—' || s === '-') return null;
+  const m = s.match(/^(\d+(?:\.\d+)?)\s*\/\s*(\d+(?:\.\d+)?)$/);
+  if (m) return parseFloat(m[1]) / parseFloat(m[2]);
+  const n = parseFloat(s); return isNaN(n) ? null : n;
+}
+function plToLevel(r) {
+  // £1 level win stake. Returns {txt,cls} or null when not computable.
+  if (typeof r.pl === 'number') return { txt: (r.pl >= 0 ? '+' : '') + '£' + r.pl.toFixed(2), cls: r.pl >= 0 ? 'pos' : 'neg' };
+  const isLoss = r.result === 'loss' || r.result === 'miss';
+  if (isLoss) return { txt: '−£1.00', cls: 'neg' };
+  const f = parseFrac(r.price);
+  if (f != null) return { txt: '+£' + f.toFixed(2), cls: 'pos' };
+  return { txt: 'n/a', cls: 'na' };
+}
+let RW_FILTER = 'all';
+function renderRecentResults() {
   const strip = document.getElementById('results-strip');
   if (!strip || typeof RECENT_WINS === 'undefined') return;
-  strip.innerHTML = RECENT_WINS.map(r => `
-    <div class="result-pill" role="listitem">
-      <div class="result-win">✓ Win</div>
+  const rows = RECENT_WINS.filter(r => RW_FILTER === 'wins' ? (r.result !== 'loss' && r.result !== 'miss') : true);
+  const note = document.getElementById('rw-note');
+  if (note && !RECENT_WINS.some(r => r.result === 'loss' || r.result === 'miss')) {
+    note.textContent = 'Losing selections are added here as results are graded.';
+  }
+  strip.innerHTML = rows.map(r => {
+    const isLoss = r.result === 'loss' || r.result === 'miss';
+    const url = r.url || FEST_URL[r.festival] || 'season-2026.html';
+    const pl = plToLevel(r);
+    const price = r.price ? escHtml(r.price) : '—';
+    const sp = r.sp ? escHtml(r.sp) : '—';
+    return `
+    <a class="result-pill fmb-rw ${isLoss ? 'is-loss' : ''}" href="${escHtml(url)}" role="listitem">
+      <div class="result-outcome ${isLoss ? 'loss' : 'win'}">${isLoss ? '✗ Lost' : '✓ Win'}</div>
       <div class="result-horse">${escHtml(r.horse)}</div>
       <div class="result-meta">${escHtml(r.tipster)} · ${escHtml(r.race)}</div>
       <div class="result-fest">${escHtml(r.festival)} · ${escHtml(r.date)}</div>
-    </div>
-  `).join('');
+      <div class="fmb-rw__row">
+        <span class="fmb-rw__od">Adv <b>${price}</b> · SP <b>${sp}</b></span>
+        <span class="fmb-pl-badge ${pl.cls}">${pl.txt}</span>
+      </div>
+    </a>`;
+  }).join('');
+}
+function initRecentResults() {
+  renderRecentResults();
+  document.querySelectorAll('[data-rw-filter]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      RW_FILTER = btn.getAttribute('data-rw-filter');
+      document.querySelectorAll('[data-rw-filter]').forEach(b => b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'));
+      renderRecentResults();
+    });
+  });
 }
 
 // ── Season league table ────────────────────────────────────────
