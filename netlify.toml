@@ -37,6 +37,13 @@
   [headers.values]
     Cache-Control = "public, max-age=300, stale-while-revalidate=60"
 
+# ── API ────────────────────────────────────────────────────
+# Email capture stub (§9) → Netlify function
+[[redirects]]
+  from = "/api/subscribe"
+  to   = "/.netlify/functions/subscribe"
+  status = 200
+
 # ── Redirects ──────────────────────────────────────────────
 # Clean URL: /cheltenham-2026 → /cheltenham-2026.html
 [[redirects]]
