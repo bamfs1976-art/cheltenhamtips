@@ -1228,8 +1228,8 @@ function initLeagueTable() {
   const scored = computeSeasonScores().filter(t => t.totalPicks > 0);
 
   // Chronological festival order (Mar → Jun) for the cumulative sparkline
-  const CHRONO = ['cSc','gnSc','sgnSc','guinSc','chSc','dSc','eSc','raSc','npSc'];
-  const FEST_LABEL = { cSc:'Cheltenham', gnSc:'Grand National', sgnSc:'Scottish GN', guinSc:'Guineas', chSc:'Chester', dSc:'Dante', eSc:'Epsom', raSc:'Royal Ascot', npSc:'Northumberland Plate' };
+  const CHRONO = ['cSc','gnSc','sgnSc','guinSc','chSc','dSc','eSc','raSc','npSc','nmjSc'];
+  const FEST_LABEL = { cSc:'Cheltenham', gnSc:'Grand National', sgnSc:'Scottish GN', guinSc:'Guineas', chSc:'Chester', dSc:'Dante', eSc:'Epsom', raSc:'Royal Ascot', npSc:'Northumberland Plate', nmjSc:'Newmarket July' };
   const JUMPS = ['cSc','gnSc','sgnSc'];
 
   scored.forEach((t, i) => {

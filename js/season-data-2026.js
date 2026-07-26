@@ -965,21 +965,100 @@ const NP_PICKS = {
 };
 
 // ════════════════════════════════════════════════════════════════════════════
+// NEWMARKET JULY FESTIVAL 2026 (July Course · 9–11 Jul · day 0=Thu,1=Fri,2=Sat)
+// NOTE: Day 3 (Sat) results verified from public sources for the first three
+// home only; where a 2nd/3rd wasn't published it is left null, so a pick that
+// finished there scores as a miss rather than a place. Conservative by design.
+// ════════════════════════════════════════════════════════════════════════════
+const NMJ_RESULTS = {
+  // Thu 9 Jul — Day 1
+  '13:50-0':{ winner:'Point Of Law',     second:'Galiyan',          third:'Del Maro' },          // Bahrain Trophy (G3)
+  '14:25-0':{ winner:'Inner City Blues', second:'Adaay Of Scarlett',third:'Hickory Lad' },       // July Stakes (G2)
+  '15:00-0':{ winner:'Jazl',             second:'Calico Blue',      third:'Thunder Call' },
+  '15:35-0':{ winner:"Rebel's Romance",  second:'Arabian Crown',    third:'Almeric' },           // Princess of Wales's (G2)
+  '16:10-0':{ winner:'Scommessa Sicura', second:'Tall Trees',       third:'Madam Secretary' },
+  '16:45-0':{ winner:'Shayem',           second:'Colori Forever',   third:'Conclave' },          // Sir Henry Cecil (Listed)
+  '17:20-0':{ winner:'Asmen Warrior',    second:'Tawajjah',         third:'Sterling Knight' },
+  // Fri 10 Jul — Day 2
+  '13:50-1':{ winner:'Heraldry',         second:'Decade Of Time',   third:'Laureate Crown' },
+  '14:25-1':{ winner:'Senorita Bonita',  second:'Libertango',       third:'Alwaysanangel' },     // Duchess of Cambridge (G2)
+  '15:00-1':{ winner:'Valedictory',      second:'Roaring Legend',   third:'Goblet Of Fire' },
+  '15:35-1':{ winner:'Blue Bolt',        second:'Precise',          third:'Balantina' },         // FALMOUTH (G1)
+  '16:10-1':{ winner:'Acting Lady',      second:'Sierra Belle',     third:'Speed Of Sound' },
+  '16:45-1':{ winner:'Twilight Calls',   second:"Rapper's Delight", third:'Emperor Spirit' },
+  '17:20-1':{ winner:'Sierra Sands',     second:'Lion Of Mali',     third:'Flight Control' },
+  // Sat 11 Jul — July Cup Day
+  '13:40-2':{ winner:'Haffner',          second:null,               third:null },
+  '14:15-2':{ winner:'Planet Seeker',    second:null,               third:null },
+  '14:52-2':{ winner:'St Anton',         second:'Moonfall',         third:null },
+  '15:25-2':{ winner:'Aalto',            second:'Back In Black',    third:'Elarak' },            // Bunbury Cup
+  '16:00-2':{ winner:'Al Hudaiba',       second:'Abraham Lincoln',  third:null },                // Superlative (G2)
+  '16:35-2':{ winner:'Comanche Brave',   second:'Venetian Sun',     third:'Satono Reve' },       // JULY CUP (G1)
+  '17:10-2':{ winner:'Leadman',          second:null,               third:null },
+  '17:45-2':{ winner:'Parisian Scholar', second:'First Officer',    third:'Cape Fear' },
+};
+
+const NMJ_PICKS = {
+  'Our NAP':{ label:'Our NAP', color:'#34d399', icon:'⭐', picks:{
+    '13:50-0':'Del Maro','14:25-0':'Inner City Blues','15:00-0':'Thunder Call','15:35-0':"Rebel's Romance",'16:10-0':'Peaceful Charm','16:45-0':'Morris Dancer','17:20-0':'Spanish Voice',
+    '13:50-1':'Princling','14:25-1':'Libertango','15:00-1':'Wine Dark Sea','15:35-1':'Precise','16:10-1':'Acting Lady','16:45-1':'Our Cody','17:20-1':'Three Non Blondes',
+    '13:40-2':'Haffner','14:15-2':'Machadadorp','14:52-2':'Moonfall','15:25-2':'Aalto','16:00-2':'Abraham Lincoln','16:35-2':'Venetian Sun','17:10-2':"Pinatubo's Legacy",'17:45-2':'Cape Fear',
+  }},
+  'Our NB':{ label:'Our NB', color:'#60a5fa', icon:'🔵', picks:{
+    '13:50-0':'Point Of Law','14:25-0':'Adaay Of Scarlett','15:00-0':'Red Spells Danger','15:35-0':'Convergent','16:10-0':'Scommessa Sicura','16:45-0':'Shayem','17:20-0':'Shipbourne',
+    '13:50-1':'Heraldry','14:25-1':'Senorita Bonita','15:00-1':'Valedictory','15:35-1':'Blue Bolt','16:10-1':'Pure Majesty','16:45-1':'Rosario','17:20-1':'Aqua Bear',
+    '13:40-2':'Al Wathba','14:15-2':'True Test','14:52-2':'Eklleem','15:25-2':'Back In Black','16:00-2':'Al Hudaiba','16:35-2':'Satono Reve','17:10-2':'Exposure','17:45-2':'Bintabuha',
+  }},
+  // 15:35-0 omitted: Tenability was a non-runner (void, stake returned) — not scored.
+  'Our LONG':{ label:'Our LONG', color:'#f472b6', icon:'🎯', picks:{
+    '13:50-0':'Galiyan','14:25-0':'Hickory Lad','15:00-0':'Sea Cookie','16:10-0':'Madam Secretary','16:45-0':'Colori Forever','17:20-0':'Lion Of Alba',
+    '13:50-1':'Decade Of Time','14:25-1':'Etonnante','15:00-1':'Goblet Of Fire','15:35-1':'Balantina','16:10-1':'Desert Smoke','16:45-1':'Tatterstall','17:20-1':'Kimbara',
+    '13:40-2':'Subscription','14:15-2':'Planet Seeker','14:52-2':'Alfaraz','15:25-2':'Supido','16:00-2':'Pikachu','16:35-2':'Double Rush','17:10-2':'Righthere Rightnow','17:45-2':'Wonder',
+  }},
+  'Mullington (WH)':{ label:'Mullington (WH)', color:'#fbbf24', icon:'📝', picks:{
+    '13:50-0':'Galiyan','14:25-0':'Inner City Blues','15:00-0':'Red Spells Danger','15:35-0':"Rebel's Romance",'16:10-0':'Peaceful Charm','16:45-0':'Morris Dancer','17:20-0':'Lion Of Alba',
+    '13:50-1':'Princling','14:25-1':'Libertango','15:00-1':'Goblet Of Fire','15:35-1':'Blue Bolt','16:10-1':'Acting Lady','16:45-1':'Twilight Calls','17:20-1':'Aqua Bear',
+    '13:40-2':'Subscription','14:15-2':'Tarot','14:52-2':'Moonfall','15:25-2':'Elarak','16:00-2':'Abraham Lincoln','16:35-2':'Venetian Sun','17:10-2':'Leadman','17:45-2':'Cape Fear',
+  }},
+  'Nick Luck (WH)':{ label:'Nick Luck (WH)', color:'#5eead4', icon:'🎙️', picks:{
+    '13:50-1':'Laureate Crown','14:25-1':'Libertango','15:00-1':'Beylerbeyi','15:35-1':'Balantina',
+    '13:40-2':'Haffner','14:15-2':'Machadadorp','14:52-2':'Wechaad','15:25-2':'Two Tribes','16:00-2':'Alfred Wallace','16:35-2':'Mission Central',
+  }},
+  'HRN':{ label:'horseracing.net / Spotlight', color:'#7dd3fc', icon:'📰', picks:{
+    '13:50-1':'Heraldry','14:25-1':'Libertango','15:00-1':'Wine Dark Sea','15:35-1':'Precise','16:10-1':'Acting Lady','16:45-1':'Never Just A Dream','17:20-1':'Lion Of Mali',
+    '13:40-2':'Haffner','14:15-2':'Song N Dance','14:52-2':'Moonfall','15:25-2':'Back In Black','16:00-2':'Abraham Lincoln','16:35-2':'Satono Reve','17:10-2':'Leadman','17:45-2':'Cape Fear',
+  }},
+  'Grimshaw (HRN)':{ label:'Grimshaw (HRN)', color:'#67e8f9', icon:'📺', picks:{
+    '13:50-0':'Del Maro','15:00-0':'Thunder Call',
+    '16:35-2':'Mission Central',
+  }},
+  'Raceolly':{ label:'Raceolly', color:'#c4b5fd', icon:'📱', picks:{
+    '15:00-0':'Ghost Mode','17:20-0':'Shafdar',
+  }},
+  // One entry per race (their biggest-priced nap in that race).
+  'HRN BIG':{ label:'HRN BIG (longshots)', color:'#fca5a5', icon:'🔥', picks:{
+    '15:00-0':'Ghost Mode','17:20-0':'Daysofourlives',
+    '14:25-1':'Alwaysanangel','15:35-1':'Evolutionist','16:10-1':'Hout Bay','16:45-1':'U S S Charleston',
+    '15:25-2':'Nostrum','16:35-2':'Comanche Brave',
+  }},
+};
+
+// ════════════════════════════════════════════════════════════════════════════
 // SEASON MAP  — links tipster across all festivals
 // ════════════════════════════════════════════════════════════════════════════
 const SEASON_MAP = [
-  { id:'Our NAP',       cKey:'Our NAP',        gnKey:'Our NAP',       sgnKey:'Our NAP',          guinKey:'Our NAP',         chKey:'Our NAP',         dKey:'Our NAP', eKey:'Our NAP', raKey:'Our NAP',          npKey:'Our NAP',          label:'Our NAP',          color:'#34d399', icon:'⭐' },
-  { id:'Our NB',        cKey:'Our NB',          gnKey:'Our NB',        sgnKey:'Our NB',            guinKey:'Our NB',              chKey:'Our NB',          dKey:'Our NB', eKey:'Our NB', raKey:'Our NB',           npKey:'Our NB',           label:'Our NB',           color:'#60a5fa', icon:'🔵' },
-  { id:'Our LONG',      cKey:null,              gnKey:null,            sgnKey:null,                guinKey:'Our LONG',              chKey:'Our LONG',        dKey:'Our LONG', eKey:'Our LONG', raKey:'Our LONG',         npKey:'Our LONG',         label:'Our LONG',         color:'#f472b6', icon:'🎯' },
-  { id:'Mullington',    cKey:'Mullington (WH)', gnKey:'Mullington',    sgnKey:'Mullington (WH)',   guinKey:'Mullington (WH)', chKey:'Mullington (WH)', dKey:'Mullington (WH)', eKey:'Mullington (WH)', raKey:'Mullington (WH)',  label:'Mullington (WH)',  color:'#fbbf24', icon:'📝' },
+  { id:'Our NAP',       cKey:'Our NAP',        gnKey:'Our NAP',       sgnKey:'Our NAP',          guinKey:'Our NAP',         chKey:'Our NAP',         dKey:'Our NAP', eKey:'Our NAP', raKey:'Our NAP',          npKey:'Our NAP',          nmjKey:'Our NAP', label:'Our NAP',          color:'#34d399', icon:'⭐' },
+  { id:'Our NB',        cKey:'Our NB',          gnKey:'Our NB',        sgnKey:'Our NB',            guinKey:'Our NB',              chKey:'Our NB',          dKey:'Our NB', eKey:'Our NB', raKey:'Our NB',           npKey:'Our NB',           nmjKey:'Our NB', label:'Our NB',           color:'#60a5fa', icon:'🔵' },
+  { id:'Our LONG',      cKey:null,              gnKey:null,            sgnKey:null,                guinKey:'Our LONG',              chKey:'Our LONG',        dKey:'Our LONG', eKey:'Our LONG', raKey:'Our LONG',         npKey:'Our LONG',         nmjKey:'Our LONG', label:'Our LONG',         color:'#f472b6', icon:'🎯' },
+  { id:'Mullington',    cKey:'Mullington (WH)', gnKey:'Mullington',    sgnKey:'Mullington (WH)',   guinKey:'Mullington (WH)', chKey:'Mullington (WH)', dKey:'Mullington (WH)', eKey:'Mullington (WH)', raKey:'Mullington (WH)',  nmjKey:'Mullington (WH)', label:'Mullington (WH)',  color:'#fbbf24', icon:'📝' },
   { id:'Cunningham (GC)',raKey:'Cunningham (GC)', label:'Cunningham (Sporting Life)', color:'#22d3ee', icon:'🗞️' },
   { id:'WH Experts',    cKey:null,              gnKey:'WH Experts',    sgnKey:'WH Experts',        guinKey:null,              chKey:null,              dKey:null,               label:'WH Experts',       color:'#a3e635', icon:'🏆' },
   { id:'Geraghty',      cKey:null,              gnKey:'Geraghty',      sgnKey:'Geraghty (WH)',     guinKey:null,              chKey:null,              dKey:null,               label:'Barry Geraghty',   color:'#fb7185', icon:'🎤' },
-  { id:'Nick Luck',     cKey:null,              gnKey:'Nick Luck',     sgnKey:'Nick Luck (WH)',    guinKey:'Nick Luck (WH)',  chKey:'Nick Luck (WH)',  dKey:'Nick Luck (WH)', eKey:'Nick Luck (WH)', raKey:'Nick Luck (WH)',   npKey:'Nick Luck (WH)',   label:'Nick Luck',        color:'#38bdf8', icon:'🎙️' },
-  { id:'Raceolly',      cKey:null,              gnKey:'Raceolly',      sgnKey:'Raceolly',          guinKey:'Raceolly',        chKey:'Raceolly',        dKey:'Raceolly', eKey:'Raceolly', raKey:'Raceolly',         npKey:'Raceolly',         label:'Raceolly',         color:'#f97316', icon:'📱' },
-  { id:'Grimshaw (HRN)',cKey:'Grimshaw (HRN)',  gnKey:null,            sgnKey:'Grimshaw (HRN)',    guinKey:'Grimshaw (HRN)', chKey:'Grimshaw (HRN)', eKey:'Grimshaw (HRN)', raKey:'Grimshaw (HRN)',  dKey:null,               label:'Grimshaw (HRN)',   color:'#67e8f9', icon:'📺' },
-  { id:'HRN',           cKey:null,              gnKey:null,            sgnKey:null,                guinKey:null,              chKey:'HRN',             dKey:'HRN', eKey:'HRN', raKey:'HRN',              npKey:'HRN',              label:'horseracing.net',  color:'#7dd3fc', icon:'📰' },
-  { id:'HRN BIG',       cKey:null,              gnKey:null,            sgnKey:null,                guinKey:null,              chKey:'HRN BIG', eKey:'HRN BIG', raKey:'HRN BIG',         dKey:null,               label:'HRN BIG (longshots)',color:'#fca5a5', icon:'🔥' },
+  { id:'Nick Luck',     cKey:null,              gnKey:'Nick Luck',     sgnKey:'Nick Luck (WH)',    guinKey:'Nick Luck (WH)',  chKey:'Nick Luck (WH)',  dKey:'Nick Luck (WH)', eKey:'Nick Luck (WH)', raKey:'Nick Luck (WH)',   npKey:'Nick Luck (WH)',   nmjKey:'Nick Luck (WH)', label:'Nick Luck',        color:'#38bdf8', icon:'🎙️' },
+  { id:'Raceolly',      cKey:null,              gnKey:'Raceolly',      sgnKey:'Raceolly',          guinKey:'Raceolly',        chKey:'Raceolly',        dKey:'Raceolly', eKey:'Raceolly', raKey:'Raceolly',         npKey:'Raceolly',         nmjKey:'Raceolly', label:'Raceolly',         color:'#f97316', icon:'📱' },
+  { id:'Grimshaw (HRN)',cKey:'Grimshaw (HRN)',  gnKey:null,            sgnKey:'Grimshaw (HRN)',    guinKey:'Grimshaw (HRN)', chKey:'Grimshaw (HRN)', eKey:'Grimshaw (HRN)', raKey:'Grimshaw (HRN)',  dKey:null,               nmjKey:'Grimshaw (HRN)', label:'Grimshaw (HRN)',   color:'#67e8f9', icon:'📺' },
+  { id:'HRN',           cKey:null,              gnKey:null,            sgnKey:null,                guinKey:null,              chKey:'HRN',             dKey:'HRN', eKey:'HRN', raKey:'HRN',              npKey:'HRN',              nmjKey:'HRN', label:'horseracing.net',  color:'#7dd3fc', icon:'📰' },
+  { id:'HRN BIG',       cKey:null,              gnKey:null,            sgnKey:null,                guinKey:null,              chKey:'HRN BIG', eKey:'HRN BIG', raKey:'HRN BIG',         dKey:null,               nmjKey:'HRN BIG', label:'HRN BIG (longshots)',color:'#fca5a5', icon:'🔥' },
   { id:'Steve Chambers',cKey:null,              gnKey:null,            sgnKey:null,                guinKey:null,              chKey:null,              dKey:'Steve Chambers',   label:'Steve Chambers (HRN)', color:'#fda4af', icon:'📺' },
   { id:'Joe Napier',    cKey:null,              gnKey:null,            sgnKey:null,                guinKey:null,              chKey:null,              dKey:'Joe Napier',       label:'Joe Napier (HRN)', color:'#a3e635', icon:'🎤' },
   { id:'WH Racecard',   cKey:null,              gnKey:'WH Racecard',   sgnKey:null,                guinKey:null,              chKey:null,              dKey:null,               label:'WH Racecard',      color:'#a78bfa', icon:'💜' },
@@ -1022,13 +1101,14 @@ function computeSeasonScores() {
     const eSc   = t.eKey    ? scoreEvent(EPSOM_PICKS[t.eKey].picks,     EPSOM_RESULTS)   : null;
     const raSc  = t.raKey   ? scoreEvent(RA_PICKS[t.raKey].picks,       RA_RESULTS)      : null;
     const npSc  = t.npKey   ? scoreEvent(NP_PICKS[t.npKey].picks,       NP_RESULTS)      : null;
-    const total = (cSc?.pts||0) + (gnSc?.pts||0) + (sgnSc?.pts||0) + (guinSc?.pts||0) + (chSc?.pts||0) + (dSc?.pts||0) + (eSc?.pts||0) + (raSc?.pts||0) + (npSc?.pts||0);
-    const totalPicks = (cSc?.total||0) + (gnSc?.total||0) + (sgnSc?.total||0) + (guinSc?.total||0) + (chSc?.total||0) + (dSc?.total||0) + (eSc?.total||0) + (raSc?.total||0) + (npSc?.total||0);
-    const totalWins  = (cSc?.wins||0)  + (gnSc?.wins||0)  + (sgnSc?.wins||0)  + (guinSc?.wins||0)  + (chSc?.wins||0)  + (dSc?.wins||0)  + (eSc?.wins||0)  + (raSc?.wins||0)  + (npSc?.wins||0);
-    const totalPlace = (cSc?.places||0)+ (gnSc?.places||0)+ (sgnSc?.places||0)+ (guinSc?.places||0)+ (chSc?.places||0)+ (dSc?.places||0)+ (eSc?.places||0)+ (raSc?.places||0)+ (npSc?.places||0);
-    const totalMiss  = (cSc?.misses||0)+ (gnSc?.misses||0)+ (sgnSc?.misses||0)+ (guinSc?.misses||0)+ (chSc?.misses||0)+ (dSc?.misses||0)+ (eSc?.misses||0)+ (raSc?.misses||0)+ (npSc?.misses||0);
+    const nmjSc = t.nmjKey  ? scoreEvent(NMJ_PICKS[t.nmjKey].picks,     NMJ_RESULTS)     : null;
+    const total = (cSc?.pts||0) + (gnSc?.pts||0) + (sgnSc?.pts||0) + (guinSc?.pts||0) + (chSc?.pts||0) + (dSc?.pts||0) + (eSc?.pts||0) + (raSc?.pts||0) + (npSc?.pts||0) + (nmjSc?.pts||0);
+    const totalPicks = (cSc?.total||0) + (gnSc?.total||0) + (sgnSc?.total||0) + (guinSc?.total||0) + (chSc?.total||0) + (dSc?.total||0) + (eSc?.total||0) + (raSc?.total||0) + (npSc?.total||0) + (nmjSc?.total||0);
+    const totalWins  = (cSc?.wins||0)  + (gnSc?.wins||0)  + (sgnSc?.wins||0)  + (guinSc?.wins||0)  + (chSc?.wins||0)  + (dSc?.wins||0)  + (eSc?.wins||0)  + (raSc?.wins||0)  + (npSc?.wins||0) + (nmjSc?.wins||0);
+    const totalPlace = (cSc?.places||0)+ (gnSc?.places||0)+ (sgnSc?.places||0)+ (guinSc?.places||0)+ (chSc?.places||0)+ (dSc?.places||0)+ (eSc?.places||0)+ (raSc?.places||0)+ (npSc?.places||0) + (nmjSc?.places||0);
+    const totalMiss  = (cSc?.misses||0)+ (gnSc?.misses||0)+ (sgnSc?.misses||0)+ (guinSc?.misses||0)+ (chSc?.misses||0)+ (dSc?.misses||0)+ (eSc?.misses||0)+ (raSc?.misses||0)+ (npSc?.misses||0) + (nmjSc?.misses||0);
     const strikeRate = totalPicks > 0 ? Math.round(totalWins / totalPicks * 100) : 0;
     const ptsPerPick = totalPicks > 0 ? (total / totalPicks).toFixed(2) : '0.00';
-    return { ...t, cSc, gnSc, sgnSc, guinSc, chSc, dSc, eSc, raSc, npSc, total, totalPicks, totalWins, totalPlace, totalMiss, strikeRate, ptsPerPick };
+    return { ...t, cSc, gnSc, sgnSc, guinSc, chSc, dSc, eSc, raSc, npSc, nmjSc, total, totalPicks, totalWins, totalPlace, totalMiss, strikeRate, ptsPerPick };
   }).sort((a,b) => b.total - a.total || b.totalWins - a.totalWins || b.strikeRate - a.strikeRate);
 }
