@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🏇 Glorious Goodwood 2026 – Day 1 Tips, Race Cards &amp; Selections</title>
+<meta name="description" content="Glorious Goodwood 2026 — Nap, NB and Longshot for every race on Day 1 (Tue 28 July), Lucky 15, Goodwood Cup (G1), Vintage &amp; Lennox Stakes (G2). Form-based selections with draw analysis.">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self' 'unsafe-inline';">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/fmb-ui.css">
+<script src="/js/fmb-ui.js" defer></script>
+<style>
+  :root {
+    --bg:#0a1428; --bg-mid:#0f1d3a; --card:#142747; --lit:#1a3057;
+    --gold:#fbbf24; --gold-lt:#fde68a;
+    --gw:#0ea5e9; --gw-lt:#7dd3fc; --gw-deep:#0369a1;
+    --blue-l:#60a5fa; --pink:#f472b6; --green-lt:#4ade80; --silver:#a1a1aa;
+    --cream:#f5f5f4; --red:#ef4444;
+  }
+  *,*::before,*::after { box-sizing:border-box }
+  html,body { margin:0; padding:0; background:var(--bg); color:var(--cream); font-family:'Inter',system-ui,sans-serif; font-size:14px; line-height:1.5 }
+  a { color:var(--gw-lt); text-decoration:none } a:hover { color:var(--gw); text-decoration:underline }
+  .container { max-width:920px; margin:0 auto; padding:0 14px 40px }
+  .live-strip { background:linear-gradient(90deg,rgba(14,165,233,0.22),rgba(14,165,233,0.06)); border-bottom:1px solid rgba(14,165,233,0.4); color:var(--gw-lt); font-size:0.78rem; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; padding:8px 16px; text-align:center }
+  .live-strip strong { color:var(--cream) }
+  .site-header { text-align:center; padding:26px 16px 18px; background:radial-gradient(ellipse at 50% -10%, rgba(14,165,233,0.14), transparent 60%) }
+  .header-badge { display:inline-block; font-size:0.66rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--gw-lt); border:1px solid rgba(14,165,233,0.4); border-radius:50px; padding:4px 14px; margin-bottom:12px }
+  .site-header h1 { font-family:'Playfair Display',serif; font-size:clamp(1.8rem,5vw,2.8rem); font-weight:900; margin:0 0 6px; color:#fff }
+  .site-header h1 em { color:var(--gw-lt); font-style:normal }
+  .hero-dates { font-size:0.82rem; color:var(--silver); margin-bottom:14px }
+  .hero-stats { display:flex; justify-content:center; gap:22px; flex-wrap:wrap }
+  .hero-stats > div { text-align:center }
+  .hero-stat-val { display:block; font-family:'Playfair Display',serif; font-size:1.5rem; font-weight:700; color:var(--gw-lt); font-variant-numeric:tabular-nums }
+  .hero-stat-lbl { font-size:0.6rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--silver) }
+  .day-tabs { display:flex; gap:8px; margin:16px 0; flex-wrap:wrap }
+  .day-tab { background:var(--card); border:1px solid rgba(255,255,255,0.08); border-radius:8px; padding:8px 14px; font-size:0.82rem; font-weight:600; color:var(--silver); text-decoration:none }
+  .day-tab.active { border-color:rgba(14,165,233,0.5); color:var(--gw-lt); background:rgba(14,165,233,0.08) }
+  .titlebar { border-left:3px solid var(--gw); padding:6px 0 6px 12px; margin:6px 0 16px }
+  .titlebar h2 { font-family:'Playfair Display',serif; font-size:1.05rem; margin:0; color:var(--cream) }
+  .titlebar p { font-size:0.76rem; color:var(--silver); margin:2px 0 0 }
+  .draw-note { background:rgba(251,191,36,0.08); border:1px solid rgba(251,191,36,0.35); border-radius:10px; padding:11px 14px; font-size:0.78rem; color:var(--gold-lt); line-height:1.55; margin-bottom:18px }
+  .draw-note strong { color:#fff }
+  .panel { background:var(--card); border:1px solid rgba(255,255,255,0.06); border-radius:12px; padding:16px 14px; margin-bottom:16px }
+  .panel.gw-top { border-top:3px solid var(--gw) }
+  .panel.gold-top { border-top:3px solid var(--gold) }
+  .panel.blue-left { border-left:3px solid var(--blue-l) }
+  .panel-head { font-family:'Playfair Display',serif; font-size:1.05rem; margin:0 0 10px; color:var(--cream) }
+  .race-block { border-top:1px solid rgba(255,255,255,0.07); padding-top:12px; margin-top:12px }
+  .race-block:first-of-type { border-top:none; padding-top:0; margin-top:0 }
+  .race-hd { font-size:0.82rem; font-weight:700; color:var(--gold-lt); border-bottom:2px solid rgba(251,191,36,0.3); padding-bottom:5px; margin:0 0 8px }
+  .pick-row { display:grid; grid-template-columns:56px 1fr auto; gap:8px; align-items:start; padding:7px 0; border-top:1px solid rgba(255,255,255,0.05) }
+  .pick-row:first-of-type { border-top:none }
+  .pick-tag { font-size:0.62rem; font-weight:800; letter-spacing:0.04em; text-align:center; padding:3px 0; border-radius:5px; height:fit-content }
+  .pick-tag.nap { background:rgba(251,191,36,0.18); color:var(--gold-lt); border:1px solid rgba(251,191,36,0.4) }
+  .pick-tag.nb  { background:rgba(96,165,250,0.16); color:var(--blue-l); border:1px solid rgba(96,165,250,0.4) }
+  .pick-tag.long{ background:rgba(244,114,182,0.14); color:var(--pink); border:1px solid rgba(244,114,182,0.4) }
+  .pick-horse { font-weight:700; color:#fff; font-size:0.92rem }
+  .pick-odds { font-weight:800; color:var(--gw-lt); font-size:0.9rem; white-space:nowrap; font-variant-numeric:tabular-nums }
+  .draw-b { font-size:0.6rem; font-weight:700; background:rgba(14,165,233,0.15); color:var(--gw-lt); border:1px solid rgba(14,165,233,0.35); border-radius:4px; padding:1px 6px; margin-left:4px; white-space:nowrap }
+  .draw-b.tbc { background:rgba(251,191,36,0.12); color:var(--gold-lt); border-color:rgba(251,191,36,0.35) }
+  .conns { display:block; font-size:0.72rem; color:var(--silver); margin-top:2px; font-variant-numeric:tabular-nums }
+  .pick-note { font-size:0.78rem; color:#cbd5cf; line-height:1.5; margin-top:3px }
+  .l15-foot { font-size:0.74rem; color:var(--silver); border-top:1px dashed rgba(255,255,255,0.1); margin-top:8px; padding-top:8px }
+  .footer { text-align:center; font-size:0.74rem; color:var(--silver); padding:22px 14px; line-height:1.7; border-top:1px solid rgba(255,255,255,0.06); margin-top:10px }
+  .gambleaware { color:var(--gold-lt); margin-top:6px }
+  @media (max-width:480px){ .pick-row{ grid-template-columns:48px 1fr auto; gap:6px } }
+</style>
+</head>
+<body>
+
+<a class="fmb-skip" href="#main">Skip to content</a>
+
+<!-- Shared grouped global nav (injected by fmb-ui.js) -->
+<div id="fmb-nav-root"></div>
+
+<div class="live-strip">🏇 Glorious Goodwood 2026 · <strong>Days 1–4 cards up</strong> — Goodwood Cup (G1) · Sussex (G1, Bow Echo) · Nassau (G1) · King George (G2) · Stewards’ Cup Saturday</div>
+
+<main class="container" id="main" tabindex="-1">
+
+  <header class="site-header">
+    <div class="header-badge">🏇 Goodwood · Sussex Downs · Flat</div>
+    <h1><em>Glorious Goodwood</em> 2026</h1>
+    <p class="hero-dates">📍 Goodwood · 28 July – 1 August 2026 · 5-day summer flat festival · Days 1–4 selections live</p>
+    <div class="hero-stats">
+      <div><span class="hero-stat-val">31</span><span class="hero-stat-lbl">races built</span></div>
+      <div><span class="hero-stat-val">3</span><span class="hero-stat-lbl">Group 1s</span></div>
+      <div><span class="hero-stat-val">4</span><span class="hero-stat-lbl">Lucky 15s</span></div>
+    </div>
+  </header>
+
+  <div class="day-tabs">
+    <a href="#day1" class="day-tab active">Tue 28 · Day 1</a>
+    <a href="#day2" class="day-tab">Wed 29 · Sussex Day</a>
+    <a href="#day3" class="day-tab">Thu 30 · Nassau Day</a>
+    <a href="#day4" class="day-tab">Fri 31 · Day 4</a>
+    <span class="day-tab">Sat 1 Aug · Stewards’ Cup</span>
+  </div>
+
+  <div class="titlebar">
+    <h2>goodwood 2026 · four days built · Tue 28 – Fri 31 July</h2>
+    <p>31 races · a Lucky 15 per day · Going: Good (GoingStick 6.9, watered)</p>
+  </div>
+
+  <div class="draw-note">
+    ⚠️ <strong>Draw note (important at Goodwood).</strong> The card supplied was a Racing Post text card that didn’t carry clean stall numbers for most runners, so — per our rule of never inventing data — draw badges below read <span class="draw-b tbc">Draw t.b.c.</span> where the stall wasn’t supplied. Goodwood’s draw bias is real, <strong>especially in the 5f (16:10) and 6f (17:55) big-field handicaps</strong>, so treat those three handicaps as provisional until draws are overlaid. Send a Sky Bet screencard and I’ll firm the draws and any price moves. Selections are made on form, class, pace and trainer/jockey.
+  </div>
+
+  <!-- DAY 1 ENGINE CARD -->
+  <section id="day1" class="panel gw-top">
+    <h2 class="panel-head">🎩 Day 1 · Tuesday 28 July · tips card · 8 races</h2>
+
+    <div class="race-block">
+      <p class="race-hd">13:50 · Coral Chesterfield Cup (Heritage Handicap, Cl2) · 1m1f197y · 4yo+ · 29 runners · EW 1/4, 5 places</p>
+      <div class="pick-row"><div class="pick-tag nap">NAP</div><div><span class="pick-horse">Raammee</span> <span class="draw-b tbc">Draw t.b.c.</span> <span class="pick-odds">4/1</span><span class="conns">R.Dawson | R.Varian | F:11-421 | 4yo 9-6 · OR103 RPR117</span><div class="pick-note">The favourite — a progressive, lightly-raced Varian 4yo (won two of last five, RPR117 &amp; top TS of the fancied runners). Exactly the improving profile that lands these big handicaps.</div></div></div>
+      <div class="pick-row"><div class="pick-tag nb">NB</div><div><span class="pick-horse">Noble Horizon</span> <span class="draw-b tbc">Draw t.b.c.</span> <span class="pick-odds">8/1</span><span class="conns">S.De Sousa | O.Rix | F:583-71 | 4yo 8-11 · OR94</span><div class="pick-note">Won last time (…71) off a workable OR94 with Silvestre De Sousa staying on board — a well-handicapped 4yo improver; the each-way value.</div></div></div>
+      <div class="pick-row"><div class="pick-tag long">LONG</div><div><span class="pick-horse">Al Aali</span> <span class="draw-b tbc">Draw t.b.c.</span> <span class="pick-odds">16/1</span><span class="conns">W.Buick | G.Scott | F:087551 | 4yo 8-10 · OR93 RPR118</span><div class="pick-note">Won last time (…51) and the <strong>booking of Buick</strong> is a pointer; RPR118 is among the best in the field. Genuine each-way claims at a price. Quai De Bethune (RPR120) &amp; Night Breeze the others.</div></div></div>
+    </div>
+
+    <div class="race-block">
+      <p class="race-hd">14:25 · Coral Vintage Stakes (Group 2) · 7f · 2yo · 9 runners · EW 1/4, 2 places</p>
+      <div class="pick-row"><div class="pick-tag nap">NAP</div><div><span class="pick-horse">Al Hudaiba</span> <span class="draw-b">Draw 1</span> <span class="pick-odds">6/4</span><span class="conns">W.Buick | C.Appleby | F:1U11 | 2yo 9-6 · OR108 RPR117</span><div class="pick-note">Top-rated on OR (108) and RPR (117) — an Appleby/Buick colt who’s won three of four, the Superlative form franked. The class 2yo of the field. <strong style="color:var(--gold-lt)">Short — kept out of the Lucky 15.</strong></div></div></div>
+      <div class="pick-row"><div class="pick-tag nb">NB</div><div><span class="pick-horse">Haffner</span> <span class="draw-b">Draw 5</span> <span class="pick-odds">5/2</span><span class="conns">R.L.Moore | A.P.O'Brien | F:21 | 2yo 9-3 · RPR103</span><div class="pick-note">A progressive Ballydoyle colt (2nd then won) with Ryan Moore — unbeaten going the right way; the obvious danger and the value against the favourite.</div></div></div>
+      <div class="pick-row"><div class="pick-tag long">LONG</div><div><span class="pick-horse">Pikachu</span> <span class="draw-b">Draw 7</span> <span class="pick-odds">12/1</span><span class="conns">D.Egan | C.Johnston | F:253 | 2yo 9-3 · OR104 RPR114</span><div class="pick-note">RPR114 is second-best in the race and he’s met some smart sorts (2-5-3) — the each-way alternative if the two market principals falter.</div></div></div>
+    </div>
+
+    <div class="race-block">
+      <p class="race-hd">15:00 · HKJC World Pool Lennox Stakes (Group 2) · 7f · 3yo+ · 16 runners · EW 1/4, 3 places</p>
+      <div class="pick-row"><div class="pick-tag nap">NAP</div><div><span class="pick-horse">Lake Forest</span> <span class="draw-b tbc">Draw t.b.c.</span> <span class="pick-odds">7/4</span><span class="conns">C.Fallon | W.Haggas | F:207-15 | 5yo 9-6 · OR119 RPR128</span><div class="pick-note">The class act — top OR (119) and joint-top RPR (128) in the field, a Haggas 5yo who won last time. Proven Group sprinter; the one they all have to beat.</div></div></div>
+      <div class="pick-row"><div class="pick-tag nb">NB</div><div><span class="pick-horse">Never So Brave</span> <span class="draw-b tbc">Draw t.b.c.</span> <span class="pick-odds">7/1</span><span class="conns">R.L.Moore | A.M.Balding | F:17-552 | 5yo 9-6 · RPR128 TS116</span><div class="pick-note">Matches Lake Forest on RPR (128) and tops the field on TopSpeed (116), with <strong>Ryan Moore</strong> booked. The value each-way play at 7/1 — our Lucky 15 pick in this race.</div></div></div>
+      <div class="pick-row"><div class="pick-tag long">LONG</div><div><span class="pick-horse">Zavateri</span> <span class="draw-b tbc">Draw t.b.c.</span> <span class="pick-odds">8/1</span><span class="conns">C.Bishop | E.Johnson Houghton | F:1114-2 | 3yo 8-13 · OR118 RPR124</span><div class="pick-note">A CD winner getting <strong>weight-for-age</strong> as the sole progressive 3yo (form 1-1-1-4-2) — RPR124 and 7lb from his elders makes him dangerous at the weights. Qirat (won last, Keane) the other live one.</div></div></div>
+    </div>
+
+    <div class="race-block">
+      <p class="race-hd">15:35 · Al Shaqab Goodwood Cup (Group 1) · 2m · 3yo+ · 8 runners · EW 1/4, 2 places · ⭐⭐ the feature</p>
+      <div class="pick-row"><div class="pick-tag nap">NAP</div><div><span class="pick-horse">Scandinavia</span> <span class="draw-b">Draw 6</span> <span class="pick-odds">5/6</span><span class="conns">R.L.Moore | A.P.O'Brien | F:11-111 | 4yo 9-12 · OR123 RPR125</span><div class="pick-note">The <strong>Ascot Gold Cup winner</strong> returns — Ballydoyle’s unbeaten-this-year stayer tops the field on OR (123) and is a relentless galloper over 2m. The odds-on banker of the day. <strong style="color:var(--gold-lt)">Below evens — kept out of the Lucky 15.</strong></div></div></div>
+      <div class="pick-row"><div class="pick-tag nb">NB</div><div><span class="pick-horse">Trawlerman</span> <span class="draw-b">Draw 7</span> <span class="pick-odds">2/1</span><span class="conns">W.Buick | J &amp; T Gosden | F:1111-2 | 8yo 9-12 · OR122 RPR125 TS125</span><div class="pick-note">The battle-hardened Gosden stayer — joint-top RPR (125) and <strong>top TopSpeed (125)</strong>, with Buick. The one horse with the class and toughness to make Scandinavia work. Our Lucky 15 anchor.</div></div></div>
+      <div class="pick-row"><div class="pick-tag long">LONG</div><div><span class="pick-horse">Rahiebb</span> <span class="draw-b">Draw 5</span> <span class="pick-odds">10/1</span><span class="conns">R.Dawson | R.Varian | F:342-18 | 4yo 9-12 · OR116 RPR120 TS118</span><div class="pick-note">A lightly-raced Varian stayer (RPR120, TS118) stepping into Group 1 company on the back of a wide-margin win — the each-way improver against the two market leaders.</div></div></div>
+    </div>
+
+    <div class="race-block">
+      <p class="race-hd">16:10 · Coral Rewards Shaker Handicap (Cl2, 0-105) · 5f · 3yo+ · 31 runners · EW 1/4, 6 places · <span style="color:var(--gold-lt)">draw critical — provisional</span></p>
+      <div class="pick-row"><div class="pick-tag nap">NAP</div><div><span class="pick-horse">Sandal’s Song</span> <span class="draw-b tbc">Draw t.b.c.</span> <span class="pick-odds">5/1</span><span class="conns">J.Doyle | K.R.Burke | F:13-622 | 3yo 9-4 · OR100</span><div class="pick-note">The favourite — a K.R.Burke 3yo getting <strong>weight-for-age</strong> in a red-hot sprint handicap, consistent (1-3-6-2-2) with James Doyle and first-time headgear. Best-treated of the principals.</div></div></div>
+      <div class="pick-row"><div class="pick-tag nb">NB</div><div><span class="pick-horse">Lexington Blitz</span> <span class="draw-b tbc">Draw t.b.c.</span> <span class="pick-odds">17/2</span><span class="conns">E.Greatrex | R.Cowell | F:19-313 | 4yo 9-6 · OR98</span><div class="pick-note">From <strong>Robert Cowell’s sprint yard</strong>, a course-and-distance winner placed in two of his last three (…313). The type to relish a strongly-run 5f; each-way with a live chance.</div></div></div>
+      <div class="pick-row"><div class="pick-tag long">LONG</div><div><span class="pick-horse">Exclamation</span> <span class="draw-b tbc">Draw t.b.c.</span> <span class="pick-odds">33/1</span><span class="conns">R.Dawson | G.Harris | F:901902 | 3yo 8-12 · OR94</span><div class="pick-note">A proven big-priced each-way animal (placed at 45/1 earlier in the season) with weight-for-age on his side — pure lottery value in a 31-runner cavalry charge, called out as a dart. <strong>Draw will decide plenty here.</strong></div></div></div>
+    </div>
+
+    <div class="race-block">
+      <p class="race-hd">16:45 · British Stallion Studs EBF Maiden (Colts &amp; Geldings, Cl2) · 6f · 2yo · 29 runners · EW 1/5, 3 places · <span style="color:var(--gold-lt)">market not shown (SP)</span></p>
+      <div class="pick-row"><div class="pick-tag nap">NAP</div><div><span class="pick-horse">Final Objective</span> <span class="draw-b tbc">Draw t.b.c.</span> <span class="pick-odds">SP</span><span class="conns">J.Doyle | H.Al Jehani | F:— | 2yo 9-2 · RPR109 TS97</span><div class="pick-note">Tops this huge maiden on RPR (109) with the best TopSpeed of the experienced runners — the most-proven form on offer, James Doyle up.</div></div></div>
+      <div class="pick-row"><div class="pick-tag nb">NB</div><div><span class="pick-horse">Down To You Kid</span> <span class="draw-b tbc">Draw t.b.c.</span> <span class="pick-odds">SP</span><span class="conns">S.Levey | R.Hannon | F:323 | 2yo 9-2 · OR80 RPR99</span><div class="pick-note">A consistent Hannon colt placed in all three (3-2-3) and crying out for this — the reliable form pick against a sea of newcomers.</div></div></div>
+      <div class="pick-row"><div class="pick-tag long">LONG</div><div><span class="pick-horse">Severn Councils</span> <span class="draw-b tbc">Draw t.b.c.</span> <span class="pick-odds">SP</span><span class="conns">R.L.Moore | R.Hughes | F:— | 2yo 9-2 · RPR92</span><div class="pick-note">A Richard Hughes newcomer with <strong>Ryan Moore</strong> booked — a strong pointer on a well-bred type; the each-way unknown with upside. Majestic Jude (Haggas/Marquand) &amp; Dorigo (Ryan) the other intent debutants.</div></div></div>
+    </div>
+
+    <div class="race-block">
+      <p class="race-hd">17:20 · Bolney English Wine Fillies’ Handicap (Cl3, 0-95) · 1m · 3yo+ · 29 runners · EW 1/5, 5 places · <span style="color:var(--gold-lt)">market not shown (SP)</span></p>
+      <div class="pick-row"><div class="pick-tag nap">NAP</div><div><span class="pick-horse">Lyrics Of Life</span> <span class="draw-b tbc">Draw t.b.c.</span> <span class="pick-odds">SP</span><span class="conns">B.Meehan runner | F:5-2301 | 3yo 8-5 · OR81 RPR104</span><div class="pick-note">Tops the field on RPR (104) and won last time (…01) for the in-form Brian Meehan yard — a well-treated, progressive 3yo filly the pick on ratings.</div></div></div>
+      <div class="pick-row"><div class="pick-tag nb">NB</div><div><span class="pick-horse">Crazee Icon</span> <span class="draw-b tbc">Draw t.b.c.</span> <span class="pick-odds">SP</span><span class="conns">R.Dawson | A.M.Balding | F:-52511 | 3yo 8-4 · OR80 RPR100</span><div class="pick-note">A Balding 3yo on a two-timer (…11) with Ray Dawson — clearly ahead of her mark and going the right way; the each-way threat.</div></div></div>
+      <div class="pick-row"><div class="pick-tag long">LONG</div><div><span class="pick-horse">Annastarzy</span> <span class="draw-b tbc">Draw t.b.c.</span> <span class="pick-odds">SP</span><span class="conns">J.Leavy | R.Hannon | F:-48111 | 3yo 8-12 · OR88 CD</span><div class="pick-note">A course-and-distance winner chasing a hat-trick (…111) for Hannon — three wins from the last five and clearly thriving; the value each-way improver.</div></div></div>
+    </div>
+
+    <div class="race-block">
+      <p class="race-hd">17:55 · World Pool / Tote EBF Fillies’ Handicap (Cl3, 0-95) · 6f · 3yo+ · 31 runners · EW 1/4, 6 places · <span style="color:var(--gold-lt)">draw critical — provisional (SP)</span></p>
+      <div class="pick-row"><div class="pick-tag nap">NAP</div><div><span class="pick-horse">Machadadorp</span> <span class="draw-b tbc">Draw t.b.c.</span> <span class="pick-odds">SP</span><span class="conns">O.Murphy | A.M.Balding | F:6112 | 3yo 9-0 · OR88 RPR100 BF</span><div class="pick-note">Progressive Balding/Murphy 3yo (6-1-1-2, beaten favourite last time so ran well) — the improving profile that wins these, with Oisin Murphy loyal. Our value pick of the finale.</div></div></div>
+      <div class="pick-row"><div class="pick-tag nb">NB</div><div><span class="pick-horse">Secret History</span> <span class="draw-b tbc">Draw t.b.c.</span> <span class="pick-odds">SP</span><span class="conns">K.Shoemark | E.Walker | F:3-1141 | 3yo 8-9 · OR83 RPR101</span><div class="pick-note">An Ed Walker 3yo who won last time (…41), RPR101, with Shoemark — unexposed and well-in; the each-way threat.</div></div></div>
+      <div class="pick-row"><div class="pick-tag long">LONG</div><div><span class="pick-horse">Rogue Attraction</span> <span class="draw-b tbc">Draw t.b.c.</span> <span class="pick-odds">SP</span><span class="conns">H.Davies | E.Bethell | F:100-61 | 3yo 8-8 · OR82 RPR103</span><div class="pick-note">Won last time (…61), RPR103 (joint-best in the field), for the sharp Bethell yard — the each-way value. Fleetwater, Zen Diva &amp; Rogue-stablemates all last-time-out winners in a fiercely competitive heat. <strong>Draw is pivotal over 6f.</strong></div></div></div>
+    </div>
+  </section>
+
+  <!-- DAY 1 LUCKY 15 -->
+  <section class="panel gold-top">
+    <h2 class="panel-head">🎯 Day 1 Lucky 15 · 4 value picks</h2>
+    <p style="font-size:0.78rem;color:var(--silver);line-height:1.55;margin-bottom:6px">Four picks from four different races — leaving out the odds-on bankers (Scandinavia 5/6, Al Hudaiba 6/4, Lake Forest 7/4) and the SP-priced RTV handicaps until the markets form. The value sits with the progressive handicapper, the two Group-race value plays and the veteran stayer.</p>
+    <div class="pick-row"><div class="pick-tag nap">L15</div><div><span class="pick-horse">Raammee</span> <span class="pick-odds">4/1</span><div class="pick-note">13:50 Chesterfield Cup — the progressive Varian favourite.</div></div></div>
+    <div class="pick-row"><div class="pick-tag nap">L15</div><div><span class="pick-horse">Never So Brave</span> <span class="pick-odds">7/1</span><div class="pick-note">15:00 Lennox (G2) — joint-top RPR, top TS, Ryan Moore at a price.</div></div></div>
+    <div class="pick-row"><div class="pick-tag nap">L15</div><div><span class="pick-horse">Trawlerman</span> <span class="pick-odds">2/1</span><div class="pick-note">15:35 Goodwood Cup (G1) — the tough Gosden stayer, top TopSpeed.</div></div></div>
+    <div class="pick-row"><div class="pick-tag nap">L15</div><div><span class="pick-horse">Sandal’s Song</span> <span class="pick-odds">5/1</span><div class="pick-note">16:10 Shaker (5f) — the WFA-favoured Burke 3yo (draw permitting).</div></div></div>
+    <div class="l15-foot">15 bets · 50p each = £7.50 outlay · plus 50p e/w Nap/NB/Long × 8 races = £24.00 · total Day 1 outlay £31.50 <span style="color:var(--silver);font-weight:400">(your actual Lucky 15 stake: 10p e/w = £3.00)</span></div>
+  </section>
+
+  <!-- DAY 2 ENGINE CARD -->
+  <section id="day2" class="panel gw-top">
+    <h2 class="panel-head">🎩 Day 2 · Wednesday 29 July · Sussex Stakes Day · 7 races</h2>
+    <p style="font-size:0.78rem;color:var(--silver);line-height:1.55;margin-bottom:12px">Showers forecast, going Good. Headlined by the <strong>Sussex Stakes (G1, £1.5m)</strong> — the "Duel on the Downs" — plus the Oak Tree (G3) and Molecomb (G3). Same draw caveat: the two RTV finales (50 and 51 entries) are declaration-stage fields and prices weren’t shown.</p>
+
+    <div class="race-block">
+      <p class="race-hd">13:50 · Coral Shaker Handicap (Cl2, 3yo 0-105) · 1m3f218y · 17 runners · EW 1/4, 4 places</p>
+      <div class="pick-row"><div class="pick-tag nap">NAP</div><div><span class="pick-horse">Infraad</span> <span class="draw-b tbc">Draw t.b.c.</span> <span class="pick-odds">5/1</span><span class="conns">T.Marquand | W.Haggas | F:2-313 | 3yo 8-11 · OR90 RPR111 TS105</span><div class="pick-note">Top RPR (111) and joint-top TopSpeed (105) yet racing off the <strong>lowest mark of the principals</strong> (OR90, 8-11) — a lightly-raced Haggas colt with Marquand. Clearly ahead of the handicapper.</div></div></div>
+      <div class="pick-row"><div class="pick-tag nb">NB</div><div><span class="pick-horse">Enceladus</span> <span class="draw-b tbc">Draw t.b.c.</span> <span class="pick-odds">6/1</span><span class="conns">J.P.O'Brien | F:33-11 | 3yo 9-6 · OR99 TS101 RPR110</span><div class="pick-note">Won his last two (…11) for Joseph O’Brien and unexposed over this trip — the progressive profile that lands these; the obvious threat.</div></div></div>
+      <div class="pick-row"><div class="pick-tag long">LONG</div><div><span class="pick-horse">Hatteen</span> <span class="draw-b tbc">Draw t.b.c.</span> <span class="pick-odds">7/1</span><span class="conns">O.Murphy | A.M.Balding | F:35-221 | 3yo 8-9 · OR88 TS106</span><div class="pick-note"><strong>Top TopSpeed in the race</strong> (106), won last time and gets in light — Balding/Murphy, the each-way value at a fair price.</div></div></div>
+    </div>
+
+    <div class="race-block">
+      <p class="race-hd">14:25 · Alice Keppel Fillies’ Conditions Stakes (Cl2) · 5f · 2yo · 19 runners · EW 1/4, 3 places</p>
+      <div class="pick-row"><div class="pick-tag nap">NAP</div><div><span class="pick-horse">Pershaada</span> <span class="draw-b tbc">Draw t.b.c.</span> <span class="pick-odds">5/1</span><span class="conns">S.Levey | R.Hannon | F:3214 | 2yo 9-0 · OR96 TS110 RPR112 · CD</span><div class="pick-note">A <strong>course-and-distance winner</strong> with the best RPR (112) and TopSpeed (110) in the field — Hannon’s filly has the strongest form line of these over the sharp Goodwood 5f.</div></div></div>
+      <div class="pick-row"><div class="pick-tag nb">NB</div><div><span class="pick-horse">Wild Blossom</span> <span class="draw-b tbc">Draw t.b.c.</span> <span class="pick-odds">5/2</span><span class="conns">J.Doyle | K.R.Burke | F:10 | 2yo 9-2 · OR98 TS103 RPR106</span><div class="pick-note">The market leader and top-rated on official figures (OR98) — a Burke filly with James Doyle; the one the money is for.</div></div></div>
+      <div class="pick-row"><div class="pick-tag long">LONG</div><div><span class="pick-horse">Acting Lady</span> <span class="draw-b tbc">Draw t.b.c.</span> <span class="pick-odds">7/1</span><span class="conns">W.Buick | C.Appleby | F:31 | 2yo 9-2</span><div class="pick-note">Appleby/Buick — <strong>the filly who won for us at Newmarket (100/30)</strong> stepping up in grade. Unexposed and going the right way; the each-way improver. Hidden Gift (9/2) &amp; Fast Track (8/1) the others.</div></div></div>
+    </div>
+
+    <div class="race-block">
+      <p class="race-hd">15:00 · Rolls-Royce Oak Tree Stakes (Group 3) · 7f · 3yo+ fillies &amp; mares · 22 runners · EW 1/4, 3 places</p>
+      <div class="pick-row"><div class="pick-tag nap">NAP</div><div><span class="pick-horse">Hassaleh</span> <span class="draw-b tbc">Draw t.b.c.</span> <span class="pick-odds">5/1</span><span class="conns">W.Buick | C.Appleby | F:3-131 | 3yo 8-13 · OR104 RPR117</span><div class="pick-note">Won last time (…31), RPR117, and as a 3yo receives <strong>7lb weight-for-age</strong> from the older mares. Appleby/Buick — the progressive one at the weights.</div></div></div>
+      <div class="pick-row"><div class="pick-tag nb">NB</div><div><span class="pick-horse">Sayidah Dariyan</span> <span class="draw-b tbc">Draw t.b.c.</span> <span class="pick-odds">6/1</span><span class="conns">R.L.Moore | R.Hughes | F:170-39 | 4yo 9-6 · OR107 RPR123</span><div class="pick-note"><strong>Much the best RPR in the field (123)</strong> with Ryan Moore booked — the form is patchy (…39) but on raw ability she’s the class runner. Each-way with upside.</div></div></div>
+      <div class="pick-row"><div class="pick-tag long">LONG</div><div><span class="pick-horse">Flora Of Bermuda</span> <span class="draw-b tbc">Draw t.b.c.</span> <span class="pick-odds">6/1</span><span class="conns">J.Doyle | A.M.Balding | F:39-101 | 5yo 9-9 · OR111 RPR119 · C</span><div class="pick-note">A course winner who scored last time (…01) — RPR119 and in form for Balding. Secret Of Life (4/1, 1-1-1) &amp; Zanthos (5/1) the market principals.</div></div></div>
+    </div>
+
+    <div class="race-block">
+      <p class="race-hd">15:35 · Veuve Clicquot Molecomb Stakes (Group 3) · 5f · 2yo · 17 runners · EW 1/4, 3 places</p>
+      <div class="pick-row"><div class="pick-tag nap">NAP</div><div><span class="pick-horse">Crownbreaker</span> <span class="draw-b tbc">Draw t.b.c.</span> <span class="pick-odds">6/1</span><span class="conns">D.Egan | K.Philippart De Foy | F:3251 | 2yo 9-0 · OR97 TS113 RPR116</span><div class="pick-note"><strong>Tops the race on both RPR (116) and TopSpeed (113)</strong> and won last time — the fastest filly in a Group 3 sprint. The clock says she’s the one.</div></div></div>
+      <div class="pick-row"><div class="pick-tag nb">NB</div><div><span class="pick-horse">Adonius</span> <span class="draw-b tbc">Draw t.b.c.</span> <span class="pick-odds">11/2</span><span class="conns">K.Fraser | R.Menzies | F:111 | 2yo 9-3 · OR94 TS101</span><div class="pick-note"><strong>Unbeaten in three</strong> (1-1-1) — the improving colt (and an old Chester friend of ours) taking a big step up in class with an unblemished record.</div></div></div>
+      <div class="pick-row"><div class="pick-tag long">LONG</div><div><span class="pick-horse">El Floridita</span> <span class="draw-b tbc">Draw t.b.c.</span> <span class="pick-odds">7/1</span><span class="conns">R.Scott | N.Tinkler | F:512 | 2yo 9-3 · OR98 TS102 RPR105</span><div class="pick-note">Second-top OR (98) with a solid 5-1-2 line for the sharp Tinkler sprint yard — the each-way value. Pershaada &amp; Ruler’s Pride (both 11/2) also engaged.</div></div></div>
+    </div>
+
+    <div class="race-block">
+      <p class="race-hd">16:10 · Visit Qatar Sussex Stakes (Group 1) · 1m · 3yo+ · 12 runners · EW 1/4, 3 places · ⭐⭐⭐ the feature</p>
+      <div class="pick-row"><div class="pick-tag nap">NAP</div><div><span class="pick-horse">Bow Echo</span> <span class="draw-b tbc">Draw t.b.c.</span> <span class="pick-odds">11/10</span><span class="conns">B.Loughnane | G.Boughey | F:111-11 | 3yo 9-2 · OR126 TS126 RPR131</span><div class="pick-note">The outstanding miler of the season — <strong>tops the field on OR (126), TopSpeed (126) and RPR (131)</strong>, unbeaten in five with 8lb weight-for-age. The banker of the festival. <strong style="color:var(--gold-lt)">Odds-on — out of the Lucky 15.</strong></div></div></div>
+      <div class="pick-row"><div class="pick-tag nb">NB</div><div><span class="pick-horse">Opera Ballo</span> <span class="draw-b tbc">Draw t.b.c.</span> <span class="pick-odds">3/1</span><span class="conns">W.Buick | C.Appleby | F:21-113 | 4yo 9-10 · OR125 RPR130</span><div class="pick-note">The established Group 1 miler — OR125, RPR130, Appleby/Buick. The only one with the class to take Bow Echo on; our Lucky 15 pick here.</div></div></div>
+      <div class="pick-row"><div class="pick-tag long">LONG</div><div><span class="pick-horse">Ten Bob Tony</span> <span class="draw-b tbc">Draw t.b.c.</span> <span class="pick-odds">16/1</span><span class="conns">K.Shoemark | E.Walker | F:0-4811 | 5yo 9-10 · OR121 RPR126 TS117</span><div class="pick-note">On a <strong>two-timer (…11)</strong> with RPR126 — a progressive older miler at a big price in a small field paying three. Gstaad (10/3, O’Brien) the other principal.</div></div></div>
+    </div>
+
+    <div class="race-block">
+      <p class="race-hd">17:00 · Coral Charlton Handicap (Cl4, 0-80) · 6f · 3yo+ · 50 entries · <span style="color:var(--gold-lt)">market not shown (SP)</span></p>
+      <div class="pick-row"><div class="pick-tag nap">NAP</div><div><span class="pick-horse">Sonic Si</span> <span class="draw-b tbc">Draw t.b.c.</span> <span class="pick-odds">SP</span><span class="conns">T.Carroll | F:343111 | 4yo 9-4 · OR72</span><div class="pick-note">Won his <strong>last three</strong> (…111) and still only rated 72 — the classic handicap-blot profile in a huge field.</div></div></div>
+      <div class="pick-row"><div class="pick-tag nb">NB</div><div><span class="pick-horse">Under The Twilight</span> <span class="draw-b tbc">Draw t.b.c.</span> <span class="pick-odds">SP</span><span class="conns">H.Davies | M.Blake | F:-62441 | 8yo 9-10 · OR78</span><div class="pick-note">Won last time and running into form for Michael Blake — the reliable each-way type off a workable mark.</div></div></div>
+      <div class="pick-row"><div class="pick-tag long">LONG</div><div><span class="pick-horse">Tex</span> <span class="draw-b tbc">Draw t.b.c.</span> <span class="pick-odds">SP</span><span class="conns">G.Baker | F:3-2301 | 5yo 8-13 · OR67 RPR92 TS82</span><div class="pick-note">Won last time off just OR67 with the <strong>best RPR (92) in the race</strong> — well ahead of his mark; the value dart. <em>50 entries — final field will be much smaller.</em></div></div></div>
+    </div>
+
+    <div class="race-block">
+      <p class="race-hd">17:40 · HKJC World Pool Handicap (Cl3, 0-95) · 7f · 3yo+ · 51 entries · <span style="color:var(--gold-lt)">market not shown (SP)</span></p>
+      <div class="pick-row"><div class="pick-tag nap">NAP</div><div><span class="pick-horse">St Anton</span> <span class="draw-b tbc">Draw t.b.c.</span> <span class="pick-odds">SP</span><span class="conns">R.Hannon | F:-31101 | 3yo 9-7 · OR97 TS96</span><div class="pick-note">Top-rated (OR97), won last time and gets <strong>7lb weight-for-age</strong> as the 3yo — a Hannon colt in the form of his life (and a past winner for our engine).</div></div></div>
+      <div class="pick-row"><div class="pick-tag nb">NB</div><div><span class="pick-horse">Best Rate</span> <span class="draw-b tbc">Draw t.b.c.</span> <span class="pick-odds">SP</span><span class="conns">R.Hannon | F:432411 | 4yo 9-4 · OR87 RPR104</span><div class="pick-note">A second Hannon runner on a two-timer (…11) with RPR104 — clearly progressing through the grades.</div></div></div>
+      <div class="pick-row"><div class="pick-tag long">LONG</div><div><span class="pick-horse">Marengo Storm</span> <span class="draw-b tbc">Draw t.b.c.</span> <span class="pick-odds">SP</span><span class="conns">F.Marsh | R.Hughes | F:5121 | 3yo 8-8 · OR84 RPR102</span><div class="pick-note">Won last time, lightly-raced (5-1-2-1) and gets WFA — a Richard Hughes 3yo well treated at the weights. <em>51 entries — expect a much smaller final field.</em></div></div></div>
+    </div>
+  </section>
+
+  <section class="panel gold-top">
+    <h2 class="panel-head">🎯 Day 2 Lucky 15 · 4 value picks</h2>
+    <p style="font-size:0.78rem;color:var(--silver);line-height:1.55;margin-bottom:6px">Leaving out the odds-on Sussex banker (Bow Echo 11/10) and the two SP mega-field handicaps. The value is the well-handicapped Haggas colt, the CD sprint filly, the fastest 2yo on the clock and the Group 1 second string.</p>
+    <div class="pick-row"><div class="pick-tag nap">L15</div><div><span class="pick-horse">Infraad</span> <span class="pick-odds">5/1</span><div class="pick-note">13:50 Shaker (Cl2) — top RPR off the lowest mark.</div></div></div>
+    <div class="pick-row"><div class="pick-tag nap">L15</div><div><span class="pick-horse">Pershaada</span> <span class="pick-odds">5/1</span><div class="pick-note">14:25 Alice Keppel — the CD winner, top RPR &amp; TS.</div></div></div>
+    <div class="pick-row"><div class="pick-tag nap">L15</div><div><span class="pick-horse">Crownbreaker</span> <span class="pick-odds">6/1</span><div class="pick-note">15:35 Molecomb (G3) — fastest 2yo in the race.</div></div></div>
+    <div class="pick-row"><div class="pick-tag nap">L15</div><div><span class="pick-horse">Opera Ballo</span> <span class="pick-odds">3/1</span><div class="pick-note">16:10 Sussex (G1) — the one to take on Bow Echo.</div></div></div>
+    <div class="l15-foot">15 bets · 50p each = £7.50 · plus 50p e/w Nap/NB/Long × 7 races = £21.00 · total Day 2 outlay £28.50 <span style="color:var(--silver);font-weight:400">(your actual Lucky 15 stake: 10p e/w = £3.00)</span></div>
+  </section>
+
+  <!-- DAY 3 ENGINE CARD -->
+  <section id="day3" class="panel gw-top">
+    <h2 class="panel-head">🎩 Day 3 · Thursday 30 July · Nassau Stakes Day · 8 races</h2>
+    <p style="font-size:0.78rem;color:var(--silver);line-height:1.55;margin-bottom:12px">Partly cloudy, going Good. The <strong>Nassau Stakes (G1)</strong> headlines, with the Richmond (G2) and Gordon (G3) in support. Ladies’ Day and a punchy card — two of the handicaps carry 26+ entries.</p>
+
+    <div class="race-block">
+      <p class="race-hd">13:50 · Coral Kincsem Heritage Handicap (Cl2, 3yo) · 1m1f197y · 29 runners · EW 1/4, 5 places</p>
+      <div class="pick-row"><div class="pick-tag nap">NAP</div><div><span class="pick-horse">King Of Earth</span> <span class="draw-b tbc">Draw t.b.c.</span> <span class="pick-odds">6/1</span><span class="conns">T.Marquand | W.Haggas | F:2-2411 | 3yo 8-13 · OR92 TS102</span><div class="pick-note">On a <strong>two-timer (…11)</strong> for Haggas with Marquand and still only OR92 — the progressive, well-treated profile that wins big 3yo handicaps.</div></div></div>
+      <div class="pick-row"><div class="pick-tag nb">NB</div><div><span class="pick-horse">Decade Of Time</span> <span class="draw-b tbc">Draw t.b.c.</span> <span class="pick-odds">9/1</span><span class="conns">J.Channon | F:3112 | 3yo 9-1 · OR94 RPR113</span><div class="pick-note">RPR113 and a 3-1-1-2 sheet — lightly-raced for Jack Channon (and an old each-way pick of ours at Newmarket). Solid each-way claims.</div></div></div>
+      <div class="pick-row"><div class="pick-tag long">LONG</div><div><span class="pick-horse">Ciarrai Abu</span> <span class="draw-b tbc">Draw t.b.c.</span> <span class="pick-odds">12/1</span><span class="conns">S.Osborne | H.Eustace | F:62-141 | 3yo 8-7 · OR86 · C</span><div class="pick-note">A course winner who scored last time, gets in light (8-7) and Harry Eustace is in red-hot form (81%). The value each-way play.</div></div></div>
+    </div>
+
+    <div class="race-block">
+      <p class="race-hd">14:25 · Markel Richmond Stakes (Group 2) · 6f · 2yo colts &amp; geldings · 13 runners · EW 1/4, 3 places</p>
+      <div class="pick-row"><div class="pick-tag nap">NAP</div><div><span class="pick-horse">Flann Sunna</span> <span class="draw-b tbc">Draw t.b.c.</span> <span class="pick-odds">9/4</span><span class="conns">W.Buick | S &amp; E Crisford | F:11 | 2yo 9-2 · OR99 RPR109</span><div class="pick-note"><strong>Unbeaten in two</strong> for the Crisfords with Buick booked — the improving, unexposed colt heading the market on the back of a smart win.</div></div></div>
+      <div class="pick-row"><div class="pick-tag nb">NB</div><div><span class="pick-horse">Adaay Of Scarlett</span> <span class="draw-b tbc">Draw t.b.c.</span> <span class="pick-odds">6/1</span><span class="conns">O.Murphy | H.Palmer | F:11222 | 2yo 9-2 · OR105 RPR113</span><div class="pick-note"><strong>Top-rated in the race</strong> (OR105, RPR113) and rock-solid — but three straight seconds is the warning. Palmer/Murphy; the class runner at a price.</div></div></div>
+      <div class="pick-row"><div class="pick-tag long">LONG</div><div><span class="pick-horse">Jaan Ki Tukri</span> <span class="draw-b tbc">Draw t.b.c.</span> <span class="pick-odds">16/1</span><span class="conns">H.Crouch | C.Cox | F:32291 | 2yo 9-2 · OR95 TS110 RPR114</span><div class="pick-note"><strong>Best RPR (114) and TopSpeed (110) in the field</strong>, and won last time — a Clive Cox colt hugely overpriced on the clock. The each-way value of the day.</div></div></div>
+    </div>
+
+    <div class="race-block">
+      <p class="race-hd">15:00 · Maison Perrier Gordon Stakes (Group 3) · 1m3f218y · 3yo · 11 runners · EW 1/5, 3 places</p>
+      <div class="pick-row"><div class="pick-tag nap">NAP</div><div><span class="pick-horse">Geryon</span> <span class="draw-b tbc">Draw t.b.c.</span> <span class="pick-odds">5/1</span><span class="conns">G.M.Lyons | F:-44241 | 3yo 9-6 · OR107 RPR120</span><div class="pick-note">Won last time and carries a penalty on the joint-best RPR (120) — the Ger Lyons colt is going the right way at exactly the right time.</div></div></div>
+      <div class="pick-row"><div class="pick-tag nb">NB</div><div><span class="pick-horse">Shaihaan</span> <span class="draw-b tbc">Draw t.b.c.</span> <span class="pick-odds">6/1</span><span class="conns">T.Marquand | D.A.O'Brien | F:4-1435 | 3yo 9-3 · OR103 TS117 RPR119</span><div class="pick-note"><strong>Top TopSpeed (117)</strong> with RPR119 — Donnacha O’Brien’s colt with Marquand; the fastest of these on the clock.</div></div></div>
+      <div class="pick-row"><div class="pick-tag long">LONG</div><div><span class="pick-horse">Venetian Lace</span> <span class="draw-b tbc">Draw t.b.c.</span> <span class="pick-odds">25/1</span><span class="conns">J.Hart | C.Johnston | F:62-397 | 3yo 9-0 · OR110 TS117 RPR124</span><div class="pick-note">A genuine anomaly — <strong>tops the field on OR (110), TopSpeed (117) and RPR (124)</strong> yet available at 25/1 because the recent form reads 3-9-7. If she runs to her figures she wins; textbook each-way value.</div></div></div>
+    </div>
+
+    <div class="race-block">
+      <p class="race-hd">15:35 · Qatar Nassau Stakes (Group 1) · 1m1f197y · 3yo+ fillies &amp; mares · 10 runners · EW 1/4, 3 places · ⭐⭐ the feature</p>
+      <div class="pick-row"><div class="pick-tag nap">NAP</div><div><span class="pick-horse">Diamond Necklace</span> <span class="draw-b tbc">Draw t.b.c.</span> <span class="pick-odds">4/6</span><span class="conns">A.P.O'Brien | F:111-11 | 3yo 9-0 · OR115 TS122 RPR122</span><div class="pick-note"><strong>Unbeaten in five</strong> for Ballydoyle with 9lb weight-for-age from the older mares — the outstanding 3yo filly of the season. <strong style="color:var(--gold-lt)">Odds-on — out of the Lucky 15.</strong></div></div></div>
+      <div class="pick-row"><div class="pick-tag nb">NB</div><div><span class="pick-horse">See The Fire</span> <span class="draw-b tbc">Draw t.b.c.</span> <span class="pick-odds">7/2</span><span class="conns">O.Murphy | A.M.Balding | F:29-116 | 5yo 9-9 · OR114 RPR120</span><div class="pick-note">A proven Group 1 mare for Balding/Murphy who won two of her last four — the established danger to the unbeaten favourite.</div></div></div>
+      <div class="pick-row"><div class="pick-tag long">LONG</div><div><span class="pick-horse">Minnie Hauk</span> <span class="draw-b tbc">Draw t.b.c.</span> <span class="pick-odds">33/1</span><span class="conns">A.P.O'Brien | F:6-1528 | 4yo 9-9 · OR123 TS124 RPR130</span><div class="pick-note">The stable’s second string but <strong>the highest-rated horse in the race by some way</strong> (OR123, RPR130). At 33/1 in a 10-runner Group 1 paying three, that’s each-way value you can’t ignore.</div></div></div>
+    </div>
+
+    <div class="race-block">
+      <p class="race-hd">16:10 · Buccellati Handicap (Cl3, 3yo 0-95) · 5f · 23 runners · EW 1/4, 4 places · <span style="color:var(--gold-lt)">draw important</span></p>
+      <div class="pick-row"><div class="pick-tag nap">NAP</div><div><span class="pick-horse">Shes Got A Brother</span> <span class="draw-b tbc">Draw t.b.c.</span> <span class="pick-odds">8/1</span><span class="conns">B.Garritty | M &amp; D Easterby | F:11435 | 3yo 9-1 · OR87 RPR109</span><div class="pick-note"><strong>Much the best RPR in the race (109)</strong> off a workable OR87 — the Easterby filly has the highest ceiling of these sprinters.</div></div></div>
+      <div class="pick-row"><div class="pick-tag nb">NB</div><div><span class="pick-horse">Quantum Power</span> <span class="draw-b tbc">Draw t.b.c.</span> <span class="pick-odds">12/1</span><span class="conns">D.Egan | T.Clover | F:734111 | 3yo 9-0 · OR86 RPR103</span><div class="pick-note">Won his <strong>last three</strong> (…111) for the in-form Tom Clover yard (85%) — the hat-trick horse still on a fair mark.</div></div></div>
+      <div class="pick-row"><div class="pick-tag long">LONG</div><div><span class="pick-horse">Truly Glamorous</span> <span class="draw-b tbc">Draw t.b.c.</span> <span class="pick-odds">14/1</span><span class="conns">G.Mangan | C.Mason | F:26-411 | 3yo 8-0 · OR72 TS97 RPR105</span><div class="pick-note">Two-timer (…11) racing off just OR72 with RPR105 — <strong>well ahead of the handicapper</strong> and gets in at the bottom of the weights. The value dart.</div></div></div>
+    </div>
+
+    <div class="race-block">
+      <p class="race-hd">16:45 · Whispering Angel Nursery Handicap (Cl2) · 7f · 2yo · 26 runners · <span style="color:var(--gold-lt)">market not shown (SP)</span></p>
+      <div class="pick-row"><div class="pick-tag nap">NAP</div><div><span class="pick-horse">Cash Cove</span> <span class="draw-b tbc">Draw t.b.c.</span> <span class="pick-odds">SP</span><span class="conns">B.Loughnane | C.Johnston | F:4413 | 2yo 8-10 · OR76 TS88 RPR101</span><div class="pick-note"><strong>Top RPR (101) and TopSpeed (88) in the nursery</strong> yet rated only 76 — the standout on figures at a light weight.</div></div></div>
+      <div class="pick-row"><div class="pick-tag nb">NB</div><div><span class="pick-horse">Everatease</span> <span class="draw-b tbc">Draw t.b.c.</span> <span class="pick-odds">SP</span><span class="conns">C.Bishop | E.Johnson Houghton | F:66411 | 2yo 9-0 · OR80 TS94</span><div class="pick-note">Won his last two (…11) and improving fast for Eve Johnson Houghton — the in-form nursery type.</div></div></div>
+      <div class="pick-row"><div class="pick-tag long">LONG</div><div><span class="pick-horse">Global Success</span> <span class="draw-b tbc">Draw t.b.c.</span> <span class="pick-odds">SP</span><span class="conns">J.S.Moore | F:5632 | 2yo 8-1 · OR67 RPR96</span><div class="pick-note">RPR96 off the minimum OR67 and 8st 1lb — second last time; the each-way outsider well in at the weights.</div></div></div>
+    </div>
+
+    <div class="race-block">
+      <p class="race-hd">17:20 · Tatler British EBF Maiden Fillies’ Stakes (Cl2) · 7f · 2yo · 25 runners · <span style="color:var(--gold-lt)">market not shown (SP)</span></p>
+      <div class="pick-row"><div class="pick-tag nap">NAP</div><div><span class="pick-horse">Madam Secretary</span> <span class="draw-b tbc">Draw t.b.c.</span> <span class="pick-odds">SP</span><span class="conns">A.P.O'Brien | F:33 | 2yo 9-2 · RPR92</span><div class="pick-note"><strong>Best RPR (92) of the experienced fillies</strong> — a Ballydoyle filly twice-third (she placed for us at Newmarket) who looks ready to go one better in a race full of newcomers.</div></div></div>
+      <div class="pick-row"><div class="pick-tag nb">NB</div><div><span class="pick-horse">So Lovely</span> <span class="draw-b tbc">Draw t.b.c.</span> <span class="pick-odds">SP</span><span class="conns">A.P.O'Brien | F:2 | 2yo 9-2 · RPR86</span><div class="pick-note">Second on debut for O’Brien and entitled to improve markedly for the run — the stable’s other live one.</div></div></div>
+      <div class="pick-row"><div class="pick-tag long">LONG</div><div><span class="pick-horse">Clarity</span> <span class="draw-b tbc">Draw t.b.c.</span> <span class="pick-odds">SP</span><span class="conns">O.Murphy | A.M.Balding | F:3 | 2yo 9-2 · RPR80</span><div class="pick-note">Third on debut for Balding with Oisin Murphy staying on board — the each-way improver. Gosden, Varian &amp; Beckett all run well-bred newcomers.</div></div></div>
+    </div>
+
+    <div class="race-block">
+      <p class="race-hd">17:55 · HKJC World Pool Handicap (Cl3, 3yo 0-90) · 1m · 47 entries · <span style="color:var(--gold-lt)">market not shown (SP)</span></p>
+      <div class="pick-row"><div class="pick-tag nap">NAP</div><div><span class="pick-horse">Go Rimbaud</span> <span class="draw-b tbc">Draw t.b.c.</span> <span class="pick-odds">SP</span><span class="conns">J &amp; T Gosden | F:22-151 | 3yo 9-4 · OR85 RPR100</span><div class="pick-note">Won last time for the Gosdens off OR85 with RPR100 — lightly-raced and clearly still improving.</div></div></div>
+      <div class="pick-row"><div class="pick-tag nb">NB</div><div><span class="pick-horse">Annastarzy</span> <span class="draw-b tbc">Draw t.b.c.</span> <span class="pick-odds">SP</span><span class="conns">J.Leavy | R.Hannon | F:-48111 | 3yo 9-7 · OR88 · CD</span><div class="pick-note">A <strong>course-and-distance winner on a hat-trick</strong> (…111) for Hannon — thriving, and our Day 1 each-way pick doubles up here.</div></div></div>
+      <div class="pick-row"><div class="pick-tag long">LONG</div><div><span class="pick-horse">Drymee</span> <span class="draw-b tbc">Draw t.b.c.</span> <span class="pick-odds">SP</span><span class="conns">J.Fanshawe | F:4-711 | 3yo 8-10 · OR77 RPR99</span><div class="pick-note">Won his last two off just OR77 for James Fanshawe — a progressive lightweight the handicapper may not have caught. <em>47 entries — final field much smaller.</em></div></div></div>
+    </div>
+  </section>
+
+  <section class="panel gold-top">
+    <h2 class="panel-head">🎯 Day 3 Lucky 15 · 4 value picks</h2>
+    <p style="font-size:0.78rem;color:var(--silver);line-height:1.55;margin-bottom:6px">Leaving out the odds-on Nassau banker (Diamond Necklace 4/6) and the SP nurseries. Two Group-race value plays on the clock, plus the two best-handicapped improvers.</p>
+    <div class="pick-row"><div class="pick-tag nap">L15</div><div><span class="pick-horse">King Of Earth</span> <span class="pick-odds">6/1</span><div class="pick-note">13:50 Kincsem — Haggas/Marquand two-timer off OR92.</div></div></div>
+    <div class="pick-row"><div class="pick-tag nap">L15</div><div><span class="pick-horse">Flann Sunna</span> <span class="pick-odds">9/4</span><div class="pick-note">14:25 Richmond (G2) — unbeaten with Buick.</div></div></div>
+    <div class="pick-row"><div class="pick-tag nap">L15</div><div><span class="pick-horse">Geryon</span> <span class="pick-odds">5/1</span><div class="pick-note">15:00 Gordon (G3) — last-time winner, joint-top RPR.</div></div></div>
+    <div class="pick-row"><div class="pick-tag nap">L15</div><div><span class="pick-horse">Shes Got A Brother</span> <span class="pick-odds">8/1</span><div class="pick-note">16:10 Buccellati (5f) — much the best RPR in the race.</div></div></div>
+    <div class="l15-foot">15 bets · 50p each = £7.50 · plus 50p e/w Nap/NB/Long × 8 races = £24.00 · total Day 3 outlay £31.50 <span style="color:var(--silver);font-weight:400">(your actual Lucky 15 stake: 10p e/w = £3.00)</span></div>
+  </section>
+
+  <!-- DAY 4 ENGINE CARD -->
+  <section id="day4" class="panel gw-top">
+    <h2 class="panel-head">🎩 Day 4 · Friday 31 July · 8 races</h2>
+    <p style="font-size:0.78rem;color:var(--silver);line-height:1.55;margin-bottom:12px">Going Good. A cracking punting card — the <strong>Golden Mile</strong> and the marathon <strong>Goodwood Handicap</strong> (2m4f) bookend the <strong>King George Qatar Stakes (G2)</strong> sprint and the Thoroughbred Stakes (G3). Several horses hold multiple entries across the day; final declarations will resolve.</p>
+
+    <div class="race-block">
+      <p class="race-hd">13:50 · Coral Goodwood Handicap (Cl2, 0-105) · 2m4f137y · 30 runners · EW 1/4, 5 places · <span style="color:var(--gold-lt)">market not shown (SP)</span></p>
+      <div class="pick-row"><div class="pick-tag nap">NAP</div><div><span class="pick-horse">Valiancy</span> <span class="draw-b tbc">Draw t.b.c.</span> <span class="pick-odds">SP</span><span class="conns">J.Doyle | W.Haggas | F:321-16 | 4yo · OR97 TS96 RPR105</span><div class="pick-note">A lightly-raced Haggas stayer with James Doyle — 3-2-1 then a win, and the strongest combination of figures (RPR105/TS96) among the fancied runners.</div></div></div>
+      <div class="pick-row"><div class="pick-tag nb">NB</div><div><span class="pick-horse">Believitanducan</span> <span class="draw-b tbc">Draw t.b.c.</span> <span class="pick-odds">SP</span><span class="conns">W.Buick | A.King | F:/2-111 | 5yo · OR87</span><div class="pick-note"><strong>Won his last three</strong> (…111) with <strong>William Buick booked</strong> for Alan King — a dual-purpose stayer in the form of his life and a significant jockey pointer.</div></div></div>
+      <div class="pick-row"><div class="pick-tag long">LONG</div><div><span class="pick-horse">Defiantly</span> <span class="draw-b tbc">Draw t.b.c.</span> <span class="pick-odds">SP</span><span class="conns">J.P.O'Brien | F:47-042 | 4yo · TS97 RPR104</span><div class="pick-note">Second last time with RPR104/TS97 — a Joseph O’Brien raider unexposed at this marathon trip; the each-way value. Maxi King (OR103, top weight) the class runner.</div></div></div>
+    </div>
+
+    <div class="race-block">
+      <p class="race-hd">14:25 · HKJC World Pool Thoroughbred Stakes (Group 3) · 1m · 3yo · 13 runners · EW 1/5, 3 places</p>
+      <div class="pick-row"><div class="pick-tag nap">NAP</div><div><span class="pick-horse">Talk Of New York</span> <span class="draw-b tbc">Draw t.b.c.</span> <span class="pick-odds">—</span><span class="conns">W.Buick | C.Appleby | F:1-3113 | 3yo 9-3 · OR116 TS111 RPR118</span><div class="pick-note"><strong>Tops the race on OR (116), TopSpeed (111) and RPR (118)</strong> — an Appleby colt with Buick who has won three of his last five. The class act of a Group 3.</div></div></div>
+      <div class="pick-row"><div class="pick-tag nb">NB</div><div><span class="pick-horse">Hankelow</span> <span class="draw-b tbc">Draw t.b.c.</span> <span class="pick-odds">—</span><span class="conns">C.Lee | K.R.Burke | F:121-30 | 3yo 9-3 · OR114 TS111 RPR114</span><div class="pick-note">Second-top on the ratings (OR114) and matches the favourite on TopSpeed — a Burke colt who beat good ones before a below-par last run.</div></div></div>
+      <div class="pick-row"><div class="pick-tag long">LONG</div><div><span class="pick-horse">Shayem</span> <span class="draw-b tbc">Draw t.b.c.</span> <span class="pick-odds">—</span><span class="conns">C.Lee | K.R.Burke | F:-05421 | 3yo 9-3 · OR109 RPR111</span><div class="pick-note">Won last time (…21) — the Burke second string who <strong>landed the Sir Henry Cecil for us at Newmarket at 7/2</strong>. Progressive and the each-way value again.</div></div></div>
+    </div>
+
+    <div class="race-block">
+      <p class="race-hd">15:00 · Coral Golden Mile (Heritage Handicap, Cl2) · 1m · 37 runners · EW 1/4, 6 places</p>
+      <div class="pick-row"><div class="pick-tag nap">NAP</div><div><span class="pick-horse">Indalo</span> <span class="draw-b tbc">Draw t.b.c.</span> <span class="pick-odds">6/1</span><span class="conns">R.Dawson | R.Varian | F:12-231 | 5yo 9-9 3ex · OR102 RPR114</span><div class="pick-note">The favourite — <strong>won last time and carries a 3lb penalty</strong> for Varian, RPR114 and clearly thriving. The form pick of a red-hot heritage handicap.</div></div></div>
+      <div class="pick-row"><div class="pick-tag nb">NB</div><div><span class="pick-horse">Beagle Bay</span> <span class="draw-b tbc">Draw t.b.c.</span> <span class="pick-odds">10/1</span><span class="conns">R.Beckett | F:2-1411 | 4yo 9-1 · OR94 TS104 RPR114</span><div class="pick-note">On a <strong>two-timer (…11)</strong> with RPR114 off just OR94 — a Beckett improver still ahead of the assessor. Our Lucky 15 pick here.</div></div></div>
+      <div class="pick-row"><div class="pick-tag long">LONG</div><div><span class="pick-horse">Rhoscolyn</span> <span class="draw-b tbc">Draw t.b.c.</span> <span class="pick-odds">20/1</span><span class="conns">D.O'Meara | F:4-5005 | 8yo 8-13 · OR92 TS111 RPR116 · CD</span><div class="pick-note">A course-and-distance winner with <strong>the best RPR (116) and near-top TopSpeed (111) in a 37-runner field</strong> — the classic O’Meara big-field each-way dart. St Anton (3ex) &amp; Scoville the others.</div></div></div>
+    </div>
+
+    <div class="race-block">
+      <p class="race-hd">15:35 · King George Qatar Stakes (Group 2) · 5f · 3yo+ · 16 runners · EW 1/4, 3 places · ⭐⭐</p>
+      <div class="pick-row"><div class="pick-tag nap">NAP</div><div><span class="pick-horse">Jakajaro</span> <span class="draw-b tbc">Draw t.b.c.</span> <span class="pick-odds">5/1</span><span class="conns">R.Cowell | F:-11453 | 5yo 9-4 · OR109 TS115 RPR127</span><div class="pick-note"><strong>Top TopSpeed in the race (115)</strong> with RPR127, from <strong>Robert Cowell’s specialist sprint yard</strong> — exactly the profile for Goodwood’s tricky 5f.</div></div></div>
+      <div class="pick-row"><div class="pick-tag nb">NB</div><div><span class="pick-horse">Rumstar</span> <span class="draw-b tbc">Draw t.b.c.</span> <span class="pick-odds">9/2</span><span class="conns">J.Portman | F:60-201 | 6yo 9-4 · OR110 RPR126 · CD</span><div class="pick-note">A <strong>course-and-distance winner who scored last time</strong> — OR110, RPR126. Course form counts for plenty over this idiosyncratic five furlongs.</div></div></div>
+      <div class="pick-row"><div class="pick-tag long">LONG</div><div><span class="pick-horse">Time For Sandals</span> <span class="draw-b tbc">Draw t.b.c.</span> <span class="pick-odds">16/1</span><span class="conns">H.Eustace | F:7-5800 | 4yo 9-1 · OR107 TS108 RPR130</span><div class="pick-note"><strong>The highest RPR in the field (130)</strong> at 16/1 — the recent form is poor (8-0-0) but the raw ability is unmatched here; a big-priced each-way stab in a race paying three. Night Raider (10/3) heads the market.</div></div></div>
+    </div>
+
+    <div class="race-block">
+      <p class="race-hd">16:10 · Regent Seven Seas Bentinck Conditions Stakes (Cl2) · 1m1f11y · 4yo+ · 10 runners · EW 1/5, 3 places</p>
+      <div class="pick-row"><div class="pick-tag nap">NAP</div><div><span class="pick-horse">Boiling Point</span> <span class="draw-b tbc">Draw t.b.c.</span> <span class="pick-odds">9/2</span><span class="conns">C.Lee | K.R.Burke | F:-43134 | 5yo · OR112 TS105 RPR119 · CD</span><div class="pick-note"><strong>Top RPR (119) and a course-and-distance winner</strong> — a consistent Burke horse with Clifford Lee in a small, select conditions field.</div></div></div>
+      <div class="pick-row"><div class="pick-tag nb">NB</div><div><span class="pick-horse">Galen</span> <span class="draw-b tbc">Draw t.b.c.</span> <span class="pick-odds">4/1</span><span class="conns">J.P.O'Brien | F:324-04 | 5yo · RPR118</span><div class="pick-note">The market leader — RPR118 for Joseph O’Brien; a class horse who needs to bounce back from a quiet run.</div></div></div>
+      <div class="pick-row"><div class="pick-tag long">LONG</div><div><span class="pick-horse">Diego Ventura</span> <span class="draw-b tbc">Draw t.b.c.</span> <span class="pick-odds">7/1</span><span class="conns">J.Doyle | H.Al Jehani | F:33-671 | 4yo · OR107 RPR111</span><div class="pick-note">Won last time with James Doyle aboard — improving and the value alternative to the two market principals.</div></div></div>
+    </div>
+
+    <div class="race-block">
+      <p class="race-hd">16:45 · Hawes &amp; Curtis Nursery Handicap (Cl2) · 6f · 2yo · 27 runners · <span style="color:var(--gold-lt)">market not shown (SP)</span></p>
+      <div class="pick-row"><div class="pick-tag nap">NAP</div><div><span class="pick-horse">Dubai Champion</span> <span class="draw-b tbc">Draw t.b.c.</span> <span class="pick-odds">SP</span><span class="conns">R.L.Moore | B.Haslam | F:431 | 2yo · OR83 RPR86</span><div class="pick-note">Won last time and <strong>Ryan Moore takes the ride</strong> for Ben Haslam — the best RPR in the nursery plus a booking that shouts intent.</div></div></div>
+      <div class="pick-row"><div class="pick-tag nb">NB</div><div><span class="pick-horse">Innichen</span> <span class="draw-b tbc">Draw t.b.c.</span> <span class="pick-odds">SP</span><span class="conns">T.Marquand | J.Channon | F:6211 | 2yo · OR82 RPR83</span><div class="pick-note">Won his <strong>last two</strong> (…11) with Marquand for the in-form Jack Channon (71%) — improving with every run.</div></div></div>
+      <div class="pick-row"><div class="pick-tag long">LONG</div><div><span class="pick-horse">Jaijai</span> <span class="draw-b tbc">Draw t.b.c.</span> <span class="pick-odds">SP</span><span class="conns">P.Dobbs | R.Hannon | F:6212 | 2yo · OR84 RPR83 · C, BF</span><div class="pick-note">A course winner and <strong>beaten favourite last time</strong> (so ran below expectations) — Hannon’s colt is well placed to bounce back at a price.</div></div></div>
+    </div>
+
+    <div class="race-block">
+      <p class="race-hd">17:20 · World Pool / Tote Handicap (Cl3, 3yo 0-90) · 1m3f44y · 28 runners · <span style="color:var(--gold-lt)">market not shown (SP)</span></p>
+      <div class="pick-row"><div class="pick-tag nap">NAP</div><div><span class="pick-horse">Room Fourteen</span> <span class="draw-b tbc">Draw t.b.c.</span> <span class="pick-odds">SP</span><span class="conns">R.L.Moore | J.Fanshawe | F:-31211 | 3yo 8-3 · OR83 RPR89</span><div class="pick-note">On a <strong>two-timer (…11)</strong> with <strong>Ryan Moore booked</strong> for James Fanshawe (68%) — the progressive filly with the strongest jockey pointer in the race.</div></div></div>
+      <div class="pick-row"><div class="pick-tag nb">NB</div><div><span class="pick-horse">Infraad</span> <span class="draw-b tbc">Draw t.b.c.</span> <span class="pick-odds">SP</span><span class="conns">W.Haggas | F:2-313 | 3yo 9-9 · OR90 TS88 RPR94</span><div class="pick-note">Top-rated (OR90) with the best RPR (94) — the Haggas colt who is also our Day 2 NAP; whichever race he lands in, he’s well treated.</div></div></div>
+      <div class="pick-row"><div class="pick-tag long">LONG</div><div><span class="pick-horse">Devil’s Peak</span> <span class="draw-b tbc">Draw t.b.c.</span> <span class="pick-odds">SP</span><span class="conns">J &amp; T Gosden | F:4-2451 | 3yo · OR82 RPR89</span><div class="pick-note">Won last time for the Gosdens off OR82 — lightly-raced and open to more; the each-way improver.</div></div></div>
+    </div>
+
+    <div class="race-block">
+      <p class="race-hd">17:55 · British Stallion Studs EBF Fillies’ Handicap (Cl2, 0-105) · 1m1f197y · 18 runners · <span style="color:var(--gold-lt)">market not shown (SP)</span></p>
+      <div class="pick-row"><div class="pick-tag nap">NAP</div><div><span class="pick-horse">Francophone</span> <span class="draw-b tbc">Draw t.b.c.</span> <span class="pick-odds">SP</span><span class="conns">C.Johnston | F:1-4004 | 5yo 9-12 · OR102 RPR106 · CD</span><div class="pick-note">Top-rated (OR102) and a <strong>course-and-distance winner</strong> — Charlie Johnston’s mare sets the standard; the class runner of the finale.</div></div></div>
+      <div class="pick-row"><div class="pick-tag nb">NB</div><div><span class="pick-horse">Frances Ethel</span> <span class="draw-b tbc">Draw t.b.c.</span> <span class="pick-odds">SP</span><span class="conns">W.Haggas | F:9/952- | 5yo · OR97 RPR103</span><div class="pick-note">A Haggas mare returning from a long layoff with RPR103 — the yard rarely runs these without a plan; the each-way threat if fit.</div></div></div>
+      <div class="pick-row"><div class="pick-tag long">LONG</div><div><span class="pick-horse">Wisper</span> <span class="draw-b tbc">Draw t.b.c.</span> <span class="pick-odds">SP</span><span class="conns">D.Egan | A.King | F:585-13 | 8yo · OR88 TS86 RPR94</span><div class="pick-note">Won two back and placed last time (…13) for Alan King with David Egan — the veteran mare running into form; the value each-way close to the festival week.</div></div></div>
+    </div>
+  </section>
+
+  <section class="panel gold-top">
+    <h2 class="panel-head">🎯 Day 4 Lucky 15 · 4 value picks</h2>
+    <p style="font-size:0.78rem;color:var(--silver);line-height:1.55;margin-bottom:6px">Priced races only — the four SP handicaps are left out until markets form. Two Group-race class calls and the two best-handicapped Golden Mile types.</p>
+    <div class="pick-row"><div class="pick-tag nap">L15</div><div><span class="pick-horse">Indalo</span> <span class="pick-odds">6/1</span><div class="pick-note">15:00 Golden Mile — last-time winner carrying his penalty.</div></div></div>
+    <div class="pick-row"><div class="pick-tag nap">L15</div><div><span class="pick-horse">Beagle Bay</span> <span class="pick-odds">10/1</span><div class="pick-note">15:00 Golden Mile — two-timer, RPR114 off OR94.</div></div></div>
+    <div class="pick-row"><div class="pick-tag nap">L15</div><div><span class="pick-horse">Jakajaro</span> <span class="pick-odds">5/1</span><div class="pick-note">15:35 King George (G2) — top TopSpeed, Cowell sprint yard.</div></div></div>
+    <div class="pick-row"><div class="pick-tag nap">L15</div><div><span class="pick-horse">Boiling Point</span> <span class="pick-odds">9/2</span><div class="pick-note">16:10 Bentinck — top RPR and a CD winner.</div></div></div>
+    <div class="l15-foot">15 bets · 50p each = £7.50 · plus 50p e/w Nap/NB/Long × 8 races = £24.00 · total Day 4 outlay £31.50 <span style="color:var(--silver);font-weight:400">(your actual Lucky 15 stake: 10p e/w = £3.00)</span> · <em>Note: two Golden Mile picks in one race means that leg can only win once.</em></div>
+  </section>
+
+  <!-- KEY SIGNALS -->
+  <section class="panel gold-top">
+    <h2 class="panel-head">🔑 Key signals · Goodwood 2026 (Days 1–4)</h2>
+    <div style="font-size:0.82rem;color:#cbd5cf;line-height:1.7">
+      • <strong style="color:var(--gold-lt)">Three Group 1 bankers, none of them Lucky 15 material.</strong> Scandinavia (Goodwood Cup, 5/6), <strong>Bow Echo</strong> (Sussex, 11/10 — tops OR/TS/RPR, unbeaten in five) and Diamond Necklace (Nassau, 4/6, unbeaten in five) are the three standout favourites of the week. Back them as singles; the engine’s edge is the NBs behind them (Trawlerman, Opera Ballo, See The Fire).<br>
+      • <strong style="color:var(--cream)">The clock finds the value.</strong> Four of our best-priced picks top their race on TopSpeed or RPR while trading at big odds: <strong>Jaan Ki Tukri</strong> 16/1 (Richmond G2), <strong>Venetian Lace</strong> 25/1 (Gordon G3), <strong>Minnie Hauk</strong> 33/1 (Nassau G1) and <strong>Rhoscolyn</strong> 20/1 (Golden Mile). Each has patchy recent form — that’s exactly why the price is there.<br>
+      • <strong style="color:var(--cream)">Weight-for-age is the recurring angle</strong> — Zavateri (Lennox), Sandal’s Song (Shaker), Hassaleh (Oak Tree), St Anton (7f handicap) and Diamond Necklace (Nassau, 9lb) all benefit taking on their elders.<br>
+      • <strong style="color:var(--gold-lt)">Draw remains the biggest unknown.</strong> The supplied Racing Post text cards carried no clean stall numbers, and Goodwood’s big-field sprints (5f Shaker 31, 6f Fillies’ 31, 5f Buccellati 23, King George 16) are genuinely draw-dependent. All handicap picks are <strong>provisional</strong> until draws are overlaid.<br>
+      • <strong style="color:var(--cream)">Mega-fields at entry stage:</strong> several RTV handicaps show 27–51 entries (Charlton 50, World Pool 51, HKJC 47, Golden Mile 37). Those will cut down sharply at declaration — treat the picks as a shortlist, not a final field.<br>
+      • <strong style="color:var(--cream)">Familiar faces:</strong> Acting Lady, Adaay Of Scarlett, Shayem, Madam Secretary, Annastarzy, Decade Of Time and St Anton all ran for our engine at Newmarket July — several as winners. Shayem (7/2 winner in the Cecil) is our Thoroughbred Stakes LONG.
+    </div>
+  </section>
+
+  <!-- COURSE GUIDE -->
+  <section class="panel">
+    <h2 class="panel-head">Goodwood — the course</h2>
+    <p><strong style="color:var(--gw-lt)">Right-handed, undulating and tactically tricky.</strong> Goodwood sits high on the Sussex Downs and is one of Britain’s most idiosyncratic tracks — sweeping bends, a stiff finish and a real premium on a well-judged position. It rewards tactical speed and punishes horses caught wide or short of room.</p>
+    <p><strong style="color:var(--gw-lt)">Draw &amp; pace.</strong> Draw bias is a genuine factor here, particularly in the big-field sprints. On the straight 5f and 6f, large fields often split into groups and where the pace lies — plus the day’s rail movements (today: 5f/round rails out +7 to +13 yards) — can hand a decisive edge to one side. Low-to-middle stalls have historically been favoured in many big Goodwood sprint handicaps, but it’s field- and going-dependent, so live draw data matters more than a rule of thumb.</p>
+    <p><strong style="color:var(--gw-lt)">Angles.</strong> Class horses with tactical speed and a proven ability to handle the undulations dominate the Group races (Appleby, Haggas, the Gosdens, Balding, O’Brien). In the handicaps, well-treated progressive types and yards with strong Goodwood records (Varian, Cowell at 5f, Hannon) are the reliable reads. The festival builds to the <strong style="color:var(--gw-lt)">Sussex Stakes (G1)</strong> on Thursday and the <strong style="color:var(--gw-lt)">Stewards’ Cup</strong> on Saturday.</p>
+  </section>
+
+  <!-- TRUST BAND + EMAIL CAPTURE -->
+  <section class="fmb-trust" aria-label="Track record and newsletter signup" style="border-radius:12px;margin:16px 0">
+    <div class="fmb-trust__inner">
+      <p class="fmb-trust__stat">Results tracked since <b>March 2026</b> · <a href="season-2026.html#methodology">Methodology <span aria-hidden="true">→</span></a></p>
+      <div class="fmb-capture">
+        <label class="fmb-capture__label" for="nap-email">Get the Saturday NAP in your inbox by 9am</label>
+        <form class="fmb-capture__form" data-capture novalidate>
+          <input class="fmb-input" id="nap-email" type="email" name="email" placeholder="you@email.com" autocomplete="email" required aria-describedby="nap-email-msg">
+          <button class="fmb-btn fmb-btn--primary" type="submit">Sign up</button>
+        </form>
+        <p class="fmb-capture__msg" id="nap-email-msg" role="status" aria-live="polite"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div>🏇 <strong>Glorious Goodwood 2026</strong> · Goodwood (Sussex Downs) · part of <a href="index.html">The Festival Form Book</a></div>
+    <div style="margin-top:6px">Recent: <a href="newmarket-july-2026.html">Newmarket July 2026</a> · <a href="royal-ascot-2026.html">Royal Ascot 2026</a> · <a href="season-2026.html">Season Leaderboard</a></div>
+    <div class="gambleaware">⚠️ 18+ · BeGambleAware.org · Tips for entertainment only · Always bet responsibly</div>
+    <div style="margin-top:6px"><a href="https://www.begambleaware.org">BeGambleAware</a> · <a href="https://www.gamcare.org.uk">GamCare</a> · National Gambling Helpline 0808 8020 133</div>
+  </footer>
+
+</main>
+</body>
+</html>

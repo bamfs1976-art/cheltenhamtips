@@ -122,8 +122,18 @@ const FESTIVALS_2026 = [
     dateLabel:'9–11 July 2026', venue:'Newmarket (July Course)', type:'Flat',
     theme:'theme-lime', accentColor:'#84cc16', url:'newmarket-july-2026.html',
     races:null,
-    headline:'ALL THREE cards LIVE — the July Cup (G1, NAP Venetian Sun) headlines Saturday, with the Superlative (G2) &amp; Bunbury Cup. Day 2 by the Falmouth Stakes (G1, Precise); Day 1 by the Princess of Wales’s (G2, Rebel’s Romance). Four tipster columns &amp; crossover signals overlaid on Days 1–2.',
-    headlineRace:'July Cup (G1) · Sat 11 Jul — the mid-season sprint championship · Princess of Wales’s Stakes (G2) Thu',
+    concluded:true,
+    headline:'COMPLETE — 14 winners over 3 days from 66 picks. Comanche Brave (11/1) won the July Cup; Blue Bolt landed the Falmouth (G1) at 85/40 as our NB; the Bunbury Cup produced an Aalto/Back In Black 1-2. Engine ROI −18.3% (−£12.11 on £66). The NB again outperformed — 7 of the first 10 winners were next-bests; the short multi-source NAPs kept placing without winning.',
+    headlineRace:'July Cup (G1) · Sat 11 Jul — won by Comanche Brave (11/1) · Falmouth Stakes (G1) Fri — won by Blue Bolt',
+  },
+  {
+    slug:'goodwood-2026', name:'Glorious Goodwood 2026', shortName:'Goodwood',
+    icon:'🏇', dates:['2026-07-28','2026-07-29','2026-07-30','2026-07-31','2026-08-01'],
+    dateLabel:'28 Jul – 1 Aug 2026', venue:'Goodwood (Sussex Downs)', type:'Flat',
+    theme:'theme-blue', accentColor:'#0ea5e9', url:'goodwood-2026.html',
+    races:null,
+    headline:'Days 1–4 cards LIVE — 31 races. Goodwood Cup (G1, Scandinavia) Tue · Sussex Stakes (G1, Bow Echo) Wed · Nassau Stakes (G1, Diamond Necklace) Thu · King George Qatar Stakes (G2) Fri. Stewards’ Cup closes on Saturday.',
+    headlineRace:'Sussex Stakes (G1) · Wed 29 Jul — the Duel on the Downs · Goodwood Cup (G1) Tue · Nassau (G1) Thu',
   },
 ];
 
