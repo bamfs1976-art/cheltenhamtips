@@ -193,6 +193,14 @@
   .event-hd.ev-royal { background: rgba(167,139,250,0.07);border-left-color: #a78bfa; }
   .event-hd.ev-np { background: rgba(45,212,191,0.07);border-left-color: #2dd4bf; }
   .event-hd.ev-nmj { background: rgba(132,204,22,0.07);border-left-color: #84cc16; }
+  .event-hd.ev-roi { background: rgba(245,200,66,0.07);border-left-color: var(--gold); }
+  .roi-pos { color: #4ade80; font-weight: 700; font-variant-numeric: tabular-nums; }
+  .roi-neg { color: #f87171; font-weight: 700; font-variant-numeric: tabular-nums; }
+  .roi-sum { display:flex; gap:10px; flex-wrap:wrap; margin:0 0 14px; }
+  .roi-card { flex:1; min-width:150px; background:var(--card); border:1px solid var(--border); border-radius:8px; padding:12px 14px; }
+  .roi-card .rc-lbl { font-size:0.68rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--muted); }
+  .roi-card .rc-val { font-size:1.35rem; font-weight:700; font-variant-numeric:tabular-nums; margin-top:2px; }
+  .roi-note { font-size:0.72rem; color:var(--muted); line-height:1.5; }
 
   .ev-icon { font-size: 1.3rem; flex-shrink: 0; }
   .ev-title {
@@ -467,6 +475,7 @@
       <a href="royal-ascot-2026.html">🎩 Royal Ascot 2026</a>
       <a href="northumberland-plate-2026.html">⚓ Northumberland Plate 2026</a>
       <a href="newmarket-july-2026.html">☀️ Newmarket July 2026</a>
+      <a href="#roi-ledger">💷 Settled ROI ledger</a>
     </nav>
   </div>
 </header>
@@ -801,6 +810,32 @@
       </table>
     </div>
 
+    <!-- ── Settled engine ROI ledger ── -->
+    <div class="event-hd ev-roi" id="roi-ledger">
+      <span class="ev-icon" aria-hidden="true">💷</span>
+      <div>
+        <div class="ev-title" style="color:var(--gold)">Settled engine ROI ledger</div>
+        <div class="ev-meta">Actual staked vs returned for every settled festival — engine singles at 50p e/w. This is the honest money record, kept separate from the points leaderboard above.</div>
+      </div>
+    </div>
+    <div class="roi-sum" id="roi-summary"></div>
+    <div class="tbl-wrap" role="region" aria-label="Settled engine ROI by festival">
+      <table class="bd-table fmb-nums" id="roi-table">
+        <thead>
+          <tr>
+            <th scope="col">Festival</th>
+            <th scope="col" class="num">Staked</th>
+            <th scope="col" class="num">Returned</th>
+            <th scope="col" class="num">Net</th>
+            <th scope="col" class="num">ROI</th>
+            <th scope="col">What happened</th>
+          </tr>
+        </thead>
+        <tbody id="roi-body"></tbody>
+      </table>
+    </div>
+    <p class="roi-note" id="roi-foot" style="margin:10px 0 30px"></p>
+
     <!-- ── Newmarket July breakdown ── -->
     <div class="event-hd ev-nmj" id="newmarket-july-section">
       <span class="ev-icon" aria-hidden="true">☀️</span>
@@ -895,6 +930,50 @@ function festivalStatus(startDateStr, endDateStr) {
   return 'upcoming';
 }
 
+
+// ── Settled ROI ledger ────────────────────────────────────────
+function renderRoiLedger() {
+  const body = document.getElementById('roi-body');
+  if (!body || typeof ROI_LEDGER === 'undefined') return;
+  const money = v => (v < 0 ? '\u2212£' : '£') + Math.abs(v).toFixed(2);
+  ROI_LEDGER.forEach(r => {
+    const net = r.returned - r.staked;
+    const roi = r.staked ? (net / r.staked * 100) : 0;
+    const cls = net >= 0 ? 'roi-pos' : 'roi-neg';
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td><strong>${escHtml(r.event)}</strong>${r.day ? ' <span style="color:var(--muted)">' + escHtml(r.day) + '</span>' : ''}</td>
+      <td class="num">£${r.staked.toFixed(2)}</td>
+      <td class="num">£${r.returned.toFixed(2)}</td>
+      <td class="num ${cls}">${money(net)}</td>
+      <td class="num ${cls}">${roi >= 0 ? '+' : '\u2212'}${Math.abs(roi).toFixed(1)}%</td>
+      <td style="font-size:0.76rem;color:var(--muted);line-height:1.45">${escHtml(r.note || '')}</td>`;
+    body.appendChild(tr);
+  });
+
+  const t = roiTotals(ROI_LEDGER);
+  const l = (typeof L15_LEDGER !== 'undefined') ? roiTotals(L15_LEDGER) : null;
+  const wins = ROI_LEDGER.filter(r => r.returned > r.staked).length;
+  const sum = document.getElementById('roi-summary');
+  if (sum) {
+    const c = (lbl, val, cls) => `<div class="roi-card"><div class="rc-lbl">${lbl}</div><div class="rc-val ${cls || ''}">${val}</div></div>`;
+    sum.innerHTML =
+      c('Total staked', '£' + t.staked.toFixed(2)) +
+      c('Net', (t.net < 0 ? '\u2212£' : '£') + Math.abs(t.net).toFixed(2), t.net >= 0 ? 'roi-pos' : 'roi-neg') +
+      c('Engine ROI', (t.roi >= 0 ? '+' : '\u2212') + Math.abs(t.roi).toFixed(1) + '%', t.roi >= 0 ? 'roi-pos' : 'roi-neg') +
+      c('Profitable events', wins + '/' + ROI_LEDGER.length) +
+      (l ? c('Lucky 15 ROI', (l.roi >= 0 ? '+' : '\u2212') + Math.abs(l.roi).toFixed(1) + '%', l.roi >= 0 ? 'roi-pos' : 'roi-neg') : '');
+  }
+  const foot = document.getElementById('roi-foot');
+  if (foot) {
+    foot.innerHTML = 'Engine singles only (50p e/w × NAP/NB/LONG). The <strong>Lucky 15 is tracked separately</strong> at 10p e/w: staked £' +
+      (l ? l.staked.toFixed(2) : '0.00') + ', returned £' + (l ? l.returned.toFixed(2) : '0.00') +
+      ', <span class="' + (l && l.net >= 0 ? 'roi-pos' : 'roi-neg') + '">' + (l ? (l.net < 0 ? '\u2212£' : '£') + Math.abs(l.net).toFixed(2) : '—') +
+      '</span>. Settled at card odds (price when selected). Non-runners void. ' +
+      'Where a festival was settled day-by-day, each day is listed separately.';
+  }
+}
+
 // ── Main build ────────────────────────────────────────────────
 function build() {
   // Update Guineas status badge dynamically
@@ -918,6 +997,7 @@ function build() {
   renderBreakdown('ra-body',      'raKey',   RA_PICKS,       RA_RESULTS,      '#a78bfa');
   renderBreakdown('np-body',      'npKey',   NP_PICKS,       NP_RESULTS,      '#2dd4bf');
   renderBreakdown('nmj-body',     'nmjKey',  NMJ_PICKS,      NMJ_RESULTS,     '#84cc16');
+  renderRoiLedger();
 
   // §9 trust band — total graded picks across the season
   const gradedEl = document.getElementById('picks-graded');

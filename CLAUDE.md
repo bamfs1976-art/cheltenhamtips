@@ -69,23 +69,100 @@ For each race, assess:
 9. Market moves (significant shortening = money talks; drifting = caution)
 10. Pace analysis (who leads, is there enough pace, front-runner bias)
 
+### Step 3b — PRE-FLIGHT GATE (mandatory, per race)
+
+**Do not price a race that fails this gate.** Added after Goodwood 2026,
+where six picks in three unverified races returned nothing and cost £9 —
+11.5% of that festival's entire turnover.
+
+Before making selections, confirm for the race:
+
+1. **Declared field** — the final runner list, not the entry list. Entry
+   lists routinely halve (Goodwood: 29→18, 16→8, 22→14, 10→5, 31→24).
+2. **Field size and EW terms** as they will actually settle.
+3. **Draw** for every runner (flat).
+
+If any of those is missing, the race prints:
+
+> **NO BET — declarations not confirmed.**
+
+with a one-line note on what's missing. Do not substitute entry-stage
+data, do not price picks "provisionally", and never carry an unverified
+pick into the Lucky 15. A skipped race costs nothing; an unverified race
+costs the full stake.
+
+**Also re-check on declarations:** horses get re-routed between races on
+the same card (Goodwood: Pershaada moved 14:25→15:35; Zavateri moved
+Day 1→Day 2; Room Fourteen was entered in the 17:55 but our card had it
+in the 17:20). Verify the race assignment, not just the name.
+
 ### Step 4 — Selections
 
 Three picks per race:
 
-- **NAP** — strongest selection, most confidence
-- **NB** — next best, solid each-way chance
-- **LONGSHOT** — value pick at bigger odds, must have a credible winning
-  or placing chance
+- **NAP** — strongest selection
+- **NB** — next best
+- **LONGSHOT** — conditional value pick (see the gate below)
 
 Selection reasoning: 1-2 sentences max per pick. Lead with the key angle
 (draw, form, trainer stats, course form).
 
+#### NAP vs NB — the NB is not the weaker slot
+
+Season record to date (10 festivals, ~190 picks each):
+
+| Slot | Picks | Wins | SR | Pts/pick |
+|---|---|---|---|---|
+| Our NB | 186 | 43 | **23%** | **0.90** |
+| Our NAP | 189 | 37 | 20% | 0.83 |
+| Our LONG | 133 | 9 | **7%** | **0.47** |
+
+The NB outperforms the NAP on both measures across a large sample. Treat
+the two as **equally weighted**, not as first and second choice. Reserve
+the NAP label for a genuine standout; if the card doesn't have one, say so
+rather than promoting the best of a weak set.
+
+#### LONG slot — conditional, not automatic
+
+At 7% strike rate and 0.47 pts/pick the LONG has been the engine's
+structural leak. **Only run a LONG when all three hold:**
+
+- **5+ places paid** (or 4+ in a field of 16+), AND
+- price **8/1 or bigger**, AND
+- a concrete positive signal — course/distance form, a significant
+  jockey booking, or money coming (see market moves below).
+
+If the race fails any of these, print **two picks only**. Do not fill the
+slot for the sake of it.
+
 ### Step 5 — Lucky 15
 
-Pick the 4 strongest NAPs from across the card. Avoid short-priced bankers
-(below 2/1) in the Lucky 15. Focus on value. 15 bets at 50p per line =
-£7.50.
+**Record to date: −47.7% (−£7.15 on £15 across five days).** Treat it as
+the highest-variance part of the card, not a default.
+
+- 4 legs from 4 different races, all at **4/1 or bigger**
+- **Never** include a pick below 2/1, an odds-on banker, or any pick from
+  a race that failed the pre-flight gate
+- **Never** promote a horse into the Lucky 15 on crossover count alone
+  (see Step 6) — this specific error cost the Goodwood Day 1 L15
+- If fewer than 4 qualifying legs exist, run a Lucky 15 with what
+  qualifies or skip it and say why
+
+### Step 5b — MARKET MOVE (record on every pick)
+
+**The one repeatable edge the 2026 season produced.** Every
+declaration-driven winner was a steamer: Hatteen 4/1→11/4, Noble Horizon
+8/1→4/1, Lexington Blitz 17/2→5/1, Ciarrai Abu into 100/30F, plus Flora
+Of Bermuda and Infraad.
+
+- Capture the **full price trail** from the racecard, not just the
+  current price.
+- Mark each pick **STEAM** (shortening), **DRIFT** (easing) or flat, and
+  show it inline.
+- A significant steamer is a **promotion signal**; a drifter on a pick
+  you were confident about is a **demotion signal** — say so in the note.
+- This is mechanical and checkable. Prefer it over interpretive angles
+  when the two conflict.
 
 ### Step 6 — External tipster integration
 
@@ -93,10 +170,34 @@ When the user provides external tipster picks:
 
 - Tag each tipster with a short code and a coloured badge (see registry)
 - Show badges inline next to matching horses
-- Show a **2x** crossover badge where two or more sources agree
+- Show a **2x / 3x / 4x** crossover badge where sources agree
 - Add a tipster summary box listing all external picks
 - Add a crossover signals box listing all 2+ source agreements
 - Show non-matching external picks as a small tipster row under the race
+
+#### Crossover is INFORMATION, never a promotion trigger
+
+**This is the most expensive lesson of the season.** At Goodwood 2026,
+**five multi-source picks were beaten**: Qirat (5x, unanimous across every
+column), Annastarzy (5x), Planet Seeker (3x), Flann Sunna (3x, unplaced
+favourite) and Jaan Ki Tukri (3x). Meanwhile the day that made money was
+won by **Al Aali at 14/1 — a price no external column tipped at all.**
+
+Rules:
+
+- **Never** move a pick up a slot, or into the Lucky 15, because of
+  source count. Annastarzy was promoted to NAP *and* into the L15 purely
+  on 5x agreement and was the unplaced favourite.
+- Consensus clusters on short-priced favourites, which is where value
+  isn't. Treat a high crossover count on an odds-on horse as a **banker
+  marker** (i.e. keep it out of the L15), not as confidence.
+- Do use crossovers to **surface dissent**: when 2+ independent sources
+  back a horse we don't hold, say so plainly and prominently. Goodwood
+  Day 2's 17:40 (Crimson Spirit, 2 sources) and Day 3's Gordon
+  (Enceladus, 3 sources + money) both won, and both were flagged on the
+  card before the off.
+- A tipster's **strike rate matters more than their agreement**. Keep the
+  season leaderboard in view: Frick 30%, Geraghty 29% vs Grimshaw 16%.
 
 #### Tipster code registry
 
@@ -282,16 +383,25 @@ After racing, when the user provides results:
 2. Always state the reasoning. "I like this because…" not "this wins."
 3. Draw position must appear on every flat racing pick.
 4. Course and distance winners get flagged (CD / C / D badges).
-5. Market moves matter. Note significant shortening or drifting.
+5. **Market moves are the primary mechanical signal.** Record the full
+   price trail and mark STEAM / DRIFT on every pick (see Step 5b).
 6. Fewer than 5 runners = limited EW value. Flag it.
 7. Short-priced favourites (below evens) are bankers, not Lucky 15
    selections.
-8. Tipster crossovers are signals, not certainties. Two sources agreeing
-   raises confidence; it doesn't guarantee anything.
+8. **Tipster crossovers are information, never a promotion trigger.**
+   Five multi-source picks were beaten at Goodwood 2026. Never move a
+   pick up a slot or into the Lucky 15 on source count (see Step 6).
 9. Always verify today's date and day of week before responding.
 10. UK date format (DD/MM/YYYY) and UK time (BST/GMT).
 11. Going is critical. If you don't know the going, search for it or ask.
 12. Weather affects going. Check the forecast for the racecourse.
+13. **No declarations, no bet.** A race without a confirmed final field
+    prints NO BET (see Step 3b). Never price entry-stage data.
+14. **The LONG slot is conditional** — 5+ places, 8/1+, and a concrete
+    signal, or print two picks only (see Step 4).
+15. **Report honestly against the record.** When a flagged warning proves
+    right and we bet the other side anyway, say so in the settlement
+    panel. The value of the archive is that it is truthful.
 
 ---
 
@@ -369,14 +479,31 @@ Add new course profiles as they're covered.
 
 ## 11. CHECKLIST BEFORE SHIPPING A NEW DAILY TIPS CARD
 
+**Gate first — every race must pass Step 3b or print NO BET:**
+
+- [ ] **Declared final field confirmed** for every race (not entry list)
+- [ ] **Field size + EW terms** confirmed as they will settle
+- [ ] **Draw confirmed** for every flat pick
+- [ ] **Race assignment verified** — no horse priced in the wrong race,
+      no horse that ran earlier in the week
+- [ ] Any race failing the above prints **NO BET** with the reason
+
+**Then:**
+
 - [ ] Course profile recalled and verified
 - [ ] Racecard extracted with draws, jockeys, trainers, form, weights,
       odds, EW terms
-- [ ] All NAP / NB / LONG picks have a stated angle
+- [ ] All picks have a stated angle
+- [ ] **Market move (STEAM / DRIFT) recorded on every pick**
+- [ ] **LONG slot passes the conditional gate** (5+ places, 8/1+,
+      concrete signal) — or the race runs two picks only
 - [ ] Draw badges shown on every flat-racing pick
 - [ ] CD / C / D flags applied where relevant
-- [ ] Lucky 15 picked, avoiding bankers below 2/1
+- [ ] Lucky 15: 4 legs, all 4/1+, none from a NO BET race, **none
+      promoted on crossover count**
 - [ ] External tipsters integrated with badges and crossover signals
+- [ ] **Dissent surfaced** — any horse with 2+ external sources that we
+      do not hold is called out prominently
 - [ ] Key signals section written (4-6 bullets)
 - [ ] Page registered in `FESTIVALS_2026[]` if new festival
 - [ ] `netlify.toml` redirect added if new file

@@ -1088,6 +1088,40 @@ const RECENT_WINS = [
 ];
 
 // ════════════════════════════════════════════════════════════════════════════
+// SETTLED ENGINE ROI LEDGER
+// Actual staked/returned per settled festival (or per day where a festival was
+// settled day-by-day). Engine singles only — 50p e/w × 3 picks × races.
+// The Lucky 15 is tracked separately because it is a different bet structure.
+// Source of truth = the settlement panels on each festival page.
+// ════════════════════════════════════════════════════════════════════════════
+const ROI_LEDGER = [
+  { event:'Chester May',        day:null,  staked:88.50, returned:130.09, note:'A Piece Of Heaven 7/1 won the Chester Cup; 15 winners + 13 places from 66 picks' },
+  { event:'Dante',              day:null,  staked:96.50, returned:61.51,  note:'14 winners from 63 picks; the Friday Yankee and Lucky 15 were the leaks' },
+  { event:'Epsom Derby',        day:null,  staked:63.00, returned:38.90,  note:'4 winners; Sparks Fly (NAP, L15 anchor) won; Benvenuto Cellini a stalls NR' },
+  { event:'Royal Ascot',        day:null,  staked:114.00, returned:87.16, note:'18 winners over 5 days; Day 3 the standout (+60%); odds-on bankers sank Day 5' },
+  { event:'Northumberland Plate',day:null, staked:72.00, returned:59.00,  note:'10 winners; Plate Day’s four winners were ALL our NBs' },
+  { event:'Newmarket July',     day:null,  staked:66.00, returned:53.89,  note:'14 winners; Blue Bolt (NB) won the Falmouth G1 at 85/40' },
+  { event:'Goodwood',           day:'Day 1', staked:24.00, returned:26.29, note:'Al Aali 14/1 (LONG) won — no external column tipped it; Goodwood Cup 1-2-3 sweep' },
+  { event:'Goodwood',           day:'Day 2', staked:21.00, returned:14.92, note:'4 winners but 3 were short; the unverified 17:40 cost £3' },
+  { event:'Goodwood',           day:'Day 3', staked:24.00, returned:11.40, note:'Worst day: 2 winners; two unverified races cost £6; Enceladus 3x dissent won' },
+];
+
+// Lucky 15 record (10p e/w = £3/day) — tracked separately
+const L15_LEDGER = [
+  { event:'Newmarket July Day 1', staked:3.00, returned:0.89 },
+  { event:'Newmarket July Day 2', staked:3.00, returned:3.50 },
+  { event:'Goodwood Day 1',       staked:3.00, returned:0.18 },
+  { event:'Goodwood Day 2',       staked:3.00, returned:1.97 },
+  { event:'Goodwood Day 3',       staked:3.00, returned:1.31 },
+];
+
+function roiTotals(rows) {
+  const s = rows.reduce((n,r)=>n+r.staked,0);
+  const r = rows.reduce((n,x)=>n+x.returned,0);
+  return { staked:s, returned:r, net:r-s, roi: s>0 ? ((r-s)/s*100) : 0 };
+}
+
+// ════════════════════════════════════════════════════════════════════════════
 // COMPUTED SEASON SCORES  (call once, use everywhere)
 // ════════════════════════════════════════════════════════════════════════════
 function computeSeasonScores() {
