@@ -91,6 +91,19 @@ data, do not price picks "provisionally", and never carry an unverified
 pick into the Lucky 15. A skipped race costs nothing; an unverified race
 costs the full stake.
 
+**Re-check the place count at the off, not just at declaration.** Added
+after Goodwood Day 5. The 17:20 cleared the LONG gate on declarations at
+18 runners paying 5 places; three withdrawals took the field to 15 and
+it settled at **4 places**, below the threshold the gate requires. The
+longshot ran under a condition that no longer held.
+
+- Enhanced place terms are conditional on runner counts (Sky Bet:
+  5 places at 16+, 4 places at 8+). Withdrawals can drop a race below
+  the band **after** you have priced it.
+- If a race is within two runners of a place-band boundary, say so on
+  the card and treat the LONG as provisional.
+- On settlement, always state the place count that actually applied.
+
 **Also re-check on declarations:** horses get re-routed between races on
 the same card (Goodwood: Pershaada moved 14:25→15:35; Zavateri moved
 Day 1→Day 2; Room Fourteen was entered in the 17:55 but our card had it
@@ -137,7 +150,7 @@ slot for the sake of it.
 
 ### Step 5 — Lucky 15
 
-**Record to date: −47.7% (−£7.15 on £15 across five days).** Treat it as
+**Record to date: −58.8% (−£12.35 on £21 across seven days).** Treat it as
 the highest-variance part of the card, not a default.
 
 - 4 legs from 4 different races, all at **4/1 or bigger**
@@ -191,6 +204,15 @@ Rules:
 - Consensus clusters on short-priced favourites, which is where value
   isn't. Treat a high crossover count on an odds-on horse as a **banker
   marker** (i.e. keep it out of the L15), not as confidence.
+- **A 3x+ horse under 3/1 should not be the NAP.** Goodwood 2026 ran
+  nine multi-source picks across five days and **not one won**. The
+  existing rule stops crossover *promoting* a pick; it does not stop us
+  independently arriving at the same favourite and labelling it NAP,
+  which is what kept happening (Al Hudaiba, Qirat, Annastarzy, Indalo,
+  Al Aasy, Waardah, Al Wathba). If our own analysis lands on a short
+  favourite that 3+ columns also hold, run it as the **NB** and give the
+  NAP to a pick the consensus does not share — or state plainly on the
+  card why the standout justifies the slot.
 - Do use crossovers to **surface dissent**: when 2+ independent sources
   back a horse we don't hold, say so plainly and prominently. Goodwood
   Day 2's 17:40 (Crimson Spirit, 2 sources) and Day 3's Gordon
@@ -402,6 +424,14 @@ After racing, when the user provides results:
 15. **Report honestly against the record.** When a flagged warning proves
     right and we bet the other side anyway, say so in the settlement
     panel. The value of the archive is that it is truthful.
+16. **Re-check place terms at the off.** Enhanced EW places depend on
+    runner counts and withdrawals can drop a race below the band after
+    it has been priced (see Step 3b).
+17. **Market move is the primary signal, not the only one.** At Goodwood
+    Day 5 a steamer (Waardah 2/1→7/4) was the beaten favourite while a
+    drifter we dismissed (Santorini Star 11/2→6/1) ran second. Record
+    the move, weight it, but do not treat a drift as disqualifying when
+    the form case is independently strong.
 
 ---
 
@@ -495,6 +525,8 @@ Add new course profiles as they're covered.
       odds, EW terms
 - [ ] All picks have a stated angle
 - [ ] **Market move (STEAM / DRIFT) recorded on every pick**
+- [ ] **Place band checked** — race not within two runners of dropping
+      a place; LONG flagged provisional if it is
 - [ ] **LONG slot passes the conditional gate** (5+ places, 8/1+,
       concrete signal) — or the race runs two picks only
 - [ ] Draw badges shown on every flat-racing pick

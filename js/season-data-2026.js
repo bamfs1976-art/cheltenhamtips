@@ -1104,6 +1104,8 @@ const ROI_LEDGER = [
   { event:'Goodwood',           day:'Day 1', staked:24.00, returned:26.29, note:'Al Aali 14/1 (LONG) won — no external column tipped it; Goodwood Cup 1-2-3 sweep' },
   { event:'Goodwood',           day:'Day 2', staked:21.00, returned:14.92, note:'4 winners but 3 were short; the unverified 17:40 cost £3' },
   { event:'Goodwood',           day:'Day 3', staked:24.00, returned:11.40, note:'Worst day: 2 winners; two unverified races cost £6; Enceladus 3x dissent won' },
+  { event:'Goodwood',           day:'Day 4', staked:24.00, returned:25.41, note:'Best day since Tuesday: both LONGs won (Defiantly 11/4, Shayem 17/2); Indalo the 4x pick was the unplaced favourite; £3 returned on 3 non-runners' },
+  { event:'Goodwood',           day:'Day 5', staked:16.00, returned:7.42,  note:'First card under the revised rules. Crest of Fire 7/2 the only winner; all four consensus picks failed; 5 finishing positions unpublished, settled as unplaced' },
 ];
 
 // Lucky 15 record (10p e/w = £3/day) — tracked separately
@@ -1113,6 +1115,8 @@ const L15_LEDGER = [
   { event:'Goodwood Day 1',       staked:3.00, returned:0.18 },
   { event:'Goodwood Day 2',       staked:3.00, returned:1.97 },
   { event:'Goodwood Day 3',       staked:3.00, returned:1.31 },
+  { event:'Goodwood Day 4',       staked:3.00, returned:0.58 },
+  { event:'Goodwood Day 5',       staked:3.00, returned:0.22 },
 ];
 
 function roiTotals(rows) {
