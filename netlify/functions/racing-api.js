@@ -6,26 +6,52 @@
 
 const RACING_API_BASE = 'https://api.theracingapi.com';
 
+// Endpoints on the FREE plan. Verified against the published OpenAPI spec —
+// /v1/racecards/today and /v1/racecards/tomorrow do not exist; the free
+// racecard endpoint is /v1/racecards/free with a `day=today|tomorrow` param.
 const ALLOWED_ENDPOINTS = [
   '/v1/racecards/free',
-  '/v1/racecards/today',
-  '/v1/racecards/tomorrow',
-  '/v1/results/today',
-  '/v1/results/',
+  '/v1/results/today/free',
+  '/v1/courses/regions',
   '/v1/courses',
-  '/v1/horses/search',
-  '/v1/trainers/search',
-  '/v1/jockeys/search',
 ];
 
-const CORS_HEADERS = {
-  'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Methods': 'GET, OPTIONS',
-  'Access-Control-Allow-Headers': 'Content-Type',
+// Endpoints that exist but need a paid plan. Kept here so the 403 explains
+// itself rather than surfacing an opaque upstream error.
+const PAID_ENDPOINTS = {
+  '/v1/racecards/basic': 'Basic',
+  '/v1/racecards/summaries': 'Basic',
+  '/v1/results/today': 'Basic',
+  '/v1/results': 'Standard',
+  '/v1/horses/search': 'Standard',
+  '/v1/trainers/search': 'Standard',
+  '/v1/jockeys/search': 'Standard',
+  '/v1/sires/search': 'Standard',
+  '/v1/racecards/pro': 'Pro',
+  '/v1/odds/': 'Pro',
 };
+
+// The upstream call spends our API quota, so the proxy is same-origin only.
+// ALLOWED_ORIGIN can widen this for local development.
+const ALLOWED_ORIGIN = process.env.ALLOWED_ORIGIN || 'https://cheltenhamtips.netlify.app';
+
+function corsHeaders(origin) {
+  const ok = origin === ALLOWED_ORIGIN || /^http:\/\/localhost(:\d+)?$/.test(origin || '');
+  return {
+    'Access-Control-Allow-Origin': ok ? origin : ALLOWED_ORIGIN,
+    'Access-Control-Allow-Methods': 'GET, OPTIONS',
+    'Access-Control-Allow-Headers': 'Content-Type',
+    Vary: 'Origin',
+  };
+}
 
 function isAllowed(endpoint) {
   return ALLOWED_ENDPOINTS.some((allowed) => endpoint.startsWith(allowed));
+}
+
+function paidPlanFor(endpoint) {
+  const hit = Object.keys(PAID_ENDPOINTS).find((p) => endpoint.startsWith(p));
+  return hit ? PAID_ENDPOINTS[hit] : null;
 }
 
 function buildUpstreamUrl(endpoint, queryParams) {
@@ -39,6 +65,9 @@ function buildUpstreamUrl(endpoint, queryParams) {
 }
 
 exports.handler = async function (event) {
+  const origin = (event.headers && (event.headers.origin || event.headers.Origin)) || '';
+  const CORS_HEADERS = corsHeaders(origin);
+
   // Handle CORS preflight
   if (event.httpMethod === 'OPTIONS') {
     return {
@@ -73,10 +102,17 @@ exports.handler = async function (event) {
 
   // Whitelist check
   if (!isAllowed(endpoint)) {
+    const plan = paidPlanFor(endpoint);
     return {
       statusCode: 403,
       headers: { ...CORS_HEADERS, 'Content-Type': 'application/json' },
-      body: JSON.stringify({ error: `Endpoint not permitted: ${endpoint}` }),
+      body: JSON.stringify({
+        error: `Endpoint not permitted: ${endpoint}`,
+        reason: plan
+          ? `${endpoint} requires the ${plan} plan. Add it to ALLOWED_ENDPOINTS once the subscription covers it.`
+          : 'Not a known Racing API endpoint on the free plan.',
+        allowed: ALLOWED_ENDPOINTS,
+      }),
     };
   }
 

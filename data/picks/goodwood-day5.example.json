@@ -1,0 +1,51 @@
+{
+  "event": "Goodwood Day 5",
+  "date": "2026-08-01",
+  "races": [
+    {
+      "off": "15:35",
+      "ewFrac": 5,
+      "places": 7,
+      "picks": [
+        {
+          "type": "NAP",
+          "horse": "Far Above Dream",
+          "odds": "11/2"
+        },
+        {
+          "type": "NB",
+          "horse": "Two Tribes",
+          "odds": "8/1"
+        },
+        {
+          "type": "LONG",
+          "horse": "Get It",
+          "odds": "12/1"
+        }
+      ]
+    },
+    {
+      "off": "17:20",
+      "ewFrac": 5,
+      "declaredPlaces": 5,
+      "picks": [
+        {
+          "type": "NAP",
+          "horse": "Crest Of Fire",
+          "odds": "7/2"
+        },
+        {
+          "type": "NB",
+          "horse": "Spell Master",
+          "odds": "15/2"
+        },
+        {
+          "type": "LONG",
+          "horse": "Thunder Wonder",
+          "odds": "9/1"
+        }
+      ]
+    }
+  ],
+  "_note": "Example picks file. Omit \"places\" to derive the place count from what actually ran; set \"declaredPlaces\" to what the card was priced at so a band change is reported."
+}
