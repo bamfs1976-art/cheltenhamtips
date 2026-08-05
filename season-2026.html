@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>2025/26 Season Leaderboard | Festival Form Book</title>
-<meta name="description" content="Combined tipster standings across Cheltenham, Grand National, Scottish Grand National, Guineas, Chester, Dante, Epsom Derby, Royal Ascot the Northumberland Plate and the Newmarket July Festival 2026.">
+<meta name="description" content="Combined tipster standings across Cheltenham, Grand National, Scottish Grand National, Guineas, Chester, Dante, Epsom Derby, Royal Ascot the Northumberland Plate, the Newmarket July Festival and Glorious Goodwood 2026.">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self' 'unsafe-inline';">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -193,6 +193,7 @@
   .event-hd.ev-royal { background: rgba(167,139,250,0.07);border-left-color: #a78bfa; }
   .event-hd.ev-np { background: rgba(45,212,191,0.07);border-left-color: #2dd4bf; }
   .event-hd.ev-nmj { background: rgba(132,204,22,0.07);border-left-color: #84cc16; }
+  .event-hd.ev-gw  { background: rgba(14,165,233,0.07);border-left-color: #0ea5e9; }
   .event-hd.ev-roi { background: rgba(245,200,66,0.07);border-left-color: var(--gold); }
   .roi-pos { color: #4ade80; font-weight: 700; font-variant-numeric: tabular-nums; }
   .roi-neg { color: #f87171; font-weight: 700; font-variant-numeric: tabular-nums; }
@@ -320,6 +321,7 @@
   .pill-royal { background: rgba(167,139,250,0.14);color: #c4b5fd; border: 1px solid rgba(167,139,250,0.32); }
   .pill-np { background: rgba(45,212,191,0.14);color: #5eead4; border: 1px solid rgba(45,212,191,0.32); }
   .pill-nmj { background: rgba(132,204,22,0.14);color: #bef264; border: 1px solid rgba(132,204,22,0.32); }
+  .pill-gw  { background: rgba(14,165,233,0.16);color: #7dd3fc; border: 1px solid rgba(14,165,233,0.35); }
   .pill-none  { background: rgba(255,255,255,0.04);color: var(--muted); border: 1px solid rgba(255,255,255,0.06); }
 
   .total-pts {
@@ -463,7 +465,7 @@
   <div class="header-inner">
     <div class="header-badge">2025 / 26 National Hunt Season</div>
     <h1>Tipster <span class="gold">Season Leaderboard</span></h1>
-    <p class="header-sub">Cheltenham · Grand National · Scottish GN · Guineas · Chester · Dante · Epsom · Royal Ascot · Northumberland Plate · Newmarket July — combined standings</p>
+    <p class="header-sub">Cheltenham · Grand National · Scottish GN · Guineas · Chester · Dante · Epsom · Royal Ascot · Northumberland Plate · Newmarket July · Goodwood — combined standings</p>
     <nav class="festival-nav" aria-label="Festival pages">
       <a href="cheltenham-2026.html">🏆 Cheltenham 2026</a>
       <a href="grand-national-2026.html">🏇 Grand National 2026</a>
@@ -475,6 +477,7 @@
       <a href="royal-ascot-2026.html">🎩 Royal Ascot 2026</a>
       <a href="northumberland-plate-2026.html">⚓ Northumberland Plate 2026</a>
       <a href="newmarket-july-2026.html">☀️ Newmarket July 2026</a>
+      <a href="goodwood-2026.html">🏇 Goodwood 2026</a>
       <a href="#roi-ledger">💷 Settled ROI ledger</a>
     </nav>
   </div>
@@ -493,6 +496,7 @@
     <span class="s-dot"><span class="dot" style="background:#a78bfa" aria-hidden="true"></span>Royal Ascot — complete (35 races, 5 days)</span>
     <span class="s-dot"><span class="dot" style="background:#2dd4bf" aria-hidden="true"></span>Northumberland Plate — complete (22 races, 3 days)</span>
     <span class="s-dot"><span class="dot" style="background:#84cc16" aria-hidden="true"></span>Newmarket July — complete (22 races, 3 days)</span>
+    <span class="s-dot"><span class="dot" style="background:#0ea5e9" aria-hidden="true"></span>Goodwood — complete (38 races, 5 days)</span>
     <span class="scoring-note" id="methodology" style="scroll-margin-top:70px">Scoring: Win = 3pts · Placed = 1pt · Miss = 0pts</span>
   </div>
 </div>
@@ -528,7 +532,8 @@
             <th scope="col" class="num sortable" data-col="9" aria-sort="none">Royal Ascot <span class="fmb-sort" aria-hidden="true">↕</span></th>
             <th scope="col" class="num sortable" data-col="10" aria-sort="none">N’land Plate <span class="fmb-sort" aria-hidden="true">↕</span></th>
             <th scope="col" class="num sortable" data-col="11" aria-sort="none">Nmkt July <span class="fmb-sort" aria-hidden="true">↕</span></th>
-            <th scope="col" class="num sortable" data-col="12" aria-sort="descending">Total <span class="fmb-sort" aria-hidden="true">↕</span></th>
+            <th scope="col" class="num sortable" data-col="12" aria-sort="none">Goodwood <span class="fmb-sort" aria-hidden="true">↕</span></th>
+            <th scope="col" class="num sortable" data-col="13" aria-sort="descending">Total <span class="fmb-sort" aria-hidden="true">↕</span></th>
             <th scope="col" class="num">Trend</th>
           </tr>
         </thead>
@@ -836,6 +841,41 @@
     </div>
     <p class="roi-note" id="roi-foot" style="margin:10px 0 30px"></p>
 
+    <!-- ── Goodwood breakdown ── -->
+    <div class="event-hd ev-gw" id="goodwood-section">
+      <span class="ev-icon" aria-hidden="true">🏇</span>
+      <div>
+        <div class="ev-title" style="color:#7dd3fc">Glorious Goodwood 2026 · complete</div>
+        <div class="ev-meta">28 July – 1 August 2026 · Goodwood · 38 races over 5 days · Evening Saigon (16/1) took the Stewards’ Cup; Al Aali won the opener at 14/1 as our LONG · engine ROI −27.7% (−£34.30/£124) · <strong style="color:#f0abfc">Racing Post Spotlight was the meeting’s best column</strong> (11 wins, 30% SR)</div>
+      </div>
+      <span class="ev-badge" aria-label="Status: Concluded" style="background:rgba(161,161,170,0.18);border:1px solid rgba(161,161,170,0.4);color:#d4d4d8">Concluded</span>
+    </div>
+    <div class="tbl-wrap" role="region" aria-label="Glorious Goodwood 2026 tipster scores">
+      <table class="bd-table">
+        <thead>
+          <tr>
+            <th scope="col" style="width:36px;">#</th>
+            <th scope="col">Tipster</th>
+            <th scope="col" class="num">W</th>
+            <th scope="col" class="num">P</th>
+            <th scope="col" class="num">M</th>
+            <th scope="col" class="num">Pts</th>
+            <th scope="col" class="num">Eff</th>
+            <th scope="col" style="width:90px;">Score</th>
+          </tr>
+        </thead>
+        <tbody id="gw-body"></tbody>
+      </table>
+    </div>
+    <p class="roi-note" style="margin:10px 0 30px">
+      <strong>Coverage note.</strong> Winners are confirmed for all 38 races. Second and third are published in full for
+      Days 4–5; Days 1–3 carry gaps where only the winner and one placed horse were recorded at the time —
+      <strong>55 of 76 place slots are known (72%)</strong>. Unknown places are stored as null and never guessed, so
+      <strong>wins and strike rate are exact while place counts are a floor</strong>. External columns are mapped to a race
+      only where the race was stated or the horse is unambiguously identifiable from our own card, which is why the
+      longshot columns (Raceolly, HRN BIG) carry fewer picks here than they published.
+    </p>
+
     <!-- ── Newmarket July breakdown ── -->
     <div class="event-hd ev-nmj" id="newmarket-july-section">
       <span class="ev-icon" aria-hidden="true">☀️</span>
@@ -997,6 +1037,7 @@ function build() {
   renderBreakdown('ra-body',      'raKey',   RA_PICKS,       RA_RESULTS,      '#a78bfa');
   renderBreakdown('np-body',      'npKey',   NP_PICKS,       NP_RESULTS,      '#2dd4bf');
   renderBreakdown('nmj-body',     'nmjKey',  NMJ_PICKS,      NMJ_RESULTS,     '#84cc16');
+  renderBreakdown('gw-body',      'gwKey',   GW_PICKS,       GW_RESULTS,      '#0ea5e9');
   renderRoiLedger();
 
   // §9 trust band — total graded picks across the season
@@ -1033,7 +1074,7 @@ function updateGuineasBadge() {
 // ── Season leaderboard ────────────────────────────────────────
 function renderSeasonTable(scores) {
   const body = document.getElementById('season-body');
-  const CHRONO = ['cSc','gnSc','sgnSc','guinSc','chSc','dSc','eSc','raSc','npSc','nmjSc'];
+  const CHRONO = ['cSc','gnSc','sgnSc','guinSc','chSc','dSc','eSc','raSc','npSc','nmjSc','gwSc'];
   scores.forEach((t, i) => {
     const rank  = i + 1;
     const rankCls = rank === 1 ? 'rank-1' : rank === 2 ? 'rank-2' : rank === 3 ? 'rank-3' : '';
@@ -1054,6 +1095,7 @@ function renderSeasonTable(scores) {
       t.raKey   ? 'Royal Ascot' : null,
       t.npKey   ? 'Northumberland Plate' : null,
       t.nmjKey  ? 'Newmarket July' : null,
+      t.gwKey   ? 'Goodwood' : null,
     ].filter(Boolean).join(' · ');
 
     const cCell   = t.cSc   ? `<span class="pill pill-chelt">${t.cSc.pts}pts</span>`     : `<span class="pill pill-none">—</span>`;
@@ -1066,6 +1108,7 @@ function renderSeasonTable(scores) {
     const raCell  = t.raSc  ? `<span class="pill pill-royal">${t.raSc.pts}pts</span>`    : `<span class="pill pill-none">—</span>`;
     const npCell  = t.npSc  ? `<span class="pill pill-np">${t.npSc.pts}pts</span>`       : `<span class="pill pill-none">—</span>`;
     const nmjCell = t.nmjSc ? `<span class="pill pill-nmj">${t.nmjSc.pts}pts</span>`     : `<span class="pill pill-none">—</span>`;
+    const gwCell  = t.gwSc  ? `<span class="pill pill-gw">${t.gwSc.pts}pts</span>`       : `<span class="pill pill-none">—</span>`;
 
     const v = k => (t[k] ? t[k].pts : -1); // -1 sorts non-participants below 0-pt entries
     const tr = document.createElement('tr');
@@ -1094,6 +1137,7 @@ function renderSeasonTable(scores) {
       <td class="num" data-val="${v('raSc')}">${raCell}</td>
       <td class="num" data-val="${v('npSc')}">${npCell}</td>
       <td class="num" data-val="${v('nmjSc')}">${nmjCell}</td>
+      <td class="num" data-val="${v('gwSc')}">${gwCell}</td>
       <td class="num" data-val="${t.total}">
         <span class="total-pts" aria-label="${t.total} points total">${t.total}</span>
       </td>

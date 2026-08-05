@@ -122,13 +122,13 @@ Selection reasoning: 1-2 sentences max per pick. Lead with the key angle
 
 #### NAP vs NB — the NB is not the weaker slot
 
-Season record to date (10 festivals, ~190 picks each):
+Season record to date (11 festivals, through Glorious Goodwood):
 
 | Slot | Picks | Wins | SR | Pts/pick |
 |---|---|---|---|---|
-| Our NB | 186 | 43 | **23%** | **0.90** |
-| Our NAP | 189 | 37 | 20% | 0.83 |
-| Our LONG | 133 | 9 | **7%** | **0.47** |
+| Our NB | 224 | 49 | **22%** | **0.89** |
+| Our NAP | 227 | 43 | 19% | 0.82 |
+| Our LONG | 165 | 12 | **7%** | **0.47** |
 
 The NB outperforms the NAP on both measures across a large sample. Treat
 the two as **equally weighted**, not as first and second choice. Reserve
