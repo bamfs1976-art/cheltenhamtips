@@ -45,6 +45,29 @@ Rate limit is 1 request/second; the client throttles and backs off on 429.
 
 ---
 
+## 2b. Self-test — run this first
+
+```sh
+node scripts/api-selftest.mjs                 # is it wired up at all?
+node scripts/api-selftest.mjs --course york   # Ebor readiness
+```
+
+It checks credentials, auth, and then the **shapes** the engine actually
+depends on: `runner.draw` on racecards (the flat draw rule), `runner.position`
+on results (settlement beyond the first three), `race.off` (the race key), and
+that the archive directory is writable. Exits 0 only if all of them are present.
+
+Two results are normal rather than failures:
+
+- **0 racecards** — there is no GB racing today, or the card is not up yet.
+- **0 results** — nothing has been settled yet today.
+
+Note that **Netlify environment variables do not reach a local shell.** Setting
+them in the Netlify dashboard makes the deployed proxy work; the CLI scripts
+need them exported locally as well.
+
+---
+
 ## 3. Pre-flight gate
 
 Implements CLAUDE.md Step 3b against declared fields instead of transcribed
