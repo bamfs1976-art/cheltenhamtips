@@ -23,10 +23,20 @@ const RACING_API_FIELDS = {
   race_id:      { ours: 'raceId',      where: 'not stored — we key races by "HH:MM-dayIndex"' },
   course:       { ours: 'course',      where: 'page title / festival name' },
   date:         { ours: 'date',        where: 'FESTIVALS_2026[].dates' },
-  off:          { ours: 'off',         where: 'race key prefix, e.g. "15:35"' },
+  // NOTE: the FREE plan (RacecardBasic) uses off_time / distance_f / race_class /
+  // sex_restriction / field_size, while the Pro racecard and the published
+  // examples use off / dist_f / class / sex_rest. Verified against the OpenAPI
+  // spec 2026-08-05. Use the resolvers in scripts/lib/racing-api.mjs, which
+  // accept either spelling, rather than reading these keys directly.
+  off_time:     { ours: 'off',         where: 'race key prefix, e.g. "15:35" (free plan)' },
+  off:          { ours: 'off',         where: 'race key prefix (pro plan / examples)' },
   race_name:    { ours: 'raceName',    where: 'race-hd text' },
-  dist_f:       { ours: 'distanceF',   where: 'race-hd text, unparsed' },
-  class:        { ours: 'raceClass',   where: 'race-hd text, unparsed' },
+  distance_f:   { ours: 'distanceF',   where: 'race-hd text, unparsed (free plan)' },
+  dist_f:       { ours: 'distanceF',   where: 'race-hd text, unparsed (pro plan)' },
+  race_class:   { ours: 'raceClass',   where: 'race-hd text, unparsed (free plan)' },
+  class:        { ours: 'raceClass',   where: 'race-hd text, unparsed (pro plan)' },
+  field_size:   { ours: 'fieldSize',   where: 'race-hd runner count — authoritative on the free plan' },
+  race_status:  { ours: 'raceStatus',  where: '— declaration status, not yet used by the gate' },
   type:         { ours: 'code',        where: 'implicit — flat vs jumps decides the draw rule' },
   going:        { ours: 'going',       where: 'results panel prose' },
   pattern:      { ours: 'pattern',     where: 'race-hd text (Group 1/2/3, Listed)' },
@@ -109,7 +119,7 @@ function normaliseApiResult(apiRace) {
     sixth: at(5),
     seventh: at(6),
     raceId: apiRace.race_id ?? null,
-    off: apiRace.off ?? null,
+    off: apiRace.off_time ?? apiRace.off ?? null,
     going: apiRace.going ?? null,
     ranCount: ran.length,
     nonRunners,
@@ -145,7 +155,9 @@ function positionOf(result, horse) {
  * Keeps API-sourced results droppable straight into the existing *_RESULTS maps.
  */
 function raceKeyFor(apiRace, dayIndex) {
-  const off = String(apiRace.off ?? '').trim();
+  const raw = apiRace.off_time ?? apiRace.off ?? apiRace.off_dt ?? '';
+  const m = String(raw).match(/(\d{1,2}):(\d{2})/);
+  const off = m ? `${m[1].padStart(2, '0')}:${m[2]}` : String(raw).trim();
   return `${off}-${dayIndex}`;
 }
 

@@ -16,7 +16,7 @@
 // data/racing-api/ so the history accumulates from here on.
 
 import fs from 'node:fs/promises';
-import { resultsToday, archive, readArchive, sameHorse, ukDate } from './lib/racing-api.mjs';
+import { resultsToday, archive, sameHorse, ukDate, raceOff, raceDistanceF, raceGoing } from './lib/racing-api.mjs';
 
 const STAKE_DEFAULT = 0.5; // 50p each-way per engine single
 
@@ -60,11 +60,11 @@ function normaliseRace(race) {
   ran.sort((a, b) => Number(a.position) - Number(b.position));
   return {
     raceId: race.race_id,
-    off: race.off ?? '??:??',
+    off: raceOff(race) ?? '??:??',
     course: race.course,
     name: race.race_name,
-    going: race.going,
-    dist: race.dist_f ? `${race.dist_f}f` : null,
+    going: raceGoing(race),
+    dist: raceDistanceF(race) ? `${raceDistanceF(race)}f` : null,
     ranCount: ran.length,
     order: ran,
     nonRunners,

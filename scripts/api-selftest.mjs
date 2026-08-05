@@ -3,11 +3,12 @@
 // gate-check.mjs and settle.mjs depend on.
 //
 //   node scripts/api-selftest.mjs
-//   node scripts/api-selftest.mjs --course york      # Ebor readiness
+//   node scripts/api-selftest.mjs --course york                 # Ebor readiness
+//   node scripts/api-selftest.mjs --course york --day tomorrow  # tomorrow's card
 //
 // Exits 0 if everything the engine needs is present, 1 otherwise.
 
-import { get, racecards, resultsToday, courses, archive, ukDate } from './lib/racing-api.mjs';
+import { get, racecards, resultsToday, courses, archive, ukDate, raceOff, raceDistanceF, raceClass, raceFieldSize } from './lib/racing-api.mjs';
 
 const ok = (s) => `\x1b[32m✓\x1b[0m ${s}`;
 const bad = (s) => `\x1b[31m✗\x1b[0m ${s}`;
@@ -44,6 +45,13 @@ async function main() {
   const argv = process.argv.slice(2);
   const i = argv.indexOf('--course');
   const course = i >= 0 ? argv[i + 1] : null;
+  const j = argv.indexOf('--day');
+  const day = j >= 0 && argv[j + 1] ? argv[j + 1] : 'today';
+  if (!['today', 'tomorrow'].includes(day)) {
+    console.log(bad(`--day must be "today" or "tomorrow" on the free plan (got "${day}")`));
+    process.exitCode = 1;
+    return;
+  }
 
   console.log(`\nThe Racing API — self-test · ${ukDate()}\n`);
 
@@ -80,12 +88,12 @@ async function main() {
   }
 
   // 4. Racecards — what the pre-flight gate needs
-  const rc = await step('fetching racecards (today)', () => racecards({ day: 'today' }));
+  const rc = await step(`fetching racecards (${day})`, () => racecards({ day }));
   const cards = first(rc, 'racecards', 'data');
   if (cards.length === 0) {
-    console.log(warn('racecards/free returned 0 races for today — check again on a race day'));
+    console.log(warn(`racecards/free returned 0 races for ${day} — check again on a race day`));
   } else {
-    console.log(ok(`racecards/free returned ${cards.length} races today`));
+    console.log(ok(`racecards/free returned ${cards.length} races ${day}`));
     const withRunners = cards.filter((r) => Array.isArray(r.runners) && r.runners.length);
     check(withRunners.length > 0, `${withRunners.length} races carry a declared runner list`,
           'no race carried a runners array — the gate cannot run');
@@ -93,21 +101,31 @@ async function main() {
     if (sample) {
       const r0 = sample.runners[0];
       const drawn = sample.runners.filter((r) => r.draw !== undefined && r.draw !== null && r.draw !== '');
-      console.log(dim(`   sample: ${sample.off ?? '?'} ${sample.course ?? '?'} — ${sample.race_name ?? '?'} (${sample.runners.length} runners)`));
+      const off = raceOff(sample);
+      console.log(dim(`   sample: ${off ?? '?'} ${sample.course ?? '?'} — ${sample.race_name ?? '?'} (${sample.runners.length} runners)`));
       check(r0.horse !== undefined, 'runner.horse present', 'runner.horse MISSING');
       check(drawn.length > 0 || String(sample.type ?? '').includes('jump'),
             `runner.draw present on ${drawn.length}/${sample.runners.length} runners`,
             'runner.draw MISSING — the flat draw rule cannot be enforced');
-      check(sample.off !== undefined, 'race.off present (used as the race key)', 'race.off MISSING');
-      ['class', 'type', 'going', 'dist_f'].forEach((k) => {
-        if (sample[k] === undefined) console.log(warn(`race.${k} absent — card metadata will be thinner`));
-      });
+      check(off !== null, `race off time resolved as "${off}" (used as the race key)`,
+            'off time MISSING — races cannot be keyed');
+      check(raceFieldSize(sample) > 0, `field size ${raceFieldSize(sample)}`, 'field size MISSING');
+      if (raceDistanceF(sample) === null) console.log(warn('race distance absent — card metadata thinner'));
+      if (raceClass(sample) === null) console.log(warn('race class absent — card metadata thinner'));
+      if (argv.includes('--keys')) {
+        console.log(dim(`   race keys:   ${Object.keys(sample).join(', ')}`));
+        console.log(dim(`   runner keys: ${Object.keys(r0).join(', ')}`));
+      }
     }
     if (course) {
       const mine = cards.filter((r) => String(r.course ?? '').toLowerCase().includes(course.toLowerCase()));
-      console.log(mine.length
-        ? ok(`${mine.length} races at "${course}" today`)
-        : dim(`   no racing at "${course}" today — expected unless the meeting is on`));
+      if (mine.length) {
+        console.log(ok(`${mine.length} races at "${course}" ${day}`));
+        mine.sort((a, b) => String(raceOff(a)).localeCompare(String(raceOff(b))))
+          .forEach((r) => console.log(dim(`     ${raceOff(r) ?? '??:??'}  ${r.race_name ?? '?'}  (${raceFieldSize(r)} runners)`)));
+      } else {
+        console.log(dim(`   no racing at "${course}" ${day} — expected unless the meeting is on`));
+      }
     }
   }
 
@@ -121,7 +139,7 @@ async function main() {
     const sample = results.find((r) => Array.isArray(r.runners) && r.runners.length);
     if (sample) {
       const positioned = sample.runners.filter((r) => Number.isFinite(Number(r.position)));
-      console.log(dim(`   sample: ${sample.off ?? '?'} ${sample.course ?? '?'} — ${sample.runners.length} runners`));
+      console.log(dim(`   sample: ${raceOff(sample) ?? '?'} ${sample.course ?? '?'} — ${sample.runners.length} runners`));
       check(positioned.length > 0,
         `runner.position present on ${positioned.length}/${sample.runners.length} runners ` +
           `— full finishing order, not just the first three`,
@@ -140,8 +158,8 @@ async function main() {
   console.log('');
   if (failures === 0) {
     console.log(ok('\x1b[1mAll checks passed — the engine can run off the API.\x1b[0m'));
-    console.log(dim('   Pre-flight gate:  node scripts/gate-check.mjs --course york --day tomorrow'));
-    console.log(dim('   Settlement:       node scripts/settle.mjs --course york'));
+    console.log(dim(`   Pre-flight gate:  node scripts/gate-check.mjs --course ${course ?? 'york'} --day ${day}`));
+    console.log(dim(`   Settlement:       node scripts/settle.mjs --course ${course ?? 'york'}`));
   } else {
     console.log(bad(`\x1b[1m${failures} check(s) failed.\x1b[0m See docs/racing-api.md.`));
   }

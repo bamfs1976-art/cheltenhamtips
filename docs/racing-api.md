@@ -47,10 +47,27 @@ Rate limit is 1 request/second; the client throttles and backs off on 429.
 
 ## 2b. Self-test — run this first
 
-```sh
-node scripts/api-selftest.mjs                 # is it wired up at all?
-node scripts/api-selftest.mjs --course york   # Ebor readiness
+**PowerShell** (Windows) — note `$env:`, not `export`, and these last only for
+the current terminal window:
+
+```powershell
+cd path\to\cheltenhamtips
+$env:RACING_API_USERNAME='...'
+$env:RACING_API_PASSWORD='...'
+node scripts/api-selftest.mjs --course york --day tomorrow
 ```
+
+**bash / zsh:**
+
+```sh
+export RACING_API_USERNAME='...' RACING_API_PASSWORD='...'
+node scripts/api-selftest.mjs                                 # is it wired up at all?
+node scripts/api-selftest.mjs --course york --day tomorrow     # Ebor readiness
+node scripts/api-selftest.mjs --course york --keys             # dump raw field names
+```
+
+Setting the variables in the Netlify dashboard makes the *deployed proxy* work.
+It does **not** reach a local shell — the CLI scripts need them set there too.
 
 It checks credentials, auth, and then the **shapes** the engine actually
 depends on: `runner.draw` on racecards (the flat draw rule), `runner.position`
@@ -61,10 +78,6 @@ Two results are normal rather than failures:
 
 - **0 racecards** — there is no GB racing today, or the card is not up yet.
 - **0 results** — nothing has been settled yet today.
-
-Note that **Netlify environment variables do not reach a local shell.** Setting
-them in the Netlify dashboard makes the deployed proxy work; the CLI scripts
-need them exported locally as well.
 
 ---
 

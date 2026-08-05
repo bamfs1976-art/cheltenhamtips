@@ -123,20 +123,84 @@ export async function racecards({ day = 'today', regionCodes = ['gb'], courseIds
   if (!['today', 'tomorrow'].includes(day)) {
     throw new Error(`day must be "today" or "tomorrow" on the free plan (got "${day}")`);
   }
-  const params = { day, limit: 200 };
+  const params = { day, limit: 500 }; // spec max for this endpoint
   if (regionCodes?.length) params.region_codes = regionCodes.join(',');
   if (courseIds?.length) params.course_ids = courseIds.join(',');
   return get('/v1/racecards/free', params);
 }
 
-/** Today's results. There is no free endpoint for any other date. */
-export async function resultsToday({ region = 'gb' } = {}) {
-  return get('/v1/results/today/free', { region, limit: 200 });
+/**
+ * Today's results. There is no free endpoint for any other date.
+ * limit is capped at 100 by the API (a larger value returns 422), so this
+ * pages through with skip until a short page comes back.
+ */
+export async function resultsToday({ region = 'gb', maxPages = 10 } = {}) {
+  const PAGE = 100;
+  const all = [];
+  let raw = null;
+  for (let page = 0; page < maxPages; page++) {
+    const res = await get('/v1/results/today/free', {
+      region,
+      limit: PAGE,
+      skip: page * PAGE,
+    });
+    raw = raw ?? res;
+    const batch = res.results ?? res.data ?? [];
+    all.push(...batch);
+    if (batch.length < PAGE) break;
+  }
+  return { ...raw, results: all };
 }
 
 /** Course list, used to resolve a course name to its course_id. */
 export async function courses({ regionCodes = ['gb'] } = {}) {
   return get('/v1/courses', { region_codes: regionCodes.join(',') });
+}
+
+
+/* ── Field-name resolution ──────────────────────────────────────────
+ * The free plan's RacecardBasic uses different names from the Pro
+ * racecard and from the published examples. Verified against the
+ * OpenAPI spec, 2026-08-05:
+ *   free:  off_time, distance_f, race_class, sex_restriction, field_size
+ *   pro/examples: off, dist_f, class, sex_rest
+ * These resolvers accept either, so the same code works on both plans.
+ */
+const pick = (obj, ...names) => {
+  for (const n of names) {
+    const v = obj?.[n];
+    if (v !== undefined && v !== null && v !== '') return v;
+  }
+  return null;
+};
+
+/** Off time as "HH:MM" — the race key prefix. */
+export function raceOff(race) {
+  const v = pick(race, 'off_time', 'off');
+  if (v) {
+    const m = String(v).match(/(\d{1,2}):(\d{2})/);
+    if (m) return `${m[1].padStart(2, '0')}:${m[2]}`;
+    return String(v);
+  }
+  const dt = pick(race, 'off_dt');
+  if (dt) {
+    const m = String(dt).match(/T?(\d{2}):(\d{2})/);
+    if (m) return `${m[1]}:${m[2]}`;
+  }
+  return null;
+}
+
+export const raceDistanceF = (race) => pick(race, 'distance_f', 'dist_f');
+export const raceClass     = (race) => pick(race, 'race_class', 'class');
+export const raceType      = (race) => pick(race, 'type');
+export const raceGoing     = (race) => pick(race, 'going');
+export const raceStatus    = (race) => pick(race, 'race_status');
+
+/** Declared field size — the API states it directly on the free plan. */
+export function raceFieldSize(race) {
+  const n = pick(race, 'field_size');
+  if (n !== null && Number.isFinite(Number(n))) return Number(n);
+  return Array.isArray(race?.runners) ? race.runners.length : 0;
 }
 
 /** Case- and punctuation-insensitive horse-name comparison. */

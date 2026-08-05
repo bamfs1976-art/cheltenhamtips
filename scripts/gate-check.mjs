@@ -8,7 +8,7 @@
 // Exits 1 if any race fails the gate, so it can guard a build.
 
 import fs from 'node:fs/promises';
-import { racecards, archive, ukDate } from './lib/racing-api.mjs';
+import { racecards, archive, ukDate, raceOff, raceDistanceF, raceClass, raceType, raceGoing, raceFieldSize, raceStatus } from './lib/racing-api.mjs';
 
 // Sky Bet's observed enhanced each-way ladder. These are the terms the engine
 // prices against; they are an offer, not a rule, so the card must still state
@@ -39,7 +39,7 @@ function boundaryRisk(runners) {
 }
 
 function isFlat(race) {
-  const t = String(race.type ?? '').toLowerCase();
+  const t = String(raceType(race) ?? '').toLowerCase();
   if (t) return t.includes('flat');
   // Fall back on the distance/name if the API omits type.
   return !/hurdle|chase|nh flat|bumper/i.test(race.race_name ?? '');
@@ -47,7 +47,8 @@ function isFlat(race) {
 
 function checkRace(race) {
   const runners = Array.isArray(race.runners) ? race.runners : [];
-  const n = runners.length;
+  // field_size is authoritative on the free plan; fall back to the array length.
+  const n = raceFieldSize(race);
   const flat = isFlat(race);
   const terms = placeTerms(n);
   const risk = boundaryRisk(n);
@@ -58,18 +59,22 @@ function checkRace(race) {
 
   const failures = [];
   if (n === 0) failures.push('no declared runners');
+  if (runners.length && n !== runners.length) {
+    failures.push(`field_size ${n} does not match ${runners.length} listed runners`);
+  }
   if (flat && missingDraw.length) {
     failures.push(`${missingDraw.length} runner(s) without a draw`);
   }
 
   return {
     raceId: race.race_id,
-    off: race.off ?? race.off_dt ?? '??:??',
+    off: raceOff(race) ?? '??:??',
     course: race.course,
     name: race.race_name,
-    cls: race.class,
-    dist: race.dist_f ? `${race.dist_f}f` : (race.distance ?? '—'),
-    going: race.going ?? '—',
+    cls: raceClass(race),
+    dist: raceDistanceF(race) ? `${raceDistanceF(race)}f` : '—',
+    going: raceGoing(race) ?? '—',
+    status: raceStatus(race),
     code: flat ? 'flat' : 'jumps',
     runners: n,
     places: terms.places,
