@@ -546,9 +546,19 @@ Add new course profiles as they're covered.
   - have a `chester-2026`-style URL redirect added to `netlify.toml`
   - link from the hub `index.html` festival grid
 - Every page must include the BeGambleAware footer block.
-- Production deploy is wired to `main` branch on Netlify project
-  `cheltenhamtips` (site id `da21f57e-0317-4657-9fef-35e4892f0795`). A
-  push to main triggers an auto-build.
+- **Live site: <https://ukracinghub.netlify.app>** (renamed from
+  `cheltenhamtips.netlify.app` on 15 Aug 2026 — the old subdomain is
+  retired, so use the new one in any link, check or announcement).
+- Production deploy is wired to `main` branch on Netlify site id
+  `da21f57e-0317-4657-9fef-35e4892f0795`. A push to main triggers an
+  auto-build. The site id is unchanged by the rename.
+- The **repo** is still `bamfs1976-art/cheltenhamtips` and the local
+  directory is still `cheltenhamtips` — only the deployed hostname moved.
+  Don't "fix" the repo name to match.
+- Renaming the site changes the origin the browser sends. Anything that
+  pins the hostname has to move with it — currently the CORS default in
+  `netlify/functions/racing-api.js` (`ALLOWED_ORIGIN`). Check for new
+  hardcoded hostnames if it is ever renamed again.
 
 ---
 

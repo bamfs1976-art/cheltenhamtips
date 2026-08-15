@@ -33,7 +33,7 @@ const PAID_ENDPOINTS = {
 
 // The upstream call spends our API quota, so the proxy is same-origin only.
 // ALLOWED_ORIGIN can widen this for local development.
-const ALLOWED_ORIGIN = process.env.ALLOWED_ORIGIN || 'https://cheltenhamtips.netlify.app';
+const ALLOWED_ORIGIN = process.env.ALLOWED_ORIGIN || 'https://ukracinghub.netlify.app';
 
 function corsHeaders(origin) {
   const ok = origin === ALLOWED_ORIGIN || /^http:\/\/localhost(:\d+)?$/.test(origin || '');
