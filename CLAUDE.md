@@ -478,11 +478,56 @@ Sheehan (28%).
 
 ### York (flat)
 
-Left-handed. Wide, galloping, fair. Long straight (~2f for round course,
-5f for straight). Minimal draw bias on round. Straight: high draws
-preferred on soft ground, no bias on good. Rewards quality horses with
-a strong finish. Top trainers: Aidan O'Brien, John & Thady Gosden,
-Charlie Appleby.
+Left-handed. Wide, galloping, fair. Circuit about 2m with sweeping turns
+and a long home straight (~4.5f). No camber tricks, no tight bends.
+Rewards the best horse rather than the best-positioned one, which is why
+short-priced class acts hold up better here than at Chester or Epsom.
+
+**Draw.** Close to immaterial on the round course — there is room and
+time to recover from a wide stall. It matters on the **straight course**
+(5f, 6f and the sprint handicaps), where big fields split into groups and
+the favoured side moves with the ground and the rail position. Soft
+ground has historically favoured higher numbers towards the stands' side.
+That is a pattern, not a law — use live draw data, never the rule of
+thumb, and put the draw on every pick regardless.
+
+**Going.** Drains reasonably but sits on low ground beside the Ouse.
+August fixtures here have been lost or softened by rain before. Check the
+York forecast on the morning of each card rather than carrying the going
+forward from the previous day.
+
+Top trainers: Aidan O'Brien, John & Thady Gosden, Charlie Appleby, plus
+the northern handicap yards in the big-field pots.
+
+**Meetings covered:** Dante Festival (May) — see `dante-2026.html`;
+Ebor Festival (August) — see `ebor-2026.html`.
+
+#### Ebor Festival (York, four days, August)
+
+Wed–Sat. Three Group 1s and Europe's richest flat handicap:
+
+| Day | Feature races |
+|---|---|
+| Wed | **Juddmonte International (G1)**, Great Voltigeur (G2), Acomb (G3) |
+| Thu | **Yorkshire Oaks (G1)**, Lowther (G2), Galtres (G3) |
+| Fri | **Nunthorpe (G1)**, Gimcrack (G2), Lonsdale Cup (G2), Roses (Listed) |
+| Sat | **Ebor Handicap** (Heritage), City of York (G2), Melrose Hcap |
+
+Engine notes specific to this meeting:
+
+- The Group races run small, quality fields — expect the LONG slot to be
+  **closed** on the place count in most of them. Do not force it.
+- The **Ebor** and the **Melrose** are the two races most likely to open
+  the LONG slot: maximum fields, enhanced places. Both are also the two
+  most likely to carry a **one-off place special above the standard
+  ladder** (heritage handicaps regularly do — the Stewards' Cup paid 7),
+  and the two most exposed to a **place band dropping on withdrawals**.
+  Read the terms off the actual offer and re-check at the off.
+- The **Nunthorpe** (straight 5f) is the one Group race where the draw is
+  a first-order factor rather than a tiebreak.
+- Off-times and the supporting card are confirmed at declarations only.
+  UK turf flat declarations confirm **48 hours out**, so each day's card
+  is built two days ahead and not before.
 
 Add new course profiles as they're covered.
 

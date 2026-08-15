@@ -135,6 +135,15 @@ const FESTIVALS_2026 = [
     headline:'COMPLETE — 15 winners over 5 days from 109 picks. Evening Saigon (16/1) took the Stewards’ Cup; Al Aali won the opener at 14/1 as our LONG and Bow Echo completed the Guineas/St James’s Palace/Sussex treble. Engine ROI −27.7% (−£34.30 on £124) — the season’s worst festival. Nine multi-source picks ran and not one won, which is what drove the revised engine rules; Racing Post Spotlight was the meeting’s best column at 30%.',
     headlineRace:'Stewards’ Cup · Sat 1 Aug — won by Evening Saigon (16/1) · Sussex Stakes (G1) Wed — won by Bow Echo',
   },
+  {
+    slug:'ebor-2026', name:'Ebor Festival 2026', shortName:'Ebor',
+    icon:'🎯', dates:['2026-08-19','2026-08-20','2026-08-21','2026-08-22'],
+    dateLabel:'19–22 Aug 2026', venue:'York (Knavesmire)', type:'Flat',
+    theme:'theme-crimson', accentColor:'#e11d48', url:'ebor-2026.html',
+    races:null,
+    headline:'Preview live — four days on the Knavesmire. Cards publish as each day’s declarations confirm; nothing priced from the entry stage. First full festival under the post-Goodwood engine rules.',
+    headlineRace:'Ebor Handicap · Sat 22 Aug · Juddmonte International (G1) Wed · Yorkshire Oaks (G1) Thu · Nunthorpe (G1) Fri',
+  },
 ];
 
 // ════════════════════════════════════════════════════════════════════════════

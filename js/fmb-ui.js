@@ -11,6 +11,7 @@
      festival, independent of the wall clock. Results/business data
      stay in season-data-2026.js and are never duplicated here. */
   var FESTIVALS = [
+    { name: 'Ebor Festival 2026',      short: 'Ebor',           url: 'ebor-2026.html',           type: 'flat',  status: 'upcoming', date: '19–22 Aug 2026', sort: '2026-08-19', venue: 'York (Knavesmire)' },
     { name: 'Glorious Goodwood',       short: 'Goodwood',       url: 'goodwood-2026.html',       type: 'flat',  status: 'archive',  date: '28 Jul – 1 Aug 2026', sort: '2026-07-28', venue: 'Goodwood (Sussex Downs)' },
     { name: 'Newmarket July Festival', short: 'Newmarket July', url: 'newmarket-july-2026.html', type: 'flat',  status: 'archive',  date: '9–11 Jul 2026', sort: '2026-07-09', venue: 'Newmarket (July Course)' },
     { name: 'King George Weekend',     short: 'King George',    url: 'index.html',               type: 'flat',  status: 'archive',  date: '24–25 Jul 2026', sort: '2026-07-24', venue: 'Ascot' },

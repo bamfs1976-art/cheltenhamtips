@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🏇 Ebor Festival 2026 – York Tips, Race Cards &amp; Selections</title>
+<meta name="description" content="Ebor Festival 2026 at York, 19–22 August. Nap, NB and Longshot for every race across four days — Juddmonte International, Yorkshire Oaks, Nunthorpe and the Ebor Handicap. Cards publish on declarations.">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self' 'unsafe-inline';">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/fmb-ui.css">
+<script src="/js/fmb-ui.js" defer></script>
+<style>
+  :root {
+    --bg:#0a1428; --bg-mid:#0f1d3a; --card:#142747; --lit:#1a3057;
+    --gold:#fbbf24; --gold-lt:#fde68a;
+    --eb:#e11d48; --eb-lt:#fda4af; --eb-deep:#9f1239;
+    --blue-l:#60a5fa; --pink:#f472b6; --green-lt:#4ade80; --silver:#a1a1aa;
+    --cream:#f5f5f4; --red:#ef4444;
+  }
+  *,*::before,*::after { box-sizing:border-box }
+  html,body { margin:0; padding:0; background:var(--bg); color:var(--cream); font-family:'Inter',system-ui,sans-serif; font-size:14px; line-height:1.5 }
+  a { color:var(--eb-lt); text-decoration:none } a:hover { color:var(--eb); text-decoration:underline }
+  .container { max-width:920px; margin:0 auto; padding:0 14px 40px }
+  .live-strip { background:linear-gradient(90deg,rgba(225,29,72,0.22),rgba(225,29,72,0.06)); border-bottom:1px solid rgba(225,29,72,0.4); color:var(--eb-lt); font-size:0.78rem; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; padding:8px 16px; text-align:center }
+  .live-strip strong { color:var(--cream) }
+  .site-header { text-align:center; padding:26px 16px 18px; background:radial-gradient(ellipse at 50% -10%, rgba(225,29,72,0.14), transparent 60%) }
+  .header-badge { display:inline-block; font-size:0.66rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--eb-lt); border:1px solid rgba(225,29,72,0.4); border-radius:50px; padding:4px 14px; margin-bottom:12px }
+  .site-header h1 { font-family:'Playfair Display',serif; font-size:clamp(1.8rem,5vw,2.8rem); font-weight:900; margin:0 0 6px; color:#fff }
+  .site-header h1 em { color:var(--eb-lt); font-style:normal }
+  .hero-dates { font-size:0.82rem; color:var(--silver); margin-bottom:14px }
+  .hero-stats { display:flex; justify-content:center; gap:22px; flex-wrap:wrap }
+  .hero-stats > div { text-align:center }
+  .hero-stat-val { display:block; font-family:'Playfair Display',serif; font-size:1.5rem; font-weight:700; color:var(--eb-lt); font-variant-numeric:tabular-nums }
+  .hero-stat-lbl { font-size:0.6rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--silver) }
+  .day-tabs { display:flex; gap:8px; margin:16px 0; flex-wrap:wrap }
+  .day-tab { background:var(--card); border:1px solid rgba(255,255,255,0.08); border-radius:8px; padding:8px 14px; font-size:0.82rem; font-weight:600; color:var(--silver); text-decoration:none }
+  .day-tab.active { border-color:rgba(225,29,72,0.5); color:var(--eb-lt); background:rgba(225,29,72,0.08) }
+  .titlebar { border-left:3px solid var(--eb); padding:6px 0 6px 12px; margin:6px 0 16px }
+  .titlebar h2 { font-family:'Playfair Display',serif; font-size:1.05rem; margin:0; color:var(--cream) }
+  .titlebar p { font-size:0.76rem; color:var(--silver); margin:2px 0 0 }
+  .draw-note { background:rgba(251,191,36,0.08); border:1px solid rgba(251,191,36,0.35); border-radius:10px; padding:11px 14px; font-size:0.78rem; color:var(--gold-lt); line-height:1.55; margin-bottom:18px }
+  .draw-note strong { color:#fff }
+  .panel { background:var(--card); border:1px solid rgba(255,255,255,0.06); border-radius:12px; padding:16px 14px; margin-bottom:16px }
+  .panel.eb-top { border-top:3px solid var(--eb) }
+  .panel.gold-top { border-top:3px solid var(--gold) }
+  .panel.blue-left { border-left:3px solid var(--blue-l) }
+  .panel.blue-top { border-top:3px solid var(--blue-l) }
+  .panel-head { font-family:'Playfair Display',serif; font-size:1.05rem; margin:0 0 10px; color:var(--cream) }
+  .race-block { border-top:1px solid rgba(255,255,255,0.07); padding-top:12px; margin-top:12px }
+  .race-block:first-of-type { border-top:none; padding-top:0; margin-top:0 }
+  .race-hd { font-size:0.82rem; font-weight:700; color:var(--gold-lt); border-bottom:2px solid rgba(251,191,36,0.3); padding-bottom:5px; margin:0 0 8px }
+  .race-hd .g1 { color:var(--eb-lt) }
+  .pick-row { display:grid; grid-template-columns:56px 1fr auto; gap:8px; align-items:start; padding:7px 0; border-top:1px solid rgba(255,255,255,0.05) }
+  .pick-row:first-of-type { border-top:none }
+  .pick-tag { font-size:0.62rem; font-weight:800; letter-spacing:0.04em; text-align:center; padding:3px 0; border-radius:5px; height:fit-content }
+  .pick-tag.nap { background:rgba(251,191,36,0.18); color:var(--gold-lt); border:1px solid rgba(251,191,36,0.4) }
+  .pick-tag.nb  { background:rgba(96,165,250,0.16); color:var(--blue-l); border:1px solid rgba(96,165,250,0.4) }
+  .pick-tag.long{ background:rgba(244,114,182,0.14); color:var(--pink); border:1px solid rgba(244,114,182,0.4) }
+  .pick-tag.gate{ background:rgba(161,161,170,0.14); color:var(--silver); border:1px solid rgba(161,161,170,0.35) }
+  .pick-horse { font-weight:700; color:#fff; font-size:0.92rem }
+  .pick-odds { font-weight:800; color:var(--eb-lt); font-size:0.9rem; white-space:nowrap; font-variant-numeric:tabular-nums }
+  .pick-note { font-size:0.78rem; color:#cbd5cf; line-height:1.5; margin-top:3px }
+  .conns { display:block; font-size:0.72rem; color:var(--silver); margin-top:2px; font-variant-numeric:tabular-nums }
+  .draw-b { font-size:0.6rem; font-weight:700; background:rgba(225,29,72,0.15); color:var(--eb-lt); border:1px solid rgba(225,29,72,0.35); border-radius:4px; padding:1px 6px; margin-left:4px; white-space:nowrap }
+  .sb { font-size:0.6rem; font-weight:700; padding:2px 7px; border-radius:4px; margin-left:4px }
+  .sb-sm { background:rgba(74,222,128,0.18); border:1px solid rgba(74,222,128,0.5); color:#4ade80 }
+  .sb-rp { background:rgba(96,165,250,0.16); border:1px solid rgba(96,165,250,0.5); color:#60a5fa }
+  .sb-bg { background:rgba(234,88,12,0.18); border:1px solid rgba(234,88,12,0.5); color:#fdba74 }
+  .sb-nl { background:rgba(94,234,212,0.16); border:1px solid rgba(94,234,212,0.5); color:#5eead4 }
+  .sb-ro { background:rgba(167,139,250,0.18); border:1px solid rgba(167,139,250,0.5); color:#c4b5fd }
+  .sb-big { background:rgba(239,68,68,0.18); border:1px solid rgba(239,68,68,0.55); color:#fca5a5 }
+  .nobet { margin-top:8px; padding:9px 11px; background:rgba(161,161,170,0.07); border:1px solid rgba(161,161,170,0.25); border-radius:6px; font-size:0.74rem; color:var(--silver); line-height:1.6 }
+  .nobet strong { color:#e4e4e7 }
+  .pending-inline { margin-top:8px; padding:8px 10px; background:rgba(251,191,36,0.07); border:1px solid rgba(251,191,36,0.25); border-radius:6px; font-size:0.72rem; color:var(--gold-lt); line-height:1.6 }
+  .pending-inline strong { color:#fde68a }
+  .gate-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:10px; margin-top:10px }
+  .gate-cell { background:var(--bg-mid); border-radius:8px; padding:10px 12px; border-left:3px solid rgba(161,161,170,0.4) }
+  .gate-cell.ok { border-left-color:var(--green-lt) }
+  .gate-cell.wait { border-left-color:var(--gold) }
+  .gate-cell .gc-lbl { font-size:0.62rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--silver) }
+  .gate-cell .gc-val { font-size:0.84rem; font-weight:700; color:var(--cream); margin-top:3px }
+  .gate-cell.wait .gc-val { color:var(--gold-lt) }
+  .gate-cell.ok .gc-val { color:var(--green-lt) }
+  .rules-row { padding:8px 0; border-bottom:1px solid rgba(255,255,255,0.06); font-size:0.8rem; color:#cbd5cf; line-height:1.6 }
+  .rules-row:last-child { border-bottom:none }
+  .rules-row strong { color:var(--cream) }
+  .rec-table { width:100%; border-collapse:collapse; font-size:0.8rem; margin-top:8px }
+  .rec-table th, .rec-table td { text-align:left; padding:7px 8px; border-bottom:1px solid rgba(255,255,255,0.07) }
+  .rec-table th { font-size:0.62rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--silver); font-weight:600 }
+  .rec-table td.num { text-align:right; font-variant-numeric:tabular-nums }
+  .rec-table tr.hl td { color:var(--green-lt); font-weight:700 }
+  .rec-table tr.lo td { color:var(--pink) }
+  .footer { text-align:center; font-size:0.74rem; color:var(--silver); padding:22px 14px; line-height:1.7; border-top:1px solid rgba(255,255,255,0.06); margin-top:10px }
+  .gambleaware { color:var(--gold-lt); margin-top:6px }
+  @media (max-width:480px){ .pick-row{ grid-template-columns:48px 1fr auto; gap:6px } }
+</style>
+</head>
+<body>
+
+<a class="fmb-skip" href="#main">Skip to content</a>
+
+<!-- Shared grouped global nav (injected by fmb-ui.js) -->
+<div id="fmb-nav-root"></div>
+
+<div class="live-strip">🏇 Ebor Festival 2026 · <strong>Wed 19 – Sat 22 August · York</strong> · cards publish as each day's declarations confirm</div>
+
+<main class="container" id="main" tabindex="-1">
+
+  <header class="site-header">
+    <div class="header-badge">🏇 York · Knavesmire · Flat</div>
+    <h1><em>Ebor Festival</em> 2026</h1>
+    <p class="hero-dates">📍 York (Knavesmire) · 19–22 August 2026 · four-day summer flat festival · page live, cards pending declarations</p>
+    <div class="hero-stats">
+      <div><span class="hero-stat-val">4</span><span class="hero-stat-lbl">days</span></div>
+      <div><span class="hero-stat-val">3</span><span class="hero-stat-lbl">Group 1s</span></div>
+      <div><span class="hero-stat-val">1</span><span class="hero-stat-lbl">Heritage Hcap</span></div>
+      <div><span class="hero-stat-val">—</span><span class="hero-stat-lbl">races priced</span></div>
+    </div>
+  </header>
+
+  <div class="day-tabs">
+    <a href="#day1" class="day-tab">Wed 19 · Juddmonte</a>
+    <a href="#day2" class="day-tab">Thu 20 · Yorkshire Oaks</a>
+    <a href="#day3" class="day-tab">Fri 21 · Nunthorpe</a>
+    <a href="#day4" class="day-tab">Sat 22 · Ebor Handicap</a>
+  </div>
+
+  <div class="titlebar">
+    <h2>ebor 2026 · festival preview · Wed 19 – Sat 22 August</h2>
+    <p>Group-race programme confirmed · no race priced yet · 0 picks live</p>
+  </div>
+
+  <!-- ── PRE-FLIGHT GATE STATUS ─────────────────────────────── -->
+  <section class="panel gold-top">
+    <h2 class="panel-head">⛔ Pre-flight gate · status</h2>
+    <p style="font-size:0.78rem;color:var(--silver);line-height:1.6;margin:0 0 4px">
+      Under <strong style="color:var(--cream)">Step 3b</strong> no race is priced until its
+      <strong style="color:var(--cream)">final declared field</strong> is confirmed — not the entry
+      list. Entry lists routinely halve: at Goodwood they went 29→18, 16→8, 22→14, 10→5 and 31→24, and
+      six picks in three unverified races returned nothing and cost £9, which was 11.5% of that
+      festival's entire turnover. Today is <strong style="color:var(--cream)">Saturday 15 August</strong>
+      and nothing for Wednesday is declared yet, so every race below reads NO BET.
+    </p>
+    <div class="gate-grid">
+      <div class="gate-cell wait"><div class="gc-lbl">Declared fields</div><div class="gc-val">Awaiting</div></div>
+      <div class="gate-cell wait"><div class="gc-lbl">Field size &amp; EW terms</div><div class="gc-val">Awaiting</div></div>
+      <div class="gate-cell wait"><div class="gc-lbl">Draw (flat — mandatory)</div><div class="gc-val">Awaiting</div></div>
+      <div class="gate-cell ok"><div class="gc-lbl">Course profile</div><div class="gc-val">Confirmed</div></div>
+      <div class="gate-cell ok"><div class="gc-lbl">Group-race programme</div><div class="gc-val">Confirmed</div></div>
+      <div class="gate-cell ok"><div class="gc-lbl">Engine rules</div><div class="gc-val">Post-Goodwood</div></div>
+    </div>
+    <div class="pending-inline" style="margin-top:12px">
+      <strong>Declarations for a UK turf flat card confirm 48 hours out.</strong> On that timetable
+      Wednesday's field is known from <strong>Monday 17 August</strong>, Thursday's from Tuesday 18th,
+      Friday's from Wednesday 19th and Saturday's from Thursday 20th. Each day's card is built once its
+      own declarations land — never earlier, and never from the entry stage.
+    </div>
+  </section>
+
+  <!-- ── DAY 1 ──────────────────────────────────────────────── -->
+  <section id="day1" class="panel eb-top">
+    <h2 class="panel-head">🏆 Day 1 · Wednesday 19 August · Juddmonte International day</h2>
+    <p style="font-size:0.78rem;color:var(--silver);line-height:1.55;margin-bottom:6px">
+      The Group-race programme below is the published fixture. Off-times, the supporting handicaps,
+      field sizes, draws and each-way terms all arrive with declarations.
+    </p>
+
+    <div class="race-block">
+      <p class="race-hd"><span class="g1">Juddmonte International Stakes (G1)</span> · about 1m2f · 3yo+ · York's championship middle-distance race</p>
+      <div class="pick-row"><div class="pick-tag gate">GATE</div><div><span class="pick-horse">NO BET — declarations not confirmed</span><div class="pick-note">Missing: declared field, field size, each-way terms, draw. The festival's headline race and usually a small, high-class field — expect a banker-shaped market rather than a Lucky 15 leg.</div></div></div>
+    </div>
+
+    <div class="race-block">
+      <p class="race-hd">Great Voltigeur Stakes (G2) · about 1m4f · 3yo colts &amp; geldings · the St Leger trial</p>
+      <div class="pick-row"><div class="pick-tag gate">GATE</div><div><span class="pick-horse">NO BET — declarations not confirmed</span><div class="pick-note">Missing: declared field, field size, each-way terms, draw. Small fields are the norm, so the LONG slot will most likely be closed here on the place count alone.</div></div></div>
+    </div>
+
+    <div class="race-block">
+      <p class="race-hd">Acomb Stakes (G3) · about 7f · 2yo</p>
+      <div class="pick-row"><div class="pick-tag gate">GATE</div><div><span class="pick-horse">NO BET — declarations not confirmed</span><div class="pick-note">Missing: declared field, field size, each-way terms, draw. A 2yo Group race — limited form, so trainer, sire and price moves carry the analysis (CLAUDE.md §8).</div></div></div>
+    </div>
+
+    <div class="race-block">
+      <p class="race-hd">Supporting card · handicaps and conditions races</p>
+      <div class="pick-row"><div class="pick-tag gate">GATE</div><div><span class="pick-horse">NO BET — race list not confirmed</span><div class="pick-note">The full Wednesday card — including the big-field handicaps where the draw and the place band actually matter — is confirmed at declarations on Monday 17 August.</div></div></div>
+    </div>
+  </section>
+
+  <!-- ── DAY 2 ──────────────────────────────────────────────── -->
+  <section id="day2" class="panel eb-top">
+    <h2 class="panel-head">👑 Day 2 · Thursday 20 August · Yorkshire Oaks day</h2>
+
+    <div class="race-block">
+      <p class="race-hd"><span class="g1">Darley Yorkshire Oaks (G1)</span> · about 1m4f · fillies &amp; mares 3yo+</p>
+      <div class="pick-row"><div class="pick-tag gate">GATE</div><div><span class="pick-horse">NO BET — declarations not confirmed</span><div class="pick-note">Missing: declared field, field size, each-way terms, draw.</div></div></div>
+    </div>
+
+    <div class="race-block">
+      <p class="race-hd">Lowther Stakes (G2) · about 6f · 2yo fillies</p>
+      <div class="pick-row"><div class="pick-tag gate">GATE</div><div><span class="pick-horse">NO BET — declarations not confirmed</span><div class="pick-note">Missing: declared field, field size, each-way terms, draw. Run on the straight course, so the draw read matters more than it does on the round.</div></div></div>
+    </div>
+
+    <div class="race-block">
+      <p class="race-hd">Galtres Stakes (G3) · about 1m4f · fillies &amp; mares 3yo+</p>
+      <div class="pick-row"><div class="pick-tag gate">GATE</div><div><span class="pick-horse">NO BET — declarations not confirmed</span><div class="pick-note">Missing: declared field, field size, each-way terms, draw.</div></div></div>
+    </div>
+
+    <div class="race-block">
+      <p class="race-hd">Supporting card · handicaps and conditions races</p>
+      <div class="pick-row"><div class="pick-tag gate">GATE</div><div><span class="pick-horse">NO BET — race list not confirmed</span><div class="pick-note">Confirmed at declarations on Tuesday 18 August.</div></div></div>
+    </div>
+  </section>
+
+  <!-- ── DAY 3 ──────────────────────────────────────────────── -->
+  <section id="day3" class="panel eb-top">
+    <h2 class="panel-head">⚡ Day 3 · Friday 21 August · Nunthorpe day</h2>
+
+    <div class="race-block">
+      <p class="race-hd"><span class="g1">Coolmore Nunthorpe Stakes (G1)</span> · 5f · 2yo+ · the fastest five furlongs of the season</p>
+      <div class="pick-row"><div class="pick-tag gate">GATE</div><div><span class="pick-horse">NO BET — declarations not confirmed</span><div class="pick-note">Missing: declared field, field size, each-way terms, draw. Straight-course 5f — <strong>the draw is a first-order factor here</strong>, not a tiebreak, and it cannot be assessed until stalls are published.</div></div></div>
+    </div>
+
+    <div class="race-block">
+      <p class="race-hd">Gimcrack Stakes (G2) · about 6f · 2yo colts &amp; geldings</p>
+      <div class="pick-row"><div class="pick-tag gate">GATE</div><div><span class="pick-horse">NO BET — declarations not confirmed</span><div class="pick-note">Missing: declared field, field size, each-way terms, draw.</div></div></div>
+    </div>
+
+    <div class="race-block">
+      <p class="race-hd">Lonsdale Cup (G2) · about 2m · 3yo+ · staying championship</p>
+      <div class="pick-row"><div class="pick-tag gate">GATE</div><div><span class="pick-horse">NO BET — declarations not confirmed</span><div class="pick-note">Missing: declared field, field size, each-way terms, draw. Stayers' form lines are the most readable on the card — but small fields usually close the LONG slot.</div></div></div>
+    </div>
+
+    <div class="race-block">
+      <p class="race-hd">Supporting card · handicaps, the Roses Stakes (Listed, 5f) and conditions races</p>
+      <div class="pick-row"><div class="pick-tag gate">GATE</div><div><span class="pick-horse">NO BET — race list not confirmed</span><div class="pick-note">Confirmed at declarations on Wednesday 19 August.</div></div></div>
+    </div>
+  </section>
+
+  <!-- ── DAY 4 ──────────────────────────────────────────────── -->
+  <section id="day4" class="panel eb-top">
+    <h2 class="panel-head">🎯 Day 4 · Saturday 22 August · Ebor Handicap day</h2>
+
+    <div class="race-block">
+      <p class="race-hd">Sky Bet Ebor Handicap (Heritage Handicap) · about 1m6f · 3yo+ · Europe's richest flat handicap</p>
+      <div class="pick-row"><div class="pick-tag gate">GATE</div><div><span class="pick-horse">NO BET — declarations not confirmed</span><div class="pick-note">Missing: declared field, field size, each-way terms, draw. <strong>The one race on the card most likely to open the LONG slot</strong> — a maximum field with enhanced places. Two cautions apply: heritage handicaps carry one-off place specials well above the standard ladder (the Stewards' Cup paid 7), so the terms must be read off the actual offer; and a big field sitting just above a place boundary can lose a place to withdrawals after it has been priced.</div></div></div>
+    </div>
+
+    <div class="race-block">
+      <p class="race-hd">City of York Stakes (G2) · about 7f · 3yo+</p>
+      <div class="pick-row"><div class="pick-tag gate">GATE</div><div><span class="pick-horse">NO BET — declarations not confirmed</span><div class="pick-note">Missing: declared field, field size, each-way terms, draw.</div></div></div>
+    </div>
+
+    <div class="race-block">
+      <p class="race-hd">Melrose Handicap · about 1m6f · 3yo</p>
+      <div class="pick-row"><div class="pick-tag gate">GATE</div><div><span class="pick-horse">NO BET — declarations not confirmed</span><div class="pick-note">Missing: declared field, field size, each-way terms, draw. A big-field staying handicap for three-year-olds — the second most likely LONG candidate of the festival.</div></div></div>
+    </div>
+
+    <div class="race-block">
+      <p class="race-hd">Supporting card · the Convivial Maiden and closing handicaps</p>
+      <div class="pick-row"><div class="pick-tag gate">GATE</div><div><span class="pick-horse">NO BET — race list not confirmed</span><div class="pick-note">Confirmed at declarations on Thursday 20 August.</div></div></div>
+    </div>
+  </section>
+
+  <!-- ── ENGINE RULES IN FORCE ──────────────────────────────── -->
+  <section class="panel gold-top">
+    <h2 class="panel-head">⚙️ Engine rules in force at Ebor</h2>
+    <p style="font-size:0.78rem;color:var(--silver);line-height:1.55;margin-bottom:4px">
+      Ebor is the first full festival built under the rules the Goodwood review produced. What changes
+      versus every card before it:
+    </p>
+    <div class="rules-row"><strong>No declarations, no bet.</strong> Every race passes the pre-flight gate — declared final field, field size, settling each-way terms and a draw for every runner — or it prints NO BET. A skipped race costs nothing; an unverified race costs the full stake.</div>
+    <div class="rules-row"><strong>The LONG slot is conditional, not automatic.</strong> It runs only when the race pays 5+ places (or 4+ in a field of 16 or more), the price is 8/1 or bigger, <em>and</em> there is a concrete signal — course/distance form, a significant jockey booking, or money coming. Otherwise the race runs two picks. At 7% strike rate and 0.47 pts per pick the LONG has been the engine's structural leak.</div>
+    <div class="rules-row"><strong>NAP and NB are equally weighted.</strong> Across 11 festivals the NB beats the NAP on both strike rate and points per pick. The NAP label is reserved for a genuine standout; if a card hasn't got one, the card says so.</div>
+    <div class="rules-row"><strong>Crossover is information, never a promotion trigger.</strong> No pick moves up a slot or into the Lucky 15 on source count. A 3x+ horse under 3/1 does not get the NAP — it runs as the NB, and the NAP goes to a pick the consensus does not share. Nine multi-source picks ran at Goodwood and not one won.</div>
+    <div class="rules-row"><strong>Market move is recorded on every pick.</strong> Full price trail, marked STEAM or DRIFT inline. It is the one mechanical, checkable edge the season produced — but it is weighted, not absolute: at Goodwood a steamer was the beaten favourite while a drifter we dismissed ran second.</div>
+    <div class="rules-row"><strong>Place terms are re-checked at the off.</strong> Enhanced places are conditional on runner counts. Any race within two runners of a place-band boundary is flagged on the card and its LONG treated as provisional. The settlement panel states the place count that actually applied.</div>
+    <div class="rules-row"><strong>Dissent is surfaced.</strong> Any horse carrying two or more external sources that we do <em>not</em> hold gets called out prominently before the off.</div>
+  </section>
+
+  <!-- ── SEASON RECORD ──────────────────────────────────────── -->
+  <section class="panel blue-top">
+    <h2 class="panel-head">📊 Where the engine stands going in</h2>
+    <p style="font-size:0.78rem;color:var(--silver);line-height:1.55;margin-bottom:4px">
+      Eleven festivals, through Glorious Goodwood. This is the record the Ebor card is measured against.
+    </p>
+    <table class="rec-table">
+      <thead><tr><th scope="col">Slot</th><th scope="col" class="num">Picks</th><th scope="col" class="num">Wins</th><th scope="col" class="num">Strike rate</th><th scope="col" class="num">Pts/pick</th></tr></thead>
+      <tbody>
+        <tr class="hl"><td>Our NB</td><td class="num">224</td><td class="num">49</td><td class="num">22%</td><td class="num">0.89</td></tr>
+        <tr><td>Our NAP</td><td class="num">227</td><td class="num">43</td><td class="num">19%</td><td class="num">0.82</td></tr>
+        <tr class="lo"><td>Our LONG</td><td class="num">165</td><td class="num">12</td><td class="num">7%</td><td class="num">0.47</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:0.76rem;color:var(--silver);line-height:1.6;margin-top:10px">
+      The Lucky 15 sits at <strong style="color:#fca5a5">−58.8%</strong> (−£12.35 on £21 across seven days)
+      and is treated as the highest-variance part of the card, not a default. Four legs from four races,
+      all 4/1 or bigger, nothing from a NO BET race, and nothing promoted on crossover count. If fewer
+      than four legs qualify, it runs short or it doesn't run.
+    </p>
+    <p style="font-size:0.76rem;color:var(--silver);line-height:1.6;margin-top:6px">
+      York itself has form on this site: the <a href="dante-2026.html">Dante Festival in May</a> returned
+      14 winners over three days on the same track, with three of five three-source signals landing —
+      and still finished at −36.3%. The Knavesmire produces winners; it has not yet produced a profit.
+    </p>
+  </section>
+
+  <!-- ── COURSE GUIDE ───────────────────────────────────────── -->
+  <section class="panel">
+    <h2 class="panel-head">York (Knavesmire) — the course</h2>
+    <p><strong style="color:var(--eb-lt)">Left-handed, flat, wide and galloping.</strong> York is one of the fairest
+    big tracks in Britain — a broad, level circuit of about two miles with sweeping turns and a long home
+    straight of roughly four and a half furlongs. There are no camber tricks and no tight bends to get
+    squeezed on. Horses get every chance to build momentum, which is why the Knavesmire tends to reward
+    the best horse in the race rather than the best-positioned one.</p>
+    <p><strong style="color:var(--eb-lt)">Draw &amp; pace.</strong> On the round course the draw is close to
+    immaterial — there is time and room to recover from a wide stall. It is the <strong>straight course</strong>
+    (5f and 6f, and the sprint handicaps) where the draw earns its analysis: big fields split into groups,
+    and which side of the track holds the advantage moves with the ground and the rail position. Soft
+    ground has historically favoured the higher numbers on the stands' side. That is a pattern, not a law,
+    so live draw data beats a rule of thumb every time — and per the flat rules the draw goes on every pick.</p>
+    <p><strong style="color:var(--eb-lt)">Going.</strong> The Knavesmire drains reasonably but sits on low-lying
+    ground beside the Ouse, and August meetings here have been lost or softened by rain before. Going is the
+    single input most likely to move between now and Wednesday — it gets checked against the forecast on the
+    morning of each card, not assumed from the week before.</p>
+    <p><strong style="color:var(--eb-lt)">Angles.</strong> A quality track for quality yards: Aidan O'Brien,
+    John &amp; Thady Gosden and Charlie Appleby all have strong records here, and the northern handicap
+    specialists are the reliable read in the big-field pots. The festival builds from the
+    <strong style="color:var(--eb-lt)">Juddmonte International</strong> on Wednesday to the
+    <strong style="color:var(--eb-lt)">Ebor Handicap</strong> on Saturday.</p>
+  </section>
+
+  <!-- ── WHAT'S NEEDED TO PUBLISH ───────────────────────────── -->
+  <section class="panel blue-left">
+    <h2 class="panel-head">📋 What turns this preview into a card</h2>
+    <p style="font-size:0.78rem;color:var(--silver);line-height:1.6;margin-bottom:8px">
+      Each day's card publishes as soon as these land. Nothing is priced from an entry list.
+    </p>
+    <div class="rules-row"><strong>1 · Declared runners.</strong> A Sky Bet screencard per race, or a Racing API pull — cloth number, draw, horse, jockey, trainer, form figures, age, weight and current odds.</div>
+    <div class="rules-row"><strong>2 · Field size and each-way terms</strong> as they will actually settle, plus any big-race place special on the Ebor and the Melrose.</div>
+    <div class="rules-row"><strong>3 · Price trail per runner</strong> — opening price through to current, so each pick can be marked STEAM or DRIFT rather than given a single snapshot number.</div>
+    <div class="rules-row"><strong>4 · Going and the York forecast</strong> on the morning of each day.</div>
+    <div class="rules-row"><strong>5 · External tipster columns</strong> — Mullington, Geraghty, Nick Luck, Grimshaw, Spotlight, Frick, Raceolly, HRN biggest-priced. Overlaid as badges with crossover signals, and used to surface dissent, never to promote a pick.</div>
+  </section>
+
+  <!-- TRUST BAND + EMAIL CAPTURE -->
+  <section class="fmb-trust" aria-label="Track record and newsletter signup" style="border-radius:12px;margin:16px 0">
+    <div class="fmb-trust__inner">
+      <p class="fmb-trust__stat">Results tracked since <b>March 2026</b> · <a href="season-2026.html#methodology">Methodology <span aria-hidden="true">→</span></a></p>
+      <div class="fmb-capture">
+        <label class="fmb-capture__label" for="nap-email">Get the Saturday NAP in your inbox by 9am</label>
+        <form class="fmb-capture__form" data-capture novalidate>
+          <input class="fmb-input" id="nap-email" type="email" name="email" placeholder="you@email.com" autocomplete="email" required aria-describedby="nap-email-msg">
+          <button class="fmb-btn fmb-btn--primary" type="submit">Sign up</button>
+        </form>
+        <p class="fmb-capture__msg" id="nap-email-msg" role="status" aria-live="polite"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div>🏇 <strong>Ebor Festival 2026</strong> · York (Knavesmire) · part of <a href="index.html">The Festival Form Book</a></div>
+    <div style="margin-top:6px">Recent: <a href="goodwood-2026.html">Glorious Goodwood 2026</a> · <a href="dante-2026.html">Dante Festival 2026</a> · <a href="season-2026.html">Season Leaderboard</a></div>
+    <div class="gambleaware">⚠️ 18+ · BeGambleAware.org · Tips for entertainment only · Always bet responsibly</div>
+    <div style="margin-top:6px"><a href="https://www.begambleaware.org">BeGambleAware</a> · <a href="https://www.gamcare.org.uk">GamCare</a> · National Gambling Helpline 0808 8020 133</div>
+  </footer>
+
+</main>
+</body>
+</html>
