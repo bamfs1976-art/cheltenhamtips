@@ -44,7 +44,13 @@ combos and course form.
 
 ### Step 2 — Racecard extraction
 
-Extract from user-provided screenshots (typically Sky Bet):
+**Get the racecard by the cheapest route that works — see §12 for the
+full acquisition ladder.** In short: a pasted Racing Post racecard is the
+best source and the one to ask for by name. The API is better when it is
+reachable, but in a Claude Code web session it usually is not.
+
+Extract from user-provided screenshots (typically Sky Bet) or a pasted
+Racing Post racecard:
 
 - Race number, time, name, distance, class, number of runners
 - Each-way terms (odds fraction and number of places)
@@ -599,3 +605,115 @@ Add new course profiles as they're covered.
 - [ ] Mobile rendering checked at 375px
 - [ ] Committed to feature branch, merged to `main` only with user
       authorization
+
+---
+
+## 12. RACECARD ACQUISITION — how to get a gateable card
+
+Added 18 Aug 2026 (Ebor). Three routes were tried for one card; only one
+worked. Try them in this order and stop at the first that yields draws.
+
+### 1 · Pasted Racing Post racecard — **the primary route**
+
+Ask for this by name: *"paste the Racing Post racecard for <course>,
+<date>"*. One paste per day carries **everything the pre-flight gate and
+the display contract need**, which no other source does:
+
+- Going line with **GoingStick** and per-strip readings
+  (`Far Side / Centre / Stands' Side`), watering and weather
+- Per race: off time, full sponsored name, class, age band, prize,
+  **runner count**, exact distance, going, TV channel and
+  **`(STALLS Inside/Centre/Outside)`**
+- Race conditions, penalty values **1st–6th** (this is where the real
+  place count comes from — see below), entries and the long handicap
+- Per runner: cloth number, **draw in parentheses**, horse, days since
+  last run, headgear, colour/sex, age, weight, jockey, **trainer with
+  strike rate**, odds, **OR / TS / RPR**, form figures and
+  **CD / C / D / BF** flags
+- The **Betting Forecast** line — a full-field price list, which is the
+  baseline for calling STEAM or DRIFT later
+- The Racing Post **VERDICT** with the named tipster — a free tipster
+  column, already per-race
+
+Parsing notes (learned the hard way):
+
+| In the text | Means |
+|---|---|
+| `9 (4) Toca Madera` | cloth 9, **draw 4** |
+| `Warren Fentiman(3)` | jockey's claim is 3lb |
+| `Hugo Palmer 54%` | trainer's recent strike rate |
+| `9st 4lb5ex` | carrying a 5lb penalty |
+| `CD` / `C` / `D` / `BF` | course-and-distance / course / distance winner, beaten favourite |
+| `HC1` | first run in a handicap |
+| `1Rossa Ryan` / `2Faye Bramley` | leading-count marker, **not** part of the name |
+| `Penalty value 1st…6th` | **prize money** paid down to 6th — racecourse money, **not** each-way places |
+
+**Do not read each-way terms off the racecard — it does not carry them.**
+The `Penalty value` list is the racecourse's prize-money breakdown and has
+nothing to do with what a bookmaker pays each-way. The Ebor Thursday card
+makes this obvious: Harry's Half Million pays prize money **down to 10th**,
+and no bookmaker offers ten each-way places on a 2yo sales race.
+
+Each-way terms come from the **bookmaker** (Sky Bet by default) and must be
+read off the actual offer at the time of pricing, then **re-checked at the
+off** because withdrawals can drop the band (rule 16). `PLACE_BANDS` in
+`gate-check.mjs` encodes Sky Bet's standard ladder and is explicitly a
+**floor, not the answer** — heritage handicaps carry one-off specials above
+it (the Stewards' Cup paid 7). The racecard tells you the field size, which
+is what drives the band; the bookmaker tells you the band.
+
+### 2 · WebSearch — partial, useful when nothing else is available
+
+`WebSearch` is generally reachable even when direct fetching is not. It
+reliably returns **race names, off-times, field sizes and the going**, and
+sometimes a full declared field with jockeys. It does **not** return
+draws, so it cannot clear the gate on its own — but field sizes alone are
+enough to compute each-way terms, the LONG gate and place-band risk, which
+is a genuinely useful partial card.
+
+`WebFetch` is blocked for racing sites (racingpost.com, sportinglife.com
+both return `EGRESS_BLOCKED`), so do not burn turns on it.
+
+### 3 · The Racing API — best when reachable, usually isn't
+
+`scripts/gate-check.mjs --course <x> --day tomorrow` is still the ideal
+path and stays the documented one. It needs **both**:
+
+1. `RACING_API_USERNAME` / `RACING_API_PASSWORD` exported in the shell —
+   Netlify env vars do not reach it
+2. **network egress to `api.theracingapi.com`** — blocked by default in a
+   Claude Code web session, and the deployed Netlify proxy is blocked too,
+   so it cannot be used as a way round
+
+A 403 here is ambiguous and the client now says which kind it is. If the
+message names the egress proxy, do not touch the credentials — the host
+needs allowing in the environment's network egress settings.
+
+### Gate anything you get, whatever the source
+
+Whichever route produced the data, **run it through the real gate rather
+than eyeballing it**. Build a fixture in the API's payload shape and
+replay it:
+
+```js
+{ "racecards": [ { "off_time":"13:50", "course":"York", "race_name":"…",
+  "distance_f":5.4, "race_class":2, "type":"Flat", "going":"Good",
+  "field_size":22, "runners":[ {"horse":"…","draw":17}, … ] } ] }
+```
+
+```sh
+node scripts/gate-check.mjs --fixture <file>
+```
+
+It computes each-way terms, LONG open/closed and place-band risk
+mechanically. Two rules about fixtures:
+
+- **Set `draw` to `null` when you genuinely do not have it.** The gate
+  then reports "N runner(s) without a draw" and fails the race, which is
+  correct. Never invent a stall to make a race pass.
+- **Keep hand-built fixtures out of `data/racing-api/`.** That directory
+  is documented as raw API payloads and is the only history backfill
+  there is; putting a web-sourced or hand-built file in it corrupts the
+  archive. Use a scratch path and say on the card where the data came
+  from.
+

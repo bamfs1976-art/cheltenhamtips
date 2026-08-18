@@ -112,7 +112,7 @@
 <!-- Shared grouped global nav (injected by fmb-ui.js) -->
 <div id="fmb-nav-root"></div>
 
-<div class="live-strip">🏇 Ebor Festival 2026 &middot; <strong>Day 1 is tomorrow &mdash; Wed 19 August</strong> &middot; 7 races gated &middot; 106 runners &middot; going Good &middot; stalls are the last missing input</div>
+<div class="live-strip">🏇 Ebor Festival 2026 &middot; <strong>Day 1 is tomorrow &mdash; Wed 19 August</strong> &middot; Racecard in &middot; gate CLEARED 7/7 &middot; 106 runners &middot; going Good &middot; pricing next</div>
 
 <main class="container" id="main" tabindex="-1">
 
@@ -138,44 +138,42 @@
 
   <div class="titlebar">
     <h2>ebor 2026 · Day 1 tomorrow · Wed 19 – Sat 22 August</h2>
-    <p>Wednesday gated: 7 races · 106 runners · going Good · 4 LONG slots open · 3 near a place boundary · 0 priced (no stalls)</p>
+    <p>Wednesday gate CLEARED 7/7 · 106 runners · all draws in · 4 LONG slots open · 3 near a place boundary · pricing next</p>
   </div>
 
   <!-- ── PRE-FLIGHT GATE STATUS ─────────────────────────────── -->
   <section class="panel gold-top">
-    <h2 class="panel-head">⛔ Pre-flight gate · Wednesday · 7 races checked, 7 NO BET</h2>
+    <h2 class="panel-head">✅ Pre-flight gate · Wednesday · 7 races checked, <span style="color:var(--green-lt)">7 pass</span></h2>
     <p style="font-size:0.78rem;color:var(--silver);line-height:1.6;margin:0 0 4px">
-      Run through <code>scripts/gate-check.mjs</code> against the published declarations on
-      <strong style="color:var(--cream)">Tuesday 18 August</strong>. Field sizes, each-way terms, the LONG
-      gate and place-band risk are all <strong style="color:var(--cream)">computed, not estimated</strong>.
-      Result: <strong style="color:var(--cream)">7 races, 0 pass, 7 NO BET, 3 sitting near a place
-      boundary</strong> — every failure for the same reason, no published stalls.
+      The full Racing Post racecard landed on <strong style="color:var(--cream)">Tuesday 18 August</strong>
+      and was run through <code>scripts/gate-check.mjs</code>. All 106 stalls are present and verified as a
+      complete draw for every race. <strong style="color:var(--green-lt)">7 races, 7 pass, 0 NO BET</strong> —
+      the gate is clear for the first time this festival, and picks can now be made.
     </p>
     <div class="gate-grid">
-      <div class="gate-cell ok"><div class="gc-lbl">Race list &amp; off-times</div><div class="gc-val">Confirmed</div></div>
-      <div class="gate-cell ok"><div class="gc-lbl">Declared field sizes</div><div class="gc-val">All 7 · 106 rnrs</div></div>
-      <div class="gate-cell ok"><div class="gc-lbl">Each-way terms</div><div class="gc-val">Computed</div></div>
-      <div class="gate-cell ok"><div class="gc-lbl">Going</div><div class="gc-val">Good</div></div>
-      <div class="gate-cell wait"><div class="gc-lbl">Draw (flat — mandatory)</div><div class="gc-val">MISSING</div></div>
+      <div class="gate-cell ok"><div class="gc-lbl">Declared runners</div><div class="gc-val">All 7 · 106</div></div>
+      <div class="gate-cell ok"><div class="gc-lbl">Draw (flat — mandatory)</div><div class="gc-val">Complete</div></div>
+      <div class="gate-cell ok"><div class="gc-lbl">Going</div><div class="gc-val">Good · GS 5.8</div></div>
+      <div class="gate-cell ok"><div class="gc-lbl">Race conditions</div><div class="gc-val">Confirmed</div></div>
+      <div class="gate-cell wait"><div class="gc-lbl">Bookmaker EW terms</div><div class="gc-val">To read at pricing</div></div>
       <div class="gate-cell ok"><div class="gc-lbl">Engine rules</div><div class="gc-val">Post-Goodwood</div></div>
     </div>
     <div class="pending-inline" style="margin-top:12px">
-      <strong>What the gate found that is worth acting on regardless.</strong>
-      <strong style="color:var(--green-lt)">Four races open the LONG slot</strong> (13:50, 16:10, 16:45, 17:20 — all
-      5+ places); <strong>three close it</strong> and run two picks at most (the Acomb, the Voltigeur and the
-      Juddmonte, exactly as a Group-race card predicts).
-      <strong style="color:#fca5a5">Three races sit within one runner of a place boundary</strong> — the 16:10
-      most dangerously, where two withdrawals take it from 5 places to 4. That is precisely the Goodwood
-      Day 5 failure, caught this time <em>before</em> pricing rather than after settling.
-      The 13:50 and 17:20 both have 22 runners and should be checked for a place special above the ladder.
+      <strong>What the gate says about shape.</strong>
+      <strong style="color:var(--green-lt)">Four races open the LONG slot</strong> (13:50, 16:10, 16:45, 17:20);
+      <strong>three close it</strong> and run two picks at most — the Acomb, the Voltigeur and the Juddmonte.
+      <strong style="color:#fca5a5">Three sit within one runner of a place boundary:</strong> the Voltigeur
+      (6 runners — two withdrawals and it is win-only), the Juddmonte (9 — drops to 2 places), and most
+      dangerously the <strong>16:10 at 17 runners, where two withdrawals take it from 5 places to 4</strong>.
+      That is the Goodwood Day 5 failure exactly, caught before pricing this time.
+      Stalls: Centre for the 13:50, 15:00, 16:45 and 17:20; Inside for the 14:25, 15:35 and 16:10.
     </div>
     <div class="pending-inline" style="margin-top:8px;background:rgba(161,161,170,0.07);border-color:rgba(161,161,170,0.3);color:var(--silver)">
-      <strong style="color:#e4e4e7">Provenance, stated plainly.</strong> These field sizes come from published
-      declaration reports, <strong>not</strong> from a Racing API pull — the API host is blocked by this
-      environment&rsquo;s network policy, so no payload was archived to <code>data/racing-api/</code> and nothing
-      here is presented as one. The numbers gate correctly and the Juddmonte field is confirmed runner by
-      runner, but <strong>a Sky Bet screencard or an API pull remains the thing that turns this into picks</strong>,
-      because it is the only source that carries stalls.
+      <strong style="color:#e4e4e7">Each-way terms are not on the racecard.</strong> Its penalty-value list is
+      the racecourse&rsquo;s <em>prize money</em> — Thursday&rsquo;s Harry&rsquo;s Half Million pays down to
+      10th, and no bookmaker offers ten each-way places. The bands shown per race are Sky Bet&rsquo;s standard
+      ladder, which is a <strong>floor</strong>; the real terms get read off the offer at pricing and
+      re-checked at the off.
     </div>
   </section>
 
