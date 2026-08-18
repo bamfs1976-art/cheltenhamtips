@@ -86,9 +86,24 @@ export async function get(endpoint, params = {}, { retries = 4 } = {}) {
     if (res.ok) return res.json();
 
     if (res.status === 401 || res.status === 403) {
+      // A 403 here is ambiguous: it can come from the API rejecting the
+      // credentials, or from an egress proxy refusing to open the tunnel at
+      // all. Those need opposite fixes, so say which one this looks like
+      // rather than always blaming the credentials.
+      const body = await res.text().catch(() => '');
+      const proxied = Boolean(
+        process.env.HTTPS_PROXY || process.env.https_proxy || process.env.ALL_PROXY
+      );
+      const looksUpstream = /\{|error|message|unauthor/i.test(body);
+      const hint =
+        proxied && !looksUpstream
+          ? `no upstream response body, and an egress proxy is configured ` +
+            `(${process.env.HTTPS_PROXY || process.env.https_proxy || process.env.ALL_PROXY}) — ` +
+            'this is most likely the proxy denying the host, not a bad password. ' +
+            'Check the network policy allows api.theracingapi.com before touching the credentials.'
+          : 'check the credentials, and check the endpoint is included in your plan.';
       throw new Error(
-        `${res.status} from ${endpoint} — check the credentials, and check the ` +
-          'endpoint is included in your plan.'
+        `${res.status} from ${endpoint} — ${hint}${body ? ` [body: ${body.slice(0, 200)}]` : ''}`
       );
     }
     if (res.status === 429 || res.status >= 500) {

@@ -41,6 +41,38 @@ node scripts/gate-check.mjs   --course york --day tomorrow
 Credentials are not set in this repo's shell and Netlify env vars do not
 reach a local shell — export them in the terminal you are running from.
 
+**Two things must both be true, and in a Claude Code web session neither
+is by default:**
+
+1. **Credentials in the shell.** Netlify env vars do not reach it.
+2. **Network egress to the API host.** Checked on 18 Aug 2026 and the
+   sandbox proxy refused both routes:
+
+   ```
+   api.theracingapi.com:443    → 403 CONNECT
+     "Host not in allowlist: api.theracingapi.com.
+      Add this host to your network egress settings to allow access."
+   ukracinghub.netlify.app:443 → 403 CONNECT (so the deployed proxy,
+     which does hold the credentials, is unreachable from here too)
+   ```
+
+   Fix: add `api.theracingapi.com` to the environment's network egress
+   settings (see <https://code.claude.com/docs/en/claude-code-on-the-web>).
+   Credentials alone will not help while the host is blocked.
+
+**If egress cannot be opened, run the pull locally and replay it here.**
+The gate is fixture-driven for exactly this reason:
+
+```sh
+# on a machine with network access
+export RACING_API_USERNAME='...' RACING_API_PASSWORD='...'
+node scripts/gate-check.mjs --course york --day tomorrow      # writes data/racing-api/
+git add data/racing-api && git commit -m "archive: york declarations" && git push
+```
+
+Then in session: `node scripts/gate-check.mjs --fixture data/racing-api/racecards-<stamp>-york.json`
+— the archived payload gates identically to a live pull, with no network.
+
 Read the gate output for:
 
 - **NO BET rows** — any race missing a declared field, or missing a draw
