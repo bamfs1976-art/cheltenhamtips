@@ -71,6 +71,7 @@
   .sb-ro { background:rgba(167,139,250,0.18); border:1px solid rgba(167,139,250,0.5); color:#c4b5fd }
   .sb-big { background:rgba(239,68,68,0.18); border:1px solid rgba(239,68,68,0.55); color:#fca5a5 }
   .sb-jm { background:rgba(244,114,182,0.16); border:1px solid rgba(244,114,182,0.5); color:#f9a8d4 }
+  .sb-cd { font-size:0.6rem; font-weight:700; padding:2px 6px; border-radius:4px; margin-left:4px; background:rgba(74,222,128,0.16); border:1px solid rgba(74,222,128,0.45); color:#4ade80 }
   .sb-2x { background:rgba(251,191,36,0.2); border:1px solid rgba(251,191,36,0.55); color:var(--gold-lt) }
   .tip-row { margin-top:6px; padding:7px 10px; background:rgba(96,165,250,0.05); border-left:2px solid rgba(96,165,250,0.35); border-radius:0 6px 6px 0; font-size:0.74rem; color:#cbd5cf; line-height:1.6 }
   .tip-row strong { color:var(--cream) }
@@ -79,6 +80,7 @@
   .xs-row { padding:7px 0; border-bottom:1px solid rgba(255,255,255,0.06); font-size:0.8rem; color:#cbd5cf; line-height:1.55 }
   .xs-row:last-child { border-bottom:none }
   .xs-row strong { color:var(--cream) }
+  .l15-foot { font-size:0.74rem; color:var(--silver); border-top:1px dashed rgba(255,255,255,0.1); margin-top:8px; padding-top:8px }
   .nobet { margin-top:8px; padding:9px 11px; background:rgba(161,161,170,0.07); border:1px solid rgba(161,161,170,0.25); border-radius:6px; font-size:0.74rem; color:var(--silver); line-height:1.6 }
   .nobet strong { color:#e4e4e7 }
   .pending-inline { margin-top:8px; padding:8px 10px; background:rgba(251,191,36,0.07); border:1px solid rgba(251,191,36,0.25); border-radius:6px; font-size:0.72rem; color:var(--gold-lt); line-height:1.6 }
@@ -112,7 +114,7 @@
 <!-- Shared grouped global nav (injected by fmb-ui.js) -->
 <div id="fmb-nav-root"></div>
 
-<div class="live-strip">🏇 Ebor Festival 2026 &middot; <strong>Day 1 is tomorrow &mdash; Wed 19 August</strong> &middot; Racecard in &middot; gate CLEARED 7/7 &middot; 106 runners &middot; going Good &middot; pricing next</div>
+<div class="live-strip">🏇 Ebor Festival 2026 &middot; <strong>Day 1 is tomorrow &mdash; Wed 19 August</strong> &middot; DAY 1 CARD LIVE &middot; 18 picks &middot; 4-leg Lucky 15 &middot; gate 7/7 &middot; Fri &amp; Sat still entry-stage</div>
 
 <main class="container" id="main" tabindex="-1">
 
@@ -125,7 +127,7 @@
       <div><span class="hero-stat-val">3</span><span class="hero-stat-lbl">Group 1s</span></div>
       <div><span class="hero-stat-val">1</span><span class="hero-stat-lbl">Heritage Hcap</span></div>
       <div><span class="hero-stat-val">106</span><span class="hero-stat-lbl">Wed runners</span></div>
-      <div><span class="hero-stat-val">—</span><span class="hero-stat-lbl">races priced</span></div>
+      <div><span class="hero-stat-val">7</span><span class="hero-stat-lbl">races priced</span></div>
     </div>
   </header>
 
@@ -138,7 +140,7 @@
 
   <div class="titlebar">
     <h2>ebor 2026 · Day 1 tomorrow · Wed 19 – Sat 22 August</h2>
-    <p>Wednesday gate CLEARED 7/7 · 106 runners · all draws in · 4 LONG slots open · 3 near a place boundary · pricing next</p>
+    <p>Wednesday priced: 18 picks · 4-leg Lucky 15 · £26.50 outlay · 26 external picks · gate 7/7 · Fri &amp; Sat entry-stage, unpriced</p>
   </div>
 
   <!-- ── PRE-FLIGHT GATE STATUS ─────────────────────────────── -->
@@ -179,56 +181,49 @@
 
   <!-- ── DAY 1 ──────────────────────────────────────────────── -->
   <section id="day1" class="panel eb-top">
-    <h2 class="panel-head">🏆 Day 1 · Wednesday 19 August · Juddmonte International day · 7 races</h2>
+    <h2 class="panel-head">🏆 Day 1 · Wednesday 19 August · Juddmonte International day · 7 races · <span style="color:var(--green-lt)">PRICED</span></h2>
     <p style="font-size:0.78rem;color:var(--silver);line-height:1.55;margin-bottom:6px">
-      <strong style="color:var(--cream)">Declared field sizes are in for all seven races</strong> — 106 runners,
-      going <strong style="color:var(--cream)">Good</strong>. Each-way terms, the LONG gate and the place-band
-      warnings below are <strong>computed mechanically</strong> by <code>scripts/gate-check.mjs</code>, not
-      estimated. <strong style="color:var(--gold-lt)">Every race still fails on one input: no stalls have
-      been published to us.</strong> Three of the seven are straight-course races where the draw decides
-      the result, so that is not a technicality. Badged rows are external tips, not ours.
+      Gate cleared 7/7 on the declared card. <strong style="color:var(--cream)">18 picks — three races run two
+      picks only</strong> because the LONG slot is closed on the place count, exactly as a Group-race card
+      should. Going <strong style="color:var(--cream)">Good, GoingStick 5.8</strong> — and the per-strip
+      readings matter today: <strong>stands&rsquo; side 5.8 against far side 5.6</strong>, so the high numbers
+      are on the faster ground in the three straight-course races. Prices are the racecard&rsquo;s, moves are
+      against its own Betting Forecast.
     </p>
 
     <div class="race-block">
-      <p class="race-hd">13:50 &middot; Hong Kong Jockey Club World Pool Handicap <span style="color:var(--silver);font-weight:400">(Heritage Hcap)</span> &middot; 5&frac12;f &middot; <strong>straight course</strong></p>
-      <div class="pick-row"><div class="pick-tag gate">GATE</div><div><span class="pick-horse">NO BET &mdash; 22 runners without a draw</span><div class="pick-note"><strong>22 declared</strong> &middot; EW 1/5, at least 5 places &middot; <span style="color:var(--green-lt)">LONG <strong>open</strong></span><div style="margin-top:5px;color:#7dd3fc">ℹ <strong>Big field</strong> — check for a place special above the standard ladder; this class of handicap often pays 6–8.</div></div></div></div>
-      <div class="tip-row"><span class="sb sb-rp">RP&#9733;</span> <strong>Spotlight</strong> (Paul Smith, &#9733;&#9734;&#9734;): <strong>Toca Madera</strong> 7/1</div><div class="tip-row"><span class="sb sb-sm">SM</span> <strong>Steve Mullington (WH)</strong>: <strong>Corolla Point</strong> &mdash; <strong>10/1 e/w</strong>. Ed Bethell on a <strong>41% win strike rate</strong> over the last fortnight; third here in a similar event at the Dante meeting.</div><div class="pending-inline"><strong>The best LONG candidate on the card</strong> &mdash; 22 runners, 5+ places, and a Heritage Handicap that may well pay more. Mullington&rsquo;s 10/1 e/w clears the 8/1 floor. It is also a <strong>straight-course sprint</strong>, so the draw is not a tiebreak here, it is the race. No stalls, no pick.</div>
+      <p class="race-hd">13:50 &middot; Hong Kong Jockey Club World Pool Handicap (Heritage) &middot; 5&frac12;f &middot; 22 rnrs &middot; Cl2 &middot; EW 1/5 5pl &middot; <strong>straight course, stalls Centre</strong></p>
+      <div class="pick-row"><div class="pick-tag nap">NAP</div><div><span class="pick-horse">Corolla Point</span> <span class="draw-b">Draw 9</span> <span class="sb sb-sm">SM</span><span class="conns">C.Rodriguez | Edward Bethell <strong>86%</strong> | 4yo 9-8 · OR100 · RPR111</span><div class="pick-note"><strong style='color:var(--green-lt)'>STEAM 7/1 &rarr; 6/1.</strong> Bethell&rsquo;s 86% strike rate is the standout trainer stat on the whole card, and the horse was third here in a similar event at the Dante meeting — course-and-trip form on a track where that counts. Mullington&rsquo;s selection.</div></div><div class="pick-odds">6/1</div></div><div class="pick-row"><div class="pick-tag nb">NB</div><div><span class="pick-horse">Air Force One</span> <span class="draw-b">Draw 5</span> <span class="sb-cd">C</span><span class="conns">P J McDonald | Geoff Oldroyd <strong>100%</strong> | 5yo 8-13 · OR91 · RPR113</span><div class="pick-note">A <strong>course winner</strong> for a yard running at 100%, dropped to a workable OR91. Draw 5 is the reservation on today&rsquo;s ground read.</div></div><div class="pick-odds">15/2</div></div><div class="pick-row"><div class="pick-tag long">LONG</div><div><span class="pick-horse">Dubai Bling</span> <span class="draw-b">Draw 17</span> <span class="sb sb-nl">NL</span><span class="conns">O.Murphy | Hugo Palmer 54% | 4yo 9-12 · OR104 · RPR113</span><div class="pick-note"><strong>The gate opens the LONG here</strong> (22 runners, 5+ places) and this clears 8/1 with a concrete signal. <span class='sb sb-nl'>NL</span> <strong>Nick Luck</strong>: the Stewards&rsquo; Cup run was far better than the finish after a shocking start, he races off 3lb lower and gets Murphy. <strong>The GoingStick backs him</strong> — stands&rsquo; side 5.8 against far side 5.6, so the high berth sits on the faster strip. Drifted 16/1&rarr;20/1, which is why he is the longshot and not the NB.</div></div><div class="pick-odds">20/1</div></div>
     </div>
 
     <div class="race-block">
-      <p class="race-hd">14:25 &middot; Tattersalls Acomb Stakes <span class="g1">(Group 3)</span> &middot; 7f &middot; 2yo</p>
-      <div class="pick-row"><div class="pick-tag gate">GATE</div><div><span class="pick-horse">NO BET &mdash; 11 runners without a draw</span><div class="pick-note"><strong>11 declared</strong> &middot; EW 1/5, at least 4 places &middot; <span style="color:var(--silver)">LONG closed &mdash; two picks only</span></div></div></div>
-      <div class="tip-row"><span class="sb sb-rp">RP&#9733;</span> <strong>Spotlight</strong> (Ben Hutton, &#9733;&#9734;&#9734;): <strong>Trean</strong> 5/1</div><div class="tip-row"><span class="sb sb-jm">JM</span> <strong>Jane Mangan (WH)</strong>: <strong>Trean</strong> &mdash; Paddy Twomey; emphatic Galway winner last time. <span class="sb sb-2x">2x</span> with Spotlight.</div><div class="tip-row"><span class="sb sb-sm">SM</span> <strong>Steve Mullington (WH)</strong>: <strong>Alfred Wallace</strong> &mdash; won going away at Ascot in a 7f Listed race &mdash; a natural step up for the Dubawi colt.</div><div class="pending-inline"><strong>Three columns, three horses, and none of them the favourite.</strong> Spotlight and Mangan are on Trean, Mullington on Alfred Wallace, and both WH articles flag <strong>Haffner</strong> (Ballydoyle) as the market leader nobody tips. <strong>LONG is closed at 4 places</strong> — this race runs two picks at most.</div>
+      <p class="race-hd">14:25 &middot; Tattersalls Acomb Stakes <span class="g1">(Group 3)</span> &middot; 7f &middot; 11 rnrs &middot; 2yo &middot; EW 1/5 4pl &middot; stalls Inside &middot; <strong>LONG closed &mdash; two picks</strong></p>
+      <div class="pick-row"><div class="pick-tag nap">NAP</div><div><span class="pick-horse">Alfred Wallace</span> <span class="draw-b">Draw 8</span> <span class="sb sb-sm">SM</span> <span class="sb sb-nl">NL</span> <span class="sb sb-2x">2x</span><span class="conns">K.Shoemark | Ed Walker 59% | 2yo 9-3 · OR105 · RPR114</span><div class="pick-note">Won going away in a 7f Listed at Ascot, so a marginal rise to Group 3 is natural. <strong>2x</strong> — Mullington and Nick Luck both here, and Luck&rsquo;s pace case is the concrete bit: <strong>Haffner (11) and Confucius (10) are trapped widest and will have to bull forward</strong>, with Trean also on the sharp end. Sets up for a restrained ride.</div></div><div class="pick-odds">13/2</div></div><div class="pick-row"><div class="pick-tag nb">NB</div><div><span class="pick-horse">Trean</span> <span class="draw-b">Draw 7</span> <span class="sb sb-rp">RP&#9733;</span> <span class="sb sb-jm">JM</span> <span class="sb sb-2x">2x</span><span class="conns">W J Lee | P Twomey (IRE) 70% | 2yo 9-3 · RPR101</span><div class="pick-note">The other <strong>2x</strong> in the race — Spotlight and Jane Mangan — after an emphatic Galway maiden win. Twomey targets this meeting. Held as the NB rather than the NAP because Luck&rsquo;s read has him used up early.</div></div><div class="pick-odds">4/1</div></div><div class="pending-inline"><strong>What we are opposing.</strong> <strong>Haffner</strong> 7/4 has the best RPR in the race (116) and is Moore/O&rsquo;Brien — and <em>not one of our four columns tips him</em>. That is the whole race in a sentence: the form horse against the pace shape. If he wins we were beaten by the obvious, and the card says so in advance.</div>
     </div>
 
     <div class="race-block">
-      <p class="race-hd">15:00 &middot; Sky Bet Great Voltigeur Stakes <span class="g1">(Group 2)</span> &middot; 1m4f &middot; 3yo &middot; St Leger trial</p>
-      <div class="pick-row"><div class="pick-tag gate">GATE</div><div><span class="pick-horse">NO BET &mdash; 6 runners without a draw</span><div class="pick-note"><strong>6 declared</strong> &middot; EW 1/4, at least 2 places &middot; <span style="color:var(--silver)">LONG closed &mdash; two picks only</span><div style="margin-top:5px;color:var(--gold-lt)">⚠ <strong>Place band at risk</strong> — only 1 runner above the 5-runner boundary. <strong>Two withdrawals and this is win-only.</strong> Each-way value is already marginal at 6 runners (rule 6).</div></div></div></div>
-      <div class="tip-row"><span class="sb sb-rp">RP&#9733;</span> <strong>Spotlight</strong> (Richard Austen, &#9733;&#9734;&#9734;): <strong>Pierre Bonnard</strong> 3/1</div><div class="tip-row"><span class="sb sb-sm">SM</span> <strong>Steve Mullington (WH)</strong>: <strong>Christmas Day <em>(his NAP)</em></strong> &mdash; the <strong>Derby winner</strong> reasserting himself over 1m4f on the Knavesmire; main rival <strong>Maltese Cross</strong>.</div><div class="tip-row" style="border-left-color:rgba(251,191,36,0.5);background:rgba(251,191,36,0.05)"><strong style="color:var(--gold-lt)">Our archive:</strong> Christmas Day won the <a href="epsom-derby-2026.html">Epsom Derby</a> at 7/1 for us, and was the 4x-crossover quad that finished <strong>third in the Dante on this very track</strong> in May. He has run at York and not won.</div>
+      <p class="race-hd">15:00 &middot; Sky Bet Great Voltigeur Stakes <span class="g1">(Group 2)</span> &middot; 1m4f &middot; 6 rnrs &middot; 3yo &middot; EW 1/4 2pl &middot; stalls Centre &middot; <strong>LONG closed &mdash; two picks</strong></p>
+      <div class="pick-row"><div class="pick-tag nap">NAP</div><div><span class="pick-horse">Pierre Bonnard</span> <span class="draw-b">Draw 2</span> <span class="sb sb-rp">RP&#9733;</span> <span class="sb sb-nl">NL</span> <span class="sb sb-2x">2x</span><span class="conns">W.Lordan | A P O'Brien (IRE) 71% | 3yo 9-2 · OR116 · <strong>TS128 · RPR131</strong></span><div class="pick-note"><strong>Top RPR and top Topspeed in the race</strong>, and he <strong>receives 5lb</strong> from both principals. 2x with Nick Luck, who notes he was slow to start the season and is only now coming to himself; a level track and cut in the ground suit.</div></div><div class="pick-odds">3/1</div></div><div class="pick-row"><div class="pick-tag nb">NB</div><div><span class="pick-horse">Christmas Day</span> <span class="draw-b">Draw 4</span> <span class="sb sb-sm">SM</span><span class="conns">R.Moore | A P O'Brien (IRE) 71% | 3yo 9-7 · OR118 · RPR126</span><div class="pick-note"><strong style='color:var(--green-lt)'>STEAM 7/2 &rarr; 11/4</strong> — money coming for the Derby winner, Mullington&rsquo;s NAP. Under 3/1 so rule 8 keeps him out of our NAP slot. <em>Our own archive is the caution: he was third in the Dante on this track in May.</em></div></div><div class="pick-odds">11/4</div></div><div class="pending-inline"><strong>⚠ Six runners, two places, and one withdrawal from trouble.</strong> Two non-runners make this <strong>win-only</strong>. Each-way value is already marginal (rule 6) — these are win bets in all but name.</div>
     </div>
 
     <div class="race-block">
-      <p class="race-hd">15:35 &middot; Juddmonte International Stakes <span class="g1">(Group 1)</span> &middot; 1m2f &middot; 3yo+ &middot; &pound;1.5m &middot; the festival&rsquo;s headline race</p>
-      <div class="pick-row"><div class="pick-tag gate">GATE</div><div><span class="pick-horse">NO BET &mdash; 9 runners without a draw</span><div class="pick-note"><strong>9 declared</strong> &middot; EW 1/5, at least 4 places &middot; <span style="color:var(--silver)">LONG closed &mdash; two picks only</span><div style="margin-top:5px;color:var(--gold-lt)">⚠ <strong>Place band at risk</strong> — 1 runner above the 8-runner boundary; <strong>two withdrawals drops this to 2 places.</strong></div></div></div></div>
-      <div class="tip-row" style="border-left-color:rgba(74,222,128,0.5)"><strong>The one declared field we have in full (9):</strong> Almaqam (K.Shoemark) &middot; Devil&rsquo;s Advocate (R.Havlin) &middot; <strong>Ombudsman (W.Buick)</strong> &middot; Pride Of Arras (R.Ryan) &middot; Zaydann (M.Barzalona) &middot; Action (R.Whelan) &middot; <strong>Constitution River (R.Moore)</strong> &middot; Hawk Mountain (W.Lordan) &middot; <strong>Item</strong> (C.Keane). <em>Still no stalls &mdash; and Item was our NB at Epsom.</em></div><div class="tip-row"><span class="sb sb-rp">RP&#9733;</span> <strong>Spotlight</strong> (Ben Hutton, &#9733;&#9734;&#9734;): <strong>Ombudsman</strong> 11/10</div><div class="tip-row"><span class="sb sb-sm">SM</span> <strong>Steve Mullington (WH)</strong>: <strong>Ombudsman <em>(his NB)</em></strong> &mdash; won this last year; bidding to be the <strong>first back-to-back Juddmonte winner in 30 years</strong>.</div><div class="pending-inline"><strong>Banker marker &mdash; two rules bite.</strong> At 11/10 he is under the 2/1 floor (rule 7, out of the Lucky 15) and he is a 2x horse under 3/1 (rule 8, barred from our NAP). WH list him among their three worst results of the meeting: the money is already on. <strong>LONG closed at 4 places.</strong></div>
+      <p class="race-hd">15:35 &middot; Juddmonte International Stakes <span class="g1">(Group 1)</span> &middot; 1m2f &middot; 9 rnrs &middot; &pound;1.5m &middot; EW 1/5 4pl &middot; stalls Inside &middot; <strong>LONG closed &mdash; two picks</strong></p>
+      <div class="pick-row"><div class="pick-tag nap">NAP</div><div><span class="pick-horse">Constitution River</span> <span class="draw-b">Draw 7</span> <span class="sb sb-nl">NL</span><span class="conns">R.Moore | A P O'Brien (IRE) 71% | 3yo 9-1 · OR124 · RPR134</span><div class="pick-note">The Eclipse winner, and <span class='sb sb-nl'>NL</span> <strong>Nick Luck confidently fancies him to beat Ombudsman</strong>: Ballydoyle shape the race through Action and the underrated Hawk Mountain, he simply glided through the Eclipse, and a bit of cut helps. <strong>Our NAP goes here precisely because the consensus is on the other one.</strong></div></div><div class="pick-odds">13/8</div></div><div class="pick-row"><div class="pick-tag nb">NB</div><div><span class="pick-horse">Ombudsman</span> <span class="draw-b">Draw 1</span> <span class="sb-cd">CD</span> <span class="sb sb-rp">RP&#9733;</span> <span class="sb sb-sm">SM</span> <span class="sb sb-2x">2x</span><span class="conns">W.Buick | John &amp; Thady Gosden 75% | 5yo 9-8 · <strong>OR132 · RPR139</strong></span><div class="pick-note">Top-rated, a <strong>course-and-distance winner</strong>, bidding to be the first back-to-back Juddmonte winner in 30 years, and carrying <strong>7 of the Racing Post&rsquo;s tips</strong>. <strong>Rule 8 forces him to NB</strong> — a 2x horse under 3/1 does not take our NAP. Note he has eased <strong>11/10 &rarr; 5/4</strong>, a mild demotion signal that points the same way.</div></div><div class="pick-odds">5/4</div></div><div class="pending-inline"><strong>⚠ Nine runners, 4 places, one off the boundary</strong> — two withdrawals drops this to 2 places. Also worth noting: <strong>Item</strong> (draw 2, 8/1, drifted from 6/1) is a CD winner and was <a href="epsom-derby-2026.html">our NB at Epsom</a>.</div>
     </div>
 
     <div class="race-block">
-      <p class="race-hd">16:10 &middot; Sky Bet Stayers Handicap <span style="color:var(--silver);font-weight:400">(Heritage Hcap)</span> &middot; 2m &middot; stayers</p>
-      <div class="pick-row"><div class="pick-tag gate">GATE</div><div><span class="pick-horse">NO BET &mdash; 17 runners without a draw</span><div class="pick-note"><strong>17 declared</strong> &middot; EW 1/5, at least 5 places &middot; <span style="color:var(--green-lt)">LONG <strong>open</strong></span><div style="margin-top:5px;color:var(--gold-lt)">⚠ <strong>Place band at risk</strong> — <strong>only 1 runner above the 16-runner boundary — two withdrawals drops this to 4 places.</strong> This is the exact failure that cost us at Goodwood Day 5: priced at 5 places, settled at 4. Any LONG here is <strong>provisional</strong> and the count must be re-checked at the off.</div></div></div></div>
-      <div class="tip-row"><span class="sb sb-rp">RP&#9733;</span> <strong>Spotlight</strong> (Richard Austen, &#9733;&#9734;&#9734;): <strong>Small Fry</strong> 3/1</div><div class="tip-row"><span class="sb sb-sm">SM</span> <strong>Steve Mullington (WH)</strong>: <strong>Shrimp Shady</strong> &mdash; Andrew Balding&rsquo;s 4yo, a Chester May Meeting winner who has held his form over marathon trips.</div>
+      <p class="race-hd">16:10 &middot; Sky Bet Stayers Handicap (Heritage) &middot; 2m &middot; 17 rnrs &middot; Cl2 &middot; EW 1/5 5pl &middot; stalls Inside &middot; <strong style='color:var(--green-lt)'>LONG open</strong></p>
+      <div class="pick-row"><div class="pick-tag nap">NAP</div><div><span class="pick-horse">Kirchner</span> <span class="draw-b">Draw 5</span> <span class="sb sb-nl">NL</span> <span class="sb sb-rp">RP&#9733;</span> <span class="sb sb-2x">2x</span><span class="conns">R.Moore | James Owen 63% | 4yo 9-7 · OR97 · RPR108</span><div class="pick-note"><strong style='color:var(--green-lt)'>STEAM 5/1 &rarr; 9/2</strong> with <strong>Ryan Moore booked</strong>. Northumberland Plate runner-up — a race <a href='northumberland-plate-2026.html'>we covered</a> — and Nick Luck reckons Owen hasn&rsquo;t got to the bottom of him and the handicapper could have gone harder. The RP verdict also has him topping the list.</div></div><div class="pick-odds">9/2</div></div><div class="pick-row"><div class="pick-tag nb">NB</div><div><span class="pick-horse">Small Fry</span> <span class="draw-b">Draw 10</span> <span class="sb sb-rp">RP&#9733;</span><span class="conns">D.Browne McMonagle | Joseph O'Brien (IRE) 56% | 5yo 9-6 · OR96 · RPR108</span><div class="pick-note"><strong style='color:var(--green-lt)'>STEAM 3/1 &rarr; 5/2</strong> and the Racing Post&rsquo;s headline selection. Under 3/1, so NB not NAP.</div></div><div class="pick-odds">5/2</div></div><div class="pick-row"><div class="pick-tag long">LONG</div><div><span class="pick-horse">Shrimp Shady</span> <span class="draw-b">Draw 3</span> <span class="sb sb-sm">SM</span> <span class="sb-cd">D</span><span class="conns">R.Hornby | Andrew Balding 53% | 4yo 9-1 · OR91 · RPR112</span><div class="pick-note">Clears the gate — 5 places, 11/1, and a concrete signal in Mullington&rsquo;s column plus a <strong>distance win</strong> and the Chester May Meeting form. Beaten favourite last time, which is usually where the price comes from.</div></div><div class="pick-odds">11/1</div></div><div class="pending-inline"><strong style="color:#fca5a5">⚠ LONG is PROVISIONAL.</strong> 17 runners is one above the 16-runner boundary: <strong>two withdrawals drops this from 5 places to 4</strong> and Shrimp Shady would be running under terms that no longer hold. This is the Goodwood Day 5 failure exactly. <strong>Re-check the place count at the off.</strong></div>
     </div>
 
     <div class="race-block">
-      <p class="race-hd">16:45 &middot; Irish Thoroughbred Marketing Handicap <span style="color:var(--silver);font-weight:400">(Heritage Hcap, Class 2, 3yo 0-105)</span> &middot; 5f &middot; <strong>straight course</strong></p>
-      <div class="pick-row"><div class="pick-tag gate">GATE</div><div><span class="pick-horse">NO BET &mdash; 19 runners without a draw</span><div class="pick-note"><strong>19 declared</strong> &middot; EW 1/5, at least 5 places &middot; <span style="color:var(--green-lt)">LONG <strong>open</strong></span></div></div></div>
-      <div class="tip-row"><span class="sb sb-rp">RP&#9733;</span> <strong>Spotlight</strong> (Ben Hutton, &#9733;&#9734;&#9734;): <strong>Naana&rsquo;s Shadow</strong> 5/1</div><div class="tip-row"><span class="sb sb-sm">SM</span> <strong>Steve Mullington (WH)</strong>: <strong>Baker Blue</strong> &mdash; <strong>each-way interest</strong>. Dylan Cunha runs him back quickly after a competitive 5f third at Pontefract on Sunday.</div><div class="pending-inline"><strong>19 runners over the straight five &mdash; the single most draw-dependent race of the day.</strong> LONG is open on the terms, but pricing a 5f cavalry charge without stalls would be guessing, not analysis.</div>
+      <p class="race-hd">16:45 &middot; Irish Thoroughbred Marketing Handicap (Heritage) &middot; 5f &middot; 19 rnrs &middot; Cl2 3yo 0-105 &middot; EW 1/5 5pl &middot; <strong>straight course, stalls Centre</strong> &middot; <strong style='color:var(--green-lt)'>LONG open</strong></p>
+      <div class="pick-row"><div class="pick-tag nap">NAP</div><div><span class="pick-horse">Naana's Shadow</span> <span class="draw-b">Draw 15</span> <span class="sb-cd">CD</span> <span class="sb sb-rp">RP&#9733;</span><span class="conns">O.Murphy | Katie Scott 36% | 3yo 9-9 · OR102 · RPR112</span><div class="pick-note"><strong style='color:var(--green-lt)'>STEAM 5/1 &rarr; 4/1.</strong> A <strong>course-and-distance winner</strong> going for a fifth win of the season, top weight because she keeps defying the handicapper, with Murphy up. <strong>Drawn 15 of 19 on the stands&rsquo; side</strong> — the GoingStick reads 5.8 there against 5.6 far side, so she is on the faster strip.</div></div><div class="pick-odds">4/1</div></div><div class="pick-row"><div class="pick-tag nb">NB</div><div><span class="pick-horse">Old Is Gold</span> <span class="draw-b">Draw 12</span> <span class="sb sb-nl">NL</span> <span class="sb-cd">D</span><span class="conns">S.Osborne | Andrew Balding 53% | 3yo 8-5 · OR84 · RPR110</span><div class="pick-note"><strong style='color:var(--green-lt)'>STEAM 12/1 &rarr; 10/1.</strong> Nick Luck: heavily fancied at Goodwood but blew it at the start again, and he is <strong>banking on the first-time visor</strong> fixing that. Exceptionally well treated on last year&rsquo;s form if it does.</div></div><div class="pick-odds">10/1</div></div><div class="pick-row"><div class="pick-tag long">LONG</div><div><span class="pick-horse">Baker Blue</span> <span class="draw-b">Draw 11</span> <span class="sb sb-sm">SM</span> <span class="sb-cd">D</span><span class="conns">C.Rodriguez | Dylan Cunha 54% | 3yo 9-1 · OR94 · RPR112</span><div class="pick-note">Mullington&rsquo;s each-way call. A <strong>distance winner</strong> running back quickly after a competitive 5f third at Pontefract on Sunday, and Cunha is right to press on. Price unmoved at 25/1.</div></div><div class="pick-odds">25/1</div></div>
     </div>
 
     <div class="race-block">
-      <p class="race-hd">17:20 &middot; Sky Bet Nursery Handicap &middot; 6f &middot; 2yo &middot; <strong>straight course</strong></p>
-      <div class="pick-row"><div class="pick-tag gate">GATE</div><div><span class="pick-horse">NO BET &mdash; 22 runners without a draw</span><div class="pick-note"><strong>22 declared</strong> &middot; EW 1/5, at least 5 places &middot; <span style="color:var(--green-lt)">LONG <strong>open</strong></span><div style="margin-top:5px;color:#7dd3fc">ℹ <strong>Big field</strong> — check for a place special above the standard ladder; this class of handicap often pays 6–8.</div></div></div></div>
-      <div class="tip-row"><span class="sb sb-rp">RP&#9733;</span> <strong>Spotlight</strong> (Richard Russell, &#9733;&#9734;&#9734;): <strong>Henley On Thames</strong> 10/1</div><div class="tip-row"><span class="sb sb-sm">SM</span> <strong>Steve Mullington (WH)</strong>: <strong>Note To Self</strong> &mdash; Shane Foley teams up with the Gosdens; the Too Darn Hot colt goes handicapping off 8st 9lb.</div>
+      <p class="race-hd">17:20 &middot; Sky Bet Nursery Handicap &middot; 6f &middot; 22 rnrs &middot; Cl2 2yo &middot; EW 1/5 5pl &middot; <strong>straight course, stalls Centre</strong> &middot; <strong style='color:var(--green-lt)'>LONG open</strong></p>
+      <div class="pick-row"><div class="pick-tag nap">NAP</div><div><span class="pick-horse">Dubai Champion</span> <span class="draw-b">Draw 20</span><span class="conns">R.Moore | Ben Haslam 45% | 2yo 9-3 · OR87 · RPR98</span><div class="pick-note"><strong style='color:var(--green-lt)'>STEAM 11/2 &rarr; 9/2</strong> with <strong>Ryan Moore</strong> booked, and <strong>drawn 20 of 22</strong> — the stands&rsquo;-side strip the GoingStick reads fastest today (5.8 v 5.6). Money and draw pointing the same way in a race where the draw decides it.</div></div><div class="pick-odds">9/2</div></div><div class="pick-row"><div class="pick-tag nb">NB</div><div><span class="pick-horse">Henley On Thames</span> <span class="draw-b">Draw 6</span> <span class="sb sb-rp">RP&#9733;</span> <span class="sb-cd">D</span><span class="conns">D.Egan | K.Philippart De Foy 50% | 2yo 8-9 · OR79 · <strong>RPR104</strong></span><div class="pick-note"><strong>The best RPR in the race by 3lb</strong> and a distance winner who went gun-to-tape at Hamilton, carrying four Racing Post tips. Held at NB purely on the draw: 6 is the wrong side of the track on today&rsquo;s stick readings.</div></div><div class="pick-odds">9/1</div></div><div class="pick-row"><div class="pick-tag long">LONG</div><div><span class="pick-horse">God Given Talent</span> <span class="draw-b">Draw 11</span> <span class="sb sb-nl">NL</span> <span class="sb-cd">D</span><span class="conns">T.Marquand | William Haggas 67% | 2yo 9-5 · OR89 · RPR98</span><div class="pick-note"><strong style='color:var(--green-lt)'>STEAM 14/1 &rarr; 11/1</strong> — the strongest LONG on the card. First start for <strong>Haggas</strong>, Marquand booked, and a <strong>tongue tie applied</strong>. Nick Luck notes Marquand had a sit on him at his final start for the previous yard and may have prompted the headgear.</div></div><div class="pick-odds">11/1</div></div>
     </div>
   </section>
 
@@ -275,6 +270,23 @@
   <!-- ── DAY 3 ──────────────────────────────────────────────── -->
   <section id="day3" class="panel eb-top">
     <h2 class="panel-head">⚡ Day 3 · Friday 21 August · Nunthorpe day</h2>
+    <div class="pending-inline" style="background:rgba(239,68,68,0.08);border-color:rgba(239,68,68,0.35);color:#fca5a5">
+      <strong style="color:#fecaca">⛔ ENTRY-STAGE DATA RECEIVED — NOT DECLARATIONS. NOTHING PRICED.</strong><br><br>
+      A full card for this day has been supplied, but it is the <strong>entry/confirmation stage</strong>, not
+      the declared field. Four independent tells, any one of which is enough:<br><br>
+      <strong>1 · Field sizes far above the safety limit.</strong> The Ebor lists <strong>50 runners</strong>,
+      the Constantine 44, the Finale 35, the Melrose 27, the Sky Bet Mile 30 and the Assured Data 28. York&rsquo;s
+      limit for these is around 22. These fields will roughly halve.<br>
+      <strong>2 · No draw on any runner.</strong> Wednesday&rsquo;s declared card carried a stall for all 106
+      runners; these carry none, because stalls are not assigned until declaration.<br>
+      <strong>3 · Jockeys largely unfilled</strong>, and several races still read
+      &ldquo;CONFIRM/SUPPLEMENT&rdquo;.<br>
+      <strong>4 · The timetable says so.</strong> Declarations confirm 48 hours out: Friday&rsquo;s land
+      <strong>Wednesday</strong>, Saturday&rsquo;s land <strong>Thursday</strong>. Neither has happened.<br><br>
+      This is precisely what rule 13 exists for. At Goodwood entry lists went 29→18, 16→8, 22→14, 10→5 and
+      31→24, and six picks in three unverified races cost £9. <strong>These days get priced when their own
+      declarations land, and not before.</strong>
+    </div>
 
     <div class="race-block">
       <p class="race-hd">15:35 · <span class="g1">Coolmore City Of Troy Nunthorpe Stakes (G1)</span> · 5f · 2yo+ · the fastest five furlongs of the season</p>
@@ -301,6 +313,23 @@
   <!-- ── DAY 4 ──────────────────────────────────────────────── -->
   <section id="day4" class="panel eb-top">
     <h2 class="panel-head">🎯 Day 4 · Saturday 22 August · Ebor Handicap day</h2>
+    <div class="pending-inline" style="background:rgba(239,68,68,0.08);border-color:rgba(239,68,68,0.35);color:#fca5a5">
+      <strong style="color:#fecaca">⛔ ENTRY-STAGE DATA RECEIVED — NOT DECLARATIONS. NOTHING PRICED.</strong><br><br>
+      A full card for this day has been supplied, but it is the <strong>entry/confirmation stage</strong>, not
+      the declared field. Four independent tells, any one of which is enough:<br><br>
+      <strong>1 · Field sizes far above the safety limit.</strong> The Ebor lists <strong>50 runners</strong>,
+      the Constantine 44, the Finale 35, the Melrose 27, the Sky Bet Mile 30 and the Assured Data 28. York&rsquo;s
+      limit for these is around 22. These fields will roughly halve.<br>
+      <strong>2 · No draw on any runner.</strong> Wednesday&rsquo;s declared card carried a stall for all 106
+      runners; these carry none, because stalls are not assigned until declaration.<br>
+      <strong>3 · Jockeys largely unfilled</strong>, and several races still read
+      &ldquo;CONFIRM/SUPPLEMENT&rdquo;.<br>
+      <strong>4 · The timetable says so.</strong> Declarations confirm 48 hours out: Friday&rsquo;s land
+      <strong>Wednesday</strong>, Saturday&rsquo;s land <strong>Thursday</strong>. Neither has happened.<br><br>
+      This is precisely what rule 13 exists for. At Goodwood entry lists went 29→18, 16→8, 22→14, 10→5 and
+      31→24, and six picks in three unverified races cost £9. <strong>These days get priced when their own
+      declarations land, and not before.</strong>
+    </div>
 
     <div class="race-block">
       <p class="race-hd">15:35 · Sky Bet Ebor Handicap (Heritage Handicap) · about 1m6f · 3yo+ · Europe's richest flat handicap</p>
@@ -326,6 +355,23 @@
     </div>
   </section>
 
+  <!-- LUCKY 15 -->
+  <section class="panel gold-top">
+    <h2 class="panel-head">🎯 Day 1 Lucky 15 · 4 legs</h2>
+    <p style="font-size:0.78rem;color:var(--silver);line-height:1.55;margin-bottom:6px">
+      Four legs from four different races, <strong>all 4/1 or bigger</strong>, none from a race that failed the
+      gate, and <strong style="color:var(--cream)">none promoted on crossover count</strong>. The short ones are
+      deliberately absent: Constitution River 13/8, Ombudsman 5/4, Christmas Day 11/4, Pierre Bonnard 3/1 and
+      Small Fry 5/2 are all under the 4/1 floor, and Ombudsman is a banker marker on top of it.
+      Record to date is <strong style="color:#fca5a5">−58.8%</strong> — this is the highest-variance part of the card.
+    </p>
+    <div class="pick-row"><div class="pick-tag nap">L15</div><div><span class="pick-horse">Corolla Point</span> <span class="draw-b">Draw 9</span> <span class="sb sb-sm">SM</span><div class="pick-note">13:50 — STEAM 7/1→6/1, Bethell 86%, course-and-trip form here at the Dante meeting.</div></div><div class="pick-odds">6/1</div></div>
+    <div class="pick-row"><div class="pick-tag nap">L15</div><div><span class="pick-horse">Alfred Wallace</span> <span class="draw-b">Draw 8</span> <span class="sb sb-2x">2x</span><div class="pick-note">14:25 Acomb — Ascot Listed winner, and the pace shape sets up for him with the two Ballydoyle colts drawn widest.</div></div><div class="pick-odds">13/2</div></div>
+    <div class="pick-row"><div class="pick-tag nap">L15</div><div><span class="pick-horse">Kirchner</span> <span class="draw-b">Draw 5</span> <span class="sb sb-2x">2x</span><div class="pick-note">16:10 — STEAM 5/1→9/2, Ryan Moore booked, Northumberland Plate runner-up.</div></div><div class="pick-odds">9/2</div></div>
+    <div class="pick-row"><div class="pick-tag nap">L15</div><div><span class="pick-horse">Naana&rsquo;s Shadow</span> <span class="draw-b">Draw 15</span> <span class="sb-cd">CD</span><div class="pick-note">16:45 — STEAM 5/1→4/1, CD winner chasing a fifth win of the season, drawn on the faster stands&rsquo;-side strip.</div></div><div class="pick-odds">4/1</div></div>
+    <div class="l15-foot">15 bets &times; 50p = <strong>&pound;7.50</strong> &middot; plus 50p e/w on 18 singles = <strong>&pound;18.00</strong> &middot; <strong>total Day 1 outlay &pound;25.50</strong> <span style="color:var(--silver);font-weight:400">(4 races carry three picks, 3 carry two)</span></div>
+  </section>
+
   <!-- ── MARKET MOVES ───────────────────────────────────────── -->
   <section class="panel gold-top">
     <h2 class="panel-head">📈 Market moves · recorded before the off</h2>
@@ -346,7 +392,7 @@
 
   <!-- ── EXTERNAL TIPSTERS ──────────────────────────────────── -->
   <section class="panel blue-left">
-    <h2 class="panel-head">📋 External tipsters · 19 picks overlaid</h2>
+    <h2 class="panel-head">📋 External tipsters · 26 picks · four columns</h2>
     <p style="font-size:0.78rem;color:var(--silver);line-height:1.55;margin-bottom:6px">
       Three columns are in. <strong style="color:var(--cream)">None of these is ours.</strong> They are
       logged because a tipster&rsquo;s strike rate and the dissent between them are worth knowing before
@@ -371,7 +417,13 @@
       <strong>Love Me Tender</strong> (Ebor, Sat 15:35).
       <em style="color:#f9a8d4">An all-Irish angle across three days.</em>
     </div>
-    <div class="pending-inline"><strong>Still to overlay:</strong> Geraghty, Nick Luck, Grimshaw, Frick, Raceolly and the HRN biggest-priced lists.</div>
+    <div class="tp-block"><span class="sb sb-nl">NL</span> <span class="tp-name">Nick Luck (William Hill ambassador) &middot; Day 1, all seven races</span> &mdash;
+      <strong>Dubai Bling</strong> (13:50) &middot; <strong>Alfred Wallace</strong> (14:25) &middot; <strong>Pierre Bonnard</strong> (15:00) &middot;
+      <strong>Constitution River</strong> (15:35) &middot; <strong>Kirchner</strong> (16:10) &middot; <strong>Old Is Gold</strong> (16:45) &middot;
+      <strong>God Given Talent</strong> e/w (17:20).
+      <em style="color:#5eead4">The most useful column of the four — he reasons from pace and ground rather than form alone, and his stands&rsquo;-side ground read is corroborated by the GoingStick. <strong>Five of his seven are in our frame.</strong></em>
+    </div>
+    <div class="pending-inline"><strong>Still to overlay:</strong> Geraghty, Grimshaw, Frick, Raceolly and the HRN biggest-priced lists.</div>
   </section>
 
   <!-- ── CROSSOVER SIGNALS ──────────────────────────────────── -->
