@@ -112,7 +112,7 @@
 <!-- Shared grouped global nav (injected by fmb-ui.js) -->
 <div id="fmb-nav-root"></div>
 
-<div class="live-strip">🏇 Ebor Festival 2026 &middot; <strong>Day 1 is tomorrow &mdash; Wed 19 August</strong> &middot; 7-race card confirmed &middot; 4 steamers logged &middot; racecard still needed to price</div>
+<div class="live-strip">🏇 Ebor Festival 2026 &middot; <strong>Day 1 is tomorrow &mdash; Wed 19 August</strong> &middot; 7 races gated &middot; 106 runners &middot; going Good &middot; stalls are the last missing input</div>
 
 <main class="container" id="main" tabindex="-1">
 
@@ -124,7 +124,7 @@
       <div><span class="hero-stat-val">4</span><span class="hero-stat-lbl">days</span></div>
       <div><span class="hero-stat-val">3</span><span class="hero-stat-lbl">Group 1s</span></div>
       <div><span class="hero-stat-val">1</span><span class="hero-stat-lbl">Heritage Hcap</span></div>
-      <div><span class="hero-stat-val">7</span><span class="hero-stat-lbl">Wed races</span></div>
+      <div><span class="hero-stat-val">106</span><span class="hero-stat-lbl">Wed runners</span></div>
       <div><span class="hero-stat-val">—</span><span class="hero-stat-lbl">races priced</span></div>
     </div>
   </header>
@@ -138,37 +138,44 @@
 
   <div class="titlebar">
     <h2>ebor 2026 · Day 1 tomorrow · Wed 19 – Sat 22 August</h2>
-    <p>Wednesday’s 7 races, names &amp; distances confirmed · 19 external picks · 2 crossovers · 4 steamers logged · 0 of our picks priced</p>
+    <p>Wednesday gated: 7 races · 106 runners · going Good · 4 LONG slots open · 3 near a place boundary · 0 priced (no stalls)</p>
   </div>
 
   <!-- ── PRE-FLIGHT GATE STATUS ─────────────────────────────── -->
   <section class="panel gold-top">
-    <h2 class="panel-head">⛔ Pre-flight gate · status</h2>
+    <h2 class="panel-head">⛔ Pre-flight gate · Wednesday · 7 races checked, 7 NO BET</h2>
     <p style="font-size:0.78rem;color:var(--silver);line-height:1.6;margin:0 0 4px">
-      Under <strong style="color:var(--cream)">Step 3b</strong> no race is priced until its
-      <strong style="color:var(--cream)">final declared field</strong> is confirmed — not the entry
-      list. Entry lists routinely halve: at Goodwood they went 29→18, 16→8, 22→14, 10→5 and 31→24, and
-      six picks in three unverified races returned nothing and cost £9, which was 11.5% of that
-      festival's entire turnover. Today is <strong style="color:var(--cream)">Tuesday 18 August</strong>.
-      Wednesday's declarations <strong style="color:var(--cream)">are out</strong> — the seven-race card
-      and its off-times are confirmed below — but the declared <em>racecard</em> has not reached the
-      engine: no field sizes, no draws, no settling each-way terms. The gate turns on what we can
-      verify, not on what exists somewhere, so every race below still reads NO BET.
+      Run through <code>scripts/gate-check.mjs</code> against the published declarations on
+      <strong style="color:var(--cream)">Tuesday 18 August</strong>. Field sizes, each-way terms, the LONG
+      gate and place-band risk are all <strong style="color:var(--cream)">computed, not estimated</strong>.
+      Result: <strong style="color:var(--cream)">7 races, 0 pass, 7 NO BET, 3 sitting near a place
+      boundary</strong> — every failure for the same reason, no published stalls.
     </p>
     <div class="gate-grid">
-      <div class="gate-cell ok"><div class="gc-lbl">Wed race list &amp; off-times</div><div class="gc-val">Confirmed</div></div>
-      <div class="gate-cell wait"><div class="gc-lbl">Declared runners</div><div class="gc-val">Not supplied</div></div>
-      <div class="gate-cell wait"><div class="gc-lbl">Field size &amp; EW terms</div><div class="gc-val">Not supplied</div></div>
-      <div class="gate-cell wait"><div class="gc-lbl">Draw (flat — mandatory)</div><div class="gc-val">Not supplied</div></div>
-      <div class="gate-cell ok"><div class="gc-lbl">Course profile</div><div class="gc-val">Confirmed</div></div>
+      <div class="gate-cell ok"><div class="gc-lbl">Race list &amp; off-times</div><div class="gc-val">Confirmed</div></div>
+      <div class="gate-cell ok"><div class="gc-lbl">Declared field sizes</div><div class="gc-val">All 7 · 106 rnrs</div></div>
+      <div class="gate-cell ok"><div class="gc-lbl">Each-way terms</div><div class="gc-val">Computed</div></div>
+      <div class="gate-cell ok"><div class="gc-lbl">Going</div><div class="gc-val">Good</div></div>
+      <div class="gate-cell wait"><div class="gc-lbl">Draw (flat — mandatory)</div><div class="gc-val">MISSING</div></div>
       <div class="gate-cell ok"><div class="gc-lbl">Engine rules</div><div class="gc-val">Post-Goodwood</div></div>
     </div>
     <div class="pending-inline" style="margin-top:12px">
-      <strong>Declarations for a UK turf flat card confirm 48 hours out.</strong> Wednesday's and
-      Thursday's are therefore out now; Friday's confirm tomorrow and Saturday's on Thursday. What is
-      still missing here is not the declarations themselves but <strong>the racecard in a form the
-      engine can read</strong> — a Sky Bet screencard per race, or a Racing API pull. Until one of
-      those lands, the picks below stay empty rather than being guessed from a tips list.
+      <strong>What the gate found that is worth acting on regardless.</strong>
+      <strong style="color:var(--green-lt)">Four races open the LONG slot</strong> (13:50, 16:10, 16:45, 17:20 — all
+      5+ places); <strong>three close it</strong> and run two picks at most (the Acomb, the Voltigeur and the
+      Juddmonte, exactly as a Group-race card predicts).
+      <strong style="color:#fca5a5">Three races sit within one runner of a place boundary</strong> — the 16:10
+      most dangerously, where two withdrawals take it from 5 places to 4. That is precisely the Goodwood
+      Day 5 failure, caught this time <em>before</em> pricing rather than after settling.
+      The 13:50 and 17:20 both have 22 runners and should be checked for a place special above the ladder.
+    </div>
+    <div class="pending-inline" style="margin-top:8px;background:rgba(161,161,170,0.07);border-color:rgba(161,161,170,0.3);color:var(--silver)">
+      <strong style="color:#e4e4e7">Provenance, stated plainly.</strong> These field sizes come from published
+      declaration reports, <strong>not</strong> from a Racing API pull — the API host is blocked by this
+      environment&rsquo;s network policy, so no payload was archived to <code>data/racing-api/</code> and nothing
+      here is presented as one. The numbers gate correctly and the Juddmonte field is confirmed runner by
+      runner, but <strong>a Sky Bet screencard or an API pull remains the thing that turns this into picks</strong>,
+      because it is the only source that carries stalls.
     </div>
   </section>
 
@@ -176,53 +183,54 @@
   <section id="day1" class="panel eb-top">
     <h2 class="panel-head">🏆 Day 1 · Wednesday 19 August · Juddmonte International day · 7 races</h2>
     <p style="font-size:0.78rem;color:var(--silver);line-height:1.55;margin-bottom:6px">
-      <strong style="color:var(--cream)">Race names, distances and off-times are all confirmed</strong> —
-      Steve Mullington's card is explicitly written after Wednesday's declarations. What is still absent
-      is the runner-level data: no field sizes, no stalls, no settling each-way terms. Badged rows are
-      <strong>external tips, not ours</strong>. Note that <strong>three of the seven races are on the
-      straight course</strong>, where the draw is decisive — which is precisely why NO BET stands.
+      <strong style="color:var(--cream)">Declared field sizes are in for all seven races</strong> — 106 runners,
+      going <strong style="color:var(--cream)">Good</strong>. Each-way terms, the LONG gate and the place-band
+      warnings below are <strong>computed mechanically</strong> by <code>scripts/gate-check.mjs</code>, not
+      estimated. <strong style="color:var(--gold-lt)">Every race still fails on one input: no stalls have
+      been published to us.</strong> Three of the seven are straight-course races where the draw decides
+      the result, so that is not a technicality. Badged rows are external tips, not ours.
     </p>
 
     <div class="race-block">
-      <p class="race-hd">13:50 &middot; World Pool Stakes Handicap &middot; 5&frac12;f &middot; handicap</p>
-      <div class="pick-row"><div class="pick-tag gate">GATE</div><div><span class="pick-horse">NO BET &mdash; racecard not supplied</span><div class="pick-note">Missing: declared runners, field size, each-way terms, draw.</div></div></div>
-      <div class="tip-row"><span class="sb sb-rp">RP&#9733;</span> <strong>Spotlight</strong> (Paul Smith, &#9733;&#9734;&#9734;): <strong>Toca Madera</strong> 7/1</div><div class="tip-row"><span class="sb sb-sm">SM</span> <strong>Steve Mullington (WH)</strong>: <strong>Corolla Point</strong> &mdash; <strong>10/1 e/w</strong>. Ed Bethell is on a <strong>41% win strike rate over the last fortnight</strong>; the horse was third here in a similar event at the Dante meeting.</div><div class="pending-inline"><strong>Straight-course race &mdash; draw is a first-order factor.</strong> York&rsquo;s 5f, 5&frac12;f and 6f are run on the straight, where big fields split into groups and one side of the track can hold a decisive edge. This is exactly the race we cannot price without stalls.</div>
+      <p class="race-hd">13:50 &middot; Hong Kong Jockey Club World Pool Handicap <span style="color:var(--silver);font-weight:400">(Heritage Hcap)</span> &middot; 5&frac12;f &middot; <strong>straight course</strong></p>
+      <div class="pick-row"><div class="pick-tag gate">GATE</div><div><span class="pick-horse">NO BET &mdash; 22 runners without a draw</span><div class="pick-note"><strong>22 declared</strong> &middot; EW 1/5, at least 5 places &middot; <span style="color:var(--green-lt)">LONG <strong>open</strong></span><div style="margin-top:5px;color:#7dd3fc">ℹ <strong>Big field</strong> — check for a place special above the standard ladder; this class of handicap often pays 6–8.</div></div></div></div>
+      <div class="tip-row"><span class="sb sb-rp">RP&#9733;</span> <strong>Spotlight</strong> (Paul Smith, &#9733;&#9734;&#9734;): <strong>Toca Madera</strong> 7/1</div><div class="tip-row"><span class="sb sb-sm">SM</span> <strong>Steve Mullington (WH)</strong>: <strong>Corolla Point</strong> &mdash; <strong>10/1 e/w</strong>. Ed Bethell on a <strong>41% win strike rate</strong> over the last fortnight; third here in a similar event at the Dante meeting.</div><div class="pending-inline"><strong>The best LONG candidate on the card</strong> &mdash; 22 runners, 5+ places, and a Heritage Handicap that may well pay more. Mullington&rsquo;s 10/1 e/w clears the 8/1 floor. It is also a <strong>straight-course sprint</strong>, so the draw is not a tiebreak here, it is the race. No stalls, no pick.</div>
     </div>
 
     <div class="race-block">
-      <p class="race-hd">14:25 &middot; <span class="g1">Acomb Stakes (Group 3)</span> &middot; 7f &middot; 2yo</p>
-      <div class="pick-row"><div class="pick-tag gate">GATE</div><div><span class="pick-horse">NO BET &mdash; racecard not supplied</span><div class="pick-note">Missing: declared runners, field size, each-way terms, draw.</div></div></div>
-      <div class="tip-row"><span class="sb sb-rp">RP&#9733;</span> <strong>Spotlight</strong> (Ben Hutton, &#9733;&#9734;&#9734;): <strong>Trean</strong> 5/1</div><div class="tip-row"><span class="sb sb-jm">JM</span> <strong>Jane Mangan (WH)</strong>: <strong>Trean</strong> &mdash; Paddy Twomey; should have won on debut at Fairyhouse, then won emphatically at Galway. <span class="sb sb-2x">2x</span> with Spotlight.</div><div class="tip-row"><span class="sb sb-sm">SM</span> <strong>Steve Mullington (WH)</strong>: <strong>Alfred Wallace</strong> &mdash; won going away at Ascot in a 7f Listed race, so a marginal step up to Group 3 is natural progression for the Dubawi colt. Notes most market attention is on the Irish raiders.</div><div class="pending-inline"><strong>Three columns, three different horses &mdash; and none of them is the favourite.</strong> Spotlight and Mangan are on Trean, Mullington is on Alfred Wallace, and both articles flag <strong>Haffner</strong> (Ballydoyle) as the market leader that nobody is tipping. A race where the informed money and the informed opinion disagree is a race to be careful in, not confident in.</div>
+      <p class="race-hd">14:25 &middot; Tattersalls Acomb Stakes <span class="g1">(Group 3)</span> &middot; 7f &middot; 2yo</p>
+      <div class="pick-row"><div class="pick-tag gate">GATE</div><div><span class="pick-horse">NO BET &mdash; 11 runners without a draw</span><div class="pick-note"><strong>11 declared</strong> &middot; EW 1/5, at least 4 places &middot; <span style="color:var(--silver)">LONG closed &mdash; two picks only</span></div></div></div>
+      <div class="tip-row"><span class="sb sb-rp">RP&#9733;</span> <strong>Spotlight</strong> (Ben Hutton, &#9733;&#9734;&#9734;): <strong>Trean</strong> 5/1</div><div class="tip-row"><span class="sb sb-jm">JM</span> <strong>Jane Mangan (WH)</strong>: <strong>Trean</strong> &mdash; Paddy Twomey; emphatic Galway winner last time. <span class="sb sb-2x">2x</span> with Spotlight.</div><div class="tip-row"><span class="sb sb-sm">SM</span> <strong>Steve Mullington (WH)</strong>: <strong>Alfred Wallace</strong> &mdash; won going away at Ascot in a 7f Listed race &mdash; a natural step up for the Dubawi colt.</div><div class="pending-inline"><strong>Three columns, three horses, and none of them the favourite.</strong> Spotlight and Mangan are on Trean, Mullington on Alfred Wallace, and both WH articles flag <strong>Haffner</strong> (Ballydoyle) as the market leader nobody tips. <strong>LONG is closed at 4 places</strong> — this race runs two picks at most.</div>
     </div>
 
     <div class="race-block">
-      <p class="race-hd">15:00 &middot; Great Voltigeur Stakes (Group 2) &middot; 1m4f &middot; 3yo &middot; the St Leger trial</p>
-      <div class="pick-row"><div class="pick-tag gate">GATE</div><div><span class="pick-horse">NO BET &mdash; racecard not supplied</span><div class="pick-note">Missing: declared runners, field size, each-way terms, draw.</div></div></div>
-      <div class="tip-row"><span class="sb sb-rp">RP&#9733;</span> <strong>Spotlight</strong> (Richard Austen, &#9733;&#9734;&#9734;): <strong>Pierre Bonnard</strong> 3/1</div><div class="tip-row"><span class="sb sb-sm">SM</span> <strong>Steve Mullington (WH)</strong>: <strong>Christmas Day <em>(his NAP)</em></strong> &mdash; the <strong>Derby winner</strong> re-establishing himself as king of the 1m4f trip on the Knavesmire; main rival <strong>Maltese Cross</strong>.</div><div class="tip-row" style="border-left-color:rgba(251,191,36,0.5);background:rgba(251,191,36,0.05)"><strong style="color:var(--gold-lt)">Our archive on this horse:</strong> Christmas Day won the <a href="epsom-derby-2026.html">Epsom Derby</a> at 7/1 for us in June, and was the 4x-crossover quad that finished third in the Dante at this track in May. He has run at York before and did not win.</div>
+      <p class="race-hd">15:00 &middot; Sky Bet Great Voltigeur Stakes <span class="g1">(Group 2)</span> &middot; 1m4f &middot; 3yo &middot; St Leger trial</p>
+      <div class="pick-row"><div class="pick-tag gate">GATE</div><div><span class="pick-horse">NO BET &mdash; 6 runners without a draw</span><div class="pick-note"><strong>6 declared</strong> &middot; EW 1/4, at least 2 places &middot; <span style="color:var(--silver)">LONG closed &mdash; two picks only</span><div style="margin-top:5px;color:var(--gold-lt)">⚠ <strong>Place band at risk</strong> — only 1 runner above the 5-runner boundary. <strong>Two withdrawals and this is win-only.</strong> Each-way value is already marginal at 6 runners (rule 6).</div></div></div></div>
+      <div class="tip-row"><span class="sb sb-rp">RP&#9733;</span> <strong>Spotlight</strong> (Richard Austen, &#9733;&#9734;&#9734;): <strong>Pierre Bonnard</strong> 3/1</div><div class="tip-row"><span class="sb sb-sm">SM</span> <strong>Steve Mullington (WH)</strong>: <strong>Christmas Day <em>(his NAP)</em></strong> &mdash; the <strong>Derby winner</strong> reasserting himself over 1m4f on the Knavesmire; main rival <strong>Maltese Cross</strong>.</div><div class="tip-row" style="border-left-color:rgba(251,191,36,0.5);background:rgba(251,191,36,0.05)"><strong style="color:var(--gold-lt)">Our archive:</strong> Christmas Day won the <a href="epsom-derby-2026.html">Epsom Derby</a> at 7/1 for us, and was the 4x-crossover quad that finished <strong>third in the Dante on this very track</strong> in May. He has run at York and not won.</div>
     </div>
 
     <div class="race-block">
-      <p class="race-hd">15:35 &middot; <span class="g1">Juddmonte International Stakes (Group 1)</span> &middot; 1m2f &middot; 3yo+ &middot; the festival&rsquo;s headline race</p>
-      <div class="pick-row"><div class="pick-tag gate">GATE</div><div><span class="pick-horse">NO BET &mdash; racecard not supplied</span><div class="pick-note">Missing: declared runners, field size, each-way terms, draw.</div></div></div>
-      <div class="tip-row"><span class="sb sb-rp">RP&#9733;</span> <strong>Spotlight</strong> (Ben Hutton, &#9733;&#9734;&#9734;): <strong>Ombudsman</strong> 11/10</div><div class="tip-row"><span class="sb sb-sm">SM</span> <strong>Steve Mullington (WH)</strong>: <strong>Ombudsman <em>(his NB)</em></strong> &mdash; won this race last year and is trying to become the <strong>first horse in 30 years to win back-to-back Juddmonte Internationals</strong>. A repeat of his Prince of Wales&rsquo;s run at Royal Ascot puts <strong>Constitution River</strong> away.</div><div class="pending-inline"><strong>Banker marker &mdash; and the rules bite twice here.</strong> At 11/10 he is below the 2/1 floor, so rule 7 keeps him out of the Lucky 15. And he is now a <strong>2x</strong> horse under 3/1, so rule 8 bars him from the NAP slot &mdash; if our own read lands on him he runs as the <strong>NB</strong>. William Hill list him as their third-worst result of the meeting, so the money is already on him; there is no value left to find.</div>
+      <p class="race-hd">15:35 &middot; Juddmonte International Stakes <span class="g1">(Group 1)</span> &middot; 1m2f &middot; 3yo+ &middot; &pound;1.5m &middot; the festival&rsquo;s headline race</p>
+      <div class="pick-row"><div class="pick-tag gate">GATE</div><div><span class="pick-horse">NO BET &mdash; 9 runners without a draw</span><div class="pick-note"><strong>9 declared</strong> &middot; EW 1/5, at least 4 places &middot; <span style="color:var(--silver)">LONG closed &mdash; two picks only</span><div style="margin-top:5px;color:var(--gold-lt)">⚠ <strong>Place band at risk</strong> — 1 runner above the 8-runner boundary; <strong>two withdrawals drops this to 2 places.</strong></div></div></div></div>
+      <div class="tip-row" style="border-left-color:rgba(74,222,128,0.5)"><strong>The one declared field we have in full (9):</strong> Almaqam (K.Shoemark) &middot; Devil&rsquo;s Advocate (R.Havlin) &middot; <strong>Ombudsman (W.Buick)</strong> &middot; Pride Of Arras (R.Ryan) &middot; Zaydann (M.Barzalona) &middot; Action (R.Whelan) &middot; <strong>Constitution River (R.Moore)</strong> &middot; Hawk Mountain (W.Lordan) &middot; <strong>Item</strong> (C.Keane). <em>Still no stalls &mdash; and Item was our NB at Epsom.</em></div><div class="tip-row"><span class="sb sb-rp">RP&#9733;</span> <strong>Spotlight</strong> (Ben Hutton, &#9733;&#9734;&#9734;): <strong>Ombudsman</strong> 11/10</div><div class="tip-row"><span class="sb sb-sm">SM</span> <strong>Steve Mullington (WH)</strong>: <strong>Ombudsman <em>(his NB)</em></strong> &mdash; won this last year; bidding to be the <strong>first back-to-back Juddmonte winner in 30 years</strong>.</div><div class="pending-inline"><strong>Banker marker &mdash; two rules bite.</strong> At 11/10 he is under the 2/1 floor (rule 7, out of the Lucky 15) and he is a 2x horse under 3/1 (rule 8, barred from our NAP). WH list him among their three worst results of the meeting: the money is already on. <strong>LONG closed at 4 places.</strong></div>
     </div>
 
     <div class="race-block">
-      <p class="race-hd">16:10 &middot; Stayers Stakes Handicap &middot; 2m &middot; handicap</p>
-      <div class="pick-row"><div class="pick-tag gate">GATE</div><div><span class="pick-horse">NO BET &mdash; racecard not supplied</span><div class="pick-note">Missing: declared runners, field size, each-way terms, draw.</div></div></div>
-      <div class="tip-row"><span class="sb sb-rp">RP&#9733;</span> <strong>Spotlight</strong> (Richard Austen, &#9733;&#9734;&#9734;): <strong>Small Fry</strong> 3/1</div><div class="tip-row"><span class="sb sb-sm">SM</span> <strong>Steve Mullington (WH)</strong>: <strong>Shrimp Shady</strong> &mdash; Andrew Balding&rsquo;s 4yo, a winner at Chester&rsquo;s May Meeting, has held his form well over these marathon trips.</div>
+      <p class="race-hd">16:10 &middot; Sky Bet Stayers Handicap <span style="color:var(--silver);font-weight:400">(Heritage Hcap)</span> &middot; 2m &middot; stayers</p>
+      <div class="pick-row"><div class="pick-tag gate">GATE</div><div><span class="pick-horse">NO BET &mdash; 17 runners without a draw</span><div class="pick-note"><strong>17 declared</strong> &middot; EW 1/5, at least 5 places &middot; <span style="color:var(--green-lt)">LONG <strong>open</strong></span><div style="margin-top:5px;color:var(--gold-lt)">⚠ <strong>Place band at risk</strong> — <strong>only 1 runner above the 16-runner boundary — two withdrawals drops this to 4 places.</strong> This is the exact failure that cost us at Goodwood Day 5: priced at 5 places, settled at 4. Any LONG here is <strong>provisional</strong> and the count must be re-checked at the off.</div></div></div></div>
+      <div class="tip-row"><span class="sb sb-rp">RP&#9733;</span> <strong>Spotlight</strong> (Richard Austen, &#9733;&#9734;&#9734;): <strong>Small Fry</strong> 3/1</div><div class="tip-row"><span class="sb sb-sm">SM</span> <strong>Steve Mullington (WH)</strong>: <strong>Shrimp Shady</strong> &mdash; Andrew Balding&rsquo;s 4yo, a Chester May Meeting winner who has held his form over marathon trips.</div>
     </div>
 
     <div class="race-block">
-      <p class="race-hd">16:45 &middot; Irish Thoroughbred Marketing Handicap &middot; 5f &middot; handicap</p>
-      <div class="pick-row"><div class="pick-tag gate">GATE</div><div><span class="pick-horse">NO BET &mdash; racecard not supplied</span><div class="pick-note">Missing: declared runners, field size, each-way terms, draw.</div></div></div>
-      <div class="tip-row"><span class="sb sb-rp">RP&#9733;</span> <strong>Spotlight</strong> (Ben Hutton, &#9733;&#9734;&#9734;): <strong>Naana&rsquo;s Shadow</strong> 5/1</div><div class="tip-row"><span class="sb sb-sm">SM</span> <strong>Steve Mullington (WH)</strong>: <strong>Baker Blue</strong> &mdash; <strong>each-way interest</strong>. Dylan Cunha runs him back quickly after a competitive third over 5f at Pontefract on Sunday; should find York easier.</div><div class="pending-inline"><strong>Straight-course race &mdash; draw is a first-order factor.</strong> York&rsquo;s 5f, 5&frac12;f and 6f are run on the straight, where big fields split into groups and one side of the track can hold a decisive edge. This is exactly the race we cannot price without stalls.</div>
+      <p class="race-hd">16:45 &middot; Irish Thoroughbred Marketing Handicap <span style="color:var(--silver);font-weight:400">(Heritage Hcap, Class 2, 3yo 0-105)</span> &middot; 5f &middot; <strong>straight course</strong></p>
+      <div class="pick-row"><div class="pick-tag gate">GATE</div><div><span class="pick-horse">NO BET &mdash; 19 runners without a draw</span><div class="pick-note"><strong>19 declared</strong> &middot; EW 1/5, at least 5 places &middot; <span style="color:var(--green-lt)">LONG <strong>open</strong></span></div></div></div>
+      <div class="tip-row"><span class="sb sb-rp">RP&#9733;</span> <strong>Spotlight</strong> (Ben Hutton, &#9733;&#9734;&#9734;): <strong>Naana&rsquo;s Shadow</strong> 5/1</div><div class="tip-row"><span class="sb sb-sm">SM</span> <strong>Steve Mullington (WH)</strong>: <strong>Baker Blue</strong> &mdash; <strong>each-way interest</strong>. Dylan Cunha runs him back quickly after a competitive 5f third at Pontefract on Sunday.</div><div class="pending-inline"><strong>19 runners over the straight five &mdash; the single most draw-dependent race of the day.</strong> LONG is open on the terms, but pricing a 5f cavalry charge without stalls would be guessing, not analysis.</div>
     </div>
 
     <div class="race-block">
-      <p class="race-hd">17:20 &middot; Nursery Heritage Handicap &middot; 6f &middot; 2yo handicap</p>
-      <div class="pick-row"><div class="pick-tag gate">GATE</div><div><span class="pick-horse">NO BET &mdash; racecard not supplied</span><div class="pick-note">Missing: declared runners, field size, each-way terms, draw.</div></div></div>
-      <div class="tip-row"><span class="sb sb-rp">RP&#9733;</span> <strong>Spotlight</strong> (Richard Russell, &#9733;&#9734;&#9734;): <strong>Henley On Thames</strong> 10/1</div><div class="tip-row"><span class="sb sb-sm">SM</span> <strong>Steve Mullington (WH)</strong>: <strong>Note To Self</strong> &mdash; Shane Foley teams up with the Gosdens in the finale; the Too Darn Hot colt goes handicapping off a mark of 8st 9lb.</div><div class="pending-inline"><strong>Straight-course race &mdash; draw is a first-order factor.</strong> York&rsquo;s 5f, 5&frac12;f and 6f are run on the straight, where big fields split into groups and one side of the track can hold a decisive edge. This is exactly the race we cannot price without stalls.</div>
+      <p class="race-hd">17:20 &middot; Sky Bet Nursery Handicap &middot; 6f &middot; 2yo &middot; <strong>straight course</strong></p>
+      <div class="pick-row"><div class="pick-tag gate">GATE</div><div><span class="pick-horse">NO BET &mdash; 22 runners without a draw</span><div class="pick-note"><strong>22 declared</strong> &middot; EW 1/5, at least 5 places &middot; <span style="color:var(--green-lt)">LONG <strong>open</strong></span><div style="margin-top:5px;color:#7dd3fc">ℹ <strong>Big field</strong> — check for a place special above the standard ladder; this class of handicap often pays 6–8.</div></div></div></div>
+      <div class="tip-row"><span class="sb sb-rp">RP&#9733;</span> <strong>Spotlight</strong> (Richard Russell, &#9733;&#9734;&#9734;): <strong>Henley On Thames</strong> 10/1</div><div class="tip-row"><span class="sb sb-sm">SM</span> <strong>Steve Mullington (WH)</strong>: <strong>Note To Self</strong> &mdash; Shane Foley teams up with the Gosdens; the Too Darn Hot colt goes handicapping off 8st 9lb.</div>
     </div>
   </section>
 
