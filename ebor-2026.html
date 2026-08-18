@@ -70,6 +70,15 @@
   .sb-nl { background:rgba(94,234,212,0.16); border:1px solid rgba(94,234,212,0.5); color:#5eead4 }
   .sb-ro { background:rgba(167,139,250,0.18); border:1px solid rgba(167,139,250,0.5); color:#c4b5fd }
   .sb-big { background:rgba(239,68,68,0.18); border:1px solid rgba(239,68,68,0.55); color:#fca5a5 }
+  .sb-jm { background:rgba(244,114,182,0.16); border:1px solid rgba(244,114,182,0.5); color:#f9a8d4 }
+  .sb-2x { background:rgba(251,191,36,0.2); border:1px solid rgba(251,191,36,0.55); color:var(--gold-lt) }
+  .tip-row { margin-top:6px; padding:7px 10px; background:rgba(96,165,250,0.05); border-left:2px solid rgba(96,165,250,0.35); border-radius:0 6px 6px 0; font-size:0.74rem; color:#cbd5cf; line-height:1.6 }
+  .tip-row strong { color:var(--cream) }
+  .tp-block { padding:8px 10px; margin-top:8px; background:var(--bg-mid); border-radius:8px; font-size:0.76rem; color:#cbd5cf; line-height:1.6 }
+  .tp-block .tp-name { font-weight:700; color:var(--cream) }
+  .xs-row { padding:7px 0; border-bottom:1px solid rgba(255,255,255,0.06); font-size:0.8rem; color:#cbd5cf; line-height:1.55 }
+  .xs-row:last-child { border-bottom:none }
+  .xs-row strong { color:var(--cream) }
   .nobet { margin-top:8px; padding:9px 11px; background:rgba(161,161,170,0.07); border:1px solid rgba(161,161,170,0.25); border-radius:6px; font-size:0.74rem; color:var(--silver); line-height:1.6 }
   .nobet strong { color:#e4e4e7 }
   .pending-inline { margin-top:8px; padding:8px 10px; background:rgba(251,191,36,0.07); border:1px solid rgba(251,191,36,0.25); border-radius:6px; font-size:0.72rem; color:var(--gold-lt); line-height:1.6 }
@@ -103,18 +112,19 @@
 <!-- Shared grouped global nav (injected by fmb-ui.js) -->
 <div id="fmb-nav-root"></div>
 
-<div class="live-strip">🏇 Ebor Festival 2026 · <strong>Wed 19 – Sat 22 August · York</strong> · cards publish as each day's declarations confirm</div>
+<div class="live-strip">🏇 Ebor Festival 2026 &middot; <strong>Day 1 is tomorrow &mdash; Wed 19 August</strong> &middot; 7-race card &amp; off-times confirmed &middot; racecard still needed to price</div>
 
 <main class="container" id="main" tabindex="-1">
 
   <header class="site-header">
     <div class="header-badge">🏇 York · Knavesmire · Flat</div>
     <h1><em>Ebor Festival</em> 2026</h1>
-    <p class="hero-dates">📍 York (Knavesmire) · 19–22 August 2026 · four-day summer flat festival · page live, cards pending declarations</p>
+    <p class="hero-dates">📍 York (Knavesmire) · 19–22 August 2026 · four-day summer flat festival · Day 1 tomorrow · tipster overlay live, our picks pending the racecard</p>
     <div class="hero-stats">
       <div><span class="hero-stat-val">4</span><span class="hero-stat-lbl">days</span></div>
       <div><span class="hero-stat-val">3</span><span class="hero-stat-lbl">Group 1s</span></div>
       <div><span class="hero-stat-val">1</span><span class="hero-stat-lbl">Heritage Hcap</span></div>
+      <div><span class="hero-stat-val">7</span><span class="hero-stat-lbl">Wed races</span></div>
       <div><span class="hero-stat-val">—</span><span class="hero-stat-lbl">races priced</span></div>
     </div>
   </header>
@@ -127,8 +137,8 @@
   </div>
 
   <div class="titlebar">
-    <h2>ebor 2026 · festival preview · Wed 19 – Sat 22 August</h2>
-    <p>Group-race programme confirmed · no race priced yet · 0 picks live</p>
+    <h2>ebor 2026 · Day 1 tomorrow · Wed 19 – Sat 22 August</h2>
+    <p>Wednesday’s 7 races &amp; off-times confirmed · 12 external tipster picks overlaid · 1 crossover · 0 of our picks priced</p>
   </div>
 
   <!-- ── PRE-FLIGHT GATE STATUS ─────────────────────────────── -->
@@ -139,76 +149,120 @@
       <strong style="color:var(--cream)">final declared field</strong> is confirmed — not the entry
       list. Entry lists routinely halve: at Goodwood they went 29→18, 16→8, 22→14, 10→5 and 31→24, and
       six picks in three unverified races returned nothing and cost £9, which was 11.5% of that
-      festival's entire turnover. Today is <strong style="color:var(--cream)">Saturday 15 August</strong>
-      and nothing for Wednesday is declared yet, so every race below reads NO BET.
+      festival's entire turnover. Today is <strong style="color:var(--cream)">Tuesday 18 August</strong>.
+      Wednesday's declarations <strong style="color:var(--cream)">are out</strong> — the seven-race card
+      and its off-times are confirmed below — but the declared <em>racecard</em> has not reached the
+      engine: no field sizes, no draws, no settling each-way terms. The gate turns on what we can
+      verify, not on what exists somewhere, so every race below still reads NO BET.
     </p>
     <div class="gate-grid">
-      <div class="gate-cell wait"><div class="gc-lbl">Declared fields</div><div class="gc-val">Awaiting</div></div>
-      <div class="gate-cell wait"><div class="gc-lbl">Field size &amp; EW terms</div><div class="gc-val">Awaiting</div></div>
-      <div class="gate-cell wait"><div class="gc-lbl">Draw (flat — mandatory)</div><div class="gc-val">Awaiting</div></div>
+      <div class="gate-cell ok"><div class="gc-lbl">Wed race list &amp; off-times</div><div class="gc-val">Confirmed</div></div>
+      <div class="gate-cell wait"><div class="gc-lbl">Declared runners</div><div class="gc-val">Not supplied</div></div>
+      <div class="gate-cell wait"><div class="gc-lbl">Field size &amp; EW terms</div><div class="gc-val">Not supplied</div></div>
+      <div class="gate-cell wait"><div class="gc-lbl">Draw (flat — mandatory)</div><div class="gc-val">Not supplied</div></div>
       <div class="gate-cell ok"><div class="gc-lbl">Course profile</div><div class="gc-val">Confirmed</div></div>
-      <div class="gate-cell ok"><div class="gc-lbl">Group-race programme</div><div class="gc-val">Confirmed</div></div>
       <div class="gate-cell ok"><div class="gc-lbl">Engine rules</div><div class="gc-val">Post-Goodwood</div></div>
     </div>
     <div class="pending-inline" style="margin-top:12px">
-      <strong>Declarations for a UK turf flat card confirm 48 hours out.</strong> On that timetable
-      Wednesday's field is known from <strong>Monday 17 August</strong>, Thursday's from Tuesday 18th,
-      Friday's from Wednesday 19th and Saturday's from Thursday 20th. Each day's card is built once its
-      own declarations land — never earlier, and never from the entry stage.
+      <strong>Declarations for a UK turf flat card confirm 48 hours out.</strong> Wednesday's and
+      Thursday's are therefore out now; Friday's confirm tomorrow and Saturday's on Thursday. What is
+      still missing here is not the declarations themselves but <strong>the racecard in a form the
+      engine can read</strong> — a Sky Bet screencard per race, or a Racing API pull. Until one of
+      those lands, the picks below stay empty rather than being guessed from a tips list.
     </div>
   </section>
 
   <!-- ── DAY 1 ──────────────────────────────────────────────── -->
   <section id="day1" class="panel eb-top">
-    <h2 class="panel-head">🏆 Day 1 · Wednesday 19 August · Juddmonte International day</h2>
+    <h2 class="panel-head">🏆 Day 1 · Wednesday 19 August · Juddmonte International day · 7 races</h2>
     <p style="font-size:0.78rem;color:var(--silver);line-height:1.55;margin-bottom:6px">
-      The Group-race programme below is the published fixture. Off-times, the supporting handicaps,
-      field sizes, draws and each-way terms all arrive with declarations.
+      <strong style="color:var(--cream)">Off-times and the seven-race card are confirmed.</strong> The
+      rows marked <span class="sb sb-rp">RP&#9733;</span> are the Racing Post Spotlight column's free
+      tips — <strong>external picks, not ours</strong>. Our NAP / NB / LONG stay empty until the
+      declared racecard arrives with field sizes, draws and each-way terms. Race names below are given
+      only where confirmed; the rest are to be checked against the official card rather than assumed.
     </p>
 
     <div class="race-block">
-      <p class="race-hd"><span class="g1">Juddmonte International Stakes (G1)</span> · about 1m2f · 3yo+ · York's championship middle-distance race</p>
-      <div class="pick-row"><div class="pick-tag gate">GATE</div><div><span class="pick-horse">NO BET — declarations not confirmed</span><div class="pick-note">Missing: declared field, field size, each-way terms, draw. The festival's headline race and usually a small, high-class field — expect a banker-shaped market rather than a Lucky 15 leg.</div></div></div>
+      <p class="race-hd">13:50 &middot; Race 1 &middot; race name to confirm against the official card</p>
+      <div class="pick-row"><div class="pick-tag gate">GATE</div><div><span class="pick-horse">NO BET &mdash; racecard not supplied</span><div class="pick-note">Missing: declared field, field size, each-way terms, draw.</div></div></div>
+      <div class="tip-row"><span class="sb sb-rp">RP&#9733;</span> <strong>Spotlight</strong> (Paul Smith, &#9733;&#9734;&#9734;): <strong>Toca Madera</strong> 7/1</div>
     </div>
 
     <div class="race-block">
-      <p class="race-hd">Great Voltigeur Stakes (G2) · about 1m4f · 3yo colts &amp; geldings · the St Leger trial</p>
-      <div class="pick-row"><div class="pick-tag gate">GATE</div><div><span class="pick-horse">NO BET — declarations not confirmed</span><div class="pick-note">Missing: declared field, field size, each-way terms, draw. Small fields are the norm, so the LONG slot will most likely be closed here on the place count alone.</div></div></div>
+      <p class="race-hd">14:25 &middot; <span class="g1">Acomb Stakes (G3)</span> &middot; about 7f &middot; 2yo</p>
+      <div class="pick-row"><div class="pick-tag gate">GATE</div><div><span class="pick-horse">NO BET &mdash; racecard not supplied</span><div class="pick-note">Missing: declared field, field size, each-way terms, draw.</div></div></div>
+      <div class="tip-row"><span class="sb sb-rp">RP&#9733;</span> <strong>Spotlight</strong> (Ben Hutton, &#9733;&#9734;&#9734;): <strong>Trean</strong> 5/1 <span class="sb sb-jm">JM</span> <span class="sb sb-2x">2x</span></div><div class="tip-row"><span class="sb sb-jm">JM</span> <strong>Jane Mangan (WH)</strong>: <strong>Trean</strong> &mdash; Paddy Twomey; should have won on debut at Fairyhouse, underperformed at the Curragh, then won emphatically at Galway. Notes <strong>Haffner</strong> heads the market for Ballydoyle. <em style="color:var(--gold-lt)">Two sources agree &mdash; recorded as information, not as a promotion trigger.</em></div>
     </div>
 
     <div class="race-block">
-      <p class="race-hd">Acomb Stakes (G3) · about 7f · 2yo</p>
-      <div class="pick-row"><div class="pick-tag gate">GATE</div><div><span class="pick-horse">NO BET — declarations not confirmed</span><div class="pick-note">Missing: declared field, field size, each-way terms, draw. A 2yo Group race — limited form, so trainer, sire and price moves carry the analysis (CLAUDE.md §8).</div></div></div>
+      <p class="race-hd">15:00 &middot; Race 3 &middot; race name to confirm &mdash; the Great Voltigeur (G2) is the expected slot</p>
+      <div class="pick-row"><div class="pick-tag gate">GATE</div><div><span class="pick-horse">NO BET &mdash; racecard not supplied</span><div class="pick-note">Missing: declared field, field size, each-way terms, draw.</div></div></div>
+      <div class="tip-row"><span class="sb sb-rp">RP&#9733;</span> <strong>Spotlight</strong> (Richard Austen, &#9733;&#9734;&#9734;): <strong>Pierre Bonnard</strong> 3/1</div>
     </div>
 
     <div class="race-block">
-      <p class="race-hd">Supporting card · handicaps and conditions races</p>
-      <div class="pick-row"><div class="pick-tag gate">GATE</div><div><span class="pick-horse">NO BET — race list not confirmed</span><div class="pick-note">The full Wednesday card — including the big-field handicaps where the draw and the place band actually matter — is confirmed at declarations on Monday 17 August.</div></div></div>
+      <p class="race-hd">15:35 &middot; <span class="g1">Juddmonte International Stakes (G1)</span> &middot; about 1m2f &middot; 3yo+ &middot; the festival&rsquo;s headline race</p>
+      <div class="pick-row"><div class="pick-tag gate">GATE</div><div><span class="pick-horse">NO BET &mdash; racecard not supplied</span><div class="pick-note">Missing: declared field, field size, each-way terms, draw.</div></div></div>
+      <div class="tip-row"><span class="sb sb-rp">RP&#9733;</span> <strong>Spotlight</strong> (Ben Hutton, &#9733;&#9734;&#9734;): <strong>Ombudsman</strong> 11/10</div><div class="pending-inline"><strong>Banker marker, not a Lucky 15 leg.</strong> At 11/10 Ombudsman sits below the 2/1 floor the Lucky 15 requires, and rule 7 keeps short-priced favourites out of it. If our own analysis lands on him too he runs as the <strong>NB</strong>, not the NAP &mdash; a multi-source horse under 3/1 does not get the NAP slot.</div>
+    </div>
+
+    <div class="race-block">
+      <p class="race-hd">16:10 &middot; Race 5 &middot; race name to confirm against the official card</p>
+      <div class="pick-row"><div class="pick-tag gate">GATE</div><div><span class="pick-horse">NO BET &mdash; racecard not supplied</span><div class="pick-note">Missing: declared field, field size, each-way terms, draw.</div></div></div>
+      <div class="tip-row"><span class="sb sb-rp">RP&#9733;</span> <strong>Spotlight</strong> (Richard Austen, &#9733;&#9734;&#9734;): <strong>Small Fry</strong> 3/1</div>
+    </div>
+
+    <div class="race-block">
+      <p class="race-hd">16:45 &middot; Race 6 &middot; race name to confirm against the official card</p>
+      <div class="pick-row"><div class="pick-tag gate">GATE</div><div><span class="pick-horse">NO BET &mdash; racecard not supplied</span><div class="pick-note">Missing: declared field, field size, each-way terms, draw.</div></div></div>
+      <div class="tip-row"><span class="sb sb-rp">RP&#9733;</span> <strong>Spotlight</strong> (Ben Hutton, &#9733;&#9734;&#9734;): <strong>Naana&rsquo;s Shadow</strong> 5/1</div>
+    </div>
+
+    <div class="race-block">
+      <p class="race-hd">17:20 &middot; Race 7 &middot; race name to confirm against the official card</p>
+      <div class="pick-row"><div class="pick-tag gate">GATE</div><div><span class="pick-horse">NO BET &mdash; racecard not supplied</span><div class="pick-note">Missing: declared field, field size, each-way terms, draw.</div></div></div>
+      <div class="tip-row"><span class="sb sb-rp">RP&#9733;</span> <strong>Spotlight</strong> (Richard Russell, &#9733;&#9734;&#9734;): <strong>Henley On Thames</strong> 10/1</div>
     </div>
   </section>
 
   <!-- ── DAY 2 ──────────────────────────────────────────────── -->
   <section id="day2" class="panel eb-top">
     <h2 class="panel-head">👑 Day 2 · Thursday 20 August · Yorkshire Oaks day</h2>
+    <p style="font-size:0.78rem;color:var(--silver);line-height:1.55;margin-bottom:6px">
+      Thursday's declarations are out too. Three off-times are confirmed from Jane Mangan's column; the
+      rest of the card still needs checking against the official racecard. Her picks show as external
+      tips, not as ours.
+    </p>
 
     <div class="race-block">
-      <p class="race-hd"><span class="g1">Darley Yorkshire Oaks (G1)</span> · about 1m4f · fillies &amp; mares 3yo+</p>
-      <div class="pick-row"><div class="pick-tag gate">GATE</div><div><span class="pick-horse">NO BET — declarations not confirmed</span><div class="pick-note">Missing: declared field, field size, each-way terms, draw.</div></div></div>
+      <p class="race-hd">13:50 &middot; Lowther Stakes (G2) &middot; about 6f &middot; 2yo fillies &middot; run on the straight course</p>
+      <div class="pick-row"><div class="pick-tag gate">GATE</div><div><span class="pick-horse">NO BET &mdash; racecard not supplied</span><div class="pick-note">Missing: declared field, field size, each-way terms, draw.</div></div></div>
+      <div class="tip-row"><span class="sb sb-jm">JM</span> <strong>Jane Mangan (WH)</strong>: <strong>Star Of State</strong> &mdash; Joseph O&rsquo;Brien. Should have beaten Livenka on debut at Fairyhouse, then won by the length of the straight at Leopardstown with a potent turn of foot &mdash; her <strong>leading player</strong> in the race.</div>
     </div>
 
     <div class="race-block">
-      <p class="race-hd">Lowther Stakes (G2) · about 6f · 2yo fillies</p>
-      <div class="pick-row"><div class="pick-tag gate">GATE</div><div><span class="pick-horse">NO BET — declarations not confirmed</span><div class="pick-note">Missing: declared field, field size, each-way terms, draw. Run on the straight course, so the draw read matters more than it does on the round.</div></div></div>
+      <p class="race-hd">14:25 &middot; Harry&rsquo;s Half Million By Goffs (sales race) &middot; big field &middot; 2yo</p>
+      <div class="pick-row"><div class="pick-tag gate">GATE</div><div><span class="pick-horse">NO BET &mdash; racecard not supplied</span><div class="pick-note">Missing: declared field, field size, each-way terms, draw.</div></div></div>
+      <div class="tip-row"><span class="sb sb-jm">JM</span> <strong>Jane Mangan (WH)</strong>: <strong>Sun Goddess</strong> &mdash; the <strong>G1 Phoenix Stakes winner</strong>, and Mangan can&rsquo;t believe she has been declared for a sales race &mdash; &ldquo;the clear form pick&rdquo;, giving weight to the colts.</div>
     </div>
 
     <div class="race-block">
-      <p class="race-hd">Galtres Stakes (G3) · about 1m4f · fillies &amp; mares 3yo+</p>
-      <div class="pick-row"><div class="pick-tag gate">GATE</div><div><span class="pick-horse">NO BET — declarations not confirmed</span><div class="pick-note">Missing: declared field, field size, each-way terms, draw.</div></div></div>
+      <p class="race-hd">15:35 &middot; <span class="g1">Darley Yorkshire Oaks (G1)</span> &middot; about 1m4f &middot; fillies &amp; mares 3yo+</p>
+      <div class="pick-row"><div class="pick-tag gate">GATE</div><div><span class="pick-horse">NO BET &mdash; racecard not supplied</span><div class="pick-note">Missing: declared field, field size, each-way terms, draw.</div></div></div>
+      <div class="tip-row"><span class="sb sb-jm">JM</span> <strong>Jane Mangan (WH)</strong>: <strong>Minnie Hauk</strong> &mdash; a huge run behind <strong>Ombudsman</strong> in the Prince of Wales&rsquo;s and close in the Arc last year &mdash; &ldquo;a little forgotten about&rdquo;. Any rain won&rsquo;t blunt her.</div>
     </div>
 
     <div class="race-block">
-      <p class="race-hd">Supporting card · handicaps and conditions races</p>
-      <div class="pick-row"><div class="pick-tag gate">GATE</div><div><span class="pick-horse">NO BET — race list not confirmed</span><div class="pick-note">Confirmed at declarations on Tuesday 18 August.</div></div></div>
+      <p class="race-hd">Time t.b.c. &middot; Galtres Stakes (G3) &middot; about 1m4f &middot; fillies &amp; mares 3yo+</p>
+      <div class="pick-row"><div class="pick-tag gate">GATE</div><div><span class="pick-horse">NO BET &mdash; racecard not supplied</span><div class="pick-note">Missing: declared field, field size, each-way terms, draw.</div></div></div>
+      
+    </div>
+
+    <div class="race-block">
+      <p class="race-hd">Time t.b.c. &middot; Supporting card &middot; handicaps and conditions races</p>
+      <div class="pick-row"><div class="pick-tag gate">GATE</div><div><span class="pick-horse">NO BET &mdash; racecard not supplied</span><div class="pick-note">Missing: declared field, field size, each-way terms, draw.</div></div></div>
+      
     </div>
   </section>
 
@@ -242,8 +296,9 @@
     <h2 class="panel-head">🎯 Day 4 · Saturday 22 August · Ebor Handicap day</h2>
 
     <div class="race-block">
-      <p class="race-hd">Sky Bet Ebor Handicap (Heritage Handicap) · about 1m6f · 3yo+ · Europe's richest flat handicap</p>
+      <p class="race-hd">15:35 · Sky Bet Ebor Handicap (Heritage Handicap) · about 1m6f · 3yo+ · Europe's richest flat handicap</p>
       <div class="pick-row"><div class="pick-tag gate">GATE</div><div><span class="pick-horse">NO BET — declarations not confirmed</span><div class="pick-note">Missing: declared field, field size, each-way terms, draw. <strong>The one race on the card most likely to open the LONG slot</strong> — a maximum field with enhanced places. Two cautions apply: heritage handicaps carry one-off place specials well above the standard ladder (the Stewards' Cup paid 7), so the terms must be read off the actual offer; and a big field sitting just above a place boundary can lose a place to withdrawals after it has been priced.</div></div></div>
+      <div class="tip-row"><span class="sb sb-jm">JM</span> <strong>Jane Mangan (WH)</strong>: <strong>Love Me Tender</strong> &mdash; Willie Mullins, first start for the yard after three runs in France, off a French mark of 96 &mdash; &ldquo;could be absolutely thrown in&rdquo;. <strong>William Buick</strong> booked, last year&rsquo;s winning rider; Mullins took this with Ethical Diamond last year.</div>
     </div>
 
     <div class="race-block">
@@ -260,6 +315,39 @@
       <p class="race-hd">Supporting card · the Convivial Maiden and closing handicaps</p>
       <div class="pick-row"><div class="pick-tag gate">GATE</div><div><span class="pick-horse">NO BET — race list not confirmed</span><div class="pick-note">Confirmed at declarations on Thursday 20 August.</div></div></div>
     </div>
+  </section>
+
+  <!-- ── EXTERNAL TIPSTERS ──────────────────────────────────── -->
+  <section class="panel blue-left">
+    <h2 class="panel-head">📋 External tipsters · overlaid so far</h2>
+    <p style="font-size:0.78rem;color:var(--silver);line-height:1.55;margin-bottom:6px">
+      Twelve external picks are on the board. <strong style="color:var(--cream)">None of them is ours.</strong>
+      They are recorded here because a tipster's strike rate and any dissent they represent are worth
+      knowing before we price — never because agreement promotes a horse.
+    </p>
+    <div class="tp-block"><span class="sb sb-rp">RP&#9733;</span> <span class="tp-name">Racing Post Spotlight &middot; free York tips (Wed 19 Aug)</span> &mdash; one per race, all rated &#9733;&#9734;&#9734;:
+      <strong>Toca Madera</strong> 7/1 (13:50) &middot; <strong>Trean</strong> 5/1 (14:25) &middot;
+      <strong>Pierre Bonnard</strong> 3/1 (15:00) &middot; <strong>Ombudsman</strong> 11/10 (15:35) &middot;
+      <strong>Small Fry</strong> 3/1 (16:10) &middot; <strong>Naana&rsquo;s Shadow</strong> 5/1 (16:45) &middot;
+      <strong>Henley On Thames</strong> 10/1 (17:20).
+      <em style="color:var(--blue-l)">Spotlight was the best column at Goodwood (30% strike rate), so this is the one to weigh.</em>
+    </div>
+    <div class="tp-block"><span class="sb sb-jm">JM</span> <span class="tp-name">Jane Mangan (William Hill ambassador) &middot; 5 Irish horses to follow</span> &mdash;
+      <strong>Trean</strong> (Acomb G3, Wed 14:25) &middot; <strong>Star Of State</strong> (Lowther G2, Thu 13:50) &middot;
+      <strong>Sun Goddess</strong> (Harry&rsquo;s Half Million, Thu 14:25) &middot; <strong>Minnie Hauk</strong> (Yorkshire Oaks G1, Thu 15:35) &middot;
+      <strong>Love Me Tender</strong> (Ebor Handicap, Sat 15:35).
+      <em style="color:#f9a8d4">An all-Irish angle spread across three days &mdash; four of the five are Group-race runners.</em>
+    </div>
+    <div class="pending-inline"><strong>Still to overlay:</strong> Mullington, Geraghty, Nick Luck, Grimshaw, Frick, Raceolly and the HRN biggest-priced lists. Crossover counts below will move as those land.</div>
+  </section>
+
+  <!-- ── CROSSOVER SIGNALS ──────────────────────────────────── -->
+  <section class="panel blue-top">
+    <h2 class="panel-head">🔗 Crossover signals</h2>
+    <div class="xs-row"><span class="sb sb-2x">2x</span> <strong>Trean</strong> 5/1 (14:25 Wed, Acomb G3) &mdash; Spotlight + Jane Mangan. Paddy Twomey&rsquo;s colt, an emphatic Galway winner last time. <strong>Both sources note Haffner heads the market for Ballydoyle</strong>, so this is the pair backing against the favourite rather than with it.</div>
+    <div class="xs-row"><span style="color:var(--gold-lt)">⚠ Read this the right way.</span> Every crossover on this page is <strong>between external sources only</strong> — we hold no picks yet, so nothing here is agreement <em>with</em> us. Nine multi-source picks ran at Goodwood and not one won. Crossover never promotes a pick into a slot or into the Lucky 15.</div>
+    <div class="xs-row"><span style="color:var(--gold-lt)">⚠ Banker marker:</span> <strong>Ombudsman</strong> 11/10 in the Juddmonte. Short-priced favourites are bankers, not Lucky 15 legs (rule 7), and a multi-source horse under 3/1 does not take the NAP (rule 8). If we land on him independently he runs as the NB.</div>
+    <div class="xs-row"><span style="color:var(--gold-lt)">⚠ Dissent to watch:</span> <strong>Haffner</strong> (Acomb, Ballydoyle) is the market leader that both our current sources are opposing. If further columns come in for Haffner it becomes the clearest dissent signal of the day and gets called out here.</div>
   </section>
 
   <!-- ── ENGINE RULES IN FORCE ──────────────────────────────── -->
