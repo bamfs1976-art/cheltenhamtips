@@ -433,7 +433,17 @@ After racing, when the user provides results:
 16. **Re-check place terms at the off.** Enhanced EW places depend on
     runner counts and withdrawals can drop a race below the band after
     it has been priced (see Step 3b).
-17. **Market move is the primary signal, not the only one.** At Goodwood
+17. **A GoingStick differential under ~0.5 is noise, not a draw bias.**
+    Added after Ebor Day 1. The morning strips read Far 5.6 / Centre 5.8 /
+    Stands' 5.8 and the card was built on "stands' side is faster, back
+    high draws" across three straight-course races. At the off it was
+    Far 6.1 / **Centre 6.3** / Stands' 6.1 — the centre quickest and the
+    two sides identical. **Henley On Thames was held at NB instead of NAP
+    purely on drawing 6 "the wrong side", and won at 10/1.** Read the
+    strips, but require a gap of about half a point before letting it move
+    a pick, and re-read them at the off — they move with watering and
+    weather like the going itself does.
+18. **Market move is the primary signal, not the only one.** At Goodwood
     Day 5 a steamer (Waardah 2/1→7/4) was the beaten favourite while a
     drifter we dismissed (Santorini Star 11/2→6/1) ran second. Record
     the move, weight it, but do not treat a drift as disqualifying when

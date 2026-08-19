@@ -1,0 +1,33 @@
+{
+  "event": "Ebor Festival 2026 · Day 1",
+  "date": "2026-08-19",
+  "course": "York",
+  "note": "Settled at card odds. Prices are as published on ebor-2026.html at the off.",
+  "races": [
+    { "off": "13:50", "ewFrac": 5, "declaredPlaces": 5, "picks": [
+      { "type": "NAP",  "horse": "Corolla Point",      "odds": "6/1"  },
+      { "type": "NB",   "horse": "Air Force One",      "odds": "15/2" },
+      { "type": "LONG", "horse": "Dubai Bling",        "odds": "20/1" } ] },
+    { "off": "14:25", "ewFrac": 5, "declaredPlaces": 4, "picks": [
+      { "type": "NAP",  "horse": "Alfred Wallace",     "odds": "13/2" },
+      { "type": "NB",   "horse": "Trean",              "odds": "9/2"  } ] },
+    { "off": "15:00", "ewFrac": 4, "declaredPlaces": 2, "picks": [
+      { "type": "NAP",  "horse": "Pierre Bonnard",     "odds": "3/1"  },
+      { "type": "NB",   "horse": "Christmas Day",      "odds": "11/4" } ] },
+    { "off": "15:35", "ewFrac": 5, "declaredPlaces": 4, "picks": [
+      { "type": "NAP",  "horse": "Constitution River", "odds": "7/4"  },
+      { "type": "NB",   "horse": "Ombudsman",          "odds": "13/10"} ] },
+    { "off": "16:10", "ewFrac": 5, "declaredPlaces": 5, "picks": [
+      { "type": "NAP",  "horse": "Kirchner",           "odds": "9/2"  },
+      { "type": "NB",   "horse": "Small Fry",          "odds": "3/1"  },
+      { "type": "LONG", "horse": "Shrimp Shady",       "odds": "11/1" } ] },
+    { "off": "16:45", "ewFrac": 5, "declaredPlaces": 5, "picks": [
+      { "type": "NAP",  "horse": "Naana's Shadow",     "odds": "4/1"  },
+      { "type": "NB",   "horse": "Old Is Gold",        "odds": "10/1" },
+      { "type": "LONG", "horse": "Baker Blue",         "odds": "25/1" } ] },
+    { "off": "17:20", "ewFrac": 5, "declaredPlaces": 5, "picks": [
+      { "type": "NAP",  "horse": "Dubai Champion",     "odds": "9/2"  },
+      { "type": "NB",   "horse": "Henley On Thames",   "odds": "10/1" },
+      { "type": "LONG", "horse": "God Given Talent",   "odds": "11/1" } ] }
+  ]
+}
