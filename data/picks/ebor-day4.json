@@ -1,0 +1,39 @@
+{
+  "event": "Ebor Festival 2026 · Day 4",
+  "date": "2026-08-22",
+  "course": "York",
+  "note": "Gated 7/7 from the declared Racing Post racecard. Going Good To Soft, GoingStick 5.9, strips within 0.1 (noise under rule 17). Ebor/Constantine/Finale all carry big-field flags — read place terms off Sky Bet, not the gate floor. Melrose on 17 can drop to 4 places.",
+  "races": [
+    { "off": "13:50", "ewFrac": 5, "declaredPlaces": 4, "picks": [
+      { "type": "NAP",  "horse": "Hankelow",          "odds": "7/1",  "draw": 11, "move": "flat 7/1" },
+      { "type": "NB",   "horse": "Persica",           "odds": "13/2", "draw": 7,  "move": "DRIFT 6/1>13/2" } ] },
+    { "off": "14:25", "ewFrac": 5, "declaredPlaces": 5, "picks": [
+      { "type": "NAP",  "horse": "Infraad",           "odds": "7/2",  "draw": 4,  "move": "STEAM 9/2>7/2" },
+      { "type": "NB",   "horse": "Galilean Quality",  "odds": "14/1", "draw": 9,  "move": "DRIFT 12/1>14/1" },
+      { "type": "LONG", "horse": "My Ballyquinn",     "odds": "25/1", "draw": 10, "move": "flat 25/1" } ] },
+    { "off": "15:00", "ewFrac": 5, "declaredPlaces": 4, "picks": [
+      { "type": "NAP",  "horse": "Ten Bob Tony",      "odds": "8/1",  "draw": 8,  "move": "flat 8/1" },
+      { "type": "NB",   "horse": "Notable Speech",    "odds": "3/1",  "draw": 1,  "move": "flat 3/1" } ] },
+    { "off": "15:35", "ewFrac": 5, "declaredPlaces": 5, "picks": [
+      { "type": "NAP",  "horse": "Emit",              "odds": "7/1",  "draw": 11, "move": "STEAM 15/2>7/1" },
+      { "type": "NB",   "horse": "Love Me Tender",    "odds": "15/2", "draw": 15, "move": "flat 15/2" },
+      { "type": "LONG", "horse": "Furthur",           "odds": "33/1", "draw": 16, "move": "flat 33/1" } ] },
+    { "off": "16:10", "ewFrac": 5, "declaredPlaces": 5, "picks": [
+      { "type": "NAP",  "horse": "Air Force One",     "odds": "15/2", "draw": 3,  "move": "DRIFT 6/1>15/2" },
+      { "type": "NB",   "horse": "Far Above Dream",   "odds": "17/2", "draw": 12, "move": "DRIFT 8/1>17/2" },
+      { "type": "LONG", "horse": "Flash Harry",       "odds": "33/1", "draw": 17, "move": "flat 33/1" } ] },
+    { "off": "16:45", "ewFrac": 5, "declaredPlaces": 4, "picks": [
+      { "type": "NAP",  "horse": "Adonius",           "odds": "5/2",  "draw": 8,  "move": "DRIFT 9/4>5/2" },
+      { "type": "NB",   "horse": "Jaan Ki Tukri",     "odds": "12/1", "draw": 6,  "move": "flat 12/1" } ] },
+    { "off": "17:20", "ewFrac": 5, "declaredPlaces": 5, "picks": [
+      { "type": "NAP",  "horse": "Diego El Queso",    "odds": "13/2", "draw": 16, "move": "STEAM 7/1>13/2" },
+      { "type": "NB",   "horse": "Accredit",          "odds": "7/1",  "draw": 20, "move": "STEAM 10/1>7/1" },
+      { "type": "LONG", "horse": "Dark Moon Rising",  "odds": "16/1", "draw": 2,  "move": "flat 16/1" } ] }
+  ],
+  "lucky15": [
+    { "off": "13:50", "horse": "Hankelow",       "odds": "7/1"  },
+    { "off": "15:00", "horse": "Ten Bob Tony",   "odds": "8/1"  },
+    { "off": "15:35", "horse": "Emit",           "odds": "7/1"  },
+    { "off": "17:20", "horse": "Diego El Queso", "odds": "13/2" }
+  ]
+}
