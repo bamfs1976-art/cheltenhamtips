@@ -156,8 +156,11 @@ slot for the sake of it.
 
 ### Step 5 — Lucky 15
 
-**Record to date: −58.8% (−£12.35 on £21 across seven days).** Treat it as
-the highest-variance part of the card, not a default.
+**Record to date: −69.6% (−£19.85 on £28.50 across eight days).** Treat it
+as the highest-variance part of the card, not a default. Ebor Day 1 is the
+case in point: the singles returned **+41.1%** and the Lucky 15 went 0 from
+4, turning the day into **−0.4%**. On this evidence, running a card on
+singles alone is always a defensible choice and should be offered.
 
 - 4 legs from 4 different races, all at **4/1 or bigger**
 - **Never** include a pick below 2/1, an odds-on banker, or any pick from
