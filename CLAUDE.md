@@ -156,11 +156,13 @@ slot for the sake of it.
 
 ### Step 5 — Lucky 15
 
-**Record to date: −69.6% (−£19.85 on £28.50 across eight days).** Treat it
-as the highest-variance part of the card, not a default. Ebor Day 1 is the
-case in point: the singles returned **+41.1%** and the Lucky 15 went 0 from
-4, turning the day into **−0.4%**. On this evidence, running a card on
-singles alone is always a defensible choice and should be offered.
+**Record to date: −74.6% (−£26.85 on £36.00 across nine days).** Treat it
+as the highest-variance part of the card, not a default. Ebor Days 1 and 2
+are the case in point: across the two days the **singles returned +6.3%**
+(+£2.27 on £36) while the Lucky 15 lost **£14.50 from £15** — more than the
+festival's entire net loss. Without it the meeting was in profit. On this
+evidence, running a card on singles alone is always a defensible choice and
+should be offered.
 
 - 4 legs from 4 different races, all at **4/1 or bigger**
 - **Never** include a pick below 2/1, an odds-on banker, or any pick from
@@ -450,7 +452,13 @@ After racing, when the user provides results:
     Day 5 a steamer (Waardah 2/1→7/4) was the beaten favourite while a
     drifter we dismissed (Santorini Star 11/2→6/1) ran second. Record
     the move, weight it, but do not treat a drift as disqualifying when
-    the form case is independently strong.
+    the form case is independently strong. **Ebor 2026 produced two more
+    counter-examples in two days.** Day 1: Ombudsman drifted 11/10→13/10,
+    we logged the demotion, he steamed into 5/6 at the off and finished
+    unplaced. Day 2: Libertango drifted 7/4→11/4 — the biggest move of the
+    festival, logged that morning as a demotion signal — and **won at 3/1**.
+    Keep recording the move on every pick; it is mechanical and checkable.
+    Stop describing it as settled.
 
 ---
 

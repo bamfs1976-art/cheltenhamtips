@@ -1,0 +1,33 @@
+{
+  "event": "Ebor Festival 2026 · Day 2",
+  "date": "2026-08-20",
+  "course": "York",
+  "note": "Settled at card odds. Going went GOOD TO SOFT with rain; 15 non-runners on the card, 5 of our 18 picks withdrawn.",
+  "races": [
+    { "off": "13:50", "ewFrac": 5, "declaredPlaces": 5, "picks": [
+      { "type": "NAP",  "horse": "Wild Blossom",      "odds": "10/1" },
+      { "type": "NB",   "horse": "Libertango",        "odds": "11/4" },
+      { "type": "LONG", "horse": "Moonrise",          "odds": "16/1" } ] },
+    { "off": "14:25", "ewFrac": 5, "declaredPlaces": 5, "picks": [
+      { "type": "NAP",  "horse": "Sun Goddess",       "odds": "11/10" },
+      { "type": "NB",   "horse": "Tokaido",           "odds": "9/2"  },
+      { "type": "LONG", "horse": "Pride Of Toledo",   "odds": "28/1" } ] },
+    { "off": "15:00", "ewFrac": 5, "declaredPlaces": 5, "picks": [
+      { "type": "NAP",  "horse": "Point Lynas",       "odds": "12/1" },
+      { "type": "NB",   "horse": "Aalto",             "odds": "16/1" },
+      { "type": "LONG", "horse": "Yorkshire",         "odds": "25/1" } ] },
+    { "off": "15:35", "ewFrac": 5, "declaredPlaces": 4, "picks": [
+      { "type": "NAP",  "horse": "Minnie Hauk",       "odds": "7/2"  },
+      { "type": "NB",   "horse": "Kalpana",           "odds": "11/10"} ] },
+    { "off": "16:10", "ewFrac": 5, "declaredPlaces": 4, "picks": [
+      { "type": "NAP",  "horse": "Rhapsody",          "odds": "11/2" },
+      { "type": "NB",   "horse": "Without Prejudice", "odds": "7/1"  } ] },
+    { "off": "16:45", "ewFrac": 5, "declaredPlaces": 5, "picks": [
+      { "type": "NAP",  "horse": "Weleyff",           "odds": "13/2" },
+      { "type": "NB",   "horse": "Revels",            "odds": "15/2" },
+      { "type": "LONG", "horse": "Mirzimaan",         "odds": "10/1" } ] },
+    { "off": "17:20", "ewFrac": 5, "declaredPlaces": 5, "picks": [
+      { "type": "NAP",  "horse": "Royal Velvet",      "odds": "12/1" },
+      { "type": "NB",   "horse": "Starlight Lass",    "odds": "11/4" } ] }
+  ]
+}
