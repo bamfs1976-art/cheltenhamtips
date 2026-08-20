@@ -529,8 +529,8 @@ Wed–Sat. Three Group 1s and Europe's richest flat handicap:
 |---|---|
 | Wed | **Juddmonte International (G1)**, Great Voltigeur (G2), Acomb (G3) |
 | Thu | **Yorkshire Oaks (G1)**, Lowther (G2), Galtres (G3) |
-| Fri | **Nunthorpe (G1)**, Gimcrack (G2), Lonsdale Cup (G2), Roses (Listed) |
-| Sat | **Ebor Handicap** (Heritage), City of York (G2), Melrose Hcap |
+| Fri | **Nunthorpe (G1)**, Gimcrack (G2), Lonsdale Cup (G2), Mile Hcap |
+| Sat | **Ebor Handicap** (Heritage), City of York (G2), Melrose Hcap, Roses (Listed) |
 
 Engine notes specific to this meeting:
 
