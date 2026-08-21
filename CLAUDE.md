@@ -156,13 +156,13 @@ slot for the sake of it.
 
 ### Step 5 — Lucky 15
 
-**Record to date: −74.6% (−£26.85 on £36.00 across nine days).** Treat it
-as the highest-variance part of the card, not a default. Ebor Days 1 and 2
-are the case in point: across the two days the **singles returned +6.3%**
-(+£2.27 on £36) while the Lucky 15 lost **£14.50 from £15** — more than the
-festival's entire net loss. Without it the meeting was in profit. On this
-evidence, running a card on singles alone is always a defensible choice and
-should be offered.
+**Record to date: −79.0% (−£34.35 on £43.50 across ten days).** Treat it
+as the highest-variance part of the card, not a default. Ebor Days 1–3 are
+the case in point: across three days the **singles returned +8.6%** (+£4.62
+on £54) while the Lucky 15 lost **£22.00 from £22.50** and went **0 from 11
+running legs**. Without it the meeting was in profit. On this evidence,
+**offer the singles-only line as the recommendation, not the footnote** —
+running a card on singles alone is always defensible.
 
 - 4 legs from 4 different races, all at **4/1 or bigger**
 - **Never** include a pick below 2/1, an odds-on banker, or any pick from
@@ -215,6 +215,15 @@ Rules:
 - Consensus clusters on short-priced favourites, which is where value
   isn't. Treat a high crossover count on an odds-on horse as a **banker
   marker** (i.e. keep it out of the L15), not as confidence.
+- **Ebor 2026 Day 3 is the cleanest evidence in the archive.** Three
+  short-priced consensus horses ran in one afternoon and **all three were
+  beaten favourites**: Caballo De Mar (2/1, six RP tips, unplaced at
+  7/4F), Marco Polo (3/1, three RP tips + a steam from 11/2, unplaced at
+  13/8F) and Oklahoma (the day's only 3x crossover, unplaced at 13/8F).
+  All three were named on the card *before* the off. The same day,
+  Agamemnon — a 2x pick we deliberately left out — also finished out of
+  the frame. **Surfacing consensus as dissent works; following it does
+  not.**
 - **A 3x+ horse under 3/1 should not be the NAP.** Goodwood 2026 ran
   nine multi-source picks across five days and **not one won**. The
   existing rule stops crossover *promoting* a pick; it does not stop us
@@ -572,6 +581,21 @@ Add new course profiles as they're covered.
     live banner detects it
   - have a `chester-2026`-style URL redirect added to `netlify.toml`
   - link from the hub `index.html` festival grid
+- **A section rewrite must never span more than its own section.**
+  Added 21 Aug 2026 (Ebor). Rebuilding the Day 4 card by replacing
+  everything from `id="day4"` to the next top-level comment silently
+  deleted **four unrelated panels** that happened to sit in that range —
+  the Day 1 and Day 2 settlement panels and Day 2's tipster and crossover
+  boxes. The build's own checks all passed (HTML valid, pick counts
+  right, draws matching) because they only looked at what was written,
+  never at what was removed.
+  - Before replacing a span, **assert what is inside it**: count
+    `<section` in the text being cut and confirm it is only the section
+    you meant.
+  - After writing, **diff the section inventory** — list every
+    `panel-head` and every `id=` before and after and compare.
+  - Recovery is `git show <commit>:<file>` for the deleted range; this is
+    another reason to commit each day's work separately.
 - Every page must include the BeGambleAware footer block.
 - **Live site: <https://ukracinghub.netlify.app>** (renamed from
   `cheltenhamtips.netlify.app` on 15 Aug 2026 — the old subdomain is
