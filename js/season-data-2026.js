@@ -140,9 +140,9 @@ const FESTIVALS_2026 = [
     icon:'🎯', dates:['2026-08-19','2026-08-20','2026-08-21','2026-08-22'],
     dateLabel:'19–22 Aug 2026', venue:'York (Knavesmire)', type:'Flat',
     theme:'theme-crimson', accentColor:'#e11d48', url:'ebor-2026.html',
-    races:null,
-    headline:'Preview live — four days on the Knavesmire. Cards publish as each day’s declarations confirm; nothing priced from the entry stage. First full festival under the post-Goodwood engine rules.',
-    headlineRace:'Ebor Handicap · Sat 22 Aug · Juddmonte International (G1) Wed · Yorkshire Oaks (G1) Thu · Nunthorpe (G1) Fri',
+    races:28, concluded:true,
+    headline:'COMPLETE — 28 races gated 28/28, 72 picks over four days, 11 winners. Engine ROI −31.2% (−£31.83 on £102) — but the singles finished within £2.33 of level (−3.2%) and the Lucky 15 lost £29.50 of it, going 0 from 15 running legs. That result retires the Lucky 15 as a default bet. The NB beat the NAP for a fourth straight day: 8 winners to 3, with the LONG 0 from 16.',
+    headlineRace:'Ebor Handicap · Sat 22 Aug — won by Daiquiri Bay (10/1) · Nunthorpe (G1) Fri — won by Bacio (3/1F) · Juddmonte International (G1) Wed',
   },
 ];
 
@@ -1255,6 +1255,10 @@ const ROI_LEDGER = [
   { event:'Goodwood',           day:'Day 3', staked:24.00, returned:11.40, note:'Worst day: 2 winners; two unverified races cost £6; Enceladus 3x dissent won' },
   { event:'Goodwood',           day:'Day 4', staked:24.00, returned:25.41, note:'Best day since Tuesday: both LONGs won (Defiantly 11/4, Shayem 17/2); Indalo the 4x pick was the unplaced favourite; £3 returned on 3 non-runners' },
   { event:'Goodwood',           day:'Day 5', staked:16.00, returned:7.42,  note:'First card under the revised rules. Crest of Fire 7/2 the only winner; all four consensus picks failed; 5 finishing positions unpublished, settled as unplaced' },
+  { event:'Ebor',               day:'Day 1', staked:18.00, returned:25.40, note:'Best singles day of the season: 3 winners, all NBs (Air Force One 15/2, Small Fry 3/1, Henley On Thames 10/1). Henley was held at NB on a GoingStick read that had reversed by the off — the reason rule 17 exists' },
+  { event:'Ebor',               day:'Day 2', staked:18.00, returned:12.87, note:'Ground went good to soft, 15 non-runners, 5 of ours withdrawn. Libertango won at 3/1 after the festival’s biggest drift — a clean counter-example to the market-move signal' },
+  { event:'Ebor',               day:'Day 3', staked:18.00, returned:20.35, note:'Rule 8 right three times in one afternoon: Caballo De Mar, Marco Polo and Oklahoma all beaten favourites, all named on the card first. Starlust 2nd at 25/1 — the LONG gate’s only return of the week' },
+  { event:'Ebor',               day:'Day 4', staked:18.00, returned:11.05, note:'Infraad (3x NAP at 7/2, the right side of the rule-8 line) won; Emit — the festival’s strongest signal-stack — was unplaced in the Ebor. NB beat NAP in three of seven races again' },
 ];
 
 // Lucky 15 record (10p e/w = £3/day) — tracked separately
@@ -1266,6 +1270,10 @@ const L15_LEDGER = [
   { event:'Goodwood Day 3',       staked:3.00, returned:1.31 },
   { event:'Goodwood Day 4',       staked:3.00, returned:0.58 },
   { event:'Goodwood Day 5',       staked:3.00, returned:0.22 },
+  { event:'Ebor Day 1',           staked:7.50, returned:0.00 },
+  { event:'Ebor Day 2',           staked:7.50, returned:0.50 },
+  { event:'Ebor Day 3',           staked:7.50, returned:0.00 },
+  { event:'Ebor Day 4',           staked:7.50, returned:0.00 },
 ];
 
 function roiTotals(rows) {

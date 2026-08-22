@@ -1,0 +1,15 @@
+{
+  "event": "Ebor Festival 2026 · Day 4 · settled",
+  "date": "2026-08-22", "course": "York",
+  "going": "Good To Soft (good in places), GoingStick 6.1 — Far 6.1 / Centre 5.9 / Stands' 6.0",
+  "nonRunners": 5,
+  "staked": 25.50, "returned": 11.05, "net": -14.45,
+  "singles": { "staked": 18.00, "returned": 11.05, "net": -6.95 },
+  "lucky15": { "staked": 7.50, "returned": 0.00, "legs": ["Hankelow","Ten Bob Tony","Emit","Diego El Queso"], "winners": 0 },
+  "slots": { "NAP": -3.15, "NB": 0.20, "LONG": -4.00 },
+  "unconfirmedPositions": 11, "outstandingIfAllPlaced": 21.70,
+  "festival": { "staked": 102.00, "returned": 70.17, "net": -31.83, "roi": -31.2,
+                "singles": { "staked": 72.00, "returned": 69.67, "net": -2.33 },
+                "lucky15": { "staked": 30.00, "returned": 0.50, "net": -29.50, "runningLegs": 15, "winners": 0 },
+                "slotWins": { "NAP": 3, "NB": 8, "LONG": 0 }, "slotPicks": { "NAP": 28, "NB": 28, "LONG": 16 } }
+}

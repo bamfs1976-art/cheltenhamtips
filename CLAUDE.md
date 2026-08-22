@@ -132,9 +132,18 @@ Season record to date (11 festivals, through Glorious Goodwood):
 
 | Slot | Picks | Wins | SR | Pts/pick |
 |---|---|---|---|---|
-| Our NB | 224 | 49 | **22%** | **0.89** |
-| Our NAP | 227 | 43 | 19% | 0.82 |
-| Our LONG | 165 | 12 | **7%** | **0.47** |
+| Our NB | 252 | 57 | **23%** | 0.89 |
+| Our NAP | 255 | 46 | 18% | 0.82 |
+| Our LONG | 181 | 12 | **7%** | **0.47** |
+
+*(Picks, wins and strike rate include Ebor 2026; pts/pick is carried
+forward from Glorious Goodwood and not recomputed.)*
+
+**Ebor 2026 was the most one-sided meeting yet: NB 8 winners from 28,
+NAP 3 from 28, LONG 0 from 16.** On Saturday alone the NB out-ran the
+NAP in three of seven races, including Notable Speech winning the
+Group 1 while our NAP in the same race was unplaced — and that was our
+own judgement call, not a rule-8 demotion.
 
 The NB outperforms the NAP on both measures across a large sample. Treat
 the two as **equally weighted**, not as first and second choice. Reserve
@@ -144,7 +153,11 @@ rather than promoting the best of a weak set.
 #### LONG slot — conditional, not automatic
 
 At 7% strike rate and 0.47 pts/pick the LONG has been the engine's
-structural leak. **Only run a LONG when all three hold:**
+structural leak. **Ebor 2026 returned 0 winners from 16 with a single
+placed horse all week** (Starlust, 2nd at 25/1). On the Saturday all
+three LONGs were independently napped by an outside column and all
+three were unplaced — outside agreement on a big price is not a
+qualifying signal. **Only run a LONG when all three hold:**
 
 - **5+ places paid** (or 4+ in a field of 16+), AND
 - price **8/1 or bigger**, AND
@@ -156,13 +169,23 @@ slot for the sake of it.
 
 ### Step 5 — Lucky 15
 
-**Record to date: −79.0% (−£34.35 on £43.50 across ten days).** Treat it
-as the highest-variance part of the card, not a default. Ebor Days 1–3 are
-the case in point: across three days the **singles returned +8.6%** (+£4.62
-on £54) while the Lucky 15 lost **£22.00 from £22.50** and went **0 from 11
-running legs**. Without it the meeting was in profit. On this evidence,
-**offer the singles-only line as the recommendation, not the footnote** —
-running a card on singles alone is always defensible.
+**Record to date: −82.1% (−£41.85 on £51.00 across eleven days).**
+**The Lucky 15 no longer runs by default. Offer it only when the user asks
+for it, and quote the record when they do.** Added after Ebor 2026, where
+it went **0 winners from 15 running legs** across four days, lost **£29.50
+of a £30 outlay**, and turned a near-level singles card into a −31.2%
+meeting on its own:
+
+| Day | Singles | Lucky 15 | Day |
+|---|---|---|---|
+| Wed | **+£7.40** | −£7.50 | −£0.10 |
+| Thu | −£5.13 | −£7.00 | −£12.13 |
+| Fri | **+£2.35** | −£7.50 | −£5.15 |
+| Sat | −£6.95 | −£7.50 | −£14.45 |
+| **Festival** | **−£2.33 (−3.2%)** | **−£29.50** | **−£31.83** |
+
+Seventy-two singles finished within £2.33 of level. Four Lucky 15s took
+£29.50 and returned one voided single. When it does run:
 
 - 4 legs from 4 different races, all at **4/1 or bigger**
 - **Never** include a pick below 2/1, an odds-on banker, or any pick from
