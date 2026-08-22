@@ -619,6 +619,20 @@ Add new course profiles as they're covered.
     `panel-head` and every `id=` before and after and compare.
   - Recovery is `git show <commit>:<file>` for the deleted range; this is
     another reason to commit each day's work separately.
+- **Share cards** are generated client-side by `js/fmb-share.js` (the canvas
+  engine) plus `js/fmb-share-ui.js` (the wiring). Include both before
+  `</body>` and every day section gains a "Share this day" button — 1080×1350
+  PNG, picks as priced, plus results and the settled P&L once the day has run.
+  - It works **only** off the display contract: `section[id="dayN"]`
+    containing `.race-block > .race-hd` and `.pick-row`. A page whose day
+    anchors are a programme or a results table (Royal Ascot, Northumberland
+    Plate) gets no buttons, so don't include the scripts there.
+  - Festival colours are duplicated as canvas literals in `fmb-share.js`.
+    `node scripts/check-share-palette.mjs` pins them to
+    `FESTIVALS_2026[].accentColor` and fails on drift — run it after any
+    rebrand.
+  - The card reads the **page**, never a second copy of the picks, so it
+    cannot show an odds the page has since corrected.
 - Every page must include the BeGambleAware footer block.
 - **Live site: <https://ukracinghub.netlify.app>** (renamed from
   `cheltenhamtips.netlify.app` on 15 Aug 2026 — the old subdomain is
