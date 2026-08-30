@@ -588,6 +588,47 @@ Engine notes specific to this meeting:
   UK turf flat declarations confirm **48 hours out**, so each day's card
   is built two days ahead and not before.
 
+### Haydock Park (flat)
+
+Left-handed, flat, wide and galloping — a level oval of about 1m5f with a
+long home straight of roughly 4.5f. A fair, stamina-favouring track that
+rewards a horse who sustains a gallop rather than one who quickens briefly.
+
+**The sprint course is straight and stiff.** The Sprint Cup is run over a
+straight 6f that rises to the line. Haydock sprints are not won on pure
+speed: the last furlong finds out anything that went too fast too early,
+and the track has a long history of soft-ground sprint winners that
+quicker surfaces would never have suited.
+
+**Draw.** On the straight course the favoured side moves with the ground
+and the rail, and big sprint fields often split into groups. Read the
+GoingStick strips, never a rule of thumb — and rule 17 applies in full: a
+spread under about half a point is noise, and the readings get re-checked
+at the off.
+
+**Going.** Haydock sits on heavy clay and drains slowly. Soft or heavy in
+early September is entirely possible and changes the meeting completely.
+Check the forecast on the morning of each card.
+
+**Meetings covered:** Sprint Cup Festival (September) — see
+`sprint-cup-2026.html`.
+
+#### Sprint Cup Festival (Haydock, September)
+
+Saturday's published programme is eight races headed by the **Betfair
+Sprint Cup (Group 1, 6f)** at 15:35, with the **Old Borough Cup**
+(Heritage Handicap, 1m6f) and the **Superior Mile (Group 3)** in support.
+
+- **The fixture length is not settled in our sources.** The Jockey Club
+  bills Sprint Cup Day on the Saturday; Friday is separately described as
+  the *middle* day, which implies a Thursday opener. The hub carries it
+  as 3–5 September and the page says the Thursday and Friday programmes
+  are unconfirmed. Do not silently pick a reading — wait for a racecard.
+- The **Sprint Cup** and the **Old Borough Cup** are the two races most
+  likely to carry a place special above the standard ladder, and the
+  Sprint Cup is the one where the draw is a first-order factor.
+- Declarations confirm 48 hours out, as everywhere on UK turf flat.
+
 Add new course profiles as they're covered.
 
 ---

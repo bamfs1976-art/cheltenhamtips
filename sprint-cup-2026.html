@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🏇 Sprint Cup Festival 2026 – Haydock Tips, Race Cards &amp; Selections</title>
+<meta name="description" content="Sprint Cup Festival 2026 at Haydock Park, 3–5 September. Nap, NB and Longshot for every race — the Betfair Sprint Cup (Group 1), the Old Borough Cup and the Superior Mile. Cards publish on declarations, 48 hours out.">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self' 'unsafe-inline';">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/fmb-ui.css">
+<script src="/js/fmb-ui.js" defer></script>
+<style>
+  :root {
+    --bg:#0a1428; --bg-mid:#0f1d3a; --card:#142747; --lit:#1a3057;
+    --gold:#fbbf24; --gold-lt:#fde68a;
+    --eb:#f97316; --eb-lt:#fdba74; --eb-deep:#c2410c;
+    --blue-l:#60a5fa; --pink:#f472b6; --green-lt:#4ade80; --silver:#a1a1aa;
+    --cream:#f5f5f4; --red:#ef4444;
+  }
+  *,*::before,*::after { box-sizing:border-box }
+  html,body { margin:0; padding:0; background:var(--bg); color:var(--cream); font-family:'Inter',system-ui,sans-serif; font-size:14px; line-height:1.5 }
+  a { color:var(--eb-lt); text-decoration:none } a:hover { color:var(--eb); text-decoration:underline }
+  .container { max-width:920px; margin:0 auto; padding:0 14px 40px }
+  .live-strip { background:linear-gradient(90deg,rgba(249,115,22,0.22),rgba(249,115,22,0.06)); border-bottom:1px solid rgba(249,115,22,0.4); color:var(--eb-lt); font-size:0.78rem; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; padding:8px 16px; text-align:center }
+  .live-strip strong { color:var(--cream) }
+  .site-header { text-align:center; padding:26px 16px 18px; background:radial-gradient(ellipse at 50% -10%, rgba(249,115,22,0.14), transparent 60%) }
+  .header-badge { display:inline-block; font-size:0.66rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--eb-lt); border:1px solid rgba(249,115,22,0.4); border-radius:50px; padding:4px 14px; margin-bottom:12px }
+  .site-header h1 { font-family:'Playfair Display',serif; font-size:clamp(1.8rem,5vw,2.8rem); font-weight:900; margin:0 0 6px; color:#fff }
+  .site-header h1 em { color:var(--eb-lt); font-style:normal }
+  .hero-dates { font-size:0.82rem; color:var(--silver); margin-bottom:14px }
+  .hero-stats { display:flex; justify-content:center; gap:22px; flex-wrap:wrap }
+  .hero-stats > div { text-align:center }
+  .hero-stat-val { display:block; font-family:'Playfair Display',serif; font-size:1.5rem; font-weight:700; color:var(--eb-lt); font-variant-numeric:tabular-nums }
+  .hero-stat-lbl { font-size:0.6rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--silver) }
+  .day-tabs { display:flex; gap:8px; margin:16px 0; flex-wrap:wrap }
+  .day-tab { background:var(--card); border:1px solid rgba(255,255,255,0.08); border-radius:8px; padding:8px 14px; font-size:0.82rem; font-weight:600; color:var(--silver); text-decoration:none }
+  .day-tab.active { border-color:rgba(249,115,22,0.5); color:var(--eb-lt); background:rgba(249,115,22,0.08) }
+  .titlebar { border-left:3px solid var(--eb); padding:6px 0 6px 12px; margin:6px 0 16px }
+  .titlebar h2 { font-family:'Playfair Display',serif; font-size:1.05rem; margin:0; color:var(--cream) }
+  .titlebar p { font-size:0.76rem; color:var(--silver); margin:2px 0 0 }
+  .draw-note { background:rgba(251,191,36,0.08); border:1px solid rgba(251,191,36,0.35); border-radius:10px; padding:11px 14px; font-size:0.78rem; color:var(--gold-lt); line-height:1.55; margin-bottom:18px }
+  .draw-note strong { color:#fff }
+  .panel { background:var(--card); border:1px solid rgba(255,255,255,0.06); border-radius:12px; padding:16px 14px; margin-bottom:16px }
+  .panel.eb-top { border-top:3px solid var(--eb) }
+  .panel.gold-top { border-top:3px solid var(--gold) }
+  .panel.blue-left { border-left:3px solid var(--blue-l) }
+  .panel.blue-top { border-top:3px solid var(--blue-l) }
+  .panel-head { font-family:'Playfair Display',serif; font-size:1.05rem; margin:0 0 10px; color:var(--cream) }
+  .race-block { border-top:1px solid rgba(255,255,255,0.07); padding-top:12px; margin-top:12px }
+  .race-block:first-of-type { border-top:none; padding-top:0; margin-top:0 }
+  .race-hd { font-size:0.82rem; font-weight:700; color:var(--gold-lt); border-bottom:2px solid rgba(251,191,36,0.3); padding-bottom:5px; margin:0 0 8px }
+  .race-hd .g1 { color:var(--eb-lt) }
+  .pick-row { display:grid; grid-template-columns:56px 1fr auto; gap:8px; align-items:start; padding:7px 0; border-top:1px solid rgba(255,255,255,0.05) }
+  .pick-row:first-of-type { border-top:none }
+  .pick-tag { font-size:0.62rem; font-weight:800; letter-spacing:0.04em; text-align:center; padding:3px 0; border-radius:5px; height:fit-content }
+  .pick-tag.nap { background:rgba(251,191,36,0.18); color:var(--gold-lt); border:1px solid rgba(251,191,36,0.4) }
+  .pick-tag.nb  { background:rgba(96,165,250,0.16); color:var(--blue-l); border:1px solid rgba(96,165,250,0.4) }
+  .pick-tag.long{ background:rgba(244,114,182,0.14); color:var(--pink); border:1px solid rgba(244,114,182,0.4) }
+  .pick-tag.gate{ background:rgba(161,161,170,0.14); color:var(--silver); border:1px solid rgba(161,161,170,0.35) }
+  .pick-horse { font-weight:700; color:#fff; font-size:0.92rem }
+  .pick-odds { font-weight:800; color:var(--eb-lt); font-size:0.9rem; white-space:nowrap; font-variant-numeric:tabular-nums }
+  .pick-note { font-size:0.78rem; color:#cbd5cf; line-height:1.5; margin-top:3px }
+  .conns { display:block; font-size:0.72rem; color:var(--silver); margin-top:2px; font-variant-numeric:tabular-nums }
+  .draw-b { font-size:0.6rem; font-weight:700; background:rgba(249,115,22,0.15); color:var(--eb-lt); border:1px solid rgba(249,115,22,0.35); border-radius:4px; padding:1px 6px; margin-left:4px; white-space:nowrap }
+  .sb { font-size:0.6rem; font-weight:700; padding:2px 7px; border-radius:4px; margin-left:4px }
+  .sb-sm { background:rgba(74,222,128,0.18); border:1px solid rgba(74,222,128,0.5); color:#4ade80 }
+  .sb-rp { background:rgba(96,165,250,0.16); border:1px solid rgba(96,165,250,0.5); color:#60a5fa }
+  .sb-bg { background:rgba(234,88,12,0.18); border:1px solid rgba(234,88,12,0.5); color:#fdba74 }
+  .sb-nl { background:rgba(94,234,212,0.16); border:1px solid rgba(94,234,212,0.5); color:#5eead4 }
+  .sb-ro { background:rgba(167,139,250,0.18); border:1px solid rgba(167,139,250,0.5); color:#c4b5fd }
+  .sb-big { background:rgba(239,68,68,0.18); border:1px solid rgba(239,68,68,0.55); color:#fca5a5 }
+  .sb-jm { background:rgba(244,114,182,0.16); border:1px solid rgba(244,114,182,0.5); color:#f9a8d4 }
+  .sb-cd { font-size:0.6rem; font-weight:700; padding:2px 6px; border-radius:4px; margin-left:4px; background:rgba(74,222,128,0.16); border:1px solid rgba(74,222,128,0.45); color:#4ade80 }
+  .sb-3x { background:rgba(251,191,36,0.28); border:1px solid rgba(251,191,36,0.7); color:#fff7dc; font-weight:800 }
+  .sb-2x { background:rgba(251,191,36,0.2); border:1px solid rgba(251,191,36,0.55); color:var(--gold-lt) }
+  .tip-row { margin-top:6px; padding:7px 10px; background:rgba(96,165,250,0.05); border-left:2px solid rgba(96,165,250,0.35); border-radius:0 6px 6px 0; font-size:0.74rem; color:#cbd5cf; line-height:1.6 }
+  .tip-row strong { color:var(--cream) }
+  .tp-block { padding:8px 10px; margin-top:8px; background:var(--bg-mid); border-radius:8px; font-size:0.76rem; color:#cbd5cf; line-height:1.6 }
+  .tp-block .tp-name { font-weight:700; color:var(--cream) }
+  .xs-row { padding:7px 0; border-bottom:1px solid rgba(255,255,255,0.06); font-size:0.8rem; color:#cbd5cf; line-height:1.55 }
+  .xs-row:last-child { border-bottom:none }
+  .xs-row strong { color:var(--cream) }
+  .res-row { padding:8px 0; border-bottom:1px solid rgba(255,255,255,0.06); font-size:0.8rem; color:#cbd5cf; line-height:1.55 }
+  .res-row:last-child { border-bottom:none }
+  .res-row .rt { display:inline-block; min-width:52px; font-weight:700; color:var(--gold-lt) }
+  .res-w { color:#4ade80; font-weight:700 }
+  .res-p { color:var(--blue-l); font-weight:700 }
+  .res-l { color:var(--silver) }
+  .res-v { color:var(--gold-lt) }
+  .pl-box { margin-top:12px; padding:12px 14px; background:var(--bg-mid); border-radius:8px; border-left:3px solid #4ade80; font-size:0.84rem; line-height:1.7; color:#cbd5cf }
+  .pl-box strong { color:var(--cream) }
+  .l15-foot { font-size:0.74rem; color:var(--silver); border-top:1px dashed rgba(255,255,255,0.1); margin-top:8px; padding-top:8px }
+  .nobet { margin-top:8px; padding:9px 11px; background:rgba(161,161,170,0.07); border:1px solid rgba(161,161,170,0.25); border-radius:6px; font-size:0.74rem; color:var(--silver); line-height:1.6 }
+  .nobet strong { color:#e4e4e7 }
+  .pending-inline { margin-top:8px; padding:8px 10px; background:rgba(251,191,36,0.07); border:1px solid rgba(251,191,36,0.25); border-radius:6px; font-size:0.72rem; color:var(--gold-lt); line-height:1.6 }
+  .pending-inline strong { color:#fde68a }
+  .gate-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:10px; margin-top:10px }
+  .gate-cell { background:var(--bg-mid); border-radius:8px; padding:10px 12px; border-left:3px solid rgba(161,161,170,0.4) }
+  .gate-cell.ok { border-left-color:var(--green-lt) }
+  .gate-cell.wait { border-left-color:var(--gold) }
+  .gate-cell .gc-lbl { font-size:0.62rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--silver) }
+  .gate-cell .gc-val { font-size:0.84rem; font-weight:700; color:var(--cream); margin-top:3px }
+  .gate-cell.wait .gc-val { color:var(--gold-lt) }
+  .gate-cell.ok .gc-val { color:var(--green-lt) }
+  .rules-row { padding:8px 0; border-bottom:1px solid rgba(255,255,255,0.06); font-size:0.8rem; color:#cbd5cf; line-height:1.6 }
+  .rules-row:last-child { border-bottom:none }
+  .rules-row strong { color:var(--cream) }
+  .rec-table { width:100%; border-collapse:collapse; font-size:0.8rem; margin-top:8px }
+  .rec-table th, .rec-table td { text-align:left; padding:7px 8px; border-bottom:1px solid rgba(255,255,255,0.07) }
+  .rec-table th { font-size:0.62rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--silver); font-weight:600 }
+  .rec-table td.num { text-align:right; font-variant-numeric:tabular-nums }
+  .rec-table tr.hl td { color:var(--green-lt); font-weight:700 }
+  .rec-table tr.lo td { color:var(--pink) }
+  .footer { text-align:center; font-size:0.74rem; color:var(--silver); padding:22px 14px; line-height:1.7; border-top:1px solid rgba(255,255,255,0.06); margin-top:10px }
+  .gambleaware { color:var(--gold-lt); margin-top:6px }
+  @media (max-width:480px){ .pick-row{ grid-template-columns:48px 1fr auto; gap:6px } }
+</style>
+</head>
+<body>
+
+<a class="fmb-skip" href="#main">Skip to content</a>
+
+<!-- Shared grouped global nav (injected by fmb-ui.js) -->
+<div id="fmb-nav-root"></div>
+
+<div class="live-strip">🏇 Sprint Cup Festival 2026 &middot; <strong>Haydock Park, 3&ndash;5 September</strong> &middot; PREVIEW LIVE &middot; cards publish on declarations, 48 hours out</div>
+
+<main class="container" id="main" tabindex="-1">
+
+  <header class="site-header">
+    <div class="header-badge">🏇 Haydock Park · Merseyside · Flat</div>
+    <h1><em>Sprint Cup</em> Festival 2026</h1>
+    <p class="hero-dates">📍 Haydock Park · 3–5 September 2026 · Britain’s championship sprint</p>
+    <div class="hero-stats">
+      <div><span class="hero-stat-val">3</span><span class="hero-stat-lbl">days</span></div>
+      <div><span class="hero-stat-val">1</span><span class="hero-stat-lbl">Group 1</span></div>
+      <div><span class="hero-stat-val">8</span><span class="hero-stat-lbl">Saturday races</span></div>
+      <div><span class="hero-stat-val">0</span><span class="hero-stat-lbl">picks yet</span></div>
+    </div>
+  </header>
+
+  <div class="day-tabs">
+    <a href="#day1" class="day-tab">Thu 3 Sep</a>
+    <a href="#day2" class="day-tab">Fri 4 Sep</a>
+    <a href="#day3" class="day-tab active">Sat 5 Sep · Sprint Cup</a>
+  </div>
+
+  <div class="titlebar">
+    <h2>sprint-cup 2026 · preview · Thu 3 – Sat 5 September</h2>
+    <p>Nothing priced. Saturday’s eight-race programme is published; Thursday and Friday are unconfirmed. Declarations 48 hours out.</p>
+  </div>
+
+  <!-- ── PRE-FLIGHT GATE ─────────────────────────────────────── -->
+  <section class="panel gold-top">
+    <h2 class="panel-head">⛔ Pre-flight gate · nothing priced yet</h2>
+    <div class="pending-inline" style="background:rgba(239,68,68,0.08);border-color:rgba(239,68,68,0.35);color:#fca5a5">
+      <strong style="color:#fecaca">No declarations, no bet (rule 13).</strong><br><br>
+      Today is <strong>Sunday 30 August</strong>. UK turf flat declarations confirm <strong>48 hours out</strong>, so the earliest
+      any of this can be priced is:
+      <br><br>
+      <strong>Thu 3 Sep</strong> card → declarations <strong>Tue 1 Sep</strong><br>
+      <strong>Fri 4 Sep</strong> card → declarations <strong>Wed 2 Sep</strong><br>
+      <strong>Sat 5 Sep</strong> card → declarations <strong>Thu 3 Sep</strong>
+      <br><br>
+      Until then every race on this page reads <strong>NO BET</strong>. Ebor is the reason that is not negotiable: the Ebor Handicap
+      listed <strong>50 runners at entry and 22 were declared</strong>, and the Constantine went 44 to 20. Pricing an entry list is
+      pricing a field that will not run.
+    </div>
+    <div class="pending-inline">
+      <strong style="color:var(--gold-lt)">What is confirmed, and what is not.</strong><br><br>
+      <strong style="color:var(--green-lt)">Confirmed:</strong> Saturday 5 September carries a published <strong>eight-race
+      programme</strong> headed by the <strong>Betfair Sprint Cup (Group 1, 6f)</strong> at 15:35, with the
+      <strong>Old Borough Cup</strong> (Heritage Handicap, 1m6f) and the <strong>Superior Mile (Group 3)</strong> in support.
+      <br><br>
+      <strong style="color:#fca5a5">Not confirmed:</strong> the Thursday and Friday programmes. Sources differ on whether this is a
+      two-day or three-day fixture — the Jockey Club bills <strong>Sprint Cup Day</strong> on the Saturday, and Friday 4 September is
+      separately described as the <em>middle</em> day of the meeting, which implies a Thursday opener. <strong>The hub carries it as
+      3–5 September and this page will say so until a racecard settles it</strong> rather than quietly picking whichever reading looks
+      tidier.
+    </div>
+  </section>
+
+  <!-- ── DAY 1 ──────────────────────────────────────────────── -->
+  <section id="day1" class="panel eb-top">
+    <h2 class="panel-head">🏇 Day 1 · Thursday 3 September · programme to confirm</h2>
+    <div class="pending-inline">
+      <strong>No published card for this day yet.</strong> The Saturday fixture is the one Haydock advertises, and the opening day’s
+      programme has not surfaced in any source we hold. It will be added the moment a racecard does — with a race list first and picks
+      only once declarations land on <strong>Tuesday 1 September</strong>.
+    </div>
+  </section>
+
+  <!-- ── DAY 2 ──────────────────────────────────────────────── -->
+  <section id="day2" class="panel eb-top">
+    <h2 class="panel-head">🏇 Day 2 · Friday 4 September · programme to confirm</h2>
+    <div class="pending-inline">
+      <strong>Friday is a confirmed raceday at Haydock</strong> — it carries the meeting’s Charity Race Day — but no race-by-race
+      programme is published in the sources we hold. Race list when it appears; picks after declarations on
+      <strong>Wednesday 2 September</strong>.
+    </div>
+  </section>
+
+  <!-- ── DAY 3 ──────────────────────────────────────────────── -->
+  <section id="day3" class="panel eb-top">
+    <h2 class="panel-head">⭐ Day 3 · Saturday 5 September · Betfair Sprint Cup · 8 races</h2>
+    <div class="pending-inline">
+      <strong style="color:var(--gold-lt)">The programme below is published and the times are real. The fields are not.</strong>
+      Every race prints NO BET until declarations confirm on <strong>Thursday 3 September</strong>. The
+      <strong>Sprint Cup itself is a 6f Group 1 on the straight course</strong>, which makes the draw a first-order factor rather than a
+      tiebreak — and after Ebor, the draw is not something this engine infers.
+    </div>
+
+    <div class="race-block"><p class="race-hd">13:15 &middot; Superior Mile Stakes <span class="g1">(Group 3)</span> &middot; 1m &middot; Cl1 &middot; 3yo+</p><div class="pick-row"><div class="pick-tag gate">GATE</div><div><span class="pick-horse">NO BET &mdash; declarations not confirmed</span><div class="pick-note">Missing: declared runner list, field size and <strong>draw</strong>. Haydock declarations confirm 48 hours out &mdash; <strong>Thursday 3 September</strong> for this card.</div></div></div></div>
+
+    <div class="race-block"><p class="race-hd">13:50 &middot; Ascendant Stakes <span class="g1">(Listed)</span> &middot; 1m &middot; Cl1 &middot; 2yo</p><div class="pick-row"><div class="pick-tag gate">GATE</div><div><span class="pick-horse">NO BET &mdash; declarations not confirmed</span><div class="pick-note">Missing: declared runner list, field size and <strong>draw</strong>. Haydock declarations confirm 48 hours out &mdash; <strong>Thursday 3 September</strong> for this card.</div></div></div></div>
+
+    <div class="race-block"><p class="race-hd">14:25 &middot; Betfair Plays In A Different League Handicap &middot; 1m6f &middot; Cl2 &middot; 3yo</p><div class="pick-row"><div class="pick-tag gate">GATE</div><div><span class="pick-horse">NO BET &mdash; declarations not confirmed</span><div class="pick-note">Missing: declared runner list, field size and <strong>draw</strong>. Haydock declarations confirm 48 hours out &mdash; <strong>Thursday 3 September</strong> for this card.</div></div></div></div>
+
+    <div class="race-block"><p class="race-hd">15:00 &middot; Old Borough Cup Handicap <span class="g1">(Heritage)</span> &middot; 1m6f &middot; Cl2 &middot; 3yo+</p><div class="pick-row"><div class="pick-tag gate">GATE</div><div><span class="pick-horse">NO BET &mdash; declarations not confirmed</span><div class="pick-note">Missing: declared runner list, field size and <strong>draw</strong>. Haydock declarations confirm 48 hours out &mdash; <strong>Thursday 3 September</strong> for this card.</div></div></div></div>
+
+    <div class="race-block"><p class="race-hd">15:35 &middot; <span class="g1">BETFAIR SPRINT CUP (Group 1)</span> &middot; 6f &middot; Cl1 &middot; 3yo+ &middot; the championship sprint</p><div class="pick-row"><div class="pick-tag gate">GATE</div><div><span class="pick-horse">NO BET &mdash; declarations not confirmed</span><div class="pick-note">Missing: declared runner list, field size and <strong>draw</strong>. Haydock declarations confirm 48 hours out &mdash; <strong>Thursday 3 September</strong> for this card.</div></div></div></div>
+
+    <div class="race-block"><p class="race-hd">16:07 &middot; Be Friendly Handicap &middot; 5f &middot; Cl2 &middot; 3yo+</p><div class="pick-row"><div class="pick-tag gate">GATE</div><div><span class="pick-horse">NO BET &mdash; declarations not confirmed</span><div class="pick-note">Missing: declared runner list, field size and <strong>draw</strong>. Haydock declarations confirm 48 hours out &mdash; <strong>Thursday 3 September</strong> for this card.</div></div></div></div>
+
+    <div class="race-block"><p class="race-hd">16:40 &middot; Betfair Podcasts Handicap (Div 1) &middot; 1m &middot; Cl4 &middot; 3yo+</p><div class="pick-row"><div class="pick-tag gate">GATE</div><div><span class="pick-horse">NO BET &mdash; declarations not confirmed</span><div class="pick-note">Missing: declared runner list, field size and <strong>draw</strong>. Haydock declarations confirm 48 hours out &mdash; <strong>Thursday 3 September</strong> for this card.</div></div></div></div>
+
+    <div class="race-block"><p class="race-hd">17:15 &middot; Betfair Podcasts Handicap (Div 2) &middot; 1m &middot; Cl4 &middot; 3yo+</p><div class="pick-row"><div class="pick-tag gate">GATE</div><div><span class="pick-horse">NO BET &mdash; declarations not confirmed</span><div class="pick-note">Missing: declared runner list, field size and <strong>draw</strong>. Haydock declarations confirm 48 hours out &mdash; <strong>Thursday 3 September</strong> for this card.</div></div></div></div>
+  </section>
+
+  <!-- ── ENGINE RULES ───────────────────────────────────────── -->
+  <section class="panel gold-top">
+    <h2 class="panel-head">⚙️ Engine rules in force at Haydock</h2>
+    <p style="font-size:0.78rem;color:var(--silver);line-height:1.65">
+      This is the first meeting under the rules Ebor rewrote. Three of them changed how a card gets built:
+    </p>
+    <div class="pending-inline">
+      <strong style="color:#fca5a5">The Lucky 15 no longer runs by default.</strong> It finished Ebor at
+      <strong>0 winners from 15 running legs</strong>, losing <strong>£29.50 of a £30 outlay</strong> while the 72 singles finished
+      within <strong>£2.33 of level</strong>. Its lifetime record is <strong>&minus;82.1% (&minus;£41.85 on £51 across eleven days)</strong>.
+      It is now offered only when asked for, with that record quoted.
+      <br><br>
+      <strong style="color:var(--gold-lt)">The NB is not the weaker slot.</strong> Ebor ran <strong>NB 8 winners from 28, NAP 3 from
+      28, LONG 0 from 16</strong>. Season-wide the NB strikes at 23% against the NAP’s 18%. The two carry the identical 50p each-way
+      stake and are treated as equally weighted.
+      <br><br>
+      <strong style="color:var(--green-lt)">Crossover is information, never a promotion.</strong> Ebor Day 3 ran three short-priced
+      consensus horses in one afternoon — Caballo De Mar, Marco Polo and Oklahoma — and <strong>all three were beaten
+      favourites</strong>, every one named on the card before the off. A 3x-or-more pick under 3/1 does not get the NAP.
+    </div>
+    <div class="pending-inline">
+      <strong>Also standing:</strong> the <strong>LONG slot is conditional</strong> — 5+ places, 8/1 or bigger, and a concrete signal, or
+      the race runs two picks only. A <strong>GoingStick spread under about half a point is noise, not a draw bias</strong> (rule 17,
+      which held on all three days it was tested at York). And <strong>each-way place terms come from the bookmaker and are re-checked
+      at the off</strong>, because withdrawals drop the band after a race has been priced — that fired on three consecutive days at Ebor.
+    </div>
+  </section>
+
+  <!-- ── COURSE GUIDE ───────────────────────────────────────── -->
+  <section class="panel">
+    <h2 class="panel-head">Haydock Park — the course</h2>
+    <p><strong style="color:var(--eb-lt)">Left-handed, flat, galloping — and a genuine test on soft ground.</strong> Haydock is a
+    wide, level oval of about 1m5f with a long home straight of roughly four and a half furlongs. It is a fair, stamina-favouring
+    track that rewards a horse who can sustain a gallop rather than one who quickens briefly.</p>
+    <p><strong>The sprint course is straight and it is stiff.</strong> The Sprint Cup is run over a straight 6f that rises to the
+    line. Haydock sprints are not won by pure speed alone — the last furlong finds out horses who have gone too fast too early, and
+    the track has a long history of producing soft-ground sprint winners that quicker surfaces would never have suited.</p>
+    <p><strong style="color:var(--gold-lt)">Draw:</strong> on the straight course the favoured side moves with the ground and the
+    rail, and in big sprint fields the pack often splits. That makes it a <strong>read-the-strips race, not a rule-of-thumb race</strong>.
+    Rule 17 applies in full: a GoingStick spread under about half a point is noise, and the readings get re-checked at the off rather
+    than carried from the morning.</p>
+    <p><strong>Going:</strong> Haydock sits on heavy clay and drains slowly. Soft or heavy ground in early September is entirely
+    possible and it changes the meeting completely — check the forecast on the morning of each card rather than carrying the going
+    forward from the previous day.</p>
+  </section>
+
+  <!-- ── WHAT TURNS THIS INTO A CARD ────────────────────────── -->
+  <section class="panel blue-top">
+    <h2 class="panel-head">📋 What turns this preview into a card</h2>
+    <p style="font-size:0.78rem;color:var(--silver);line-height:1.7">
+      <strong style="color:var(--cream)">1 · A Racing Post racecard, pasted.</strong> One paste per day carries everything the gate
+      and the display contract need — going with GoingStick strips, per-race field size and stalls position, and per runner the cloth
+      number, <strong>draw</strong>, jockey, trainer strike rate, odds, OR/TS/RPR, form figures and CD flags. It is the primary route
+      (CLAUDE.md §12) and the one to ask for by name.<br><br>
+      <strong style="color:var(--cream)">2 · Each-way terms off the bookmaker.</strong> Never off the racecard — its penalty values
+      are racecourse prize money, not places. The Sprint Cup and the Old Borough Cup are the two races here most likely to carry a
+      one-off place special above the standard ladder.<br><br>
+      <strong style="color:var(--cream)">3 · External columns, once they publish.</strong> Mullington, Nick Luck, Spotlight, Raceolly,
+      Grimshaw and the HRN big-priced lists get overlaid as badges, with any 2+ source horse we do not hold called out as dissent
+      before the off.
+    </p>
+  </section>
+
+  <footer class="footer">
+    <div>🏇 <strong>Sprint Cup Festival 2026</strong> · Haydock Park · part of <a href="index.html">The Festival Form Book</a></div>
+    <div style="margin-top:6px">Recent: <a href="ebor-2026.html">Ebor Festival 2026</a> · <a href="goodwood-2026.html">Glorious Goodwood 2026</a> · <a href="season-2026.html">Season Leaderboard</a></div>
+    <div class="gambleaware">⚠️ 18+ · BeGambleAware.org · Tips for entertainment only · Always bet responsibly</div>
+    <div style="margin-top:6px"><a href="https://www.begambleaware.org">BeGambleAware</a> · <a href="https://www.gamcare.org.uk">GamCare</a> · National Gambling Helpline 0808 8020 133</div>
+  </footer>
+
+</main>
+  <script src="js/fmb-share.js" defer></script>
+  <script src="js/fmb-share-ui.js" defer></script>
+</body>
+</html>

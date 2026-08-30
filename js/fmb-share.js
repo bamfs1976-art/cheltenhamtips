@@ -51,7 +51,11 @@
     'northumberland-plate-2026':    { from: '#042f2c', to: '#0d9488', strap: 'FESTIVAL FORM BOOK · N’LAND PLATE',      mark: 'N’LAND PLATE 2026' },
     'newmarket-july-2026':          { from: '#22330a', to: '#84cc16', strap: 'FESTIVAL FORM BOOK · NEWMARKET JULY',    mark: 'NEWMARKET JULY 2026' },
     'goodwood-2026':                { from: '#062b42', to: '#0ea5e9', strap: 'FESTIVAL FORM BOOK · GLORIOUS GOODWOOD', mark: 'GOODWOOD 2026' },
-    'ebor-2026':                    { from: '#3d0716', to: '#e11d48', strap: 'FESTIVAL FORM BOOK · EBOR FESTIVAL',     mark: 'EBOR 2026' }
+    'ebor-2026':                    { from: '#3d0716', to: '#e11d48', strap: 'FESTIVAL FORM BOOK · EBOR FESTIVAL',     mark: 'EBOR 2026' },
+    'sprint-cup-2026':              { from: '#431407', to: '#f97316', strap: 'FESTIVAL FORM BOOK · SPRINT CUP',        mark: 'SPRINT CUP 2026' },
+    'st-leger-2026':                { from: '#3f2d05', to: '#eab308', strap: 'FESTIVAL FORM BOOK · ST LEGER',          mark: 'ST LEGER 2026' },
+    'ayr-gold-cup-2026':            { from: '#2e1065', to: '#a855f7', strap: 'FESTIVAL FORM BOOK · AYR GOLD CUP',      mark: 'AYR GOLD CUP 2026' },
+    'cambridgeshire-2026':          { from: '#083344', to: '#0891b2', strap: 'FESTIVAL FORM BOOK · CAMBRIDGESHIRE',    mark: 'CAMBRIDGESHIRE 2026' }
   };
   var FALLBACK = { from: '#0a1428', to: '#fbbf24', strap: 'FESTIVAL FORM BOOK', mark: 'FESTIVAL FORM BOOK' };
 

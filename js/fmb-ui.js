@@ -11,6 +11,7 @@
      festival, independent of the wall clock. Results/business data
      stay in season-data-2026.js and are never duplicated here. */
   var FESTIVALS = [
+    { name: 'Sprint Cup Festival',    short: 'Sprint Cup',     url: 'sprint-cup-2026.html',     type: 'flat',  status: 'upcoming', date: '3–5 Sep 2026', sort: '2026-09-03', venue: 'Haydock Park' },
     { name: 'Ebor Festival 2026',      short: 'Ebor',           url: 'ebor-2026.html',           type: 'flat',  status: 'archive',  date: '19–22 Aug 2026', sort: '2026-08-19', venue: 'York (Knavesmire)' },
     { name: 'Glorious Goodwood',       short: 'Goodwood',       url: 'goodwood-2026.html',       type: 'flat',  status: 'archive',  date: '28 Jul – 1 Aug 2026', sort: '2026-07-28', venue: 'Goodwood (Sussex Downs)' },
     { name: 'Newmarket July Festival', short: 'Newmarket July', url: 'newmarket-july-2026.html', type: 'flat',  status: 'archive',  date: '9–11 Jul 2026', sort: '2026-07-09', venue: 'Newmarket (July Course)' },
@@ -68,7 +69,7 @@
         chip.innerHTML =
           '<span class="fmb-dot fmb-dot--' + feat0.status + '" aria-hidden="true"></span>' +
           '<span><b>' + esc(lead0) + ':</b> ' + esc(feat0.name) + '</span>' +
-          '<span class="fmb-nextup-meta">· ' + esc(feat0.date) + ' · ' + esc(feat0.venue) + '</span>';
+          '<span class="fmb-nextup-meta"> · ' + esc(feat0.date) + ' · ' + esc(feat0.venue) + '</span>';
       });
       document.querySelectorAll('[data-featured-link]').forEach(function (a) { a.href = feat0.url; });
     }
