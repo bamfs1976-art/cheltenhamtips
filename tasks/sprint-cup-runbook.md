@@ -21,15 +21,28 @@ runners at entry and 22 were declared**.
 | Fri 4 Sep · Charity Day | Wed 2 Sep | Wed 2 / Thu 3 |
 | Sat 5 Sep · **Sprint Cup** | Thu 3 Sep | Thu 3 / Fri 4 |
 
-## Open question to resolve first
+## Open question — RESOLVED 2 Sep 2026
 
-**Is this a two-day or a three-day fixture?** Sources conflict — the
-Jockey Club bills Sprint Cup Day on the Saturday, while Friday 4 Sep is
-described elsewhere as the *middle* day, which implies a Thursday opener.
-The hub carries 3–5 Sep. **The first racecard settles it.** If Thursday
-turns out not to exist, drop the Day 1 section and fix the dates in
-`FESTIVALS_2026`, `js/fmb-ui.js`, the hub calendar and the countdown —
-all four, or the live banner and the countdown will disagree.
+**Three days.** Thursday 3 September is confirmed as a Haydock raceday
+with seven flat races, 13:30–17:00. The 3–5 Sep dates already carried in
+`FESTIVALS_2026`, `js/fmb-ui.js`, the hub calendar and the countdown are
+correct and need no change.
+
+## Standing blocker on pricing
+
+Neither automated route reaches a racecard from a Claude Code web session:
+
+- **Racing API** — `api.theracingapi.com` returns **403 CONNECT** at the
+  egress proxy, and no credentials are exported in the shell. Both would
+  have to be fixed; credentials alone will not help.
+- **WebSearch** — returns race counts, some off-times and occasional race
+  names, but **never draws**. A flat race without a draw cannot clear the
+  gate, so this cannot price a card on its own.
+
+**Ask for the Racing Post racecard by name** (CLAUDE.md §12, route 1).
+One paste per day carries the draw, field size, going with GoingStick
+strips, trainer strike rates, OR/TS/RPR, form, CD flags and the betting
+forecast — everything the gate and the display contract need.
 
 ## Per-day sequence
 

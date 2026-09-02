@@ -124,7 +124,7 @@
 <!-- Shared grouped global nav (injected by fmb-ui.js) -->
 <div id="fmb-nav-root"></div>
 
-<div class="live-strip">🏇 Sprint Cup Festival 2026 &middot; <strong>Haydock Park, 3&ndash;5 September</strong> &middot; PREVIEW LIVE &middot; cards publish on declarations, 48 hours out</div>
+<div class="live-strip">🏇 Sprint Cup Festival 2026 &middot; <strong>Day 1 is tomorrow &mdash; Thu 3 September</strong> &middot; 7 races, 13:30&ndash;17:00 &middot; RACECARD NEEDED TO PRICE</div>
 
 <main class="container" id="main" tabindex="-1">
 
@@ -135,20 +135,20 @@
     <div class="hero-stats">
       <div><span class="hero-stat-val">3</span><span class="hero-stat-lbl">days</span></div>
       <div><span class="hero-stat-val">1</span><span class="hero-stat-lbl">Group 1</span></div>
-      <div><span class="hero-stat-val">8</span><span class="hero-stat-lbl">Saturday races</span></div>
+      <div><span class="hero-stat-val">15</span><span class="hero-stat-lbl">races known</span></div>
       <div><span class="hero-stat-val">0</span><span class="hero-stat-lbl">picks yet</span></div>
     </div>
   </header>
 
   <div class="day-tabs">
-    <a href="#day1" class="day-tab">Thu 3 Sep</a>
+    <a href="#day1" class="day-tab active">Thu 3 Sep · tomorrow</a>
     <a href="#day2" class="day-tab">Fri 4 Sep</a>
-    <a href="#day3" class="day-tab active">Sat 5 Sep · Sprint Cup</a>
+    <a href="#day3" class="day-tab">Sat 5 Sep · Sprint Cup</a>
   </div>
 
   <div class="titlebar">
     <h2>sprint-cup 2026 · preview · Thu 3 – Sat 5 September</h2>
-    <p>Nothing priced. Saturday’s eight-race programme is published; Thursday and Friday are unconfirmed. Declarations 48 hours out.</p>
+    <p>Nothing priced. Thursday confirmed as a 7-race card, 13:30–17:00 — declarations landed Tue 1 Sep. Saturday’s eight-race programme published. The racecard is what unblocks pricing.</p>
   </div>
 
   <!-- ── PRE-FLIGHT GATE ─────────────────────────────────────── -->
@@ -173,21 +173,39 @@
       programme</strong> headed by the <strong>Betfair Sprint Cup (Group 1, 6f)</strong> at 15:35, with the
       <strong>Old Borough Cup</strong> (Heritage Handicap, 1m6f) and the <strong>Superior Mile (Group 3)</strong> in support.
       <br><br>
-      <strong style="color:#fca5a5">Not confirmed:</strong> the Thursday and Friday programmes. Sources differ on whether this is a
-      two-day or three-day fixture — the Jockey Club bills <strong>Sprint Cup Day</strong> on the Saturday, and Friday 4 September is
-      separately described as the <em>middle</em> day of the meeting, which implies a Thursday opener. <strong>The hub carries it as
-      3–5 September and this page will say so until a racecard settles it</strong> rather than quietly picking whichever reading looks
-      tidier.
+      <strong style="color:var(--green-lt)">Resolved — it is a three-day fixture.</strong> This page previously flagged that sources
+      disagreed on whether the meeting was two days or three. <strong>Thursday 3 September is confirmed as a Haydock raceday with seven
+      races, 13:30 to 17:00</strong>, so the 3–5 September reading the hub carried is correct and the open question is closed.
+      <br><br>
+      <strong style="color:#fca5a5">Still not held: the racecards themselves.</strong> Thursday’s declarations landed on
+      <strong>Tuesday 1 September</strong> and the field is public — but this session cannot reach it. The Racing API host is
+      403-blocked at the egress proxy and no credentials are in the shell; web search returns the race count, the first and last
+      off-times and one race name, and <strong>no draws at all</strong>. A flat race without a draw cannot clear the gate
+      (rule 13, Step 3b), so every race below still reads NO BET.
     </div>
   </section>
 
   <!-- ── DAY 1 ──────────────────────────────────────────────── -->
   <section id="day1" class="panel eb-top">
-    <h2 class="panel-head">🏇 Day 1 · Thursday 3 September · programme to confirm</h2>
+    <h2 class="panel-head">🏇 Day 1 · Thursday 3 September · 7 races, 13:30–17:00 · racecard needed</h2>
     <div class="pending-inline">
-      <strong>No published card for this day yet.</strong> The Saturday fixture is the one Haydock advertises, and the opening day’s
-      programme has not surfaced in any source we hold. It will be added the moment a racecard does — with a race list first and picks
-      only once declarations land on <strong>Tuesday 1 September</strong>.
+      <strong style="color:var(--green-lt)">Confirmed:</strong> Haydock races on Thursday 3 September — <strong>seven flat races from
+      13:30 to 17:00</strong>. Declarations confirmed on <strong>Tuesday 1 September</strong>, so the fields are final and the market
+      is formed.
+      <br><br>
+      <strong>One race name is confirmed:</strong> the <strong>13:30 · 100% RacingTV Profits Back To Racing Amateur Jockeys’ Handicap
+      · Class 5 · 4yo+ · 1m3½f</strong>. The remaining six race names and off-times are not in any source this session can reach.
+      <strong>They are deliberately not listed below</strong> — inventing six plausible half-hourly off-times would put fabricated data
+      into the card and, through the share cards, out of the site altogether.
+    </div>
+    <div class="race-block">
+      <p class="race-hd">13:30 &middot; RacingTV Amateur Jockeys’ Handicap &middot; 1m3f201y &middot; Cl5 4yo+</p>
+      <div class="pick-row"><div class="pick-tag gate">GATE</div><div><span class="pick-horse">NO BET &mdash; racecard not supplied</span><div class="pick-note">Race name and time confirmed. Missing: declared runner list, field size and <strong>draw</strong>. Nothing can be priced without them.</div></div></div>
+    </div>
+    <div class="pending-inline" style="background:rgba(239,68,68,0.08);border-color:rgba(239,68,68,0.35);color:#fca5a5">
+      <strong style="color:#fecaca">Races 2–7: not listed, on purpose.</strong> Six more races run between 13:30 and 17:00 and this
+      session holds neither their names nor their off-times. A card that guessed them would look complete and be wrong, which is worse
+      than a card that says what it does not know.
     </div>
   </section>
 

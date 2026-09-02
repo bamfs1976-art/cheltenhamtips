@@ -619,11 +619,10 @@ Saturday's published programme is eight races headed by the **Betfair
 Sprint Cup (Group 1, 6f)** at 15:35, with the **Old Borough Cup**
 (Heritage Handicap, 1m6f) and the **Superior Mile (Group 3)** in support.
 
-- **The fixture length is not settled in our sources.** The Jockey Club
-  bills Sprint Cup Day on the Saturday; Friday is separately described as
-  the *middle* day, which implies a Thursday opener. The hub carries it
-  as 3–5 September and the page says the Thursday and Friday programmes
-  are unconfirmed. Do not silently pick a reading — wait for a racecard.
+- **Three days, confirmed 2 Sep 2026.** Thursday 3 September is a
+  Haydock raceday with **seven flat races, 13:30–17:00** (first race the
+  RacingTV Amateur Jockeys' Handicap, Cl5, 1m3½f). The earlier
+  two-day/three-day ambiguity is closed; 3–5 September is correct.
 - The **Sprint Cup** and the **Old Borough Cup** are the two races most
   likely to carry a place special above the standard ladder, and the
   Sprint Cup is the one where the draw is a first-order factor.
