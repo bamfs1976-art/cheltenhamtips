@@ -275,6 +275,10 @@ Rules:
 | HRN | horseracing.net main tips | blue |
 | RO | Raceolly | purple |
 | HRN BIG / BIG | HRN Biggest Priced Naps | red |
+| PD | Postdata (Racing Post statistical column) | cyan (#67e8f9) |
+| EC | Eyecatcher (David Toft) | lime (#bef264) |
+| PA | The Punt Acca | rose (#fda4af) |
+| SH | Sam Hardy | light violet (#ddd6fe) |
 
 New tipsters: assign a 2-3 letter code and a distinct badge colour. Keep
 the system extensible.
