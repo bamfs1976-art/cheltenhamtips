@@ -1295,6 +1295,7 @@ const ROI_LEDGER = [
   { event:'Ebor',               day:'Day 2', staked:18.00, returned:12.87, note:'Ground went good to soft, 15 non-runners, 5 of ours withdrawn. Libertango won at 3/1 after the festival’s biggest drift — a clean counter-example to the market-move signal' },
   { event:'Ebor',               day:'Day 3', staked:18.00, returned:20.35, note:'Rule 8 right three times in one afternoon: Caballo De Mar, Marco Polo and Oklahoma all beaten favourites, all named on the card first. Starlust 2nd at 25/1 — the LONG gate’s only return of the week' },
   { event:'Ebor',               day:'Day 4', staked:18.00, returned:11.05, note:'Infraad (3x NAP at 7/2, the right side of the rule-8 line) won; Emit — the festival’s strongest signal-stack — was unplaced in the Ebor. NB beat NAP in three of seven races again' },
+  { event:'Sprint Cup',         day:'Day 1', staked:14.00, returned:8.47, note:'4 winners from 14 and still −39.5%. The NB won 3 of 7 and lost £1.39 — rule 8 fills that slot with short favourites (5/6, 11/8) that cannot pay at a 43% strike. Deputy Vice 3rd at 17/2 returned nothing when a withdrawal dropped the 15:52 from 4 places to 2, exactly as the card had warned' },
 ];
 
 // Lucky 15 record (10p e/w = £3/day) — tracked separately
