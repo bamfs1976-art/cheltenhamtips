@@ -146,7 +146,19 @@ Group 1 while our NAP in the same race was unplaced — and that was our
 own judgement call, not a rule-8 demotion.
 
 The NB outperforms the NAP on both measures across a large sample. Treat
-the two as **equally weighted**, not as first and second choice. Reserve
+the two as **equally weighted**, not as first and second choice.
+
+**But read the strike rate with the price attached.** Added 3 Sep 2026
+(Haydock Day 1), where the NB went **3 winners from 6** — a 50% strike
+rate — and **still lost 39p** on £6.00. The winners paid 5/6, 2/1 and
+11/8; three winners returned £2.61 of profit against £3.00 of losers.
+Rule 8 is the mechanism: sending every 3x-or-more pick under 3/1 to the
+NB fills the slot **by construction** with short-priced consensus
+favourites, and at those prices 50p each-way cannot profit at a 50%
+strike rate — the place half of a 5/6 shot returns 58p for 50p staked.
+The 23% figure above is wins, not points. **Report the NB in points per
+pick as well as strike rate**, and do not read a high NB strike rate as
+a profitable slot until the prices are in front of you. Reserve
 the NAP label for a genuine standout; if the card doesn't have one, say so
 rather than promoting the best of a weak set.
 
@@ -787,6 +799,19 @@ off** because withdrawals can drop the band (rule 16). `PLACE_BANDS` in
 **floor, not the answer** — heritage handicaps carry one-off specials above
 it (the Stewards' Cup paid 7). The racecard tells you the field size, which
 is what drives the band; the bookmaker tells you the band.
+
+> **OPEN QUESTION, raised 3 Sep 2026 (Haydock Day 1) — do not treat as
+> settled.** `PLACE_BANDS` maps 8+ runners to 4 places, and the Day 1 card
+> printed "EW 1/5 4pl" on races of 13, 9, 12 and 8 declared runners.
+> Standard industry terms pay **3 places at 8–11 runners**, with 4 from 12
+> in a handicap. The Tote paid exactly three place dividends in the 13:30
+> at 11 runners, which is consistent with 3. If that reading is right the
+> ladder **over-states**, which is the dangerous direction: it makes a race
+> look like it clears the LONG gate's place test when it does not. It cost
+> nothing on the day (no pick is known to have run fourth) but left three
+> place parts unresolvable. **Confirm off an actual bookmaker offer before
+> changing `PLACE_BANDS`** — and until then read the terms off the offer,
+> never off the ladder.
 
 ### 2 · WebSearch — partial, useful when nothing else is available
 
