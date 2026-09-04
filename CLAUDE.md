@@ -671,6 +671,18 @@ Sprint Cup (Group 1, 6f)** at 15:35, with the **Old Borough Cup**
 - The **Sprint Cup** and the **Old Borough Cup** are the two races most
   likely to carry a place special above the standard ladder, and the
   Sprint Cup is the one where the draw is a first-order factor.
+- **But do not expect the Old Borough Cup to open the LONG.** Written
+  before the 2026 running on the assumption it draws a maximum field; it
+  declared **11 runners**, and the Sprint Cup declared **9**. Neither is
+  close to the sixteen the LONG's place test needs. Across the whole
+  three-day meeting the biggest field was fourteen, so the LONG was
+  closed throughout — arithmetic, not judgement (see Step 4).
+- **This is not a soft-ground meeting by default — check it daily.**
+  2026 ran Thursday and Friday on Soft (GoingStick 5.6) and Saturday on
+  **Heavy (5.1)**. A change of that size inside one meeting invalidates
+  form lines read off the earlier days, and matters most in the Sprint
+  Cup: a straight, stiff, rising 6f in heavy is a stamina test disguised
+  as a sprint.
 - Declarations confirm 48 hours out, as everywhere on UK turf flat.
 
 Add new course profiles as they're covered.
