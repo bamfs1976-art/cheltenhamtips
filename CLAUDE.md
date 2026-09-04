@@ -304,6 +304,21 @@ Rules:
   card before the off.
 - A tipster's **strike rate matters more than their agreement**. Keep the
   season leaderboard in view: Frick 30%, Geraghty 29% vs Grimshaw 16%.
+- **horseracing.net's main column is Spotlight republished. Do not count
+  it as an independent source.** Added 4 Sep 2026 (Haydock). On the two
+  days where both were available, HRN's tips were **identical to
+  Spotlight's in 14 races out of 14** — seven from seven on Day 1 and
+  seven from seven on Day 3. That is not agreement, it is one opinion
+  with two mastheads, and every 2x or 3x built on HRN + RP overstates
+  the independent support behind a horse. HRN's **best-odds figures stay
+  useful** — a price comparison is not an opinion — but the pick carries
+  no crossover weight.
+- **Count opinions, not appearances.** The cleanest example in the
+  archive is Marvelman in the 2026 Sprint Cup: he appeared three times
+  across the lists — as Spotlight's tip, as a leg of Spotlight's own
+  Lucky 15, and as HRN's republication of it — for **one actual
+  opinion**. Before awarding a crossover badge, ask which distinct
+  person or desk formed each view.
 
 #### Tipster code registry
 
