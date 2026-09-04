@@ -199,14 +199,31 @@ both failed the **8/1 price test** as well, and the place count never
 bound. Being right for the wrong stated reason still corrupts the
 archive.
 
-**Open test, set 4 Sep 2026 and to be settled honestly.** Six
-price-qualified horses were excluded on places alone in one afternoon
-(Reciprocated 35/1, American Bay 11/1, Folkene 12/1, Lesrico 9/1,
-Tortured Soul 35/1, Made All 28/1), all in races paying four. If none
-made the first four, the threshold is right and the LONG's 7% / 0.47
-pts-per-pick record justifies shutting it wherever there is no 16-runner
-handicap. If two or more placed, the threshold is mis-set for 12–15
-runner fields and the rule needs rewriting rather than restating.
+**That test ran, and here is the result.** Six price-qualified horses
+were excluded on places alone at Haydock on 4 Sep (Reciprocated 35/1,
+American Bay 11/1, Folkene 12/1, Lesrico 9/1, Tortured Soul 35/1, Made
+All 28/1), all in races paying four. The stated test was: none place and
+the threshold is right, two or more place and it is mis-set.
+**Exactly one placed** — Lesrico, second — which is the gap between the
+two thresholds. The test was badly designed; say so rather than pick the
+flattering reading.
+
+The money is unambiguous either way. Backing all six each-way returns
+**£1.40 on £6.00**; one LONG per race across the four affected races,
+picking the right one of the three in the last, returns **£1.40 on
+£4.00**. Taking the bigger price in that race — which is what a longshot
+slot is for — returns nothing.
+
+- **Re-check the LONG's PRICE at the off, not just the place count.**
+  This is the real finding. Lesrico was logged at **9/1** on Thursday
+  evening and went off **3/1 favourite**: by the time the stalls opened
+  he no longer met the slot's own 8/1 minimum. So of six horses excluded
+  on places at pricing time, **not one would have qualified as a LONG at
+  the off**. Rule 16 already says re-check the place band because
+  withdrawals move it; nothing said to re-check the price, and on this
+  evidence the price moves further between pricing and the off than the
+  band does. A LONG priced at 9/1 and running at 3/1 is a different bet
+  from the one the gate approved.
 
 ### Step 5 — Lucky 15
 
