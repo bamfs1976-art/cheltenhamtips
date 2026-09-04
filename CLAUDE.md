@@ -179,6 +179,35 @@ qualifying signal. **Only run a LONG when all three hold:**
 If the race fails any of these, print **two picks only**. Do not fill the
 slot for the sake of it.
 
+**Know what the place test actually means: 16+ runners, or nothing.**
+Added 4 Sep 2026 (Haydock Day 2). Standard terms pay **4 places at
+12–15 runners and 5 only at 16+**, so "5+ places, or 4+ at 16+" is
+satisfied by exactly one kind of race — a handicap of sixteen or more.
+There is no 12-to-15-runner field anywhere that clears it. At Haydock
+the LONG was shut in **all fourteen races across two days** and the
+biggest field was fourteen: that was arithmetic settled before a single
+runner was looked at, not a per-race judgement. Do not write it up on a
+card as though each race were being assessed — say plainly that the
+meeting has no 16-runner handicap and the slot is therefore closed
+throughout.
+
+Two related framing errors to avoid, both made on consecutive days at
+Haydock: when a horse is excluded, **check which leg it actually fails**
+before naming the reason. Pol Roger (13/2, ran 2nd at 14/1) and Kodi
+Lion (4/1) were both written up as locked out by the place count when
+both failed the **8/1 price test** as well, and the place count never
+bound. Being right for the wrong stated reason still corrupts the
+archive.
+
+**Open test, set 4 Sep 2026 and to be settled honestly.** Six
+price-qualified horses were excluded on places alone in one afternoon
+(Reciprocated 35/1, American Bay 11/1, Folkene 12/1, Lesrico 9/1,
+Tortured Soul 35/1, Made All 28/1), all in races paying four. If none
+made the first four, the threshold is right and the LONG's 7% / 0.47
+pts-per-pick record justifies shutting it wherever there is no 16-runner
+handicap. If two or more placed, the threshold is mis-set for 12–15
+runner fields and the rule needs rewriting rather than restating.
+
 ### Step 5 — Lucky 15
 
 **Record to date: −82.1% (−£41.85 on £51.00 across eleven days).**
