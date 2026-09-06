@@ -140,9 +140,9 @@ const FESTIVALS_2026 = [
     icon:'⚡', dates:['2026-09-03','2026-09-04','2026-09-05'],
     dateLabel:'3–5 Sep 2026', venue:'Haydock Park', type:'Flat',
     theme:'theme-orange', accentColor:'#f97316', url:'sprint-cup-2026.html',
-    races:null,
-    headline:'Preview live — Britain’s championship sprint. Saturday’s eight-race programme is published and headed by the Betfair Sprint Cup (G1, 6f); Thursday and Friday are unconfirmed. Nothing priced until declarations, 48 hours out. First meeting under the rules Ebor rewrote.',
-    headlineRace:'Betfair Sprint Cup (G1) · Sat 5 Sep 15:35 · Old Borough Cup (Heritage) · Superior Mile (G3)',
+    races:22, concluded:true,
+    headline:'COMPLETE — 22 races gated 22/22, 42 picks over three days, 10 winners and 15 placed. Engine ROI −1.8% (−£0.74 on £42) — the closest to level any meeting has finished, and no Lucky 15 ran all week. The LONG slot was shut in all 22 races: with no 16-runner handicap on the card, the place test is arithmetic, not judgement. Rule 8 went unbeaten on Saturday — every 3x consensus horse lost, including two beaten favourites — while the two Group-race winners we could see carried one tip and none.',
+    headlineRace:'Betfair Sprint Cup (G1) · Sat 5 Sep — won by Almeraq (9/4F), tipped by none of seven columns · Old Borough Cup — Aegean Prince (7/4F) · Superior Mile (G3) — Persica (100/30), our NB',
   },
   {
     slug:'st-leger-2026', name:'St Leger Festival 2026', shortName:'St Leger',
@@ -1297,6 +1297,7 @@ const ROI_LEDGER = [
   { event:'Ebor',               day:'Day 4', staked:18.00, returned:11.05, note:'Infraad (3x NAP at 7/2, the right side of the rule-8 line) won; Emit — the festival’s strongest signal-stack — was unplaced in the Ebor. NB beat NAP in three of seven races again' },
   { event:'Sprint Cup',         day:'Day 1', staked:14.00, returned:8.47, note:'4 winners from 14 and still −39.5%. The NB won 3 of 7 and lost £1.39 — rule 8 fills that slot with short favourites (5/6, 11/8) that cannot pay at a 43% strike. Deputy Vice 3rd at 17/2 returned nothing when a withdrawal dropped the 15:52 from 4 places to 2, exactly as the card had warned' },
   { event:'Sprint Cup',         day:'Day 2', staked:12.00, returned:14.29, note:'First profitable day of the meeting: 4 winners from 12 and all four were NAPs, the exact reverse of Day 1 where three winners were all NBs. NAP +£6.19, NB 0 from 5. The card was built on Soft and raced on Heavy — Kodi Lion, dismissed twice on a ratings-against-form conflict that heavy ground closes, won at 7/2F' },
+  { event:'Sprint Cup',         day:'Day 3', staked:16.00, returned:18.50, note:'Sprint Cup day: 2 winners and 7 placed from 15 running picks. Three winners were named on the card and opposed — Aegean Prince 7/4 (whose held price we logged as money), Almeraq 9/4 (the favourite no column tipped) and Monoceros 14/1 (steam plus best Topspeed). Rule 8 went unbeaten: every 3x consensus horse lost, including two beaten favourites' },
 ];
 
 // Lucky 15 record (10p e/w = £3/day) — tracked separately

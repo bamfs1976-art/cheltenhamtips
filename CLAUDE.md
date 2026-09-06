@@ -132,12 +132,23 @@ Season record to date (11 festivals, through Glorious Goodwood):
 
 | Slot | Picks | Wins | SR | Pts/pick |
 |---|---|---|---|---|
-| Our NB | 252 | 57 | **23%** | 0.89 |
-| Our NAP | 255 | 46 | 18% | 0.82 |
+| Our NB | 272 | 62 | **23%** | 0.89 |
+| Our NAP | 277 | 51 | 18% | 0.82 |
 | Our LONG | 181 | 12 | **7%** | **0.47** |
 
-*(Picks, wins and strike rate include Ebor 2026; pts/pick is carried
-forward from Glorious Goodwood and not recomputed.)*
+*(Picks, wins and strike rate include Ebor and Sprint Cup 2026; pts/pick
+is carried forward from Glorious Goodwood and not recomputed. The LONG
+did not run at all at the Sprint Cup — 22 races, slot closed in every
+one.)*
+
+**Sprint Cup 2026 (Haydock, three days): 42 picks, 10 winners, 15
+placed, −1.8% (−£0.74 on £42.00).** The closest to level any meeting has
+finished, and the slot pattern reversed on every one of the three days —
+Day 1 three of four winners were NBs, Day 2 all four were NAPs, Day 3
+both were NBs. **Across the meeting the NAP finished +£1.40 on £22.00
+and the NB −£2.14 on £20.00**, the opposite of the table above. Both
+statements are true; the second is worthless. Do not read slot
+performance off a single meeting.
 
 **Ebor 2026 was the most one-sided meeting yet: NB 8 winners from 28,
 NAP 3 from 28, LONG 0 from 16.** On Saturday alone the NB out-ran the
@@ -722,6 +733,22 @@ Sprint Cup (Group 1, 6f)** at 15:35, with the **Old Borough Cup**
   Cup: a straight, stiff, rising 6f in heavy is a stamina test disguised
   as a sprint.
 - Declarations confirm 48 hours out, as everywhere on UK turf flat.
+- **2026 result: 22 races gated 22/22, 42 picks, 10 winners and 15
+  placed, −1.8% (−£0.74 on £42.00).** Three lessons worth carrying
+  forward to the next running:
+  - **The going moved on all three days**, and on Saturday it moved
+    *within* the card — Heavy for four races, Soft from the Sprint Cup
+    on. Friday's card was built on Soft and raced on Heavy, which cost
+    the day's most obvious winner. Re-read the going every morning and
+    again at the off.
+  - **The consensus lost comprehensively on Saturday** — every 3x horse
+    beaten, two of them beaten favourites — while the Group 1 was won by
+    a 9/4 favourite that not one of seven columns had named. Rule 8 has
+    now been right at Goodwood, Ebor Day 3 and here.
+  - **Three winners were named on the card and opposed** (Aegean Prince,
+    Almeraq, Monoceros), each on a market signal we had written down
+    ourselves. Surfacing a signal is not the same as using one — see
+    Step 5b.
 
 Add new course profiles as they're covered.
 

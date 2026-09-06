@@ -120,9 +120,14 @@
     var box = res.querySelector('.pl-box');
     if (!box) return null;
     var t = txt(box);
-    var m = t.match(/staked\s*£([\d.]+)\s*·?\s*returned\s*£([\d.]+)\s*·?\s*net\s*([−-]?£[\d.]+)\s*\(([^)]+)\)/i);
+    /* The sign class MUST include '+'. Without it a profitable day fails to
+       match its own line and the regex runs on to the next "staked … returned
+       … net …" in the same box — which on a settled page is the festival
+       total. Caught at Haydock, where Day 3's card showed the meeting's
+       −£0.74 instead of the day's +£2.50. */
+    var m = t.match(/staked\s*£([\d.]+)\s*·?\s*returned\s*£([\d.]+)\s*·?\s*net\s*([+−-]?\s*£[\d.]+)\s*\(([^)]+)\)/i);
     if (!m) return null;
-    return { staked: '£' + m[1], returned: '£' + m[2], net: m[3].replace('-', '−'), roi: m[4] };
+    return { staked: '£' + m[1], returned: '£' + m[2], net: m[3].replace(/\s+/g, '').replace('-', '−'), roi: m[4] };
   }
 
   /* Per-pick results for a settled day, read off the settlement panel's own

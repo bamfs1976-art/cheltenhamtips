@@ -11,11 +11,12 @@
      festival, independent of the wall clock. Results/business data
      stay in season-data-2026.js and are never duplicated here. */
   var FESTIVALS = [
-    { name: 'Sprint Cup Festival',    short: 'Sprint Cup',     url: 'sprint-cup-2026.html',     type: 'flat',  status: 'upcoming', date: '3–5 Sep 2026', sort: '2026-09-03', venue: 'Haydock Park' },
+    { name: 'Sprint Cup Festival',    short: 'Sprint Cup',     url: 'sprint-cup-2026.html',     type: 'flat',  status: 'archive',  date: '3–5 Sep 2026', sort: '2026-09-03', venue: 'Haydock Park' },
     { name: 'Ebor Festival 2026',      short: 'Ebor',           url: 'ebor-2026.html',           type: 'flat',  status: 'archive',  date: '19–22 Aug 2026', sort: '2026-08-19', venue: 'York (Knavesmire)' },
     { name: 'Glorious Goodwood',       short: 'Goodwood',       url: 'goodwood-2026.html',       type: 'flat',  status: 'archive',  date: '28 Jul – 1 Aug 2026', sort: '2026-07-28', venue: 'Goodwood (Sussex Downs)' },
     { name: 'Newmarket July Festival', short: 'Newmarket July', url: 'newmarket-july-2026.html', type: 'flat',  status: 'archive',  date: '9–11 Jul 2026', sort: '2026-07-09', venue: 'Newmarket (July Course)' },
     { name: 'King George Weekend',     short: 'King George',    url: 'index.html',               type: 'flat',  status: 'archive',  date: '24–25 Jul 2026', sort: '2026-07-24', venue: 'Ascot' },
+    { name: 'St Leger Festival',       short: 'St Leger',       url: 'season-2026.html',         type: 'flat',  status: 'upcoming', date: '10–13 Sep 2026', sort: '2026-09-10', venue: 'Doncaster' },
     { name: 'Cheltenham Festival 2027', short: 'Cheltenham 2027', url: 'cheltenham-2027.html',    type: 'jumps', status: 'upcoming', date: '9–12 Mar 2027', sort: '2027-03-09', venue: 'Cheltenham' },
     { name: 'Northumberland Plate',     short: 'Northumberland Plate', url: 'northumberland-plate-2026.html', type: 'flat',  status: 'archive', date: '25–27 Jun 2026', sort: '2026-06-25', venue: 'Newcastle' },
     { name: 'Royal Ascot 2026',         short: 'Royal Ascot',   url: 'royal-ascot-2026.html',   type: 'flat',  status: 'archive', date: '16–20 Jun 2026', sort: '2026-06-16', venue: 'Ascot' },
