@@ -682,6 +682,47 @@ Engine notes specific to this meeting:
   UK turf flat declarations confirm **48 hours out**, so each day's card
   is built two days ahead and not before.
 
+### Doncaster (flat)
+
+Left-handed, flat and galloping — a wide, level, pear-shaped circuit of
+about 1m7½f with a long home straight of roughly 4½f, plus a **straight
+mile**. No tight bends, no camber, no short run-in: one of the fairest
+tracks in Britain, which is why it has staged the St Leger since 1776.
+It rewards the best horse rather than the best-positioned one.
+
+**Draw.** Close to immaterial on the round course. It matters on the
+**straight track** (the mile and the sprint/nursery trips), where big
+fields split into groups and the favoured side moves with the ground and
+the rail. Rule 17 applies in full — read the strips, require about half
+a point of spread, re-read at the off.
+
+**Going.** Drains better than Haydock but September rain moves it
+quickly. Check it daily; do not carry it forward from the previous day.
+
+**Meetings covered:** St Leger Festival (September) — see
+`st-leger-2026.html`.
+
+#### St Leger Festival (Doncaster, four days, September)
+
+Thu–Sun. The **St Leger** (G1, 1m6f115y) on the Saturday is the oldest
+Classic in the world and the longest; 2026 is the **250th running**.
+Thursday carries the **Park Hill (G2)** over the same trip and the
+**May Hill (G2)** for 2yo fillies, plus the **Weatherbys £300,000
+2-Y-O Stakes** — a sales race worth £147,540 to the winner, more than
+either Group 2, with weights set by sire yearling medians rather than
+ratings.
+
+- **This meeting is the best chance in the calendar for the LONG slot.**
+  On 2026 entries, six of Thursday's eight races had 16 or more —
+  25, 28, 17, 16, 17, 16, 21, 18. Haydock never reached 16 in 22 races
+  and the slot was shut throughout. Watch the place band at
+  declarations: 16+ runners is the only thing that opens it (Step 4).
+- **Entry lists here are very large and shed heavily.** Thursday 2026's
+  entry card had **twelve horses entered in two races on the same
+  afternoon** — five across the 13:15/13:50 and seven across the
+  16:10/16:45. Do not price any of it (see §12 on spotting entries).
+- Declarations confirm 48 hours out, as everywhere on UK turf flat.
+
 ### Haydock Park (flat)
 
 Left-handed, flat, wide and galloping — a level oval of about 1m5f with a
@@ -891,6 +932,31 @@ Parsing notes (learned the hard way):
 | `HC1` | first run in a handicap |
 | `1Rossa Ryan` / `2Faye Bramley` | leading-count marker, **not** part of the name |
 | `Penalty value 1st…6th` | **prize money** paid down to 6th — racecourse money, **not** each-way places |
+
+#### Telling an ENTRY list from a DECLARED card — check before pricing
+
+Added 7 Sep 2026 (Doncaster). A pasted Racing Post card can be either,
+and an entry list looks superficially complete: names, trainers, odds,
+OR/TS/RPR, form. **Four checks, any one of which is decisive:**
+
+1. **The same horse in two races on the same day.** A horse cannot run
+   twice in an afternoon, so a duplicate name across races proves
+   entries. Doncaster's Thursday card had **twelve** of them.
+2. **Runner count == the printed `Entries N`.** Declared fields always
+   shed. If "25 runners" sits beside "Entries 25 pay £275" in every
+   race, it is entries. Compare: the Ebor went **50 entries to 22
+   declared**.
+3. **No draw on any runner**, and jockeys missing on many. A declared
+   flat card carries a draw for every horse.
+4. **The date.** UK turf flat declarations confirm 48 hours out. If the
+   raceday is more than two days away, it cannot be declarations. Watch
+   also for a printed confirmation stage — *"CONFIRM SEP 4TH"* — which
+   is not the same thing.
+
+Also sanity-check the figures: the same Doncaster paste listed a runner
+at **0st 6lb with a Topspeed of 201 and an RPR of 217**, against a best
+of 124 on the card. Impossible numbers mean a corrupt row, and a second
+reason not to build on that paste.
 
 **Do not read each-way terms off the racecard — it does not carry them.**
 The `Penalty value` list is the racecourse's prize-money breakdown and has

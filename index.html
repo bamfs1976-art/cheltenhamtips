@@ -905,6 +905,12 @@ footer {
         <div class="fest-meta"><span class="fest-race-count">🏁 28 races · 72 picks · 11 winners</span></div></div>
       <div class="fest-card-footer"><span class="fest-venue">📍 York · Concluded</span><span class="fest-cta">View results</span></div>
     </a>
+    <a href="st-leger-2026.html" class="fest-card theme-gold v-upcoming" style="--c-accent:#eab308">
+      <div class="fest-card-inner">
+        <div class="fest-name">St Leger Festival 2026</div><div class="fest-dates">10–13 Sep 2026 · Doncaster</div>
+        <div class="fest-desc">Four days and the oldest Classic in the world — the <strong>250th St Leger</strong> on Saturday. Preview live; Thursday prints NO BET until declarations confirm on Tuesday 8 September.</div>
+      </div>
+    </a>
     <a href="sprint-cup-2026.html" class="fest-card theme-orange v-archive" style="--c-accent:#f97316">
       <div class="fest-card-body"><div class="fest-card-top"><span class="fest-icon" aria-hidden="true">⚡</span><div class="fest-badges"><span class="status-badge status-upcoming">📅 Next up</span><span class="type-badge type-flat">Flat</span></div></div>
         <div class="fest-name">Sprint Cup Festival 2026</div><div class="fest-dates">3–5 Sep 2026 · Haydock Park</div>
@@ -1001,6 +1007,7 @@ footer {
     <div class="cal-item" style="--ci-accent:var(--c-rose)"><div class="cal-month">Jul</div><div class="cal-dates">24–25</div><div class="cal-name">King George Weekend</div><span class="cal-type type-flat">Flat</span></div>
     <div class="cal-item" style="--ci-accent:var(--c-navy)"><div class="cal-month">Jul–Aug</div><div class="cal-dates">28–1</div><div class="cal-name">Glorious Goodwood</div><span class="cal-type type-flat">Flat</span></div>
     <div class="cal-item has-link" style="--ci-accent:var(--c-crimson)" onclick="location.href='ebor-2026.html'" tabindex="0" role="link" aria-label="Ebor Festival, York, August 19 to 22 — concluded"><div class="cal-month">Aug</div><div class="cal-dates">19–22</div><div class="cal-name">Ebor Festival</div><span class="cal-type type-flat">Flat</span></div>
+    <div class="cal-item has-link" style="--ci-accent:var(--c-gold)" onclick="location.href='st-leger-2026.html'" tabindex="0" role="link" aria-label="St Leger Festival, Doncaster, September 10 to 13"><div class="cal-month">Sep</div><div class="cal-dates">10–13</div><div class="cal-name">St Leger Festival</div><span class="cal-type type-flat">Flat</span></div>
     <div class="cal-item has-link" style="--ci-accent:var(--c-orange)" onclick="location.href='sprint-cup-2026.html'" tabindex="0" role="link" aria-label="Sprint Cup Festival, Haydock, September 3 to 5 — next up"><div class="cal-month">Sep</div><div class="cal-dates">3–5</div><div class="cal-name">Sprint Cup Festival</div><span class="cal-type type-flat">Flat</span></div>
     <div class="cal-item" style="--ci-accent:var(--c-bronze)"><div class="cal-month">Sep</div><div class="cal-dates">10–13</div><div class="cal-name">St Leger Festival</div><span class="cal-type type-flat">Flat</span></div>
     <div class="cal-item" style="--ci-accent:var(--c-purple)"><div class="cal-month">Sep</div><div class="cal-dates">17–19</div><div class="cal-name">Ayr Gold Cup Festival</div><span class="cal-type type-flat">Flat</span></div>
@@ -1120,6 +1127,7 @@ function initCountdown() {
   // entry is in the past the strip has nothing to count down to.
   const upcoming2026 = [
     { name: 'Sprint Cup Festival',     date: '2026-09-03', url: 'sprint-cup-2026.html' },
+    { name: 'St Leger Festival',       date: '2026-09-10', url: 'st-leger-2026.html' },
     { name: 'St Leger Festival',       date: '2026-09-10', url: 'index.html' },
     { name: 'Ayr Gold Cup Festival',   date: '2026-09-17', url: 'index.html' },
     { name: 'Cambridgeshire Meeting',  date: '2026-09-24', url: 'index.html' },
@@ -1160,7 +1168,7 @@ const FEST_URL = {
   'Epsom Derby':'epsom-derby-2026.html', 'Royal Ascot':'royal-ascot-2026.html',
   'Royal Ascot 2026':'royal-ascot-2026.html', 'Northumberland Plate':'northumberland-plate-2026.html',
   'Newmarket July':'newmarket-july-2026.html', 'Goodwood':'goodwood-2026.html',
-  'Glorious Goodwood':'goodwood-2026.html', 'Ebor':'ebor-2026.html', 'Ebor 2026':'ebor-2026.html', 'Sprint Cup':'sprint-cup-2026.html', 'Sprint Cup Festival':'sprint-cup-2026.html'
+  'Glorious Goodwood':'goodwood-2026.html', 'Ebor':'ebor-2026.html', 'Ebor 2026':'ebor-2026.html', 'Sprint Cup':'sprint-cup-2026.html', 'Sprint Cup Festival':'sprint-cup-2026.html', 'St Leger':'st-leger-2026.html', 'St Leger Festival':'st-leger-2026.html'
 };
 function parseFrac(odds) {
   if (!odds) return null;
