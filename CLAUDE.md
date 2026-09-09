@@ -353,6 +353,24 @@ Rules:
   Lucky 15, and as HRN's republication of it — for **one actual
   opinion**. Before awarding a crossover badge, ask which distinct
   person or desk formed each view.
+- **A nine-tip list can contain zero crossovers, and usually does when it
+  is one column.** Added 9 Sep 2026 (Doncaster, St Leger Day 1). The
+  Racing Post free-tips page supplied nine selections across eight races:
+  **eight were Spotlight** — five different named writers (Emily Weber,
+  Steve Boow, Richard Austen, Ben Hutton) but one desk running *one
+  verdict per race* — and one was The North. Only the 13:50 carried two
+  columns, and **they named different horses**. So nine tips produced
+  **not a single 2x agreement**: a column cannot agree with itself, and
+  the one race where two columns met was a disagreement. Do not read a
+  long tip list as broad support. Count the mastheads first, then check
+  whether any two of them actually landed in the same race.
+- **A price shorter than your card cannot be a best-odds artefact.**
+  Useful little test from the same list. Eight of its nine prices matched
+  our card exactly; Waasil alone read **15/8 against our 2/1**. A
+  price-comparison column only ever quotes a price *longer* than the
+  card, never shorter — so a shorter price is the market moving, not
+  shopping. That gave the Day 1 card its only STEAM after it had been
+  published with no market trail at all.
 
 #### Tipster code registry
 
@@ -369,6 +387,8 @@ Rules:
 | EC | Eyecatcher (David Toft) | lime (#bef264) |
 | PA | The Punt Acca | rose (#fda4af) |
 | SH | Sam Hardy | light violet (#ddd6fe) |
+| SPOT | Racing Post Spotlight (per-race verdict, named writer) | fuchsia (#f0abfc) |
+| TN | The North (Racing Post regional column) | amber (#fcd34d) |
 
 New tipsters: assign a 2-3 letter code and a distinct badge colour. Keep
 the system extensible.
