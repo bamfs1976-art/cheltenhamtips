@@ -967,6 +967,49 @@ at **0st 6lb with a Topspeed of 201 and an RPR of 217**, against a best
 of 124 on the card. Impossible numbers mean a corrupt row, and a second
 reason not to build on that paste.
 
+**A fresher paste is not a fresher card. Check the field block, never the
+header.** Added 9 Sep 2026 (Doncaster, Friday). Friday's card was pasted
+twice, two days apart. The second copy had a **visibly newer going line** —
+`GOOD TO SOFT (GoingStick 6.0)` became `GOOD TO SOFT, Good in places
+(GoingStick 6.1)`, matching the declared Thursday card exactly — so every
+signal in the header said a newer document. **The field block had not
+moved at all**: the same eight counts (23, 42, 13, 9, 20, 17, 31, 44),
+each still equal to its own printed `Entries N`, still no draw anywhere,
+still Bint Al Daar entered in two races ninety minutes apart. The Racing
+Post page refreshes going and weather live and publishes the field only at
+declarations, so the part of the page most likely to look current is the
+part that carries no field information. Re-run the four checks on every
+paste, however recent it looks.
+
+**But a re-paste is worth taking, because the price block refreshes even
+when the field block does not.** Same two Friday pastes: 65 priced runners
+compared, **14 STEAM, 17 DRIFT, 34 unchanged** — including the favouritism
+for the Flying Scotsman changing hands (Nabati 8/1→11/8, Monogram
+11/8→5/1) and all nine in the Doncaster Cup moving. That is a genuine
+two-point market trail two days before declarations, which is more than a
+single declared-card paste gives you: **Thursday's card had to print "no
+market trail available" precisely because only one copy of it ever
+existed.** So when a card is still at entries, take the re-paste anyway
+and diff the prices.
+
+Weight it below a declared-card trail, for a specific reason: these are
+ante-post prices on a field that will shed roughly half, so **a drift may
+just mean the market thinks the horse will not run** rather than anything
+about its chance. Record it as the baseline for calling STEAM/DRIFT once
+the field is published; do not read it as a signal before then.
+
+**Read the gate's LONG line only on a race that passed the gate.** Same
+day, same card. Run on a null-draw fixture the gate correctly returned
+**8 races · 0 pass · 8 NO BET**, every one failing on "N runner(s)
+without a draw" — and printed **"LONG slot: open"** beside four of those
+failures. Field size is the only input the place test has, and the fixture
+had fed it 20, 17, 31 and 44 entry-stage runners. Thursday is what that
+looks like when declarations land: the same computation said the slot
+would open and it did not. Nothing can be staked on a NO BET race so this
+costs nothing directly — but a LONG line on a failed race is arithmetic on
+a field that does not exist yet, and it is exactly the number that
+produced the entry-stage forecast §9 now warns against.
+
 **Do not read each-way terms off the racecard — it does not carry them.**
 The `Penalty value` list is the racecourse's prize-money breakdown and has
 nothing to do with what a bookmaker pays each-way. The Ebor Thursday card

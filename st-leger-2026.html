@@ -130,7 +130,7 @@
 <!-- Shared grouped global nav (injected by fmb-ui.js) -->
 <div id="fmb-nav-root"></div>
 
-<div class="live-strip">🏆 St Leger Festival 2026 &middot; <strong>THU 10 &ndash; SUN 13 SEPTEMBER</strong> &middot; the 250th St Leger &middot; <strong>Day 1 priced &mdash; 8/8 gated, 16 picks, &pound;16.00</strong> &middot; Fri&ndash;Sun awaiting declarations</div>
+<div class="live-strip">🏆 St Leger Festival 2026 &middot; <strong>THU 10 &ndash; SUN 13 SEPTEMBER</strong> &middot; the 250th St Leger &middot; <strong>Day 1 priced &mdash; 8/8 gated, 16 picks, &pound;16.00</strong> &middot; Fri re-checked, still entries &middot; Sat&ndash;Sun awaiting declarations</div>
 
 <main class="container" id="main" tabindex="-1">
 
@@ -155,7 +155,7 @@
 
   <div class="titlebar">
     <h2>st-leger-day1-tips &middot; Thursday 10 September 2026 &middot; Doncaster</h2>
-    <p><strong style="color:var(--green-lt)">8 races &middot; 8/8 gated &middot; 16 picks &middot; &pound;16.00</strong> &mdash; Thursday is declared and priced. The card shed <strong>158 entries to 85 declared</strong>, which shut the LONG slot in all eight races and falsified the prediction this page made on entries. Friday, Saturday and Sunday still print <strong>NO BET</strong> pending declarations.</p>
+    <p><strong style="color:var(--green-lt)">8 races &middot; 8/8 gated &middot; 16 picks &middot; &pound;16.00</strong> &mdash; Thursday is declared and priced. The card shed <strong>158 entries to 85 declared</strong>, which shut the LONG slot in all eight races and falsified the prediction this page made on entries. Friday was re-pasted today and is <strong>still an entry list</strong> &mdash; the going line moved, the field block did not. Friday, Saturday and Sunday all print <strong>NO BET</strong>.</p>
   </div>
 
   <!-- ── DAY 1 ─────────────────────────── -->
@@ -253,17 +253,75 @@
       numbers settle it before any other test is applied.<br><br>
       <strong style="color:#fecaca">2 &middot; Runner count equals entry count in all eight races.</strong> 23/23, 42/42, 13/13, 9/9, 20/20, 17/17, 31/31, 44/44.<br><br>
       <strong style="color:#fecaca">3 &middot; <strong>Bint Al Daar</strong> is entered in both the 15:35 and the 17:20</strong> &mdash; same afternoon, ninety minutes apart.<br><br>
-      <strong style="color:#fecaca">4 &middot; No draw anywhere, and seventeen horses are entered on both Thursday and Friday.</strong>
-      <strong>Motown Filly and Undiscovered are each entered three times across the two days.</strong> Over the two cards there are <strong>357 entry slots for 327
-      distinct horses</strong>: 28 horses are down more than once.<br><br>
-      Declarations for Friday confirm <strong>Wednesday 9 September</strong>.
+      <strong style="color:#fecaca">4 &middot; No draw anywhere on the card</strong>, and many runners carry an empty <code>J:</code> line with no jockey at all.<br><br>
+      <strong style="color:#fecaca">And now Thursday is declared, the cross-day overlap can be stated exactly rather than off entries.</strong>
+      <strong>Seven horses entered here on Friday are declared runners on Thursday</strong>, and four of them are in one race &mdash; the 13:15 Flying Scotsman:
+      <strong>Rafe&rsquo;s Da Man</strong> (our Thursday NAP), <strong>Kach Above</strong>, <strong>Undiscovered</strong> and <strong>A Bear Affair</strong>
+      (the LONG we held back on the place count). <strong>Leucothea</strong> and <strong>Rollthedicebaby</strong> are in the 16:45, <strong>Sintra</strong> in the 17:20.
+      A horse that runs on Thursday will not run on Friday, so most of those seven come out &mdash; but which ones is not knowable until the field is published.
+      This is Step 3b&rsquo;s race-assignment check working across days rather than within one card.<br><br>
+      Declarations for Friday confirm <strong>Wednesday 9 September</strong> &mdash; today. They had not published when this card was pasted.
+    </div>
+    <div class="pending-inline" style="background:rgba(96,165,250,0.07);border-color:rgba(96,165,250,0.4);color:#cbd5cf">
+      <strong style="color:var(--blue-l)">A second, fresher paste of this card arrived today &mdash; and it is the same entry list. Worth recording how you can tell.</strong><br><br>
+      The going line <strong>has</strong> moved, and moved to exactly what Thursday&rsquo;s declared card shows:
+      <code>GOOD TO SOFT (GoingStick 6.0)</code> on Monday, <code>GOOD TO SOFT, Good in places (GoingStick 6.1)</code> today.
+      Rail movements are identical. Everything about the header says a newer document.<br><br>
+      <strong style="color:#93c5fd">The field block did not move at all.</strong> All eight races carry the same counts as Monday &mdash;
+      <strong>23, 42, 13, 9, 20, 17, 31, 44</strong> &mdash; each still equal to its own printed <code>Entries N</code>, still with no draw, still with
+      <strong>Bint Al Daar entered in two races ninety minutes apart</strong>. <strong>199 entry slots across eight races.</strong><br><br>
+      <strong>The lesson for &sect;12: a Racing Post page refreshes the going block live and the field block only at declarations.</strong>
+      An updated going line is not evidence of an updated card, and it is the part of the page most likely to make a stale paste look current.
+      <strong>Check the field block, never the header.</strong><br><br>
+      The going reading itself is worth keeping: Doncaster has been <strong>6.0 &rarr; 6.1</strong> over two days with rain in between, which is a track
+      drying marginally rather than softening. As on Thursday there are <strong>no Far/Centre/Stands&rsquo; strips</strong>, so rule 17 still has nothing to read here.
+    </div>
+    <div class="pending-inline" style="background:rgba(239,68,68,0.09);border-color:rgba(239,68,68,0.45);color:#fca5a5">
+      <strong style="color:#fecaca">The gate was run on it anyway, and what it returned is the trap in one screen.</strong><br><br>
+      Built as a fixture with every draw set to <code>null</code> &mdash; never invented, per &sect;12 &mdash; <code>gate-check.mjs</code> returns:<br><br>
+      <strong style="color:#fecaca">8 races &middot; 0 pass &middot; 8 NO BET</strong>, each one failing on &ldquo;N runner(s) without a draw&rdquo;.
+      That is the correct answer and the reason the fixture is built that way.<br><br>
+      <strong style="color:#fecaca">But alongside every one of those failures it also prints &ldquo;LONG slot: open&rdquo; &mdash; in four races (15:35, 16:10, 16:45, 17:20).</strong>
+      It is computing the place test off <strong>entry-stage field sizes</strong>, because field size is the only input that test has and the fixture fed it 20, 17, 31 and 44.
+      Thursday is what that looks like when the declarations arrive: the same computation said the slot would open, and it did not.<br><br>
+      <strong>The gate is not wrong &mdash; the race already printed NO BET, so nothing was ever going to be staked.</strong> The point is narrower and worth writing down:
+      <strong>read the gate&rsquo;s LONG line only on a card that passed the gate.</strong> On a failed race it is arithmetic on numbers that do not exist yet.
     </div>
     <div class="pending-inline" style="background:rgba(74,222,128,0.07);border-color:rgba(74,222,128,0.4);color:#cbd5cf">
-      <strong style="color:var(--green-lt)">The LONG picture holds, and Friday is the better of the two days for it.</strong><br><br>
-      Entered field sizes: <strong>23, 42, 13, 9, 20, 17, 31, 44</strong> &mdash; <strong>six of eight at 16 or more</strong>, the same ratio as Thursday. The two big
-      handicaps (16:45 with 31, 17:20 with 44) will still be large fields after declarations even if they halve, and the 13:50 almost certainly splits into divisions.<br><br>
-      <strong>The exception is the Doncaster Cup at nine entered.</strong> A Group 2 staying race over 2m1f197y will not grow, so expect the LONG shut there on the place
-      count exactly as it was in every Group race at Haydock. Do not force it (Step 4).
+      <strong style="color:var(--green-lt)">The LONG forecast that used to sit here has been deleted, because Thursday falsified it.</strong><br><br>
+      This panel previously read: <em>&ldquo;the LONG picture holds, and Friday is the better of the two days for it &mdash; six of eight at 16 or more, the same ratio
+      as Thursday.&rdquo;</em> <strong>Thursday had that same ratio and delivered one race, not six.</strong> The card shed 46% and the slot was shut in all eight.
+      Repeating the forecast for Friday off the same kind of evidence would be making the identical mistake twice in three days.<br><br>
+      <strong style="color:#fca5a5">The entered field sizes are unchanged from Monday&rsquo;s paste: 23, 42, 13, 9, 20, 17, 31, 44.</strong> Two of those cannot start
+      &mdash; no British track runs 42 in a Class 5 mile or 44 in a 1m2f handicap &mdash; so the number that matters, the declared field size,
+      <strong>is not in this document at all.</strong> Field size is the one thing an entry list cannot tell you, and the LONG gate is a field-size test. That is now
+      written into &sect;9 as a standing note on this meeting.<br><br>
+      <strong>So the honest statement is conditional, not predictive.</strong> The 16:45 nursery and the 17:20 handicap are the two races that could still declare
+      sixteen or more, and the 15:35 fillies&rsquo; handicap and 16:10 maiden are the next two. <strong>If</strong> any of them declares a 16+ handicap
+      <strong>and</strong> the bookmaker&rsquo;s offer actually pays the places, the slot opens for that race. Neither half of that is known today.<br><br>
+      <strong>One thing can be said now: the Doncaster Cup will not open it.</strong> Nine entered in a Group 2 over 2m1f197y, and a staying Group 2 does not grow.
+      That is arithmetic, not judgement (Step 4).</div>
+    <div class="pending-inline" style="background:rgba(74,222,128,0.07);border-color:rgba(74,222,128,0.45);color:#cbd5cf">
+      <strong style="color:var(--green-lt)">The one thing the second paste does give us: a real market trail &mdash; the baseline Thursday&rsquo;s card had to go without.</strong><br><br>
+      The field block is frozen at entries, but the <strong>price block is not</strong>. Comparing the two pastes gives a genuine two-point trail across
+      <strong>65 priced runners: 14 STEAM, 17 DRIFT, 34 unchanged</strong>. Step 5b wants the full trail and Thursday had none, because only one copy of that card
+      ever existed. Here there are two.<br><br>
+      <strong style="color:var(--gold-lt)">13:15 Flying Scotsman &mdash; the favouritism has swapped, and it is the biggest move on the card.</strong><br>
+      <strong>Nabati 8/1 &rarr; 11/8 STEAM</strong> &middot; <strong>Monogram 11/8 &rarr; 5/1 DRIFT</strong> &middot; Desert Castle 6/1 &rarr; 16/1 DRIFT &middot;
+      Engraved 33/1 &rarr; 20/1 STEAM &middot; Forbidden Fire 5/1 &rarr; 4/1 STEAM.<br>
+      Nabati is Appleby&rsquo;s, Buick rides, and he is <strong>top-rated in the race on OR 104</strong>. That is the declaration-driven steamer shape Step 5b is built on.<br><br>
+      <strong style="color:var(--gold-lt)">15:00 Doncaster Cup &mdash; every one of the nine moved.</strong><br>
+      <strong>Winday 12/1 &rarr; 5/1 STEAM</strong> is the standout, a 3yo for Emmet Mullins with Buick booked. Also Queenstown 5/2 &rarr; 2/1 STEAM,
+      Beylerbeyi 12/1 &rarr; 8/1 STEAM, Peace Belle 50/1 &rarr; 33/1 STEAM, against Epic Poet 10/1 &rarr; 16/1 DRIFT, French Master 7/1 &rarr; 8/1 DRIFT and
+      <strong>Caballo De Mar 6/4 &rarr; 7/4 DRIFT</strong> &mdash; the beaten favourite from Ebor Day 3 easing at the head of the market.<br><br>
+      <strong style="color:var(--gold-lt)">14:25 Flying Childers</strong> &mdash; Sale Shark 9/2 &rarr; 4/1 and Flann Sunna 11/2 &rarr; 9/2 STEAM;
+      Final Objective 4/1 &rarr; 9/2, Carry The Flag 7/1 &rarr; 10/1 and Crownbreaker 8/1 &rarr; 10/1 DRIFT. Pershaada holds 9/4.<br>
+      <strong style="color:var(--gold-lt)">15:35 Fillies&rsquo; Handicap</strong> &mdash; Silver Lake 9/4 &rarr; 2/1 and Ruby Wedding 6/1 &rarr; 5/1 STEAM;
+      <strong>Summerson 6/1 &rarr; 10/1 DRIFT</strong>, which matters because the race is weighted off <em>his</em> mark of 96.<br><br>
+      <strong style="color:#fca5a5">Read this weaker than a declared-card trail, and here is exactly why.</strong> These are ante-post prices on a field that is
+      going to shed roughly half. <strong>A drift can simply mean the market has decided a horse will not run</strong> &mdash; Monogram going 11/8 to 5/1 is at least
+      as likely to be a non-runner signal as an opinion about his chance. That reading is unavailable on a declared card and it is the reason this trail is recorded
+      as a baseline rather than used as a signal. <strong>It becomes usable the moment the field is published</strong>, and it is already more than Thursday had.
     </div>
     <div class="pending-inline" style="background:rgba(251,191,36,0.08);border-color:rgba(251,191,36,0.4)">
       <strong style="color:var(--gold-lt)">A remarkable number of these horses are already in this archive.</strong><br><br>
@@ -279,14 +337,14 @@
       horses &mdash; and that information becomes usable the moment there is a declared field to attach it to.
     </div>
 
-    <div class="race-block"><p class="race-hd">13:15 &middot; Betfred Flying Scotsman Stakes <span class="g1">(Listed)</span> &middot; 7f6y &middot; <strong style="color:#fca5a5">23 entered</strong> &middot; Cl1 2yo &middot; Good to Soft</p><div class="pick-row"><div class="pick-tag gate">GATE</div><div><span class="pick-horse">NO BET &mdash; entry list, not declarations</span><div class="pick-note">&pound;65,000 guaranteed. Monogram is 11/8 on entries for Joseph O&rsquo;Brien. <strong>23 entered and 23 listed</strong>, with no draw for any runner. Declarations confirm <strong>Wednesday 9 September</strong>.</div></div></div></div>
-    <div class="race-block"><p class="race-hd">13:50 &middot; Betfred Leger Legends Classified Stakes &middot; 1m &middot; <strong style="color:#fca5a5">42 entered</strong> &middot; Cl5 3yo+ 0-70 &middot; Good to Soft</p><div class="pick-row"><div class="pick-tag gate">GATE</div><div><span class="pick-horse">NO BET &mdash; entry list, not declarations</span><div class="pick-note"><strong style="color:#fca5a5">Forty-two entered in a one-mile Class 5.</strong> Doncaster&rsquo;s round mile cannot start a field of that size &mdash; this figure alone proves the card is entries. <strong>42 entered and 42 listed</strong>, with no draw for any runner. Declarations confirm <strong>Wednesday 9 September</strong>.</div></div></div></div>
-    <div class="race-block"><p class="race-hd">14:25 &middot; Carlsberg Flying Childers Stakes <span class="g1">(Group 2)</span> &middot; 5f3y &middot; <strong style="color:#fca5a5">13 entered</strong> &middot; Cl1 2yo &middot; Good to Soft</p><div class="pick-row"><div class="pick-tag gate">GATE</div><div><span class="pick-horse">NO BET &mdash; entry list, not declarations</span><div class="pick-note"><strong>&pound;130,000 guaranteed.</strong> The sprint Group 2, and the only race on the card entered under 16. <strong>13 entered and 13 listed</strong>, with no draw for any runner. Declarations confirm <strong>Wednesday 9 September</strong>.</div></div></div></div>
-    <div class="race-block"><p class="race-hd">15:00 &middot; Betfred Doncaster Cup <span class="g1">(Group 2)</span> &middot; 2m1f197y &middot; <strong style="color:#fca5a5">9 entered</strong> &middot; Cl1 3yo+ &middot; Good to Soft</p><div class="pick-row"><div class="pick-tag gate">GATE</div><div><span class="pick-horse">NO BET &mdash; entry list, not declarations</span><div class="pick-note"><strong>&pound;165,000 guaranteed</strong> &mdash; the stayers&rsquo; Group 2 over nearly two and a quarter miles. <strong>Nine entered</strong>, so the LONG will almost certainly be shut here whatever declarations do. <strong>9 entered and 9 listed</strong>, with no draw for any runner. Declarations confirm <strong>Wednesday 9 September</strong>.</div></div></div></div>
-    <div class="race-block"><p class="race-hd">15:35 &middot; British Stallion Studs EBF Premier Fillies&rsquo; Handicap &middot; 1m3f197y &middot; <strong style="color:#fca5a5">20 entered</strong> &middot; Cl2 3yo+ 0-100 &middot; Good to Soft</p><div class="pick-row"><div class="pick-tag gate">GATE</div><div><span class="pick-horse">NO BET &mdash; entry list, not declarations</span><div class="pick-note">&pound;85,000 guaranteed. <strong>20 entered and 20 listed</strong>, with no draw for any runner. Declarations confirm <strong>Wednesday 9 September</strong>.</div></div></div></div>
-    <div class="race-block"><p class="race-hd">16:10 &middot; Coopers Marquees EBF Maiden Fillies&rsquo; Stakes &middot; 7f6y &middot; <strong style="color:#fca5a5">17 entered</strong> &middot; Cl2 2yo &middot; Good to Soft</p><div class="pick-row"><div class="pick-tag gate">GATE</div><div><span class="pick-horse">NO BET &mdash; entry list, not declarations</span><div class="pick-note">&pound;40,000 guaranteed. A 2yo maiden &mdash; <strong>eight of the seventeen have never run</strong>, so there is no form to weigh even once it is declared. <strong>17 entered and 17 listed</strong>, with no draw for any runner. Declarations confirm <strong>Wednesday 9 September</strong>.</div></div></div></div>
-    <div class="race-block"><p class="race-hd">16:45 &middot; Tanbry Construction Nursery Handicap &middot; 6f2y &middot; <strong style="color:#fca5a5">31 entered</strong> &middot; Cl4 2yo 0-85 &middot; Good to Soft</p><div class="pick-row"><div class="pick-tag gate">GATE</div><div><span class="pick-horse">NO BET &mdash; entry list, not declarations</span><div class="pick-note">&pound;25,000 guaranteed. Thirty-one entered. <strong>31 entered and 31 listed</strong>, with no draw for any runner. Declarations confirm <strong>Wednesday 9 September</strong>.</div></div></div></div>
-    <div class="race-block"><p class="race-hd">17:20 &middot; Pertemps Network Handicap &middot; 1m2f43y &middot; <strong style="color:#fca5a5">44 entered</strong> &middot; Cl4 3yo+ 0-80 &middot; Good to Soft</p><div class="pick-row"><div class="pick-tag gate">GATE</div><div><span class="pick-horse">NO BET &mdash; entry list, not declarations</span><div class="pick-note"><strong style="color:#fca5a5">Forty-four entered</strong> in a 1m2f handicap &mdash; the largest entry on either day and, again, an impossible field. <strong>44 entered and 44 listed</strong>, with no draw for any runner. Declarations confirm <strong>Wednesday 9 September</strong>.</div></div></div></div>
+    <div class="race-block"><p class="race-hd">13:15 &middot; Betfred Flying Scotsman Stakes <span class="g1">(Listed)</span> &middot; 7f6y &middot; <strong style="color:#fca5a5">23 entered</strong> &middot; Cl1 2yo &middot; Good to Soft</p><div class="pick-row"><div class="pick-tag gate">GATE</div><div><span class="pick-horse">NO BET &mdash; entry list, not declarations</span><div class="pick-note">&pound;65,000 guaranteed. <strong>The favouritism has changed hands since Monday</strong>: Monogram was 11/8 and is now 5/1, Nabati was 8/1 and is now 11/8 (see the market trail above). <strong>23 entered and 23 listed</strong>, with no draw for any runner. Declarations were due <strong>today, Wednesday 9 September</strong>, and had not published when this was pasted.</div></div></div></div>
+    <div class="race-block"><p class="race-hd">13:50 &middot; Betfred Leger Legends Classified Stakes &middot; 1m &middot; <strong style="color:#fca5a5">42 entered</strong> &middot; Cl5 3yo+ 0-70 &middot; Good to Soft</p><div class="pick-row"><div class="pick-tag gate">GATE</div><div><span class="pick-horse">NO BET &mdash; entry list, not declarations</span><div class="pick-note"><strong style="color:#fca5a5">Forty-two entered in a one-mile Class 5.</strong> Doncaster&rsquo;s round mile cannot start a field of that size &mdash; this figure alone proves the card is entries. <strong>42 entered and 42 listed</strong>, with no draw for any runner. Declarations were due <strong>today, Wednesday 9 September</strong>, and had not published when this was pasted.</div></div></div></div>
+    <div class="race-block"><p class="race-hd">14:25 &middot; Carlsberg Flying Childers Stakes <span class="g1">(Group 2)</span> &middot; 5f3y &middot; <strong style="color:#fca5a5">13 entered</strong> &middot; Cl1 2yo &middot; Good to Soft</p><div class="pick-row"><div class="pick-tag gate">GATE</div><div><span class="pick-horse">NO BET &mdash; entry list, not declarations</span><div class="pick-note"><strong>&pound;130,000 guaranteed.</strong> The sprint Group 2, and the only race on the card entered under 16. <strong>13 entered and 13 listed</strong>, with no draw for any runner. Declarations were due <strong>today, Wednesday 9 September</strong>, and had not published when this was pasted.</div></div></div></div>
+    <div class="race-block"><p class="race-hd">15:00 &middot; Betfred Doncaster Cup <span class="g1">(Group 2)</span> &middot; 2m1f197y &middot; <strong style="color:#fca5a5">9 entered</strong> &middot; Cl1 3yo+ &middot; Good to Soft</p><div class="pick-row"><div class="pick-tag gate">GATE</div><div><span class="pick-horse">NO BET &mdash; entry list, not declarations</span><div class="pick-note"><strong>&pound;165,000 guaranteed</strong> &mdash; the stayers&rsquo; Group 2 over nearly two and a quarter miles. <strong>Nine entered</strong>, so the LONG will almost certainly be shut here whatever declarations do. <strong>9 entered and 9 listed</strong>, with no draw for any runner. Declarations were due <strong>today, Wednesday 9 September</strong>, and had not published when this was pasted.</div></div></div></div>
+    <div class="race-block"><p class="race-hd">15:35 &middot; British Stallion Studs EBF Premier Fillies&rsquo; Handicap &middot; 1m3f197y &middot; <strong style="color:#fca5a5">20 entered</strong> &middot; Cl2 3yo+ 0-100 &middot; Good to Soft</p><div class="pick-row"><div class="pick-tag gate">GATE</div><div><span class="pick-horse">NO BET &mdash; entry list, not declarations</span><div class="pick-note">&pound;85,000 guaranteed. <strong>20 entered and 20 listed</strong>, with no draw for any runner. Declarations were due <strong>today, Wednesday 9 September</strong>, and had not published when this was pasted.</div></div></div></div>
+    <div class="race-block"><p class="race-hd">16:10 &middot; Coopers Marquees EBF Maiden Fillies&rsquo; Stakes &middot; 7f6y &middot; <strong style="color:#fca5a5">17 entered</strong> &middot; Cl2 2yo &middot; Good to Soft</p><div class="pick-row"><div class="pick-tag gate">GATE</div><div><span class="pick-horse">NO BET &mdash; entry list, not declarations</span><div class="pick-note">&pound;40,000 guaranteed. A 2yo maiden &mdash; <strong>eight of the seventeen have never run</strong>, so there is no form to weigh even once it is declared. <strong>17 entered and 17 listed</strong>, with no draw for any runner. Declarations were due <strong>today, Wednesday 9 September</strong>, and had not published when this was pasted.</div></div></div></div>
+    <div class="race-block"><p class="race-hd">16:45 &middot; Tanbry Construction Nursery Handicap &middot; 6f2y &middot; <strong style="color:#fca5a5">31 entered</strong> &middot; Cl4 2yo 0-85 &middot; Good to Soft</p><div class="pick-row"><div class="pick-tag gate">GATE</div><div><span class="pick-horse">NO BET &mdash; entry list, not declarations</span><div class="pick-note">&pound;25,000 guaranteed. Thirty-one entered. <strong>31 entered and 31 listed</strong>, with no draw for any runner. Declarations were due <strong>today, Wednesday 9 September</strong>, and had not published when this was pasted.</div></div></div></div>
+    <div class="race-block"><p class="race-hd">17:20 &middot; Pertemps Network Handicap &middot; 1m2f43y &middot; <strong style="color:#fca5a5">44 entered</strong> &middot; Cl4 3yo+ 0-80 &middot; Good to Soft</p><div class="pick-row"><div class="pick-tag gate">GATE</div><div><span class="pick-horse">NO BET &mdash; entry list, not declarations</span><div class="pick-note"><strong style="color:#fca5a5">Forty-four entered</strong> in a 1m2f handicap &mdash; the largest entry on either day and, again, an impossible field. <strong>44 entered and 44 listed</strong>, with no draw for any runner. Declarations were due <strong>today, Wednesday 9 September</strong>, and had not published when this was pasted.</div></div></div></div>
   </section>
 
   <!-- ── DAY 3 ──────────────────────────────────────────── -->
