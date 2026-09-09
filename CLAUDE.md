@@ -712,11 +712,20 @@ Thursday carries the **Park Hill (G2)** over the same trip and the
 either Group 2, with weights set by sire yearling medians rather than
 ratings.
 
-- **This meeting is the best chance in the calendar for the LONG slot.**
-  On 2026 entries, six of Thursday's eight races had 16 or more —
-  25, 28, 17, 16, 17, 16, 21, 18. Haydock never reached 16 in 22 races
-  and the slot was shut throughout. Watch the place band at
-  declarations: 16+ runners is the only thing that opens it (Step 4).
+- **This meeting looked like the best chance in the calendar for the LONG
+  slot on entries, and declarations killed it. Do not make that prediction
+  again from an entry list.** On 2026 entries, six of Thursday's eight
+  races had 16 or more — 25, 28, 17, 16, 17, 16, 21, 18 — and the Day 1
+  panel said so in as many words: *"if even half of these hold their
+  numbers, the LONG opens on Thursday."* **Declarations cut it from six
+  races to one.** The card shed **158 entries to 85 declared, 46%**:
+  25→13, 28→17, 17→11, 16→9, 17→11, 16→**6**, 21→9, 18→9.
+  Only the 13:50 held sixteen, and that one is a conditions sales race
+  rather than a handicap, so even it does not clearly clear the place test.
+  **The slot was shut in all eight races — the fourth meeting running.**
+  §12 already says an entry list cannot be priced; this adds that it
+  cannot be *forecast off* either. Field size is the one thing an entry
+  list tells you nothing about, and the LONG gate is a field-size test.
 - **Entry lists here are very large and shed heavily.** Thursday 2026's
   entry card had **twelve horses entered in two races on the same
   afternoon** — five across the 13:15/13:50 and seven across the
@@ -984,6 +993,26 @@ is what drives the band; the bookmaker tells you the band.
 > place parts unresolvable. **Confirm off an actual bookmaker offer before
 > changing `PLACE_BANDS`** — and until then read the terms off the offer,
 > never off the ladder.
+>
+> **Second data point, 9 Sep 2026 (Doncaster, St Leger Day 1) — still not
+> settled.** Thursday's declared card is the cleanest test yet: **three
+> races of exactly nine runners** and two more of eleven, all inside the
+> disputed 8–11 band. Reading standard terms rather than the ladder moves
+> **six races of eight** down a place — 1/5 3pl instead of 4pl in the five
+> nine-to-eleven-runner races, and 3pl instead of 5pl in the 13:50, where
+> the ladder applies a *handicap* band to a 17-runner **conditions sales
+> race**. Every one of those six moves in the direction that **closes** the
+> LONG rather than opens it, which is the same direction Haydock pointed.
+>
+> Two things follow, and neither of them is "change the ladder":
+> - **A non-handicap needs its own band.** Five places at 16+ is a handicap
+>   term. `PLACE_BANDS` has no notion of race type, so a big-field stakes
+>   race reads as LONG-open when standard terms would pay three. That is
+>   the single most likely place for the gate to wave through a bet it
+>   should refuse.
+> - **Still no bookmaker offer has been read.** Two readings disagreeing is
+>   not evidence; it is the same inference twice. The fix is to capture one
+>   real offer, screenshot or paste, and settle it.
 
 ### 2 · WebSearch — partial, useful when nothing else is available
 

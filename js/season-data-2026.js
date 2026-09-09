@@ -150,7 +150,8 @@ const FESTIVALS_2026 = [
     dateLabel:'10–13 Sep 2026', venue:'Doncaster', type:'Flat',
     theme:'theme-gold', accentColor:'#eab308', url:'st-leger-2026.html',
     races:null,
-    headline:'Preview live — four days at Doncaster and the oldest Classic in the world, the 250th St Leger on Saturday 12 September. Thursday and Friday both print NO BET on all eight: the cards in hand are entry lists. Thursday has twelve horses entered in two races on the same afternoon; Friday lists 42 runners in a one-mile Class 5 and 44 in a 1m2f handicap, fields no British track can start. Neither carries a draw. Declarations confirm Tuesday 8th and Wednesday 9th. On entries twelve of the sixteen races have 16+ runners, so the LONG slot may open for the first time since Goodwood.',
+    headline:'Day 1 priced — Thursday 10 September at Doncaster is declared and gated 8/8, 16 picks for £16.00. The card shed 158 entries to 85 declared (46%), which shut the LONG slot in all eight races and falsified the prediction this page made off the entry list: six races had 16+ runners on entries, one does on declarations. No GoingStick strips at Doncaster, so no draw-side call — every pick carries its draw, none was moved by it. Friday, Saturday and Sunday still print NO BET pending declarations. Saturday is the 250th St Leger.',
+
     headlineRace:'Betfred St Leger Stakes (G1) · Sat 12 Sep — 250th running · Park Hill (G2) · Champagne Stakes (G2)',
   },
   {
