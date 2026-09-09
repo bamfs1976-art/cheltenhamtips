@@ -845,6 +845,26 @@ Add new course profiles as they're covered.
     rebrand.
   - The card reads the **page**, never a second copy of the picks, so it
     cannot show an odds the page has since corrected.
+- **The live banner fires off LOCAL midnight, and used to fire a day late.**
+  Found 9 Sep 2026, the day before the St Leger. `new Date('2026-09-10')`
+  parses as **UTC** midnight by spec, but every `today` in the hub is
+  **local** midnight; in any timezone ahead of UTC — BST included — local
+  midnight falls before the UTC midnight of the same date, so
+  `today >= start` was false for the whole of day 1. Verified under
+  `TZ=Europe/London`: the St Leger read `upcoming` all through Thu 10 Sep
+  and only went live on the 11th. **Every festival this season lost its
+  day-1 banner on the user's own clock.** Both `index.html` and
+  `js/fmb-ui.js` now parse through a `localDate()` helper; keep the two
+  copies identical.
+- **Nav status is clock-derived, not hand-set — do not put the literal
+  back.** `js/fmb-ui.js` used to carry an explicit `status` per festival,
+  documented as keeping the nav "independent of the wall clock". The hub is
+  not independent of the clock, so the two silently drifted apart whenever a
+  festival started and nobody flipped the literal. Entries now carry
+  `sort` (start) and `end`, and `statusOf()` derives live/upcoming/archive
+  the same way `festivalStatus()` does in `index.html`. `status` survives
+  only as the fallback for an entry with no dates. **Adding a festival means
+  adding both `sort` and `end`.**
 - Every page must include the BeGambleAware footer block.
 - **Live site: <https://ukracinghub.netlify.app>** (renamed from
   `cheltenhamtips.netlify.app` on 15 Aug 2026 — the old subdomain is

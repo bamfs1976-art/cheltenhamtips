@@ -7,26 +7,36 @@
   'use strict';
 
   /* Nav registry — presentation config only (names/urls/status/type).
-     Status is explicit so the nav matches how the hub frames each
-     festival, independent of the wall clock. Results/business data
-     stay in season-data-2026.js and are never duplicated here. */
+     Results/business data stay in season-data-2026.js and are never
+     duplicated here.
+
+     `status` used to be a hand-set literal, on the reasoning that the nav
+     should match how the hub frames each festival "independent of the wall
+     clock". That reasoning was wrong: the hub is NOT independent of the
+     clock — index.html derives status from FESTIVALS_2026[].dates — so the
+     two drifted apart the moment a festival started and nobody flipped the
+     literal by hand. Caught the day before the St Leger, which the hub was
+     about to call live while this file still said 'upcoming'.
+     `start`/`end` now drive it, with `status` kept only as the fallback for
+     an entry that has no dates. Both files use the same local-midnight
+     comparison, so they cannot disagree. */
   var FESTIVALS = [
-    { name: 'Sprint Cup Festival',    short: 'Sprint Cup',     url: 'sprint-cup-2026.html',     type: 'flat',  status: 'archive',  date: '3–5 Sep 2026', sort: '2026-09-03', venue: 'Haydock Park' },
-    { name: 'Ebor Festival 2026',      short: 'Ebor',           url: 'ebor-2026.html',           type: 'flat',  status: 'archive',  date: '19–22 Aug 2026', sort: '2026-08-19', venue: 'York (Knavesmire)' },
-    { name: 'Glorious Goodwood',       short: 'Goodwood',       url: 'goodwood-2026.html',       type: 'flat',  status: 'archive',  date: '28 Jul – 1 Aug 2026', sort: '2026-07-28', venue: 'Goodwood (Sussex Downs)' },
-    { name: 'Newmarket July Festival', short: 'Newmarket July', url: 'newmarket-july-2026.html', type: 'flat',  status: 'archive',  date: '9–11 Jul 2026', sort: '2026-07-09', venue: 'Newmarket (July Course)' },
-    { name: 'King George Weekend',     short: 'King George',    url: 'index.html',               type: 'flat',  status: 'archive',  date: '24–25 Jul 2026', sort: '2026-07-24', venue: 'Ascot' },
-    { name: 'St Leger Festival',       short: 'St Leger',       url: 'st-leger-2026.html',       type: 'flat',  status: 'upcoming', date: '10–13 Sep 2026', sort: '2026-09-10', venue: 'Doncaster' },
-    { name: 'Cheltenham Festival 2027', short: 'Cheltenham 2027', url: 'cheltenham-2027.html',    type: 'jumps', status: 'upcoming', date: '9–12 Mar 2027', sort: '2027-03-09', venue: 'Cheltenham' },
-    { name: 'Northumberland Plate',     short: 'Northumberland Plate', url: 'northumberland-plate-2026.html', type: 'flat',  status: 'archive', date: '25–27 Jun 2026', sort: '2026-06-25', venue: 'Newcastle' },
-    { name: 'Royal Ascot 2026',         short: 'Royal Ascot',   url: 'royal-ascot-2026.html',   type: 'flat',  status: 'archive', date: '16–20 Jun 2026', sort: '2026-06-16', venue: 'Ascot' },
-    { name: 'Epsom Derby 2026',         short: 'Epsom Derby',   url: 'epsom-derby-2026.html',   type: 'flat',  status: 'archive', date: '5–6 Jun 2026',   sort: '2026-06-05', venue: 'Epsom Downs' },
-    { name: 'Dante Festival 2026',      short: 'Dante',         url: 'dante-2026.html',         type: 'flat',  status: 'archive', date: '13–15 May 2026', sort: '2026-05-13', venue: 'York' },
-    { name: '2000/1000 Guineas 2026',   short: 'Guineas',       url: 'guineas-2026.html',       type: 'flat',  status: 'archive', date: '2–3 May 2026',   sort: '2026-05-02', venue: 'Newmarket' },
-    { name: 'Chester May Festival 2026',short: 'Chester',       url: 'chester-2026.html',       type: 'flat',  status: 'archive', date: '6–8 May 2026',   sort: '2026-05-06', venue: 'Chester' },
-    { name: 'Scottish Grand National',  short: 'Scottish GN',   url: 'scottish-grand-national-2026.html', type: 'jumps', status: 'archive', date: '17–18 Apr 2026', sort: '2026-04-17', venue: 'Ayr' },
-    { name: 'Grand National Festival',  short: 'Aintree GN',    url: 'grand-national-2026.html', type: 'jumps', status: 'archive', date: '9–11 Apr 2026',  sort: '2026-04-09', venue: 'Aintree' },
-    { name: 'Cheltenham Festival 2026', short: 'Cheltenham 2026', url: 'cheltenham-2026.html',  type: 'jumps', status: 'archive', date: '10–13 Mar 2026', sort: '2026-03-10', venue: 'Cheltenham' }
+    { name: 'Sprint Cup Festival',    short: 'Sprint Cup',     url: 'sprint-cup-2026.html',     type: 'flat',  status: 'archive',  date: '3–5 Sep 2026', sort: '2026-09-03', end: '2026-09-05', venue: 'Haydock Park' },
+    { name: 'Ebor Festival 2026',      short: 'Ebor',           url: 'ebor-2026.html',           type: 'flat',  status: 'archive',  date: '19–22 Aug 2026', sort: '2026-08-19', end: '2026-08-22', venue: 'York (Knavesmire)' },
+    { name: 'Glorious Goodwood',       short: 'Goodwood',       url: 'goodwood-2026.html',       type: 'flat',  status: 'archive',  date: '28 Jul – 1 Aug 2026', sort: '2026-07-28', end: '2026-08-01', venue: 'Goodwood (Sussex Downs)' },
+    { name: 'Newmarket July Festival', short: 'Newmarket July', url: 'newmarket-july-2026.html', type: 'flat',  status: 'archive',  date: '9–11 Jul 2026', sort: '2026-07-09', end: '2026-07-11', venue: 'Newmarket (July Course)' },
+    { name: 'King George Weekend',     short: 'King George',    url: 'index.html',               type: 'flat',  status: 'archive',  date: '24–25 Jul 2026', sort: '2026-07-24', end: '2026-07-25', venue: 'Ascot' },
+    { name: 'St Leger Festival',       short: 'St Leger',       url: 'st-leger-2026.html',       type: 'flat',  status: 'upcoming', date: '10–13 Sep 2026', sort: '2026-09-10', end: '2026-09-13', venue: 'Doncaster' },
+    { name: 'Cheltenham Festival 2027', short: 'Cheltenham 2027', url: 'cheltenham-2027.html',    type: 'jumps', status: 'upcoming', date: '9–12 Mar 2027', sort: '2027-03-09', end: '2027-03-12', venue: 'Cheltenham' },
+    { name: 'Northumberland Plate',     short: 'Northumberland Plate', url: 'northumberland-plate-2026.html', type: 'flat',  status: 'archive', date: '25–27 Jun 2026', sort: '2026-06-25', end: '2026-06-27', venue: 'Newcastle' },
+    { name: 'Royal Ascot 2026',         short: 'Royal Ascot',   url: 'royal-ascot-2026.html',   type: 'flat',  status: 'archive', date: '16–20 Jun 2026', sort: '2026-06-16', end: '2026-06-20', venue: 'Ascot' },
+    { name: 'Epsom Derby 2026',         short: 'Epsom Derby',   url: 'epsom-derby-2026.html',   type: 'flat',  status: 'archive', date: '5–6 Jun 2026',   sort: '2026-06-05', end: '2026-06-06', venue: 'Epsom Downs' },
+    { name: 'Dante Festival 2026',      short: 'Dante',         url: 'dante-2026.html',         type: 'flat',  status: 'archive', date: '13–15 May 2026', sort: '2026-05-13', end: '2026-05-15', venue: 'York' },
+    { name: '2000/1000 Guineas 2026',   short: 'Guineas',       url: 'guineas-2026.html',       type: 'flat',  status: 'archive', date: '2–3 May 2026',   sort: '2026-05-02', end: '2026-05-03', venue: 'Newmarket' },
+    { name: 'Chester May Festival 2026',short: 'Chester',       url: 'chester-2026.html',       type: 'flat',  status: 'archive', date: '6–8 May 2026',   sort: '2026-05-06', end: '2026-05-08', venue: 'Chester' },
+    { name: 'Scottish Grand National',  short: 'Scottish GN',   url: 'scottish-grand-national-2026.html', type: 'jumps', status: 'archive', date: '17–18 Apr 2026', sort: '2026-04-17', end: '2026-04-18', venue: 'Ayr' },
+    { name: 'Grand National Festival',  short: 'Aintree GN',    url: 'grand-national-2026.html', type: 'jumps', status: 'archive', date: '9–11 Apr 2026',  sort: '2026-04-09', end: '2026-04-11', venue: 'Aintree' },
+    { name: 'Cheltenham Festival 2026', short: 'Cheltenham 2026', url: 'cheltenham-2026.html',  type: 'jumps', status: 'archive', date: '10–13 Mar 2026', sort: '2026-03-10', end: '2026-03-13', venue: 'Cheltenham' }
   ];
 
   var STATUS_LABEL = { live: 'Live', upcoming: 'Upcoming', archive: 'Concluded' };
@@ -37,8 +47,25 @@
     });
   }
 
+  /* 'YYYY-MM-DD' as LOCAL midnight. new Date('2026-09-10') is UTC midnight by
+     spec, and comparing that to a local-midnight "today" puts every festival
+     a day late in any timezone ahead of UTC, BST included. Mirrors
+     localDate() in index.html — keep the two identical. */
+  function localDate(iso) {
+    var p = String(iso).split('-').map(Number);
+    return new Date(p[0], p[1] - 1, p[2]);
+  }
+
+  function statusOf(f) {
+    if (!f.sort || !f.end) return f.status;
+    var today = new Date(); today.setHours(0, 0, 0, 0);
+    if (today > localDate(f.end)) return 'archive';
+    if (today >= localDate(f.sort)) return 'live';
+    return 'upcoming';
+  }
+
   function byStatus(st) {
-    return FESTIVALS.filter(function (f) { return f.status === st; })
+    return FESTIVALS.filter(function (f) { return statusOf(f) === st; })
       .sort(function (a, b) { return a.sort < b.sort ? -1 : 1; });
   }
 
@@ -64,7 +91,7 @@
     // Hero "Next up" chip(s) + featured CTA links
     var feat0 = featuredFestival();
     if (feat0) {
-      var lead0 = feat0.status === 'live' ? 'Live now' : 'Next up';
+      var lead0 = statusOf(feat0) === 'live' ? 'Live now' : 'Next up';
       document.querySelectorAll('[data-nextup]').forEach(function (chip) {
         chip.href = feat0.url;
         chip.innerHTML =
@@ -79,7 +106,7 @@
     var feat = feat0;
     document.querySelectorAll('[data-next-pill]').forEach(function (pill) {
       if (!feat) { pill.style.display = 'none'; return; }
-      var lead = feat.status === 'live' ? 'Live' : 'Next';
+      var lead = statusOf(feat) === 'live' ? 'Live' : 'Next';
       pill.href = feat.url;
       pill.innerHTML =
         '<span class="fmb-dot fmb-dot--' + feat.status + '" aria-hidden="true"></span>' +

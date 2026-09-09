@@ -1059,13 +1059,27 @@ footer {
 <script>
 'use strict';
 // ── Festival status helpers ────────────────────────────────────
+/* Parse a 'YYYY-MM-DD' as LOCAL midnight, not UTC.
+   `new Date('2026-09-10')` is UTC midnight by spec, but every `today` below
+   is local midnight. In any timezone ahead of UTC — BST included — local
+   midnight falls BEFORE the UTC midnight of the same date, so `today >= start`
+   stayed false for the whole of day 1 and the live banner fired a day late.
+   That is every festival, every year, on the user's own clock: verified for
+   the St Leger, which read 'upcoming' all through Thu 10 Sep under
+   TZ=Europe/London and only went live on the 11th. Build from parts so both
+   sides of every comparison are local. */
+function localDate(iso) {
+  const p = String(iso).split('-').map(Number);
+  return new Date(p[0], p[1] - 1, p[2]);
+}
+
 function festivalStatus(fest) {
   if (fest.concluded) return 'archive';
   if (!fest.dates || !fest.dates.length) return 'upcoming';
   const today = new Date();
   today.setHours(0,0,0,0);
-  const start = new Date(fest.dates[0]);
-  const end   = new Date(fest.dates[fest.dates.length - 1]);
+  const start = localDate(fest.dates[0]);
+  const end   = localDate(fest.dates[fest.dates.length - 1]);
   if (today > end)   return 'archive';
   if (today >= start) return 'live';
   return 'upcoming';
@@ -1073,7 +1087,7 @@ function festivalStatus(fest) {
 
 function daysUntil(dateStr) {
   const today = new Date(); today.setHours(0,0,0,0);
-  const d = new Date(dateStr);
+  const d = localDate(dateStr);
   return Math.ceil((d - today) / 86400000);
 }
 
@@ -1083,7 +1097,7 @@ function initLiveBanner() {
   if (!active) return;
   const banner = document.getElementById('live-banner');
   const today  = new Date(); today.setHours(0,0,0,0);
-  const dayNum = Math.floor((today - new Date(active.dates[0])) / 86400000) + 1;
+  const dayNum = Math.floor((today - localDate(active.dates[0])) / 86400000) + 1;
   document.getElementById('live-banner-title').textContent = active.name + ' — Day ' + dayNum;
   document.getElementById('live-banner-sub').textContent   = 'Live racing today at ' + active.venue;
   const cta = document.getElementById('live-banner-cta');
@@ -1097,7 +1111,7 @@ function initCountdown() {
   // Find next festival that hasn't started
   const next = FESTIVALS_2026
     .filter(f => festivalStatus(f) === 'upcoming')
-    .sort((a,b) => new Date(a.dates[0]) - new Date(b.dates[0]))[0];
+    .sort((a,b) => localDate(a.dates[0]) - localDate(b.dates[0]))[0];
 
   const cdName  = document.getElementById('cd-name');
   const cdUnits = document.getElementById('cd-units');
@@ -1127,8 +1141,8 @@ function initCountdown() {
   ];
 
   const today = new Date(); today.setHours(0,0,0,0);
-  const allUpcoming = upcoming2026.filter(f => new Date(f.date) > today)
-    .sort((a,b) => new Date(a.date) - new Date(b.date));
+  const allUpcoming = upcoming2026.filter(f => localDate(f.date) > today)
+    .sort((a,b) => localDate(a.date) - localDate(b.date));
 
   const nextAny = allUpcoming[0];
   if (!nextAny) { cdName.textContent = next.shortName; return; }
