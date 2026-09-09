@@ -364,13 +364,39 @@ Rules:
   the one race where two columns met was a disagreement. Do not read a
   long tip list as broad support. Count the mastheads first, then check
   whether any two of them actually landed in the same race.
+- **Prove independence with a divergence, don't assume it from a byline.**
+  Added 9 Sep 2026 (Doncaster Day 1), and it is the constructive other half
+  of the HRN rule. Billy Grimshaw carries an **HRN** badge, and §6 says
+  HRN's *free tips* are Spotlight republished — so his agreement with
+  Spotlight would normally be worthless. He tipped two races: in the 15:35
+  he agreed with Spotlight, and in the **14:25 he was on King Of Earth
+  while Spotlight was on Besieged**. A republication cannot disagree with
+  its source, so that single divergence is what earns his agreement in the
+  other race the right to count. **When two columns share a masthead or a
+  supplier, look for one race where they differ before counting any race
+  where they agree.** One divergence is enough; zero divergences across a
+  full card is the republication signature.
+- **A card can produce crossovers and still give you nothing to act on.**
+  Same day. Nineteen tips from four mastheads produced exactly **two 2x
+  agreements — Sea Of Rain and Waasil — and both were already our picks**.
+  Twelve external picks sat on horses we did not hold and **every one was a
+  lone opinion**, so the dissent rule (surface any horse 2+ independent
+  sources back that we do not) had nothing to flag. Two races had three
+  columns naming three different horses. Report that plainly: "no consensus
+  exists here" is a cleaner and more useful finding than a list of
+  near-misses, and it means nothing on the card is a promotion signal even
+  in principle.
 - **A price shorter than your card cannot be a best-odds artefact.**
   Useful little test from the same list. Eight of its nine prices matched
   our card exactly; Waasil alone read **15/8 against our 2/1**. A
   price-comparison column only ever quotes a price *longer* than the
   card, never shorter — so a shorter price is the market moving, not
   shopping. That gave the Day 1 card its only STEAM after it had been
-  published with no market trail at all.
+  published with no market trail at all. **Confirmed from the other side
+  the same evening**: Grimshaw's best-odds column quoted King Of Earth at
+  **11/2 against 9/2 on the card** — longer, exactly as a comparison
+  should be — with his other two prices unchanged. Shorter and longer
+  behave differently, as the rule predicts.
 
 #### Tipster code registry
 
