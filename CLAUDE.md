@@ -74,6 +74,19 @@ For each race, assess:
 8. Draw position (flat only — favourable for this track and trip?)
 9. Market moves (significant shortening = money talks; drifting = caution)
 10. Pace analysis (who leads, is there enough pace, front-runner bias)
+11. **Headgear and wind operations — scan the whole field mechanically,
+    not just the horses you are about to pick.** Added 10 Sep 2026
+    (Doncaster Day 1) after the third miss of the season. A first-time
+    **wind operation** (`w1` on the racecard) is rare and concrete:
+    Doncaster's declared eight-race card carried **nineteen headgear
+    markers and exactly one `w1`** — Spyce in the 14:25, back from 82 days
+    off for a 58% yard with Rossa Ryan booked. It was read during the
+    analysis of that race, never printed, and two outside columns arrived
+    on the horse the next morning. Raceolly's 200/1 pick Ongombo wore
+    **first-time cheekpieces**, also on the card, also unremarked.
+    Ebor lost Ribble River and Etonnante the same way. Run the scan across
+    every declared runner and note the first-time markers before selecting
+    — `w1` and `1`-suffixed headgear are the ones that matter.
 
 ### Step 3b — PRE-FLIGHT GATE (mandatory, per race)
 
@@ -386,6 +399,26 @@ Rules:
   exists here" is a cleaner and more useful finding than a list of
   near-misses, and it means nothing on the card is a promotion signal even
   in principle.
+- **Aggregator panels are not sources. Count them as zero.** Added
+  10 Sep 2026 (Doncaster Day 1). HRN's *Biggest Priced Naps* and *Biggest
+  Priced Tips* panels each row-label their entries "1 Nap" or "1 Tip" —
+  they are other columns' selections collected, not opinions of their own.
+  The proof on that card: the panel listed **Stardom Glory, which is The
+  North's pick**, already counted. Booking it again would be the Marvelman
+  error. Be honest about the limit, though — the panel's source list is not
+  visible, so when it shows a horse no known column holds you cannot tell
+  whether it is a genuine extra opinion or one you already have. **Count it
+  as one and say so**, rather than taking the flattering reading. The
+  panels stay useful for best-odds figures and for surfacing big-priced
+  naps you would otherwise never see.
+- **Alignment is not quality, and a value column will wreck the aggregate
+  figure.** Same card. Raceolly tipped five races each-way at 11/1, 200/1,
+  16/1, 12/1 and 33/1 and agreed with **nobody** — not us, not any of the
+  other four columns — taking overall alignment from 37% to 29% on its own.
+  A column playing that shape scores near 0% most days and can still be the
+  one that pays; Goodwood's single profitable day was won by a 14/1 shot no
+  column held. **Report alignment per column, never only in aggregate**,
+  and judge a column on strike rate and returns rather than on agreement.
 - **A price shorter than your card cannot be a best-odds artefact.**
   Useful little test from the same list. Eight of its nine prices matched
   our card exactly; Waasil alone read **15/8 against our 2/1**. A
