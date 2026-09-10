@@ -150,7 +150,7 @@ const FESTIVALS_2026 = [
     dateLabel:'10–13 Sep 2026', venue:'Doncaster', type:'Flat',
     theme:'theme-gold', accentColor:'#eab308', url:'st-leger-2026.html',
     races:null,
-    headline:'Day 1 priced — Thursday 10 September at Doncaster is declared and gated 8/8, 16 picks for £16.00. The card shed 158 entries to 85 declared (46%), which shut the LONG slot in all eight races and falsified the prediction this page made off the entry list: six races had 16+ runners on entries, one does on declarations. No GoingStick strips at Doncaster, so no draw-side call — every pick carries its draw, none was moved by it. Friday, Saturday and Sunday still print NO BET pending declarations. Saturday is the 250th St Leger.',
+    headline:'Day 1 settled — 2 winners from 16 picks, −£10.60 (−66.2%). Three of the eight winners were horses the card opposed by name: Waardah 5/2, Musical Times 7/4F and Devil\'s Peak 15/8F. The rule-16 warning landed on the exact race we flagged — the 15:00 lost two runners, dropped from three places to two, and our NAP finished third for nothing. The LONG hold in the 13:50 was correct: a 17-runner non-handicap paid three places, not five. Friday is declared and awaiting a racecard; Saturday is the 250th St Leger.',
 
     headlineRace:'Betfred St Leger Stakes (G1) · Sat 12 Sep — 250th running · Park Hill (G2) · Champagne Stakes (G2)',
   },
@@ -1299,6 +1299,7 @@ const ROI_LEDGER = [
   { event:'Sprint Cup',         day:'Day 1', staked:14.00, returned:8.47, note:'4 winners from 14 and still −39.5%. The NB won 3 of 7 and lost £1.39 — rule 8 fills that slot with short favourites (5/6, 11/8) that cannot pay at a 43% strike. Deputy Vice 3rd at 17/2 returned nothing when a withdrawal dropped the 15:52 from 4 places to 2, exactly as the card had warned' },
   { event:'Sprint Cup',         day:'Day 2', staked:12.00, returned:14.29, note:'First profitable day of the meeting: 4 winners from 12 and all four were NAPs, the exact reverse of Day 1 where three winners were all NBs. NAP +£6.19, NB 0 from 5. The card was built on Soft and raced on Heavy — Kodi Lion, dismissed twice on a ratings-against-form conflict that heavy ground closes, won at 7/2F' },
   { event:'Sprint Cup',         day:'Day 3', staked:16.00, returned:18.50, note:'Sprint Cup day: 2 winners and 7 placed from 15 running picks. Three winners were named on the card and opposed — Aegean Prince 7/4 (whose held price we logged as money), Almeraq 9/4 (the favourite no column tipped) and Monoceros 14/1 (steam plus best Topspeed). Rule 8 went unbeaten: every 3x consensus horse lost, including two beaten favourites' },
+  { event:'St Leger',           day:'Day 1', staked:16.00, returned:5.40, note:'2 winners from 16 and −66.2%. Three of the eight winners were opposed by name on the card — Waardah 5/2, Musical Times 7/4F (by 7½l) and Devil\'s Peak 15/8F — all short-priced horses talked out of on ratings. The rule-16 warning landed on the exact race named: the 15:00 lost two runners, dropped from 3 places to 2, and Consent (NAP) finished 3rd for nothing. The 13:50 LONG hold was right — a 17-runner non-handicap paid 3 places, not the ladder\'s 5. Across 29 external tips from six columns there was one winner; our better winner, Night In Vegas 5/6, was held by no column at all' },
 ];
 
 // Lucky 15 record (10p e/w = £3/day) — tracked separately

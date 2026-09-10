@@ -400,6 +400,25 @@ Rules:
   the card, only of the sample — and the confidence grew with each
   restatement while the evidence did not. Write "none yet, at N columns",
   never "none".
+- **Opposing the consensus is not the same as opposing on a ratings gap,
+  and the second one lost three times in one afternoon.** Added 10 Sep 2026
+  (Doncaster Day 1). **Three of the eight winners were horses the card
+  opposed by name** — Waardah 5/2, Musical Times 7/4F (by 7½ lengths) and
+  Devil's Peak 15/8F — and in every case the stated reason was a *ratings*
+  gap: "rated four pounds below Consent", "RPR 99 against 115 and 111",
+  "an RPR of 90 that ranks joint-sixth of the nine".
+
+  The compounding error is that the ambiguity had already been spotted and
+  not resolved. During the same analysis it was noted that the racecard's
+  RPR column behaves like a **projected par figure for today** rather than
+  an achieved rating — the gap to OR correlates almost perfectly inversely
+  with OR, which is the signature of a projection. That was written down,
+  left unresolved, and then **used as the primary argument against three
+  winners**. Rule 8 has been right at Goodwood, Ebor Day 3 and the Sprint
+  Cup, and it stays: what it licenses is *surfacing* consensus as dissent,
+  not talking yourself out of a short-priced horse on a ratings column you
+  do not fully understand. **Establish what a figure means before it is
+  allowed to carry an argument.**
 - **A crossover on a horse you opposed by name deserves the opposing
   argument printed, not the rating restated.** Same card. We opposed King
   Of Earth on "second-lowest RPR in the race at 107, unplaced last time".
@@ -816,6 +835,16 @@ ratings.
   §12 already says an entry list cannot be priced; this adds that it
   cannot be *forecast off* either. Field size is the one thing an entry
   list tells you nothing about, and the LONG gate is a field-size test.
+- **2026 Day 1 result: 16 picks, 2 winners, −£10.60 (−66.2%).** The worst
+  single day of the season. Speed Of Sound (NB) 5/2 and Night In Vegas
+  (NAP) 6/4 won; Danielle (NB) was second for stake back; **Consent (NAP)
+  and Waasil (NB) both finished third and were paid nothing** because both
+  races had dropped to two places. Three lessons, all recorded above:
+  three winners were opposed by name on a ratings column, the rule-16
+  band-drop landed on the exact race the card flagged, and the LONG hold
+  in the 13:50 was correct for the right stated reason. Across **29
+  external tips from six columns there was one winner**, and our better
+  winner was held by no column at all.
 - **Entry lists here are very large and shed heavily.** Thursday 2026's
   entry card had **twelve horses entered in two races on the same
   afternoon** — five across the 13:15/13:50 and seven across the
@@ -1166,6 +1195,35 @@ is what drives the band; the bookmaker tells you the band.
 > - **Still no bookmaker offer has been read.** Two readings disagreeing is
 >   not evidence; it is the same inference twice. The fix is to capture one
 >   real offer, screenshot or paste, and settle it.
+>
+> **RESULT, 10 Sep 2026 (Doncaster Day 1) — seven races of Tote dividends,
+> and the ladder is wrong in six.** The card ran and published place
+> dividends per race:
+>
+> | Race | Ran | Places paid | `PLACE_BANDS` said |
+> |---|---|---|---|
+> | 13:15 | 11 | **3** | 4 |
+> | 13:50 | 17 | **3** | 5 |
+> | 14:25 | 11 | **3** | 4 |
+> | 15:00 | 7 | **2** | 4 |
+> | 15:35 | 11 | **3** | 4 |
+> | 16:10 | 6 | **2** | 2 ✓ |
+> | 16:45 | 8 | **3** | 4 |
+>
+> The ladder over-states in six of seven, always in the dangerous
+> direction. The standard-terms reading (3 at 8–11, 2 at 5–7) was right in
+> five of seven; the two it missed were both computed off **declared**
+> runners in races that then shed, which is rule 16 rather than a reading
+> error. The 13:50 is the decisive one for the LONG gate: a **17-runner
+> non-handicap paid three**, exactly as the card argued when it held the
+> slot back, so `PLACE_BANDS` needs a race-type distinction and not just a
+> runner-count ladder.
+>
+> **Still short of the bar this note sets.** These are *Tote* dividends,
+> not a bookmaker's each-way offer. Seven races pointing one way is far
+> stronger than the two inferences above, and it is enough to settle bets
+> and to justify the change — but capture one real offer before editing
+> `PLACE_BANDS`, because that is what the rule asks for.
 
 ### 2 · WebSearch — partial, useful when nothing else is available
 
