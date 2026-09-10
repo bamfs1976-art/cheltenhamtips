@@ -389,16 +389,27 @@ Rules:
   supplier, look for one race where they differ before counting any race
   where they agree.** One divergence is enough; zero divergences across a
   full card is the republication signature.
-- **A card can produce crossovers and still give you nothing to act on.**
-  Same day. Nineteen tips from four mastheads produced exactly **two 2x
-  agreements — Sea Of Rain and Waasil — and both were already our picks**.
-  Twelve external picks sat on horses we did not hold and **every one was a
-  lone opinion**, so the dissent rule (surface any horse 2+ independent
-  sources back that we do not) had nothing to flag. Two races had three
-  columns naming three different horses. Report that plainly: "no consensus
-  exists here" is a cleaner and more useful finding than a list of
-  near-misses, and it means nothing on the card is a promotion signal even
-  in principle.
+- **Do not report an absence as a finding while the sample is still
+  growing.** Added 10 Sep 2026 (Doncaster Day 1), and it cost a retraction
+  on a live card. At four columns and again at five, the Day 1 page
+  asserted that *"there is not one 2x agreement on a horse we do not
+  hold — every external pick outside our card is a lone opinion, and the
+  dissent rule produces nothing to flag."* **A sixth column (Nick Luck)
+  produced two of them in five tips**: Seven Nation Army (Spotlight + Luck)
+  and King Of Earth (Grimshaw + Luck). The claim was never a property of
+  the card, only of the sample — and the confidence grew with each
+  restatement while the evidence did not. Write "none yet, at N columns",
+  never "none".
+- **A crossover on a horse you opposed by name deserves the opposing
+  argument printed, not the rating restated.** Same card. We opposed King
+  Of Earth on "second-lowest RPR in the race at 107, unplaced last time".
+  Luck's case is that the bad run was at York where he was *"rather run
+  off his feet"* over an inadequate trip, that he gets an extra furlong
+  and cut in the ground today, and that he is a full brother to King Of
+  Change. **Our objection rested on the one run his supporters explain
+  away.** When dissent lands on a horse the card argued against, put their
+  reasoning on the page beside ours and say which of the two the evidence
+  actually separates — restating our own number is not a reply.
 - **Aggregator panels are not sources. Count them as zero.** Added
   10 Sep 2026 (Doncaster Day 1). HRN's *Biggest Priced Naps* and *Biggest
   Priced Tips* panels each row-label their entries "1 Nap" or "1 Tip" —
