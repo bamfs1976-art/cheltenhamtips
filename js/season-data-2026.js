@@ -150,7 +150,7 @@ const FESTIVALS_2026 = [
     dateLabel:'10–13 Sep 2026', venue:'Doncaster', type:'Flat',
     theme:'theme-gold', accentColor:'#eab308', url:'st-leger-2026.html',
     races:null,
-    headline:'Day 1 settled — 2 winners from 16 picks, −£10.60 (−66.2%). Three of the eight winners were horses the card opposed by name: Waardah 5/2, Musical Times 7/4F and Devil\'s Peak 15/8F. The rule-16 warning landed on the exact race we flagged — the 15:00 lost two runners, dropped from three places to two, and our NAP finished third for nothing. The LONG hold in the 13:50 was correct: a 17-runner non-handicap paid three places, not five. Friday is declared and awaiting a racecard; Saturday is the 250th St Leger.',
+    headline:'Day 2 priced — 8/8 gated, 17 picks, £17.00. Friday declared 199 entries down to 88 runners, a 56% shed, and every race carries a Betting Forecast, so every pick has a STEAM/DRIFT recorded for the first time this meeting. The LONG slot opens in the 17:20 — the first in thirty races — and is provisional: eighteen runners is two above the count that pays five places. Whole-field headgear scan run before selections: four first-time markers on 88 runners, no wind operations. Day 1 settled −£10.60 on £16.00 (−66.2%). Saturday is the 250th St Leger.',
 
     headlineRace:'Betfred St Leger Stakes (G1) · Sat 12 Sep — 250th running · Park Hill (G2) · Champagne Stakes (G2)',
   },

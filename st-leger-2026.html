@@ -52,6 +52,7 @@
   .race-hd { font-size:0.82rem; font-weight:700; color:var(--gold-lt); border-bottom:2px solid rgba(251,191,36,0.3); padding-bottom:5px; margin:0 0 8px }
   .race-hd .g1 { color:var(--eb-lt) }
   .pick-row { display:grid; grid-template-columns:56px 1fr auto; gap:8px; align-items:start; padding:7px 0; border-top:1px solid rgba(255,255,255,0.05) }
+  .pick-row > div { min-width:0 }
   .pick-row:first-of-type { border-top:none }
   .pick-tag { font-size:0.62rem; font-weight:800; letter-spacing:0.04em; text-align:center; padding:3px 0; border-radius:5px; height:fit-content }
   .pick-tag.nap { background:rgba(251,191,36,0.18); color:var(--gold-lt); border:1px solid rgba(251,191,36,0.4) }
@@ -149,15 +150,15 @@
   </header>
 
   <div class="day-tabs">
-    <a href="#day1" class="day-tab active">Thu 10 Sep &middot; priced</a>
-    <a href="#day2" class="day-tab">Fri 11 Sep · Doncaster Cup</a>
+    <a href="#day1" class="day-tab">Thu 10 Sep &middot; settled</a>
+    <a href="#day2" class="day-tab active">Fri 11 Sep &middot; Doncaster Cup &middot; priced</a>
     <a href="#day3" class="day-tab">Sat 12 Sep · ST LEGER</a>
     <a href="#day4" class="day-tab">Sun 13 Sep</a>
   </div>
 
   <div class="titlebar">
-    <h2>st-leger-day1-tips &middot; Thursday 10 September 2026 &middot; Doncaster</h2>
-    <p><strong style="color:#fca5a5">Day 1 settled: 2 winners, 3 placed, &minus;&pound;10.60 on &pound;16.00 (&minus;66.2%).</strong> Three of the eight winners were horses this card opposed by name. The card shed <strong>158 entries to 85 declared</strong>, which shut the LONG slot in all eight races and falsified the prediction this page made on entries. Friday was re-pasted today and is <strong>still an entry list</strong> &mdash; the going line moved, the field block did not. Friday, Saturday and Sunday all print <strong>NO BET</strong>.</p>
+    <h2>st-leger-day2-tips &middot; Friday 11 September 2026 &middot; Doncaster</h2>
+    <p><strong>8 races &middot; 8/8 gated &middot; 17 picks &middot; &pound;17.00 &middot; 2 crossover signals &middot; 1 dissent.</strong> Friday declared &mdash; <strong>199 entries to 88 runners, a 56% shed</strong> &mdash; and every race carries a Betting Forecast, so <strong>every pick has a market move recorded</strong> for the first time this meeting. <strong style="color:#f9a8d4">The LONG slot opens in the 17:20, the first in thirty races</strong>, and provisionally. <strong style="color:#fca5a5">Day 1 settled &minus;&pound;10.60 on &pound;16.00 (&minus;66.2%).</strong> Saturday and Sunday still print <strong>NO BET</strong>.</p>
   </div>
 
   <!-- ── DAY 1 ─────────────────────────── -->
@@ -517,192 +518,240 @@
     </div>
   </section>
 
-  <!-- ── DAY 2 ──────────────────────────────────────────── -->
-    <section id="day2" class="panel eb-top">
-    <h2 class="panel-head">&#127942; Day 2 &middot; Friday 11 September &middot; 8 races &middot; <span style="color:#fca5a5">0/8 gated &mdash; NO BET</span></h2>
-    <div class="pending-inline" style="background:rgba(239,68,68,0.09);border-color:rgba(239,68,68,0.45);color:#fca5a5">
-      <strong style="color:#fecaca">&#9888; Friday is an entry list too, and more obviously than Thursday. All eight print NO BET (rule 13).</strong><br><br>
-      The same four checks from &sect;12, and this card fails every one of them harder:<br><br>
-      <strong style="color:#fecaca">1 &middot; Two of the fields cannot physically start.</strong> The 13:50 lists <strong>42 runners in a one-mile Class 5</strong> and the
-      17:20 lists <strong>44 in a 1m2f handicap</strong>. Doncaster&rsquo;s round course does not take fields of that size &mdash; no British track does. Those two
-      numbers settle it before any other test is applied.<br><br>
-      <strong style="color:#fecaca">2 &middot; Runner count equals entry count in all eight races.</strong> 23/23, 42/42, 13/13, 9/9, 20/20, 17/17, 31/31, 44/44.<br><br>
-      <strong style="color:#fecaca">3 &middot; <strong>Bint Al Daar</strong> is entered in both the 15:35 and the 17:20</strong> &mdash; same afternoon, ninety minutes apart.<br><br>
-      <strong style="color:#fecaca">4 &middot; No draw anywhere on the card</strong>, and many runners carry an empty <code>J:</code> line with no jockey at all.<br><br>
-      <strong style="color:#fecaca">And now Thursday is declared, the cross-day overlap can be stated exactly rather than off entries.</strong>
-      <strong>Seven horses entered here on Friday are declared runners on Thursday</strong>, and four of them are in one race &mdash; the 13:15 Flying Scotsman:
-      <strong>Rafe&rsquo;s Da Man</strong> (our Thursday NAP), <strong>Kach Above</strong>, <strong>Undiscovered</strong> and <strong>A Bear Affair</strong>
-      (the LONG we held back on the place count). <strong>Leucothea</strong> and <strong>Rollthedicebaby</strong> are in the 16:45, <strong>Sintra</strong> in the 17:20.
-      A horse that runs on Thursday will not run on Friday, so most of those seven come out &mdash; but which ones is not knowable until the field is published.
-      This is Step 3b&rsquo;s race-assignment check working across days rather than within one card.<br><br>
-      Declarations for Friday confirm <strong>Wednesday 9 September</strong> &mdash; today. They had not published when this card was pasted.
-    </div>
+  <!-- ── DAY 2 ────────────────────────────── -->
+  <section id="day2" class="panel eb-top">
+    <h2 class="panel-head">&#127942; Day 2 &middot; Friday 11 September &middot; 8 races &middot; <span style="color:var(--green-lt)">8/8 gated</span> &middot; 17 picks &middot; &pound;17.00</h2>
+
     <div class="pending-inline" style="background:rgba(74,222,128,0.09);border-color:rgba(74,222,128,0.5);color:#cbd5cf">
-      <strong style="color:var(--green-lt)">Thursday 19:20 &mdash; Friday IS now declared. Here is the mechanical proof, from a tipster column rather than a racecard.</strong><br><br>
-      Two Friday previews arrived tonight naming a horse in every race. That on its own proves nothing &mdash; columns preview entry lists too.
-      <strong>The weights do prove it.</strong><br><br>
-      The 15:35 fillies&rsquo; handicap carries the condition <em>&ldquo;weights highest weight not less than 9st 12lb&rdquo;</em>. On the entry list the top actual
-      weight was <strong>9st 7lb</strong> (Salamanca City and Summerson), which is <em>below</em> the mandated top &mdash; entry lists show provisional weights before
-      the raise. Mullington tonight has <strong>Salamanca City carrying &ldquo;the top weight of 9st 12lb&rdquo;</strong>.<br><br>
-      <strong style="color:var(--green-lt)">That +5lb raise is applied at declaration, when the horses above her come out and the handicap is re-set off a new top.
-      It cannot happen at entry stage.</strong> The prices agree: Winday 12/1&rarr;11/2, Queenstown 5/2&rarr;13/8, Rock Montreal 4/1&rarr;9/4, Sale Shark 9/2&rarr;4/1,
-      Nochebuena 7/1&rarr;11/2 &mdash; and three horses that carried no price at all on the entry list (Wield, Victoria Night 5/4, Launch Sequence 9/2) are now priced.
-      A book forms when a field is known.<br><br>
-      <strong style="color:#fca5a5">Day 2 still prints NO BET, and the reason is now a different one.</strong> It is no longer &ldquo;this is an entry list&rdquo; &mdash;
-      it is <strong>rule 3: we do not have the draws</strong>, and rule 13 wants the declared field confirmed from the card rather than inferred from a weight in a
-      blog. <strong>One pasted Racing Post racecard for Friday unblocks all eight races.</strong> Everything else is ready.
+      <strong style="color:var(--green-lt)">Friday is declared and every race passes the gate. 199 entries came down to 88 declared runners &mdash; a 56% shed, ten points heavier than Thursday&rsquo;s.</strong><br><br>
+      <code>gate-check.mjs --fixture</code> on the declared card: <strong>8 races &middot; 8 pass &middot; 0 NO BET</strong>. Every runner carries a draw, no horse appears in two races, and the counts no longer match the printed <code>Entries N</code> in any race &mdash; the four &sect;12 checks all invert.<br><br>
+      <strong>23&rarr;9 &middot; 42&rarr;13 &middot; 13&rarr;12 &middot; 9&rarr;7 &middot; 20&rarr;10 &middot; 17&rarr;4 &middot; 31&rarr;15 &middot; 44&rarr;18.</strong>
+      The two &ldquo;impossible&rdquo; fields this page named on Monday &mdash; 42 in a Class 5 mile and 44 in a 1m2f handicap &mdash; declared <strong>13</strong> and <strong>18</strong>.
+      The 17-runner maiden declared <strong>four</strong>.<br><br>
+      <strong style="color:var(--green-lt)">The declarations inference made here on Thursday evening was right.</strong> This page argued that Friday was already declared because Mullington had
+      Salamanca City carrying <em>&ldquo;the top weight of 9st 12lb&rdquo;</em> against 9st 7lb on the entry list, and a weight raise happens at declaration. The racecard now prints
+      <strong>Salamanca City 9st 12lb</strong> and, in the race conditions, <strong><code>Weight raised 5</code></strong>. That is the mechanism named exactly. It is a good inference and
+      it still did not unblock the card, because rule 3 wants draws and no blog carries them.<br><br>
+      <strong>Non-runners already out:</strong> Shadow Run and Masaban (13:50, Espona Bay reserve 16 stays in), <strong>Queenstown</strong> (15:00),
+      <strong>Antonova</strong> (16:10), Fern Clyde (16:45), Ziata (17:20). Those six explain every gap in the draw sequence, which is why the fixture&rsquo;s
+      maximum stall numbers (16, 8, 19) run above the field sizes.
     </div>
 
+    <div class="draw-note">
+      <strong>Going: GOOD, Good to soft in places (GoingStick 6.0), partly cloudy.</strong> Thursday raced on <strong>GOOD TO SOFT, Good in places (6.1)</strong>.
+      The description has dried a grade while the stick has moved <strong>one-tenth the other way</strong> &mdash; which is a reminder that the words and the number are
+      measuring different things, and that a tenth is noise. <strong>Rule 17 has nothing to read here for the second day running:</strong> Doncaster is publishing a single
+      GoingStick figure with no Far / Centre / Stands&rsquo; strips, so there is no differential to clear the half-point bar even in principle. The draw goes on every pick
+      because rule 3 requires it, not because a bias has been established.<br><br>
+      <strong>Rail movements: 3.00 +22yds, and 3.35 &amp; 5.20 +19yds.</strong> That lengthens the Doncaster Cup, the fillies&rsquo; handicap and the closing 1m2f handicap
+      beyond their nominal trips. Three of our eight races are being run further than the card says.
+    </div>
+
+    <div class="pending-inline" style="background:rgba(251,191,36,0.08);border-color:rgba(251,191,36,0.45);color:#fde68a">
+      <strong style="color:var(--gold-lt)">Step 3, item 11 &mdash; the whole-field headgear and wind-operation scan, run across all 88 declared runners and printed <em>before</em> the selections.</strong><br><br>
+      This is the scan that was run and not printed at Doncaster on Thursday, which is how Spyce&rsquo;s <code>w1</code> reached the card as a correction instead of a signal.
+      Today&rsquo;s result, mechanically:<br><br>
+      <strong>25 headgear markers across 88 runners. Four are first-time.</strong><br>
+      &bull; <strong>Launch Sequence</strong> <code>p1</code> &mdash; first-time cheekpieces, 16:45, <strong>and he is our NB</strong><br>
+      &bull; <strong>Caballo De Mar</strong> <code>tb1</code> &mdash; tongue tie plus blinkers with the first-time marker, 15:00, <strong>and he is our NAP</strong><br>
+      &bull; <strong>El Floridita</strong> <code>v1</code> &mdash; first-time visor, 14:25 Flying Childers, 50/1, <strong>a horse we do not hold</strong><br>
+      &bull; <strong>Sue&rsquo;s Last Chance</strong> <code>p1</code> &mdash; first-time cheekpieces, 16:45, 100/1, <strong>a horse we do not hold</strong><br><br>
+      <strong>Two first-time gelding marks</strong> (the <code>1</code> on the sex, not on the headgear): <strong>Sir Sirius</strong> 40/1 in the 16:45 and
+      <strong>Director&rsquo;s Cut</strong> 50/1 in the 17:20.<br><br>
+      <strong style="color:#fca5a5">Wind operations: there is no <code>w1</code> anywhere on this card.</strong> The only wind marker is <strong>In The Black</strong> in the
+      14:25, shown <code>w2</code> &mdash; second run back from surgery, not first. Thursday&rsquo;s declared card carried exactly one <code>w1</code> and it won money for two
+      outside columns; today there are none, and that is a finding rather than an absence of one, because the scan was run across the whole field.
+    </div>
+
+    <div class="pending-inline" style="background:rgba(96,165,250,0.07);border-color:rgba(96,165,250,0.4);color:#cbd5cf">
+      <strong style="color:var(--blue-l)">Each-way terms on this card are read on the standard-terms basis Thursday&rsquo;s Tote dividends proved, not off <code>PLACE_BANDS</code>.</strong><br><br>
+      Seven races of published place dividends on Thursday put the gate&rsquo;s ladder wrong in six, always over-stating. The reading that survived was
+      <strong>2 places at 5&ndash;7, 3 at 8&ndash;11, 4 at 12&ndash;15 in a handicap, 5 at 16+ in a handicap</strong>, with non-handicaps paying three however big the field &mdash;
+      the 17-runner sales race paid three. That is what is printed on each race header below.<br><br>
+      <strong style="color:#fca5a5">The bar &sect;12 sets has still not been cleared: these are Tote dividends, not a bookmaker&rsquo;s each-way offer.</strong>
+      Nothing here changes <code>PLACE_BANDS</code>. The terms on the cards are our best reading, the LONG gate below is assessed against them, and
+      <strong>the count that settles is the one at the off</strong> (rule 16).<br><br>
+      <strong>Two races sit close to a band edge.</strong> The <strong>15:00</strong> has seven runners paying two &mdash; three withdrawals and it is win-only, and rule 6
+      already applies. The <strong>17:20</strong> has eighteen paying five, which is <strong>two above the sixteen the LONG&rsquo;s place test needs</strong>; see the LONG panel.
+      The <strong>16:10 pays nothing at all</strong> &mdash; four runners is win-only, the hardest rule 6 case this season.
+    </div>
+
+    <div class="pending-inline" style="background:rgba(244,114,182,0.09);border-color:rgba(244,114,182,0.45);color:#fbcfe8">
+      <strong style="color:#f9a8d4">The LONG slot opens for the first time in thirty races &mdash; in one race, the 17:20, and provisionally.</strong><br><br>
+      It was shut in all 22 races of the Sprint Cup and all 8 of St Leger Day 1. The last meeting at which a LONG actually ran was <strong>Ebor</strong>, where it went
+      <strong>0 winners from 16</strong> with one placed horse all week. Season record: <strong>181 picks, 12 wins, 7%, 0.47 points per pick</strong> &mdash; the engine&rsquo;s
+      structural leak, and the reason the gate exists.<br><br>
+      <strong>17:20, 18-runner Class 4 handicap. All three legs hold:</strong> 5 places on standard terms &#10003; &middot; <strong>Optician 14/1</strong>, past the 8/1
+      minimum &#10003; &middot; concrete signal &mdash; he is a <strong>course winner</strong>, he has shortened <strong>20/1 &rarr; 14/1</strong>, and Michael Herrington is
+      running at <strong>69%</strong> with a 5lb claimer aboard &#10003;.<br><br>
+      <strong style="color:#fca5a5">Provisional under rule 16, and this is the race that rule was written for.</strong> Eighteen runners is two above the sixteen that pays
+      five places. <strong>Three withdrawals and it settles at four</strong>, below the threshold the slot requires &mdash; which is precisely what happened to the Goodwood
+      Day 5 longshot. And Haydock added the other half: <strong>re-check the price, not just the band.</strong> Lesrico was logged at 9/1 and went off 3/1 favourite. If
+      Optician is shorter than 8/1 at the off he no longer meets the gate that approved him.<br><br>
+      <strong>The alternative was named and rejected.</strong> <strong>Something Splendid 8/1</strong> is the only <strong>CD</strong> winner in the race, won last time
+      under a 5lb penalty and has shortened 9/1&rarr;8/1 &mdash; but 8/1 is <em>exactly</em> the minimum, which is the most price-exposed place on the whole ladder.
+      Optician is the bet; Something Splendid is recorded here so the archive can check both.
+    </div>
+
+    <div class="race-block"><p class="race-hd">13:15 &middot; Betfred Flying Scotsman Stakes <span class="g1">(Listed)</span> &middot; 7f6y &middot; 9 rnrs &middot; Cl1 2yo &middot; EW 1/5 3pl &middot; stalls Centre</p><div class="tip-row"><strong style="color:#fbbf24">The card&rsquo;s one live 2x, and it is on our NB.</strong> <span style="color:#4ade80">Mullington</span> and <span style="color:#f0abfc">Spotlight (Richard Russell)</span> both name <strong>Rock Montreal</strong>, Varian&rsquo;s 1,000,000gns colt, and the Racing Post&rsquo;s own counter shows <strong>6 tips</strong>. <strong>He is 15/8 and stays the NB &mdash; that is where rule 8 puts a short-priced consensus horse.</strong> <strong style="color:#c4b5fd">Raceolly is each-way on Varzi</strong> at 18/1, and the card reads <strong>14/1</strong>: a best-odds figure longer than ours, exactly as a price-comparison column should be. Nobody outside this card is on Nabati.</div><div class="pick-row"><div class="pick-tag nap">NAP</div><div><span class="pick-horse">Nabati</span> <span class="sb" style="background:rgba(74,222,128,0.18);border:1px solid rgba(74,222,128,0.55);color:#4ade80">STEAM</span> <span class="draw-b">Draw 4</span><span class="conns">William Buick | Charlie Appleby 79% | F:121 | 2yo 9st 2lb | OR 104 &middot; TS 91 &middot; RPR 110</span><div class="pick-note"><strong>Top of the field on official rating by eight pounds</strong> (104, next best 96) and top on RPR at 110. Appleby is running at 79% and Buick rides. He has shortened <strong>15/8 &rarr; 13/8</strong> since the forecast, which is the declaration-driven steamer shape Step 5b is built on. Thirty-five days off is the only query.</div></div><div class="pick-odds">13/8</div></div><div class="pick-row"><div class="pick-tag nb">NB</div><div><span class="pick-horse">Rock Montreal</span> <span class="sb" style="background:rgba(74,222,128,0.18);border:1px solid rgba(74,222,128,0.55);color:#4ade80">STEAM</span> <span class="sb sb-sm">SM</span> <span class="sb sb-spot">SPOT</span> <span class="sb sb-2x">2x</span> <span class="sb-cd">D</span> <span class="draw-b">Draw 7</span><span class="conns">Ray Dawson | Roger Varian 65% | F:1 | 2yo 9st 2lb | TS 73 &middot; RPR 88</span><div class="pick-note">Won on debut over the trip and Varian is at 65%; <strong>9/4 &rarr; 15/8</strong> and two columns hold him. <strong>The honest hole is the figures:</strong> one run, no official rating, and an RPR of 88 that is second-lowest of the nine. He is priced off the sale ring and the yard, not off what he has done.</div></div><div class="pick-odds">15/8</div></div><div class="nobet"><strong>LONG closed &mdash; 9 runners in a Listed race, three places. It needs a 16-runner handicap.</strong> Two picks only. <strong>Forbidden Fire (5/1)</strong> is the one we leave out: unbeaten in one for Balding with Murphy booked, but <strong>drifting 3/1 &rarr; 5/1</strong>, and at 8st 11lb she has no rating to judge. This race is also <strong>two withdrawals from dropping to two places</strong>.</div></div>
+    <div class="race-block"><p class="race-hd">13:50 &middot; Betfred Leger Legends Classified Stakes &middot; 1m &middot; 13 rnrs &middot; Cl5 3yo+ 0-70 &middot; EW 1/5 3pl &middot; stalls Centre</p><div class="tip-row"><strong style="color:#f0abfc">Spotlight (Steve Boow) is on Wield 7/1</strong> &mdash; tongue-tie retained, and he has shortened 8/1&rarr;7/1 &mdash; <strong>with Anthropologist, our NB, named as his second pick.</strong> <strong style="color:#4ade80">Mullington is each-way on Berry Clever</strong>, who has eased 7/1&rarr;8/1. Two columns, two horses, and the one point of contact is on our second string rather than our first.</div><div class="pick-row"><div class="pick-tag nap">NAP</div><div><span class="pick-horse">Bella Bisbee</span> <span class="sb" style="background:rgba(239,68,68,0.16);border:1px solid rgba(239,68,68,0.5);color:#fca5a5">DRIFT</span> <span class="sb-cd">C</span> <span class="sb-cd">D</span> <span class="draw-b">Draw 5</span><span class="conns">Tom Scudamore | Scott Dixon 39% | F:502836 | 5yo 11st 7lb | OR 70 &middot; TS 49 &middot; RPR 56</span><div class="pick-note"><strong>Say plainly what this race is: thirteen horses all rated exactly 70, so the handicapper has separated nobody and the form book is flat. There is no standout here and the NAP label is the best of a level set, not a genuine one.</strong> What does separate them is course form and clock: she is the <strong>only course-and-distance winner in the race</strong> and has the <strong>best Topspeed of the thirteen</strong> (49, next 45). <strong style="color:#fca5a5">She is drifting 11/1 &rarr; 14/1 and that is logged as a demotion signal</strong> &mdash; rule 18 says record it and do not treat it as disqualifying when the independent case stands. Here it does, narrowly.</div></div><div class="pick-odds">14/1</div></div><div class="pick-row"><div class="pick-tag nb">NB</div><div><span class="pick-horse">Anthropologist</span> <span class="sb" style="background:rgba(74,222,128,0.18);border:1px solid rgba(74,222,128,0.55);color:#4ade80">STEAM</span> <span class="sb sb-spot">SPOT 2nd</span> <span class="sb-cd">D</span> <span class="draw-b">Draw 8</span><span class="conns">Sammy Jo Bell | Michael Herrington 69% | F:648432 | 4yo 11st 7lb | OR 70 &middot; TS 26 &middot; RPR 56</span><div class="pick-note">Second last time, a winner over the trip, and Herrington is the hottest yard in the race at 69%. <strong>The steam is the mechanical case &mdash; 5/1 &rarr; 4/1, and he is the market&rsquo;s answer to a race in which nothing is rated differently.</strong> Against him: a Topspeed of 26 that ranks eighth of thirteen, which is why he is the NB and not the NAP.</div></div><div class="pick-odds">4/1</div></div><div class="nobet">LONG closed &mdash; 13 runners, and a classified stakes is not a handicap, so it pays three however it is counted. Two picks only. The two biggest movers in the race are both left out: <strong>Tolstoy 20/1 &rarr; 17/2</strong>, which is the largest shortening anywhere on the card, and <strong>Caragio 8/1 &rarr; 9/2</strong>, with Adam Kirby training and riding. Tolstoy&rsquo;s last six read -54000 and Caragio has been off 89 days; on this race&rsquo;s flat form book the money is the only argument either of them has, and it was not enough on its own.</div></div>
+    <div class="race-block"><p class="race-hd">14:25 &middot; Carlsberg Flying Childers Stakes <span class="g1">(Group 2)</span> &middot; 5f3y &middot; 12 rnrs &middot; Cl1 2yo &middot; EW 1/5 3pl &middot; stalls Centre</p><div class="tip-row"><strong style="color:#f0abfc">Spotlight (Steve Boow) naps Final Objective</strong> &mdash; our NAP &mdash; on the distance drop, with Flann Sunna second; the Racing Post counter reads <strong>5 tips</strong>. <strong style="color:#4ade80">Mullington naps Sale Shark</strong>, the Ebor 17/2 winner this archive already knows &mdash; <strong>drifting 9/2 &rarr; 7/1</strong>. <strong style="color:#fdba74">Grimshaw is on Pershaada</strong>, and <strong style="color:#c4b5fd">Raceolly each-way on Tokaido</strong> at 12/1. Four columns, four horses. <strong style="color:#fca5a5">Pershaada is the biggest collapse at the head of any market on the card: the 9/4 forecast favourite is out to 6/1.</strong></div><div class="pick-row"><div class="pick-tag nap">NAP</div><div><span class="pick-horse">Final Objective</span> <span class="sb" style="background:rgba(74,222,128,0.18);border:1px solid rgba(74,222,128,0.55);color:#4ade80">STEAM</span> <span class="sb sb-spot">SPOT NAP</span> <span class="draw-b">Draw 8</span><span class="conns">James Doyle | Hamad Al Jehani 64% | F:274124 | 2yo 9st 3lb | OR 107 &middot; TS 115 &middot; RPR 121</span><div class="pick-note"><strong>Top of the field on official rating (107) and the biggest steamer among the fancied runners: 6/1 &rarr; 10/3.</strong> Second-best Topspeed at 115, James Doyle books, the yard is at 64%. <strong>Rule 8 does not bind here and it is worth saying why:</strong> the rule stops a 3x horse <em>under 3/1</em> taking the NAP, and he is 10/3. Spotlight naps him and we arrived independently &mdash; on the money, which nobody else is following.</div></div><div class="pick-odds">10/3</div></div><div class="pick-row"><div class="pick-tag nb">NB</div><div><span class="pick-horse">Carry The Flag</span> <span class="sb" style="background:rgba(74,222,128,0.18);border:1px solid rgba(74,222,128,0.55);color:#4ade80">STEAM</span> <span class="sb-cd">D</span> <span class="draw-b">Draw 12</span><span class="conns">Ryan Moore | A P O&rsquo;Brien (IRE) 47% | F:291742 | 2yo 9st 3lb | TS 121 &middot; RPR 113</span><div class="pick-note"><strong>The fastest horse in the race on the clock &mdash; Topspeed 121, six clear of anything else</strong> &mdash; a winner over the trip, second last time, and Moore travels for O&rsquo;Brien. Shortened <strong>6/1 &rarr; 9/2</strong>. The widest stall of twelve is the query on a straight five furlongs.</div></div><div class="pick-odds">9/2</div></div><div class="nobet">LONG closed &mdash; 12 runners, Group 2, three places. Two picks only. <strong>Pershaada (6/1) is opposed, and the market is the reason:</strong> she was the 9/4 forecast favourite and is now 6/1, the largest single move on the card. She is the Goodwood horse Step 3b cites for being re-routed between races, she is second-top on official rating at 106, and Grimshaw holds her &mdash; but a drift of that size on a declared card is a demotion signal we are taking at face value. <strong>El Floridita (50/1) wears a first-time visor</strong> &mdash; flagged in the scan above, not backed.</div></div>
+    <div class="race-block"><p class="race-hd">15:00 &middot; Betfred Howard Wright Doncaster Cup <span class="g1">(Group 2)</span> &middot; 2m1f197y &middot; 7 rnrs &middot; Cl1 3yo+ &middot; EW 1/4 2pl &middot; stalls Inside &middot; rail +22yds</p><div class="tip-row"><strong style="color:#fca5a5">Queenstown is a non-runner, and that voids the 2x this page published last night.</strong> He was Spotlight&rsquo;s pick at 13/8 and Grimshaw&rsquo;s too. <strong style="color:#f0abfc">Spotlight has re-verdicted since the withdrawal and is now on Beylerbeyi</strong> &mdash; our NB &mdash; explicitly <em>&ldquo;with doubts over Caballo De Mar in an already below-par renewal&rdquo;</em>. <strong style="color:#4ade80">Mullington&rsquo;s NB is Winday</strong> at 11/2, called generous on 16lb received from the favourite; the card has him <strong>4/1 and unmoved</strong>. <strong>So the column that doubts our NAP has moved onto our NB, and that disagreement is the race.</strong></div><div class="pick-row"><div class="pick-tag nap">NAP</div><div><span class="pick-horse">Caballo De Mar</span> <span class="sb" style="background:rgba(239,68,68,0.16);border:1px solid rgba(239,68,68,0.5);color:#fca5a5">DRIFT</span> <span class="draw-b">Draw 6</span><span class="conns">Oisin Murphy | George Scott 50% | F:-22104 | 5yo 9st 12lb | OR 115 &middot; TS 114 &middot; RPR 120</span><div class="pick-note"><strong>Eight pounds clear of the field on official rating and top on Topspeed, for five pounds of Group 2 penalty.</strong> He wears the <code>tb1</code> combination &mdash; a tongue tie plus blinkers carrying the first-time marker &mdash; on a horse who was 2-2-1 before two flat runs. <strong style="color:#fca5a5">Everything against him is on the page and none of it is hidden:</strong> he is drifting 5/4 &rarr; 6/4, he carries the <strong>BF</strong> flag, Spotlight has publicly doubted him, and this archive records him as the beaten 7/4 favourite at Ebor Day 3 &mdash; rule 8&rsquo;s cleanest evidence. He is napped anyway because rule 8 is about <em>consensus</em>, and no column here holds him at all.</div></div><div class="pick-odds">6/4</div></div><div class="pick-row"><div class="pick-tag nb">NB</div><div><span class="pick-horse">Beylerbeyi</span> <span class="sb" style="background:rgba(239,68,68,0.16);border:1px solid rgba(239,68,68,0.5);color:#fca5a5">DRIFT</span> <span class="sb sb-spot">SPOT</span> <span class="sb-cd">C</span> <span class="sb-cd">D</span> <span class="draw-b">Draw 8</span><span class="conns">Clifford Lee | Ian Williams 37% | F:360845 | 6yo 9st 7lb | OR 101 &middot; TS 103 &middot; RPR 113</span><div class="pick-note"><strong>The only course-and-distance winner in the race</strong>, over a specialist trip where that counts for more than it does anywhere else on the card, and Spotlight&rsquo;s verdict. <strong>His last six read 3-6-0-8-4-5 and he is drifting 7/2 &rarr; 9/2</strong>, which is why the C&amp;D form has to carry the whole argument.</div></div><div class="pick-odds">9/2</div></div><div class="nobet"><strong style="color:#fecaca">Rule 6 &mdash; seven runners, two places at 1/4, so the each-way half is close to worthless. Three withdrawals and this is win-only.</strong> LONG closed on the place count before anything else is considered: nine entered in a staying Group 2 and seven came out, and a staying Group 2 does not grow. <strong>Winday (4/1)</strong> is the one we leave out with a real case &mdash; a 3yo receiving 11lb weight-for-age plus a light weight, Buick booked for Emmet Mullins at 40% &mdash; but a Topspeed of 73 against 114 and 103 for the two we hold.</div></div>
+    <div class="race-block"><p class="race-hd">15:35 &middot; British Stallion Studs EBF Premier Fillies&rsquo; Handicap &middot; 1m3f197y &middot; 10 rnrs &middot; Cl2 3yo+ 0-100 &middot; EW 1/5 3pl &middot; stalls Inside &middot; rail +19yds</p><div class="tip-row"><strong style="color:#fbbf24">The dissent race. <span style="color:#f0abfc">Spotlight (Richard Austen)</span> and <span style="color:#fdba74">Grimshaw</span> both name <strong>Nochebuena</strong> &mdash; a live 2x on a horse we do not hold</strong>, and the Racing Post counter reads 4 tips. Austen&rsquo;s verdict names Silver Lake, Ruby Wedding and Salamanca City as being in &ldquo;conspicuously good form&rdquo; and votes for her anyway. Her case: the only <strong>CD</strong> winner in the race, off 87, Beckett at 51%, RPR 104 which is top of the field. Ours against: a Topspeed of 61 that is the worst of the ten, sixty-three days off, and <strong>she is drifting 9/2 &rarr; 5/1</strong>. <strong>That is the argument printed both ways &mdash; see the dissent panel below.</strong> <strong style="color:#4ade80">Mullington is each-way on Salamanca City</strong>, who has gone <strong>6/1 &rarr; 14/1</strong> since taking the raised top weight. <strong style="color:#c4b5fd">Raceolly is each-way on Bint Al Daar at 100/1</strong> &mdash; the duplicate entry that proved Monday&rsquo;s paste was an entry list, declared here, and rated 70 in a 0-100.</div><div class="pick-row"><div class="pick-tag nap">NAP</div><div><span class="pick-horse">Room Fourteen</span> <span class="sb" style="background:rgba(74,222,128,0.18);border:1px solid rgba(74,222,128,0.55);color:#4ade80">STEAM</span> <span class="sb-cd">C</span> <span class="draw-b">Draw 3</span><span class="conns">Saffie Osborne | James Fanshawe 69% | F:312113 | 3yo 8st 10lb | OR 83 &middot; TS 91 &middot; RPR 99</span><div class="pick-note"><strong>The biggest steamer in the race by a distance: 9/1 &rarr; 11/2.</strong> A <strong>course winner</strong> from the low draw with the rail out, carrying 8st 10lb, for a yard at 69% with Saffie Osborne up, and her last six read 3-1-2-1-1-3. Joint-second-best Topspeed of the ten (91, with Aequitas, behind Ruby Wedding&rsquo;s 92). <strong>This is the horse Step 3b names for being priced in the wrong race at Goodwood</strong> &mdash; the race assignment has been checked and she is in the 15:35.</div></div><div class="pick-odds">11/2</div></div><div class="pick-row"><div class="pick-tag nb">NB</div><div><span class="pick-horse">Silver Lake</span> <span class="sb" style="background:rgba(74,222,128,0.18);border:1px solid rgba(74,222,128,0.55);color:#4ade80">STEAM</span> <span class="draw-b">Draw 9</span><span class="conns">James Doyle | William Haggas 58% | F:-63111 | 3yo 9st 5lb | OR 92 &middot; TS 87 &middot; RPR 103</span><div class="pick-note"><strong>Won her last three and tops the handicap on 92</strong>, Haggas at 58% with Doyle booked, and the race is weighted off her mark. Shortened <strong>15/8 &rarr; 7/4</strong>. She is the market anchor, which is where the NB belongs.</div></div><div class="pick-odds">7/4</div></div><div class="nobet">LONG closed &mdash; 10 runners, three places. It needs sixteen. Two picks only. <strong>Rule 16 note: three withdrawals take this to seven runners and two places</strong> &mdash; the band holds at three all the way down to eight.</div></div>
+    <div class="race-block"><p class="race-hd">16:10 &middot; Coopers EBF Maiden Fillies&rsquo; Stakes &middot; 7f6y &middot; 4 rnrs &middot; Cl2 2yo &middot; <strong style="color:#fca5a5">WIN ONLY &mdash; no place terms</strong> &middot; stalls Centre</p><div class="tip-row"><strong style="color:#fca5a5">Mullington&rsquo;s pick here, Antonova, is a non-runner</strong> &mdash; his second void selection of the meeting after the 15:00. <strong style="color:#f0abfc">Spotlight (Steve Boow) is on Victoria Night</strong>, our NAP, calling the newcomers &ldquo;interesting&rdquo;. The Racing Post counter reads <strong>9 tips</strong>, the highest on the card &mdash; <strong>recorded, not counted: that counter&rsquo;s source list is not visible, and one masthead&rsquo;s internal panel is not nine opinions</strong> (&sect;6, the Marvelman rule).</div><div class="pick-row"><div class="pick-tag nap">NAP</div><div><span class="pick-horse">Victoria Night</span> <span class="sb" style="background:rgba(74,222,128,0.18);border:1px solid rgba(74,222,128,0.55);color:#4ade80">STEAM</span> <span class="sb sb-spot">SPOT</span> <span class="draw-b">Draw 2</span><span class="conns">Sean Levey | Richard Hannon 52% | F:25 | 2yo 9st 2lb | TS 64 &middot; RPR 94</span><div class="pick-note"><strong>Rule 8 says a short-priced consensus horse should not be the NAP unless the card states why the standout justifies the slot. Here is why.</strong> Two of her three rivals have never run and the third was beaten on debut; <strong>she is the only filly in the race with a rating of any kind</strong> (RPR 94, Topspeed 64) and she has been placed in both starts. There is no horse to give the NAP to instead. She has also shortened <strong>5/4 &rarr; 5/6</strong>. Rule 7 applies: below evens she is a banker, which is one reason no Lucky 15 runs.</div></div><div class="pick-odds">5/6</div></div><div class="pick-row"><div class="pick-tag nb">NB</div><div><span class="pick-horse">She&rsquo;s Got A Way</span> <span class="sb" style="background:rgba(239,68,68,0.16);border:1px solid rgba(239,68,68,0.5);color:#fca5a5">DRIFT</span> <span class="draw-b">Draw 3</span><span class="conns">Ryan Moore | K R Burke 55% | unraced | 2yo 9st 2lb | no figures</span><div class="pick-note">Unraced, so the only angle is the one &sect;8 names for 2yo races: <strong>Ryan Moore riding for a 55% yard on a debutante is intent</strong>, in a race where Burke had a free choice of jockey. Eased 11/4 &rarr; 3/1, which cuts against it. Named as a thin pick rather than a strong one.</div></div><div class="pick-odds">3/1</div></div><div class="nobet"><strong style="color:#fecaca">Rule 6 in its hardest form: four runners is win-only. There is no each-way half to buy, so both of these are staked &pound;1 to win rather than 50p each-way.</strong> Seventeen were entered and thirteen came out &mdash; a 76% shed, the heaviest of the meeting. LONG closed by arithmetic several times over.</div></div>
+    <div class="race-block"><p class="race-hd">16:45 &middot; Tanbry Construction Nursery Handicap &middot; 6f2y &middot; 15 rnrs &middot; Cl4 2yo 0-85 &middot; EW 1/4 4pl &middot; stalls Centre</p><div class="tip-row"><strong style="color:#f0abfc">Spotlight (Richard Russell) is on Launch Sequence</strong> &mdash; our NB &mdash; calling it &ldquo;a deeply competitive event&rdquo;; counter reads 4 tips. <strong style="color:#4ade80">Mullington is on Beresford Gap</strong>, who has eased <strong>15/2 &rarr; 11/1</strong>. The aggregator panels carried <strong>Bear Lee 28/1</strong> and <strong>Baddaddan 18/1</strong> here &mdash; counted as zero sources, but Bear Lee is worth naming: he shares the <strong>best RPR in the race at 92</strong> with our NAP, and has drifted 14/1 &rarr; 28/1.</div><div class="pick-row"><div class="pick-tag nap">NAP</div><div><span class="pick-horse">Henley On Thames</span> <span class="sb" style="background:rgba(74,222,128,0.18);border:1px solid rgba(74,222,128,0.55);color:#4ade80">STEAM</span> <span class="sb-cd">D</span> <span class="draw-b">Draw 12</span><span class="conns">David Egan | Kevin Philippart De Foy 61% | F:62211 | 2yo 9st 7lb | OR 83 &middot; TS 84 &middot; RPR 92</span><div class="pick-note"><strong>This is the horse rule 17 is named after.</strong> At Ebor he was held at NB instead of NAP purely because he drew 6 &ldquo;the wrong side&rdquo; on a GoingStick read that had reversed by the off, and he won at 10/1. <strong>He has won his last two</strong>, is a winner over the trip, shares the best RPR in the field at 92, and has shortened <strong>13/2 &rarr; 5/1</strong>. Doncaster has no strips to misread this time &mdash; the draw goes on the card and carries no argument.</div></div><div class="pick-odds">5/1</div></div><div class="pick-row"><div class="pick-tag nb">NB</div><div><span class="pick-horse">Launch Sequence</span> <span class="sb" style="background:rgba(74,222,128,0.18);border:1px solid rgba(74,222,128,0.55);color:#4ade80">STEAM</span> <span class="sb sb-spot">SPOT</span> <span class="draw-b">Draw 7</span><span class="conns">James Doyle | K R Burke 55% | F:336 | 2yo 9st 9lb | OR 85 &middot; TS 86 &middot; RPR 89</span><div class="pick-note"><strong>First-time cheekpieces</strong> &mdash; one of the four first-time markers on the whole card, found in the scan above and printed here rather than after the race. First run in a handicap off the top mark of 85, second-best Topspeed of the fifteen (86, behind only Wait Geordie&rsquo;s 90), Burke at 55% with Doyle booked, and shortened <strong>9/2 &rarr; 7/2</strong>.</div></div><div class="pick-odds">7/2</div></div><div class="nobet">LONG closed &mdash; <strong>15 runners pays four places, and the gate wants five, or four in a field of sixteen. One more runner and this race would have opened it.</strong> That is the whole slot decided by a single declaration. Two picks only. <strong>Sue&rsquo;s Last Chance (100/1)</strong> also wears first-time cheekpieces &mdash; flagged, not backed.</div></div>
+    <div class="race-block"><p class="race-hd">17:20 &middot; Pertemps Network Handicap &middot; 1m2f43y &middot; 18 rnrs &middot; Cl4 3yo+ 0-80 &middot; EW 1/4 5pl &middot; stalls Inside &middot; rail +19yds</p><div class="tip-row"><strong style="color:#f0abfc">Spotlight (Harry March) is on Almekarem</strong> &mdash; our NB &mdash; with Fans Favourite &ldquo;respected, especially if the ground is slow&rdquo;; counter reads 3 tips. <strong style="color:#4ade80">Mullington is on Spirit Genie</strong>, and the market has demolished it: <strong>12/1 &rarr; 28/1</strong>. <strong style="color:#c4b5fd">Raceolly is each-way on Newtown Duke</strong> at 16/1, also eased from 9/1. <strong>Three columns, three horses, and both of the outside picks are drifting hard.</strong></div><div class="pick-row"><div class="pick-tag nap">NAP</div><div><span class="pick-horse">Canvas</span> <span class="sb" style="background:rgba(74,222,128,0.18);border:1px solid rgba(74,222,128,0.55);color:#4ade80">STEAM</span> <span class="sb-cd">C</span> <span class="draw-b">Draw 7</span><span class="conns">Kieran O&rsquo;Neill | Scott Dixon 39% | F:-40962 | 4yo 9st 8lb | OR 72 &middot; TS 80 &middot; RPR 88</span><div class="pick-note"><strong>Joint-top of the field on Topspeed (80) and joint-top on RPR (88), from a mark of 72 &mdash; eight pounds below the top weight.</strong> A <strong>course winner</strong>, second five days ago, cheekpieces retained, and he has shortened <strong>8/1 &rarr; 11/2</strong>. <strong>The separation from Almekarem is deliberately not made on RPR</strong> &mdash; the two are level at 88, and Doncaster Day 1 is the reason we no longer let that column carry an argument on its own. It is made on the clock and on the money.</div></div><div class="pick-odds">11/2</div></div><div class="pick-row"><div class="pick-tag nb">NB</div><div><span class="pick-horse">Almekarem</span> <span class="sb" style="background:rgba(161,161,170,0.14);border:1px solid rgba(161,161,170,0.4);color:#a1a1aa">FLAT</span> <span class="sb sb-spot">SPOT</span> <span class="sb-cd">D</span> <span class="draw-b">Draw 12</span><span class="conns">Luke Morris | Sir Mark Prescott Bt 63% | F:4-1722 | 4yo 10st 2lb | OR 80 &middot; TS 73 &middot; RPR 88</span><div class="pick-note"><strong>Joint-top of the handicap on 80 and joint-top on RPR at 88</strong>, a distance winner, second in each of his last two, Prescott at 63% with Morris booked and Spotlight&rsquo;s verdict. Against: he carries the <strong>BF</strong> flag, his Topspeed of 73 is seven light of the NAP&rsquo;s, and <strong>his price has not moved at all</strong> &mdash; 9/2 forecast, 9/2 now &mdash; in a race where fifteen of the eighteen have.</div></div><div class="pick-odds">9/2</div></div><div class="pick-row"><div class="pick-tag long">LONG</div><div><span class="pick-horse">Optician</span> <span class="sb" style="background:rgba(74,222,128,0.18);border:1px solid rgba(74,222,128,0.55);color:#4ade80">STEAM</span> <span class="sb-cd">C</span> <span class="draw-b">Draw 16</span><span class="conns">Conor Whiteley(5) | Michael Herrington 69% | F:401529 | 6yo 9st 10lb | OR 74 &middot; TS 79 &middot; RPR 83</span><div class="pick-note"><strong>The first LONG to run since Ebor, and it clears all three legs rather than being filled for the sake of it.</strong> Eighteen runners paying five; 14/1 against an 8/1 floor; and the concrete signal is a <strong>course win</strong>, a shortening of <strong>20/1 &rarr; 14/1</strong>, and Herrington&rsquo;s 69% yard taking 5lb off with Conor Whiteley. Third-best Topspeed of the eighteen. <strong style="color:#fca5a5">Provisional under rule 16: three withdrawals take this to four places and the slot shuts retrospectively &mdash; and if he is shorter than 8/1 at the off he no longer qualifies either.</strong></div></div><div class="pick-odds">14/1</div></div><div class="nobet"><strong>Fans Favourite (4/1 forecast favourite) is the one we leave out.</strong> Three wins in his last six, a distance winner, Murphy rides for Hugo Palmer, cheekpieces &mdash; but a Topspeed of 63 against 80 for our NAP, and his price has not moved either. <strong>Director&rsquo;s Cut (50/1) is first-time gelded</strong> &mdash; flagged in the scan, not backed.</div></div>
+
     <div class="panel blue-left" style="margin-top:16px;padding:14px 14px">
-      <h2 class="panel-head">&#128203; Friday tipster picks &mdash; 4 columns, logged ahead of the gate</h2>
+      <h2 class="panel-head">&#128203; External tipster picks &mdash; 23 selections from 4 columns, 2 of them void</h2>
       <div class="tp-block">
-        <span class="tp-name"><span class="sb sb-sm">SM</span> Steve Mullington (William Hill) &middot; all 8 races</span><br>
-        13:15 <strong>Rock Montreal</strong> &middot; 13:50 <strong>Berry Clever</strong> (e/w) &middot; 14:25 <strong>Sale Shark (NAP)</strong> &middot;
-        15:00 <strong>Winday (NB)</strong> 11/2 &middot; 15:35 <strong>Salamanca City</strong> (e/w) &middot; 16:10 <strong>Antonova</strong> &middot;
-        16:45 <strong>Beresford Gap</strong> &middot; 17:20 <strong>Spirit Genie</strong>
+        <span class="tp-name"><span class="sb sb-spot">SPOT</span> Racing Post Spotlight &middot; all 8 races &middot; <strong style="color:var(--green-lt)">6 of 8 with us &mdash; 75%</strong></span><br>
+        13:15 <strong style="color:var(--green-lt)">Rock Montreal</strong> <em>(Richard Russell)</em> &mdash; our NB &middot;
+        13:50 <strong>Wield</strong> <em>(Steve Boow)</em>, Anthropologist his second pick &mdash; our NB &middot;
+        14:25 <strong style="color:var(--green-lt)">Final Objective (nap)</strong> <em>(Steve Boow)</em> &mdash; our NAP &middot;
+        15:00 <strong style="color:var(--green-lt)">Beylerbeyi</strong> <em>(Richard Austen)</em> &mdash; our NB, <strong>re-verdicted after Queenstown came out</strong> &middot;
+        15:35 <strong style="color:#fca5a5">Nochebuena</strong> <em>(Richard Austen)</em> &mdash; <strong>dissent</strong> &middot;
+        16:10 <strong style="color:var(--green-lt)">Victoria Night</strong> <em>(Steve Boow)</em> &mdash; our NAP &middot;
+        16:45 <strong style="color:var(--green-lt)">Launch Sequence</strong> <em>(Richard Russell)</em> &mdash; our NB &middot;
+        17:20 <strong style="color:var(--green-lt)">Almekarem</strong> <em>(Harry March)</em> &mdash; our NB
       </div>
       <div class="tp-block">
-        <span class="tp-name"><span class="sb sb-spot">SPOT</span> Racing Post Spotlight &middot; all 8 races</span><br>
-        13:15 <strong>Rock Montreal</strong> 9/4 <em>(Richard Russell)</em> &middot; 13:50 <strong>Wield</strong> 9/1 <em>(Steve Boow)</em> &middot;
-        14:25 <strong>Final Objective</strong> 7/1 <em>(Steve Boow)</em> &middot; 15:00 <strong>Queenstown</strong> 13/8 <em>(Richard Austen)</em> &middot;
-        15:35 <strong>Nochebuena</strong> 11/2 <em>(Richard Austen)</em> &middot; 16:10 <strong>Victoria Night</strong> 5/4 <em>(Steve Boow)</em> &middot;
-        16:45 <strong>Launch Sequence</strong> 9/2 <em>(Richard Russell)</em> &middot; 17:20 <strong>Almekarem</strong> 9/2 <em>(Harry March)</em>
+        <span class="tp-name"><span class="sb sb-sm">SM</span> Steve Mullington (William Hill) &middot; 8 races, 1 void &middot; <strong>1 of 7 live with us &mdash; 14%</strong></span><br>
+        13:15 <strong style="color:var(--green-lt)">Rock Montreal</strong> &mdash; our NB &middot; 13:50 <strong>Berry Clever</strong> (e/w) &middot;
+        14:25 <strong>Sale Shark (NAP)</strong> &middot; 15:00 <strong>Winday (NB)</strong> &middot;
+        15:35 <strong>Salamanca City</strong> (e/w) &middot; 16:10 <strong style="color:#fca5a5">Antonova &mdash; NON-RUNNER</strong> &middot;
+        16:45 <strong>Beresford Gap</strong> &middot; 17:20 <strong>Spirit Genie</strong><br>
+        <em style="color:#fca5a5">The market has gone against four of his seven live picks: Spirit Genie 12/1&rarr;28/1, Salamanca City 6/1&rarr;14/1, Beresford Gap 15/2&rarr;11/1, Sale Shark 9/2&rarr;7/1.</em>
       </div>
       <div class="tp-block">
-        <span class="tp-name"><span class="sb sb-ro">RO</span> Raceolly &middot; 4 races, all each-way</span><br>
-        13:15 <strong>Varzi</strong> 18/1 &middot; 14:25 <strong>Tokaido</strong> 12/1 &middot;
-        15:35 <strong>Bint Al Daar</strong> 100/1 &middot; 17:20 <strong>Newtown Duke</strong> 16/1
+        <span class="tp-name"><span class="sb sb-ro">RO</span> Raceolly &middot; 4 races, all each-way &middot; <strong>0 of 4 with us</strong></span><br>
+        13:15 <strong>Varzi</strong> 18/1 (card 14/1) &middot; 14:25 <strong>Tokaido</strong> 12/1 &middot;
+        15:35 <strong>Bint Al Daar</strong> 100/1 &middot; 17:20 <strong>Newtown Duke</strong> 16/1<br>
+        <em>Same shape as Doncaster Day 1: four big prices, agreement with nobody. &sect;6 says report alignment per column and judge on returns, not on agreement &mdash; a column playing this way scores near zero most days and is the one that can pay.</em>
       </div>
       <div class="tp-block">
-        <span class="tp-name"><span class="sb sb-bg">BG</span> Billy Grimshaw (HRN) &middot; 3 races</span><br>
-        14:25 <strong>Pershaada</strong> 6/1 &middot; 15:00 <strong style="color:#fca5a5">Queenstown &mdash; NON-RUNNER</strong> &middot;
-        15:35 <strong>Nochebuena</strong> 9/2
+        <span class="tp-name"><span class="sb sb-bg">BG</span> Billy Grimshaw (HRN) &middot; 3 races, 1 void &middot; <strong>0 of 2 live with us</strong></span><br>
+        14:25 <strong>Pershaada</strong> &middot; 15:00 <strong style="color:#fca5a5">Queenstown &mdash; NON-RUNNER</strong> &middot; 15:35 <strong>Nochebuena</strong><br>
+        <em>Independence check (&sect;6): he diverges from Spotlight in the 14:25 (Pershaada v Final Objective) and agrees in the 15:35. <strong>One divergence in two live races still clears the test</strong> &mdash; a republication cannot disagree with its source &mdash; but the sample is thin and getting thinner.</em>
       </div>
       <div class="tp-block" style="border-left:2px solid rgba(239,68,68,0.4)">
         <span class="tp-name"><span class="sb sb-big">BIG</span> Biggest Priced Naps / Tips &middot; <strong>aggregator, counted as zero</strong></span><br>
         <em>Naps:</em> 14:25 In The Black 35/1 &middot; 16:45 Bear Lee 28/1 &middot; 13:50 Little Miss India 28/1 &middot; 16:45 Baddaddan 18/1<br>
-        <em>Tips:</em> 15:35 Aequitas 70/1 &middot; 16:45 Wait Geordie 66/1 &middot; 13:15 <strong>Dandyman Dan 33/1 &mdash; &ldquo;2 Tips&rdquo;</strong> &middot; 17:20 Spirit Genie 30/1
+        <em>Tips:</em> 15:35 Aequitas 70/1 &middot; 16:45 Wait Geordie 66/1 &middot; 13:15 Dandyman Dan 33/1 (&ldquo;2 Tips&rdquo;) &middot; 17:20 Spirit Genie 30/1<br>
+        <em>Prices as the panels quoted them yesterday. <strong>All eight declared</strong>, which is the one thing worth recording: the panel was reading a list that shed 56% and still named eight runners. None is counted as a source (&sect;6) &mdash; the rows label themselves &ldquo;1 Nap&rdquo; and &ldquo;1 Tip&rdquo;, they are other columns&rsquo; selections collected.</em>
       </div>
-      <div class="nobet" style="margin-top:10px;border-color:rgba(239,68,68,0.45);background:rgba(239,68,68,0.07)">
-        <strong style="color:#fecaca">&#9888; Queenstown is a non-runner in the Doncaster Cup, and that is worth more than the tip it voids.</strong><br><br>
-        He was <strong>Spotlight&rsquo;s 15:00 pick at 13/8 last night</strong> and Grimshaw&rsquo;s too &mdash; a 2x crossover when it was published at 19:19.
-        By 09:46 this morning he is <strong>out</strong>. A tip has a shelf life measured in hours, and a crossover built on one that is void was never really
-        two opinions about today&rsquo;s race. It also removes the market leader from a Group 2 that already had only nine entries, so the shape of that race has
-        changed since every column previewed it.<br><br>
-        <strong>Two other things this morning&rsquo;s lists settle.</strong> <strong>Bint Al Daar</strong> &mdash; the horse entered in <em>both</em> the 15:35 and the
-        17:20, the duplicate that proved the Friday paste was an entry list &mdash; is tipped by Raceolly in the <strong>15:35</strong>, so that is where he was declared.
-        And the Biggest-Priced-Tips panel shows <strong>&ldquo;2 Tips&rdquo; on Dandyman Dan</strong>, the first aggregator row above one all week:
-        <strong>two columns we cannot see hold a horse none of our four do.</strong> Recorded, not counted.
+    </div>
+
+    <div class="panel" style="border-top:3px solid var(--blue-l);margin-top:16px">
+      <h2 class="panel-head" style="color:var(--blue-l)">&#128260; Crossover signals &mdash; two live, one void, in eight races</h2>
+      <div class="nobet" style="border-color:rgba(251,191,36,0.4)">
+        <strong style="color:var(--gold-lt)">2x &middot; Rock Montreal &middot; 13:15 &middot; 15/8 &middot; SM + SPOT.</strong> We hold him &mdash; <strong>as the NB, not the NAP</strong>, which is what rule 8 requires of a
+        short-priced horse two or more columns share. Nine multi-source picks went unbeaten-free at Goodwood; three short-priced consensus horses were all beaten favourites on
+        Ebor Day 3; the Sprint Cup Group 1 was won by a horse none of seven columns named.
+      </div>
+      <div class="nobet" style="border-color:rgba(239,68,68,0.5);background:rgba(239,68,68,0.07);margin-top:10px">
+        <strong style="color:#fecaca">&#9888; DISSENT &mdash; 2x &middot; Nochebuena &middot; 15:35 &middot; 5/1 &middot; SPOT + BG &middot; we do not hold her.</strong><br><br>
+        <strong>Their case, printed properly rather than answered with our own number</strong> (&sect;6, the King Of Earth rule): she is the <strong>only course-and-distance
+        winner</strong> in a 0-100 fillies&rsquo; handicap, she is rated 87 with an RPR of 104 that is the <strong>best in the field</strong>, Beckett is at 51%, and Austen names the
+        three in-form rivals explicitly and votes against all of them anyway.<br><br>
+        <strong>Ours against:</strong> a Topspeed of <strong>61 &mdash; the worst of the ten</strong>, sixty-three days since her last run, and a price easing <strong>9/2 &rarr; 5/1</strong>
+        while our two picks both shortened.<br><br>
+        <strong style="color:#fde68a">What separates them honestly: the two arguments are not the same kind.</strong> Theirs rests on RPR and course form; ours rests on Topspeed and the
+        market. Doncaster Day 1 is the reason that matters &mdash; three winners were opposed there on an RPR column whose meaning had been questioned and not resolved. So the
+        dissent is surfaced, her case is stated at full strength, and <strong>the honest verdict is that the evidence does not cleanly separate us</strong>. She is a legitimate
+        alternative to Room Fourteen and this card does not hold her.
       </div>
       <div class="nobet" style="margin-top:10px">
-        <strong style="color:#fde68a">Both lists are now complete, and across all eight races there is exactly one crossover: Rock Montreal in the 13:15</strong>
-        (Varian/Godolphin, a 1,000,000gns purchase who won at Yarmouth). Both columns hold him and he has shortened <strong>4/1 &rarr; 9/4</strong>.
-        <strong>The other seven races produce seven different pairs of horses</strong> &mdash; the same near-total disagreement Thursday showed, and the
-        <strong>17:20 completes it</strong>: Mullington on Spirit Genie, Spotlight on Almekarem.<br><br>
-        <strong>Almekarem is a fourth horse that carried no price at all on the entry list and is now 9/2.</strong> With Wield 9/1, Victoria Night 5/4 and
-        Launch Sequence 9/2 that is four, which is the declarations argument again from a different direction: a bookmaker does not price a horse until it
-        knows the horse is running.<br><br>
-        <strong>One gap worth stating rather than hiding:</strong> the same page carries <strong>&ldquo;Premium Doncaster Tips&rdquo; behind a Members Club
-        paywall</strong> &mdash; visible as locked rows, not readable. So this is Spotlight&rsquo;s <em>free</em> list in full, not everything the Racing Post
-        publishes on Friday. Nothing is being counted from behind the paywall, and the source list is complete only for what is public.<br><br>
-        <strong>Mullington&rsquo;s NAP is Sale Shark</strong> in the Flying Childers &mdash; a horse this archive already knows, a winner at Ebor at 17/2 &mdash;
-        and his <strong>NB is Winday</strong> in the Doncaster Cup at 11/2, called &ldquo;generous&rdquo;, receiving 16lb from Caballo De Mar.<br><br>
-        <strong>With four columns in, the Friday picture is the same as Thursday&rsquo;s: disagreement nearly everywhere.</strong>
-        Two live crossovers &mdash; <strong>Rock Montreal</strong> (13:15, Mullington + Spotlight) and <strong>Nochebuena</strong> (15:35, Spotlight + Grimshaw) &mdash;
-        plus the void one on Queenstown. The <strong>14:25 Flying Childers has four columns on four different horses</strong> (Sale Shark / Final Objective / Tokaido /
-        Pershaada) and the 17:20 has three on three.<br><br>
-        <strong>Grimshaw&rsquo;s independence is thinner today and worth watching.</strong> He diverges from Spotlight in one of three races (Pershaada v Final Objective)
-        where yesterday it was one of two. One divergence still clears the &sect;6 test, but a column that shares the HRN masthead and drifts towards zero
-        divergences is the republication signature &mdash; keep counting.<br><br>
-        <strong>All of it is logged, none of it acted on: these are notes against a card we have not gated.</strong>
+        <strong>VOID &middot; Queenstown &middot; 15:00 &middot; SPOT + BG.</strong> Published on this page last night as a live 2x at 13/8; a non-runner by 09:46 this morning.
+        <strong>A crossover built on a tip that is void was never two opinions about today&rsquo;s race</strong>, and Spotlight has since re-verdicted onto Beylerbeyi.
+        A tip has a shelf life measured in hours.
       </div>
+      <div class="nobet" style="margin-top:10px">
+        <strong>No 3x anywhere on the card, at four columns.</strong> Written that way deliberately: Doncaster Day 1 asserted an absence three times at four and five columns and a
+        sixth column falsified it immediately. <strong>None yet, at four columns</strong> &mdash; not none.
+      </div>
+    </div>
+
+    <div class="panel" style="border-top:3px solid var(--gold);margin-top:16px">
+      <h2 class="panel-head" style="color:var(--gold-lt)">&#128200; Market moves &mdash; a real trail on a declared card, which Thursday never had</h2>
+      <div class="nobet">
+        Thursday&rsquo;s card had to print &ldquo;no market trail available&rdquo; because only one copy of it ever existed. Friday carries a <strong>Betting Forecast line in every
+        race</strong>, so every pick on this page has a move recorded against it. All <strong>88 declared runners carry a price, and the trail reads 28 STEAM, 53 DRIFT, 7 unmoved.</strong>
+        A field shedding 56% pushes the bottom of every market out, which is why drifts outnumber steamers nearly three to one &mdash; the signal is in the horses that shortened
+        <em>against</em> that tide.<br><br>
+        <strong style="color:var(--gold-lt)">Twelve of our seventeen picks have shortened:</strong> Final Objective <strong>6/1&rarr;10/3</strong> (the biggest move on any pick) &middot;
+        Room Fourteen <strong>9/1&rarr;11/2</strong> &middot; Optician <strong>20/1&rarr;14/1</strong> &middot; Canvas <strong>8/1&rarr;11/2</strong> &middot;
+        Carry The Flag 6/1&rarr;9/2 &middot; Henley On Thames 13/2&rarr;5/1 &middot; Launch Sequence 9/2&rarr;7/2 &middot; Anthropologist 5/1&rarr;4/1 &middot;
+        Nabati 15/8&rarr;13/8 &middot; Rock Montreal 9/4&rarr;15/8 &middot; Silver Lake 15/8&rarr;7/4 &middot; Victoria Night 5/4&rarr;5/6.<br><br>
+        <strong style="color:#fca5a5">And the four we are backing into a drift, named rather than buried:</strong> Caballo De Mar 5/4&rarr;6/4 (NAP), Beylerbeyi 7/2&rarr;9/2 (NB),
+        Bella Bisbee 11/1&rarr;14/1 (NAP), She&rsquo;s Got A Way 11/4&rarr;3/1 (NB). Almekarem is the one pick that has not moved at all.
+        <strong>Rule 18 is why those four still run</strong> &mdash; Libertango drifted 7/4&rarr;11/4 at Ebor, was logged that morning as a demotion signal, and won at 3/1.<br><br>
+        <strong>The biggest drifts on the card, measured as a ratio rather than by eye:</strong> Kach Above <strong>25/1&rarr;66/1</strong>, Sir Sirius and On The Inlet both
+        <strong>16/1&rarr;40/1</strong>, Without Compromise 33/1&rarr;80/1, <strong>Spirit Genie 12/1&rarr;28/1</strong> (Mullington&rsquo;s pick),
+        <strong>Pershaada 9/4&rarr;6/1</strong> (Grimshaw&rsquo;s) and <strong>Salamanca City 6/1&rarr;14/1</strong> (Mullington&rsquo;s).
+        The biggest steamer on the whole card is <strong>Tolstoy 20/1&rarr;17/2</strong> in the 13:50, a horse nobody holds.
+      </div>
+    </div>
+
+    <div class="panel" style="border-top:3px solid var(--gold);margin-top:16px">
+      <h2 class="panel-head" style="color:var(--gold-lt)">&#128273; Key signals</h2>
+      <div class="nobet">
+        <strong>1 &middot; The LONG is open in exactly one race after thirty closed ones, and it is provisional.</strong> Eighteen runners is two above the line that pays five
+        places. Rule 16 says re-check the band at the off; Haydock added re-check the price. Optician qualifies on both today and may qualify on neither at 17:20.<br><br>
+        <strong>2 &middot; Every pick carries a market move for the first time this meeting.</strong> Twelve of our seventeen have shortened. Four are drifting and are named as
+        such rather than quietly re-argued &mdash; rule 18 is explicit that a drift is a demotion signal and not a disqualification, and it has been wrong in both directions
+        this season.<br><br>
+        <strong>3 &middot; The whole-field headgear scan ran before selections, not after.</strong> Four first-time markers on 88 runners, two of them on our own picks and two on
+        horses we do not hold. No <code>w1</code> anywhere. That is the Doncaster Day 1 correction closed out.<br><br>
+        <strong>4 &middot; Alignment with Spotlight is 75%, and that is a caution rather than a comfort.</strong> Six of our eight races share a pick with one desk. Consensus
+        clusters where value is not: nine multi-source picks lost at Goodwood, three consensus favourites were all beaten on Ebor Day 3, and Doncaster Day 1 returned
+        <strong>one winner from 29 external tips across six columns</strong> while our better winner was held by nobody.<br><br>
+        <strong>5 &middot; The draw is on every pick and carries no argument anywhere.</strong> Doncaster publishes one GoingStick figure with no strips for the second day, so
+        rule 17&rsquo;s half-point test cannot even be applied. Three races are run on a moved rail, which lengthens them beyond the printed trip.<br><br>
+        <strong>6 &middot; Two races are effectively win-only.</strong> The 16:10 has four runners and no place terms at all; the 15:00 has seven paying two. Rule 6 is flagged on
+        both and the 16:10 pair are staked to win.
+      </div>
+    </div>
+
+    <div class="nobet" style="margin-top:16px;border-color:rgba(239,68,68,0.45);background:rgba(239,68,68,0.07)">
+      <strong style="color:#fecaca">No Lucky 15 today.</strong> Record to date <strong>&minus;82.1% (&minus;&pound;41.85 on &pound;51.00 across eleven days)</strong>, including
+      <strong>0 winners from 15 running legs at Ebor</strong>, where it took &pound;29.50 out of a singles card that finished within &pound;2.33 of level across seventy-two bets.
+      It no longer runs by default &mdash; ask for it and it will be built and the record quoted. On this card it would struggle anyway: four of the seventeen picks are below
+      2/1 and one is odds-on.<br><br>
+      <strong>Staking: 15 picks at 50p each-way (&pound;1 each) plus the two in the 16:10 at &pound;1 to win, since a four-runner race has no place terms. Total &pound;17.00.</strong>
     </div>
 
     <div class="pending-inline" style="background:rgba(96,165,250,0.07);border-color:rgba(96,165,250,0.4);color:#cbd5cf">
-      <strong style="color:var(--blue-l)">A second, fresher paste of this card arrived today &mdash; and it is the same entry list. Worth recording how you can tell.</strong><br><br>
-      The going line <strong>has</strong> moved, and moved to exactly what Thursday&rsquo;s declared card shows:
-      <code>GOOD TO SOFT (GoingStick 6.0)</code> on Monday, <code>GOOD TO SOFT, Good in places (GoingStick 6.1)</code> today.
-      Rail movements are identical. Everything about the header says a newer document.<br><br>
-      <strong style="color:#93c5fd">The field block did not move at all.</strong> All eight races carry the same counts as Monday &mdash;
-      <strong>23, 42, 13, 9, 20, 17, 31, 44</strong> &mdash; each still equal to its own printed <code>Entries N</code>, still with no draw, still with
-      <strong>Bint Al Daar entered in two races ninety minutes apart</strong>. <strong>199 entry slots across eight races.</strong><br><br>
-      <strong>The lesson for &sect;12: a Racing Post page refreshes the going block live and the field block only at declarations.</strong>
-      An updated going line is not evidence of an updated card, and it is the part of the page most likely to make a stale paste look current.
-      <strong>Check the field block, never the header.</strong><br><br>
-      The going reading itself is worth keeping: Doncaster has been <strong>6.0 &rarr; 6.1</strong> over two days with rain in between, which is a track
-      drying marginally rather than softening. As on Thursday there are <strong>no Far/Centre/Stands&rsquo; strips</strong>, so rule 17 still has nothing to read here.
+      <strong style="color:var(--blue-l)">Kept from before the declarations, because both lessons are now in CLAUDE.md and both were earned on this card.</strong><br><br>
+      <strong>1 &middot; A fresher paste is not a fresher card.</strong> Friday was pasted twice at entry stage, two days apart. The second copy had a visibly newer going line
+      &mdash; <code>GoingStick 6.0</code> became <code>6.1</code>, matching Thursday&rsquo;s declared card exactly &mdash; while <strong>the field block had not moved at all</strong>:
+      the same counts 23/42/13/9/20/17/31/44, each equal to its own printed <code>Entries N</code>, still no draw, still Bint Al Daar in two races ninety minutes apart.
+      The Racing Post refreshes going live and the field only at declarations. <strong>Check the field block, never the header.</strong><br><br>
+      <strong>2 &middot; Read the gate&rsquo;s LONG line only on a race that passed the gate.</strong> Run on the entry-stage fixture with every draw <code>null</code>, the gate
+      correctly returned <strong>8 races, 0 pass, 8 NO BET</strong> &mdash; and printed <strong>&ldquo;LONG slot: open&rdquo; beside four of them</strong>, because field size is the
+      only input the place test has and it had been fed 20, 17, 31 and 44. <strong>The declarations settle it: those four races came out at 10, 4, 15 and 18, and the slot opened
+      in one.</strong> Three of the gate&rsquo;s four entry-stage &ldquo;opens&rdquo; were wrong, which is the same error &sect;9 now records for the meeting as a whole.<br><br>
+      <strong>3 &middot; Field size is the one thing an entry list cannot tell you.</strong> This page deleted its own LONG forecast on Wednesday rather than repeat Thursday&rsquo;s
+      mistake, and said only that the 16:45 and 17:20 were the two that could still declare sixteen or more. <strong>The 17:20 did and the 16:45 missed by one runner.</strong>
+      Conditional was the right register; predictive would have been wrong again.
     </div>
-    <div class="pending-inline" style="background:rgba(239,68,68,0.09);border-color:rgba(239,68,68,0.45);color:#fca5a5">
-      <strong style="color:#fecaca">The gate was run on it anyway, and what it returned is the trap in one screen.</strong><br><br>
-      Built as a fixture with every draw set to <code>null</code> &mdash; never invented, per &sect;12 &mdash; <code>gate-check.mjs</code> returns:<br><br>
-      <strong style="color:#fecaca">8 races &middot; 0 pass &middot; 8 NO BET</strong>, each one failing on &ldquo;N runner(s) without a draw&rdquo;.
-      That is the correct answer and the reason the fixture is built that way.<br><br>
-      <strong style="color:#fecaca">But alongside every one of those failures it also prints &ldquo;LONG slot: open&rdquo; &mdash; in four races (15:35, 16:10, 16:45, 17:20).</strong>
-      It is computing the place test off <strong>entry-stage field sizes</strong>, because field size is the only input that test has and the fixture fed it 20, 17, 31 and 44.
-      Thursday is what that looks like when the declarations arrive: the same computation said the slot would open, and it did not.<br><br>
-      <strong>The gate is not wrong &mdash; the race already printed NO BET, so nothing was ever going to be staked.</strong> The point is narrower and worth writing down:
-      <strong>read the gate&rsquo;s LONG line only on a card that passed the gate.</strong> On a failed race it is arithmetic on numbers that do not exist yet.
-    </div>
-    <div class="pending-inline" style="background:rgba(74,222,128,0.07);border-color:rgba(74,222,128,0.4);color:#cbd5cf">
-      <strong style="color:var(--green-lt)">The LONG forecast that used to sit here has been deleted, because Thursday falsified it.</strong><br><br>
-      This panel previously read: <em>&ldquo;the LONG picture holds, and Friday is the better of the two days for it &mdash; six of eight at 16 or more, the same ratio
-      as Thursday.&rdquo;</em> <strong>Thursday had that same ratio and delivered one race, not six.</strong> The card shed 46% and the slot was shut in all eight.
-      Repeating the forecast for Friday off the same kind of evidence would be making the identical mistake twice in three days.<br><br>
-      <strong style="color:#fca5a5">The entered field sizes are unchanged from Monday&rsquo;s paste: 23, 42, 13, 9, 20, 17, 31, 44.</strong> Two of those cannot start
-      &mdash; no British track runs 42 in a Class 5 mile or 44 in a 1m2f handicap &mdash; so the number that matters, the declared field size,
-      <strong>is not in this document at all.</strong> Field size is the one thing an entry list cannot tell you, and the LONG gate is a field-size test. That is now
-      written into &sect;9 as a standing note on this meeting.<br><br>
-      <strong>So the honest statement is conditional, not predictive.</strong> The 16:45 nursery and the 17:20 handicap are the two races that could still declare
-      sixteen or more, and the 15:35 fillies&rsquo; handicap and 16:10 maiden are the next two. <strong>If</strong> any of them declares a 16+ handicap
-      <strong>and</strong> the bookmaker&rsquo;s offer actually pays the places, the slot opens for that race. Neither half of that is known today.<br><br>
-      <strong>One thing can be said now: the Doncaster Cup will not open it.</strong> Nine entered in a Group 2 over 2m1f197y, and a staying Group 2 does not grow.
-      That is arithmetic, not judgement (Step 4).</div>
-    <div class="pending-inline" style="background:rgba(74,222,128,0.07);border-color:rgba(74,222,128,0.45);color:#cbd5cf">
-      <strong style="color:var(--green-lt)">The one thing the second paste does give us: a real market trail &mdash; the baseline Thursday&rsquo;s card had to go without.</strong><br><br>
-      The field block is frozen at entries, but the <strong>price block is not</strong>. Comparing the two pastes gives a genuine two-point trail across
-      <strong>65 priced runners: 14 STEAM, 17 DRIFT, 34 unchanged</strong>. Step 5b wants the full trail and Thursday had none, because only one copy of that card
-      ever existed. Here there are two.<br><br>
-      <strong style="color:var(--gold-lt)">13:15 Flying Scotsman &mdash; the favouritism has swapped, and it is the biggest move on the card.</strong><br>
-      <strong>Nabati 8/1 &rarr; 11/8 STEAM</strong> &middot; <strong>Monogram 11/8 &rarr; 5/1 DRIFT</strong> &middot; Desert Castle 6/1 &rarr; 16/1 DRIFT &middot;
-      Engraved 33/1 &rarr; 20/1 STEAM &middot; Forbidden Fire 5/1 &rarr; 4/1 STEAM.<br>
-      Nabati is Appleby&rsquo;s, Buick rides, and he is <strong>top-rated in the race on OR 104</strong>. That is the declaration-driven steamer shape Step 5b is built on.<br><br>
-      <strong style="color:var(--gold-lt)">15:00 Doncaster Cup &mdash; every one of the nine moved.</strong><br>
-      <strong>Winday 12/1 &rarr; 5/1 STEAM</strong> is the standout, a 3yo for Emmet Mullins with Buick booked. Also Queenstown 5/2 &rarr; 2/1 STEAM,
-      Beylerbeyi 12/1 &rarr; 8/1 STEAM, Peace Belle 50/1 &rarr; 33/1 STEAM, against Epic Poet 10/1 &rarr; 16/1 DRIFT, French Master 7/1 &rarr; 8/1 DRIFT and
-      <strong>Caballo De Mar 6/4 &rarr; 7/4 DRIFT</strong> &mdash; the beaten favourite from Ebor Day 3 easing at the head of the market.<br><br>
-      <strong style="color:var(--gold-lt)">14:25 Flying Childers</strong> &mdash; Sale Shark 9/2 &rarr; 4/1 and Flann Sunna 11/2 &rarr; 9/2 STEAM;
-      Final Objective 4/1 &rarr; 9/2, Carry The Flag 7/1 &rarr; 10/1 and Crownbreaker 8/1 &rarr; 10/1 DRIFT. Pershaada holds 9/4.<br>
-      <strong style="color:var(--gold-lt)">15:35 Fillies&rsquo; Handicap</strong> &mdash; Silver Lake 9/4 &rarr; 2/1 and Ruby Wedding 6/1 &rarr; 5/1 STEAM;
-      <strong>Summerson 6/1 &rarr; 10/1 DRIFT</strong>, which matters because the race is weighted off <em>his</em> mark of 96.<br><br>
-      <strong style="color:#fca5a5">Read this weaker than a declared-card trail, and here is exactly why.</strong> These are ante-post prices on a field that is
-      going to shed roughly half. <strong>A drift can simply mean the market has decided a horse will not run</strong> &mdash; Monogram going 11/8 to 5/1 is at least
-      as likely to be a non-runner signal as an opinion about his chance. That reading is unavailable on a declared card and it is the reason this trail is recorded
-      as a baseline rather than used as a signal. <strong>It becomes usable the moment the field is published</strong>, and it is already more than Thursday had.
-    </div>
+
     <div class="pending-inline" style="background:rgba(251,191,36,0.08);border-color:rgba(251,191,36,0.4)">
-      <strong style="color:var(--gold-lt)">A remarkable number of these horses are already in this archive.</strong><br><br>
-      <strong>Henley On Thames</strong> is entered in the 16:45 &mdash; the horse <strong>rule 17 is named after</strong>. He was held at NB instead of NAP at Ebor purely
-      on drawing 6 &ldquo;the wrong side&rdquo;, on a GoingStick read that had reversed by the off, and won at 10/1.<br><br>
-      <strong>Mehmas Champion</strong> is in the 17:20 &mdash; he <strong>won the Haydock finale at 80/1 on Thursday</strong>, the winner not one column had. <strong>Star Cast</strong>
-      is in the same race, our Haydock Day 1 NAP that ran third at 5/1, and <strong>Nightsinwhitesatin</strong> is in the 15:35 after finishing fourth in that Haydock 17:00.<br><br>
-      <strong>The Flying Childers is a CLAUDE.md reunion:</strong> <strong>Agamemnon</strong> (the 2x we deliberately left out at Ebor, unplaced), <strong>Flann Sunna</strong>
-      (Goodwood&rsquo;s 3x unplaced favourite), <strong>Pershaada</strong> (the Goodwood horse re-routed between races that Step 3b cites) and <strong>Sale Shark</strong>
-      (won at Ebor at 17/2). <strong>Caballo De Mar</strong> heads the Doncaster Cup at 6/4 &mdash; the beaten favourite from Ebor Day 3 that rule 8&rsquo;s cleanest evidence
-      is built on.<br><br>
-      <strong>None of that is a reason to back or oppose anything.</strong> It is worth noting because it means the settled record already holds real information on these
-      horses &mdash; and that information becomes usable the moment there is a declared field to attach it to.
+      <strong style="color:var(--gold-lt)">The archive reunion, now that declarations have decided which of them actually turn up.</strong><br><br>
+      <strong>Declared and on our card:</strong> <strong>Henley On Thames</strong> (16:45) &mdash; the horse rule 17 is named after, our NAP. <strong>Room Fourteen</strong> (15:35)
+      &mdash; the horse Step 3b cites for being priced in the wrong race at Goodwood, our NAP, and the race assignment has been verified. <strong>Caballo De Mar</strong> (15:00)
+      &mdash; rule 8&rsquo;s beaten 7/4 favourite from Ebor Day 3, our NAP.<br><br>
+      <strong>Declared and opposed:</strong> <strong>Pershaada</strong> (14:25), the Goodwood horse re-routed between races &mdash; and the biggest drift on the card.
+      <strong>Flann Sunna</strong> (14:25), Goodwood&rsquo;s 3x unplaced favourite. <strong>Agamemnon</strong> (14:25), the 2x we deliberately left out at Ebor, unplaced.
+      <strong>Sale Shark</strong> (14:25), the Ebor 17/2 winner, now Mullington&rsquo;s nap and drifting. <strong>Kach Above</strong> (13:15) &mdash; and he is the interesting one, below.<br><br>
+      <strong>The cross-day check, resolved exactly.</strong> This page named <strong>seven horses entered for both Thursday and Friday</strong> and said which ones came out would not be
+      knowable until the field was published. <strong>Six of the seven ran on Thursday and none of them is here.</strong> The seventh is <strong>Kach Above</strong>, who was
+      <strong>withdrawn from Thursday&rsquo;s 16:45 on unsuitable ground</strong> as the top weight off a mark of 94 &mdash; and takes his place in today&rsquo;s Listed race instead,
+      on Good, at 66/1 after drifting from 25/1. A horse cannot run twice in an afternoon; it can miss one day and turn up the next. That is Step 3b&rsquo;s race-assignment check
+      working across days rather than within a card.<br><br>
+      <strong>Did not declare:</strong> Mehmas Champion, Star Cast and Nightsinwhitesatin, all named here on Monday off the entry list.
     </div>
-
-    <div class="race-block"><p class="race-hd">13:15 &middot; Betfred Flying Scotsman Stakes <span class="g1">(Listed)</span> &middot; 7f6y &middot; <strong style="color:#fca5a5">23 entered</strong> &middot; Cl1 2yo &middot; Good to Soft</p><div class="pick-row"><div class="pick-tag gate">GATE</div><div><span class="pick-horse">NO BET &mdash; entry list, not declarations</span><div class="pick-note">&pound;65,000 guaranteed. <strong>The favouritism has changed hands since Monday</strong>: Monogram was 11/8 and is now 5/1, Nabati was 8/1 and is now 11/8 (see the market trail above). <strong>23 entered and 23 listed</strong>, with no draw for any runner. Declarations were due <strong>today, Wednesday 9 September</strong>, and had not published when this was pasted.</div></div></div></div>
-    <div class="race-block"><p class="race-hd">13:50 &middot; Betfred Leger Legends Classified Stakes &middot; 1m &middot; <strong style="color:#fca5a5">42 entered</strong> &middot; Cl5 3yo+ 0-70 &middot; Good to Soft</p><div class="pick-row"><div class="pick-tag gate">GATE</div><div><span class="pick-horse">NO BET &mdash; entry list, not declarations</span><div class="pick-note"><strong style="color:#fca5a5">Forty-two entered in a one-mile Class 5.</strong> Doncaster&rsquo;s round mile cannot start a field of that size &mdash; this figure alone proves the card is entries. <strong>42 entered and 42 listed</strong>, with no draw for any runner. Declarations were due <strong>today, Wednesday 9 September</strong>, and had not published when this was pasted.</div></div></div></div>
-    <div class="race-block"><p class="race-hd">14:25 &middot; Carlsberg Flying Childers Stakes <span class="g1">(Group 2)</span> &middot; 5f3y &middot; <strong style="color:#fca5a5">13 entered</strong> &middot; Cl1 2yo &middot; Good to Soft</p><div class="pick-row"><div class="pick-tag gate">GATE</div><div><span class="pick-horse">NO BET &mdash; entry list, not declarations</span><div class="pick-note"><strong>&pound;130,000 guaranteed.</strong> The sprint Group 2, and the only race on the card entered under 16. <strong>13 entered and 13 listed</strong>, with no draw for any runner. Declarations were due <strong>today, Wednesday 9 September</strong>, and had not published when this was pasted.</div></div></div></div>
-    <div class="race-block"><p class="race-hd">15:00 &middot; Betfred Doncaster Cup <span class="g1">(Group 2)</span> &middot; 2m1f197y &middot; <strong style="color:#fca5a5">9 entered</strong> &middot; Cl1 3yo+ &middot; Good to Soft</p><div class="pick-row"><div class="pick-tag gate">GATE</div><div><span class="pick-horse">NO BET &mdash; entry list, not declarations</span><div class="pick-note"><strong>&pound;165,000 guaranteed</strong> &mdash; the stayers&rsquo; Group 2 over nearly two and a quarter miles. <strong>Nine entered</strong>, so the LONG will almost certainly be shut here whatever declarations do. <strong>9 entered and 9 listed</strong>, with no draw for any runner. Declarations were due <strong>today, Wednesday 9 September</strong>, and had not published when this was pasted.</div></div></div></div>
-    <div class="race-block"><p class="race-hd">15:35 &middot; British Stallion Studs EBF Premier Fillies&rsquo; Handicap &middot; 1m3f197y &middot; <strong style="color:#fca5a5">20 entered</strong> &middot; Cl2 3yo+ 0-100 &middot; Good to Soft</p><div class="pick-row"><div class="pick-tag gate">GATE</div><div><span class="pick-horse">NO BET &mdash; entry list, not declarations</span><div class="pick-note">&pound;85,000 guaranteed. <strong>20 entered and 20 listed</strong>, with no draw for any runner. Declarations were due <strong>today, Wednesday 9 September</strong>, and had not published when this was pasted.</div></div></div></div>
-    <div class="race-block"><p class="race-hd">16:10 &middot; Coopers Marquees EBF Maiden Fillies&rsquo; Stakes &middot; 7f6y &middot; <strong style="color:#fca5a5">17 entered</strong> &middot; Cl2 2yo &middot; Good to Soft</p><div class="pick-row"><div class="pick-tag gate">GATE</div><div><span class="pick-horse">NO BET &mdash; entry list, not declarations</span><div class="pick-note">&pound;40,000 guaranteed. A 2yo maiden &mdash; <strong>eight of the seventeen have never run</strong>, so there is no form to weigh even once it is declared. <strong>17 entered and 17 listed</strong>, with no draw for any runner. Declarations were due <strong>today, Wednesday 9 September</strong>, and had not published when this was pasted.</div></div></div></div>
-    <div class="race-block"><p class="race-hd">16:45 &middot; Tanbry Construction Nursery Handicap &middot; 6f2y &middot; <strong style="color:#fca5a5">31 entered</strong> &middot; Cl4 2yo 0-85 &middot; Good to Soft</p><div class="pick-row"><div class="pick-tag gate">GATE</div><div><span class="pick-horse">NO BET &mdash; entry list, not declarations</span><div class="pick-note">&pound;25,000 guaranteed. Thirty-one entered. <strong>31 entered and 31 listed</strong>, with no draw for any runner. Declarations were due <strong>today, Wednesday 9 September</strong>, and had not published when this was pasted.</div></div></div></div>
-    <div class="race-block"><p class="race-hd">17:20 &middot; Pertemps Network Handicap &middot; 1m2f43y &middot; <strong style="color:#fca5a5">44 entered</strong> &middot; Cl4 3yo+ 0-80 &middot; Good to Soft</p><div class="pick-row"><div class="pick-tag gate">GATE</div><div><span class="pick-horse">NO BET &mdash; entry list, not declarations</span><div class="pick-note"><strong style="color:#fca5a5">Forty-four entered</strong> in a 1m2f handicap &mdash; the largest entry on either day and, again, an impossible field. <strong>44 entered and 44 listed</strong>, with no draw for any runner. Declarations were due <strong>today, Wednesday 9 September</strong>, and had not published when this was pasted.</div></div></div></div>
   </section>
-
   <!-- ── DAY 3 ──────────────────────────────────────────── -->
   <section id="day3" class="panel eb-top">
     <h2 class="panel-head">&#128197; Day 3 &middot; Saturday 12 September &middot; <span style="color:var(--silver)">awaiting declarations</span></h2>
