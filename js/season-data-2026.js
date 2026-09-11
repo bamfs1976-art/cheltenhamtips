@@ -150,7 +150,7 @@ const FESTIVALS_2026 = [
     dateLabel:'10–13 Sep 2026', venue:'Doncaster', type:'Flat',
     theme:'theme-gold', accentColor:'#eab308', url:'st-leger-2026.html',
     races:null,
-    headline:'Day 2 priced — 8/8 gated, 17 picks, £17.00. Friday declared 199 entries down to 88 runners, a 56% shed, and every race carries a Betting Forecast, so every pick has a STEAM/DRIFT recorded for the first time this meeting. The LONG slot opens in the 17:20 — the first in thirty races — and is provisional: eighteen runners is two above the count that pays five places. Whole-field headgear scan run before selections: four first-time markers on 88 runners, no wind operations. Day 1 settled −£10.60 on £16.00 (−66.2%). Saturday is the 250th St Leger.',
+    headline:'Day 3 priced — the 250th St Leger. 7/7 gated, 16 picks, £16.00, and the cleanest card of the meeting: every draw sequence unbroken, so nothing has come out since declarations. The LONG slot opens TWICE in one afternoon for the first time this season — Station X 20/1 in the 22-runner Portland and Pinatubo\'s Legacy 28/1 in the 17-runner mile handicap — both provisional under rule 16. Five first-time headgear markers on 87 runners, one of them cheekpieces on the 2/1 Classic favourite Enceladus, and no wind operation anywhere. The market has split the two Ballydoyle principals in the Leger: Pierre Bonnard 7/2→3/1 while Christmas Day eases 2/1→5/2. Day 1 settled −£10.60 (−66.2%); Friday priced at £17.00 and awaiting results.',
 
     headlineRace:'Betfred St Leger Stakes (G1) · Sat 12 Sep — 250th running · Park Hill (G2) · Champagne Stakes (G2)',
   },
