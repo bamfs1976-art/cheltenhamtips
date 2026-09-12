@@ -478,6 +478,7 @@ Rules:
 | SH | Sam Hardy | light violet (#ddd6fe) |
 | SPOT | Racing Post Spotlight (per-race verdict, named writer) | fuchsia (#f0abfc) |
 | TN | The North (Racing Post regional column) | amber (#fcd34d) |
+| FR | Frick (@frickstips) | indigo (#818cf8) |
 
 New tipsters: assign a 2-3 letter code and a distinct badge colour. Keep
 the system extensible.
