@@ -122,6 +122,8 @@
   .rec-table td.num { text-align:right; font-variant-numeric:tabular-nums }
   .rec-table tr.hl td { color:var(--green-lt); font-weight:700 }
   .rec-table tr.lo td { color:var(--pink) }
+  .tbl-scroll { overflow-x:auto; -webkit-overflow-scrolling:touch; margin:8px 0 }
+  .tbl-scroll > .rec-table { min-width:440px; margin:0 }
   .footer { text-align:center; font-size:0.74rem; color:var(--silver); padding:22px 14px; line-height:1.7; border-top:1px solid rgba(255,255,255,0.06); margin-top:10px }
   .gambleaware { color:var(--gold-lt); margin-top:6px }
   @media (max-width:480px){ .pick-row{ grid-template-columns:48px 1fr auto; gap:6px } }
@@ -153,13 +155,13 @@
   <div class="day-tabs">
     <a href="#day1" class="day-tab">Thu 10 Sep &middot; settled</a>
     <a href="#day2" class="day-tab">Fri 11 Sep &middot; settled +&pound;3.47</a>
-    <a href="#day3" class="day-tab">Sat 12 Sep &middot; ST LEGER &middot; priced</a>
+    <a href="#day3" class="day-tab">Sat 12 Sep &middot; ST LEGER &middot; &minus;&pound;6.57</a>
     <a href="#day4" class="day-tab active">Sun 13 Sep &middot; priced</a>
   </div>
 
   <div class="titlebar">
     <h2>st-leger-day4-tips &middot; Sunday 13 September 2026 &middot; Doncaster &middot; <span style="color:var(--silver)">final day</span></h2>
-    <p><strong>8 races &middot; 8/8 gated &middot; 18 picks &middot; &pound;18.00 &middot; 109 runners, the biggest card of the meeting.</strong> <strong style="color:var(--gold-lt)">The whole-field scan found the festival&rsquo;s only first-time wind operation &mdash; Mo Of Cairo, <code>w1</code>, 14/1 &mdash; and it is backed as the LONG</strong>, which is the marker Step 3 item 11 was written into the engine for. <strong style="color:#f9a8d4">The LONG opens twice and both races declared exactly sixteen runners: zero place-band margin, so one non-runner shuts either slot.</strong> The 15:05 Group 3 has twenty runners and the slot is <strong>held back against the gate&rsquo;s own output</strong>, because a non-handicap is not a five-place race. <strong style="color:var(--gold-lt)">Spotlight has rated Forty Years On &#9733;&#9733;&#9733; &mdash; the first multi-star row in the archive, on our NB.</strong> Recorded at full strength; the slots do not move. Day 1 settled &minus;&pound;10.60, Day 2 <strong style="color:var(--green-lt)">+&pound;3.47</strong>, Day 3 priced and awaiting results.</p>
+    <p><strong>8 races &middot; 8/8 gated &middot; 18 picks &middot; &pound;18.00 &middot; 109 runners, the biggest card of the meeting.</strong> <strong style="color:var(--gold-lt)">The whole-field scan found the festival&rsquo;s only first-time wind operation &mdash; Mo Of Cairo, <code>w1</code>, 14/1 &mdash; and it is backed as the LONG</strong>, which is the marker Step 3 item 11 was written into the engine for. <strong style="color:#f9a8d4">The LONG opens twice and both races declared exactly sixteen runners: zero place-band margin, so one non-runner shuts either slot.</strong> The 15:05 Group 3 has twenty runners and the slot is <strong>held back against the gate&rsquo;s own output</strong>, because a non-handicap is not a five-place race. <strong style="color:var(--gold-lt)">Spotlight has rated Forty Years On &#9733;&#9733;&#9733; &mdash; the first multi-star row in the archive, on our NB.</strong> Recorded at full strength; the slots do not move. Day 1 &minus;&pound;10.60, Day 2 <strong style="color:var(--green-lt)">+&pound;3.47</strong>, <strong style="color:#fca5a5">Day 3 settled &minus;&pound;6.57 (&minus;41.0%)</strong> &mdash; the 3x was beaten, the Classic went to an 11/1 shot no column named, and <strong>three horses we opposed on a drift had all shortened by the off</strong>. Meeting <strong style="color:#fca5a5">&minus;&pound;13.70 on &pound;49.00</strong>.</p>
   </div>
 
   <!-- ── DAY 1 ─────────────────────────── -->
@@ -1009,7 +1011,7 @@
 
   <!-- ── DAY 3 ────────────────────────────── -->
   <section id="day3" class="panel eb-top">
-    <h2 class="panel-head">&#127942; Day 3 &middot; Saturday 12 September &middot; THE 250th ST LEGER &middot; 7 races &middot; <span style="color:var(--green-lt)">7/7 gated</span> &middot; 16 picks &middot; &pound;16.00 &middot; 5 columns &middot; <span style="color:var(--gold-lt)">1 3x + 4 2x</span></h2>
+    <h2 class="panel-head">&#127942; Day 3 &middot; Saturday 12 September &middot; THE 250th ST LEGER &middot; 7 races &middot; <span style="color:var(--green-lt)">7/7 gated</span> &middot; 16 picks &middot; &pound;16.00 &middot; 5 columns &middot; <span style="color:#fca5a5">settled &minus;&pound;6.57 (&minus;41.0%)</span></h2>
 
     <div class="pending-inline" style="background:rgba(74,222,128,0.09);border-color:rgba(74,222,128,0.5);color:#cbd5cf">
       <strong style="color:var(--green-lt)">Saturday is declared and it is the cleanest card of the meeting: 7 races, 7 pass, 0 NO BET &mdash; and not a single non-runner yet.</strong><br><br>
@@ -1295,6 +1297,172 @@
       <strong>Staking: 16 picks at 50p each-way, &pound;1 per bet, &pound;16.00 total.</strong> Five races run two picks; the Portland and the 16:15 run three.
     </div>
   </section>
+  <!-- ── DAY 3 RESULTS ─────────────────────── -->
+  <section id="day3-results" class="panel eb-top">
+    <h2 class="panel-head">&#128202; Day 3 settled &middot; Saturday 12 September &middot; <span style="color:#fca5a5">&minus;&pound;6.57 (&minus;41.0%)</span></h2>
+
+    <div class="pl-box" style="border-left-color:#ef4444">
+      <strong>2 winners and 5 placed from 16 picks — staked £16.00 · returned £9.43 · net −£6.57 (−41.0%).</strong><br>
+      <strong>NAP</strong> 1 winner and 4 placed from 7, returned &pound;7.01 on &pound;7.00 &mdash; net <strong>+&pound;0.01</strong>, level to the penny.
+      <strong>NB</strong> 1 winner and 1 placed from 7, returned &pound;2.42 on &pound;7.00 &mdash; net <strong style="color:#fca5a5">&minus;&pound;4.58</strong>.
+      <strong>LONG</strong> 0 from 2, returned nothing &mdash; net <strong style="color:#fca5a5">&minus;&pound;2.00</strong>.<br><br>
+      <strong>Seven of sixteen picks made the frame and the card still lost two fifths of its stake</strong>, which is what happens when five of the seven are places rather
+      than wins and two of those are at 2/1 and 6/5.<br><br>
+      Season: <strong>&pound;772.00 staked, &pound;662.22 returned, &minus;&pound;109.78 (&minus;14.2%)</strong>.
+      Meeting after three days: <strong>&minus;&pound;13.70 on &pound;49.00 (&minus;28.0%)</strong>.
+    </div>
+
+    <div class="res-row"><span class="rt">13:10</span> <strong>EBF Maiden &middot; 10 ran &middot; 3 places</strong><br>
+      1st <strong>Al Jabbar 3/1</strong> &middot; 2nd Hmas Perth 4/1 &middot; 3rd Game Character 5/2F<br>
+      <span class="res-w">Al Jabbar (NAP) 15/8 WON &mdash; returned &pound;2.13.</span> <span class="res-l">Berkshire Regal (NB) 6/1 unplaced.</span><br>
+      <strong>The biggest steamer on the card won it</strong> &mdash; but he was <strong>15/8 when we priced him and went off 3/1</strong>, so he drifted into the win.
+      And <strong style="color:#fca5a5">Game Character, the horse we opposed as &ldquo;the biggest drifter on the whole card, 7/2&rarr;11/1&rdquo;, ran third having come back to
+      5/2 favourite.</strong> See the panel below; this is the day&rsquo;s real lesson and it starts here.</div>
+
+    <div class="res-row"><span class="rt">13:45</span> <strong>Champagne Stakes (Group 2) &middot; 5 ran (Rosberg NR) &middot; 2 places</strong><br>
+      1st <strong>Desert Castle EvensF</strong> &middot; 2nd Sergei Diaghilev 5/2 &middot; 3rd Breacher 10/1<br>
+      <span class="res-p">Sergei Diaghilev (NAP) 11/2 second &mdash; returned &pound;1.19.</span> <span class="res-l">Gentle Hurricane (NB) 6/1 unplaced.</span><br>
+      <strong style="color:#fca5a5">Desert Castle is the second horse this card opposed by name and the second to shorten into the result.</strong> We left him out on the
+      lowest Topspeed and lowest RPR in the field and a drift from 4/5 to 6/5. <strong>He went off EvensF and won by three lengths.</strong> Rule 6 held exactly as printed:
+      six declared, one withdrawal, five ran, two places paid &mdash; the warning was that <em>two</em> withdrawals would make it win-only.
+      <strong>Breacher, the SPOT + FR dissent crossover, was third at 10/1.</strong></div>
+
+    <div class="res-row"><span class="rt">14:20</span> <strong>The Portland (Heritage Handicap) &middot; 21 ran (Trefor NR) &middot; Tote paid 4 places</strong><br>
+      1st <strong>Air Force One 11/2</strong> &middot; 2nd Twilight Calls 11/2 &middot; 3rd Al Shabab Storm 22/1 &middot; 4th Annaf 20/1 &middot; unplaced fav Toca Madera 5/1F<br>
+      <span class="res-p">Twilight Calls (NAP) 13/2 second &mdash; returned &pound;1.31.</span> <span class="res-l">Eternal Sunshine (NB) 15/2 and Station X (LONG) 20/1 both out of the frame.</span><br>
+      <strong>Beaten half a length.</strong> Our NAP, Spotlight&rsquo;s nap and Frick&rsquo;s pick all ran second in a 21-runner heritage handicap. <strong>Apollo One, the
+      SM + FR dissent crossover, was unplaced</strong>, and so was the 5/1 favourite. <strong>The rule-16 flag resolved safely</strong> &mdash; 22 declared shed one and the band
+      needed seven to go.</div>
+
+    <div class="res-row"><span class="rt">14:55</span> <strong>Park Stakes (Group 2) &middot; 8 ran &middot; 3 places</strong><br>
+      1st <strong>More Thunder 4/5F</strong> &middot; 2nd Flora Of Bermuda 6/1 &middot; 3rd Qirat 11/1<br>
+      <span class="res-w">More Thunder (NB) 6/5 WON &mdash; returned &pound;1.72.</span> <span class="res-p">Flora Of Bermuda (NAP) 7/1 second &mdash; returned &pound;1.20.</span><br>
+      <strong style="color:var(--green-lt)">Our one-two, and the NB beat the NAP again.</strong> More Thunder was top of the field on all three figures and went to NB because
+      Spotlight held him &mdash; rule 8 working as written, and costing nothing here because both picks made the frame.
+      <strong>Qirat was third</strong>, the horse rule 8 records as Goodwood&rsquo;s beaten 5x unanimous pick; we opposed him and he placed without winning.</div>
+
+    <div class="res-row"><span class="rt">15:35</span> <strong>THE ST LEGER (Group 1) &middot; 11 ran &middot; 3 places</strong><br>
+      1st <strong>Highwayman 11/1</strong> &middot; 2nd Enceladus 5/2 &middot; 3rd Amelia Earhart 22/1 &middot; <strong style="color:#fca5a5">unplaced fav Christmas Day 7/4F</strong><br>
+      <span class="res-p">Enceladus (NB) 2/1 second &mdash; returned &pound;0.70.</span> <span class="res-l">Pierre Bonnard (NAP) 3/1 unplaced.</span><br>
+      <strong style="color:var(--gold-lt)">The 250th St Leger went to a horse not one of five columns named, and the card&rsquo;s only 3x was beaten.</strong> See the two panels below.</div>
+
+    <div class="res-row"><span class="rt">16:15</span> <strong>Pertemps Network Handicap &middot; 17 ran &middot; Tote paid 4 places</strong><br>
+      1st <strong>Scoville 5/1</strong> &middot; 2nd Moonfall 11/2 &middot; 3rd Ebt&rsquo;s Guard 22/1 &middot; 4th River King 7/1 &middot; <strong style="color:#fca5a5">unplaced fav Inspired 4/1F</strong><br>
+      <span class="res-l">Inspired (NAP) 17/2, Blue Courvoisier (NB) 6/1 and Pinatubo&rsquo;s Legacy (LONG) 28/1 all out of the frame.</span><br>
+      <strong style="color:#fca5a5">The worst race of the day and the one that carries the lesson twice over.</strong> <strong>Scoville won at 5/1 &mdash; named on this card and
+      left out</strong> as &ldquo;a beaten favourite drifting 11/2&rarr;8/1&rdquo;; he came back to 5/1. <strong>And our NAP was the beaten favourite:</strong> Inspired was
+      <strong>17/2 when we priced him and went off 4/1</strong>, the biggest shortening of any pick all week, and finished nowhere. The rule-16 flag resolved safely &mdash;
+      no withdrawals, the band held at seventeen &mdash; so the LONG lost on merit.</div>
+
+    <div class="res-row"><span class="rt">16:48</span> <strong>PJ Towey Handicap &middot; 12 ran (Old Harrovian NR) &middot; Tote paid 3 places</strong><br>
+      1st <strong>Thunder Run 11/4F</strong> &middot; 2nd City Of Poets 5/1 &middot; 3rd Tawajjah 7/2<br>
+      <span class="res-p">Tawajjah (NAP) 11/2 third &mdash; returned &pound;1.19.</span> <span class="res-l">Port Of London (NB) 15/2 not in the first three.</span><br>
+      <strong>Our NAP made the frame and shortened into it &mdash; 11/2 on the card, 7/2 at the off</strong>, which is the one market read of the day that pointed the right way.
+      <strong>City Of Poets, the other half of Spotlight&rsquo;s shortlist, was second at 5/1</strong> after drifting 7/1&rarr;11/1 on our card. <strong>One part of this race
+      cannot be settled from the results supplied</strong> &mdash; see the place-terms note.</div>
+
+    <div class="panel" style="border-top:3px solid #ef4444;margin-top:16px">
+      <h2 class="panel-head" style="color:#fca5a5">&#9888; The finding: we record the wrong market move, and Saturday proved it four times</h2>
+      <div class="nobet">
+        <strong>Every STEAM and DRIFT on this card is measured from the Racing Post <em>betting forecast</em> to the <em>racecard board price</em>. Nothing measures the move from
+        the racecard to the off &mdash; and on Saturday that second move was bigger, and it went the other way.</strong><br><br>
+        <div class="tbl-scroll"><table class="rec-table" style="width:100%;font-size:0.78rem">
+          <tr><th style="text-align:left">Horse</th><th>Forecast</th><th>Our card</th><th>Off (SP)</th><th style="text-align:left">Result</th></tr>
+          <tr><td><strong>Desert Castle</strong> &mdash; opposed</td><td>4/5</td><td>6/5 DRIFT</td><td><strong>EvensF</strong></td><td><strong style="color:#fca5a5">WON</strong></td></tr>
+          <tr><td><strong>Scoville</strong> &mdash; named, left out</td><td>11/2</td><td>8/1 DRIFT</td><td><strong>5/1</strong></td><td><strong style="color:#fca5a5">WON</strong></td></tr>
+          <tr><td><strong>Game Character</strong> &mdash; opposed</td><td>7/2</td><td>11/1 DRIFT</td><td><strong>5/2F</strong></td><td>3rd</td></tr>
+          <tr><td><strong>Al Jabbar</strong> &mdash; our NAP</td><td>13/2</td><td>15/8 STEAM</td><td><strong>3/1</strong></td><td><strong style="color:var(--green-lt)">WON</strong></td></tr>
+          <tr><td><strong>Inspired</strong> &mdash; our NAP</td><td>14/1</td><td>17/2 STEAM</td><td><strong>4/1F</strong></td><td>unplaced</td></tr>
+        </table></div>
+        <strong style="color:#fca5a5">All three horses we opposed on a drift shortened materially by the off, and two of them won.</strong> Desert Castle came from 6/5 to Evens,
+        Scoville from 8/1 to 5/1, Game Character from 11/1 to 5/2 favourite. <strong>Each was excluded in writing for easing, and each had stopped easing before the stalls opened.</strong><br><br>
+        <strong style="color:#fca5a5">And our own two biggest reads inverted in opposite directions on the same afternoon.</strong> Al Jabbar was the card&rsquo;s largest steamer at
+        15/8, drifted to 3/1, and won. Inspired was 17/2, steamed to 4/1 favourite &mdash; the biggest shortening of any pick this week &mdash; and was beaten out of the frame.
+        <strong>Both market signals were wrong, in opposite directions, in the same three hours.</strong><br><br>
+        <strong style="color:var(--gold-lt)">What this changes, stated as a rule rather than an observation.</strong> &sect;12 makes the betting forecast the baseline for calling
+        STEAM and DRIFT, and rule 16 says re-check <em>the LONG&rsquo;s</em> price at the off because Lesrico went 9/1 to 3/1. <strong>Nothing in the engine says re-check
+        <em>every</em> pick&rsquo;s price at the off, and Saturday says the forecast-to-card move we do record is the less informative of the two.</strong> Friday already showed
+        Caballo De Mar logged as a drifter at 6/4 and going off 5/6; this is the same failure at scale.<br><br>
+        <strong>The narrow, testable version: a drift measured at the racecard is not a demotion signal, because roughly half a day of money has yet to arrive.</strong> On this card
+        it reversed on every horse it mattered for. Rule 18 already refuses to call the market settled; this says <em>when</em> to read it, not whether.
+      </div>
+    </div>
+
+    <div class="panel" style="border-top:3px solid var(--gold);margin-top:16px">
+      <h2 class="panel-head" style="color:var(--gold-lt)">&#127942; The St Leger: the 3x was beaten and the Classic went to a horse nobody named</h2>
+      <div class="nobet">
+        <strong>Highwayman won the 250th St Leger at 11/1</strong> &mdash; Joseph O&rsquo;Brien&rsquo;s <em>other</em> runner, ridden by Saffie Osborne. <strong>Not one of the five
+        columns tracked this week held him, and neither did we.</strong><br><br>
+        <strong style="color:var(--gold-lt)">Enceladus, the card&rsquo;s only 3x, ran second at 5/2.</strong> Spotlight napped him, Mullington made him his NB, Frick backed him to
+        win. He was placed at <strong>NB</strong> before a single column was read, on rule 8 alone, and the panel published that morning said the rule had &ldquo;anticipated the
+        crowd&rdquo;. <strong>It had. The consensus horse did not win.</strong> That is now Goodwood, Ebor Day 3, the Sprint Cup, Friday&rsquo;s Doncaster Cup and here &mdash;
+        five meetings.<br><br>
+        <strong style="color:var(--green-lt)">And the opposition was right too: Christmas Day, opposed by name, was the unplaced 7/4 favourite.</strong> This is the part worth
+        being careful about. On Saturday morning this page ran a panel headed <em>&ldquo;the St Leger market has moved back, and it weakens the case for our NAP&rdquo;</em>, because
+        Christmas Day had come in from 5/2 to 9/4 overnight and Grimshaw had backed him to win. He went off <strong>7/4 favourite</strong> and finished out of the frame.
+        <strong>Recording the move at full strength and refusing to act on it was the right call, and the card said so in advance.</strong><br><br>
+        <strong style="color:#fca5a5">But being right about Christmas Day earned nothing, because Pierre Bonnard was unplaced as well.</strong> Our NAP was taken on the
+        within-stable market split &mdash; Pierre Bonnard shortening while Christmas Day eased &mdash; and the race was won by a third runner from the other O&rsquo;Brien yard.
+        <strong>The whole argument was about the wrong two horses.</strong> Opposing the favourite correctly and backing the wrong alternative is a losing bet, and the archive should
+        record it that way rather than as a vindication.
+      </div>
+    </div>
+
+    <div class="panel" style="border-top:3px solid var(--pink);margin-top:16px">
+      <h2 class="panel-head" style="color:#f9a8d4">&#127919; Both LONGs lost &mdash; and both rule-16 flags resolved safely, so they lost on merit</h2>
+      <div class="nobet">
+        <strong>Station X 20/1 and Pinatubo&rsquo;s Legacy 28/1 both finished out of the frame. &pound;2.00 staked, nothing returned.</strong> The slot&rsquo;s season record moves to
+        <strong>183 picks, 12 wins</strong>; Friday&rsquo;s placed 14/1 remains the only return since Ebor.<br><br>
+        <strong style="color:var(--green-lt)">The place bands both held, which matters for what the loss means.</strong> The Portland declared 22 and ran 21 &mdash; it needed seven
+        withdrawals to drop a place. The 16:15 declared 17 and ran 17, no withdrawals at all, so the band that Saturday&rsquo;s card called &ldquo;the tighter of the two&rdquo; never
+        came under pressure. <strong>Neither LONG was settled under terms different from the ones the gate approved.</strong> They were simply beaten.<br><br>
+        <strong>And the hold in the 15:05 cost nothing.</strong> The card refused the LONG in the 20-runner Group 3 against the gate&rsquo;s own output, on the ground that a
+        non-handicap is not a five-place race, and named <strong>The Prettiest Star 8/1</strong> as the bet that would have run. He is not in the first three of a race where the
+        Tote paid three. <strong>The hold was right and it also happened to save a pound.</strong>
+      </div>
+    </div>
+
+    <div class="panel" style="border-top:3px solid var(--blue-l);margin-top:16px">
+      <h2 class="panel-head" style="color:var(--blue-l)">&#128260; Crossovers, columns and place terms</h2>
+      <div class="nobet">
+        <strong>Not one crossover horse won a race, for the second day running.</strong><br>
+        &bull; <strong>Enceladus</strong> (3x &mdash; SPOT + SM + FR, held at NB) &mdash; <strong>second</strong><br>
+        &bull; <strong>Twilight Calls</strong> (2x &mdash; SPOT + FR, held at NAP) &mdash; <strong>second</strong><br>
+        &bull; <strong>Blue Courvoisier</strong> (2x &mdash; SPOT + FR, held at NB) &mdash; unplaced<br>
+        &bull; <strong>Breacher</strong> (2x dissent &mdash; SPOT + FR, not held) &mdash; <strong>third</strong><br>
+        &bull; <strong>Apollo One</strong> (2x dissent &mdash; SM + FR, not held) &mdash; unplaced<br>
+        Two seconds, one third, two beaten, <strong>no winner among five multi-source horses</strong>. Both dissent calls were correct in that neither won; Breacher placing at 10/1
+        is the honest qualification, and the disagreement there was RPR against Topspeed and official rating &mdash; our two figures beat his one into third.<br><br>
+        <strong>Columns on live picks:</strong> <span style="color:#4ade80"><strong>Mullington 2 winners from 6</strong></span> &mdash; Al Jabbar, which we shared as our NAP, and
+        <strong>Desert Castle, which we opposed</strong> &mdash; comfortably the best column of the day. <span style="color:#f0abfc"><strong>Spotlight 1 from 7</strong></span>
+        (More Thunder) with four placed. <span style="color:#a5b4fc"><strong>Frick 0 from 6</strong></span> with three placed.
+        <span style="color:#fdba74"><strong>Grimshaw 0 from 2</strong></span>, <span style="color:#c4b5fd"><strong>Raceolly 0 from 3</strong></span>.<br><br>
+        <strong style="color:#fde68a">Frick blanking is worth recording against &sect;6.</strong> The rule says a column&rsquo;s strike rate matters more than its agreement, and
+        Frick leads the season leaderboard on 30% &mdash; so the card wrote that his two dissents &ldquo;carry more than the count suggests&rdquo;. <strong>He went 0 from 6 and
+        neither dissent won.</strong> One day is not a verdict on a season figure, and the rule stands; but the specific sentence overweighted him on the day.<br><br>
+        <strong style="color:var(--blue-l)">Place terms: the Tote paid fewer than our card in three of the seven races</strong> &mdash; the Portland 4 against our 5 on 21 runners,
+        the 16:15 4 against our 5 on 17, and the 16:48 3 against our 4 on 12. <strong>That is the Tote&rsquo;s own schedule again, exactly as Friday established</strong>, and none
+        of the three changed a settled amount. <strong style="color:#fca5a5">One part stays open:</strong> our 16:48 terms were four places, the Tote paid three so no fourth
+        dividend published, and the results give only the first three. <strong>If Port Of London ran fourth a place part is owed</strong>; he is settled as unplaced and the day&rsquo;s
+        total is a floor. That is the second time this meeting the same gap has appeared, and &sect;12&rsquo;s demand for one real bookmaker offer is still unmet.
+      </div>
+    </div>
+
+    <div class="panel" style="border-top:3px solid var(--gold);margin-top:16px">
+      <h2 class="panel-head" style="color:var(--gold-lt)">&#128202; And the slot arithmetic, which is Haydock&rsquo;s lesson again</h2>
+      <div class="nobet">
+        <strong>NAP: 1 winner and 4 placed from 7 &mdash; and exactly level, +&pound;0.01 on &pound;7.00.</strong>
+        <strong>NB: 1 winner and 1 placed from 7 &mdash; &minus;&pound;4.58.</strong><br><br>
+        The NB&rsquo;s two returns were <strong>More Thunder at 6/5</strong> and <strong>Enceladus placed at 2/1</strong>. Rule 8 sends every 3x-or-more pick under 3/1 to the NB, so
+        the slot fills <em>by construction</em> with short-priced consensus horses &mdash; and at those prices a win and a place cannot cover five blanks.
+        <strong>This is the Haydock note in &sect;4 restated by a different card:</strong> a respectable strike rate in that slot is not the same as a profitable slot, and the number
+        to report is points per pick, not wins.<br><br>
+        <strong>The NAP slot finished level on a day the card lost 41%</strong>, which is the other half of the same point: the money went out of the LONG (&minus;&pound;2.00) and out
+        of seven NB blanks, not out of the picks the analysis was most confident about.
+      </div>
+    </div>
+  </section>
+
   <!-- ── DAY 4 ────────────────────────────── -->
   <section id="day4" class="panel eb-top">
     <h2 class="panel-head">&#127942; Day 4 &middot; Sunday 13 September &middot; 8 races &middot; <span style="color:var(--green-lt)">8/8 gated</span> &middot; 18 picks &middot; &pound;18.00 &middot; <span style="color:var(--gold-lt)">the meeting&rsquo;s only w1</span> &middot; <span style="color:var(--gold-lt)">&#9733;&#9733;&#9733; on our NB</span></h2>
