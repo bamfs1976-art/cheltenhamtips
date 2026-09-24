@@ -293,6 +293,31 @@ Of Bermuda and Infraad.
 - This is mechanical and checkable. Prefer it over interpretive angles
   when the two conflict.
 
+**Normalise to the book before calling STEAM or DRIFT.** Added 24 Sep 2026
+(Newmarket, Cambridgeshire meeting). Differencing the Racing Post betting
+forecast against the board price on the same card read **7 STEAM against 31
+DRIFT** on Friday's seven races — a card apparently being deserted wholesale.
+It was margin, not money. The forecast book averaged **123.1%** and the board
+**115.2%**, and the board was looser **in all seven races**, by about eight
+points. A runner can hold exactly the same share of the book and still read as
+a drift, because the whole book got longer.
+
+- Express each price as its share of its own book normalised to 100%, then
+  take the **deviation from the race median**. Friday then reads **21 STEAM,
+  24 DRIFT, 21 flat** — balanced, which is what a card with no news should
+  look like.
+- The median step matters as much as the normalising. A race where every
+  price is unchanged shows a uniform non-zero value; that is the margin
+  rebate spread evenly, not seven horses being backed.
+- This is the **third consecutive meeting** the market method has been found
+  defective and the first with a fix that can be applied immediately. The St
+  Leger found we measure forecast→racecard and never racecard→off; this finds
+  the leg we *do* measure is contaminated. Both are true and both need the
+  same thing: **two observations of the same market, normalised.**
+- Stated limit: this assumes forecast and board are honest statements of the
+  same market differing only in margin. A uniform eight-point gap across seven
+  races is strong evidence, not proof.
+
 ### Step 6 — External tipster integration
 
 When the user provides external tipster picks:
