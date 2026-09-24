@@ -852,6 +852,60 @@ ratings.
   16:10/16:45. Do not price any of it (see §12 on spotting entries).
 - Declarations confirm 48 hours out, as everywhere on UK turf flat.
 
+### Newmarket — Rowley Mile (flat)
+
+Right-handed, wide and galloping, with one of the stiffest finishes in
+Britain. The straight course runs a full mile: it dips about a furlong and a
+half out and then rises to the line, which finds out anything that committed
+too early. No tight bends, no camber. Like York and Doncaster it rewards the
+best horse rather than the best-positioned one, so short-priced class acts
+hold up here far better than at Chester or Epsom.
+
+**Draw.** Close to immaterial in a small field. It becomes a **first-order
+factor in the big autumn handicaps**, where a wide field splits into two or
+more groups and one side can be racing on materially different ground — the
+Cambridgeshire is the standing example. The favoured side moves with the
+ground, the rail and the watering, so rule 17 applies in full: read the
+strips, require about half a point of spread, re-read at the off.
+
+**Going.** Free-draining chalk heath, so it dries quickly and late-September
+ground is usually good or quicker unless it has rained properly. Check it
+each morning; do not carry it forward from the previous day.
+
+**Meetings covered:** Guineas (May) — see `guineas-2026.html`; July Festival
+(July, July Course not Rowley Mile) — see `newmarket-july-2026.html`;
+Cambridgeshire Meeting (September) — see `cambridgeshire-2026.html`.
+
+#### Cambridgeshire Meeting (Newmarket, three days, September)
+
+Thu–Sat. The **bet365 Cambridgeshire** (Heritage Handicap, 1m1f) on the
+Saturday is the first leg of the Autumn Double — the **Cesarewitch is the
+second leg and runs at a different meeting**, Newmarket's Future Champions
+fixture in October. Do not describe both as running here; the hub card said
+so and it was wrong.
+
+Saturday also carries the **Cheveley Park (G1)**, the **Middle Park (G1)**
+and the **Royal Lodge (G2)**; Friday is a Group and Listed card — Rockfel
+(G2), Joel (G2), Princess Royal (G3), Rosemary and Godolphin (Listed).
+
+Engine notes specific to this meeting:
+
+- **The whole meeting's LONG slot lives or dies on one race.** 2026 declared
+  fourteen races across Friday and Saturday and **exactly one was a handicap
+  of 16+**: the Cambridgeshire itself, at 28 runners. Friday declared **no
+  handicap at all** — biggest field twelve — so the slot was shut in all
+  seven races on arithmetic, not judgement. Say that plainly (§4) rather
+  than assessing it race by race.
+- The Group races run small: 2026 declared 6, 7 and 7 in the three Saturday
+  Group races and 7 in the Joel, so those are **two-place races**, one
+  withdrawal from win only.
+- **The Cambridgeshire is the most likely race on the calendar to carry a
+  place special above the standard ladder** (the Stewards' Cup paid 7), and
+  the most exposed to a band *drop* on withdrawals from a field that size.
+  Read the terms off the bookmaker's actual offer and re-check at the off
+  (rule 16).
+- Declarations confirm 48 hours out, as everywhere on UK turf flat.
+
 ### Haydock Park (flat)
 
 Left-handed, flat, wide and galloping — a level oval of about 1m5f with a
@@ -1275,6 +1329,20 @@ mechanically. Two rules about fixtures:
 - **Set `draw` to `null` when you genuinely do not have it.** The gate
   then reports "N runner(s) without a draw" and fails the race, which is
   correct. Never invent a stall to make a race pass.
+- **An empty `runners` array used to pass the gate. Fixed 24 Sep 2026 —
+  build the array, do not just set `field_size`.** Found building the
+  Cambridgeshire card. `gate-check.mjs` counted only *listed* runners with a
+  missing draw, and the field-size mismatch check was guarded by
+  `runners.length &&`, so a race with `field_size: 9` and `runners: []`
+  failed nothing and printed a green ✓. That is exactly the fixture shape
+  this section tells you to build when the API is blocked, because
+  **WebSearch gives field sizes and never gives draws** — so the documented
+  fallback produced a clean pass on a card with not one draw behind it.
+  Seven Newmarket races passed that way before it was spotted. The gate now
+  treats an unlisted runner as a runner without a draw and fails the race.
+  Build one `{"horse": …, "draw": null}` entry **per declared runner**;
+  `field_size` alone is not a field.
+
 - **Keep hand-built fixtures out of `data/racing-api/`.** That directory
   is documented as raw API payloads and is the only history backfill
   there is; putting a web-sourced or hand-built file in it corrupts the

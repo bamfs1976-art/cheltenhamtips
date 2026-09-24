@@ -167,9 +167,9 @@ const FESTIVALS_2026 = [
     slug:'cambridgeshire-2026', name:'Cambridgeshire Meeting 2026', shortName:'Cambridgeshire',
     icon:'🎪', dates:['2026-09-24','2026-09-25','2026-09-26'],
     dateLabel:'24–26 Sep 2026', venue:'Newmarket (Rowley Mile)', type:'Flat',
-    theme:'theme-navy', accentColor:'#0891b2', url:'index.html',
-    races:null,
-    headline:'Three days on the Rowley Mile and the first leg of the autumn handicap double — the Cambridgeshire, a maximum-field cavalry charge over 1m1f. Page publishes as the meeting approaches.',
+    theme:'theme-navy', accentColor:'#0891b2', url:'cambridgeshire-2026.html',
+    races:14,
+    headline:'Friday and Saturday are declared and the page is open, but the field lists reaching us carry no draw, so all 14 races currently print NO BET and nothing is priced. The field-size arithmetic is done and it settles the LONG for the whole meeting: Friday has no handicap at all and the slot is shut in all seven, while Saturday opens it in exactly one race \u2014 the 28-runner bet365 Cambridgeshire at 15:40, which is also the race most likely to carry a place special above the ladder and the one most exposed to a band drop on withdrawals. Awaiting a pasted Racing Post racecard for each day.',
     headlineRace:'Cambridgeshire Handicap · Sat 26 Sep · Royal Lodge (G2) · Cheveley Park (G1) · Middle Park (G1)',
   },
   {

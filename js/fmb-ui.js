@@ -27,6 +27,7 @@
     { name: 'Newmarket July Festival', short: 'Newmarket July', url: 'newmarket-july-2026.html', type: 'flat',  status: 'archive',  date: '9–11 Jul 2026', sort: '2026-07-09', end: '2026-07-11', venue: 'Newmarket (July Course)' },
     { name: 'King George Weekend',     short: 'King George',    url: 'index.html',               type: 'flat',  status: 'archive',  date: '24–25 Jul 2026', sort: '2026-07-24', end: '2026-07-25', venue: 'Ascot' },
     { name: 'St Leger Festival',       short: 'St Leger',       url: 'st-leger-2026.html',       type: 'flat',  status: 'upcoming', date: '10–13 Sep 2026', sort: '2026-09-10', end: '2026-09-13', venue: 'Doncaster' },
+    { name: 'Cambridgeshire Meeting',   short: 'Cambridgeshire', url: 'cambridgeshire-2026.html', type: 'flat',  status: 'upcoming', date: '24–26 Sep 2026', sort: '2026-09-24', end: '2026-09-26', venue: 'Newmarket (Rowley Mile)' },
     { name: 'Cheltenham Festival 2027', short: 'Cheltenham 2027', url: 'cheltenham-2027.html',    type: 'jumps', status: 'upcoming', date: '9–12 Mar 2027', sort: '2027-03-09', end: '2027-03-12', venue: 'Cheltenham' },
     { name: 'Northumberland Plate',     short: 'Northumberland Plate', url: 'northumberland-plate-2026.html', type: 'flat',  status: 'archive', date: '25–27 Jun 2026', sort: '2026-06-25', end: '2026-06-27', venue: 'Newcastle' },
     { name: 'Royal Ascot 2026',         short: 'Royal Ascot',   url: 'royal-ascot-2026.html',   type: 'flat',  status: 'archive', date: '16–20 Jun 2026', sort: '2026-06-16', end: '2026-06-20', venue: 'Ascot' },

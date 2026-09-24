@@ -57,13 +57,22 @@ function checkRace(race) {
     ? runners.filter((r) => r.draw === undefined || r.draw === null || r.draw === '').map((r) => r.horse)
     : [];
 
+  // A runner that is not listed at all has no draw either. Counting only the
+  // listed-but-drawless ones let a race with field_size N and an EMPTY runners
+  // array pass the gate clean — which is exactly the shape of a fixture built
+  // from WebSearch, the fallback §12 tells you to use when the API is blocked
+  // (it gives field sizes and never gives draws). Found 24 Sep 2026 building
+  // the Cambridgeshire card: seven Newmarket races passed on web-sourced field
+  // sizes with not one draw behind them.
+  const unlisted = n > 0 ? Math.max(0, n - runners.length) : 0;
+
   const failures = [];
   if (n === 0) failures.push('no declared runners');
-  if (runners.length && n !== runners.length) {
-    failures.push(`field_size ${n} does not match ${runners.length} listed runners`);
+  if (n > 0 && runners.length !== n) {
+    failures.push(`field_size ${n} does not match ${runners.length} listed runner(s)`);
   }
-  if (flat && missingDraw.length) {
-    failures.push(`${missingDraw.length} runner(s) without a draw`);
+  if (flat && missingDraw.length + unlisted > 0) {
+    failures.push(`${missingDraw.length + unlisted} runner(s) without a draw`);
   }
 
   return {

@@ -107,6 +107,11 @@
   status = 200
 
 [[redirects]]
+  from = "/cambridgeshire-2026"
+  to = "/cambridgeshire-2026.html"
+  status = 200
+
+[[redirects]]
   from = "/sprint-cup-2026"
   to   = "/sprint-cup-2026.html"
   status = 200
