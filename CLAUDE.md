@@ -486,6 +486,32 @@ Rules:
   should be — with his other two prices unchanged. Shorter and longer
   behave differently, as the rule predicts.
 
+**A Racing Post star rating belongs to the tip ROW, not to the horse.**
+Added 24 Sep 2026 (Newmarket), and it corrects a reading made eleven days
+earlier. The St Leger card recorded a `★★★` on Forty Years On, called it *"the
+first multi-star row this archive has seen"*, and asked in advance whether a
+column's own confidence rating deserves weight its agreement does not. She
+went off 5/4F and was unplaced, which was logged as one point against.
+
+One Newmarket free-tips page then carried **four multi-star rows** (Coedana
+★★★; Without Prejudice, Ruby Moon and Spirited Gesture ★★). So the rating is
+not rare, and "the first in the archive" was a fact about the sample, not the
+instrument — the §6 error about crossovers, repeated on a different column.
+
+The decisive evidence is on one horse. **Coedana appeared twice, both from
+Spotlight: ★★★ on the named verdict row and ★ on the leg of Spotlight's own
+Lucky 15.** Same desk, same horse, same race, two star counts. Spirited
+Gesture makes the point across columns — ★★ from Sam Hardy, ★ from David
+Milnes, ★ from Spotlight, one horse at one price.
+
+- **Never let a star count move a slot**, and now for a positive reason rather
+  than only by analogy to the crossover prohibition: it does not measure what
+  it appears to measure.
+- Record it, because it is cheap to record and the archive is the point.
+- The Marvelman rule fires here too: a column's tip and that column's own
+  accumulator or Lucky 15 leg are **one opinion**, however many rows they
+  occupy and whatever stars each row carries.
+
 #### Tipster code registry
 
 | Code | Tipster | Badge colour |
@@ -504,6 +530,11 @@ Rules:
 | SPOT | Racing Post Spotlight (per-race verdict, named writer) | fuchsia (#f0abfc) |
 | TN | The North (Racing Post regional column) | amber (#fcd34d) |
 | FR | Frick (@frickstips) | indigo (#818cf8) |
+| TSP | Topspeed (Craig Thake, Racing Post) | sky (#7dd3fc) |
+| RPR | RP Ratings (Ainsley Scorah) | light orange (#fdba74) |
+| OTN | On The Nose (Racing Post) | mint (#a7f3d0) |
+| PU | The Punt (Harry Wilson) | rose (#fda4af) |
+| DM | David Milnes (RP Newmarket correspondent) | slate (#cbd5e1) |
 
 New tipsters: assign a 2-3 letter code and a distinct badge colour. Keep
 the system extensible.
