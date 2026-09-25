@@ -535,6 +535,7 @@ Milnes, ★ from Spotlight, one horse at one price.
 | OTN | On The Nose (Racing Post) | mint (#a7f3d0) |
 | PU | The Punt (Harry Wilson) | rose (#fda4af) |
 | DM | David Milnes (RP Newmarket correspondent) | slate (#cbd5e1) |
+| LB | Lambourn (Liam Headd, Racing Post) | slate-light (#cbd5e1) |
 
 New tipsters: assign a 2-3 letter code and a distinct badge colour. Keep
 the system extensible.
