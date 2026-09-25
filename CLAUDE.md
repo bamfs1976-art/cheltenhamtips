@@ -154,6 +154,40 @@ is carried forward from Glorious Goodwood and not recomputed. The LONG
 did not run at all at the Sprint Cup — 22 races, slot closed in every
 one.)*
 
+**Pts/pick recomputed on the only 81 picks that record it — and the NB leads
+on both measures.** Added 25 Sep 2026. The table above carries strike rate
+through the Sprint Cup but pts/pick only to Goodwood, and the gap has never
+been closed because **the archive cannot close it.** Per-pick returns are
+written down on `st-leger-2026.html` and `cambridgeshire-2026.html` and
+nowhere else: Goodwood, Chester and Dante carry no machine-readable results
+at all, and Ebor and the Sprint Cup carry slot, price and finishing position
+but **not the each-way terms each race settled on**, so their returns cannot
+be rebuilt without re-deriving thirty-odd place bands by hand. What can be
+computed is the five settled days since 10 Sep — 81 picks, £81.00 staked,
+£67.09 returned, reconciling to the penny against `ROI_LEDGER`:
+
+| Slot | Picks | Wins | SR | Returned | Net | Pts/pick |
+|---|---|---|---|---|---|---|
+| Our NB | 38 | 9 | **24%** | £36.34 | −£1.66 | **0.96** |
+| Our NAP | 38 | 7 | 18% | £28.50 | −£9.50 | 0.75 |
+| Our LONG | 5 | 0 | 0% | £2.25 | −£2.75 | 0.45 |
+
+On this sample the NB leads on strike rate **and** on points, which is not
+what Haydock Day 1 warned about — there a 50% NB strike rate still lost 39p
+because rule 8 had filled the slot with 5/6 and 11/8 shots. The difference is
+price: these nine NB winners include 6/1, 9/2, 4/1 and 7/1, and the single
+biggest return in the whole sample is an NB at £4.75. The LONG lands on 0.45
+against the 0.47 carried forward from Goodwood, on five picks — consistent,
+and far too small to mean anything on its own.
+
+Two limits, stated rather than glossed. Eighty-one picks is a fifth of the
+season and both slots are still **losing**; nothing here promotes the NB or
+retires the Haydock warning. And the sample is two meetings on two galloping
+tracks, which is exactly the kind of slice §4 already says not to read slot
+performance off. **Report both numbers every time** — a slot cannot be judged
+on wins alone in either direction, and recording the return per pick is the
+only thing that makes a future recompute possible at all.
+
 **Sprint Cup 2026 (Haydock, three days): 42 picks, 10 winners, 15
 placed, −1.8% (−£0.74 on £42.00).** The closest to level any meeting has
 finished, and the slot pattern reversed on every one of the three days —
