@@ -10,31 +10,79 @@
 import fs from 'node:fs/promises';
 import { racecards, archive, ukDate, raceOff, raceDistanceF, raceClass, raceType, raceGoing, raceFieldSize, raceStatus } from './lib/racing-api.mjs';
 
-// Sky Bet's observed enhanced each-way ladder. These are the terms the engine
-// prices against; they are an offer, not a rule, so the card must still state
-// what actually applied at the off (CLAUDE.md rule 16).
-const PLACE_BANDS = [
-  { min: 16, places: 5, frac: '1/5' },
-  { min: 8, places: 4, frac: '1/5' },
-  { min: 5, places: 2, frac: '1/4' },
-  { min: 1, places: 0, frac: '—' },
-];
+// Sky Bet's STANDARD each-way ladder, race-type aware.
+//
+// PROVENANCE DIFFERS PER BAND — read this before trusting a row.
+//
+// The 16+ HANDICAP band is the only one confirmed against a real bookmaker
+// offer, which is what §12 has asked for since Haydock Day 1 and finally got
+// on 25 Sep 2026. Sky Bet's Cambridgeshire market (28 runners, Class 2
+// handicap) read "Each Way: 1/5 Odds, 7 Places" above a banner reading "We are
+// paying 7 places instead of 4 on all each way bets if there are 16 runners or
+// more". The 7 is the promotion; the 4 it names is Sky Bet's own standard term.
+// So the base at 16+ is FOUR, and the 5 this table carried from the start was
+// wrong — in the dangerous direction, exactly as every inference since Haydock
+// had said, and NOT ONE of the 38 archived races ever paid five.
+//
+// Every other band still rests on the Tote-dividend model (St Leger + the
+// Cambridgeshire Friday, 38 races, no exceptions) and NOT on an offer. That
+// model predicted 4 at 16+ and the offer confirmed it, which is real evidence
+// for the model — but one offer confirms one band, so the rest stay estimates.
+// Keep reading the terms off the actual market and re-checking at the off
+// (rule 16).
+//
+// ENHANCED OFFERS SIT ABOVE THIS TABLE and are deliberately not modelled: the
+// same Cambridgeshire paid 7. This is a floor, never the answer.
+const PLACE_BANDS = {
+  handicap: [
+    { min: 16, places: 4, frac: '1/5', src: 'Sky Bet offer 25 Sep 2026' },
+    { min: 8, places: 3, frac: '1/5', src: 'Tote model, 38 races' },
+    { min: 5, places: 2, frac: '1/4', src: 'Tote model, 38 races' },
+    { min: 1, places: 0, frac: '—', src: 'win only' },
+  ],
+  // Five places at 16+ is a HANDICAP term. A big-field stakes or sales race
+  // read as LONG-open under the old single ladder while standard terms pay
+  // three — §12 called this the single most likely place for the gate to wave
+  // through a bet it should refuse. Doncaster's 13:50 is the worked example: a
+  // 17-runner conditions sales race paid THREE, and the card held the slot back
+  // by hand because the ladder would not.
+  other: [
+    { min: 8, places: 3, frac: '1/5', src: 'Tote model, 38 races' },
+    { min: 5, places: 2, frac: '1/4', src: 'Tote model, 38 races' },
+    { min: 1, places: 0, frac: '—', src: 'win only' },
+  ],
+};
 
 // Runner counts at which the place count changes. A race sitting just above one
 // of these can lose a place to withdrawals after it has been priced — which is
-// exactly what happened to the Goodwood Day 5 17:20.
-const BOUNDARIES = [16, 8, 5];
+// exactly what happened to the Goodwood Day 5 17:20, and again to the St Leger
+// Day 1 15:00. The boundaries differ by race type because the bands do.
+const BOUNDARIES = { handicap: [16, 8, 5], other: [8, 5] };
 const AT_RISK_MARGIN = 2;
 
-function placeTerms(runners) {
-  const band = PLACE_BANDS.find((b) => runners >= b.min) ?? PLACE_BANDS.at(-1);
-  return { places: band.places, frac: band.frac };
+// Nurseries are handicaps. "Hcap"/"H'cap" are how the API and the Racing Post
+// abbreviate it; the long form appears in sponsored race names.
+function isHandicap(race) {
+  return /handicap|\bh'?cap\b|nursery/i.test(
+    `${race.race_name ?? ''} ${race.race_type ?? ''} ${race.pattern ?? ''}`,
+  );
 }
 
-function boundaryRisk(runners) {
-  const b = BOUNDARIES.find((x) => runners >= x && runners <= x + AT_RISK_MARGIN);
+function bandsFor(race) {
+  return isHandicap(race) ? PLACE_BANDS.handicap : PLACE_BANDS.other;
+}
+
+function placeTerms(runners, race = {}) {
+  const bands = bandsFor(race);
+  const band = bands.find((b) => runners >= b.min) ?? bands.at(-1);
+  return { places: band.places, frac: band.frac, src: band.src };
+}
+
+function boundaryRisk(runners, race = {}) {
+  const list = isHandicap(race) ? BOUNDARIES.handicap : BOUNDARIES.other;
+  const b = list.find((x) => runners >= x && runners <= x + AT_RISK_MARGIN);
   if (!b) return null;
-  const below = placeTerms(b - 1);
+  const below = placeTerms(b - 1, race);
   return { boundary: b, margin: runners - b, dropsTo: below.places };
 }
 
@@ -50,8 +98,8 @@ function checkRace(race) {
   // field_size is authoritative on the free plan; fall back to the array length.
   const n = raceFieldSize(race);
   const flat = isFlat(race);
-  const terms = placeTerms(n);
-  const risk = boundaryRisk(n);
+  const terms = placeTerms(n, race);
+  const risk = boundaryRisk(n, race);
 
   const missingDraw = flat
     ? runners.filter((r) => r.draw === undefined || r.draw === null || r.draw === '').map((r) => r.horse)
@@ -88,6 +136,8 @@ function checkRace(race) {
     runners: n,
     places: terms.places,
     ewFrac: terms.frac,
+    termsSource: terms.src,
+    handicap: isHandicap(race),
     boundaryRisk: risk,
     missingDraw,
     // The LONG slot needs 5+ places, or 4+ in a field of 16 or more.
@@ -123,10 +173,17 @@ function fmt(r) {
         `drops this to ${dropTxt}. Treat any LONG as provisional and re-check at the off.`
     );
   }
+  // §12: read the LONG line only on a race that PASSED the gate. A failed race
+  // has no confirmed field, so the place test would be arithmetic on a field
+  // that does not exist yet — which is exactly the entry-stage forecast the
+  // St Leger got wrong. Nothing can be staked on a NO BET race, so printing it
+  // costs nothing directly; it just invites the reader to believe a number.
   lines.push(
-    r.longSlotOpen
-      ? `      LONG slot: \x1b[32mopen\x1b[0m (needs 8/1+ and a concrete signal)`
-      : `      LONG slot: \x1b[90mclosed\x1b[0m — ${r.places} places, run two picks only`
+    !r.pass
+      ? `      LONG slot: \x1b[90mnot assessed\x1b[0m — race failed the gate, no confirmed field to test`
+      : r.longSlotOpen
+        ? `      LONG slot: \x1b[32mopen\x1b[0m (needs 8/1+ and a concrete signal)`
+        : `      LONG slot: \x1b[90mclosed\x1b[0m — ${r.places} places, run two picks only`
   );
   return lines.join('\n');
 }

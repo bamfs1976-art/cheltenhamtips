@@ -994,7 +994,12 @@ Engine notes specific to this meeting:
   place special above the standard ladder** (the Stewards' Cup paid 7), and
   the most exposed to a band *drop* on withdrawals from a field that size.
   Read the terms off the bookmaker's actual offer and re-check at the off
-  (rule 16).
+  (rule 16). **2026 confirmed it: Sky Bet paid 1/5, SEVEN places** on 28
+  runners — and the same offer is what finally settled §12's place-band
+  question, because the banner named Sky Bet's own standard term (4) in order
+  to advertise beating it. This race is worth reading the offer on for two
+  reasons, then: it carries the biggest special of the year, and it is the
+  one place a bookmaker states its base terms out loud.
 - Declarations confirm 48 hours out, as everywhere on UK turf flat.
 
 ### Haydock Park (flat)
@@ -1309,6 +1314,40 @@ off** because withdrawals can drop the band (rule 16). `PLACE_BANDS` in
 it (the Stewards' Cup paid 7). The racecard tells you the field size, which
 is what drives the band; the bookmaker tells you the band.
 
+> **SETTLED 25 Sep 2026 — a real Sky Bet offer was finally read, and the
+> ladder was wrong by a whole place.** Sky Bet's Cambridgeshire market (28
+> runners, Class 2 handicap) printed **"Each Way: 1/5 Odds, 7 Places"** above
+> a banner reading **"we are paying 7 places instead of 4 on all each way bets
+> if there are 16 runners or more"**. The 7 is the promotion; **the 4 it names
+> is Sky Bet's own standard term**, which is the number this question was
+> about. So at 16+ the base is **four**, `PLACE_BANDS` said five, and it was
+> wrong in the dangerous direction for the whole season — as every inference
+> since Haydock had said, and as all 38 archived races had shown by never
+> once paying five.
+>
+> `PLACE_BANDS` is now **race-type aware** — the fix this section asked for by
+> name — with handicaps 2/3/4 at 5–7 / 8–15 / 16+ and non-handicaps 2/3/3.
+> Backtested against the seven published Doncaster dividends it is right in
+> **7 of 7**; the old ladder was right in **2 of 7**. No LONG decision already
+> taken changes: a 16+ handicap used to pass the place test on "5+ places"
+> and now passes on "4+ in a field of 16 or more". What does change is the
+> shape that mattered — a 17-runner **non-handicap** now returns 3 places and
+> **LONG shut** mechanically, instead of reading 5 and open.
+>
+> **Three limits. One offer confirms one band** (16+ handicap); every other
+> row still rests on the Tote model and is labelled in the code as such — the
+> model earned credit by predicting this one correctly, it did not earn the
+> whole table. **The table is a floor**: specials sit above it, and this very
+> race paid seven. And **never retro-fit a settled card** — when the bands
+> changed, Saturday's printed terms moved and Friday's did not, because
+> Friday had already run.
+>
+> The original question and its three inconclusive rounds are kept below,
+> because the discipline of refusing to edit the code on repeated inference
+> is what made the eventual answer worth having.
+>
+> ---
+>
 > **OPEN QUESTION, raised 3 Sep 2026 (Haydock Day 1) — do not treat as
 > settled.** `PLACE_BANDS` maps 8+ runners to 4 places, and the Day 1 card
 > printed "EW 1/5 4pl" on races of 13, 9, 12 and 8 declared runners.
@@ -1370,6 +1409,12 @@ is what drives the band; the bookmaker tells you the band.
 > stronger than the two inferences above, and it is enough to settle bets
 > and to justify the change — but capture one real offer before editing
 > `PLACE_BANDS`, because that is what the rule asks for.
+>
+> **That bar was cleared on 25 Sep 2026 — see the resolution at the top of
+> this block.** The offer agreed with the Tote-derived reading at the one
+> band it covers, so the discipline cost nothing and bought a real answer.
+> Keep the rule for next time: two inferences agreeing is still one
+> inference.
 
 ### 2 · WebSearch — partial, useful when nothing else is available
 
