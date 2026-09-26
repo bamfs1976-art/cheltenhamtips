@@ -550,6 +550,22 @@ Rules:
   also that a horse appearing in *both* HRN panels ("1 Nap" in one, "1 Tip"
   in the other) is **one opinion in two rows** — a nap is a tip.
 
+  **"See link above" is a POINTER, not a source. Count it as zero.** Added
+  26 Sep 2026 (Cambridgeshire). A William Hill fancies list named a horse in
+  only three of seven Newmarket races; for the four ITV races it said *"see
+  link above"*, pointing at the house article headlined *"First Law Heads
+  Best Bets…"* — and First Law was **already counted at 3x** on the card.
+  Booking the pointer as a fresh opinion is the Marvelman error in its purest
+  form: one view, two rows.
+
+  The useful part is that **the author's identity does not matter.** The
+  screenshot had no byline, so it could not be established whether this was
+  Mullington posting his own list or another William Hill writer pointing at
+  the house article. **Either way the count is identical**, because a pointer
+  is never a source: the deferred races add nothing and the only new
+  information is the races the list actually names. When a column defers to
+  someone else, you do not have to identify it in order to score it.
+
   **Sometimes the Marvelman duplicate IS resolvable — check the price.**
   Same card. Raceolly tipped Salam Dubawi each-way at **40/1**, and the
   Biggest Priced Naps panel carried Salam Dubawi as "1 Nap" at **the
@@ -558,6 +574,14 @@ Rules:
   opinion, and matching the quoted price is what lets you say so instead of
   guessing. Where the prices differ, or no known column holds the horse, the
   old advice stands: count it as one and state the limit.
+- **Four divergences in four shared races is what independence looks like.**
+  Added 26 Sep 2026 (Cambridgeshire). Mullington and Nick Luck both write for
+  William Hill and both covered the same four Newmarket races: Marsala v Next
+  Of Kin, First Law v Quicken Away, Libertango v Senorita Bonita, Inner City
+  Blues v Orthodox. **They agreed on nothing.** Grimshaw earned his standing
+  on two divergences in three; this is the cleanest case in the archive, and
+  it means a shared masthead says nothing on its own — test it and move on.
+
 - **Alignment is not quality, and a value column will wreck the aggregate
   figure.** Same card. Raceolly tipped five races each-way at 11/1, 200/1,
   16/1, 12/1 and 33/1 and agreed with **nobody** — not us, not any of the
