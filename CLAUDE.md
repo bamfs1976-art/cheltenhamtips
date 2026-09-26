@@ -478,6 +478,43 @@ Rules:
   not talking yourself out of a short-priced horse on a ratings column you
   do not fully understand. **Establish what a figure means before it is
   allowed to carry an argument.**
+
+  **RESOLVED 26 Sep 2026 (Cambridgeshire) — the RPR column is a race par,
+  and it is worse than the suspicion.** The 28-runner Cambridgeshire is the
+  best sample the archive has: a full OR and RPR on every runner. Official
+  ratings span **82–108** (spread 26, sd 7.4); Racing Post Ratings span
+  **111–118** (spread 7, sd 1.7), and regressing RPR on OR gives a slope of
+  **−0.006**. That is not a weak relationship, it is none: every runner is
+  projected to 111–118 whether the handicapper has them at 82 or 108.
+  **Salam Dubawi carries the field's highest RPR (118) off its second-lowest
+  mark (84) at 80/1**; two 100/1 shots out-rate the 22/1 top weight.
+
+  - **The trap in one line: the RPR−OR gap is biggest for the lowest-rated
+    horse by construction.** The five biggest gaps in that race (29–34lb)
+    are the five lowest marks, all 50/1–100/1; the five smallest (5–10lb)
+    are the five highest, all 8/1–22/1. So "well handicapped on the figures
+    — a big RPR off a small mark" is **arithmetic, not analysis**, and it
+    selects the outsider every time. Our own 13:22 NB was written up exactly
+    that way: lowest mark in the race, therefore biggest gap, therefore
+    "best handicapped".
+  - **Do not pool races to test it.** Pooled across four races the
+    correlation is only −0.276 and the first script run printed "NOT the
+    projection signature". Wrong: RPR is projected to each *race's* par, so
+    pooling different pars destroys the effect. Within-race it is −0.976,
+    −0.934 and −0.908. **The summary statistic said the opposite of the
+    data** — a reminder to look at the per-group numbers before believing an
+    aggregate.
+  - **The constructive instrument is the residual**, not the rating and not
+    the gap: how far a horse sits above the par *its own mark* predicts,
+    against the race's own OR→RPR line. Applied to our Saturday card it
+    rescued two picks (both ranked 1st in their race on the residual) and
+    killed two.
+  - **Calibrate by race type.** RPR spread as a fraction of OR spread ran
+    **0.27** in the 28-runner handicap, 0.53 in an 11-runner nursery, 0.78
+    in a 13-runner handicap and **1.16** in a 7-runner Group 2. The column
+    is worthless in a big open handicap and close to honest in a small Group
+    race. A maiden has no marks at all, so there RPR is simply untestable —
+    say so rather than treating it as evidence either way.
 - **A crossover on a horse you opposed by name deserves the opposing
   argument printed, not the rating restated.** Same card. We opposed King
   Of Earth on "second-lowest RPR in the race at 107, unplaced last time".
@@ -500,6 +537,27 @@ Rules:
   as one and say so**, rather than taking the flattering reading. The
   panels stay useful for best-odds figures and for surfacing big-priced
   naps you would otherwise never see.
+
+  **The row label is a COUNT, and it can exceed one.** Added 26 Sep 2026
+  (Cambridgeshire). Every panel row seen until now read "1 Nap" or "1 Tip";
+  St Anton read **"2 Naps"** — the first time a panel has asserted
+  *multi-column* agreement rather than a single borrowed selection. That is
+  not the panel holding an opinion, it is the panel reporting that two
+  columns it tracks both napped the horse, which is exactly the dissent
+  signal this section says to surface. But the mastheads are not visible, so
+  **independence cannot be proved by a divergence** and it must not earn a
+  2x badge. Surface it, say the count, and say you cannot verify it. Note
+  also that a horse appearing in *both* HRN panels ("1 Nap" in one, "1 Tip"
+  in the other) is **one opinion in two rows** — a nap is a tip.
+
+  **Sometimes the Marvelman duplicate IS resolvable — check the price.**
+  Same card. Raceolly tipped Salam Dubawi each-way at **40/1**, and the
+  Biggest Priced Naps panel carried Salam Dubawi as "1 Nap" at **the
+  identical 40/1**, in the same race. Same horse, same price, and Raceolly
+  is precisely the big-price column such a panel harvests. That is one
+  opinion, and matching the quoted price is what lets you say so instead of
+  guessing. Where the prices differ, or no known column holds the horse, the
+  old advice stands: count it as one and state the limit.
 - **Alignment is not quality, and a value column will wreck the aggregate
   figure.** Same card. Raceolly tipped five races each-way at 11/1, 200/1,
   16/1, 12/1 and 33/1 and agreed with **nobody** — not us, not any of the
