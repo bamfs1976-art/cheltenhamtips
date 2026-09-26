@@ -389,7 +389,16 @@ Rules:
   the frame. **Surfacing consensus as dissent works; following it does
   not.**
 - **A 3x+ horse under 3/1 should not be the NAP.** Goodwood 2026 ran
-  nine multi-source picks across five days and **not one won**. The
+  nine multi-source picks across five days and **not one won**. **Right again
+  26 Sep 2026 (Cambridgeshire), and this time the override was argued in
+  writing first.** Senorita Bonita went to 3x at 2/1 on race morning, we kept
+  her as NAP on a genuine standout case (officially 117, eight clear; Topspeed
+  130, sixteen clear) and printed in advance that *"if she is beaten, rule 8
+  is right for a sixth meeting and the excuse offered here was not good
+  enough."* She was unplaced. **But score the remedy too: rule 8's fix is to
+  demote and give the NAP to a pick the consensus does not share — here
+  Moonrise at 22/1, also unplaced. The swap was worth 0p.** The rule picks the
+  loser reliably; it does not thereby find you a winner. Say both. The
   existing rule stops crossover *promoting* a pick; it does not stop us
   independently arriving at the same favourite and labelling it NAP,
   which is what kept happening (Al Hudaiba, Qirat, Annastarzy, Indalo,
@@ -867,7 +876,20 @@ After racing, when the user provides results:
     unplaced. Day 2: Libertango drifted 7/4→11/4 — the biggest move of the
     festival, logged that morning as a demotion signal — and **won at 3/1**.
     Keep recording the move on every pick; it is mechanical and checkable.
-    Stop describing it as settled.
+    Stop describing it as settled. **Cambridgeshire Saturday refused to settle
+    it again, from the drifting side: every card-to-off drifter that can be
+    tracked made the frame, five from five**, including our own NAP Orthodox
+    (11/4 → 7/2) winning the Middle Park — while **both steamers that failed
+    were steaming into favouritism** (Fire Thunder 10/1 → 100/30F, Inner City
+    Blues 15/8 → 6/4F, both unplaced). Two data points do not make a
+    sub-pattern, but it is the second meeting running where the drifters
+    outperformed their reputation.
+
+    **And the moves you cannot see are still the biggest ones.** That card
+    printed "no trail" on two races because the paste carried no betting
+    forecast, and those two races contained the day's largest contractions —
+    Fire Thunder 10/1 → 100/30F and Haffner 4/1 → 7/4F, one of them our
+    winner. A missing trail is not a quiet market.
 
 ---
 
@@ -1083,6 +1105,18 @@ Engine notes specific to this meeting:
   reasons, then: it carries the biggest special of the year, and it is the
   one place a bookmaker states its base terms out loud.
 - Declarations confirm 48 hours out, as everywhere on UK turf flat.
+- **2026 result: 14 races gated 14/14, 29 picks, −£6.99 on £29.00 (−24.1%),
+  with £3.00 still unresolved.** Friday finished seven pence off level;
+  Saturday returned £8.08 of £15.00. **The unresolved part is the lesson:
+  Sky Bet paid seven places on the Cambridgeshire and the published result
+  gives only the first four**, so three picks in a 27-runner field cannot be
+  settled at all. When a race carries a place special well above the Tote's
+  count, the result as published is not enough to settle it — **ask for the
+  full finishing order to the offer's place count, or the day books at a
+  floor.** Booked at the floor here, as St Leger Day 4 was.
+- The Group races are where the money was: both winners came from them
+  (Haffner 4/1 in the Royal Lodge, Orthodox 11/4 in the Middle Park) while
+  the two big handicaps returned nothing that can yet be counted.
 
 ### Haydock Park (flat)
 
