@@ -1186,6 +1186,127 @@ Sprint Cup (Group 1, 6f)** at 15:35, with the **Old Borough Cup**
     ourselves. Surfacing a signal is not the same as using one — see
     Step 5b.
 
+### Ascot (flat and jumps)
+
+Right-handed. A triangle of about 1m6f with a steady **uphill pull from the
+home turn to the line**, plus a **straight mile** that joins the round course.
+Nothing here is sharp: the finish is stiff enough that a horse in front two out
+can still be swallowed, which is why Ascot form reads as genuine.
+
+**Draw.** On the Flat it is close to immaterial in a small field and becomes a
+first-order factor in the **big straight-course handicaps**, where a wide field
+splits into groups and one side can be on materially better ground. Rule 17
+governs — read the GoingStick strips, require about half a point of spread,
+re-read at the off.
+
+**Over jumps** it is galloping and stamina-favouring, and rewards a sound
+jumper who truly stays. The Long Walk Hurdle is run over 3m½f and is won on
+stamina rather than speed.
+
+**Meetings covered:** Royal Ascot (June) — see `royal-ascot-2026.html`;
+QIPCO British Champions Day (October) — see `champions-day-2026.html`;
+Howden Christmas Racing Weekend (December) — see `ascot-christmas-2026.html`.
+
+#### QIPCO British Champions Day (Ascot, one day, October)
+
+Britain's richest raceday and the Flat season's finale: **four Group 1s** —
+Champion Stakes, Queen Elizabeth II, Champions Sprint and Fillies & Mares —
+plus the Long Distance Cup (G2) and the **Balmoral Handicap**.
+
+- The four Group 1s will run **small, quality fields**, so expect the LONG slot
+  to be shut on the place count in all of them. Say that as arithmetic, not as
+  a per-race judgement.
+- **The Balmoral is the only handicap on the card** and the only realistic
+  candidate for the LONG. It is also the race most exposed to a place-band drop
+  on withdrawals from a big field (rule 16).
+
+### Cheltenham (jumps)
+
+Left-handed and relentlessly undulating, with the **stiffest finish in British
+jumps racing**: an uphill run-in of about a furlong and a half that is the
+single most decisive feature of the track. A horse that travels well and stops
+on the hill is the classic Cheltenham trap.
+
+**Two circuits.** The **Old Course** (sharper) is used in November and December;
+the **New Course** (stiffer) is used at the Festival. So November and December
+form is a guide to March and **not a transcript of it** — do not treat a
+Paddy Power Gold Cup running as a Festival trial without saying which course it
+was run on.
+
+**No draw.** Stamina and jumping outweigh speed. **Going is the primary factor**
+and midwinter ground here moves fast — check it on the morning of every card
+and again at the off (rule 11, rule 12).
+
+**Meetings covered:** The Festival (March) — see `cheltenham-2026.html`
+(frozen); November Meeting — see `cheltenham-november-2026.html`; Christmas
+Meeting — see `cheltenham-christmas-2026.html`.
+
+### Kempton Park (jumps)
+
+Right-handed, **flat**, and sharp — an oval of about 1m5f with easy bends and a
+short run-in. It is **the opposite test to Cheltenham in almost every respect**:
+it rewards speed, fluent jumping and a horse that can lie up, and it never asks
+the stamina question an uphill finish asks.
+
+That divergence is the point worth carrying: **King George form and Gold Cup
+form disagree as often as they agree**, and a horse whose reputation was made
+on Boxing Day has not thereby proved it stays Cheltenham in March.
+
+**Front-runners and prominent racers do well** because there is nowhere to make
+up ground late. **No draw.** The surface drains well and Boxing Day ground is
+usually good or good to soft.
+
+**Meetings covered:** King George VI Chase (26 December) — see
+`king-george-2026.html`.
+
+### Chepstow (jumps)
+
+Left-handed, about 2m round, and severely undulating — a switchback circuit
+with a stiff uphill finish. **No draw.**
+
+In midwinter the ground gets genuinely testing, and the **Welsh Grand National
+is run over 3m5½f on it**, which makes it one of the two or three hardest
+stamina tests in the British calendar. **Proven stamina on soft or heavy ground
+matters more here than class**: horses who stay beyond three miles and act in
+the mud repeatedly outrun their ratings. Going is the first thing to read and
+the last thing to re-read.
+
+**Meetings covered:** Coral Welsh Grand National — see
+`welsh-national-2026.html`.
+
+#### The 2026 run-in: what is left, and what the engine should expect
+
+Added 1 Oct 2026. The Cambridgeshire was the last meeting in the original
+`FESTIVALS_2026[]`; seven ITV-televised fixtures remain to the end of the year,
+and all seven now have pages.
+
+| Dates | Meeting | Code | ITV day |
+|---|---|---|---|
+| 9–10 Oct | Future Champions, Newmarket | Flat | Sat 10 |
+| 17 Oct | British Champions Day, Ascot | Flat | Sat 17 |
+| 13–15 Nov | Cheltenham November | Jumps | Sat 14 |
+| 11–12 Dec | Cheltenham Christmas | Jumps | Sat 12 |
+| 18–19 Dec | Howden Christmas Weekend, Ascot | Jumps | Sat 19 |
+| 26 Dec | King George VI Chase, Kempton | Jumps | Sat 26 |
+| 28 Dec | Coral Welsh Grand National, Chepstow | Jumps | Mon 28 |
+
+- **ITV covers the Saturday, not the meeting.** On the multi-day fixtures the
+  Friday and Sunday are Racing TV. Build the televised day first; the others
+  are optional.
+- **Two races are the realistic LONG candidates all quarter** — the
+  **Cesarewitch** (2m2f, routinely 30+) and the **Welsh Grand National**
+  (3m5½f, maximum field). Everything else is Group racing or a small-field
+  card, and the slot is shut on arithmetic. **But §9 already records that field
+  size cannot be forecast off an entry list**, so treat both as what to watch
+  for and not as a decision.
+- **The code changes in November.** From Cheltenham onwards it is jumps: no
+  draw, going is the primary factor, trainer/jockey combos at the course matter
+  far more, and §8's jumps rules govern rather than the flat ones. The draw
+  badge comes off every pick.
+- **The Welsh Grand National moved to 28 December** this year, off its
+  traditional 27th, to end the clash with Kempton. Verify the date on
+  declarations rather than trusting the habit.
+
 Add new course profiles as they're covered.
 
 ---

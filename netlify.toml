@@ -128,3 +128,38 @@
   from = "/*"
   to   = "/index.html"
   status = 302
+
+[[redirects]]
+  from = "/future-champions-2026"
+  to = "/future-champions-2026.html"
+  status = 200
+
+[[redirects]]
+  from = "/champions-day-2026"
+  to = "/champions-day-2026.html"
+  status = 200
+
+[[redirects]]
+  from = "/cheltenham-november-2026"
+  to = "/cheltenham-november-2026.html"
+  status = 200
+
+[[redirects]]
+  from = "/cheltenham-christmas-2026"
+  to = "/cheltenham-christmas-2026.html"
+  status = 200
+
+[[redirects]]
+  from = "/ascot-christmas-2026"
+  to = "/ascot-christmas-2026.html"
+  status = 200
+
+[[redirects]]
+  from = "/king-george-2026"
+  to = "/king-george-2026.html"
+  status = 200
+
+[[redirects]]
+  from = "/welsh-national-2026"
+  to = "/welsh-national-2026.html"
+  status = 200

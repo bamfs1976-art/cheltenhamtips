@@ -55,7 +55,14 @@
     'sprint-cup-2026':              { from: '#431407', to: '#f97316', strap: 'FESTIVAL FORM BOOK · SPRINT CUP',        mark: 'SPRINT CUP 2026' },
     'st-leger-2026':                { from: '#3f2d05', to: '#eab308', strap: 'FESTIVAL FORM BOOK · ST LEGER',          mark: 'ST LEGER 2026' },
     'ayr-gold-cup-2026':            { from: '#2e1065', to: '#a855f7', strap: 'FESTIVAL FORM BOOK · AYR GOLD CUP',      mark: 'AYR GOLD CUP 2026' },
-    'cambridgeshire-2026':          { from: '#083344', to: '#0891b2', strap: 'FESTIVAL FORM BOOK · CAMBRIDGESHIRE',    mark: 'CAMBRIDGESHIRE 2026' }
+    'cambridgeshire-2026':          { from: '#083344', to: '#0891b2', strap: 'FESTIVAL FORM BOOK · CAMBRIDGESHIRE',    mark: 'CAMBRIDGESHIRE 2026' },
+    'future-champions-2026': { from: '#2e1065', to: '#c084fc', strap: 'FESTIVAL FORM BOOK · FUTURE CHAMPIONS', mark: 'FUTURE CHAMPIONS 2026' },
+    'champions-day-2026': { from: '#451a03', to: '#f59e0b', strap: 'FESTIVAL FORM BOOK · CHAMPIONS DAY', mark: 'CHAMPIONS DAY 2026' },
+    'cheltenham-november-2026': { from: '#052e16', to: '#22c55e', strap: 'FESTIVAL FORM BOOK · CHELTENHAM NOVEMBER', mark: 'CHELTENHAM NOVEMBER 2026' },
+    'cheltenham-christmas-2026': { from: '#450a0a', to: '#ef4444', strap: 'FESTIVAL FORM BOOK · CHELTENHAM CHRISTMAS', mark: 'CHELTENHAM CHRISTMAS 2026' },
+    'ascot-christmas-2026': { from: '#042f2c', to: '#14b8a6', strap: 'FESTIVAL FORM BOOK · ASCOT CHRISTMAS', mark: 'ASCOT CHRISTMAS 2026' },
+    'king-george-2026': { from: '#2e1065', to: '#a78bfa', strap: 'FESTIVAL FORM BOOK · KING GEORGE', mark: 'KING GEORGE 2026' },
+    'welsh-national-2026': { from: '#450a0a', to: '#dc2626', strap: 'FESTIVAL FORM BOOK · WELSH NATIONAL', mark: 'WELSH NATIONAL 2026' }
   };
   var FALLBACK = { from: '#0a1428', to: '#fbbf24', strap: 'FESTIVAL FORM BOOK', mark: 'FESTIVAL FORM BOOK' };
 

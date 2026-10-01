@@ -181,6 +181,69 @@ const FESTIVALS_2026 = [
     headline:'COMPLETE — 28 races gated 28/28, 72 picks over four days, 11 winners. Engine ROI −31.2% (−£31.83 on £102) — but the singles finished within £2.33 of level (−3.2%) and the Lucky 15 lost £29.50 of it, going 0 from 15 running legs. That result retires the Lucky 15 as a default bet. The NB beat the NAP for a fourth straight day: 8 winners to 3, with the LONG 0 from 16.',
     headlineRace:'Ebor Handicap · Sat 22 Aug — won by Daiquiri Bay (10/1) · Nunthorpe (G1) Fri — won by Bacio (3/1F) · Juddmonte International (G1) Wed',
   },
+  {
+    slug:'future-champions-2026', name:'Future Champions Festival 2026', shortName:'Future Champions',
+    icon:'🏆', dates:['2026-10-09','2026-10-10'],
+    dateLabel:'9-10 Oct 2026', venue:'Newmarket (Rowley Mile)', type:'Flat',
+    theme:'theme-purple', accentColor:'#c084fc',
+    url:'future-champions-2026.html', races:null, concluded:false,
+    headline:'AWAITING DECLARATIONS - nothing priced. UK declarations confirm 48 hours out, so this card cannot be built until then (rule 13: no declared field, no bet). Published now: the course profile, the confirmed feature races and the place-count arithmetic that decides the LONG slot. ITV coverage: Sat 10 Oct.',
+    headlineRace:'Fillies’ Mile (Group 1) · Somerville Tattersall Stakes (Group 3) · Autumn Stakes (Group 3) · Darley Dewhurst Stakes (Group 1) · Cesarewitch Handicap (Heritage Handicap) · Challenge Stakes (Group'
+  },
+  {
+    slug:'champions-day-2026', name:'QIPCO British Champions Day 2026', shortName:'Champions Day',
+    icon:'👑', dates:['2026-10-17'],
+    dateLabel:'17 Oct 2026', venue:'Ascot', type:'Flat',
+    theme:'theme-amber', accentColor:'#f59e0b',
+    url:'champions-day-2026.html', races:null, concluded:false,
+    headline:'AWAITING DECLARATIONS - nothing priced. UK declarations confirm 48 hours out, so this card cannot be built until then (rule 13: no declared field, no bet). Published now: the course profile, the confirmed feature races and the place-count arithmetic that decides the LONG slot. ITV coverage: Sat 17 Oct.',
+    headlineRace:'QIPCO Champion Stakes (Group 1) · Queen Elizabeth II Stakes (Group 1) · British Champions Sprint (Group 1) · British Champions Fillies & Mares (Group 1) · British Champions Long Distance Cup (Grou'
+  },
+  {
+    slug:'cheltenham-november-2026', name:'Cheltenham November Meeting 2026', shortName:'Cheltenham Nov',
+    icon:'🌾', dates:['2026-11-13','2026-11-14','2026-11-15'],
+    dateLabel:'13-15 Nov 2026', venue:'Cheltenham', type:'Jumps',
+    theme:'theme-green', accentColor:'#22c55e',
+    url:'cheltenham-november-2026.html', races:null, concluded:false,
+    headline:'AWAITING DECLARATIONS - nothing priced. UK declarations confirm 48 hours out, so this card cannot be built until then (rule 13: no declared field, no bet). Published now: the course profile, the confirmed feature races and the place-count arithmetic that decides the LONG slot. ITV coverage: Sat 14 Nov.',
+    headlineRace:'Supreme Trial Novices’ Hurdle (Listed) · Paddy Power Gold Cup (Grade 3 Handicap Chase) · November Novices’ Chase (Grade 2) · Paddy Power Handicap Hurdle (Grade 3) · Greatwood Hurdle (Grade'
+  },
+  {
+    slug:'cheltenham-christmas-2026', name:'Cheltenham Christmas Meeting 2026', shortName:'Cheltenham Xmas',
+    icon:'🎄', dates:['2026-12-11','2026-12-12'],
+    dateLabel:'11-12 Dec 2026', venue:'Cheltenham', type:'Jumps',
+    theme:'theme-red', accentColor:'#ef4444',
+    url:'cheltenham-christmas-2026.html', races:null, concluded:false,
+    headline:'AWAITING DECLARATIONS - nothing priced. UK declarations confirm 48 hours out, so this card cannot be built until then (rule 13: no declared field, no bet). Published now: the course profile, the confirmed feature races and the place-count arithmetic that decides the LONG slot. ITV coverage: Sat 12 Dec.',
+    headlineRace:'Unibet Hurdle (Listed) · International Hurdle (Grade 2) · Caspian Caviar Gold Cup (Grade 3 Handicap Chase) · Albert Bartlett Novices’ Hurdle (Grade 2)'
+  },
+  {
+    slug:'ascot-christmas-2026', name:'Howden Christmas Racing Weekend 2026', shortName:'Ascot Xmas',
+    icon:'❄️', dates:['2026-12-18','2026-12-19'],
+    dateLabel:'18-19 Dec 2026', venue:'Ascot', type:'Jumps',
+    theme:'theme-teal', accentColor:'#14b8a6',
+    url:'ascot-christmas-2026.html', races:null, concluded:false,
+    headline:'AWAITING DECLARATIONS - nothing priced. UK declarations confirm 48 hours out, so this card cannot be built until then (rule 13: no declared field, no bet). Published now: the course profile, the confirmed feature races and the place-count arithmetic that decides the LONG slot. ITV coverage: Sat 19 Dec.',
+    headlineRace:'Mandarin Handicap Chase (Listed) · Long Walk Hurdle (Grade 1) · Howden Silver Cup (Grade 3 Handicap Chase) · Noel Novices’ Chase (Grade 2)'
+  },
+  {
+    slug:'king-george-2026', name:'King George VI Chase 2026', shortName:'King George',
+    icon:'👑', dates:['2026-12-26'],
+    dateLabel:'26 Dec 2026', venue:'Kempton Park', type:'Jumps',
+    theme:'theme-violet', accentColor:'#a78bfa',
+    url:'king-george-2026.html', races:null, concluded:false,
+    headline:'AWAITING DECLARATIONS - nothing priced. UK declarations confirm 48 hours out, so this card cannot be built until then (rule 13: no declared field, no bet). Published now: the course profile, the confirmed feature races and the place-count arithmetic that decides the LONG slot. ITV coverage: Sat 26 Dec.',
+    headlineRace:'Ladbrokes King George VI Chase (Grade 1) · Christmas Hurdle (Grade 1) · Kauto Star Novices’ Chase (Grade 1) · Desert Orchid Chase (Grade 2)'
+  },
+  {
+    slug:'welsh-national-2026', name:'Coral Welsh Grand National 2026', shortName:'Welsh National',
+    icon:'🏴󠁧󠁢󠁷󠁬󠁳󠁿', dates:['2026-12-28'],
+    dateLabel:'28 Dec 2026', venue:'Chepstow', type:'Jumps',
+    theme:'theme-crimson', accentColor:'#dc2626',
+    url:'welsh-national-2026.html', races:null, concluded:false,
+    headline:'AWAITING DECLARATIONS - nothing priced. UK declarations confirm 48 hours out, so this card cannot be built until then (rule 13: no declared field, no bet). Published now: the course profile, the confirmed feature races and the place-count arithmetic that decides the LONG slot. ITV coverage: Mon 28 Dec.',
+    headlineRace:'Coral Welsh Grand National (Grade 3 Handicap Chase) · Coral Finale Juvenile Hurdle (Grade 1) · Coral Future Stars Handicap Chase (Listed)'
+  }
 ];
 
 // ════════════════════════════════════════════════════════════════════════════
