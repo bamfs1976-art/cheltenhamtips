@@ -691,13 +691,28 @@ the hand-built rich race-card layout described below.
 - **`chester-2026.html`** — the primary reference (Day 1 Wed 6 May 2026).
   Race-card blocks, draw badges, source-badge tipster overlay, Lucky 15,
   external tipsters box, crossover signals box.
-- **`dante-2026.html`** — Wed (Day 1, 13 May 2026) and Thu (Day 2,
+- **`dante-2026.html`** — ~~Wed (Day 1, 13 May 2026) and Thu (Day 2,
   14 May 2026) cards both follow the contract end-to-end with 21 picks
-  per day. Use as a working example of how to add a second day onto a
-  multi-day festival page once a single day is live.
+  per day.~~ **Wrong — do not model anything on this page. Corrected
+  6 Oct 2026.** Checked while resolving the share-button question: it has
+  **no `dayN` anchors, no `.race-block` and no `.race-hd`**, and nine
+  `.pick-row` elements rather than the forty-two described above. It does not
+  follow the display contract in any respect, and a session told to use it as
+  "a working example" would build the wrong thing. The multi-day example to
+  copy is **`ebor-2026.html`** (four days) or **`st-leger-2026.html`** (four
+  days) — both render share buttons on every day, which is itself proof the
+  structure is right.
 
-If a new festival page can't be modelled on one of these two, ask
-before improvising a different layout.
+So the reference set is **`chester-2026.html`** for a single day and
+**`ebor-2026.html`** or **`st-leger-2026.html`** for a multi-day page. If a new
+festival page can't be modelled on one of those, ask before improvising a
+different layout.
+
+**A page that renders share buttons is conforming; a page that doesn't may not
+be.** The share engine reads nothing but the display contract, so
+`node scripts/analysis/share-eligibility.mjs` doubles as a contract check —
+it is how the `dante` error was found after that page had been documented as a
+reference implementation for five months.
 
 ### File naming
 
@@ -1369,6 +1384,28 @@ Add new course profiles as they're covered.
     containing `.race-block > .race-hd` and `.pick-row`. A page whose day
     anchors are a programme or a results table (Royal Ascot, Northumberland
     Plate) gets no buttons, so don't include the scripts there.
+
+    **That condition is a NESTING one, and testing it with a page-level regex
+    fails. Resolved 6 Oct 2026 after getting it wrong three times.** The
+    `.race-block` must sit *inside* the `dayN` section; whether the page
+    contains a day anchor, a `race-hd` and a `pick-row` somewhere is a
+    different and much weaker question. Two versions of the verify check
+    counted `.pick-row` alone, a third and'ed three page-level regexes
+    together, and all three mis-read the same page.
+
+    `northumberland-plate-2026.html` is the shape that exposes it: its three
+    `dayN` sections hold **results tables**, and the tips cards live in sibling
+    sections carrying no day anchor at all. **76 pick rows on the page, none
+    reachable from a day section** — so the engine renders nothing and the page
+    correctly has no scripts. The §10 line above was right and the check was
+    wrong.
+
+    The arbiter is the engine, not a reading of it:
+    `node scripts/analysis/share-eligibility.mjs` (with `python3 -m
+    http.server 8899` from the repo root) runs the engine's own predicate in
+    Chromium on every page and diffs it against what `verify-site.mjs`
+    computes. **0 divergences across 25 pages**, day-ID for day-ID. If it ever
+    reports one, the regex is the thing that is wrong.
   - Festival colours are duplicated as canvas literals in `fmb-share.js`.
     `node scripts/check-share-palette.mjs` pins them to
     `FESTIVALS_2026[].accentColor` and fails on drift — run it after any

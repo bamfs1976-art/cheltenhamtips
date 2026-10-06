@@ -46,12 +46,6 @@ const KNOWN = {
     why: 'narrowing the row boundary to sibling rows cleared 17 of 19; the rest are on the oldest '
        + 'pages, whose race blocks nest differently, and are unreviewed rather than known-good',
   },
-  'Share scripts present iff the share engine would render': {
-    pages: ['northumberland-plate-2026.html'],
-    why: '§10 calls this a programme page that gets no buttons, but it has day sections AND '
-       + 'pick rows, so the engine would in fact render. Needs a decision — recorded rather '
-       + 'than silently passed (6 Oct 2026)',
-  },
 };
 
 const debtSeen = [];
@@ -109,12 +103,46 @@ check('BeGambleAware footer on every page',
 //    earlier version of this check counted pick-rows alone and reported three
 //    false positives, which is the same "checked the wrong thing" failure the
 //    header of this file is about.
+//    RESOLVED 6 Oct 2026, and the check was wrong for the THIRD time. The two
+//    earlier versions counted pick-rows alone; this one tested `id="day\d+"`,
+//    `race-hd` and `pick-row` anywhere on the PAGE. The engine's condition is a
+//    NESTING one — a .race-block inside the dayN section — so a page-level
+//    regex cannot express it however many terms it ands together.
+//
+//    northumberland-plate is exactly that shape: three dayN sections that hold
+//    RESULTS tables, with the tips cards in sibling sections carrying no day
+//    anchor. 76 pick rows on the page, zero reachable from a day section.
+//    Confirmed by running the engine's own predicate in a real browser across
+//    every page — scripts/analysis/share-eligibility.mjs, 0 mismatches.
+//
+//    So scope it properly: walk each dayN section's span by counting section
+//    tags, and look for the race-block inside that span.
+const daySpans = (s) => {
+  const out = [];
+  const open = /<section\b[^>]*\bid="(day\d+|d\d+)"[^>]*>/g;
+  let m;
+  while ((m = open.exec(s))) {
+    // Walk forward counting <section>/</section> until this one closes.
+    let depth = 1;
+    const tag = /<\/?section\b/g;
+    tag.lastIndex = m.index + m[0].length;
+    let t;
+    while (depth > 0 && (t = tag.exec(s))) {
+      depth += t[0] === '</section' ? -1 : 1;
+    }
+    out.push({ id: m[1], inner: s.slice(m.index + m[0].length, t ? t.index : s.length) });
+  }
+  return out;
+};
+
 check('Share scripts present iff the share engine would render', pages.flatMap((f) => {
   const s = src[f];
-  const eligible = /id="day\d+"/.test(s) && /class="race-hd"/.test(s) && /<div class="pick-row"/.test(s);
+  // A day renders iff it contains a race-block that has BOTH a head and a pick.
+  const renders = daySpans(s).filter((d) =>
+    /class="race-block"/.test(d.inner) && /class="race-hd"/.test(d.inner) && /class="pick-row"/.test(d.inner));
   const share = /fmb-share\.js/.test(s);
-  if (eligible && !share) return [`${f}: day sections + picks, but no share scripts`];
-  if (!eligible && share) return [`${f}: share scripts but the engine would render nothing`];
+  if (renders.length && !share) return [`${f}: ${renders.length} renderable day(s) (${renders.map((d) => d.id).join(', ')}), but no share scripts`];
+  if (!renders.length && share) return [`${f}: share scripts but no day section the engine would render`];
   return [];
 }));
 
