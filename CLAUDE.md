@@ -1372,6 +1372,37 @@ Add new course profiles as they're covered.
   the same way `festivalStatus()` does in `index.html`. `status` survives
   only as the fallback for an entry with no dates. **Adding a festival means
   adding both `sort` and `end`.**
+- **No number ships without the script that produced it, committed.** Added
+  6 Oct 2026, borrowed from `bumasello/mazetick` (MIT), whose article schema
+  makes a `derivation: path/script.py@commit` field a **build requirement** —
+  added there after two published numbers in two days turned out not to
+  reproduce.
+
+  We had the same hole, and worse. A check on 6 Oct found **41 scratchpad
+  scripts had produced every number published this season and not one was
+  committed**: the RPR-as-race-par slope (−0.006), the place-band backtest
+  (7/7), the pts/pick recompute (0.96 / 0.75 / 0.45), the Cambridgeshire
+  settlement arithmetic. All of it lived in a session temp directory that dies
+  with the container. The panels are still on the site; the derivations were
+  already gone.
+
+  - Analysis that produces a **published number** goes in `scripts/analysis/`
+    and is committed in the same change as the number.
+  - Page *generators* are not analysis and do not need keeping; the page is the
+    artefact. The distinction is whether the output is a **claim** or markup.
+  - Where a panel states a figure, name the script beside it.
+
+- **`node scripts/verify-site.mjs` before any merge.** Every check scans every
+  page — never a sample, never a region. That rule is the whole point: §10's
+  Ebor failure passed its own checks because they looked only at what was
+  written, and mazetick's equivalent was written after their footer check passed
+  on correct hrefs wrapped in broken text. A check scoped to the thing you
+  edited cannot see what you broke elsewhere.
+
+  Known pre-existing debt is listed **inside the script** with a reason and a
+  date, reported separately, and does not fail the run. A check that silently
+  tolerates a class of failure has stopped being a check.
+
 - Every page must include the BeGambleAware footer block.
 - **Live site: <https://ukracinghub.netlify.app>** (renamed from
   `cheltenhamtips.netlify.app` on 15 Aug 2026 — the old subdomain is
@@ -1424,6 +1455,8 @@ Add new course profiles as they're covered.
 - [ ] Live banner wires up correctly on the hub on the day
 - [ ] BeGambleAware footer present
 - [ ] Mobile rendering checked at 375px
+- [ ] `node scripts/verify-site.mjs` passes
+- [ ] Any published number has its script committed under `scripts/analysis/`
 - [ ] Committed to feature branch, merged to `main` only with user
       authorization
 
@@ -1652,6 +1685,51 @@ is what drives the band; the bookmaker tells you the band.
 > band it covers, so the discipline cost nothing and bought a real answer.
 > Keep the rule for next time: two inferences agreeing is still one
 > inference.
+
+#### External corroboration, and the dimension our bands still miss
+
+Added 6 Oct 2026, from a review of `bumasello/mazetick` (MIT) — a public site
+that reads each-way terms **hourly** from one bookmaker's own race pages and
+time-stamps every change. 324 races over nine consecutive days, 81 term changes.
+It is independent of everything above, measures the advertised offer rather than
+the Tote, and it agrees with us where we overlap:
+
+- **Handicap 16+ opens at 4 places**, which is the number Sky Bet's own banner
+  named and the number our Tote-derived model predicted. Three unrelated routes,
+  one answer.
+- **Handicap 10–11 and non-handicap 10+ never moved at all** across nine days —
+  3 places at 1/5 in both, 113 races, zero changes. That is our 8–15 band for
+  handicaps and our 8+ band for non-handicaps, confirmed from the offer side.
+
+**But it finds two things our `PLACE_BANDS` does not model at all:**
+
+1. **The classic ladder describes the OPEN, not the off.** Terms changed in 81
+   of 324 races, and divergence from the classic table runs **28.7% at the
+   opening against 39.5% at the close**. Our table has no time dimension: it
+   answers "what are the terms" as though that were a property of the race.
+   Rule 16 already says re-check the band at the off because withdrawals move
+   it; this says the bookmaker moves it too, on a schedule, with no withdrawal
+   involved.
+2. **A promotion always costs the fraction.** In **54 promotions the fraction
+   did not improve once** — 48 gained a place *and* were cut, 6 gained a place
+   already at the worse level, **zero** gained a place and kept the fraction.
+   So "7 places instead of 4" is not a gift of three places; it is three places
+   bought with a cut from 1/4 to 1/5 on all of them.
+
+**That matters for our settlements and we have not been tracking it.** Our bands
+carry a `frac` per band and we treat it as fixed. Their reading is that a 16+
+handicap opens at 4 places **at 1/4** and ends the day with no 1/4 anywhere on
+the card. The Cambridgeshire bears that out from our own side: we read the
+promoted state, **1/5 and seven places**, and settled on it correctly — but if a
+race is ever settled at the *base* 4 places we would compute 1/5 where 1/4
+applied and **understate every place return by 20%**.
+
+- **Record the fraction as well as the place count, both at pricing and at the
+  off.** We have been recording the count and assuming the fraction.
+- Their limits are worth carrying too, because they are the honest ones: nine
+  days, **one** firm, terms read once an hour (a change made and reverted inside
+  the hour is invisible), and it measures what was *advertised*, not what anyone
+  was paid.
 
 ### 2 · WebSearch — partial, useful when nothing else is available
 

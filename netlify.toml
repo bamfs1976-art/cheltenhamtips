@@ -163,3 +163,13 @@
   from = "/welsh-national-2026"
   to = "/welsh-national-2026.html"
   status = 200
+
+[[redirects]]
+  from = "/guineas-2026"
+  to = "/guineas-2026.html"
+  status = 200
+
+[[redirects]]
+  from = "/scottish-grand-national-2026"
+  to = "/scottish-grand-national-2026.html"
+  status = 200
