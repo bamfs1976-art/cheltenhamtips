@@ -856,6 +856,29 @@ After racing, when the user provides results:
 16. **Re-check place terms at the off.** Enhanced EW places depend on
     runner counts and withdrawals can drop a race below the band after
     it has been priced (see Step 3b).
+
+    **This is now a script, not a habit — run it.** Added 6 Oct 2026.
+    `node scripts/nr-check.mjs --card <priced-card.json> --nr "15:40 Pathein,
+    16:15 La Pittura"` re-runs the band arithmetic against the withdrawals and
+    exits non-zero if anything moved. It reports four things per race: whether
+    the **base band** moved, whether a **place special was lost** (an offer of
+    N places is conditional on its own runner threshold — 5 places at 16+ stops
+    applying at 15), whether any **pick is a non-runner**, and whether the
+    **LONG still clears the place test on the terms that will actually apply**.
+    It also reprints the LONG's card price, because §4 found the price moves
+    further between pricing and the off than the band does.
+
+    `scripts/fixtures/nr-regression.json` replays the three withdrawals the
+    archive already lost money to — Goodwood Day 5's 18→15, St Leger Day 1's
+    15:00 dropping 3→2 with Consent third for nothing, and La Pittura out of
+    the Cambridgeshire 16:15. It catches all three. If that fixture ever exits
+    0, this rule has stopped being enforced.
+
+    One caveat worth stating: an offer recorded without its `minRunners`
+    threshold cannot be tested, and the script says so rather than assuming the
+    offer holds. **Record the threshold when you record the offer** — Sky Bet's
+    Cambridgeshire banner stated it in as many words ("if there are 16 runners
+    or more"), so it is there to be read.
 17. **A GoingStick differential under ~0.5 is noise, not a draw bias.**
     Added after Ebor Day 1. The morning strips read Far 5.6 / Centre 5.8 /
     Stands' 5.8 and the card was built on "stands' side is faster, back
@@ -1403,6 +1426,24 @@ Add new course profiles as they're covered.
   date, reported separately, and does not fail the run. A check that silently
   tolerates a class of failure has stopped being a check.
 
+- **The engine's scripts, and which rule each one makes mechanical:**
+
+  | Script | Enforces |
+  |---|---|
+  | `scripts/gate-check.mjs` | Step 3b / rule 13 — declared field, draws, EW terms, LONG gate |
+  | `scripts/nr-check.mjs` | Rule 16 — band moves, lost place specials, withdrawn picks, at the off |
+  | `scripts/settle.mjs` | §6 P/L from published positions, refusing to guess the fraction |
+  | `scripts/lib/place-terms.mjs` | The place-band model — **the only copy** |
+  | `scripts/verify-site.mjs` | The display contract and §10, every page every check |
+  | `scripts/check-share-palette.mjs` | Share-card colours against `FESTIVALS_2026[].accentColor` |
+
+  **A model that matters belongs in `scripts/lib/`, imported, never copied.**
+  Added 6 Oct 2026. The place bands existed in two files; the one that was
+  corrected was the gate, and the one that was not was the file computing the
+  money (§12). Both passed their own tests, because each was self-consistent.
+  Duplicated domain logic does not announce itself — it diverges quietly and the
+  stale copy is as likely to be the one that pays out.
+
 - Every page must include the BeGambleAware footer block.
 - **Live site: <https://ukracinghub.netlify.app>** (renamed from
   `cheltenhamtips.netlify.app` on 15 Aug 2026 — the old subdomain is
@@ -1457,8 +1498,21 @@ Add new course profiles as they're covered.
 - [ ] Mobile rendering checked at 375px
 - [ ] `node scripts/verify-site.mjs` passes
 - [ ] Any published number has its script committed under `scripts/analysis/`
+- [ ] **Each-way fraction recorded per race**, not left to a default — settlement
+      refuses to price a placed pick without it
+- [ ] **A place special recorded with its own runner threshold** (`minRunners`),
+      or `nr-check.mjs` cannot test whether it still holds
 - [ ] Committed to feature branch, merged to `main` only with user
       authorization
+
+**At the off — the checklist does not end when the card ships:**
+
+- [ ] `node scripts/nr-check.mjs --card <card.json> --nr "…"` run against the
+      withdrawals; exit 0 before anything is treated as still standing
+- [ ] Going and GoingStick strips re-read (rules 11, 12, 17)
+- [ ] Any LONG's **price** re-checked, not just its place count (§4 — Lesrico
+      was logged at 9/1 and started 3/1F)
+- [ ] The place count that **actually applied** stated in the settlement panel
 
 ---
 
@@ -1611,6 +1665,35 @@ is what drives the band; the bookmaker tells you the band.
 > race paid seven. And **never retro-fit a settled card** — when the bands
 > changed, Saturday's printed terms moved and Friday's did not, because
 > Friday had already run.
+>
+> **ONE COPY, and the second copy was computing the money. Fixed 6 Oct 2026.**
+> The bands now live in `scripts/lib/place-terms.mjs` and nothing else carries a
+> ladder. Wiring that up found two bugs in `settle.mjs` — the file that turns
+> results into pounds — both of which had been live since the 25 Sep fix went
+> into `gate-check.mjs` and only there:
+>
+> - It carried **its own `placesForRunners()`, still the old disproved ladder**
+>   (5 at 16+, 4 at 8+). The gate had been corrected eleven days earlier; the
+>   settlement had not, so every number published in that window was computed on
+>   a table the archive had already shown wrong in six races of seven. **Correct
+>   one copy and you have corrected one copy** — grep for the others.
+> - It defaulted the each-way fraction with `race.ewFrac ?? 5`. A race that
+>   settled at **1/4 was being paid at 1/5, understating every place return by
+>   20%**, with nothing on screen to say a default had been applied. It now
+>   **refuses**: an unplaced runner settles fine without a fraction, a *placed*
+>   one prints `UNRESOLVED`, says how much stake is booked at zero and **is not
+>   a loss**, and exits non-zero. A settlement that cannot be computed should
+>   look different from one that lost.
+>
+> **And a third, which this file's own habits caused.** `settle.mjs` normalises
+> the API payload and renames `race_name` to `name`, so the shared
+> `isHandicap()` — which reads `race_name` — saw nothing and **every handicap
+> settled on the non-handicap bands**. A 16+ handicap read 3 places instead of
+> 4, silently, in the direction that pays out less. The unit that caught it was
+> a fixture with a 20-runner handicap *and* a 20-runner Group 1 in the same
+> payload: the two ladders only differ above 15 runners, so a test on a
+> nine-runner race cannot see the bug at all. **When two tables differ in one
+> band, test inside that band.**
 >
 > The original question and its three inconclusive rounds are kept below,
 > because the discipline of refusing to edit the code on repeated inference

@@ -8,83 +8,13 @@
 // Exits 1 if any race fails the gate, so it can guard a build.
 
 import fs from 'node:fs/promises';
+import { placeTerms, boundaryRisk, isHandicap } from './lib/place-terms.mjs';
 import { racecards, archive, ukDate, raceOff, raceDistanceF, raceClass, raceType, raceGoing, raceFieldSize, raceStatus } from './lib/racing-api.mjs';
 
-// Sky Bet's STANDARD each-way ladder, race-type aware.
-//
-// PROVENANCE DIFFERS PER BAND — read this before trusting a row.
-//
-// The 16+ HANDICAP band is the only one confirmed against a real bookmaker
-// offer, which is what §12 has asked for since Haydock Day 1 and finally got
-// on 25 Sep 2026. Sky Bet's Cambridgeshire market (28 runners, Class 2
-// handicap) read "Each Way: 1/5 Odds, 7 Places" above a banner reading "We are
-// paying 7 places instead of 4 on all each way bets if there are 16 runners or
-// more". The 7 is the promotion; the 4 it names is Sky Bet's own standard term.
-// So the base at 16+ is FOUR, and the 5 this table carried from the start was
-// wrong — in the dangerous direction, exactly as every inference since Haydock
-// had said, and NOT ONE of the 38 archived races ever paid five.
-//
-// Every other band still rests on the Tote-dividend model (St Leger + the
-// Cambridgeshire Friday, 38 races, no exceptions) and NOT on an offer. That
-// model predicted 4 at 16+ and the offer confirmed it, which is real evidence
-// for the model — but one offer confirms one band, so the rest stay estimates.
-// Keep reading the terms off the actual market and re-checking at the off
-// (rule 16).
-//
-// ENHANCED OFFERS SIT ABOVE THIS TABLE and are deliberately not modelled: the
-// same Cambridgeshire paid 7. This is a floor, never the answer.
-const PLACE_BANDS = {
-  handicap: [
-    { min: 16, places: 4, frac: '1/5', src: 'Sky Bet offer 25 Sep 2026' },
-    { min: 8, places: 3, frac: '1/5', src: 'Tote model, 38 races' },
-    { min: 5, places: 2, frac: '1/4', src: 'Tote model, 38 races' },
-    { min: 1, places: 0, frac: '—', src: 'win only' },
-  ],
-  // Five places at 16+ is a HANDICAP term. A big-field stakes or sales race
-  // read as LONG-open under the old single ladder while standard terms pay
-  // three — §12 called this the single most likely place for the gate to wave
-  // through a bet it should refuse. Doncaster's 13:50 is the worked example: a
-  // 17-runner conditions sales race paid THREE, and the card held the slot back
-  // by hand because the ladder would not.
-  other: [
-    { min: 8, places: 3, frac: '1/5', src: 'Tote model, 38 races' },
-    { min: 5, places: 2, frac: '1/4', src: 'Tote model, 38 races' },
-    { min: 1, places: 0, frac: '—', src: 'win only' },
-  ],
-};
-
-// Runner counts at which the place count changes. A race sitting just above one
-// of these can lose a place to withdrawals after it has been priced — which is
-// exactly what happened to the Goodwood Day 5 17:20, and again to the St Leger
-// Day 1 15:00. The boundaries differ by race type because the bands do.
-const BOUNDARIES = { handicap: [16, 8, 5], other: [8, 5] };
-const AT_RISK_MARGIN = 2;
-
-// Nurseries are handicaps. "Hcap"/"H'cap" are how the API and the Racing Post
-// abbreviate it; the long form appears in sponsored race names.
-function isHandicap(race) {
-  return /handicap|\bh'?cap\b|nursery/i.test(
-    `${race.race_name ?? ''} ${race.race_type ?? ''} ${race.pattern ?? ''}`,
-  );
-}
-
-function bandsFor(race) {
-  return isHandicap(race) ? PLACE_BANDS.handicap : PLACE_BANDS.other;
-}
-
-function placeTerms(runners, race = {}) {
-  const bands = bandsFor(race);
-  const band = bands.find((b) => runners >= b.min) ?? bands.at(-1);
-  return { places: band.places, frac: band.frac, src: band.src };
-}
-
-function boundaryRisk(runners, race = {}) {
-  const list = isHandicap(race) ? BOUNDARIES.handicap : BOUNDARIES.other;
-  const b = list.find((x) => runners >= x && runners <= x + AT_RISK_MARGIN);
-  if (!b) return null;
-  const below = placeTerms(b - 1, race);
-  return { boundary: b, margin: runners - b, dropsTo: below.places };
-}
+/* The place-terms model lives in one place now — see scripts/lib/place-terms.mjs
+   for the bands, their provenance, and why the FRACTION is not just another
+   column. This file used to carry its own copy; settle.mjs carried a different
+   one, and settle.mjs's was the ladder we had already disproved. */
 
 function isFlat(race) {
   const t = String(raceType(race) ?? '').toLowerCase();
@@ -137,6 +67,7 @@ function checkRace(race) {
     places: terms.places,
     ewFrac: terms.frac,
     termsSource: terms.src,
+    fracStable: terms.fracStable,
     handicap: isHandicap(race),
     boundaryRisk: risk,
     missingDraw,

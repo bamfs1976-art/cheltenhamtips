@@ -1,0 +1,77 @@
+{
+ "event": "Regression \u2014 the three the archive already lost to",
+ "date": "replay",
+ "races": [
+  {
+   "off": "17:20",
+   "race_name": "Goodwood Day 5 Handicap",
+   "declared": 18,
+   "places": 5,
+   "ewFrac": "1/5",
+   "offer": {
+    "places": 5,
+    "frac": "1/5",
+    "minRunners": 16
+   },
+   "picks": [
+    {
+     "slot": "LONG",
+     "horse": "Longshot",
+     "odds": "12/1"
+    }
+   ]
+  },
+  {
+   "off": "15:00",
+   "race_name": "St Leger Day 1 May Hill Stakes",
+   "declared": 9,
+   "places": 3,
+   "ewFrac": "1/5",
+   "picks": [
+    {
+     "slot": "NAP",
+     "horse": "Consent",
+     "odds": "6/1"
+    }
+   ]
+  },
+  {
+   "off": "16:15",
+   "race_name": "Blandford Maiden Fillies Stakes",
+   "declared": 11,
+   "places": 3,
+   "ewFrac": "1/5",
+   "picks": [
+    {
+     "slot": "NAP",
+     "horse": "Ruby Sands",
+     "odds": "SP"
+    },
+    {
+     "slot": "NB",
+     "horse": "La Pittura",
+     "odds": "SP"
+    }
+   ]
+  },
+  {
+   "off": "15:40",
+   "race_name": "bet365 Cambridgeshire Handicap",
+   "declared": 28,
+   "places": 7,
+   "ewFrac": "1/5",
+   "offer": {
+    "places": 7,
+    "frac": "1/5",
+    "minRunners": 16
+   },
+   "picks": [
+    {
+     "slot": "LONG",
+     "horse": "Alcarath",
+     "odds": "20/1"
+    }
+   ]
+  }
+ ]
+}
