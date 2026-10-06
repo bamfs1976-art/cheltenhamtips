@@ -41,8 +41,16 @@ const KNOWN = {
     why: 'built before the .tbl-scroll convention (Sep 2026); frozen archives per §10',
   },
   'No duplicate source badge within a pick row': {
-    pages: ['ebor-2026.html','goodwood-2026.html','st-leger-2026.html','sprint-cup-2026.html'],
-    why: 'flagged 6 Oct 2026, not yet reviewed one by one; some may be legitimate repeats',
+    pages: ['ebor-2026.html','goodwood-2026.html','st-leger-2026.html','sprint-cup-2026.html',
+            'royal-ascot-2026.html'],
+    why: 'narrowing the row boundary to sibling rows cleared 17 of 19; the rest are on the oldest '
+       + 'pages, whose race blocks nest differently, and are unreviewed rather than known-good',
+  },
+  'Share scripts present iff the share engine would render': {
+    pages: ['northumberland-plate-2026.html'],
+    why: '§10 calls this a programme page that gets no buttons, but it has day sections AND '
+       + 'pick rows, so the engine would in fact render. Needs a decision — recorded rather '
+       + 'than silently passed (6 Oct 2026)',
   },
 };
 
@@ -120,8 +128,13 @@ check('Every table wrapped in .tbl-scroll', pages.flatMap((f) => {
 
 // 5. A source badge twice in one pick row overstates the support behind a
 //    horse. This shipped live through three deploys once.
+//
+//    Stop at the next SIBLING ROW, not just the next pick-row: a race block ends
+//    with tipster and BIG-naps rows that legitimately carry the same badges, and
+//    an earlier version of this check ran past them and reported three false
+//    positives on royal-ascot. A check that cries wolf gets switched off.
 check('No duplicate source badge within a pick row', pages.flatMap((f) =>
-  [...src[f].matchAll(/<div class="pick-row">[\s\S]*?(?=<div class="pick-row"|<p class="race-hd"|<\/section>)/g)]
+  [...src[f].matchAll(/<div class="pick-row">[\s\S]*?(?=<div class="(?:pick-row|tip-row|l15-foot)"|<p class="race-hd"|<\/section>)/g)]
     .flatMap((m) => {
       const labs = [...m[0].matchAll(/class="sb[^"]*"[^>]*>([^<]+)</g)].map((x) => x[1].trim());
       const dup = [...new Set(labs)].filter((x) => labs.filter((y) => y === x).length > 1);
