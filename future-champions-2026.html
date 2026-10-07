@@ -58,6 +58,11 @@
   .pick-tag.nap { background:rgba(251,191,36,0.18); color:var(--gold-lt); border:1px solid rgba(251,191,36,0.4) }
   .pick-tag.nb  { background:rgba(96,165,250,0.16); color:var(--blue-l); border:1px solid rgba(96,165,250,0.4) }
   .pick-tag.long{ background:rgba(244,114,182,0.14); color:var(--pink); border:1px solid rgba(244,114,182,0.4) }
+  /* A NO BET row is deliberately NOT .pick-row: the share engine renders any
+     day holding .race-block + .race-hd + .pick-row, and a gated day has
+     nothing to share. Same grid, different class. */
+  .gate-row { display:grid; grid-template-columns:56px 1fr auto; gap:8px; align-items:start; padding:7px 0; border-top:1px solid rgba(255,255,255,0.05) }
+  .gate-row > div { min-width:0 }
   .pick-tag.gate{ background:rgba(161,161,170,0.14); color:var(--silver); border:1px solid rgba(161,161,170,0.35) }
   .pick-horse { font-weight:700; color:#fff; font-size:0.92rem }
   .pick-odds { font-weight:800; color:var(--eb-lt); font-size:0.9rem; white-space:nowrap; font-variant-numeric:tabular-nums }
@@ -134,7 +139,7 @@
 <a class="fmb-skip" href="#main">Skip to content</a>
 
 <div id="fmb-nav-root"></div>
-<div class="live-strip">&#127942; Future Champions Festival &middot; <strong>9&ndash;10 OCT 2026</strong> &middot; Newmarket (Rowley Mile) &middot; <strong style="color:#4ade80">FRIDAY PRICED &mdash; 16 picks, 8/8 gated</strong> &middot; <strong style="color:var(--eb-lt)">ITV: both days</strong></div>
+<div class="live-strip">&#127942; Future Champions Festival &middot; <strong>9&ndash;10 OCT 2026</strong> &middot; Newmarket (Rowley Mile) &middot; <strong style="color:#4ade80">FRIDAY PRICED &mdash; 16 picks, 8/8 gated</strong> &middot; <strong style="color:#fca5a5">SATURDAY 7 NO BET &mdash; entry list</strong> &middot; <strong style="color:var(--eb-lt)">ITV: both days</strong></div>
 <main class="container" id="main" tabindex="-1">
   <header class="site-header">
     <div class="header-badge">&#127942; Newmarket (Rowley Mile) &middot; Flat</div>
@@ -144,18 +149,18 @@
       <div><span class="hero-stat-val">16</span><span class="hero-stat-lbl">picks Friday</span></div>
       <div><span class="hero-stat-val">8/8</span><span class="hero-stat-lbl">races gated</span></div>
       <div><span class="hero-stat-val">ITV</span><span class="hero-stat-lbl">both days</span></div>
-      <div><span class="hero-stat-val">14:57</span><span class="hero-stat-lbl">Fillies&rsquo; Mile G1</span></div>
+      <div><span class="hero-stat-val">7</span><span class="hero-stat-lbl">Sat NO BET</span></div>
     </div>
   </header>
   <div class="day-tabs">
     <a href="#day1" class="day-tab active">Fri 9 Oct &middot; ITV &middot; priced</a>
-    <a href="#day2" class="day-tab">Sat 10 Oct &middot; ITV</a>
+    <a href="#day2" class="day-tab">Sat 10 Oct &middot; ITV &middot; 7 NO BET</a>
   </div>
   <div class="titlebar">
     <h2>future-champions-2026 &middot; Friday 9 October 2026 &middot; Newmarket (Rowley Mile)</h2>
-    <p><strong>8 races &middot; 16 picks &middot; 8/8 gated &middot; LONG shut throughout &middot; no Lucky 15.</strong>
-    Friday&rsquo;s declared card is priced. Saturday&rsquo;s is not, and will not be until its own declarations land on 8 October &mdash;
-    rule 13 is absolute. Going <strong>Good to Firm (GoingStick 8.0)</strong> with light rain; re-read it on the morning.</p>
+    <p><strong>Friday: 8 races &middot; 16 picks &middot; 8/8 gated &middot; LONG shut throughout &middot; no Lucky 15.</strong>
+    <strong style="color:#fca5a5">Saturday: 7 races, 7 NO BET &mdash; the card that arrived is an entry list, not declarations</strong>, and all four
+    &sect;12 checks fail on it. Going <strong>Good to Firm (GoingStick 8.0)</strong>; re-read it on each morning.</p>
   </div>
   <section id="day1" class="panel eb-top">
     <h2 class="panel-head">&#127942; Day 1 &middot; Friday 9 October &middot; <span style="color:var(--eb-lt)">LIVE ON ITV</span> &middot; <span style="color:var(--silver)">8 races</span></h2>
@@ -337,23 +342,82 @@
   </section>
 
   <section id="day2" class="panel eb-top">
-    <h2 class="panel-head">&#127942; Day 2 &middot; Sat 10 Oct &middot; <span style="color:var(--eb-lt)">LIVE ON ITV</span></h2>
+    <h2 class="panel-head">&#127942; Day 2 &middot; Saturday 10 October &middot; <span style="color:var(--eb-lt)">LIVE ON ITV</span> &middot; <span style="color:#fca5a5">7 NO BET</span></h2>
     <div class="gate-grid">
-      <div class="gate-cell"><div class="gc-lbl">Declarations</div><div class="gc-val">Not confirmed</div></div>
-      <div class="gate-cell"><div class="gc-lbl">Field size</div><div class="gc-val">Unknown</div></div>
-      <div class="gate-cell"><div class="gc-lbl">Gate</div><div class="gc-val">Not assessed</div></div>
+      <div class="gate-cell"><div class="gc-lbl">Declarations</div><div class="gc-val" style="color:#fca5a5">Not confirmed</div></div>
+      <div class="gate-cell"><div class="gc-lbl">Gate</div><div class="gc-val" style="color:#fca5a5">0 pass &middot; 7 NO BET</div></div>
       <div class="gate-cell"><div class="gc-lbl">LONG slot</div><div class="gc-val">Not assessed</div></div>
+      <div class="gate-cell"><div class="gc-lbl">Outlay</div><div class="gc-val">&pound;0.00</div></div>
     </div>
-    <p style="font-size:0.82rem;line-height:1.7;color:#fca5a5;margin-top:10px"><strong>NO BET &mdash; declarations not confirmed.</strong>
-    Every race on this day fails the pre-flight gate on the same leg: there is no declared field, so there is no field size, no draw and nothing to price.
-    The gate is not being run race by race here because it cannot be &mdash; that is one reason, stated once. Declarations for Saturday confirm on <strong>8 October</strong>.</p>
-    <p style="font-size:0.82rem;line-height:1.7;color:#cbd5cf"><strong>Confirmed feature races</strong> (the programme is published well ahead;
-    <strong>off-times and the supporting card are not</strong>, and are deliberately left blank rather than guessed):</p>
-    <div class="race-block"><p class="race-hd">Darley Dewhurst Stakes &middot; <span class="g1">Group 1</span> &middot; 7f</p><p style="font-size:0.8rem;color:var(--silver);margin:4px 0 0">2yo &mdash; the juvenile championship</p></div>
-    <div class="race-block"><p class="race-hd">Cesarewitch Handicap &middot; <span class="g1">Heritage Handicap</span> &middot; 2m2f</p><p style="font-size:0.8rem;color:var(--silver);margin:4px 0 0">the Autumn Double&rsquo;s second leg</p></div>
-    <div class="race-block"><p class="race-hd">Somerville Tattersall Stakes &middot; <span class="g1">Group 3</span> &middot; 7f</p><p style="font-size:0.8rem;color:var(--silver);margin:4px 0 0">2yo colts &amp; geldings &mdash; <strong style="color:#fca5a5">moved here from Friday</strong></p></div>
-    <div class="race-block"><p class="race-hd">Autumn Stakes &middot; <span class="g1">Group 3</span> &middot; 1m</p><p style="font-size:0.8rem;color:var(--silver);margin:4px 0 0">2yo &mdash; <strong style="color:#fca5a5">moved here from Friday</strong></p></div>
-    <div class="race-block"><p class="race-hd">Darley Stakes &middot; <span class="g1">Group 3</span> &middot; 1m1f</p><p style="font-size:0.8rem;color:var(--silver);margin:4px 0 0">3yo+</p></div>
+    <p style="font-size:0.82rem;line-height:1.7;color:#fca5a5;margin-top:10px"><strong>NO BET &mdash; this is an ENTRY LIST, not a declared card.</strong>
+    It arrived looking complete: names, trainers, strike rates, OR/TS/RPR, form figures, and prices on two races. It is not declarations, and
+    <strong>all four of &sect;12&rsquo;s checks fail</strong> &mdash; any one of them would have been decisive on its own.</p>
+    <div class="xs-row"><strong>1 &middot; Nine horses are entered in two races on the same afternoon.</strong>
+    A horse cannot run twice in a day, so this alone proves entries.
+    <span style="color:var(--silver)">Albany County, Capability Brown, Drumbeat, Hmas Perth and Wall Street across the 13:50 and 14:25;
+    Raging Bull and Rock Montreal across the 14:25 and the Dewhurst; Undiscovered and Clash Of Hearts across the 14:25 and the 16:50.</span></div>
+    <div class="xs-row"><strong>2 &middot; Every runner count equals its own printed <code>Entries N</code> &mdash; 7 races out of 7.</strong>
+    13=13, 11=11, 16=16, 7=7, 42=42, 15=15, 19=19. Declared fields always shed; Friday&rsquo;s card at this very meeting shed <strong>41%</strong>.</div>
+    <div class="xs-row"><strong>3 &middot; Not one draw anywhere, and 63 of 123 runners have no jockey.</strong>
+    A declared flat card carries a draw for every horse. Friday&rsquo;s did, in a complete 1&ndash;N set in all eight races.</div>
+    <div class="xs-row"><strong>4 &middot; The date.</strong> Raceday 10 October, card pasted <strong>7 October &mdash; three days out</strong>.
+    UK turf flat declarations confirm 48 hours out, so this could not be declarations whatever the field block said.</div>
+    <p style="font-size:0.8rem;line-height:1.7;color:var(--silver);margin-top:10px">Gated mechanically rather than by eye, with <code>draw: null</code> as &sect;12 requires &mdash;
+    never an invented stall to make a race pass: <strong>7 races &middot; 0 pass &middot; 7 NO BET</strong>.</p>
+    <div class="race-block">
+      <p class="race-hd">13:15 &middot; Too Darn Hot Darley Stakes &middot; <span class="g1">Group 3</span> &middot; <span style="color:var(--silver);font-weight:600">1m1f &middot; 13 entries &middot; ITV</span></p>
+      <div class="gate-row"><div class="pick-tag gate">NO BET</div><div><span class="pick-horse" style="color:#fca5a5">Declarations not confirmed</span><span class="conns">entry list &mdash; 13 entered, 13 printed as <code>Entries 13</code>, no draw on any runner</span></div><div class="pick-odds" style="color:var(--silver)">&mdash;</div></div>
+    </div>
+    <div class="race-block">
+      <p class="race-hd">13:50 &middot; Night Of Thunder Zetland Stakes &middot; <span class="g1">Group 3</span> &middot; <span style="color:var(--silver);font-weight:600">1m2f &middot; 11 entries &middot; ITV</span></p>
+      <div class="gate-row"><div class="pick-tag gate">NO BET</div><div><span class="pick-horse" style="color:#fca5a5">Declarations not confirmed</span><span class="conns">entry list &mdash; 11 entered, 11 printed as <code>Entries 11</code>, no draw on any runner</span></div><div class="pick-odds" style="color:var(--silver)">&mdash;</div></div>
+    </div>
+    <div class="race-block">
+      <p class="race-hd">14:25 &middot; Emirates Autumn Stakes &middot; <span class="g1">Group 3</span> &middot; <span style="color:var(--silver);font-weight:600">1m &middot; 16 entries &middot; ITV</span></p>
+      <div class="gate-row"><div class="pick-tag gate">NO BET</div><div><span class="pick-horse" style="color:#fca5a5">Declarations not confirmed</span><span class="conns">entry list &mdash; 16 entered, 16 printed as <code>Entries 16</code>, no draw on any runner</span></div><div class="pick-odds" style="color:var(--silver)">&mdash;</div></div>
+    </div>
+    <div class="race-block">
+      <p class="race-hd">15:00 &middot; Darley Dewhurst Stakes &middot; <span class="g1">Group 1</span> &middot; <span style="color:var(--silver);font-weight:600">7f &middot; 7 entries &middot; ITV</span></p>
+      <div class="gate-row"><div class="pick-tag gate">NO BET</div><div><span class="pick-horse" style="color:#fca5a5">Declarations not confirmed</span><span class="conns">entry list &mdash; 7 entered, 7 printed as <code>Entries 7</code>, no draw on any runner</span></div><div class="pick-odds" style="color:var(--silver)">&mdash;</div></div>
+    </div>
+    <div class="race-block">
+      <p class="race-hd">15:40 &middot; Club Godolphin Cesarewitch &middot; <span class="g1">Heritage Handicap</span> &middot; <span style="color:var(--silver);font-weight:600">2m2f &middot; 42 entries &middot; ITV</span></p>
+      <div class="gate-row"><div class="pick-tag gate">NO BET</div><div><span class="pick-horse" style="color:#fca5a5">Declarations not confirmed</span><span class="conns">entry list &mdash; 42 entered, 42 printed as <code>Entries 42</code>, no draw on any runner</span></div><div class="pick-odds" style="color:var(--silver)">&mdash;</div></div>
+    </div>
+    <div class="race-block">
+      <p class="race-hd">16:15 &middot; Triple Time Maiden Fillies&rsquo; Stakes &middot; Cl2 &middot; <span style="color:var(--silver);font-weight:600">7f &middot; 15 entries &middot; RTV</span></p>
+      <div class="gate-row"><div class="pick-tag gate">NO BET</div><div><span class="pick-horse" style="color:#fca5a5">Declarations not confirmed</span><span class="conns">entry list &mdash; 15 entered, 15 printed as <code>Entries 15</code>, no draw on any runner</span></div><div class="pick-odds" style="color:var(--silver)">&mdash;</div></div>
+    </div>
+    <div class="race-block">
+      <p class="race-hd">16:50 &middot; Dubai Racing Club Nursery &middot; Cl3 Handicap &middot; <span style="color:var(--silver);font-weight:600">7f &middot; 19 entries &middot; RTV</span></p>
+      <div class="gate-row"><div class="pick-tag gate">NO BET</div><div><span class="pick-horse" style="color:#fca5a5">Declarations not confirmed</span><span class="conns">entry list &mdash; 19 entered, 19 printed as <code>Entries 19</code>, no draw on any runner</span></div><div class="pick-odds" style="color:var(--silver)">&mdash;</div></div>
+    </div>
+    <p style="font-size:0.8rem;line-height:1.7;color:var(--silver);margin-top:12px"><strong>Two rows are also corrupt, which is a second reason not to build on this paste.</strong>
+    <strong>Samui</strong> carries an official mark of 102 with a <strong>Topspeed of 35 and an RPR of 84</strong> &mdash; eighteen pounds <em>below</em> his own mark.
+    <strong>Starburster</strong> has <strong>no weight at all</strong> in a handicap weighted 9st 10lb down to 7st 13lb.</p>
+  </section>
+
+  <section class="panel" style="border-top:3px solid var(--red)">
+    <h2 class="panel-head">&#127919; The Cesarewitch shows 42 entries. That is not a LONG, and this is the race the archive warns about by name</h2>
+    <p style="font-size:0.82rem;line-height:1.7;color:#cbd5cf">The LONG slot has been shut in every race of the last five meetings because it needs
+    a <strong>handicap of sixteen or more runners</strong> and none has appeared. The Cesarewitch is the one race left in 2026 that could open it &mdash;
+    a 2m2f marathon handicap &mdash; and the entry list says <strong>42</strong>.</p>
+    <p style="font-size:0.82rem;line-height:1.7;color:#fca5a5"><strong>So the temptation is at its maximum, and the answer is still no.</strong>
+    Forty-two is an <em>entry</em> count. &sect;9 records what happened the last time this engine reasoned from one: on 2026 entries, six of the St Leger
+    Thursday&rsquo;s eight races had 16 or more, and the Day 1 panel wrote <em>&ldquo;if even half of these hold their numbers, the LONG opens on
+    Thursday.&rdquo;</em> <strong>Declarations cut it from six races to one.</strong> The card shed 158 entries to 85 declared and the slot was shut in all
+    eight. Field size is the one thing an entry list tells you nothing about, and the LONG gate is a field-size test.</p>
+    <p style="font-size:0.82rem;line-height:1.7;color:#cbd5cf"><strong>The evidence that it will shed is sitting on this same page.</strong>
+    Friday&rsquo;s card at this very meeting went <strong>170 entries to 100 declared &mdash; 41% &mdash; two days ago</strong>. Apply that rate and 42 becomes
+    about 25. <strong>That number is deliberately not printed as a forecast anywhere on this page</strong>, because producing it is the exact move
+    &sect;9 forbids. It is here once, in the paragraph explaining why it is worthless.</p>
+    <p style="font-size:0.82rem;line-height:1.7;color:#cbd5cf"><strong>What the gate did, mechanically, is the part worth keeping.</strong>
+    Run on this fixture it returned <strong>NO BET &mdash; 42 runner(s) without a draw</strong> and, beside it,
+    <strong>&ldquo;LONG slot: not assessed &mdash; race failed the gate, no confirmed field to test&rdquo;</strong>.
+    Until 9 September it would have printed <em>&ldquo;LONG slot: open&rdquo;</em> there, computing the place test off 42 entry-stage runners &mdash; arithmetic
+    on a field that does not exist. That fix was made on a card that cost nothing; this is the race it was made for.</p>
+    <p style="font-size:0.8rem;line-height:1.7;color:var(--silver)">The question gets answered on <strong>8 October</strong>, when declarations land, and not
+    one hour before.</p>
   </section>
 
   <section class="panel" style="border-top:3px solid var(--eb)">

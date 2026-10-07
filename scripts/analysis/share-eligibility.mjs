@@ -48,12 +48,18 @@ for (const f of pages) {
     /class="race-block"/.test(d.inner) && /class="race-hd"/.test(d.inner) && /class="pick-row"/.test(d.inner)
   ).map(d => d.id);
   await p.goto(`http://localhost:8899/${f}`, { waitUntil: 'domcontentloaded' });
+  /* Count the share buttons the ENGINE actually rendered, rather than
+     re-implementing its predicate here. Corrected 7 Oct 2026: this script
+     previously reimplemented the day filter, and on 6 Oct that copy was
+     STRICTER than fmb-share-ui.js itself -- which required only a .race-block,
+     so it put a button on a fully gated day. Two agreeing reimplementations are
+     not a check on the original; only running it is. Found by rendering the page
+     and counting buttons, which is what this now does. */
+  await p.waitForFunction(() => document.readyState === 'complete');
   const dom = await p.evaluate(() => Array.prototype.slice
-    .call(document.querySelectorAll('section[id^="day"], section[id^="d"]'))
-    .filter(s => /^(day\d+|d\d+)$/.test(s.id))
-    .filter(s => Array.prototype.slice.call(s.querySelectorAll('.race-block'))
-      .some(bk => bk.querySelector('.race-hd') && bk.querySelector('.pick-row')))
-    .map(s => s.id));
+    .call(document.querySelectorAll('.fmb-share-row'))
+    .map(r => r.closest('section')?.id)
+    .filter(Boolean));
   const same = JSON.stringify(regex) === JSON.stringify(dom);
   if (!same) { diff++; console.log(`DIVERGES ${f}: regex=[${regex}] dom=[${dom}]`); }
   else if (dom.length) console.log(`ok ${f.padEnd(34)} ${dom.join(', ')}`);

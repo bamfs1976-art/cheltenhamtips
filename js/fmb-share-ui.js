@@ -107,7 +107,16 @@
     var all = Array.prototype.slice.call(
       document.querySelectorAll('section[id^="day"], section[id^="d"]'));
     return all.filter(function (s) {
-      return /^(day\d+|d\d+)$/.test(s.id) && s.querySelector('.race-block');
+      /* A .race-block alone is not enough: a GATED day is built from race
+         blocks too, and a card with no picks in it is worse than no card.
+         Found 7 Oct 2026 on the Future Champions Saturday, whose seven races
+         are all NO BET -- it drew a "Share this day" button that would have
+         produced an empty card. Require a block that actually holds a pick. */
+      if (!/^(day\d+|d\d+)$/.test(s.id)) return false;
+      return Array.prototype.slice.call(s.querySelectorAll('.race-block'))
+        .some(function (blk) {
+          return blk.querySelector('.race-hd') && blk.querySelector('.pick-row');
+        });
     });
   }
 

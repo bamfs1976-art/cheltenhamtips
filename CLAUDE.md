@@ -1218,6 +1218,25 @@ the Friday and the **Darley Dewhurst (G1)** on the Saturday, with the
   **eight**, which is the 8-runner threshold exactly: one non-runner takes it
   from three places to two. Treat any each-way pick in it as provisional and
   re-check at the off (rule 16).
+- **The Cesarewitch is the biggest entry-list trap in the calendar, and it was
+  refused. 7 Oct 2026.** Saturday's card arrived three days out showing the
+  Cesarewitch at **42 entries** — the single most tempting LONG forecast the
+  archive has seen, in the one race left in 2026 that could open the slot. It
+  was an entry list and **all four §12 checks failed**: nine horses entered in
+  two races on the same afternoon, every runner count equal to its printed
+  `Entries N` in 7 of 7 races, **no draw anywhere** (63 of 123 runners also had
+  no jockey), and three days out when declarations confirm at two.
+  Gated with `draw: null`, it returned **7 races · 0 pass · 7 NO BET**, and
+  beside the 42-runner race it printed **"LONG slot: not assessed — race failed
+  the gate, no confirmed field to test"**. Before the 9 Sep fix it would have
+  printed *"LONG slot: open"* there, computing the place test off 42
+  entry-stage runners. That fix was made on a card that cost nothing; **this is
+  the race it was made for.**
+- **The shed rate was sitting on the same page and still does not license a
+  forecast.** Friday's card at this meeting went 170 entries to 100 declared
+  (41%) two days earlier; applying it gives about 25. That number belongs only
+  in the paragraph explaining why it is worthless — producing it as a
+  prediction is exactly the St Leger error §9 already records.
 - Declarations confirm 48 hours out, as everywhere on UK turf flat.
 
 ### Haydock Park (flat)
@@ -1484,10 +1503,31 @@ Add new course profiles as they're covered.
 
     The arbiter is the engine, not a reading of it:
     `node scripts/analysis/share-eligibility.mjs` (with `python3 -m
-    http.server 8899` from the repo root) runs the engine's own predicate in
-    Chromium on every page and diffs it against what `verify-site.mjs`
-    computes. **0 divergences across 25 pages**, day-ID for day-ID. If it ever
-    reports one, the regex is the thing that is wrong.
+    http.server 8899` from the repo root) renders every page in Chromium and
+    diffs the share buttons the engine **actually drew** against what
+    `verify-site.mjs` computes. **0 divergences across 25 pages**, day-ID for
+    day-ID.
+
+    **That script said "the engine" yesterday and did not mean it. Corrected
+    7 Oct 2026.** It re-implemented the day filter rather than running it, and
+    that copy was *stricter* than `fmb-share-ui.js` itself, which required only
+    a `.race-block`. So a fully gated day — race blocks, no picks — drew a
+    "Share this day" button that would have produced an **empty card**, and
+    both of my checks agreed with each other while disagreeing with the engine.
+    The symptom was found by **rendering the page and counting buttons**, not by
+    either check.
+
+    - `fmb-share-ui.js` now requires a block holding both a `.race-hd` and a
+      `.pick-row`, so a NO BET day draws no button.
+    - A **NO BET row is deliberately not a `.pick-row`** (it uses `.gate-row`,
+      same grid), because it is not a pick and must not reach the share engine
+      or any pick count.
+    - The script now counts rendered `.fmb-share-row` elements instead of
+      reimplementing the predicate. Verified by restoring the loose condition
+      and watching it report the divergence it previously could not see.
+    - **Two agreeing reimplementations are not a check on the original.** This
+      is the same shape as §12's "two inferences agreeing is still one
+      inference", in code rather than in place bands.
   - Festival colours are duplicated as canvas literals in `fmb-share.js`.
     `node scripts/check-share-palette.mjs` pins them to
     `FESTIVALS_2026[].accentColor` and fails on drift — run it after any
