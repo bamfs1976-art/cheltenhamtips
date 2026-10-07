@@ -524,6 +524,37 @@ Rules:
     is worthless in a big open handicap and close to honest in a small Group
     race. A maiden has no marks at all, so there RPR is simply untestable —
     say so rather than treating it as evidence either way.
+
+  **REPRODUCED 7 Oct 2026 on a card nobody chose for the purpose** (Newmarket,
+  Future Champions Friday — eight races run through the same two diagnostics
+  before any selection was made; `scripts/analysis/rpr-calibration-newmarket-09-oct.py`).
+  The split landed exactly where the rule predicts:
+
+  | | ratio | r(gap, OR) | |
+  |---|---|---|---|
+  | Five Group/Listed races | 0.86–2.00 | −0.27 to +0.64 | no par signature |
+  | **Old Rowley Cup (Cl2 handicap)** | **0.32** | **−0.968** | par — residual only |
+  | World Pool (Cl4 handicap) | 0.67 | −0.869 | carries nothing |
+
+  Against **0.27 and −0.976** in the Cambridgeshire that produced the finding.
+  Two things worth carrying:
+
+  - **Use two diagnostics, not one.** The ratio says the *level* is compressed;
+    `r(gap, OR)` says the *gap* is arithmetic. They can disagree — the 16:45
+    read an honest 0.87 ratio with a −0.618 gap correlation, which is a race
+    where the level is fine and the lowest mark is still being flattered.
+  - **The first NEGATIVE within-race r(RPR, OR) in the archive** turned up here:
+    the Cl4 handicap read **−0.177**, meaning the column carries not just a
+    compressed signal but essentially none. When that happens, say so and lead
+    on something else — Topspeed, course form, the jockey booking — rather than
+    reaching for the residual of a line that does not exist.
+
+  The payoff was concrete and is the clearest worked example of the trap yet.
+  In the Old Rowley Cup the raw gap hands you **Kahin +29 and Lord d'Or +28,
+  both 16/1 off the joint-lowest mark of 81**, and calls them best handicapped.
+  The residual against the race's own line keeps **Kahin at 2nd and drops Lord
+  d'Or to 6th of 11**. Same two numbers, opposite verdicts; only the residual
+  is a read.
 - **A crossover on a horse you opposed by name deserves the opposing
   argument printed, not the rating restated.** Same card. We opposed King
   Of Earth on "second-lowest RPR in the race at 107, unplaced last time".
@@ -1107,7 +1138,8 @@ each morning; do not carry it forward from the previous day.
 
 **Meetings covered:** Guineas (May) — see `guineas-2026.html`; July Festival
 (July, July Course not Rowley Mile) — see `newmarket-july-2026.html`;
-Cambridgeshire Meeting (September) — see `cambridgeshire-2026.html`.
+Cambridgeshire Meeting (September) — see `cambridgeshire-2026.html`;
+Future Champions Festival (October) — see `future-champions-2026.html`.
 
 #### Cambridgeshire Meeting (Newmarket, three days, September)
 
@@ -1155,6 +1187,38 @@ Engine notes specific to this meeting:
 - The Group races are where the money was: both winners came from them
   (Haffner 4/1 in the Royal Lodge, Orthodox 11/4 in the Middle Park) while
   the two big handicaps returned nothing that can yet be counted.
+
+#### Future Champions Festival (Newmarket, two days, October)
+
+Fri–Sat. The Flat's juvenile championship meeting: the **Fillies' Mile (G1)** on
+the Friday and the **Darley Dewhurst (G1)** on the Saturday, with the
+**Cesarewitch** — the Autumn Double's second leg — also on the Saturday.
+
+- **ITV covers BOTH days**, not just the Saturday. See the correction in the
+  run-in table above; the broadcaster is printed per race on the declared card
+  and is not derivable from the meeting.
+- **Friday 2026 declared eight races and the LONG was shut in all eight** — and
+  this is the cleanest example yet of the slot being decided by *race type*
+  rather than field size. The two 16+ fields were the **13:50 (16 runners)** and
+  the **16:45 (17 runners)**, and **both are non-handicaps**, so they pay three
+  places. The only two handicaps declared 11 and 15. Under the pre-25-Sep ladder
+  the 17-runner Group 3 would have read **5 places and the slot open**; the
+  race-type-aware bands return **3 and shut**, mechanically. That is the exact
+  failure mode §12 named when it asked for the fix.
+- **Friday's card is where the LONG forecast finally held**, and the reason is
+  worth keeping: the advance page named only the Cesarewitch as a candidate,
+  which implies Friday has none, and Friday had none. It worked because it was
+  built on **which races are handicaps** — knowable months ahead from the
+  programme — rather than on a guess at field size, which §9 records as
+  worthless. Forecast the *shape*, never the *size*.
+- Entry lists shed hard here as everywhere: Friday 2026 went **170 entries to
+  100 declared, 41%**, with every race's count strictly below its printed
+  `Entries N`.
+- **The Fillies' Mile runs small and sits on a place boundary.** 2026 declared
+  **eight**, which is the 8-runner threshold exactly: one non-runner takes it
+  from three places to two. Treat any each-way pick in it as provisional and
+  re-check at the off (rule 16).
+- Declarations confirm 48 hours out, as everywhere on UK turf flat.
 
 ### Haydock Park (flat)
 
@@ -1320,7 +1384,7 @@ and all seven now have pages.
 
 | Dates | Meeting | Code | ITV day |
 |---|---|---|---|
-| 9–10 Oct | Future Champions, Newmarket | Flat | Sat 10 |
+| 9–10 Oct | Future Champions, Newmarket | Flat | **Both days** |
 | 17 Oct | British Champions Day, Ascot | Flat | Sat 17 |
 | 13–15 Nov | Cheltenham November | Jumps | Sat 14 |
 | 11–12 Dec | Cheltenham Christmas | Jumps | Sat 12 |
@@ -1331,6 +1395,24 @@ and all seven now have pages.
 - **ITV covers the Saturday, not the meeting.** On the multi-day fixtures the
   Friday and Sunday are Racing TV. Build the televised day first; the others
   are optional.
+
+  **Wrong for the first fixture it was applied to. Corrected 7 Oct 2026.**
+  Future Champions Friday declared with **ITV on five of its eight races**
+  (13:15–15:30, Racing TV on the last three), and both the table above and
+  `future-champions-2026.html` had called that day "not televised — Racing TV".
+  The broadcaster is **not** derivable from the meeting; read it off the
+  declared card, which prints the channel per race. Treat the ITV column as a
+  guess until declarations confirm it.
+
+- **The programme is knowable in advance; the DAY it runs on is not.** Same
+  correction. Under a heading reading *"Confirmed feature races"* the page had
+  given Friday the **Somerville Tattersall** and the **Autumn Stakes**, neither
+  of which is on it, and put the **Challenge Stakes (G2)** on Saturday when it
+  runs **Friday at 14:25**. Three of four wrong. Step 3b already says to verify
+  the race assignment and not just the name — that was written about horses
+  being re-routed between races on a card, and it applies just as much to races
+  being placed on the wrong day of a meeting. **Do not write "confirmed" next
+  to anything declarations have not confirmed.**
 - **Two races are the realistic LONG candidates all quarter** — the
   **Cesarewitch** (2m2f, routinely 30+) and the **Welsh Grand National**
   (3m5½f, maximum field). Everything else is Group racing or a small-field
@@ -1462,6 +1544,27 @@ Add new course profiles as they're covered.
   Known pre-existing debt is listed **inside the script** with a reason and a
   date, reported separately, and does not fail the run. A check that silently
   tolerates a class of failure has stopped being a check.
+
+  **A page generator breaks every page at once, so check the class not the
+  page.** Added 7 Oct 2026. Building the Future Champions card surfaced
+  `9&NDASH;10 OCT 2026` rendering as literal text in the live banner — an HTML
+  entity is **case-sensitive**, and the Phase 8 generator had uppercased a date
+  label in the *source* instead of leaving it to CSS `text-transform`. It was on
+  **four pages**, every multi-day page that generator built; the three
+  single-day ones were clean only because they have no date range. Nothing
+  caught it for a month: it is valid HTML, it nests correctly, `verify-site`
+  passed it, and it is visible only by **looking at the rendered page**.
+
+  - `verify-site.mjs` now has a **No malformed HTML entities** check, with the
+    genuinely mixed-case named entities (`&Omega;`, `&Aacute;`, `&OElig;` …)
+    allow-listed so it cannot cry wolf. Verified by reintroducing the bug and
+    watching it fail.
+  - The wider lesson: when a defect is found on a generated page, **grep every
+    page the generator touched before fixing the one in front of you**. One
+    page's bug is four pages' bug roughly as often as not.
+  - And render the page. Three of the defects found on this build — the broken
+    entity, a stale banner and a stale hub headline — were all invisible to
+    static checks and obvious in a 375px screenshot.
 
 - **The engine's scripts, and which rule each one makes mechanical:**
 

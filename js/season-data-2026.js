@@ -187,8 +187,8 @@ const FESTIVALS_2026 = [
     dateLabel:'9-10 Oct 2026', venue:'Newmarket (Rowley Mile)', type:'Flat',
     theme:'theme-purple', accentColor:'#c084fc',
     url:'future-champions-2026.html', races:null, concluded:false,
-    headline:'AWAITING DECLARATIONS - nothing priced. UK declarations confirm 48 hours out, so this card cannot be built until then (rule 13: no declared field, no bet). Published now: the course profile, the confirmed feature races and the place-count arithmetic that decides the LONG slot. ITV coverage: Sat 10 Oct.',
-    headlineRace:'Fillies’ Mile (Group 1) · Somerville Tattersall Stakes (Group 3) · Autumn Stakes (Group 3) · Darley Dewhurst Stakes (Group 1) · Cesarewitch Handicap (Heritage Handicap) · Challenge Stakes (Group'
+    headline:'FRIDAY 9 OCT PRICED - 16 picks across 8 races, all eight through the pre-flight gate, LONG slot shut throughout (no 16-runner handicap on the card). Saturday awaits its own declarations on 8 Oct. ITV covers BOTH days, not just the Saturday as forecast here.',
+    headlineRace:'Fillies’ Mile (Group 1) · Challenge Stakes (Group 2) · Cornwallis Stakes (Group 3) · Oh So Sharp Stakes (Group 3) · Old Rowley Cup (Heritage Handicap) · Darley Dewhurst Stakes (Group 1) · Cesarewitch Handicap'
   },
   {
     slug:'champions-day-2026', name:'QIPCO British Champions Day 2026', shortName:'Champions Day',

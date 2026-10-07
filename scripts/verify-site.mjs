@@ -48,6 +48,16 @@ const KNOWN = {
   },
 };
 
+/* HTML defines a handful of genuinely mixed-case named entities; everything
+   else with a capital in it is a typo for the lowercase form. */
+const KNOWN_MIXED = new Set(['&Alpha;','&Beta;','&Gamma;','&Delta;','&Epsilon;','&Zeta;','&Eta;',
+  '&Theta;','&Iota;','&Kappa;','&Lambda;','&Mu;','&Nu;','&Xi;','&Omicron;','&Pi;','&Rho;','&Sigma;',
+  '&Tau;','&Upsilon;','&Phi;','&Chi;','&Psi;','&Omega;','&Aacute;','&Agrave;','&Acirc;','&Atilde;',
+  '&Auml;','&Aring;','&AElig;','&Ccedil;','&Eacute;','&Egrave;','&Ecirc;','&Euml;','&Iacute;',
+  '&Igrave;','&Icirc;','&Iuml;','&Ntilde;','&Oacute;','&Ograve;','&Ocirc;','&Otilde;','&Ouml;',
+  '&Oslash;','&Uacute;','&Ugrave;','&Ucirc;','&Uuml;','&Yacute;','&ETH;','&THORN;','&Dagger;',
+  '&OElig;','&Scaron;','&Yuml;','&Prime;','&ImaginaryI;','&TRADE;']);
+
 const debtSeen = [];
 const check = (name, problems) => {
   const known = KNOWN[name];
@@ -144,6 +154,19 @@ check('Share scripts present iff the share engine would render', pages.flatMap((
   if (renders.length && !share) return [`${f}: ${renders.length} renderable day(s) (${renders.map((d) => d.id).join(', ')}), but no share scripts`];
   if (!renders.length && share) return [`${f}: share scripts but no day section the engine would render`];
   return [];
+}));
+
+// 3b. An HTML entity is case-sensitive: &NDASH; is not &ndash;, it renders as
+//     literal text. Found 7 Oct 2026 on FOUR pages at once -- the Phase 8
+//     generator uppercased a live-strip date label in the source instead of
+//     leaving it to CSS text-transform, so every multi-day page it built shipped
+//     "9&NDASH;10 OCT 2026" into the banner. The single-day pages were clean
+//     only because they have no date range. Nothing caught it: it is valid HTML,
+//     it nests correctly, and it is visible only by looking at the page.
+check('No malformed HTML entities', pages.flatMap((f) => {
+  const bad = [...new Set((src[f].match(/&[A-Za-z][A-Za-z0-9]*;/g) || [])
+    .filter((e) => /[A-Z]/.test(e) && e !== e.toLowerCase() && !KNOWN_MIXED.has(e)))];
+  return bad.length ? [`${f}: ${bad.join(', ')}`] : [];
 }));
 
 // 4. Tables wider than the viewport must sit in .tbl-scroll, or they push the
