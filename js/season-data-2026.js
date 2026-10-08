@@ -187,7 +187,7 @@ const FESTIVALS_2026 = [
     dateLabel:'9-10 Oct 2026', venue:'Newmarket (Rowley Mile)', type:'Flat',
     theme:'theme-purple', accentColor:'#c084fc',
     url:'future-champions-2026.html', races:null, concluded:false,
-    headline:'FRIDAY 9 OCT PRICED - 16 picks across 8 races, all eight through the pre-flight gate, LONG slot shut throughout (no 16-runner handicap on the card). SATURDAY 7 NO BET - the card that arrived is an entry list, not declarations: nine horses entered in two races, every runner count equal to its printed Entries N, no draw anywhere, and three days out. The Cesarewitch shows 42 entries and that is not a LONG slot. ITV covers BOTH days.',
+    headline:'BOTH DAYS PRICED - 15 races, all 15 through the pre-flight gate, 31 picks. Friday: LONG shut in all eight (no 16-runner handicap). Saturday: the Cesarewitch declared 29 from 42 entries and the LONG slot is OPEN for the first time in six meetings. The entry list that arrived three days out was refused and gated 7 NO BET; declarations landed on time. ITV covers BOTH days.',
     headlineRace:'Fillies’ Mile (Group 1) · Challenge Stakes (Group 2) · Cornwallis Stakes (Group 3) · Oh So Sharp Stakes (Group 3) · Old Rowley Cup (Heritage Handicap) · Darley Dewhurst Stakes (Group 1) · Cesarewitch Handicap'
   },
   {

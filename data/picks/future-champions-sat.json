@@ -1,0 +1,145 @@
+{
+ "event": "Future Champions Saturday \u2014 Newmarket",
+ "date": "2026-10-10",
+ "races": [
+  {
+   "off": "13:15",
+   "race_name": "Modern Games Darley Stakes (Group 3)",
+   "declared": 5,
+   "places": 2,
+   "ewFrac": "1/4",
+   "picks": [
+    {
+     "slot": "NAP",
+     "horse": "Boiling Point",
+     "odds": "8/1"
+    },
+    {
+     "slot": "NB",
+     "horse": "The Lost King",
+     "odds": "7/4"
+    }
+   ]
+  },
+  {
+   "off": "13:50",
+   "race_name": "Native Trail Zetland Stakes (Group 3)",
+   "declared": 6,
+   "places": 2,
+   "ewFrac": "1/4",
+   "picks": [
+    {
+     "slot": "NAP",
+     "horse": "Apulia Bay",
+     "odds": "10/1"
+    },
+    {
+     "slot": "NB",
+     "horse": "Drumbeat",
+     "odds": "6/5"
+    }
+   ]
+  },
+  {
+   "off": "14:25",
+   "race_name": "Emirates Autumn Stakes (Group 3)",
+   "declared": 7,
+   "places": 2,
+   "ewFrac": "1/4",
+   "picks": [
+    {
+     "slot": "NAP",
+     "horse": "Notable Dream",
+     "odds": "7/1"
+    },
+    {
+     "slot": "NB",
+     "horse": "Sergei Diaghilev",
+     "odds": "3/1"
+    }
+   ]
+  },
+  {
+   "off": "15:00",
+   "race_name": "Darley Dewhurst Stakes (Group 1)",
+   "declared": 5,
+   "places": 2,
+   "ewFrac": "1/4",
+   "picks": [
+    {
+     "slot": "NAP",
+     "horse": "Darkness Falls",
+     "odds": "15/8"
+    },
+    {
+     "slot": "NB",
+     "horse": "Great Barrier Reef",
+     "odds": "7/1"
+    }
+   ]
+  },
+  {
+   "off": "15:40",
+   "race_name": "Club Godolphin Cesarewitch Handicap",
+   "declared": 29,
+   "places": 4,
+   "ewFrac": "1/4",
+   "_note": "places/ewFrac are the FLOOR from the model. Sky Bet paid 7 at 1/5 on the Cambridgeshire (28 rnrs). Read the offer, then set offer{} below with its own minRunners.",
+   "picks": [
+    {
+     "slot": "NAP",
+     "horse": "Sea Lantern",
+     "odds": "6/1"
+    },
+    {
+     "slot": "NB",
+     "horse": "Beylerbeyi",
+     "odds": "5/1"
+    },
+    {
+     "slot": "LONG",
+     "horse": "Premiere Ligne",
+     "odds": "33/1"
+    }
+   ]
+  },
+  {
+   "off": "16:15",
+   "race_name": "Triple Time Maiden Fillies' Stakes",
+   "declared": 7,
+   "places": 2,
+   "ewFrac": "1/4",
+   "picks": [
+    {
+     "slot": "NAP",
+     "horse": "Desert Romance",
+     "odds": "SP"
+    },
+    {
+     "slot": "NB",
+     "horse": "Cullenagh Rainbow",
+     "odds": "SP"
+    }
+   ]
+  },
+  {
+   "off": "16:50",
+   "race_name": "Dubai Racing Club Nursery Handicap",
+   "declared": 9,
+   "places": 3,
+   "ewFrac": "1/5",
+   "picks": [
+    {
+     "slot": "NAP",
+     "horse": "National Honour",
+     "odds": "SP"
+    },
+    {
+     "slot": "NB",
+     "horse": "Mobadir",
+     "odds": "SP"
+    }
+   ]
+  }
+ ]
+}

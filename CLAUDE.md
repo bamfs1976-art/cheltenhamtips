@@ -555,6 +555,41 @@ Rules:
   The residual against the race's own line keeps **Kahin at 2nd and drops Lord
   d'Or to 6th of 11**. Same two numbers, opposite verdicts; only the residual
   is a read.
+
+  **THE RESIDUAL HAS A FAILURE MODE, AND IT IS SILENT. Added 8 Oct 2026**
+  (the 29-runner Cesarewitch; `scripts/analysis/rpr-calibration-newmarket-10-oct.py`).
+  The residual is `RPR − (a + b·OR)`. **When the fitted slope `b` is ~0 there is
+  no line, and the residual collapses to `RPR − mean(RPR)` — the raw RPR shifted
+  by a constant.** The Cesarewitch fits **b = +0.0016**, flatter than the −0.006
+  that produced this whole method. Measured on it:
+
+  - `corr(residual, raw RPR)` = **0.999996**
+  - largest difference between the residual and `RPR − mean(RPR)` = **0.02lb**
+
+  **So ranking by residual there IS ranking by raw RPR — precisely what the rule
+  exists to prevent.** And nothing warns you: it returns a tidy ordered list with
+  plausible decimals beside it, and that list is the projection you were trying
+  to escape. This is the same shape as every other failure in this file — an
+  instrument that is self-consistent and wrong.
+
+  - **Check `r(RPR, OR)` BEFORE computing a residual.** Below about 0.3 there is
+    no line, so there is no residual either; say the column carries nothing and
+    lead on something else. The Cesarewitch read **+0.003** and the same card's
+    nursery read **+0.143**.
+  - The three diagnostics now go in order: `r(RPR, OR)` says whether a line
+    exists at all; the **ratio** says whether the level is compressed; and
+    `r(gap, OR)` says whether the gap is arithmetic. The first one gates the
+    other two.
+  - What replaced it on that card, in the two races where RPR was empty:
+    **course-and-distance form, the 4lb penalty** (which states that a horse won
+    after the weights were published), the **handicapper's own Future OR** line,
+    and **Topspeed**. All four are printed on the racecard and none of them is a
+    projection.
+
+  One more limit from the same card, worth stating because it is easy to gloss:
+  **four of seven races fitted on five rated runners or fewer, and the Dewhurst
+  on three.** A three-point line is not evidence. Print the row rather than
+  hiding it, and let nothing rest on it.
 - **A crossover on a horse you opposed by name deserves the opposing
   argument printed, not the rating restated.** Same card. We opposed King
   Of Earth on "second-lowest RPR in the race at 107, unplaced last time".
@@ -1264,9 +1299,29 @@ the Friday and the **Darley Dewhurst (G1)** on the Saturday, with the
   the race it was made for.**
 - **The shed rate was sitting on the same page and still does not license a
   forecast.** Friday's card at this meeting went 170 entries to 100 declared
-  (41%) two days earlier; applying it gives about 25. That number belongs only
-  in the paragraph explaining why it is worthless — producing it as a
-  prediction is exactly the St Leger error §9 already records.
+  (41%) two days earlier; applying it gives about 25.
+
+  **SCORED 8 Oct 2026, and the estimate was wrong. The Cesarewitch declared 29.**
+  That is a 31% shed, not Friday's 41%, so the number we declined to publish was
+  **four runners light** — on consecutive days, at the same meeting, from the same
+  Racing Post page. It happened not to change the decision, because 25 clears
+  sixteen as readily as 29 does, but that is luck and not method: the same error
+  in the other direction at a lower entry count closes a slot that should be open.
+  **A shed rate is not transferable between cards.** The refusal was right; the
+  arithmetic it refused to publish would also have been wrong.
+- **The LONG slot opened on that race — the first time in six meetings.** 29
+  runners, a Class 2 handicap, so four places at the floor. The qualifying pick
+  was a course-and-distance winner at 33/1 carrying a 4lb penalty. Note what the
+  slot's own record says before reading anything into that: **7% and 0.47 points
+  per pick across the season, 0 from 16 at Ebor, 0 from 5 in the only sample that
+  records returns.** One qualifying horse is not a reason to expect a different
+  answer.
+- **Saturday 2026 declared tiny fields everywhere else: 5, 6, 7, 5, 7 and 9
+  around the Cesarewitch's 29.** The Dewhurst (G1, £283,550 to the winner)
+  declared **five**. Six of the seven races sat within two runners of a place
+  boundary and two were on the floor, so one non-runner takes them to win only.
+  Expect this shape here: one enormous handicap and a card of small quality
+  fields around it.
 - Declarations confirm 48 hours out, as everywhere on UK turf flat.
 
 ### Haydock Park (flat)
