@@ -565,6 +565,24 @@ Rules:
   away.** When dissent lands on a horse the card argued against, put their
   reasoning on the page beside ours and say which of the two the evidence
   actually separates — restating our own number is not a reply.
+
+  **The best version of that is to TEST their argument arithmetically, and it
+  worked first time. Added 8 Oct 2026** (Newmarket, Challenge Stakes). Our card
+  opposed Time To Turn on ratings; Mullington made him his nap, "especially
+  given the fact that he receives a **2lb weight-for-age allowance from his
+  older rivals**". That claim is checkable against the race conditions, and it
+  is **half right**: 3yo colts carry 9st 3lb and 4yo+ colts and geldings 9st 5lb,
+  so against three of the five rivals he genuinely is 2lb better off. **But 4yo+
+  fillies and mares carry 9st 2lb**, so against our NAP Flora Of Bermuda — and
+  our NB Pina Sonata — he is giving a pound away. **The allowance he was being
+  backed on applies against the horses we also oppose and runs backwards against
+  both of our picks.**
+
+  That is what a reply looks like: it engages the stated reason, concedes the
+  part that is true, and locates precisely where it stops working — without
+  repeating our own rating once. Say also what it does *not* settle (here the
+  89-day absence, and whether an improving 3yo beats a mare at her peak), so the
+  archive can score the right thing afterwards.
 - **Aggregator panels are not sources. Count them as zero.** Added
   10 Sep 2026 (Doncaster Day 1). HRN's *Biggest Priced Naps* and *Biggest
   Priced Tips* panels each row-label their entries "1 Nap" or "1 Tip" —
@@ -641,6 +659,18 @@ Rules:
   **11/2 against 9/2 on the card** — longer, exactly as a comparison
   should be — with his other two prices unchanged. Shorter and longer
   behave differently, as the rule predicts.
+
+  **The rule has a CONDITION, and it is easy to apply past it. Added 8 Oct 2026.**
+  It works because a *price-comparison* column quotes the best of several books,
+  which is longer than any one card by construction — so a shorter price cannot
+  be shopping. **A single bookmaker quoting its own board carries no such
+  asymmetry** and can sit either side of a forecast on any horse. William Hill's
+  Newmarket column gave **Turty Tree 6/1 against our 13/2 (shorter) and Musical
+  Times 1/2 against our 4/9 (longer)**, which under the rule's *conclusion* reads
+  as one STEAM and one DRIFT and under its *conditions* reads as neither.
+  Two prices are also not a book, so §5b's normalisation cannot run either.
+  **Recorded as two observations, called as neither.** Check whose price it is
+  before reaching for this test: a comparison, or a firm's own board.
 
 **A Racing Post star rating belongs to the tip ROW, not to the horse.**
 Added 24 Sep 2026 (Newmarket), and it corrects a reading made eleven days
@@ -1554,6 +1584,19 @@ Add new course profiles as they're covered.
   the same way `festivalStatus()` does in `index.html`. `status` survives
   only as the fallback for an entry with no dates. **Adding a festival means
   adding both `sort` and `end`.**
+- **A figure stated in prose must be read off the derivation, not retyped.**
+  Added 8 Oct 2026. The Friday card said Time To Turn's RPR was *"116, nine
+  below Flora Of Bermuda"*. The committed derivation has 116 and 126 — the gap
+  is **ten**, and the error survived a full build, a render check and a merge,
+  because no check compares a number in a sentence against the script that
+  produced it. It surfaced only when a second panel restated the same gap and
+  the two disagreed on the page.
+
+  - When a panel quotes a figure the derivation computes, **print it from the
+    derivation's own output** rather than typing it beside the prose.
+  - Two panels stating the same number is a free consistency check and this is
+    the second time it has caught something. Prefer restating to paraphrasing.
+
 - **No number ships without the script that produced it, committed.** Added
   6 Oct 2026, borrowed from `bumasello/mazetick` (MIT), whose article schema
   makes a `derivation: path/script.py@commit` field a **build requirement** —
