@@ -675,6 +675,36 @@ Rules:
   on two divergences in three; this is the cleanest case in the archive, and
   it means a shared masthead says nothing on its own — test it and move on.
 
+  **Five from five, 8 Oct 2026** (Future Champions Friday) — the same pair,
+  five shared races, five different horses. Nick Luck against Spotlight also
+  read five from five, and Mullington against Spotlight four from five.
+
+- **A ONE-TIP COLUMN CANNOT BE TESTED, SO ITS CROSSOVER CANNOT BE TRUSTED.
+  Added 8 Oct 2026**, and it is the gap the divergence rule leaves open.
+  Twenty-two tip rows from seven desks produced three 2x crossovers:
+
+  | Crossover | Desks | Shared races | Divergences | Verdict |
+  |---|---|---|---|---|
+  | Time To Turn 2x | Mullington + Spotlight | 5 | 4 | **independence proven** |
+  | In The Black 2x | Eyecatcher + Spotlight | **1** | **0** | untestable |
+  | Forty Years On 2x | Newmarket + Spotlight | **1** | **0** | untestable |
+
+  Both unverifiable badges have the same shape: a column that appears **once**,
+  in a race where it happens to agree with Spotlight. Zero divergences is the
+  republication signature — but across one shared race it is also just what
+  agreement looks like, so neither conclusion is available.
+
+  - **A desk that tips one race on the card can never earn a crossover badge**,
+    because there is no second race in which to disagree. Record the count,
+    print "untestable", and do not rely on it.
+  - The honest framing is uncomfortable and should be said anyway: on this card
+    **the only crossover whose independence could be demonstrated was the one on
+    a horse we were arguing against.** The two we would most like to treat as
+    outside support were exactly the two that could not be checked.
+  - Note the asymmetry with the HRN rule. There, *zero divergences across a full
+    card* proved republication. Here, zero divergences across *one* race proves
+    nothing. **The sample size is doing all the work in both directions.**
+
 - **Alignment is not quality, and a value column will wreck the aggregate
   figure.** Same card. Raceolly tipped five races each-way at 11/1, 200/1,
   16/1, 12/1 and 33/1 and agreed with **nobody** — not us, not any of the
@@ -757,6 +787,7 @@ Milnes, ★ from Spotlight, one horse at one price.
 | PU | The Punt (Harry Wilson) | rose (#fda4af) |
 | DM | David Milnes (RP Newmarket correspondent) | slate (#cbd5e1) |
 | LB | Lambourn (Liam Headd, Racing Post) | slate-light (#cbd5e1) |
+| WC | West Country (Liam Watson, Racing Post) | tan (#d4a574) |
 
 New tipsters: assign a 2-3 letter code and a distinct badge colour. Keep
 the system extensible.
