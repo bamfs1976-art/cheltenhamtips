@@ -790,6 +790,44 @@ Rules:
   Printing 4x would be counting rows rather than opinions: the Marvelman error
   one level up.
 
+  **A VERIFIED COUNT IS A PROPERTY OF THE SAMPLE, NOT THE HORSE, AND IT GOES UP.
+  Added 10 Oct 2026**, hours after the paragraph above was written. A seventh
+  Saturday column arrived — Billy Grimshaw, three Newmarket tips — also on Rock
+  Montreal. Five desks now assert ten pairings, and the verified count moved from
+  **one to three**: Spotlight, The Punt Acca and Grimshaw are mutually verified,
+  a proven triangle. The honest label went from *a verified 2x plus two
+  unverifiable rows* to **a verified 3x plus two unverifiable rows**.
+
+  - **State the verified count with the sample it was computed on**, and expect
+    it to rise. Yesterday's reading was not wrong, it was smaller — which is a
+    different thing from the retractions elsewhere in this file and should be
+    reported as such.
+  - It only ever moves **up**: a new desk can add checkable pairings but cannot
+    remove the divergences already observed.
+  - A desk with one tip adds a row and no verification; a desk with three adds
+    both. **The arrival worth noticing is a multi-race column, not another name.**
+
+  **And the desk that did the verifying is the one §6 tells you to distrust by
+  default — which inverts how the rule reads.** Grimshaw carries the **HRN**
+  masthead, and §6 records that horseracing.net's free tips *are* Spotlight
+  republished, identical in 14 races of 14. He is the last column you would
+  expect to firm anything up. He did it because he tips three races and
+  **diverged from Spotlight in two of them**, and a republication cannot
+  disagree with its source. Meanwhile Eyecatcher and Newmarket carry impeccable
+  Racing Post bylines and remain uncheckable on one tip each.
+
+  **What verifies a desk is how many races it tips, not what its masthead is
+  worth.** Reputation tells you what to suspect; tip count tells you what you can
+  settle.
+
+  **Second running of the same test, same answer — a replication, not a
+  correction.** Grimshaw against Spotlight read **two divergences in three** at
+  Doncaster on 9 Sep 2026, which is where he earned his standing, and **two in
+  three** again at Newmarket on 10 Oct, a different card at a different course
+  three weeks later. Most entries in this file record something that turned out
+  wrong; this one records a standing judgement holding up on fresh data, and the
+  archive is worth less if only the failures get written down.
+
 - **Alignment is not quality, and a value column will wreck the aggregate
   figure.** Same card. Raceolly tipped five races each-way at 11/1, 200/1,
   16/1, 12/1 and 33/1 and agreed with **nobody** — not us, not any of the
