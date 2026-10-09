@@ -283,6 +283,23 @@ slot is for — returns nothing.
   band does. A LONG priced at 9/1 and running at 3/1 is a different bet
   from the one the gate approved.
 
+  **Caught before the off for the first time, and now scripted. 9 Oct 2026**
+  (Future Champions Saturday). Premiere Ligne was priced **33/1** off the
+  racecard and read **25/1** on a Racing Post price-comparison list the next
+  morning — a STEAM, spotted while the race was still a day away rather than
+  reconstructed from the settlement. It still cleared 8/1 by a street, so the
+  slot held and nothing changed; the point is that the move was *visible*.
+
+  - `nr-check.mjs` now scores this instead of only reminding you to look.
+    Record the LONG's prices on the card JSON as **`oddsObserved[]`** —
+    `{source, odds}`, oldest first — and it prints the trail, calls
+    STEAM/DRIFT/flat, and **exits non-zero if the latest observation is under
+    8/1**. With no trail recorded it says so rather than passing quietly.
+  - The Lesrico case is in `scripts/fixtures/nr-regression.json`, and it is the
+    one row there that **fires with no withdrawals at all**. A check driven only
+    by `--nr` can never see a price move, which is exactly why this one went
+    unnoticed for a month.
+
 ### Step 5 — Lucky 15
 
 **Record to date: −82.1% (−£41.85 on £51.00 across eleven days).**
@@ -749,6 +766,30 @@ Rules:
     card* proved republication. Here, zero divergences across *one* race proves
     nothing. **The sample size is doing all the work in both directions.**
 
+  **A one-tip column CAN be tested — across cards. Added 9 Oct 2026**, and it is
+  the way out of the trap above. A desk that tips one race today may tip a
+  different one tomorrow, so **pool the divergence test over the meeting rather
+  than the card.** The same two desks produced the untestable badge on both days
+  of Future Champions:
+
+  | Desk | Friday | Saturday | Shared races with Spotlight | Divergences |
+  |---|---|---|---|---|
+  | Eyecatcher | In The Black (= Spotlight) | Rock Montreal (= Spotlight) | **2** | **0** |
+  | Newmarket (Milnes) | Forty Years On (= Spotlight) | Rock Montreal (= Spotlight) | **2** | **0** |
+
+  Two is still not enough to conclude anything — zero divergences never proves
+  independence — but it is twice the evidence, and it points at republication
+  rather than away from it. Write **"none yet, at two shared races each"**, keep
+  pooling across the meeting, and say so the day the count means something.
+
+  **And a multi-desk crossover is several pairwise claims, each testable
+  separately.** Same card. Rock Montreal was quoted by *four* desks at 13/8,
+  which reads as a 4x — but that badge asserts six pairings, and only **one** of
+  them could be checked (The Punt Acca diverged from Spotlight in the other race
+  it tipped). The honest label is **a verified 2x plus two unverifiable rows**.
+  Printing 4x would be counting rows rather than opinions: the Marvelman error
+  one level up.
+
 - **Alignment is not quality, and a value column will wreck the aggregate
   figure.** Same card. Raceolly tipped five races each-way at 11/1, 200/1,
   16/1, 12/1 and 33/1 and agreed with **nobody** — not us, not any of the
@@ -780,6 +821,26 @@ Rules:
   Two prices are also not a book, so §5b's normalisation cannot run either.
   **Recorded as two observations, called as neither.** Check whose price it is
   before reaching for this test: a comparison, or a firm's own board.
+
+  **The strongest form of the test is a WITHIN-RACE control, and one turned up
+  on 9 Oct 2026** (Future Champions, the Cesarewitch). All three of our picks in
+  that race were priced by the same comparison page at the same moment:
+
+  | Pick | Our card | Comparison | Read |
+  |---|---|---|---|
+  | Beylerbeyi (NB) | 5/1 | 6/1 | longer — shopping |
+  | Sea Lantern (NAP) | 6/1 | 6/1 | level |
+  | **Premiere Ligne (LONG)** | **33/1** | **25/1** | **shorter — STEAM** |
+
+  Whatever margin that page carries, it carries on all three, so **the margin
+  cannot be what made the third one shorter.** That is §5b's "normalise to the
+  book" done with a control inside one race rather than an average across the
+  card — and it is available whenever we hold two or more picks in the same
+  race, which is every race where the LONG runs. Prefer it: it needs no book,
+  no median and no assumption that forecast and board differ only in margin.
+
+  Stated limit: it gives the **direction** of the move, not its size. One
+  comparison observation against one card is two points, not a trail.
 
 **A Racing Post star rating belongs to the tip ROW, not to the horse.**
 Added 24 Sep 2026 (Newmarket), and it corrects a reading made eleven days
@@ -828,13 +889,28 @@ Milnes, ★ from Spotlight, one horse at one price.
 | TSP | Topspeed (Craig Thake, Racing Post) | sky (#7dd3fc) |
 | RPR | RP Ratings (Ainsley Scorah) | light orange (#fdba74) |
 | OTN | On The Nose (Racing Post) | mint (#a7f3d0) |
-| PU | The Punt (Harry Wilson) | rose (#fda4af) |
+| PU | The Punt (Harry Wilson) | deep rose (#fb7185) |
 | DM | David Milnes (RP Newmarket correspondent) | slate (#cbd5e1) |
-| LB | Lambourn (Liam Headd, Racing Post) | slate-light (#cbd5e1) |
+| LB | Lambourn (Otis Brankin-Frisby / Liam Headd, Racing Post) | steel (#94a3b8) |
 | WC | West Country (Liam Watson, Racing Post) | tan (#d4a574) |
 
 New tipsters: assign a 2-3 letter code and a distinct badge colour. Keep
 the system extensible.
+
+**Two colours in this table were duplicates, and both were caught only when the
+desks turned up on the same card. Fixed 9 Oct 2026.** PU (The Punt) was given
+PA's rose and LB (Lambourn) was given DM's slate — so on Future Champions
+Saturday, where The Punt and Lambourn both tipped the 16:50 and the badge is
+the only thing telling a reader they are two desks, the badges would have been
+indistinguishable from other columns' on the same page. PU is now **deep rose
+(#fb7185)** against PA's rose, and LB **steel (#94a3b8)** against DM's slate.
+
+- The same-family-different-weight pairing is deliberate for the two Punt
+  columns and reads as related, which they are.
+- **"Distinct" is the stated requirement, so check the table before assigning,
+  not after.** BG is still two different people (Geraghty green, Grimshaw
+  orange) — a code collision rather than a colour one, and it has not bitten
+  yet only because they have never appeared on the same card.
 
 ---
 

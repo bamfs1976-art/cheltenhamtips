@@ -118,7 +118,29 @@ for (const race of card.races ?? []) {
       } else {
         lines.push(`\x1b[32m✓\x1b[0m LONG ${pick.horse} still clears the place test on ${eff} places`);
       }
-      lines.push(`\x1b[33m⚠\x1b[0m re-check the LONG's PRICE too — ${pick.odds ?? '?'} on the card. §4: Lesrico was logged at 9/1 and started 3/1F`);
+      /* §4 says re-check the LONG's PRICE, not just the place count, because the
+         price moves further between pricing and the off than the band does. If the
+         card records a trail (oddsObserved[]), score the latest against the slot's
+         own 8/1 minimum rather than just reminding the reader to look. */
+      const trail = Array.isArray(pick.oddsObserved) ? pick.oddsObserved : [];
+      if (trail.length < 2) {
+        lines.push(`\x1b[33m⚠\x1b[0m re-check the LONG's PRICE too — ${pick.odds ?? '?'} on the card, no second observation recorded. §4: Lesrico was logged at 9/1 and started 3/1F`);
+      } else {
+        const first = trail[0], last = trail[trail.length - 1];
+        const dec = (o) => { const m = String(o).match(/^(\d+(?:\.\d+)?)\s*\/\s*(\d+(?:\.\d+)?)$/); return m ? Number(m[1]) / Number(m[2]) : NaN; };
+        const a = dec(first.odds), b = dec(last.odds);
+        const dir = !Number.isFinite(a) || !Number.isFinite(b) ? 'unreadable'
+                  : b < a ? 'STEAM' : b > a ? 'DRIFT' : 'flat';
+        lines.push(`      price trail: ${trail.map(t => `${t.odds} (${t.source})`).join('  →  ')}  — ${dir}`);
+        if (!Number.isFinite(b)) {
+          lines.push(`\x1b[33m⚠\x1b[0m latest LONG price "${last.odds}" is not readable as a fraction — check the 8/1 minimum by hand`);
+        } else if (b < 8) {
+          lines.push(`\x1b[31m✗ LONG NO LONGER MEETS THE 8/1 MINIMUM\x1b[0m — ${last.odds} at the latest observation. This is the Lesrico case (9/1 priced, 3/1F at the off)`);
+          problems++;
+        } else {
+          lines.push(`\x1b[32m✓\x1b[0m LONG price still clears 8/1 — ${last.odds} at the latest observation`);
+        }
+      }
     }
   }
 
