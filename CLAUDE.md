@@ -631,6 +631,17 @@ Rules:
   panels stay useful for best-odds figures and for surfacing big-priced
   naps you would otherwise never see.
 
+  **And when a panel hands you a big price, name the leg it actually fails.**
+  Added 9 Oct 2026. Friday's panels produced **Previous 49/1** (17-runner
+  non-handicap) and **Albemagic 37/1** (15-runner handicap), the two biggest
+  prices offered on the card. Both **clear the 8/1 minimum comfortably** and
+  both sit in races paying **three**, so the place count binds on each one
+  alone — which is the precise statement §4 asked for after Pol Roger and
+  Kodi Lion were written up as locked out by places when they failed the
+  price test too. A panel's job is to show you prices the card never would;
+  that makes it the most likely place to reach for the LONG slot and get the
+  reason wrong.
+
   **The row label is a COUNT, and it can exceed one.** Added 26 Sep 2026
   (Cambridgeshire). Every panel row seen until now read "1 Nap" or "1 Tip";
   St Anton read **"2 Naps"** — the first time a panel has asserted
@@ -667,6 +678,39 @@ Rules:
   opinion, and matching the quoted price is what lets you say so instead of
   guessing. Where the prices differ, or no known column holds the horse, the
   old advice stands: count it as one and state the limit.
+
+  **The exact-match version of that test almost never fires. Loosened
+  9 Oct 2026** (Future Champions Friday), and the loosening is the point
+  rather than a caveat. These panels head their odds column **Best Odds**,
+  and §6's own rule says a price-comparison quotes *longer* than any single
+  card by construction — so demanding an identical price asks the panel to do
+  the one thing it does not do. Salam Dubawi matching at 40/1 was luck.
+  On Friday's Newmarket card both duplicates were longer and both were real:
+  **Albemagic 37/1 in the panel against Spotlight's 33/1**, and **Lola De
+  Valence 94/1 against West Country's 50/1**.
+
+  - The workable test is **same horse, same race, a known column holds it,
+    and the panel price is longer or equal**. Shorter would mean it is not a
+    comparison and the duplicate does not resolve.
+  - Both readings returned the same count on the card that prompted this,
+    which is why it was safe to loosen there: the strict test cost nothing on
+    the day it was changed. The Cambridgeshire's "the author's identity does
+    not matter" shape again — when two readings agree, say which one you will
+    use next time.
+  - **The panel row label is still worth reading even when the duplicate
+    resolves.** "1 Nap" on Lola De Valence told us West Country's tip was his
+    *nap*, which his own row did not say. A nap is a tip, so the count does
+    not move; the information does.
+
+- **Record a column's ABSENCE from the meeting, not just its disagreements.**
+  Added 9 Oct 2026 (Future Champions Friday). Raceolly published **six tips
+  that day and not one was at Newmarket** — all six were Chepstow, each-way,
+  15/1 to 74/1. A later reading of the archive that sees Raceolly in the
+  registry, sees our Newmarket card, and finds no agreement will score him as
+  having *disagreed*. He was not in the race. §6 already says to report
+  alignment per column rather than in aggregate; this adds that a column
+  covering none of the meeting's races has an alignment of **n/a, not 0%**,
+  and the card should say so in as many words.
 - **Four divergences in four shared races is what independence looks like.**
   Added 26 Sep 2026 (Cambridgeshire). Mullington and Nick Luck both write for
   William Hill and both covered the same four Newmarket races: Marsala v Next
