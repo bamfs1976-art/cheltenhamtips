@@ -300,6 +300,25 @@ slot is for — returns nothing.
     by `--nr` can never see a price move, which is exactly why this one went
     unnoticed for a month.
 
+  **THE SIGNAL LEG BOUND FOR THE FIRST TIME. 10 Oct 2026** (the Cesarewitch).
+  §4 excludes a longshot on three legs — 4+ places at 16+, 8/1 or bigger, and a
+  concrete positive signal — and **every exclusion in the archive until this one
+  was arithmetic**: places, price, or both. Race-morning panels offered Align
+  The Stars 100/1, Tactician 94/1, Shrimp Shady 49/1, Letsbefrank 54/1, Bahadur
+  169/1 and Percy Shelley 69/1, all in a 29-runner Class 2 handicap paying four.
+  **Every one clears the place test and clears 8/1 by a distance.** What shut
+  them out was the third leg, and the slot went to the only horse in the race
+  with it — course-and-distance form over the exact 2m2f plus a 4lb penalty.
+
+  - Say which leg binds, every time. The same card shut Motown Filly (18/1,
+    16:50) out on **places** — nine runners in a Class 3 handicap pays three —
+    so two exclusions on one afternoon failed on two different legs.
+  - This is the case §4 has been warning about since Pol Roger and Kodi Lion
+    were written up as locked out by the place count when they failed on price
+    too. **When the arithmetic passes and the slot still shuts, the card has to
+    say "on judgement" in as many words**, because that is the only kind of
+    exclusion a reader cannot reconstruct from the field size.
+
 ### Step 5 — Lucky 15
 
 **Record to date: −82.1% (−£41.85 on £51.00 across eleven days).**
@@ -718,6 +737,34 @@ Rules:
     resolves.** "1 Nap" on Lola De Valence told us West Country's tip was his
     *nap*, which his own row did not say. A nap is a tip, so the count does
     not move; the information does.
+
+  **And the loosened test DECOMPOSES a multi-count row, which the strict one
+  could not. Added 10 Oct 2026.** §6 records that a "2 Naps" row asserts
+  multi-column agreement that cannot be verified, so it earns no badge. That
+  stands — but it is not the end of what can be said. The Cesarewitch panel
+  carried **Align The Stars, "2 Naps", at 100/1**, and Sam Hardy naps the same
+  horse in the same race at **66/1**: known column, longer panel price, so the
+  loosened test identifies one of the two. **The row is Sam Hardy plus one
+  unidentified opinion, not two new ones.**
+
+  - Resolve what can be resolved and **report the residual as a residual**.
+    "One known plus one unknown" is a strictly better record than either "2
+    unverifiable" or "1 opinion".
+  - The residual still earns no badge, because the unnamed half cannot be
+    tested for independence by a divergence.
+  - Where nothing resolves, the old advice holds: **Shrimp Shady read "2 Naps"
+    at 49/1 with no column holding it** — count it as one and state the limit.
+  - Same card, the cleanest textbook case of the two-row rule: **Letsbefrank
+    appeared in both panels, "1 Nap" and "1 Tip", at the identical 54/1.** One
+    opinion. A nap is a tip.
+
+- **The absence rule paid off within a day, and the two numbers are different.
+  Added 10 Oct 2026.** Friday recorded Raceolly as **n/a, not 0%**, because all
+  six of his tips were at Chepstow. On Saturday he tipped two Newmarket races
+  and agreed with nothing, which is a real **0/2**. Had Friday been booked as
+  0%, the meeting would now average a fabricated zero against a measured one.
+  An absence and a disagreement are not the same observation, and a column that
+  skips a meeting will often be back at the next one.
 
 - **Record a column's ABSENCE from the meeting, not just its disagreements.**
   Added 9 Oct 2026 (Future Champions Friday). Raceolly published **six tips
