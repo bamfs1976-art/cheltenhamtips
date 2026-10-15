@@ -1,0 +1,3 @@
+{ "races": [ { "off": "17:20", "ewFrac": "1/4",
+  "picks": [ { "slot": "NAP", "horse": "Withdrawn At SP",    "odds": "SP" },
+             { "slot": "NB",  "horse": "Withdrawn At Price", "odds": "12/1" } ] } ] }

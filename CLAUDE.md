@@ -188,6 +188,36 @@ performance off. **Report both numbers every time** — a slot cannot be judged
 on wins alone in either direction, and recording the return per pick is the
 only thing that makes a future recompute possible at all.
 
+**Recomputed on 112 picks after Future Champions (17 Oct 2026). The NB still
+leads on both measures and the gap has halved**
+(`scripts/analysis/future-champions-slots.py`):
+
+| Slot | Picks | Wins | SR | Returned | Net | Pts/pick |
+|---|---|---|---|---|---|---|
+| Our NB | 53 | 11 | **21%** | £42.76 | −£10.24 | **0.81** |
+| Our NAP | 53 | 9 | 17% | £40.51 | −£12.49 | 0.76 |
+| Our LONG | 6 | 0 | 0% | £2.25 | −£3.75 | 0.38 |
+| **Total** | **112** | 20 | 18% | **£85.52** | **−£26.48** | 0.76 |
+
+0.96 against 0.75 became 0.81 against 0.76, and **it narrowed because the NAP
+had the better meeting** — the third consecutive meeting whose internal slot
+ranking disagrees with the season's. Both slots are still losing on a fifth of
+the season; nothing here promotes either.
+
+**And the two days of that meeting were exact opposites: Friday NAP 0.95 / NB
+0.11, Saturday NAP 0.63 / NB 0.79.** Friday is the sharpest demonstration yet
+of why points and strike rate have to be reported together, and it arrived
+through the NAP rather than the NB. **The slot hit 13% — one winner from eight
+— and finished 41p off level**, because the winner was Musical Times at **4/9**
+(a Group 1, returning £1.27 on £1.00, **27p of profit**) and the real money came
+from four horses that were *beaten*: Topaz 3rd at 16/1, Fast Track 3rd at 9/1,
+Silver Lake 2nd at 6/1, Flora Of Bermuda 2nd at 7/4 — **£5.32 between them, five
+times what the winner paid.** §4 recorded this about the NB after Haydock Day 1
+and attributed it to rule 8 filling that slot with short favourites. Friday
+shows the mechanism is not a property of a slot at all: **it is a property of
+50p each-way at short prices**, and it will hit whichever slot happens to hold
+them.
+
 **Sprint Cup 2026 (Haydock, three days): 42 picks, 10 winners, 15
 placed, −1.8% (−£0.74 on £42.00).** The closest to level any meeting has
 finished, and the slot pattern reversed on every one of the three days —
@@ -318,6 +348,30 @@ slot is for — returns nothing.
     too. **When the arithmetic passes and the slot still shuts, the card has to
     say "on judgement" in as many words**, because that is the only kind of
     exclusion a reader cannot reconstruct from the field size.
+
+  **SCORED 17 Oct 2026: the signal leg went 6 from 6 and the pick it approved
+  lost.** Premiere Ligne, the course-and-distance winner with the 4lb penalty,
+  finished outside the four at 33/1 — so the LONG is **0 from 6 and 0.38 points
+  per pick** in the only sample that records returns, on its first run in six
+  meetings. **But not one of the six horses the signal leg refused made the
+  frame either.** Align The Stars 100/1, Tactician 94/1, Shrimp Shady 49/1,
+  Letsbefrank 54/1, Bahadur 169/1, Percy Shelley 69/1 — all six cleared the
+  place test and cleared 8/1 by a distance, all six were shut out on judgement
+  alone, all six lost.
+
+  - **Report both numbers.** The gate declined six losers and approved a
+    seventh. Reporting only the slot's loss says the gate is worthless;
+    reporting only the six says it works. The first evidence that the signal
+    leg carries information at all is that it refused six big prices that all
+    failed — on one card, which is one card.
+  - **The place leg was vindicated twice on the same afternoon**, and the second
+    reason could not have been priced. Motown Filly, shut out on places at 18/1,
+    **finished third**: she would have returned £1.45 at the three places the
+    race was priced at. Three withdrawals then took the field from nine to six
+    and the band fell to **two**, so at the terms that actually applied she paid
+    nothing. One of the three withdrawals was our own NAP. Rule 16 is not a
+    footnote to the LONG gate — it moved this race's place count by a third
+    after the card was published.
 
 ### Step 5 — Lucky 15
 
@@ -591,6 +645,26 @@ Rules:
   The residual against the race's own line keeps **Kahin at 2nd and drops Lord
   d'Or to 6th of 11**. Same two numbers, opposite verdicts; only the residual
   is a read.
+
+  **THAT RACE RAN, AND THE RESIDUAL LOST IT. Scored 17 Oct 2026.** **Lord d'Or
+  finished second at 11/1** in the Old Rowley Cup. The crude gap that the method
+  exists to correct had him joint-first; the correction put him sixth of eleven.
+  On the one race this worked example was built from, the number being corrected
+  was right and the correction was wrong.
+
+  - **This does not retire the method and it is not allowed to be filed as
+    noise either.** The arithmetic case stands — ranking by `RPR − OR` selects
+    the lowest-rated horse by construction, and that is a fact about the
+    subtraction, not a hypothesis. But the method's record against live results
+    is now **one observation against and none for**, which is worse than it was
+    before the race ran.
+  - **Score what the instrument was asked to do, not just what it ranked.**
+    Neither of the two picks the residual kept made the frame either, so it did
+    not merely mis-rank one horse at 11/1 — it did not find the winner. A
+    ranking method that reorders the losers correctly has still failed.
+  - The honest size of this: one placed horse in one ten-runner handicap. It is
+    recorded because the archive is worth nothing if only the confirmations get
+    written down, not because one race settles a method.
 
   **THE RESIDUAL HAS A FAILURE MODE, AND IT IS SILENT. Added 8 Oct 2026**
   (the 29-runner Cesarewitch; `scripts/analysis/rpr-calibration-newmarket-10-oct.py`).
@@ -909,6 +983,33 @@ Rules:
   three weeks later. Most entries in this file record something that turned out
   wrong; this one records a standing judgement holding up on fresh data, and the
   archive is worth less if only the failures get written down.
+
+  **AND THE VERIFIED 3x WON. Rule 8 lost its first pre-registered test,
+  17 Oct 2026.** The triangle above — Spotlight, The Punt Acca and Grimshaw,
+  mutually verified by divergence — was all on **Rock Montreal at 13/8** in the
+  14:25, and §6 says a 3x+ horse under 3/1 should not be the NAP, so the card
+  opposed him. **He started 11/8 favourite and won**, with our NAP Notable Dream
+  at 7/1 fourth of seven.
+
+  - **It was written down in advance, which is the only reason it scores.** The
+    live card carried the sentence *"if Rock Montreal wins that is a point
+    against the rule and not an excuse for us"* before the race ran. A rule
+    that is only ever evaluated after the fact cannot be wrong; pre-registering
+    the test is what makes a loss legible.
+  - **The same afternoon gave the rule its cleanest win.** Desert Castle, the
+    card's other 2x, went off **10/11 in the Dewhurst and was beaten by our NAP
+    Darkness Falls at 15/8** — the short-priced consensus horse losing to a pick
+    the consensus did not share, which is exactly the shape rule 8 exists to
+    produce. **Two crossovers, two opposite verdicts, two hours apart.**
+  - Rule 8 stands: it has been right at Goodwood, Ebor Day 3, the Sprint Cup and
+    the Cambridgeshire, and is now **wrong once, on the best-evidenced test ever
+    put to it**. Note which one that is. The crossovers we could not verify have
+    never cost anything; the one whose independence was *provable* is the one
+    that beat us. **Treat a verified count as a stronger reason to look again at
+    the horse, not as a stronger reason to oppose it.**
+  - What it does not license is reverting to consensus-following. §6's own
+    remedy was scored at the Cambridgeshire and was worth 0p — demoting a pick
+    reliably finds the loser without thereby finding a winner.
 
 - **Alignment is not quality, and a value column will wreck the aggregate
   figure.** Same card. Raceolly tipped five races each-way at 11/1, 200/1,
@@ -1520,6 +1621,24 @@ Engine notes specific to this meeting:
   count, the result as published is not enough to settle it — **ask for the
   full finishing order to the offer's place count, or the day books at a
   floor.** Booked at the floor here, as St Leger Day 4 was.
+
+  **"UNRESOLVED" IS NARROWER THAN IT LOOKS, AND IT IS NOW MECHANICAL. Added
+  17 Oct 2026.** Future Champions' Cesarewitch looked like the same problem —
+  two picks absent from a result that stops at fourth, £2.00 apparently
+  unsettleable. **It is the opposite case, and one number separates them.**
+  That race **paid four** and the result **runs four deep**, so a pick missing
+  from it *cannot* have been in the places or it would be listed. The
+  Cambridgeshire **paid seven** and the result ran four, so the three missing
+  picks genuinely cannot be settled.
+
+  - The test is **published depth against the place count**, not "is the horse
+    in the result". `settle.mjs` now computes the depth as the contiguous run
+    from 1st, calls a missing pick a **confirmed loser** when the depth reaches
+    the place count, and reserves UNRESOLVED for when it does not — naming the
+    stake and exiting non-zero so it cannot be quietly booked as a loss.
+  - Booking a confirmed loser as unresolved is not the safe direction. It
+    **understates what the archive knows** and leaves a permanent asterisk on a
+    meeting that settles to the penny.
 - The Group races are where the money was: both winners came from them
   (Haffner 4/1 in the Royal Lodge, Orthodox 11/4 in the Middle Park) while
   the two big handicaps returned nothing that can yet be counted.
@@ -1594,6 +1713,28 @@ the Friday and the **Darley Dewhurst (G1)** on the Saturday, with the
   Expect this shape here: one enormous handicap and a card of small quality
   fields around it.
 - Declarations confirm 48 hours out, as everywhere on UK turf flat.
+- **2026 result: 15 races gated 15/15, 31 picks, −£12.57 on £31.00 (−40.5%),
+  nothing unresolved.** Friday −£7.51 (−46.9%), Saturday −£5.06 (−33.7%). Four
+  winners — Musical Times 4/9 and Darkness Falls 15/8 (NAPs), Drumbeat 6/5 and
+  Cullenagh Rainbow 15/8 (NBs) — and seven placed.
+  (`scripts/analysis/future-champions-settlement.sh`.) Four things to carry:
+  - **Three winners were named on these cards and declined**: Humidity 15/8
+    (surfaced as "too much absence to price and too much ability to ignore"),
+    Lola De Valence 40/1 (a panel row the duplicate test resolved correctly as
+    one opinion, in a 16-runner non-handicap where the LONG was shut on field
+    shape), and Rock Montreal 11/8F (opposed under rule 8). Surfacing dissent
+    works and **"we flagged it" is not a return**.
+  - **The small-field shape above is a two-place shape, and it cost four
+    placed picks.** Apulia Bay 3rd at 10/1, Great Barrier Reef 3rd at 7/1,
+    Desert Romance 3rd, Boiling Point 4th of five — all in races paying two.
+    Rule 6 flags thin each-way value at this size; on this card it was the
+    single biggest drag on the NAP slot, and it is **predictable from the
+    programme** rather than from declarations.
+  - **The going was Good to Firm, GoingStick 8.0 Friday and 7.3 Saturday** —
+    a 0.7 drop between days on free-draining chalk. Re-read it each morning
+    here as everywhere; do not carry Friday's forward.
+  - The LONG opened in the Cesarewitch, ran, and lost; the signal leg that
+    refused six other qualifiers went 6 from 6. See §4.
 
 ### Haydock Park (flat)
 
@@ -2006,7 +2147,7 @@ Add new course profiles as they're covered.
   |---|---|
   | `scripts/gate-check.mjs` | Step 3b / rule 13 — declared field, draws, EW terms, LONG gate |
   | `scripts/nr-check.mjs` | Rule 16 — band moves, lost place specials, withdrawn picks, at the off |
-  | `scripts/settle.mjs` | §6 P/L from published positions, refusing to guess the fraction |
+  | `scripts/settle.mjs` | §6 P/L from published positions, refusing to guess the fraction; `--json` emits the ledger consumers read |
   | `scripts/lib/place-terms.mjs` | The place-band model — **the only copy** |
   | `scripts/verify-site.mjs` | The display contract and §10, every page every check |
   | `scripts/check-share-palette.mjs` | Share-card colours against `FESTIVALS_2026[].accentColor` |
@@ -2017,6 +2158,54 @@ Add new course profiles as they're covered.
   money (§12). Both passed their own tests, because each was self-consistent.
   Duplicated domain logic does not announce itself — it diverges quietly and the
   stale copy is as likely to be the one that pays out.
+
+  **A SHARED FIELD NAME IS DUPLICATED LOGIC TOO, AND IT HID A PAYOUT. Added
+  17 Oct 2026** (settling Future Champions). The place-band *model* was
+  de-duplicated on 6 Oct; the **card schema around it** was not. `nr-check.mjs`
+  reads a card's `places` as what the race was **priced** at. `settle.mjs` read
+  the same key as a settlement **override**. Both self-consistent, both
+  documented, neither aware of the other.
+
+  - The 16:50 nursery was priced at 9 runners and 3 places, three were
+    withdrawn, six ran, and the handicap band says **2**. It settled on the
+    card's 3. On a fixture that reproduces it, that turns a **−25% race into
+    +45%** and pays out on a horse that finished outside the places.
+  - **Worse than the money: rule 16 could never fire.** The "place band moved"
+    line compares the priced count against the settled one, and the override had
+    made them the same number by construction. **A check whose two inputs come
+    from the same place is not a check** — the same shape as §10's two agreeing
+    reimplementations of the share predicate.
+  - Fixed by giving the key one meaning: `places` is the priced count
+    everywhere, settlement always derives from what ran, and an advertised
+    special goes in `offer: {places, frac, minRunners}` — the shape `nr-check`
+    already tested. Pinned by `scripts/fixtures/settle-bands-regression.json`,
+    which carries a race in **each** place band, because the two ladders only
+    differ above fifteen runners.
+  - **When you de-duplicate a model, de-duplicate the vocabulary it reads.**
+    Two scripts importing the same `place-terms.mjs` still disagreed, because
+    they disagreed about what the card was telling them.
+
+  **TWO MORE FROM THE SAME SETTLEMENT, AND THE SECOND FIX WAS BACKWARDS.**
+
+  - **A non-runner taken at SP was booked as a loss.** The void guard and the
+    no-price guard sat in the wrong order, so an SP pick that did not run
+    returned "no card price" instead of voiding. **A void is a property of the
+    RACE, not of the price**: the stake comes back whatever it was taken at. It
+    hit Mister Mojito and National Honour for **£2.00**. The bug was invisible
+    for months because it only fires on a pick taken at SP *and* withdrawn.
+  - **Round per bet, not per total — and "more precision" was the wrong
+    instinct.** A consumer script that re-summed the printed per-pick figures
+    read Friday at −46.9% against settle's −47.0%. The first fix emitted a
+    full-precision ledger so nothing reimplemented the arithmetic, and **that
+    made the figure wrong while looking more rigorous**: a bookmaker settles
+    *each bet* and pays it to the penny, so the place part of a 7/4 shot at 1/4
+    is £0.71875 and what lands is £0.72. The real return is the sum of
+    penny-rounded returns, which is what the printed lines and the whole season
+    ledger had always been. **The unit of rounding is a domain fact about how a
+    bet is paid**, not a numerical-hygiene question, and choosing the
+    mathematically tidier answer got it wrong. Both halves stand: emit a ledger
+    so consumers read it rather than re-derive it, *and* round it where the
+    money rounds.
 
 - Every page must include the BeGambleAware footer block.
 - **Live site: <https://ukracinghub.netlify.app>** (renamed from
@@ -2075,7 +2264,9 @@ Add new course profiles as they're covered.
 - [ ] **Each-way fraction recorded per race**, not left to a default — settlement
       refuses to price a placed pick without it
 - [ ] **A place special recorded with its own runner threshold** (`minRunners`),
-      or `nr-check.mjs` cannot test whether it still holds
+      or `nr-check.mjs` cannot test whether it still holds — in `offer`, never
+      in `places`, which means **the count the race was priced at** and nothing
+      else (§10, 17 Oct 2026)
 - [ ] Committed to feature branch, merged to `main` only with user
       authorization
 
@@ -2087,6 +2278,22 @@ Add new course profiles as they're covered.
 - [ ] Any LONG's **price** re-checked, not just its place count (§4 — Lesrico
       was logged at 9/1 and started 3/1F)
 - [ ] The place count that **actually applied** stated in the settlement panel
+
+**Settling — the figures have to agree with each other before they ship:**
+
+- [ ] `settle.mjs` **exits 0**. A non-zero exit means a pick placed in a race
+      whose published result does not run as deep as the race pays, and nothing
+      can be published until that stake is resolved or explicitly booked at a
+      floor and labelled
+- [ ] Any **"place band moved"** line reported on the card, with the count that
+      actually applied (rule 16)
+- [ ] The day's figures **written into `ROI_LEDGER`** and
+      `node scripts/verify-site.mjs` run — the ledger reconciliation is a free
+      cross-check of the page against the season total, and it has caught a
+      penny-level disagreement
+- [ ] Result transcriptions committed under `scripts/analysis/`, with the
+      **ran count stated** rather than the order padded out to it. Never invent
+      a finishing position to make a place band come out right
 
 ---
 

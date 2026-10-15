@@ -5,7 +5,6 @@
     {
       "off": "15:35",
       "ewFrac": 5,
-      "places": 7,
       "picks": [
         {
           "type": "NAP",
@@ -22,7 +21,14 @@
           "horse": "Get It",
           "odds": "12/1"
         }
-      ]
+      ],
+      "declared": 24,
+      "places": 5,
+      "offer": {
+        "places": 7,
+        "frac": "1/5",
+        "minRunners": 16
+      }
     },
     {
       "off": "17:20",
@@ -47,5 +53,5 @@
       ]
     }
   ],
-  "_note": "Example picks file. Omit \"places\" to derive the place count from what actually ran; set \"declaredPlaces\" to what the card was priced at so a band change is reported."
+  "_note": "Example picks file. `places` is what the race was PRICED at \u2014 the same meaning nr-check.mjs has always given the field. Settlement derives the place count from what ACTUALLY RAN and reports a move, so a band drop is visible instead of being papered over (it used to read `places` as a settlement override, which made the two numbers agree by construction). An advertised special above the standard ladder \u2014 the Stewards' Cup's seven, the Cambridgeshire's seven \u2014 goes in `offer` WITH ITS OWN `minRunners` threshold, and only settles if that threshold still holds on the number that ran. `ewFrac` is required for any pick that places: settlement refuses to guess it rather than defaulting to 1/5. Prices are the card's own; write \"SP\" where the card quoted SP and settlement resolves it from the result's own starting price."
 }

@@ -1,0 +1,15 @@
+{ "_why": "A pick taken at SP that did not run. The two guards in settleEachWay used to sit the other way round, so the 'no card price' branch fired first and the stake was booked as a LOSS instead of returned. Caught 17 Oct 2026 settling Future Champions (Mister Mojito, National Honour). Expect: both void, £2.00 returned, net £0.00.",
+  "results": [
+    { "off_time": "17:20", "course": "Newmarket", "race_name": "Void Regression Handicap", "type": "Flat",
+      "race_class": 4, "field_size": 11, "going": "Good",
+      "runners": [
+        { "horse": "Winner", "position": "1", "sp": "2/1" },
+        { "horse": "Second", "position": "2", "sp": "3/1" },
+        { "horse": "Third",  "position": "3", "sp": "4/1" },
+        { "horse": "r4","position":"4"},{ "horse": "r5","position":"5"},{ "horse": "r6","position":"6"},
+        { "horse": "r7","position":"7"},{ "horse": "r8","position":"8"},{ "horse": "r9","position":"9"},
+        { "horse": "r10","position":"10"},{ "horse": "r11","position":"11"},
+        { "horse": "Withdrawn At SP",    "position": "NR", "sp": null },
+        { "horse": "Withdrawn At Price", "position": "NR", "sp": null }
+      ] }
+  ] }

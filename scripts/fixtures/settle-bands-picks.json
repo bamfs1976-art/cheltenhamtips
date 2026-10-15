@@ -1,0 +1,42 @@
+{
+ "event": "Band regression",
+ "date": "2026-10-10",
+ "races": [
+  {
+   "off": "16:50",
+   "declared": 9,
+   "places": 3,
+   "ewFrac": "1/5",
+   "picks": [
+    {
+     "slot": "NAP",
+     "horse": "Third",
+     "odds": "9/1"
+    }
+   ]
+  },
+  {
+   "off": "15:40",
+   "declared": 28,
+   "places": 7,
+   "ewFrac": "1/5",
+   "offer": {
+    "places": 7,
+    "frac": "1/5",
+    "minRunners": 16
+   },
+   "picks": [
+    {
+     "slot": "NAP",
+     "horse": "Fifth",
+     "odds": "10/1"
+    },
+    {
+     "slot": "NB",
+     "horse": "Deep Unknown",
+     "odds": "20/1"
+    }
+   ]
+  }
+ ]
+}
