@@ -612,6 +612,32 @@ Rules:
     no line, so there is no residual either; say the column carries nothing and
     lead on something else. The Cesarewitch read **+0.003** and the same card's
     nursery read **+0.143**.
+
+    **That gate must be SIGNED, and `b ≈ 0` is the wrong degeneracy test. Both
+    corrected 15 Oct 2026** (Ascot, the Balmoral;
+    `scripts/analysis/rpr-calibration-ascot-17-oct.py`). The race read
+    **r(RPR, OR) = −0.326**, whose *absolute* value clears 0.3 — so a gate
+    written as `|r| < 0.3` lets it straight through. It should not: a **negative**
+    correlation means better-marked horses are projected *lower*, which is the par
+    signature at its most extreme rather than evidence of a line. **Test `r > 0.3`,
+    not `|r| > 0.3`.**
+
+    The second test failed independently on the same race. §6's degeneracy flag
+    fires when the slope `b` is near zero; here **b = −0.150**, nowhere near it —
+    and yet **corr(residual, raw RPR) = +0.945**, so ranking by residual was
+    ranking by raw RPR, precisely what the method exists to prevent. **The quantity
+    that matters is the line's REACH against the thing being ranked**, not the
+    slope on its own: the line can move a runner by at most `|b| × spread(OR)`,
+    which was **2.3lb against an RPR spread of 8lb** — about a quarter, so the
+    order survived almost intact. Below roughly a third, call it degenerate.
+
+    - The Cesarewitch (b ≈ 0, 29 runners) and the Balmoral (b = −0.150, 20
+      runners) are **two different ways to the same wrong answer**, and the
+      8 Oct test only catches the first. Both are now in the script.
+    - The cost is concrete and repeats §6's own trap: the raw gap, the raw RPR
+      and the residual all hand you **Excellent Believe and Fifth Column**,
+      **both rated 99 — the joint-lowest mark in the race, shared with three
+      others**. Three instruments agreeing because they are one instrument.
   - The three diagnostics now go in order: `r(RPR, OR)` says whether a line
     exists at all; the **ratio** says whether the level is compressed; and
     `r(gap, OR)` says whether the gap is arithmetic. The first one gates the
@@ -621,6 +647,15 @@ Rules:
     after the weights were published), the **handicapper's own Future OR** line,
     and **Topspeed**. All four are printed on the racecard and none of them is a
     projection.
+
+    **The Future OR line finally got used, and it is the sharpest of the four.
+    15 Oct 2026.** Ascot's Balmoral printed `Future OR` for six of twenty
+    runners and **exactly one was going UP** — Gavriel at **+1**, with the other
+    five at −1 or −2. That is the handicapper stating in print that a horse is
+    ahead of today's mark, on a card where the RPR column was empty and could
+    say nothing. It made him the NAP. **Read the Future OR line on every
+    handicap**: it is free, it is not a projection, and it is the only
+    instrument on the card whose author also sets the weights.
 
   One more limit from the same card, worth stating because it is easy to gloss:
   **four of seven races fitted on five rated runners or fewer, and the Dewhurst
@@ -1651,16 +1686,41 @@ Howden Christmas Racing Weekend (December) — see `ascot-christmas-2026.html`.
 
 #### QIPCO British Champions Day (Ascot, one day, October)
 
-Britain's richest raceday and the Flat season's finale: **four Group 1s** —
-Champion Stakes, Queen Elizabeth II, Champions Sprint and Fillies & Mares —
-plus the Long Distance Cup (G2) and the **Balmoral Handicap**.
+Britain's richest raceday and the Flat season's finale: **five Group 1s** —
+Champion Stakes, Queen Elizabeth II, Champions Sprint, Fillies & Mares **and the
+Long Distance Cup** — plus the **Balmoral Handicap**.
 
-- The four Group 1s will run **small, quality fields**, so expect the LONG slot
+> **Corrected 15 Oct 2026, by declarations.** This section said **four** Group 1s
+> and put the **Long Distance Cup at G2**. The declared card prints *"British
+> Champions Long Distance Cup (Group 1) (Class 1)"* with £283,550 to the winner,
+> the same as the Sprint and the Fillies & Mares. The second error followed from
+> the first: downgrade that race and the count drops to four. Neither figure
+> feeds the gate, the bands or a selection, so it cost nothing — but it is the
+> **second meeting running** that an advance page asserted a race's status ahead
+> of declarations and was wrong (Future Champions put three of four feature races
+> on the wrong day). §9 already says not to write "confirmed" next to anything
+> declarations have not confirmed; the pattern is now two for two.
+
+- The five Group 1s run **small, quality fields**, so expect the LONG slot
   to be shut on the place count in all of them. Say that as arithmetic, not as
   a per-race judgement.
 - **The Balmoral is the only handicap on the card** and the only realistic
   candidate for the LONG. It is also the race most exposed to a place-band drop
   on withdrawals from a big field (rule 16).
+- **2026 declared 7 races, gated 7/7, LONG open in exactly one — the Balmoral.**
+  Field sizes 11, 10, 16, 13, 11, 6, 20. The forecast above held for the second
+  meeting running, and for the same reason: it was built on **which race is a
+  handicap**, knowable from the programme, not on a guess at field size.
+- **The 14:05 Sprint is the first Group 1 to land on the race-type band fix.**
+  Sixteen runners reads *5 places and LONG open* on the pre-25-Sep ladder; the
+  race-type-aware bands return **3 and shut**. §12 named this exact shape — "a
+  big-field stakes race reads as LONG-open when standard terms would pay three"
+  — when it asked for the fix.
+- **Expect reserves in the Balmoral**, and note which way they cut. 2026 declared
+  20 with **three reserves**. Most of this archive's experience is of fields
+  shedding; reserves replace withdrawals and so **protect** the 16-runner
+  threshold the LONG depends on. Four runners of headroom plus three reserves is
+  the most secure LONG the slot has had.
 
 ### Cheltenham (jumps)
 
@@ -2085,6 +2145,16 @@ OR/TS/RPR, form. **Four checks, any one of which is decisive:**
    declared**.
 3. **No draw on any runner**, and jockeys missing on many. A declared
    flat card carries a draw for every horse.
+
+   **This check is about PRESENCE, not contiguity — and testing contiguity
+   produces a false FAIL. Added 15 Oct 2026** (Ascot, Champions Day). A first
+   pass asserted that the declared draws form a complete `1..N` set, and
+   **failed the Balmoral**. The card was right and the check was wrong: that
+   race carried **three reserves**, and stalls are allocated across declared
+   runners *and* reserves, so the declared set legitimately had gaps — at
+   **4, 11 and 19**, which were exactly the three reserves' draws. Test that
+   every runner *has* a draw and that none is duplicated; if there are gaps,
+   check them against the reserve list rather than treating them as corruption.
 4. **The date.** UK turf flat declarations confirm 48 hours out. If the
    raceday is more than two days away, it cannot be declarations. Watch
    also for a printed confirmation stage — *"CONFIRM SEP 4TH"* — which

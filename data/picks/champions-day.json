@@ -1,0 +1,22 @@
+{
+  "event": "QIPCO British Champions Day — Ascot",
+  "date": "2026-10-17",
+  "races": [
+    { "off": "12:55", "race_name": "British Champions Day Two-Year-Old Conditions Stakes", "declared": 11, "places": 3, "ewFrac": "1/5",
+      "picks": [ { "slot": "NAP", "horse": "Speed Of Sound", "odds": "16/1" }, { "slot": "NB", "horse": "Night In Vegas", "odds": "13/2" } ] },
+    { "off": "13:30", "race_name": "British Champions Long Distance Cup (Group 1)", "declared": 10, "places": 3, "ewFrac": "1/5",
+      "picks": [ { "slot": "NAP", "horse": "Daiquiri Bay", "odds": "10/1" }, { "slot": "NB", "horse": "Gregory", "odds": "5/1" } ] },
+    { "off": "14:05", "race_name": "British Champions Sprint Stakes (Group 1)", "declared": 16, "places": 3, "ewFrac": "1/5",
+      "picks": [ { "slot": "NAP", "horse": "Almeraq", "odds": "6/5" }, { "slot": "NB", "horse": "Prince Of India", "odds": "14/1" } ] },
+    { "off": "14:40", "race_name": "British Champions Fillies & Mares Stakes (Group 1)", "declared": 13, "places": 3, "ewFrac": "1/5",
+      "picks": [ { "slot": "NAP", "horse": "Minnie Hauk", "odds": "8/1" }, { "slot": "NB", "horse": "Kalpana", "odds": "6/4" } ] },
+    { "off": "15:20", "race_name": "Queen Elizabeth II Stakes (Group 1)", "declared": 11, "places": 3, "ewFrac": "1/5",
+      "picks": [ { "slot": "NAP", "horse": "Ten Bob Tony", "odds": "8/1" }, { "slot": "NB", "horse": "Gstaad", "odds": "10/3" } ] },
+    { "off": "16:00", "race_name": "Qatar Racing Champion Stakes (Group 1)", "declared": 6, "places": 2, "ewFrac": "1/4",
+      "picks": [ { "slot": "NAP", "horse": "Constitution River", "odds": "6/1" }, { "slot": "NB", "horse": "Calandagan", "odds": "2/1" } ] },
+    { "off": "16:35", "race_name": "Balmoral Handicap", "declared": 20, "places": 4, "ewFrac": "1/4",
+      "picks": [ { "slot": "NAP", "horse": "Gavriel", "odds": "5/1" }, { "slot": "NB", "horse": "Crown Of Oaks", "odds": "7/1" },
+                 { "slot": "LONG", "horse": "Ebt's Guard", "odds": "14/1",
+                   "oddsObserved": [ { "source": "RP racecard betting forecast", "date": "2026-10-15", "odds": "14/1" } ] } ] }
+  ]
+}
