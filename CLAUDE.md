@@ -218,6 +218,26 @@ shows the mechanism is not a property of a slot at all: **it is a property of
 50p each-way at short prices**, and it will hit whichever slot happens to hold
 them.
 
+**AND THE CARD CAN MAKE THAT ARGUMENT IN ONE RACE AND IGNORE IT IN ANOTHER.
+Added 16 Oct 2026** (Champions Day, caught while overlaying the evening tips).
+The 14:40 note read, in as many words: *"She is NB and not NAP on price, not on
+merit: at 6/4 in a three-place race the place half cannot pay for itself."*
+**The 14:05 NAP was Almeraq at 6/5** — shorter, same three places, same 1/5
+fraction. Same argument, more force, opposite slot, one race apart on one page.
+
+- The arithmetic, since it is the whole case: 50p each-way at **6/5**, 1/5, three
+  places returns **£1.72 on £1.00 if it wins** and **£0.62 if it merely places**
+  — a 38p loss for being right about everything except the winner.
+- Nothing external was needed to find this. It was spotted only because a 3x
+  crossover forced a second look at the race, which is luck, not method.
+- **So check the card against itself before shipping it.** Where a note gives a
+  reason for a slot, that reason binds every other race it applies to. An
+  argument used once and ignored once is worse than never making it: the archive
+  then records a principle the card does not follow.
+- Rule 8 agreed here and was deliberately the *second* argument. It had lost its
+  first pre-registered test the day before, so the price arithmetic carried the
+  change and the consensus count was recorded as concurring.
+
 **Sprint Cup 2026 (Haydock, three days): 42 picks, 10 winners, 15
 placed, −1.8% (−£0.74 on £42.00).** The closest to level any meeting has
 finished, and the slot pattern reversed on every one of the three days —
@@ -776,6 +796,31 @@ Rules:
   panels stay useful for best-odds figures and for surfacing big-priced
   naps you would otherwise never see.
 
+  **A BOOKMAKER'S OWN TRADING DESK IS A FOURTH ZERO-OPINION SOURCE — and the
+  most useful one. Added 16 Oct 2026** (Champions Day). A William Hill news piece,
+  bylined to their news team and quoting a spokesperson, gave a market report on
+  the card. §6 already counts aggregator panels, "see link above" pointers and
+  republications as **zero opinions**; this belongs with them, for the same
+  reason — it is not anyone's view of the race. *"Ten Bob Tony is another to
+  watch"* is a **liability** statement, not a selection, and booking it as a tip
+  is the Marvelman error in a new costume.
+
+  **But it is the most informative zero in the list, and the useful part is not
+  the prices.** The 8 Oct condition bars the shorter-price test here — a single
+  firm quoting its own board carries no comparison asymmetry — and four prices
+  plus a "bar" are not a book, so §5b cannot run either. What *is* usable is that
+  **the firm states the direction in words**: *"Gregory has attracted significant
+  support since declarations"*, *"our best backed horse on Champions Day"*,
+  *"Caballo De Mar has drifted to 4/1"*.
+
+  - **Testimony about money from the people taking it beats a price
+    differential**, and it is immune to both objections above: it needs no
+    comparison and no book.
+  - It also reports something no tipster column does — **where the layer's risk
+    sits**. On this card they named our own QEII NAP as the horse they feared,
+    in a race where no column tipped it.
+  - Record it as market evidence under §5b and as **zero** under §6. Both.
+
   **And when a panel hands you a big price, name the leg it actually fails.**
   Added 9 Oct 2026. Friday's panels produced **Previous 49/1** (17-runner
   non-handicap) and **Albemagic 37/1** (15-runner handicap), the two biggest
@@ -938,6 +983,39 @@ Rules:
   rather than away from it. Write **"none yet, at two shared races each"**, keep
   pooling across the meeting, and say so the day the count means something.
 
+  **RUN THE DIVERGENCE TEST ON THE PAIR, NOT ON THE HOUSE COLUMN. Added
+  16 Oct 2026** (Champions Day), and the first version of that card's script got
+  it wrong. It tested all twelve desks against **Spotlight** and reported nine of
+  them independent. That answers the wrong question. A crossover badge is a claim
+  about **the two desks that share the horse**, and most badges contain no
+  Spotlight row at all: Ebt's Guard was Postdata + Lambourn, Mister Winston was
+  Andrew Mount + Sam Hardy. **Diverging from Spotlight proves a desk is not
+  Spotlight republished; it proves nothing about whether it is independent of its
+  co-signer.**
+
+  - Testing against the biggest column is the convenient thing to do — it is the
+    one with a tip in every race, so it always yields a comparison. Convenience
+    is why this is easy to get wrong.
+  - Corrected, the same card gives: Almeraq/Kalpana **verified on two of three
+    pairings** (Spotlight–Mullington 4 divergences in 7, Spotlight–Punt Acca 1 in
+    3 pooled; Mullington–Punt Acca 0 in 2), Ebt's Guard and Mister Winston
+    **untestable**, Hickory **republication-shaped** at 3 shared races and none.
+
+  **AND THAT LEAVES RULE 8 RESTING ON A COUNT §6 OFTEN CANNOT DELIVER.** Rule 8
+  fires on "3+ columns"; §6 says count opinions, not rows; and verifying three
+  opinions means verifying **three pairings**, not two. On this card Almeraq is a
+  3x with two pairings shown and one not — **two demonstrable independent
+  opinions plus a third that is probably but not provably distinct.**
+
+  - Demand every pairing and a 3x will almost never qualify as a 3x, because the
+    third desk is usually the one-tip column.
+  - Drop the demand and you are counting rows again, which is the error the whole
+    section exists to prevent.
+  - No clean answer yet. **State the verified count and the row count both**, the
+    way the Future Champions entry did, and do not let rule 8 carry a decision on
+    its own while this is open — on Champions Day the slot change was made on an
+    each-way price argument, with rule 8 recorded as agreeing rather than driving.
+
   **And a multi-desk crossover is several pairwise claims, each testable
   separately.** Same card. Rock Montreal was quoted by *four* desks at 13/8,
   which reads as a 4x — but that badge asserts six pairings, and only **one** of
@@ -975,6 +1053,24 @@ Rules:
   **What verifies a desk is how many races it tips, not what its masthead is
   worth.** Reputation tells you what to suspect; tip count tells you what you can
   settle.
+
+  **A MECHANISM, FINALLY, INSTEAD OF A STATISTIC: the same writer filed under two
+  mastheads on one card. Added 16 Oct 2026** (Champions Day). **Richard Russell is
+  Spotlight's verdict in the 12:55 and Eyecatcher's in the 16:35.** Eyecatcher has
+  been the archive's standing unverifiable — one tip per card, always agreeing
+  with Spotlight, now three shared races and zero divergences pooled. Until today
+  all we had was that count. A shared byline is a *reason*, and the first one.
+
+  - Be exact about what it does not establish. **In the 16:35 itself the two rows
+    are different people** — Russell for Eyecatcher, Ben Hutton for Spotlight — so
+    that race is two writers agreeing, not one writer counted twice. The badge
+    stays unverified **on the count**, not on the byline.
+  - What it does establish is that Eyecatcher is staffed from the Spotlight pool,
+    which is the "read the masthead before counting the badge" check paying off
+    in a form stronger than a tally.
+  - **So scan the bylines across the whole card, not just within a race.** A
+    writer appearing twice under different column names is free evidence and it
+    only shows up if you look for it.
 
   **Second running of the same test, same answer — a replication, not a
   correction.** Grimshaw against Spotlight read **two divergences in three** at
@@ -1063,6 +1159,34 @@ Rules:
   Stated limit: it gives the **direction** of the move, not its size. One
   comparison observation against one card is two points, not a trail.
 
+  **THE TEST HAS A BASE RATE, AND ON A TIPS LIST THE BASE RATE SWAMPS IT.
+  Added 16 Oct 2026** (Champions Day;
+  `scripts/analysis/champions-day-external-overlay.py`). A Racing Post free-tips
+  page priced **fourteen** horses our racecard also priced. **Eleven read
+  shorter.** Taken at face value that is eleven steamers in one afternoon, which
+  is not credible.
+
+  The reason is sample selection and it is obvious once stated: **every horse on
+  a tips list is somebody's selection, and a horse chosen for being tipped is a
+  horse chosen for having been backed.** "Shorter" is the base rate of the page,
+  not a fact about any horse on it. The rule was derived on a list where eight of
+  nine prices matched the card exactly and one was shorter — a sample that looked
+  unselected. It does not survive being pointed at a page of tips.
+
+  - **§5b already contains the fix and it transfers unmodified.** Express each
+    move as a ratio of implied probability, then take the **deviation from the
+    list's own median** — exactly what §5b prescribes against a book's margin,
+    with the list's selection bias standing in for the margin. Median here was
+    **×1.149 (+14.9%)**; normalised, eleven STEAMs became **four**.
+  - This is the third thing §5b's median step has now corrected. It is the single
+    most reusable idea in this file: **before reading a price difference as news,
+    subtract whatever the whole set is doing.**
+  - **Caveat, and it bites the biggest-looking rows.** The ratio is noisiest at
+    the longest prices, where one step on the ladder is a large proportional
+    move. The two strongest STEAMs on that card were 150/1→100/1 and 50/1→28/1,
+    and they are the two least trustworthy rows in the table. Rank by the
+    normalised figure, then discount the extremes rather than leading on them.
+
 **A Racing Post star rating belongs to the tip ROW, not to the horse.**
 Added 24 Sep 2026 (Newmarket), and it corrects a reading made eleven days
 earlier. The St Leger card recorded a `★★★` on Forty Years On, called it *"the
@@ -1114,6 +1238,7 @@ Milnes, ★ from Spotlight, one horse at one price.
 | DM | David Milnes (RP Newmarket correspondent) | slate (#cbd5e1) |
 | LB | Lambourn (Otis Brankin-Frisby / Liam Headd, Racing Post) | steel (#94a3b8) |
 | WC | West Country (Liam Watson, Racing Post) | tan (#d4a574) |
+| AM | Andrew Mount | yellow (#fde047) |
 
 New tipsters: assign a 2-3 letter code and a distinct badge colour. Keep
 the system extensible.
@@ -1132,6 +1257,21 @@ indistinguishable from other columns' on the same page. PU is now **deep rose
   not after.** BG is still two different people (Geraghty green, Grimshaw
   orange) — a code collision rather than a colour one, and it has not bitten
   yet only because they have never appeared on the same card.
+
+**The palette is now effectively full, and that changes what the badge is for.
+Added 16 Oct 2026** (Champions Day, assigning AM). Badges must read as light
+text on a dark panel, which confines them to roughly the 200–400 band of each
+hue, and twenty-two codes have taken almost all of it. AM's yellow (#fde047) is
+the closest pair in the table, against TN's amber (#fcd34d).
+
+- **The badge carries a CODE, and the code is the identifier.** Colour is the
+  secondary cue, not the only one — which also corrects the 9 Oct note that
+  said "the badge is the only thing telling a reader they are two desks". It
+  is not; `AM` and `TN` are unmistakable even where the two yellows are not.
+- Before assigning a twenty-third, consider whether the new desk is a
+  **one-tip column** that §6 says can never earn a badge anyway. A registry
+  entry is cheap; a near-duplicate colour on a card where both desks appear is
+  not.
 
 ---
 
@@ -2241,6 +2381,9 @@ Add new course profiles as they're covered.
 - [ ] Racecard extracted with draws, jockeys, trainers, form, weights,
       odds, EW terms
 - [ ] All picks have a stated angle
+- [ ] **Every stated angle applied evenly across the card** — a reason given for
+      one slot binds every other race it fits (§4, 16 Oct 2026: the price
+      argument was made against a 6/4 NAP and not against a 6/5 one)
 - [ ] **Market move (STEAM / DRIFT) recorded on every pick**
 - [ ] **Place band checked** — race not within two runners of dropping
       a place; LONG flagged provisional if it is
