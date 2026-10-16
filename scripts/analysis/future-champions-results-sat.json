@@ -1,0 +1,239 @@
+{
+ "_source": "TRANSCRIBED BY HAND from Racing Post result screenshots for Newmarket, 9 and 10 October 2026 \u2014 NOT a Racing API payload. \u00a712 forbids hand-built files in data/racing-api/, which is the raw-payload archive; these live here because \u00a710 requires the derivation behind a published number to be committed with it. A published result gives only the first few home, so `ran` states what actually ran and the order stops where the result does. Nothing below position 5 is invented: settle.mjs reads the published depth and decides from it whether a pick missing from the result is a confirmed loser or genuinely unsettled.",
+ "results": [
+  {
+   "off_time": "13:15",
+   "course": "Newmarket",
+   "race_name": "Modern Games Darley Stakes (Group 3)",
+   "type": "Flat",
+   "race_class": 1,
+   "field_size": 5,
+   "going": "Good",
+   "runners": [
+    {
+     "horse": "Humidity",
+     "position": "1",
+     "sp": "15/8"
+    },
+    {
+     "horse": "The Lost King",
+     "position": "2",
+     "sp": "7/4"
+    },
+    {
+     "horse": "High Stock",
+     "position": "3",
+     "sp": "20/1"
+    },
+    {
+     "horse": "Boiling Point",
+     "position": "4",
+     "sp": null
+    }
+   ],
+   "ran": 5
+  },
+  {
+   "off_time": "13:50",
+   "course": "Newmarket",
+   "race_name": "Native Trail Zetland Stakes (Group 3)",
+   "type": "Flat",
+   "race_class": 1,
+   "field_size": 6,
+   "going": "Good",
+   "runners": [
+    {
+     "horse": "Drumbeat",
+     "position": "1",
+     "sp": "10/11"
+    },
+    {
+     "horse": "Wykehurst Park",
+     "position": "2",
+     "sp": "7/2"
+    },
+    {
+     "horse": "Apulia Bay",
+     "position": "3",
+     "sp": "5/1"
+    }
+   ],
+   "ran": 6
+  },
+  {
+   "off_time": "14:25",
+   "course": "Newmarket",
+   "race_name": "Emirates Autumn Stakes (Group 3)",
+   "type": "Flat",
+   "race_class": 1,
+   "field_size": 7,
+   "going": "Good",
+   "runners": [
+    {
+     "horse": "Rock Montreal",
+     "position": "1",
+     "sp": "11/8"
+    },
+    {
+     "horse": "Sergei Diaghilev",
+     "position": "2",
+     "sp": "15/8"
+    },
+    {
+     "horse": "Al Jabbar",
+     "position": "3",
+     "sp": "4/1"
+    },
+    {
+     "horse": "Notable Dream",
+     "position": "4",
+     "sp": null
+    }
+   ],
+   "ran": 7
+  },
+  {
+   "off_time": "15:00",
+   "course": "Newmarket",
+   "race_name": "Darley Dewhurst Stakes (Group 1)",
+   "type": "Flat",
+   "race_class": 1,
+   "field_size": 5,
+   "going": "Good",
+   "runners": [
+    {
+     "horse": "Darkness Falls",
+     "position": "1",
+     "sp": "6/4"
+    },
+    {
+     "horse": "Desert Castle",
+     "position": "2",
+     "sp": "10/11"
+    },
+    {
+     "horse": "Great Barrier Reef",
+     "position": "3",
+     "sp": "15/2"
+    }
+   ],
+   "ran": 5
+  },
+  {
+   "off_time": "15:40",
+   "course": "Newmarket",
+   "race_name": "Club Godolphin Cesarewitch Handicap",
+   "type": "Flat",
+   "race_class": 2,
+   "field_size": 29,
+   "going": "Good",
+   "runners": [
+    {
+     "horse": "Alphonse Le Grande",
+     "position": "1",
+     "sp": "18/1"
+    },
+    {
+     "horse": "Sea Lantern",
+     "position": "2",
+     "sp": "4/1"
+    },
+    {
+     "horse": "Dawn Rising",
+     "position": "3",
+     "sp": "6/1"
+    },
+    {
+     "horse": "High Fibre",
+     "position": "4",
+     "sp": "12/1"
+    }
+   ],
+   "ran": 29
+  },
+  {
+   "off_time": "16:15",
+   "course": "Newmarket",
+   "race_name": "Triple Time Maiden Fillies' Stakes",
+   "type": "Flat",
+   "race_class": 2,
+   "field_size": 6,
+   "going": "Good",
+   "runners": [
+    {
+     "horse": "Cullenagh Rainbow",
+     "position": "1",
+     "sp": "15/8"
+    },
+    {
+     "horse": "Probing",
+     "position": "2",
+     "sp": "13/8"
+    },
+    {
+     "horse": "Desert Romance",
+     "position": "3",
+     "sp": "11/4"
+    },
+    {
+     "horse": "Friendly Force",
+     "position": "NR",
+     "sp": null
+    }
+   ],
+   "ran": 6
+  },
+  {
+   "off_time": "16:50",
+   "course": "Newmarket",
+   "race_name": "Dubai Racing Club Nursery Handicap",
+   "type": "Flat",
+   "race_class": 3,
+   "field_size": 6,
+   "going": "Good",
+   "runners": [
+    {
+     "horse": "Midgham Man",
+     "position": "1",
+     "sp": "11/4"
+    },
+    {
+     "horse": "Asgar",
+     "position": "2",
+     "sp": "17/2"
+    },
+    {
+     "horse": "Motown Filly",
+     "position": "3",
+     "sp": "9/1"
+    },
+    {
+     "horse": "Mobadir",
+     "position": "4",
+     "sp": null
+    },
+    {
+     "horse": "Majestic Jude",
+     "position": "5",
+     "sp": null
+    },
+    {
+     "horse": "Dandyman Dan",
+     "position": "NR",
+     "sp": null
+    },
+    {
+     "horse": "National Honour",
+     "position": "NR",
+     "sp": null
+    },
+    {
+     "horse": "Silver Sovereign",
+     "position": "NR",
+     "sp": null
+    }
+   ],
+   "ran": 6
+  }
+ ]
+}

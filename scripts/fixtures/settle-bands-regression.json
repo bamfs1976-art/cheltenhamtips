@@ -1,0 +1,89 @@
+{
+ "_why": "The card's `places` field meant TWO DIFFERENT THINGS in two scripts. nr-check.mjs reads it as the PRICED count; settle.mjs read it as a settlement OVERRIDE. So a nursery priced at 3 places that shed three runners and ran six settled at the priced 3 instead of the band's 2, and rule 16's 'place band moved' line could never fire \u2014 the override had made the two numbers agree by construction. Caught 17 Oct 2026 settling Future Champions Saturday's 16:50 (9 declared, 6 ran).\n\nTwo races, because the two tables only differ above 15 runners and only a handicap carries the 16+ band \u2014 a test inside one band cannot see the other (the lesson CLAUDE.md records from settle.mjs's race_name bug).\n\nExpect: 16:50 settles at 2 places with a BAND MOVED warning and 'Third' unplaced; 15:40 settles the advertised offer of 7 and pays 'Fifth'. Priced-at numbers must never win.\n\nThe 15:40 also pins the OTHER half of the depth test: 28 ran, an advertised seven places, and the result published only to 4th. 'Deep Unknown' is absent from it and must come back UNRESOLVED with a non-zero exit, because the result stops short of the place count \u2014 that is the Cambridgeshire case, where three picks genuinely could not be settled. Contrast Future Champions' Cesarewitch: four places, published to four, so an absent pick is a confirmed loser. Same shape, opposite verdict, and the depth is what separates them.",
+ "results": [
+  {
+   "off_time": "16:50",
+   "course": "Newmarket",
+   "race_name": "Band Regression Nursery Handicap",
+   "type": "Flat",
+   "race_class": 3,
+   "field_size": 6,
+   "going": "Good",
+   "runners": [
+    {
+     "horse": "Winner",
+     "position": "1",
+     "sp": "11/4"
+    },
+    {
+     "horse": "Second",
+     "position": "2",
+     "sp": "17/2"
+    },
+    {
+     "horse": "Third",
+     "position": "3",
+     "sp": "9/1"
+    },
+    {
+     "horse": "r4",
+     "position": "4"
+    },
+    {
+     "horse": "r5",
+     "position": "5"
+    },
+    {
+     "horse": "r6",
+     "position": "6"
+    },
+    {
+     "horse": "Gone1",
+     "position": "NR"
+    },
+    {
+     "horse": "Gone2",
+     "position": "NR"
+    },
+    {
+     "horse": "Gone3",
+     "position": "NR"
+    }
+   ],
+   "ran": 6
+  },
+  {
+   "off_time": "15:40",
+   "course": "Newmarket",
+   "race_name": "Offer Regression Heritage Handicap",
+   "type": "Flat",
+   "race_class": 2,
+   "field_size": 28,
+   "going": "Good",
+   "runners": [
+    {
+     "horse": "h1",
+     "position": "1",
+     "sp": "8/1"
+    },
+    {
+     "horse": "h2",
+     "position": "2"
+    },
+    {
+     "horse": "h3",
+     "position": "3"
+    },
+    {
+     "horse": "h4",
+     "position": "4"
+    },
+    {
+     "horse": "Fifth",
+     "position": "5"
+    }
+   ],
+   "ran": 28
+  }
+ ]
+}

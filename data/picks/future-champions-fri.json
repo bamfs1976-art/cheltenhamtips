@@ -1,0 +1,159 @@
+{
+  "event": "Future Champions Friday \u2014 Newmarket",
+  "date": "2026-10-09",
+  "_note": "`places` is what the race was PRICED at. Settlement derives the place count from what actually ran and reports a move; an advertised special above the ladder goes in `offer` with its own minRunners. Prices are the card's own, read off future-champions-2026.html \u2014 SP where the card quoted SP.",
+  "races": [
+    {
+      "off": "13:15",
+      "race_name": "Juddmonte Cornwallis Stakes (Group 3)",
+      "declared": 13,
+      "places": 3,
+      "ewFrac": "1/5",
+      "picks": [
+        {
+          "slot": "NAP",
+          "horse": "Fast Track",
+          "odds": "9/1"
+        },
+        {
+          "slot": "NB",
+          "horse": "Minster Man",
+          "odds": "12/1"
+        }
+      ]
+    },
+    {
+      "off": "13:50",
+      "race_name": "Oh So Sharp Stakes (Group 3)",
+      "declared": 16,
+      "places": 3,
+      "ewFrac": "1/5",
+      "picks": [
+        {
+          "slot": "NAP",
+          "horse": "Topaz",
+          "odds": "16/1"
+        },
+        {
+          "slot": "NB",
+          "horse": "Miss Kodi",
+          "odds": "9/2"
+        }
+      ]
+    },
+    {
+      "off": "14:25",
+      "race_name": "Shadwell Joel Challenge Stakes (Group 2)",
+      "declared": 6,
+      "places": 2,
+      "ewFrac": "1/4",
+      "picks": [
+        {
+          "slot": "NAP",
+          "horse": "Flora Of Bermuda",
+          "odds": "7/4"
+        },
+        {
+          "slot": "NB",
+          "horse": "Pina Sonata",
+          "odds": "15/2"
+        }
+      ]
+    },
+    {
+      "off": "14:57",
+      "race_name": "bet365 Fillies' Mile (Group 1)",
+      "declared": 8,
+      "places": 3,
+      "ewFrac": "1/5",
+      "picks": [
+        {
+          "slot": "NAP",
+          "horse": "Musical Times",
+          "odds": "4/9"
+        },
+        {
+          "slot": "NB",
+          "horse": "Rogue Passion",
+          "odds": "4/1"
+        }
+      ]
+    },
+    {
+      "off": "15:30",
+      "race_name": "bet365 Old Rowley Cup Handicap",
+      "declared": 11,
+      "places": 3,
+      "ewFrac": "1/5",
+      "picks": [
+        {
+          "slot": "NAP",
+          "horse": "Devil's Peak",
+          "odds": "13/2"
+        },
+        {
+          "slot": "NB",
+          "horse": "Archers Bay",
+          "odds": "11/2"
+        }
+      ]
+    },
+    {
+      "off": "16:10",
+      "race_name": "Boadicea Stakes (Listed)",
+      "declared": 14,
+      "places": 3,
+      "ewFrac": "1/5",
+      "picks": [
+        {
+          "slot": "NAP",
+          "horse": "Dance In The Storm",
+          "odds": "SP"
+        },
+        {
+          "slot": "NB",
+          "horse": "Zen Diva",
+          "odds": "SP"
+        }
+      ]
+    },
+    {
+      "off": "16:45",
+      "race_name": "Pride Stakes (Group 3)",
+      "declared": 17,
+      "places": 3,
+      "ewFrac": "1/5",
+      "picks": [
+        {
+          "slot": "NAP",
+          "horse": "Silver Lake",
+          "odds": "6/1"
+        },
+        {
+          "slot": "NB",
+          "horse": "Francophone",
+          "odds": "SP"
+        }
+      ]
+    },
+    {
+      "off": "17:20",
+      "race_name": "HKJC World Pool Handicap",
+      "declared": 15,
+      "places": 3,
+      "ewFrac": "1/4",
+      "picks": [
+        {
+          "slot": "NAP",
+          "horse": "Mister Mojito",
+          "odds": "SP"
+        },
+        {
+          "slot": "NB",
+          "horse": "Expert Agent",
+          "odds": "SP"
+        }
+      ]
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 {
-  "event": "Future Champions Saturday — Newmarket",
+  "event": "Future Champions Saturday \u2014 Newmarket",
   "date": "2026-10-10",
   "races": [
     {
@@ -154,5 +154,6 @@
         }
       ]
     }
-  ]
+  ],
+  "_note": "`places` is what the race was PRICED at. Settlement derives the place count from what actually ran and reports a move; an advertised special above the ladder goes in `offer` with its own minRunners. Prices are the card's own, read off future-champions-2026.html \u2014 SP where the card quoted SP."
 }

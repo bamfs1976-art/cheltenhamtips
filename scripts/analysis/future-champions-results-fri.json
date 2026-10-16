@@ -1,0 +1,336 @@
+{
+ "_source": "TRANSCRIBED BY HAND from Racing Post result screenshots for Newmarket, 9 and 10 October 2026 \u2014 NOT a Racing API payload. \u00a712 forbids hand-built files in data/racing-api/, which is the raw-payload archive; these live here because \u00a710 requires the derivation behind a published number to be committed with it. A published result gives only the first few home, so `ran` states what actually ran and the order stops where the result does. Nothing below position 5 is invented: settle.mjs reads the published depth and decides from it whether a pick missing from the result is a confirmed loser or genuinely unsettled.",
+ "results": [
+  {
+   "off_time": "13:15",
+   "course": "Newmarket",
+   "race_name": "Cornwallis Stakes (Group 3)",
+   "type": "Flat",
+   "race_class": 1,
+   "field_size": 13,
+   "going": "Good",
+   "runners": [
+    {
+     "horse": "Mussab",
+     "position": "1",
+     "sp": "8/1"
+    },
+    {
+     "horse": "In The Black",
+     "position": "2",
+     "sp": "9/2"
+    },
+    {
+     "horse": "Fast Track",
+     "position": "3",
+     "sp": "4/1"
+    },
+    {
+     "horse": "Minster Man",
+     "position": "4",
+     "sp": null
+    },
+    {
+     "horse": "Flann Sunna",
+     "position": "5",
+     "sp": null
+    }
+   ],
+   "ran": 13
+  },
+  {
+   "off_time": "13:50",
+   "course": "Newmarket",
+   "race_name": "Oh So Sharp Stakes (Group 3)",
+   "type": "Flat",
+   "race_class": 1,
+   "field_size": 14,
+   "going": "Good",
+   "runners": [
+    {
+     "horse": "Lola De Valence",
+     "position": "1",
+     "sp": "40/1"
+    },
+    {
+     "horse": "Sweltering",
+     "position": "2",
+     "sp": "11/2"
+    },
+    {
+     "horse": "Topaz",
+     "position": "3",
+     "sp": "17/2"
+    },
+    {
+     "horse": "Miss Kodi",
+     "position": "4",
+     "sp": null
+    },
+    {
+     "horse": "Siena Storm",
+     "position": "5",
+     "sp": null
+    },
+    {
+     "horse": "Greek Symphony",
+     "position": "NR",
+     "sp": null
+    },
+    {
+     "horse": "Nuit d'Eclair",
+     "position": "NR",
+     "sp": null
+    }
+   ],
+   "ran": 14
+  },
+  {
+   "off_time": "14:25",
+   "course": "Newmarket",
+   "race_name": "Challenge Stakes (Group 2)",
+   "type": "Flat",
+   "race_class": 1,
+   "field_size": 6,
+   "going": "Good",
+   "runners": [
+    {
+     "horse": "Never So Brave",
+     "position": "1",
+     "sp": "4/1"
+    },
+    {
+     "horse": "Flora Of Bermuda",
+     "position": "2",
+     "sp": "85/40"
+    },
+    {
+     "horse": "Time To Turn",
+     "position": "3",
+     "sp": "11/2"
+    },
+    {
+     "horse": "Pina Sonata",
+     "position": "4",
+     "sp": null
+    }
+   ],
+   "ran": 6
+  },
+  {
+   "off_time": "14:57",
+   "course": "Newmarket",
+   "race_name": "bet365 Fillies' Mile (Group 1)",
+   "type": "Flat",
+   "race_class": 1,
+   "field_size": 8,
+   "going": "Good",
+   "runners": [
+    {
+     "horse": "Musical Times",
+     "position": "1",
+     "sp": "4/9"
+    },
+    {
+     "horse": "Haven",
+     "position": "2",
+     "sp": "28/1"
+    },
+    {
+     "horse": "Forbidden Fire",
+     "position": "3",
+     "sp": "8/1"
+    },
+    {
+     "horse": "Rogue Passion",
+     "position": "4",
+     "sp": null
+    }
+   ],
+   "ran": 8
+  },
+  {
+   "off_time": "15:30",
+   "course": "Newmarket",
+   "race_name": "bet365 Old Rowley Cup Handicap",
+   "type": "Flat",
+   "race_class": 2,
+   "field_size": 10,
+   "going": "Good",
+   "runners": [
+    {
+     "horse": "Study Of Words",
+     "position": "1",
+     "sp": "10/1"
+    },
+    {
+     "horse": "Lord d'Or",
+     "position": "2",
+     "sp": "11/1"
+    },
+    {
+     "horse": "Decade Of Time",
+     "position": "3",
+     "sp": "100/30"
+    },
+    {
+     "horse": "Devil's Peak",
+     "position": "4",
+     "sp": null
+    },
+    {
+     "horse": "Archers Bay",
+     "position": "5",
+     "sp": null
+    },
+    {
+     "horse": "High Storm",
+     "position": "NR",
+     "sp": null
+    }
+   ],
+   "ran": 10
+  },
+  {
+   "off_time": "16:10",
+   "course": "Newmarket",
+   "race_name": "Boadicea Stakes (Listed)",
+   "type": "Flat",
+   "race_class": 1,
+   "field_size": 13,
+   "going": "Good",
+   "runners": [
+    {
+     "horse": "Ruby's Angel",
+     "position": "1",
+     "sp": "16/1"
+    },
+    {
+     "horse": "Zen Diva",
+     "position": "2",
+     "sp": "4/1"
+    },
+    {
+     "horse": "Magic Basma",
+     "position": "3",
+     "sp": "9/1"
+    },
+    {
+     "horse": "Dance In The Storm",
+     "position": "4",
+     "sp": null
+    },
+    {
+     "horse": "Forty Years On",
+     "position": "NR",
+     "sp": null
+    }
+   ],
+   "ran": 13
+  },
+  {
+   "off_time": "16:45",
+   "course": "Newmarket",
+   "race_name": "Pride Stakes (Group 3)",
+   "type": "Flat",
+   "race_class": 1,
+   "field_size": 14,
+   "going": "Good",
+   "runners": [
+    {
+     "horse": "Song Of The Sea",
+     "position": "1",
+     "sp": "11/4"
+    },
+    {
+     "horse": "Silver Lake",
+     "position": "2",
+     "sp": "7/2"
+    },
+    {
+     "horse": "Pacific Mission",
+     "position": "3",
+     "sp": "20/1"
+    },
+    {
+     "horse": "Francophone",
+     "position": "4",
+     "sp": null
+    },
+    {
+     "horse": "Legacy Link",
+     "position": "NR",
+     "sp": null
+    },
+    {
+     "horse": "Previous",
+     "position": "NR",
+     "sp": null
+    },
+    {
+     "horse": "Snellen",
+     "position": "NR",
+     "sp": null
+    }
+   ],
+   "ran": 14
+  },
+  {
+   "off_time": "17:20",
+   "course": "Newmarket",
+   "race_name": "HKJC World Pool Handicap",
+   "type": "Flat",
+   "race_class": 4,
+   "field_size": 11,
+   "going": "Good",
+   "runners": [
+    {
+     "horse": "Bintola",
+     "position": "1",
+     "sp": "9/2"
+    },
+    {
+     "horse": "George Wickham",
+     "position": "2",
+     "sp": "11/2"
+    },
+    {
+     "horse": "Lion Of Mali",
+     "position": "3",
+     "sp": "5/1"
+    },
+    {
+     "horse": "Expert Agent",
+     "position": "4",
+     "sp": null
+    },
+    {
+     "horse": "Nanoscience",
+     "position": "5",
+     "sp": null
+    },
+    {
+     "horse": "Majestic Dane",
+     "position": "NR",
+     "sp": null
+    },
+    {
+     "horse": "Mister Mojito",
+     "position": "NR",
+     "sp": null
+    },
+    {
+     "horse": "Righthere Rightnow",
+     "position": "NR",
+     "sp": null
+    },
+    {
+     "horse": "Waistcoat",
+     "position": "NR",
+     "sp": null
+    }
+   ],
+   "ran": 11
+  }
+ ]
+}
