@@ -1138,6 +1138,21 @@ Rules:
     remedy was scored at the Cambridgeshire and was worth 0p — demoting a pick
     reliably finds the loser without thereby finding a winner.
 
+- **THE SEASON'S BEST COLUMN CAN HOLD NOTHING OF YOURS, AND THAT IS THE MOST
+  INFORMATIVE ROW ON THE PAGE. Added 16 Oct 2026** (Champions Day). Frick is top
+  of the §6 leaderboard at **30%**, against Geraghty 29% and Grimshaw 16%. He
+  posted seven bets covering **five of our seven races and landed on a different
+  horse in every one — 0/7**.
+
+  - §6 already says a tipster's strike rate matters more than their agreement,
+    and this is that rule at its sharpest: the column with the best record is
+    the one agreeing with us least.
+  - It is **not** a reason to move a pick. §6 forbids source count moving a slot
+    in either direction, and the Cambridgeshire scored the remedy at 0p.
+  - It **is** a reason to read his names before the off and know precisely what
+    is being opposed. An alignment of zero from the leaderboard's top column is
+    a louder signal than a 3x from three columns nobody can verify.
+
 - **Alignment is not quality, and a value column will wreck the aggregate
   figure.** Same card. Raceolly tipped five races each-way at 11/1, 200/1,
   16/1, 12/1 and 33/1 and agreed with **nobody** — not us, not any of the
@@ -1248,6 +1263,50 @@ Rules:
     written up as 14/1→10/1 steaming. It came off the unlabelled list and the
     call is withdrawn. Nothing operational moved, because both prices clear the
     slot's 8/1 minimum — but the panel had already been published saying it.
+
+  **THE CONTROL ARRIVED 34 MINUTES LATER, AND THE RIVAL EXPLANATION FAILED A
+  REAL TEST. Same evening.** Frick posted seven bets at 19:17 and his list
+  **overlaps the Racing Post list on three horses** — the comparison the entry
+  above said was unavailable. **Highwayman 3/1 against 3/1 and Soul Love 28/1
+  against 28/1, identical**; Hickory 9/1 against 11/1. A tips page and a
+  tipster's struck bet, 27 minutes apart, quoting the same number.
+
+  - **So an unlabelled list is quoting a real, available price.** The reason to
+    distrust it is not that it is fictional — only that it does not say which
+    book it came from. That is a narrower objection than the one above and it is
+    the right one.
+  - **The obvious rival story was tested and is not supported.** Grimshaw might
+    read longer because of *what he picks* — a value column backing outsiders,
+    and outsiders drift while money concentrates on the fancied. Ranking every
+    horse by card price within its own race, the shorter-than-card group sits at
+    mean depth **0.42** and the longer group at **0.43**. Indistinguishable. The
+    source rule survives one real test, which is not the same as proven, and
+    Grimshaw still overlaps neither list so his direction remains unchecked on
+    any shared horse.
+  - **Look for the overlap before declaring there isn't one.** A third source
+    turning up an hour later supplied it. "These two lists cannot be compared"
+    was true of the sample, not of the question — the §6 error about absences,
+    committed again on prices instead of crossovers.
+
+  **AND THE SAME POOLING TURNED UP SOMETHING ABOUT OUR OWN PRICES. Added
+  16 Oct 2026.** Set aside the best-odds list, which is longer by construction,
+  and pool the two sources quoting an ordinary live price. **Eighteen distinct
+  horses, thirteen priced SHORTER than our card, median ×1.149.** Our prices
+  come from the racecard's **betting forecast**, pasted the day before; on most
+  of these horses it is more generous than anything the market was showing on
+  the eve of racing.
+
+  - Nothing here is invalid. §6 settles at the odds on the card, which is a
+    stated convention, and a forecast of SP never claimed to be obtainable.
+  - But **settling at card odds overstates returns** wherever the card is the
+    more generous number, and the season's figures are computed that way.
+  - And **the LONG gate tests the CARD price against 8/1**. Ebt's Guard read
+    14/1 on the card and 10/1 live; both clear, so nothing moved. **A longshot
+    priced at 9/1 on a forecast could already be under 8/1 in the market before
+    a single withdrawal** — the Lesrico failure arriving a day earlier than §4
+    expects it. When a live price is available, test the slot against that too.
+  - Stated limit: one card, eighteen horses, and forecast-to-live is not a
+    like-for-like market move. **A flag to measure again, not a result.**
 
 **A Racing Post star rating belongs to the tip ROW, not to the horse.**
 Added 24 Sep 2026 (Newmarket), and it corrects a reading made eleven days

@@ -75,6 +75,16 @@ RP = [
     ("15:20", "Gstaad",         "Grimshaw",    "Billy Grimshaw",       "14/5",  None),
     ("16:00", "Bay City Roller", "Grimshaw",   "Billy Grimshaw",       "7/1",   None),
     ("16:35", "Gavriel",        "Grimshaw",    "Billy Grimshaw",       "5/1",   None),
+    # Frick (@frickstips), posted 19:17 on X. Seven bets across five races —
+    # the SECOND multi-pick desk in two days. His prices are the ones he struck,
+    # not a comparison and not a firm's board: a third kind of price source.
+    ("13:30", "Highwayman",     "Frick",       "Frick",                "3/1",   None),
+    ("14:05", "Coppull",        "Frick",       "Frick",                "11/1",  None),
+    ("14:05", "Soul Love",      "Frick",       "Frick",                "28/1",  None),
+    ("14:40", "Johanna Walsh",  "Frick",       "Frick",                "11/2",  None),
+    ("15:20", "Rayif",          "Frick",       "Frick",                "13/2",  None),
+    ("16:35", "Hickory",        "Frick",       "Frick",                "9/1",   None),
+    ("16:35", "Classic",        "Frick",       "Frick",                "20/1",  None),
 ]
 # Which desks state that their odds are a PRICE COMPARISON. §6's shorter-price
 # test is only licensed where the column says so — see section 5.
@@ -229,8 +239,9 @@ seen = set()
 for off, horse, desk, writer, odds, stars in RP:
     if odds is None:
         continue
-    src = "Grimshaw (labelled Best Odds)" if desk in LABELLED_BEST_ODDS \
-        else "RP free-tips list (odds UNLABELLED)"
+    src = ("Grimshaw (labelled Best Odds)" if desk in LABELLED_BEST_ODDS
+           else "Frick (prices STRUCK, posted 19:17)" if desk == "Frick"
+           else "RP free-tips list (odds UNLABELLED)")
     # Dedupe on the SOURCE, not the desk: two desks on one list quote one price
     # for one horse, and counting it twice would double-weight it in the median.
     if (off, horse, src) in seen:
@@ -291,6 +302,110 @@ print("""  CAVEAT, stated rather than glossed: the ratio is noisiest at the long
   prices, where one step on the ladder is a large proportional move. Coedana
   (25/1->37/1) and Jasour (150/1->100/1) are the least trustworthy rows in
   either table, and they sit at the extremes of both.""")
+
+print("\n" + "=" * 72)
+print("5b · THE CONTROL THAT WAS MISSING — two sources priced the same horses")
+print("=" * 72)
+print("""  Yesterday's panel said the two lists shared no horse, so they could only be
+  differenced against our forecast and never against each other. Frick's list
+  closes that: it overlaps the RP list on THREE horses.
+""")
+byhorse_price = {}
+for src, rows in SOURCES.items():
+    for off, horse, fc, odds, ratio in rows:
+        byhorse_price.setdefault((off, horse), {})[src] = odds
+overlap = {k: v for k, v in byhorse_price.items() if len(v) > 1}
+for (off, horse), quotes in sorted(overlap.items()):
+    fc = FORECAST[(off, horse)]
+    qs = " · ".join(f"{s.split(' (')[0]} {o}" for s, o in sorted(quotes.items()))
+    same = len(set(quotes.values())) == 1
+    print(f"  {off} {horse:14} card {fc:>6}  |  {qs}   {'IDENTICAL' if same else 'differ'}")
+print("""
+  Two of the three are IDENTICAL, from a tips page and a tipster's struck bet
+  posted 27 minutes apart. So the RP buttons are quoting a real, available
+  price — not a forecast and not a stale number. That is worth knowing: the
+  reason to distrust them is NOT that they are fictional, it is only that they
+  do not say which book they come from.
+
+  It also sharpens the open question. Grimshaw's list still overlaps neither,
+  so the disagreement between his direction and theirs remains untested on any
+  shared horse.
+""")
+
+print("=" * 72)
+print("5c · IS IT THE SOURCE, OR IS IT THE HORSES? (the alternative, tested)")
+print("=" * 72)
+print("""  The source story says Grimshaw reads longer because he quotes best odds.
+  The rival story says he reads longer because of WHAT HE PICKS: he is a value
+  column backing outsiders, and outsiders drift while money concentrates on the
+  fancied. If so the split is about horses, not price sources, and the rule
+  written last night is wrong again.
+
+  Test: rank each horse by our card price WITHIN ITS OWN RACE (1 = shortest),
+  as a fraction of the field. If the rival story holds, the drifters sit at the
+  outsider end regardless of which list they came from.
+""")
+RANK = {}
+for off, _n, _t, _c, runners in card.RACES:
+    pr = sorted(((row[2], dec(row[8])) for row in runners), key=lambda x: x[1])
+    for i, (hname, _d) in enumerate(pr):
+        RANK[(off, hname)] = (i + 1) / len(pr)
+
+import statistics as st
+for src, rows in SOURCES.items():
+    sh = [RANK[(o, h)] for o, h, _f, _od, r in rows if r > 1 and (o, h) in RANK]
+    lo = [RANK[(o, h)] for o, h, _f, _od, r in rows if r < 1 and (o, h) in RANK]
+    f = lambda v: f"{st.mean(v):.2f}" if v else "  — "
+    print(f"  {src.split(' (')[0]:12} shorter-than-card n={len(sh)} mean rank {f(sh)}"
+          f"   |  longer n={len(lo)} mean rank {f(lo)}")
+allsh = [RANK[(o, h)] for rows in SOURCES.values() for o, h, _f, _od, r in rows if r > 1 and (o, h) in RANK]
+alllo = [RANK[(o, h)] for rows in SOURCES.values() for o, h, _f, _od, r in rows if r < 1 and (o, h) in RANK]
+print(f"\n  POOLED: shorter n={len(allsh)} mean rank {st.mean(allsh):.2f}"
+      f"  |  longer n={len(alllo)} mean rank {st.mean(alllo):.2f}")
+print("""
+  Read it honestly. If shorter and longer sat at clearly different depths in
+  their races, the rival story would be carrying the result and the source rule
+  would be an artefact. Judge by how far apart those two means are against a
+  mid-field value of 0.50, and on how few horses each count rests.
+""")
+
+print("=" * 72)
+print("5d · THE UNCOMFORTABLE ONE: our card prices are better than the market's")
+print("=" * 72)
+LIVE = {}
+for src, rows in SOURCES.items():
+    if "Best Odds" in src:
+        continue  # a best-odds comparison is longer by construction; not a live board
+    for off, horse, fc, odds, ratio in rows:
+        LIVE.setdefault((off, horse), (fc, odds, ratio))
+sh = [v for v in LIVE.values() if v[2] > 1]
+med = st.median(v[2] for v in LIVE.values())
+print(f"""  Set aside the labelled best-odds list, which is longer by construction, and
+  pool the two sources that quote an ordinary live price — the RP buttons and
+  Frick's struck bets. They agree exactly where they overlap.
+
+    {len(LIVE)} distinct horses · {len(sh)} priced SHORTER than our card · median x{med:.3f}
+
+  Our card prices come from the racecard's BETTING FORECAST, pasted the day
+  before. On most of these horses that forecast is more generous than anything
+  the market was actually showing the night before racing.
+
+  That does not invalidate anything: §6 settles at the odds on the card, which
+  is a stated convention, and a forecast of SP is not a claim that the price was
+  available. But it has two consequences worth saying out loud once:
+
+    1. Settling at card odds OVERSTATES returns wherever the card is the more
+       generous number. The season's figures are computed at prices the market
+       was not offering.
+    2. The LONG gate tests the CARD price against 8/1. Ebt's Guard is 14/1 on
+       the card and 10/1 live. Both clear, so nothing moves today — but a
+       longshot priced at 9/1 on a forecast could be under 8/1 in the market
+       before a single withdrawal, which is the Lesrico failure arriving a day
+       earlier than §4 expects it.
+
+  Stated limit: one card, {len(LIVE)} horses, and a forecast-to-live comparison is
+  not a like-for-like market move. This is a flag to measure again, not a result.
+""")
 
 print("\n" + "=" * 72)
 print("6 · THE LONG'S PRICE  (§4: re-check the PRICE, not just the place count)")
