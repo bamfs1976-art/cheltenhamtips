@@ -61,7 +61,24 @@ RP = [
     ("15:20", "Talk Of New York", "Mullington", "Steve Mullington",    None,    None),
     ("16:00", "Bay City Roller", "Mullington", "Steve Mullington",     None,    None),
     ("16:35", "Fifth Column",   "Mullington",  "Steve Mullington",     None,    None),
+    # Billy Grimshaw (HRN), arrived 19:44 the evening before. NINE tips across
+    # SIX races — two selections in each of three races, which is a shape §6's
+    # divergence test has never met. His odds column is explicitly headed
+    # "Best Odds"; the RP list's red buttons carry no such label. That
+    # difference turns out to matter more than anything else here.
+    ("13:30", "Daiquiri Bay",   "Grimshaw",    "Billy Grimshaw",       "12/1",  None),
+    ("13:30", "Mount Atlas",    "Grimshaw",    "Billy Grimshaw",       "28/1",  None),
+    ("14:05", "Division",       "Grimshaw",    "Billy Grimshaw",       "9/1",   None),
+    ("14:05", "Paborus",        "Grimshaw",    "Billy Grimshaw",       "17/1",  None),
+    ("14:40", "Sparan Nua",     "Grimshaw",    "Billy Grimshaw",       "12/1",  None),
+    ("14:40", "Coedana",        "Grimshaw",    "Billy Grimshaw",       "37/1",  None),
+    ("15:20", "Gstaad",         "Grimshaw",    "Billy Grimshaw",       "14/5",  None),
+    ("16:00", "Bay City Roller", "Grimshaw",   "Billy Grimshaw",       "7/1",   None),
+    ("16:35", "Gavriel",        "Grimshaw",    "Billy Grimshaw",       "5/1",   None),
 ]
+# Which desks state that their odds are a PRICE COMPARISON. §6's shorter-price
+# test is only licensed where the column says so — see section 5.
+LABELLED_BEST_ODDS = {"Grimshaw"}
 
 
 def dec(frac):
@@ -117,11 +134,24 @@ PRIOR = {
 
 
 def pairwise(a, b):
-    """Shared races and divergences between two desks ON THIS CARD."""
-    ra = {o: h for o, h, _ in desks[a]}
-    rb = {o: h for o, h, _ in desks[b]}
+    """Shared races and divergences between two desks ON THIS CARD.
+
+    A desk may hold MORE THAN ONE selection in a race — Grimshaw doubles up in
+    three of his six. Two desks agree in a race if their selection SETS
+    intersect at all, and diverge only if they are disjoint. That is the right
+    reading, but note what it costs: a desk covering two of sixteen runners is
+    twice as likely to intersect by chance as one covering a single runner, so
+    agreement with a multi-pick desk is WEAKER evidence than agreement with a
+    single-pick one, and a divergence from it is correspondingly stronger.
+    """
+    ra, rb = {}, {}
+    for o, h, _ in desks[a]:
+        ra.setdefault(o, set()).add(h)
+    for o, h, _ in desks[b]:
+        rb.setdefault(o, set()).add(h)
     shared = sorted(set(ra) & set(rb))
-    div = [(o, ra[o], rb[o]) for o in shared if ra[o] != rb[o]]
+    div = [(o, "/".join(sorted(ra[o])), "/".join(sorted(rb[o])))
+           for o in shared if not (ra[o] & rb[o])]
     return shared, div
 
 
@@ -184,60 +214,97 @@ print(f"\n  Of our {ours_n} picks, {held} are held by at least one column; "
       f"{ours_n - held} are held by nobody.")
 
 print("\n" + "=" * 72)
-print("5 · THE PRICE TEST, AND WHY ITS BASE RATE BREAKS IT HERE")
+print("5 · TWO PRICE LISTS, AND THEY POINT OPPOSITE WAYS")
 print("=" * 72)
-print("  §6: a price-COMPARISON quotes longer than any single card by construction,")
-print("  so a SHORTER price cannot be shopping — it is the market moving.\n")
-rows = []
+print("""  §6: a price-COMPARISON quotes longer than any single card by construction,
+  so a SHORTER price cannot be shopping — it is the market moving.
+
+  Two lists arrived 75 minutes apart on the same card. They share NO HORSE, so
+  they cannot be compared directly — but each can be differenced against our
+  racecard forecast, and the two answers are opposite. That is the finding.
+""")
+
+SOURCES = {}
 seen = set()
-# Mullington carries no comparison price, so he contributes no price row.
 for off, horse, desk, writer, odds, stars in RP:
-    if (off, horse) in seen:
-        continue
-    seen.add((off, horse))
     if odds is None:
         continue
+    src = "Grimshaw (labelled Best Odds)" if desk in LABELLED_BEST_ODDS \
+        else "RP free-tips list (odds UNLABELLED)"
+    # Dedupe on the SOURCE, not the desk: two desks on one list quote one price
+    # for one horse, and counting it twice would double-weight it in the median.
+    if (off, horse, src) in seen:
+        continue
+    seen.add((off, horse, src))
     fc = FORECAST.get((off, horse))
     if not fc:
         print(f"  !! no racecard forecast for {off} {horse}")
         continue
-    ratio = prob(odds) / prob(fc)
-    rows.append((off, horse, fc, odds, ratio))
+    SOURCES.setdefault(src, []).append((off, horse, fc, odds, prob(odds) / prob(fc)))
 
-shorter = [r for r in rows if r[4] > 1]
-longer = [r for r in rows if r[4] < 1]
-print(f"  {len(rows)} horses priced on both. "
-      f"SHORTER than our card: {len(shorter)}.  LONGER: {len(longer)}.")
-print("\n  Read naively that is ten STEAMs on one card. It is not.")
-print("  EVERY horse on this list is somebody's SELECTION. A sample chosen for")
-print("  being tipped is a sample chosen for having been backed, so 'shorter' is")
-print("  the BASE RATE of the list, not a signal about any horse in it.\n")
+medians = {}
+for src, rows in SOURCES.items():
+    short = sum(1 for r in rows if r[4] > 1)
+    med = statistics.median(r[4] for r in rows)
+    medians[src] = med
+    print(f"  {src}")
+    print(f"    {len(rows)} horses · shorter than our card: {short} · longer: {len(rows)-short-sum(1 for r in rows if r[4]==1)}"
+          f" · level: {sum(1 for r in rows if r[4]==1)}")
+    print(f"    median move: x{med:.3f} of implied probability ({(med-1)*100:+.1f}%)\n")
 
-med = statistics.median(r[4] for r in rows)
-print(f"  Median move across the list: x{med:.3f} of implied probability "
-      f"({(med - 1) * 100:+.1f}%).")
-print("  §5b's fix applies — take the deviation from the list's own median,")
-print("  exactly as it says to do against a book's margin:\n")
-print(f"  {'race':6} {'horse':16} {'card':>7} {'list':>7} {'ratio':>7} {'v median':>9}  read")
-for off, horse, fc, odds, ratio in sorted(rows, key=lambda r: -r[4]):
-    rel = ratio / med
-    read = "STEAM" if rel > 1.10 else "DRIFT" if rel < 0.90 else "flat"
-    mark = "  <-- OUR " + next(s for o, ps in OURS.items() if o == off
-                               for s, h, _ in ps if h == horse) \
-        if (off, horse) in ourset else ""
-    print(f"  {off:6} {horse:16} {fc:>7} {odds:>7} {ratio:>7.3f} {rel:>9.3f}  {read}{mark}")
+print("""  THE MEDIAN IS A PROPERTY OF THE SOURCE, NOT OF THE MARKET.
+  Yesterday's reading of the RP list said "+14.9% is the base rate of a tips
+  list — every horse on one has been backed". That story predicts BOTH lists
+  read shorter. Grimshaw's reads LONGER, by almost exactly as much. The
+  selection-bias explanation is not supported and is withdrawn.
 
-print("\n  CAVEAT, stated rather than glossed: the ratio is noisiest at the longest")
-print("  prices, where one step on the price ladder is a large proportional move.")
-print("  Jasour (150/1->100/1) and Soul Love (50/1->28/1) are the two least")
-print("  trustworthy rows here for exactly that reason.")
+  What distinguishes them is visible on the page: Grimshaw's odds sit in boxes
+  headed "Best Odds"; the RP buttons carry no label at all. A best-odds
+  comparison SHOULD read longer than one card's forecast, and Grimshaw's does.
+  So the honest rule is narrower than either version:
+
+    Apply the shorter-price test only where the column STATES its odds are a
+    comparison. Where it does not say, you do not know what you are
+    differencing — record both observations and call neither.
+
+  And normalise WITHIN a source. Never pool two.
+""")
+
+for src, rows in SOURCES.items():
+    med = medians[src]
+    licensed = "LICENSED — column states Best Odds" if "Best Odds" in src \
+        else "NOT LICENSED — source unstated, reads recorded but not called"
+    print(f"  {src}  [{licensed}]")
+    print(f"  {'race':6} {'horse':16} {'card':>7} {'list':>7} {'ratio':>7} {'v median':>9}  read")
+    for off, horse, fc, odds, ratio in sorted(rows, key=lambda r: -r[4]):
+        rel = ratio / med
+        read = "STEAM" if rel > 1.10 else "DRIFT" if rel < 0.90 else "flat"
+        if "Best Odds" not in src:
+            read = f"({read})"
+        mark = "  <-- OUR " + next(sl for o, ps in OURS.items() if o == off
+                                   for sl, h, _ in ps if h == horse) \
+            if (off, horse) in ourset else ""
+        print(f"  {off:6} {horse:16} {fc:>7} {odds:>7} {ratio:>7.3f} {rel:>9.3f}  {read}{mark}")
+    print()
+
+print("""  CAVEAT, stated rather than glossed: the ratio is noisiest at the longest
+  prices, where one step on the ladder is a large proportional move. Coedana
+  (25/1->37/1) and Jasour (150/1->100/1) are the least trustworthy rows in
+  either table, and they sit at the extremes of both.""")
 
 print("\n" + "=" * 72)
 print("6 · THE LONG'S PRICE  (§4: re-check the PRICE, not just the place count)")
 print("=" * 72)
-eg = next(r for r in rows if r[1] == "Ebt's Guard")
-print(f"  Ebt's Guard  card {eg[2]}  ->  comparison {eg[3]}")
-print(f"  ratio x{eg[4]:.3f}, v median x{eg[4] / med:.3f} — a genuine STEAM after normalising.")
-print(f"  Still clears the slot's 8/1 minimum at {eg[3]}, so the LONG holds.")
-print("  Two desks (Postdata + Lambourn) also tip it. Record the observation;")
-print("  §6 forbids the crossover count from moving the slot either way.")
+rp = SOURCES["RP free-tips list (odds UNLABELLED)"]
+eg = next(r for r in rp if r[1] == "Ebt's Guard")
+print(f"  Ebt's Guard  card {eg[2]}  ->  {eg[3]} on the RP list.")
+print(f"  ratio x{eg[4]:.3f}, v that list's median x{eg[4]/medians['RP free-tips list (odds UNLABELLED)']:.3f}.")
+print("""
+  WITHDRAWN AS A STEAM. That list does not say its odds are a comparison, and
+  the second list shows the two sources are not measuring the same thing. One
+  unlabelled observation against our forecast is two points from unknown books.
+
+  What is unchanged and is what actually matters: 10/1 and 14/1 BOTH clear the
+  slot's 8/1 minimum, so the LONG holds either way. Record both observations,
+  call the direction at the off against a source that states what it is.
+""")

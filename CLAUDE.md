@@ -1054,6 +1054,25 @@ Rules:
   worth.** Reputation tells you what to suspect; tip count tells you what you can
   settle.
 
+  **A DESK CAN TIP TWO HORSES IN ONE RACE, AND THE DIVERGENCE TEST HAS TO SAY
+  WHAT THAT MEANS. Added 16 Oct 2026** (Champions Day). Grimshaw filed **nine
+  tips across six races — two selections in three of them**, which no column in
+  this archive had done before. The test was written assuming one tip per race
+  per desk.
+
+  - **Two desks agree in a race if their selection SETS intersect at all**, and
+    diverge only if they are disjoint. That is the right reading.
+  - It has a cost worth printing. **A desk covering two of sixteen runners is
+    twice as likely to intersect by chance as one covering a single runner**, so
+    agreement with a multi-pick desk is **weaker** evidence than agreement with a
+    single-pick one — and a divergence from it is correspondingly **stronger**.
+  - Which makes Grimshaw's **6 divergences in 6 shared races against Spotlight**
+    a harder result than it looks, not an easier one: he had two chances to
+    intersect in half of those races and intersected in none.
+  - Where a crossover badge rests on a multi-pick desk, say how much of the field
+    that desk covered. "Two columns agree" means less in a race where one of them
+    named a sixth of the runners.
+
   **A MECHANISM, FINALLY, INSTEAD OF A STATISTIC: the same writer filed under two
   mastheads on one card. Added 16 Oct 2026** (Champions Day). **Richard Russell is
   Spotlight's verdict in the 12:55 and Eyecatcher's in the 16:35.** Eyecatcher has
@@ -1079,6 +1098,18 @@ Rules:
   three weeks later. Most entries in this file record something that turned out
   wrong; this one records a standing judgement holding up on fresh data, and the
   archive is worth less if only the failures get written down.
+
+  **Third running, and the clearest yet: 6 from 6 at Ascot, 16 Oct 2026.**
+  Grimshaw tipped nine horses across six Champions Day races and **disagreed with
+  Spotlight in every one of them**. A republication cannot disagree with its
+  source six times out of six. Doncaster 2/3, Newmarket 2/3, Ascot 6/6 — the HRN
+  masthead says distrust and the tip count says settle it, and the tip count has
+  now been right three times running.
+
+  - He was also the **best-aligned column on that card at 3/9 with us**, on our
+    NAP in two races and our NB in a third, while agreeing with Spotlight
+    nowhere. Independence and alignment are different axes; a column can be
+    close to us and nowhere near the house column.
 
   **AND THE VERIFIED 3x WON. Rule 8 lost its first pre-registered test,
   17 Oct 2026.** The triangle above — Spotlight, The Punt Acca and Grimshaw,
@@ -1175,17 +1206,48 @@ Rules:
 
   - **§5b already contains the fix and it transfers unmodified.** Express each
     move as a ratio of implied probability, then take the **deviation from the
-    list's own median** — exactly what §5b prescribes against a book's margin,
-    with the list's selection bias standing in for the margin. Median here was
-    **×1.149 (+14.9%)**; normalised, eleven STEAMs became **four**.
-  - This is the third thing §5b's median step has now corrected. It is the single
-    most reusable idea in this file: **before reading a price difference as news,
-    subtract whatever the whole set is doing.**
+    list's own median**. Median there was **×1.149 (+14.9%)**; normalised,
+    eleven STEAMs became **four**.
   - **Caveat, and it bites the biggest-looking rows.** The ratio is noisiest at
     the longest prices, where one step on the ladder is a large proportional
     move. The two strongest STEAMs on that card were 150/1→100/1 and 50/1→28/1,
     and they are the two least trustworthy rows in the table. Rank by the
     normalised figure, then discount the extremes rather than leading on them.
+
+  **RETRACTED THE SAME EVENING — the selection-bias explanation is wrong, and
+  the second list is what killed it. 16 Oct 2026, 75 minutes later.** Billy
+  Grimshaw's list for the same card read **nine horses, two shorter, six longer,
+  one level — median ×0.846 (−15.4%)**, almost exactly the opposite. The
+  selection-bias story predicts *every* tips list reads shorter, because every
+  horse on one has been tipped and therefore backed. One list does and one does
+  not, on the same card an hour apart, so the story is not supported.
+
+  **What separates them is printed on the page.** Grimshaw's odds sit in boxes
+  headed **"Best Odds"**; the Racing Post buttons carry no label. A best-odds
+  comparison quotes the best of several books and so *should* read longer than
+  one card's forecast — Grimshaw's does, by about fifteen points. The unlabelled
+  list does the reverse, which means it is probably not a comparison at all, and
+  the 8 Oct condition already says a single firm's board licenses no reading.
+
+  - **Apply the shorter-price test only where the column STATES its odds are a
+    comparison.** Where it does not say, you do not know what you are
+    differencing: record both observations and call neither. This is narrower
+    than both earlier versions and it is checkable on the page itself.
+  - **Normalise within a source. Never pool two.** Pooling these two lists into
+    one median produced a tidy STEAM/DRIFT split straight down the middle — and
+    the "signal" was only which list a horse came from. A script that pools is
+    manufacturing the answer.
+  - **The median is a property of the SOURCE, not of the market.** That much of
+    the original entry survives and it is the reusable half. What does not
+    survive is reading the median's *sign* as news about the horses.
+  - The two lists shared **no horse at all**, twenty-three between them, so no
+    direct comparison was possible. Where two sources overlap, difference them
+    against each other rather than against the card — that is the control, and
+    it was not available here.
+  - **Cost on the live card: one withdrawn STEAM.** Ebt's Guard, our LONG, was
+    written up as 14/1→10/1 steaming. It came off the unlabelled list and the
+    call is withdrawn. Nothing operational moved, because both prices clear the
+    slot's 8/1 minimum — but the panel had already been published saying it.
 
 **A Racing Post star rating belongs to the tip ROW, not to the horse.**
 Added 24 Sep 2026 (Newmarket), and it corrects a reading made eleven days
