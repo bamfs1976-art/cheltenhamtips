@@ -912,6 +912,30 @@ Rules:
     appeared in both panels, "1 Nap" and "1 Tip", at the identical 54/1.** One
     opinion. A nap is a tip.
 
+  **THE PRICE LEG OF THAT TEST IS VACUOUS INSIDE ONE SITE — AND THE WORKED
+  EXAMPLE THAT JUSTIFIED IT HAS THE SAME FLAW. Added 17 Oct 2026** (Champions
+  Day, race-morning panels). The test resolves a panel row when a known column
+  holds the same horse at a price the panel equals or beats. **Jasour satisfied
+  it perfectly: the Biggest Priced Naps row read 129/1 and Raceolly read 129/1.**
+  Both rows sit on horseracing.net reading one best-odds feed, so the prices
+  **must** match — the agreement is produced by the page, not observed.
+
+  - Look at the precedent before trusting the rule. §6's Cambridgeshire case
+    was **Raceolly at 40/1 against an HRN Biggest Priced Naps row at "the
+    identical 40/1"** — the same column against the same site's panel. Its
+    price leg was vacuous too, and the archive records it as the test working.
+    The 9 Oct loosening then generalised from it.
+  - **The useful half survives**: the duplicate still resolves, because a known
+    column holds the horse at all. That leg is sound and does the work.
+  - **Demand a price match only ACROSS sites with independent feeds.** Within
+    one site it is the feed agreeing with itself — the Marvelman error moved
+    from rows to prices.
+  - **"3 Naps" is the biggest count a panel has asserted in this archive**
+    (Dancing Gemini, 109/1, the QEII), against "2 Naps" at the Cambridgeshire
+    and the Cesarewitch. Nothing resolved — no tracked column held the horse —
+    so the rule applies unchanged: count it as one and say the mastheads are
+    not visible.
+
 - **The absence rule paid off within a day, and the two numbers are different.
   Added 10 Oct 2026.** Friday recorded Raceolly as **n/a, not 0%**, because all
   six of his tips were at Chepstow. On Saturday he tipped two Newmarket races
@@ -1287,6 +1311,34 @@ Rules:
     turning up an hour later supplied it. "These two lists cannot be compared"
     was true of the sample, not of the question — the §6 error about absences,
     committed again on prices instead of crossovers.
+
+  **A THIRD LABELLED SOURCE AGREED — AND IT IS CONFOUNDED, WHICH HAS TO BE SAID
+  BEFORE CALLING IT A REPLICATION. Added 17 Oct 2026** (Champions Day race
+  morning; same script, sections 5b/5c/7). Three horseracing.net panels arrived
+  at 04:48, odds headed **"Best Odds"** — the second labelled comparison on the
+  card. It read **longer, median ×0.895**, against Grimshaw's ×0.846 and the two
+  unlabelled/struck sources at ×1.149 and ×1.238. Four sources, and the split is
+  exactly the labelled/unlabelled line.
+
+  - **But two of those three panels are headed BIGGEST PRICED.** They select on
+    price: their horses sit at mean field depth **0.77** against 0.40–0.44 for
+    every other source, and the rival "outsiders drift" story predicts a source
+    made of outsiders reads longer too. On its own it cannot separate the two.
+  - What it still carries is the **within-source** comparison, pointing away
+    from the rival story: the three *shorter* horses sit *deeper* (0.82) than
+    the seven longer ones (0.73), when "outsiders drift" needs the drifters to
+    be the deeper group. Weak evidence, reported as weak.
+  - **Check what a source SELECTS ON before counting its direction as
+    evidence.** A labelled comparison earns the shorter-price test; it does not
+    thereby earn a vote on why labelled sources read longer.
+  - **The cross-feed pairing 16 Oct said was missing did arrive, on one horse.**
+    Jasour read **129/1 labelled against 100/1 unlabelled** — the labelled one
+    longer, as a comparison should be. One horse is not a result; it is the
+    first direct evidence the split is a property of the sources rather than of
+    the different horses they pick.
+  - It also produced the card's **only licensed STEAM on one of our own picks**:
+    our 12:55 NAP Speed Of Sound, 16/1 on the card against 12/1 on a source that
+    states it is a comparison, with the one external column holding her.
 
   **AND THE SAME POOLING TURNED UP SOMETHING ABOUT OUR OWN PRICES. Added
   16 Oct 2026.** Set aside the best-odds list, which is longer by construction,

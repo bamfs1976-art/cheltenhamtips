@@ -10,6 +10,13 @@ Two sources arrived the evening before the card:
      so §6's shorter-price test does not apply to it. It is handled separately
      and deliberately counted as ZERO opinions.
 
+And on RACE MORNING, 04:48, three horseracing.net panels: Biggest Priced Tips,
+Biggest Priced Naps, and Raceolly's own list. Their odds sit under a "Best Odds"
+heading, which makes them the SECOND labelled comparison on this card. They
+read longer, like the first — but two of the three panels select on PRICE,
+which the rival explanation also predicts, so the apparent replication is
+confounded and is reported as such. See sections 5c and 7.
+
 The headline finding is about the price test, not about the tips — see
 BASE RATE below. Run: python3 -I scripts/analysis/champions-day-external-overlay.py
 """
@@ -85,10 +92,36 @@ RP = [
     ("15:20", "Rayif",          "Frick",       "Frick",                "13/2",  None),
     ("16:35", "Hickory",        "Frick",       "Frick",                "9/1",   None),
     ("16:35", "Classic",        "Frick",       "Frick",                "20/1",  None),
+    # Raceolly, read off horseracing.net at 04:48 on race morning. FIVE Ascot
+    # tips, so unlike Eyecatcher or Newmarket he is a multi-race desk and the
+    # divergence test can actually settle him. His prices are the site's
+    # "Best Odds" figures — the same feed as the two panels below, which is the
+    # whole point of section 7.
+    ("12:55", "Speed Of Sound", "Raceolly",    "Raceolly",             "12/1",  None),
+    ("13:30", "Amiloc",         "Raceolly",    "Raceolly",             "17/1",  None),
+    ("14:05", "Jasour",         "Raceolly",    "Raceolly",             "129/1", None),
+    ("15:20", "Hawk Mountain",  "Raceolly",    "Raceolly",             "37/1",  None),
+    ("16:35", "Whip Cracker",   "Raceolly",    "Raceolly",             "39/1",  None),
 ]
+
+# The two aggregator panels. §6 counts these as ZERO opinions — they are other
+# columns' selections collected, row-labelled "1 Nap" / "1 Tip" / "3 Naps".
+# They are NOT desks and never enter the crossover count; they are here only
+# for their prices and for what the row labels assert.
+# (off, horse, panel, row label, Best Odds)
+PANELS = [
+    ("12:55", "Crusherman",     "HRN Biggest Priced Naps", "1 Nap",  "66/1"),
+    ("14:05", "Jasour",         "HRN Biggest Priced Naps", "1 Nap",  "129/1"),
+    ("15:20", "Dancing Gemini", "HRN Biggest Priced Naps", "3 Naps", "109/1"),
+    ("15:20", "Needle Match",   "HRN Biggest Priced Naps", "1 Nap",  "119/1"),
+    ("14:05", "Binhareer",      "HRN Biggest Priced Tips", "1 Tip",  "41/1"),
+    ("14:40", "Believed",       "HRN Biggest Priced Tips", "1 Tip",  "27/1"),
+    ("16:35", "Valvano",        "HRN Biggest Priced Tips", "1 Tip",  "37/1"),
+]
+HRN_SRC = "horseracing.net panels + Raceolly, 04:48 race morning (labelled Best Odds)"
 # Which desks state that their odds are a PRICE COMPARISON. §6's shorter-price
 # test is only licensed where the column says so — see section 5.
-LABELLED_BEST_ODDS = {"Grimshaw"}
+LABELLED_BEST_ODDS = {"Grimshaw", "Raceolly"}
 
 
 def dec(frac):
@@ -224,14 +257,19 @@ print(f"\n  Of our {ours_n} picks, {held} are held by at least one column; "
       f"{ours_n - held} are held by nobody.")
 
 print("\n" + "=" * 72)
-print("5 · TWO PRICE LISTS, AND THEY POINT OPPOSITE WAYS")
+print("5 · FOUR PRICE SOURCES, AND THEY SPLIT ON WHETHER THEY SAY WHAT THEY ARE")
 print("=" * 72)
 print("""  §6: a price-COMPARISON quotes longer than any single card by construction,
   so a SHORTER price cannot be shopping — it is the market moving.
 
-  Two lists arrived 75 minutes apart on the same card. They share NO HORSE, so
-  they cannot be compared directly — but each can be differenced against our
-  racecard forecast, and the two answers are opposite. That is the finding.
+  FOUR price sources now sit on this card: an unlabelled Racing Post tips list,
+  Grimshaw's labelled "Best Odds" boxes, Frick's STRUCK bets, and the
+  horseracing.net panels that arrived at 04:48 on race morning — also labelled
+  "Best Odds". Each is differenced against our racecard forecast and normalised
+  against ITS OWN median, never pooled. The two labelled comparisons read one
+  way and the two unlabelled/struck sources read the other — but see 5c before
+  calling the fourth source a replication: it selects on price and so cannot
+  separate the source rule from the rival story on its own.
 """)
 
 SOURCES = {}
@@ -239,7 +277,8 @@ seen = set()
 for off, horse, desk, writer, odds, stars in RP:
     if odds is None:
         continue
-    src = ("Grimshaw (labelled Best Odds)" if desk in LABELLED_BEST_ODDS
+    src = (HRN_SRC if desk == "Raceolly"
+           else "Grimshaw (labelled Best Odds)" if desk in LABELLED_BEST_ODDS
            else "Frick (prices STRUCK, posted 19:17)" if desk == "Frick"
            else "RP free-tips list (odds UNLABELLED)")
     # Dedupe on the SOURCE, not the desk: two desks on one list quote one price
@@ -252,6 +291,16 @@ for off, horse, desk, writer, odds, stars in RP:
         print(f"  !! no racecard forecast for {off} {horse}")
         continue
     SOURCES.setdefault(src, []).append((off, horse, fc, odds, prob(odds) / prob(fc)))
+
+# The panel rows carry prices but no opinion. They share Raceolly's feed, so
+# they go in the SAME source bucket — pooling two feeds is exactly what §6
+# forbids, and pooling one feed with itself is just reading the feed.
+for off, horse, _panel, _label, odds in PANELS:
+    if (off, horse, HRN_SRC) in seen:
+        continue
+    seen.add((off, horse, HRN_SRC))
+    fc = FORECAST[(off, horse)]
+    SOURCES[HRN_SRC].append((off, horse, fc, odds, prob(odds) / prob(fc)))
 
 medians = {}
 for src, rows in SOURCES.items():
@@ -300,15 +349,16 @@ for src, rows in SOURCES.items():
 
 print("""  CAVEAT, stated rather than glossed: the ratio is noisiest at the longest
   prices, where one step on the ladder is a large proportional move. Coedana
-  (25/1->37/1) and Jasour (150/1->100/1) are the least trustworthy rows in
-  either table, and they sit at the extremes of both.""")
+  (25/1->37/1), Jasour (150/1->100/1) and Needle Match (100/1->119/1) are the
+  least trustworthy rows in these tables, and they sit at the extremes of them.
+  Rank by the normalised figure, then discount the extremes.""")
 
 print("\n" + "=" * 72)
 print("5b · THE CONTROL THAT WAS MISSING — two sources priced the same horses")
 print("=" * 72)
 print("""  Yesterday's panel said the two lists shared no horse, so they could only be
   differenced against our forecast and never against each other. Frick's list
-  closes that: it overlaps the RP list on THREE horses.
+  closed that, and the race-morning panels widen it again.
 """)
 byhorse_price = {}
 for src, rows in SOURCES.items():
@@ -320,16 +370,30 @@ for (off, horse), quotes in sorted(overlap.items()):
     qs = " · ".join(f"{s.split(' (')[0]} {o}" for s, o in sorted(quotes.items()))
     same = len(set(quotes.values())) == 1
     print(f"  {off} {horse:14} card {fc:>6}  |  {qs}   {'IDENTICAL' if same else 'differ'}")
-print("""
-  Two of the three are IDENTICAL, from a tips page and a tipster's struck bet
-  posted 27 minutes apart. So the RP buttons are quoting a real, available
-  price — not a forecast and not a stale number. That is worth knowing: the
-  reason to distrust them is NOT that they are fictional, it is only that they
-  do not say which book they come from.
+n_ident = sum(1 for q in overlap.values() if len(set(q.values())) == 1)
+cross = {k: v for k, v in overlap.items()
+         if any("Best Odds" in s_ for s_ in v) and any("Best Odds" not in s_ for s_ in v)}
+print(f"""
+  {len(overlap)} shared horses, {n_ident} quoted IDENTICALLY. The two identical ones come
+  from a tips page and a tipster's struck bet posted 27 minutes apart, so the
+  unlabelled RP buttons are quoting a real, available price — not a forecast
+  and not a stale number. The reason to distrust them is NOT that they are
+  fictional, only that they do not say which book they come from.
 
-  It also sharpens the open question. Grimshaw's list still overlaps neither,
-  so the disagreement between his direction and theirs remains untested on any
-  shared horse.
+  AND THE PAIRING THAT WAS GENUINELY MISSING HAS NOW ARRIVED: a LABELLED
+  best-odds source against an unlabelled one, on the same horse. Grimshaw
+  overlapped nothing, so his direction was never checked against anybody.""")
+for (off, horse), q in sorted(cross.items()):
+    lab = [(k, v) for k, v in q.items() if "Best Odds" in k][0]
+    unl = [(k, v) for k, v in q.items() if "Best Odds" not in k][0]
+    longer = prob(lab[1]) < prob(unl[1])
+    print(f"    {off} {horse}: labelled {lab[1]} v unlabelled {unl[1]} — labelled is "
+          f"{'LONGER, as a comparison should be' if longer else 'SHORTER, which a comparison should not be'}")
+print(f"""
+  {len(cross)} horse is not a result. But it is the first direct evidence that the
+  labelled/unlabelled split is a property of the SOURCES and not only of the
+  two different sets of horses they happen to pick, which is what 5c tests
+  statistically and this tests directly.
 """)
 
 print("=" * 72)
@@ -367,6 +431,26 @@ print("""
   their races, the rival story would be carrying the result and the source rule
   would be an artefact. Judge by how far apart those two means are against a
   mid-field value of 0.50, and on how few horses each count rests.
+""")
+depth = {s_: st.mean([RANK[(o, h)] for o, h, *_ in rows if (o, h) in RANK])
+         for s_, rows in SOURCES.items()}
+print("  AND THE NEW SOURCE IS CONFOUNDED — say so before claiming a replication.")
+print("  Mean field depth of each source's horses (0 = favourite end, 1 = outsider end):")
+for s_, d in sorted(depth.items(), key=lambda kv: -kv[1]):
+    print(f"    {d:.2f}  {s_.split(',')[0]}")
+print("""
+  Two of those panels are headed BIGGEST PRICED. They select on price, so the
+  horses in them sit far deeper in their races than any other source's — and
+  "outsiders drift" predicts a source made of outsiders reads LONGER, which is
+  exactly what it does. On its own, therefore, this source cannot tell the two
+  stories apart, and calling it a clean replication of the labelled/unlabelled
+  rule would be overclaiming.
+
+  What it does still carry is the WITHIN-source comparison, and that points
+  away from the rival story: inside this source the SHORTER horses sit deeper
+  than the longer ones, when "outsiders drift" needs the drifters to be the
+  deeper group. Same shape as the pooled figures above. Weak evidence, stated
+  as weak.
 """)
 
 print("=" * 72)
@@ -422,4 +506,100 @@ print("""
   What is unchanged and is what actually matters: 10/1 and 14/1 BOTH clear the
   slot's 8/1 minimum, so the LONG holds either way. Record both observations,
   call the direction at the off against a source that states what it is.
+""")
+
+print("\n" + "=" * 72)
+print("7 · THE RACE-MORNING PANELS  (§6: an aggregator panel is ZERO opinions)")
+print("=" * 72)
+print(f"""  Three horseracing.net panels, read at 04:48 on race morning: Biggest Priced
+  Tips, Biggest Priced Naps, and Raceolly's own list. {len(PANELS)} Ascot rows in the two
+  panels and {len(desks['Raceolly'])} in Raceolly's list.
+
+  RACEOLLY IS A DESK AND COUNTS. The panels are NOT and do not: they row-label
+  their entries "1 Nap" / "1 Tip" / "3 Naps", which is other columns' selections
+  collected, never an opinion of their own.
+""")
+held_by = {}
+for off, horse, desk, *_ in RP:
+    held_by.setdefault((off, horse), set()).add(desk)
+print(f"  {'race':6} {'horse':16} {'label':8} {'best odds':>9}  resolves to")
+for off, horse, panel, label, odds in PANELS:
+    known = sorted(held_by.get((off, horse), set()))
+    if known:
+        res = f"held by {'/'.join(known)} — duplicate, panel row adds NO new opinion"
+    else:
+        res = "no known column holds it — count as ONE, independence untestable"
+    print(f"  {off:6} {horse:16} {label:8} {odds:>9}  {res}")
+
+print("""
+  THE PRICE LEG OF §6's DUPLICATE TEST IS VACUOUS INSIDE ONE SITE.
+  §6's loosened test (9 Oct) resolves a panel row when the same horse, in the
+  same race, is held by a known column at a price the panel equals or beats.
+  Jasour satisfies it perfectly: the Naps panel says 129/1 and Raceolly says
+  129/1. But BOTH ROWS ARE ON horseracing.net, reading one best-odds feed, so
+  the prices MUST match — the agreement is produced by the page, not observed.
+
+  That is not a small caveat, because §6's own worked example has the same
+  shape. The Cambridgeshire case that justified the price leg was Raceolly at
+  40/1 against an HRN Biggest Priced Naps row at "the identical 40/1" — the
+  same column against the same site's panel. Its price leg was vacuous too, and
+  the archive records it as the test working.
+
+  What survives, and it is the useful half: the duplicate still resolves,
+  because a KNOWN COLUMN HOLDS THE HORSE. That leg is sound. It is only the
+  matching price that carries no information when both rows share a feed.
+  Demand a price match only ACROSS sites with independent feeds — which is
+  exactly the cross-feed pairing section 5b found on this same horse, where the
+  labelled 129/1 sits against an unlabelled 100/1 and the gap is real.
+""")
+
+multi = [(o, h, l, od) for o, h, _p, l, od in PANELS if not l.startswith("1 ")]
+print("  MULTI-COUNT ROWS (a panel asserting more than one column napped it):")
+for off, horse, label, odds in multi:
+    known = sorted(held_by.get((off, horse), set()))
+    print(f"    {off} {horse} — \"{label}\" at {odds}; known columns holding it: "
+          f"{', '.join(known) if known else 'NONE'}")
+print("""    The biggest count a panel has asserted in this archive. The Cambridgeshire
+    saw "2 Naps" (St Anton) and the Cesarewitch saw "2 Naps" (Align The Stars,
+    half of which resolved to Sam Hardy). Nothing resolves here — no column we
+    track holds the horse — so §6's rule applies unchanged and unflatteringly:
+    COUNT IT AS ONE and say the mastheads are not visible, so independence
+    cannot be proved by a divergence and it earns no badge.
+
+    Note where it sits. The 15:20 is the QEII, which is where our NAP Ten Bob
+    Tony runs and where William Hill's trading desk said their own risk was.
+    A 109/1 shot carrying the day's loudest unverifiable panel row does not
+    change that and is recorded, not acted on.
+""")
+
+print("  DISSENT — 2+ sources on a horse we do not hold (§11 checklist):")
+for (off, horse), ds in sorted(byhorse_pre.items()):
+    if len(ds) < 2 or (off, horse) in ourset:
+        continue
+    sh, dv = pairwise(*sorted(ds)[:2])
+    print(f"    {off} {horse:16} {len(ds)}x ({', '.join(sorted(ds))}) — "
+          f"{len(sh)} shared race(s), {len(dv)} divergence(s)")
+print("""    Jasour is new this morning and is the thinnest kind of 2x there is: a
+    one-tip desk (The Punt) and a five-tip desk (Raceolly) meeting in the only
+    race they share, so it is UNTESTABLE by §6's own rule. Surfaced because the
+    checklist says to surface it, at 150/1 on our card.
+""")
+
+print("  RACEOLLY, PER COLUMN:")
+rh = sum(1 for o, h, _ in desks["Raceolly"] if (o, h) in ourset)
+print(f"    {rh}/{len(desks['Raceolly'])} with us — and the one agreement is our 12:55 NAP Speed Of Sound.")
+sos = next(r for r in SOURCES[HRN_SRC] if r[1] == "Speed Of Sound")
+print(f"    card {sos[2]}, panel {sos[3]}: ratio x{sos[4]:.3f}, "
+      f"v the source's median x{sos[4]/medians[HRN_SRC]:.3f}.")
+print("""    This source STATES its odds are a comparison, so unlike last night's RP
+    list the shorter-price test is licensed on it: a comparison quotes longer
+    than one card by construction, so a shorter price is the market moving.
+    That makes it the first licensed STEAM on one of our own picks on this
+    card — and the first external support Speed Of Sound has had from anybody.
+
+  AND THE PRICE WE MOST WANTED IS NOT HERE. These panels do not quote Ebt's
+  Guard, our LONG. §4 says re-check the LONG's PRICE at the off and not just
+  the place count, and the only two observations of it remain the card's 14/1
+  and an unlabelled 10/1 that section 6 withdrew as a STEAM call. Both clear
+  the slot's 8/1 minimum, so the LONG holds; the direction is still uncalled.
 """)
