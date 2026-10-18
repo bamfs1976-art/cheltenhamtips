@@ -603,3 +603,73 @@ print("""    This source STATES its odds are a comparison, so unlike last night'
   and an unlabelled 10/1 that section 6 withdrew as a STEAM call. Both clear
   the slot's 8/1 minimum, so the LONG holds; the direction is still uncalled.
 """)
+
+print("\n" + "=" * 72)
+print("8 · SCORED  (results, 18 Oct — §15: report honestly against the record)")
+print("=" * 72)
+import json as _json, pathlib as _pl
+RES = _json.loads((ROOT / "scripts/analysis/champions-day-results.json").read_text())
+# position -> horse, per race, only as deep as the published result runs.
+POS, PLACES = {}, {"12:55": 3, "13:30": 3, "14:05": 3, "14:40": 3,
+                   "15:20": 3, "16:00": 2, "16:35": 4}
+for r in RES["results"]:
+    for run in r["runners"]:
+        POS[(r["off_time"], run["horse"])] = run["position"]
+
+
+def outcome(off, horse):
+    p = POS.get((off, horse))
+    if p == "NR":
+        return "NR"
+    if p is None:
+        return "lost"          # below the published depth, which reaches the place count
+    return "WON" if p == "1" else ("placed" if int(p) <= PLACES[off] else "lost")
+
+
+print(f"  {'desk':14} {'tips':>4} {'wins':>5} {'placed':>7}   winners")
+rows = []
+for d, rs in sorted(desks.items()):
+    o = [(off, h, outcome(off, h)) for off, h, _ in rs]
+    w = [f"{off} {h}" for off, h, x in o if x == "WON"]
+    rows.append((d, len(o), len(w), sum(1 for _, _, x in o if x == "placed"), w))
+for d, n, w, pl, names in sorted(rows, key=lambda r: (-r[2], -r[3], r[0])):
+    print(f"  {d:14} {n:4} {w:5} {pl:7}   {', '.join(names) or '—'}")
+
+ours = [(off, sl, h, outcome(off, h)) for off, ps in OURS.items() for sl, h, _ in ps]
+print(f"\n  OURS           {len(ours):4} {sum(1 for *_, x in ours if x == 'WON'):5} "
+      f"{sum(1 for *_, x in ours if x == 'placed'):7}   "
+      f"{', '.join(f'{o} {h}' for o, _, h, x in ours if x == 'WON')}")
+
+print("""
+  FRICK, THE LEADERBOARD'S TOP COLUMN AT 30%, WENT 0 FROM 7 — and §6 recorded
+  his 0/7 ALIGNMENT with us the night before as "the most informative row on the
+  page". Both numbers are now in: he agreed with us in none of our seven races
+  and he did not win any of them either. An alignment of zero told us nothing
+  about his results, which is precisely what §6 says alignment is not.
+""")
+
+gw = [f"{off} {h}" for off, h, _ in desks["Grimshaw"] if outcome(off, h) == "WON"]
+print(f"""  AND THE WINNER CAME FROM A MULTI-PICK DESK, IN A RACE WHERE WE TOOK HIS OTHER
+  HORSE. Grimshaw's winners: {', '.join(gw)}.
+  He tipped TWO horses in the 13:30 — Daiquiri Bay and Mount Atlas. Daiquiri Bay
+  was our NAP and finished outside the three; Mount Atlas won at 33/1. §6 added
+  the multi-pick rule on 16 Oct and priced it as a COST — "a desk covering two of
+  sixteen runners is twice as likely to intersect by chance". This is the other
+  side of that ledger: doubling up is also how a desk covers the 33/1 winner, and
+  the one of his two we shared is the one that lost.
+""")
+
+ext2x = {}
+for off, horse, desk, *_ in RP:
+    ext2x.setdefault((off, horse), set()).add(desk)
+flagged = [(off, h, ds) for (off, h), ds in sorted(ext2x.items())
+           if len(ds) >= 2 and (off, h) not in ourset]
+print("  DISSENT, SCORED — the 2x+ horses we surfaced and did not hold:")
+for off, h, ds in flagged:
+    print(f"    {off} {h:16} {len(ds)}x {outcome(off, h):7} ({', '.join(sorted(ds))})")
+print("""
+  Fifth Column won the Balmoral at 22/1 and was on this page as a 2x we did not
+  hold. That is §6's dissent rule working for the fourth meeting running, and the
+  fourth time the archive has had to write down that WE FLAGGED IT IS NOT A
+  RETURN. Future Champions declined three winners the same way eight days ago.
+""")

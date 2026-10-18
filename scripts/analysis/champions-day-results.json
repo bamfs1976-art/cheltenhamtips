@@ -1,0 +1,86 @@
+{
+ "_source": "COMPILED FROM WEB SEARCH on 18 Oct 2026, not from a pasted Racing Post card and not a Racing API payload. §12 names a pasted RP racecard as the primary route and it was not available, so provenance is weaker than every other result file in this directory and the page says so. What is corroborated across several independent sources: the first three home in all seven races, Scoville 4th in the Balmoral, Crown Of Oaks a NON-RUNNER (unsuitable ground) with reserve Tribal Chief taking his place so twenty ran, and the going Good. PROVISIONAL and flagged as such on the page: Speed Of Sound 9th at 25/1 (one aggregator, which did not clearly label the price), Gavriel 8th (one source), and the Balmoral order itself, where Equidia and a recap agree on Fifth Column/Indalo/Ebt's Guard/Scoville while Geny shows a different winner. `ran` is the declared field in the six races where no withdrawal was found, which is an ASSUMPTION. scripts/analysis/champions-day-band-sensitivity.mjs tests it: five of the six are invariant, and the 16:00 is NOT — two withdrawals there would take the field below five, make it win-only and cost Calandagan's £0.75. The bigger exposure is the Balmoral's each-way FRACTION, which no one read off the offer: at a promoted 1/5 the day returns £17.37 rather than £17.72. Positions below the published depth are not invented: settle.mjs reads the depth and decides from it whether a missing pick is a confirmed loser.",
+ "results": [
+  {
+   "off_time": "12:55", "course": "Ascot",
+   "race_name": "Qatar Racing British Champions Day Two-Year-Old Conditions Stakes",
+   "type": "Flat", "race_class": 2, "field_size": 11, "going": "Good",
+   "runners": [
+    { "horse": "Night In Vegas", "position": "1", "sp": "5/2" },
+    { "horse": "Arapaho Gold", "position": "2", "sp": "9/4" },
+    { "horse": "Satellite Of Love", "position": "3", "sp": "4/1" },
+    { "horse": "Speed Of Sound", "position": "9", "sp": "25/1" }
+   ],
+   "ran": 11
+  },
+  {
+   "off_time": "13:30", "course": "Ascot",
+   "race_name": "British Champions Long Distance Cup (Group 1)",
+   "type": "Flat", "race_class": 1, "field_size": 10, "going": "Good",
+   "runners": [
+    { "horse": "Mount Atlas", "position": "1", "sp": "33/1" },
+    { "horse": "Queenstown", "position": "2", "sp": "14/1" },
+    { "horse": "Highwayman", "position": "3", "sp": "7/4" }
+   ],
+   "ran": 10
+  },
+  {
+   "off_time": "14:05", "course": "Ascot",
+   "race_name": "British Champions Sprint Stakes (Group 1)",
+   "type": "Flat", "race_class": 1, "field_size": 16, "going": "Good",
+   "runners": [
+    { "horse": "Almeraq", "position": "1", "sp": "11/10" },
+    { "horse": "Paborus", "position": "2", "sp": "18/1" },
+    { "horse": "Division", "position": "3", "sp": "17/2" }
+   ],
+   "ran": 16
+  },
+  {
+   "off_time": "14:40", "course": "Ascot",
+   "race_name": "British Champions Fillies & Mares Stakes (Group 1)",
+   "type": "Flat", "race_class": 1, "field_size": 13, "going": "Good",
+   "runners": [
+    { "horse": "Minnie Hauk", "position": "1", "sp": "5/1" },
+    { "horse": "Believed", "position": "2", "sp": "16/1" },
+    { "horse": "Lilt", "position": "3", "sp": "6/1" }
+   ],
+   "ran": 13
+  },
+  {
+   "off_time": "15:20", "course": "Ascot",
+   "race_name": "Queen Elizabeth II Stakes (Group 1)",
+   "type": "Flat", "race_class": 1, "field_size": 11, "going": "Good",
+   "runners": [
+    { "horse": "Talk Of New York", "position": "1", "sp": "3/1" },
+    { "horse": "Ten Bob Tony", "position": "2", "sp": "7/1" },
+    { "horse": "Rayif", "position": "3", "sp": "10/1" }
+   ],
+   "ran": 11
+  },
+  {
+   "off_time": "16:00", "course": "Ascot",
+   "race_name": "Qatar Racing Champion Stakes (Group 1)",
+   "type": "Flat", "race_class": 1, "field_size": 6, "going": "Good",
+   "runners": [
+    { "horse": "Ombudsman", "position": "1", "sp": null },
+    { "horse": "Calandagan", "position": "2", "sp": null },
+    { "horse": "Bay City Roller", "position": "3", "sp": null }
+   ],
+   "ran": 6
+  },
+  {
+   "off_time": "16:35", "course": "Ascot",
+   "race_name": "Balmoral Handicap (Sponsored By Qatar Racing)",
+   "type": "Flat", "race_class": 2, "field_size": 20, "going": "Good",
+   "runners": [
+    { "horse": "Fifth Column", "position": "1", "sp": "22/1" },
+    { "horse": "Indalo", "position": "2", "sp": "16/1" },
+    { "horse": "Ebt's Guard", "position": "3", "sp": "11/1" },
+    { "horse": "Scoville", "position": "4", "sp": "4/1" },
+    { "horse": "Gavriel", "position": "8", "sp": null },
+    { "horse": "Crown Of Oaks", "position": "NR", "sp": null }
+   ],
+   "ran": 20
+  }
+ ]
+}

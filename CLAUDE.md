@@ -204,6 +204,38 @@ had the better meeting** — the third consecutive meeting whose internal slot
 ranking disagrees with the season's. Both slots are still losing on a fifth of
 the season; nothing here promotes either.
 
+**Recomputed on 127 picks after Champions Day (18 Oct 2026)**
+(`scripts/analysis/champions-day-slots.py`):
+
+| Slot | Picks | Wins | SR | Returned | Net | Pts/pick |
+|---|---|---|---|---|---|---|
+| Our NB | 60 | 13 | **22%** | £51.13 | −£8.87 | **0.85** |
+| Our NAP | 60 | 10 | 17% | £47.61 | −£12.39 | 0.79 |
+| Our LONG | 7 | 0 | 0% | £4.50 | −£2.50 | 0.64 |
+| **Total** | **127** | 23 | 18% | **£103.24** | **−£23.76** | 0.81 |
+
+**AND THE TABLE MEASURES LABELS, WHICH THE CARD ITSELF MOVES. Added 18 Oct 2026**
+(Champions Day), and it is the sharpest limit yet on reading this table. The 14:05
+panel demoted **Almeraq from NAP to NB** on the each-way price arithmetic and gave
+the NAP to Prince Of India. **Almeraq won at 11/10 and Prince Of India was
+unplaced.** Both were staked £1 each way whichever label they carried, so:
+
+- **The swap cost exactly 0p in money** — and the panel pre-registered that branch
+  in those words before the race. The same answer the Cambridgeshire gave when
+  §6's remedy was scored.
+- **But it moved £1.72 between the two columns of this table.** The day reads
+  **NAP 1.01 / NB 1.20**; without the swap, same horses and same stakes, it reads
+  **NAP 1.26 / NB 0.95.** The whole "NB beat the NAP today" result is a label this
+  page moved for a reason unrelated to either horse's chance.
+- **A card that demotes on price arithmetic systematically feeds its winners to
+  the NB column**, because rule 8 and the each-way argument both send short
+  favourites there and short favourites win most often. That is a mechanism, not
+  a coincidence, and it has been running all season.
+- It does not invalidate the season figure, which averages over many cards and
+  many swaps. It does mean a **single meeting's slot ranking is worth even less
+  than §4 already says** — and that the long-run gap deserves a check against the
+  picks as first analysed rather than as finally labelled.
+
 **And the two days of that meeting were exact opposites: Friday NAP 0.95 / NB
 0.11, Saturday NAP 0.63 / NB 0.79.** Friday is the sharpest demonstration yet
 of why points and strike rate have to be reported together, and it arrived
@@ -384,6 +416,20 @@ slot is for — returns nothing.
     reporting only the six says it works. The first evidence that the signal
     leg carries information at all is that it refused six big prices that all
     failed — on one card, which is one card.
+  **AND THEN IT MADE MONEY, FOR THE FIRST TIME IN THE ARCHIVE. 17 Oct 2026**
+  (Champions Day, the Balmoral). **Ebt's Guard, 14/1, third of twenty in a
+  four-place handicap — £2.25 on £1.00, 2.25 points, the best slot on the card.**
+  On its second run in seven meetings the slot went from 0.38 points per pick to
+  **0.64**, still 0 winners from 7 and still the worst of the three.
+
+  - **One placed horse does not retire a structural leak**, and the slot is still
+    losing £2.50 of £7.00 across every pick that records a return.
+  - It is recorded because the archive is worth nothing if only the losses get
+    written down — the same reason the six refused qualifiers were recorded when
+    the slot lost.
+  - Worth noting what made the four places available: **reserves**, not luck. See
+    §9's Ascot entry.
+
   - **The place leg was vindicated twice on the same afternoon**, and the second
     reason could not have been priced. Motown Filly, shut out on places at 18/1,
     **finished third**: she would have returned £1.45 at the three places the
@@ -1162,6 +1208,21 @@ Rules:
     remedy was scored at the Cambridgeshire and was worth 0p — demoting a pick
     reliably finds the loser without thereby finding a winner.
 
+  **WRONG AGAIN THE NEXT DAY, AND THE CARD HAD ALREADY DEMOTED THE RULE. 17 Oct
+  2026** (Champions Day). **Almeraq was a 3x under 3/1 — the exact shape — and he
+  won at 11/10**, a day after Rock Montreal won at 11/8F in the same circumstances.
+  Two consecutive meetings, the rule's two best-evidenced tests, both lost.
+
+  - The useful part is what the card did with yesterday's loss. It made rule 8
+    the **second** argument and an each-way price calculation the first, and said
+    so in print. That was the right response to a rule that had just failed and it
+    did not change the outcome, which is the honest way to score a demotion: the
+    rule being secondary did not make the decision less wrong.
+  - The 17 Oct correction — **treat a verified count as a reason to look again at
+    the horse, not as a reason to oppose it** — is now twice-confirmed in two days.
+    Nothing here licenses following consensus; what it forbids is reaching for
+    source count as a reason to leave a horse out.
+
 - **THE SEASON'S BEST COLUMN CAN HOLD NOTHING OF YOURS, AND THAT IS THE MOST
   INFORMATIVE ROW ON THE PAGE. Added 16 Oct 2026** (Champions Day). Frick is top
   of the §6 leaderboard at **30%**, against Geraghty 29% and Grimshaw 16%. He
@@ -1287,6 +1348,26 @@ Rules:
     written up as 14/1→10/1 steaming. It came off the unlabelled list and the
     call is withdrawn. Nothing operational moved, because both prices clear the
     slot's 8/1 minimum — but the panel had already been published saying it.
+
+  **THE ONE LICENSED CALL THE RULE EVER MADE WAS CHECKED AGAINST THE SP, AND IT
+  WAS WRONG. Added 18 Oct 2026** (Champions Day, settled). The race-morning panels
+  made **Speed Of Sound 16/1 → 12/1** on a source that *states* its odds are a
+  comparison, so the shorter-price test was licensed and it was called a STEAM —
+  the first licensed STEAM on one of our own picks. **She started 25/1 and finished
+  ninth of eleven.** The move was a drift and we called it the opposite.
+
+  - **Held as provisional, not as a finding.** The 25/1 comes from a single
+    aggregator whose price was not clearly labelled, and one observation settles
+    nothing. Record it next to the rule anyway rather than waiting for a tidier
+    sample — the same discipline that retracted the base-rate story in 75 minutes.
+  - What it does establish is that **"licensed" was never a claim about accuracy.**
+    The licence says the comparison asymmetry permits a *reading*; it says nothing
+    about whether the reading predicts the off. §6 has two legs — whether a source
+    may be differenced, and whether the difference means anything — and only the
+    first has ever been tested.
+  - **Score every licensed call against the SP from now on.** It is the cheapest
+    test in this file and nobody had run it, because until this card the rule had
+    never produced a call on a horse we held.
 
   **THE CONTROL ARRIVED 34 MINUTES LATER, AND THE RIVAL EXPLANATION FAILED A
   REAL TEST. Same evening.** Frick posted seven bets at 19:17 and his list
@@ -2175,6 +2256,38 @@ Long Distance Cup** — plus the **Balmoral Handicap**.
   shedding; reserves replace withdrawals and so **protect** the 16-runner
   threshold the LONG depends on. Four runners of headroom plus three reserves is
   the most secure LONG the slot has had.
+
+  **CONFIRMED BY THE RUNNING, AND IT IS THE FIRST FIELD-SIZE CLAIM IN THIS FILE
+  TO SURVIVE ITS OWN WITHDRAWALS. 17 Oct 2026.** Crown Of Oaks — our own NB, and
+  the 2025 winner — came out on unsuitable ground; reserve **Tribal Chief** came
+  in; **twenty ran and the handicap band stayed at four places.** Rule 16 has
+  moved a band against us three times in this archive (Goodwood Day 5, St Leger
+  Day 1, the Future Champions nursery). This is the first time it did not, and the
+  reason is structural rather than lucky: **a race with reserves behind it has a
+  floor under its field size, and no other race in the calendar we cover does.**
+  The LONG's £2.25 is a third-place return in a four-place race, so the band
+  holding is what paid it.
+- **2026 result: 7 races gated 7/7, 15 picks, +£2.72 on £15.00 (+18.1%)** —
+  3 winners (Minnie Hauk 8/1 NAP, Night In Vegas 13/2 NB, Almeraq 6/5 NB),
+  3 placed, 1 void. Every slot finished in profit and **the LONG made money for
+  the first time in the archive** (`scripts/analysis/champions-day-settlement.sh`).
+  Four things to carry to the next running:
+  - **The five Group 1s run small and two of them paid two places.** The Champion
+    Stakes declared six and Bay City Roller's third paid nothing — rule 6's thin
+    each-way value, predictable from the programme months out, exactly as the
+    Future Champions small-field shape was.
+  - **The Balmoral is where the money is, and its terms were never read.** The
+    settlement assumes the band's base 1/4; §12 records that a promotion always
+    costs the fraction, and at a promoted 1/5 the day returns £17.37 rather than
+    £17.72. **Read the Sky Bet offer on this race** — it is the one handicap on
+    the card and the only place the fraction can move.
+  - **Results provenance was weak and the page says so.** No Racing Post card
+    could be pasted, so the result was compiled from web search; two assumptions
+    were tested in a committed script rather than left unstated
+    (`champions-day-band-sensitivity.mjs`).
+  - **The at-the-off pass never ran** — no `nr-check.mjs`, no offer read, no going
+    re-read. It cost nothing here because the only withdrawal was replaced by a
+    reserve, which is luck and not method.
 
 ### Cheltenham (jumps)
 
