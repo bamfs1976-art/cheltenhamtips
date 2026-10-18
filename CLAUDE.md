@@ -331,6 +331,21 @@ card as though each race were being assessed — say plainly that the
 meeting has no 16-runner handicap and the slot is therefore closed
 throughout.
 
+**Now proven from the model rather than asserted, and it is stronger than it
+reads. Added 18 Oct 2026** (`scripts/analysis/cheltenham-november-long-shape.mjs`).
+Scanning 1 to 60 runners through `place-terms.mjs`, a **non-handicap pays at most
+three places at ANY field size** — the `other` ladder tops out at 3 and never
+reaches the four or five the place test needs. So the slot is not merely
+*usually* shut in a non-handicap; it **cannot open in one, at any field size,
+ever**.
+
+- That is what makes a *shape* forecast legitimate where a *size* forecast is
+  worthless: which races are handicaps is knowable from the programme months
+  out, and for every other race the answer is settled before anyone counts.
+- Say it as the arithmetic it is. A card that writes up a 17-runner Group race
+  as "the slot is shut on the place count" invites the reader to think a bigger
+  field would have opened it. None would.
+
 Two related framing errors to avoid, both made on consecutive days at
 Haydock: when a horse is excluded, **check which leg it actually fails**
 before naming the reason. Pol Roger (13/2, ran 2nd at 14/1) and Kodi
@@ -2310,6 +2325,41 @@ and again at the off (rule 11, rule 12).
 (frozen); November Meeting — see `cheltenham-november-2026.html`; Christmas
 Meeting — see `cheltenham-christmas-2026.html`.
 
+#### The November Meeting (Cheltenham, three days, November)
+
+Fri–Sun, run on the **Old Course**. The **Paddy Power Gold Cup** (Grade 3
+Handicap Chase, 2m4½f) on the Saturday is the centrepiece and the best
+Cheltenham form line before the Festival; the Saturday also carries the
+**November Novices' Chase (G2)** and the **Paddy Power Handicap Hurdle (G3)**,
+the Friday the **Supreme Trial Novices' Hurdle (Listed)** and the Sunday the
+**Unibet Greatwood Handicap Hurdle (G3)**.
+
+- **Three of the five published features are handicaps** — the Gold Cup, the
+  Paddy Power Handicap Hurdle and the Greatwood — so those are the three that
+  can open the LONG, each needing sixteen. The two novice races cannot, at any
+  field size.
+- **This forecast is PARTIAL, and that has to be said rather than glossed.**
+  The Future Champions and Champions Day forecasts held because they were made
+  off the **whole declared programme**, so "the slot opens in exactly one race"
+  was complete. Here only the five features are published this far out; a
+  supporting handicap of sixteen would open the slot and the advance page would
+  not see it coming. **"Three can open it" is supported; "at most three" is
+  not.** Claiming the second would be §6's error about absences, committed on a
+  programme instead of a tip list.
+- **The jumps code switch happens here**, and the gate was replayed against a
+  jumps fixture before the meeting to prove it: `gate-check.mjs` computes its
+  missing-draw failure **only when the race reads as flat**, so a jumps card
+  does not fail on a leg that does not exist. A three-race Cheltenham fixture
+  returned *3 races · 0 pass · 3 NO BET*, every one on "no declared runners" and
+  none on a draw, with "LONG slot: not assessed" beside each. **Run that check
+  the first time any code changes**, not the first time a card depends on it.
+- The **Paddy Power Gold Cup and the Greatwood are heritage-handicap shaped**,
+  which is the shape §12 says carries a place special above the ladder. Read the
+  Sky Bet offer — **the fraction as well as the count** — and record its own
+  `minRunners`.
+- Declarations confirm 48 hours out, so the first card is built on 11 November
+  and not before.
+
 ### Kempton Park (jumps)
 
 Right-handed, **flat**, and sharp — an oval of about 1m5f with easy bends and a
@@ -2566,6 +2616,26 @@ Add new course profiles as they're covered.
   - And render the page. Three of the defects found on this build — the broken
     entity, a stale banner and a stale hub headline — were all invisible to
     static checks and obvious in a 375px screenshot.
+
+  **A RULE WRITTEN IN THIS FILE IS NOT A RULE ON THE PAGES, AND TWO OF THEM WERE
+  BEING BROKEN ON FIVE PAGES AT ONCE. Added 18 Oct 2026** (starting Cheltenham
+  November). §9 records two corrections made on 7 Oct: the broadcaster is **not
+  derivable from the meeting**, and **"do not write 'confirmed' next to anything
+  declarations have not confirmed."** A grep found the advance pages still
+  asserting both:
+
+  - **"not televised — Racing TV"** stated as fact on **three** live pages
+    (Cheltenham November ×2, Cheltenham Christmas, Ascot Christmas). The page
+    that produced the rule had been fixed; its four siblings had not.
+  - **"Confirmed feature races"** — the exact prohibited wording — as a heading
+    on **nine** blocks across **five** pages, including the two Christmas pages,
+    King George and the Welsh National.
+
+  The 7 Oct entry already says a generated defect is on every page the generator
+  touched. This adds the harder half: **when a rule is added here, grep the site
+  for the pattern it forbids, in the same change.** Writing the lesson down and
+  fixing one page is how the archive ends up recording a principle the site does
+  not follow — which §4 says about a single card and is worse across a season.
 
 - **The engine's scripts, and which rule each one makes mechanical:**
 
