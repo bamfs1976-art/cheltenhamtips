@@ -3,7 +3,7 @@
   command = "echo 'Static site — no build step required'"
 
 [build.environment]
-  NODE_VERSION = "18"
+  NODE_VERSION = "24"
 
 [functions]
   directory = "netlify/functions"
