@@ -257,9 +257,19 @@
     That is &sect;6&rsquo;s 16 October flag &mdash; <em>&ldquo;our card prices are better than the market&rsquo;s&rdquo;</em> &mdash; with the mechanism shown
     rather than suspected.</div>
 
-    <div class="xs-row"><strong>Source and its limit.</strong> <code>github.com/ficokelly/Racing-app</code>, a public repository collecting The Racing API.
-    <strong>It carries no licence file</strong>, so the default is all rights reserved: it has been read, and neither its code nor its data is copied into
-    this repo. The derivation takes a local clone as an argument and vendors nothing.
+    <div class="xs-row" style="border-left-color:rgba(96,165,250,0.6)">
+    <strong>Scored against the other call we can check, and the split is not random.</strong> The Cesarewitch STEAM of 10 October &mdash; Premiere Ligne,
+    33/1 on the card and 25/1 on the comparison &mdash; has the same kind of trail, and <strong>the market confirms it</strong>: 28/1 at 00:23 to 22/1 by
+    08:14, &minus;20.7%, while our other two picks in that race both eased 7.1% and were called as the baseline. So the shorter-price test now reads
+    <strong style="color:#4ade80">1/1 where a within-race control was available</strong> and <strong style="color:#fca5a5">0/1 where it was not</strong>, which
+    is this race. Two calls is not a sample; it is the first time either has been checked at all.
+    <strong>The rule that follows:</strong> run the test only where two or more of our picks sit in the same race and one source prices them all, and read
+    every move against the race median. One horse against our own forecast is an observation, not a call.
+    <em>Derivation: <code>scripts/analysis/market-trail.mjs</code>; see also <code>future-champions-2026.html</code>.</em></div>
+
+    <div class="xs-row"><strong>Source and its limit.</strong> <code>github.com/ficokelly/Racing-app</code>, a public repository collecting hourly
+    multi-bookmaker odds and daily results. <strong>It carries no licence file</strong>, so the default is all rights reserved: it has been read, and neither
+    its code nor its data is copied into this repo. The derivations take a local clone as an argument and vendor nothing.
     <em><code>scripts/analysis/champions-day-independent-check.mjs</code>.</em></div>
   </section>
 
