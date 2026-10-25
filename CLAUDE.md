@@ -1411,6 +1411,43 @@ Rules:
     better test against our forecast; it is two observations of the same market**,
     which is what §5b said in September and what this is the first sight of.
 
+  **SCORED AGAINST THE OTHER CALL, AND THE SPLIT FALLS WHERE §6 ALREADY SAID IT
+  WOULD. Added 25 Oct 2026** (`scripts/analysis/market-trail.mjs`). Two published
+  STEAM calls can now be checked against a live market. **The score is 1/2, and
+  which one failed is the whole finding:**
+
+  | Call | Control | Market | |
+  |---|---|---|---|
+  | Premiere Ligne 33/1→25/1, Cesarewitch | **within-race** | 28/1 → 22/1, −20.7% | **confirmed** |
+  | Speed Of Sound 16/1→12/1, Champions Day | none | 11/1 → 12/1, +8.3% | **contradicted** |
+
+  - **The control did what it exists for.** Our other two picks in the
+    Cesarewitch moved *identically* (both +7.1% to the morning) and the page
+    called neither, using them as the baseline; Premiere Ligne went −27.8pp
+    against them. A whole race easing while one horse steams is invisible to
+    anything differencing one horse against our own card.
+  - **It was right despite a wrong baseline.** Our card said 33/1 when nothing
+    in the market beat 28/1 — the same contamination that sank the other call.
+    The control survived it because **it never used the card as its baseline**.
+    Being right with a wrong baseline is luck; the control is what made it luck
+    we could afford.
+  - **So the rule narrows rather than breaking.** Run the shorter-price test
+    **only where two or more of our picks sit in the same race and one source
+    prices them all**, and read every move against the race median. One horse
+    against our own forecast is an **observation, not a call** — which §6 already
+    preferred on theory, now with a score attached.
+  - Honest size: **two** scored calls. Not a sample.
+
+  **AND THE FIRST RUN OF THAT SCRIPT GRADED THE CONTROL BY THE METHOD IT
+  REPLACES.** It applied an absolute 5% band to each horse independently and
+  marked Sea Lantern "contradicted" for drifting 7.1% — when drifting 7.1% was
+  precisely what the race did and what made it a baseline. §5b has said since
+  September to take the **deviation from the race median**; the error was
+  forgetting that the scoring needs it as much as the calling does. The prose
+  written beside it claimed 3/3 before the script ran, and the script said 2/4.
+  §10's rule caught it: read the figure off the derivation, not off your
+  expectation of it.
+
   **THE CONTROL ARRIVED 34 MINUTES LATER, AND THE RIVAL EXPLANATION FAILED A
   REAL TEST. Same evening.** Frick posted seven bets at 19:17 and his list
   **overlaps the Racing Post list on three horses** — the comparison the entry
