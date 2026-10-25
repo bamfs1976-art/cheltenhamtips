@@ -25,7 +25,17 @@
  * that is wrong — the browser is running the actual engine.
  */
 import fs from 'node:fs';
-import { chromium } from 'playwright-core';
+import { createRequire } from 'node:module';
+/* playwright-core lives in the container's tool install, not in this repo, and
+   a bare ESM import cannot be redirected with NODE_PATH. Resolve it explicitly
+   so the check runs on a clean clone. */
+const { chromium } = (() => {
+  const req = createRequire(import.meta.url);
+  for (const id of ['playwright-core', '/opt/node-tools/node_modules/playwright-core']) {
+    try { return req(id); } catch { /* try the next */ }
+  }
+  throw new Error('playwright-core not found — install it or point at the container tool install.');
+})();
 const ROOT = '/home/user/cheltenhamtips';
 const pages = fs.readdirSync(ROOT).filter(f => f.endsWith('.html')).sort();
 
@@ -39,7 +49,21 @@ const daySpans = (s) => {
   return out;
 };
 
-const b = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium-1194/chrome-linux/chrome' });
+/* The Chromium build is pinned by the container image, not by us, and the image
+   changes under the session: this read /opt/pw-browsers/chromium-1194/chrome-linux/chrome
+   until 25 Oct 2026, when the container came back with 1243 under chrome-linux64
+   and the hardcoded path stopped existing. Discover it instead of asserting it. */
+const chromeExe = (() => {
+  const root = '/opt/pw-browsers';
+  for (const dir of fs.readdirSync(root).filter((d) => d.startsWith('chromium-')).sort().reverse()) {
+    for (const sub of ['chrome-linux64', 'chrome-linux']) {
+      const exe = `${root}/${dir}/${sub}/chrome`;
+      if (fs.existsSync(exe)) return exe;
+    }
+  }
+  throw new Error(`No Chromium found under ${root} — the container image has moved again.`);
+})();
+const b = await chromium.launch({ executablePath: chromeExe });
 const p = await b.newPage();
 let diff = 0;
 for (const f of pages) {

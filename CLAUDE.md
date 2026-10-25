@@ -1384,6 +1384,33 @@ Rules:
     test in this file and nobody had run it, because until this card the rule had
     never produced a call on a horse we held.
 
+  **CONFIRMED FROM A REAL MARKET TRAIL, AND THE SP TURNED OUT NOT TO BE NEEDED.
+  Added 25 Oct 2026** (`scripts/analysis/champions-day-independent-check.mjs`).
+  A public collection of The Racing API carries **eleven timestamped snapshots of
+  Speed Of Sound's price on race day, per bookmaker** — the racecard→off leg §5b
+  has been asking for since the St Leger. Every book **held or drifted** through
+  race morning and **not one shortened**: best price 12.0 → 13.0 decimal.
+
+  - The finding stands on the trail alone. The disputed 25/1 was the weakest part
+    of it and is now beside the point.
+  - **The obvious explanation was tested and refused.** A new bookmaker joins at
+    07:29, exactly when the best price moves — so the suspicion is a *composition
+    artefact*, a max over a changing set of books. Restricting the max to the six
+    books present from the first snapshot gives the same move; Ladbrokes moved on
+    its own board and the newcomer arrived *below* the best. **Check the
+    composition before believing a best-odds move, and check it before believing
+    the tidy explanation of one too.**
+  - **THE MECHANISM IS WORSE THAN ONE BAD CALL.** At 04:23 the whole market sat
+    at **11/1–12/1 while our card carried 16/1** — a forecast pasted two days
+    earlier. The panel's 12/1 was not short against the market; **it was short
+    against a stale number of ours.** The shorter-price test differences a live
+    price against a two-day-old forecast and books the entire gap as money, so on
+    this horse it was never measuring a move at all.
+  - That is §6's 16 Oct flag — "our card prices are better than the market's" —
+    promoted from a suspicion to a demonstrated mechanism. **The fix is not a
+    better test against our forecast; it is two observations of the same market**,
+    which is what §5b said in September and what this is the first sight of.
+
   **THE CONTROL ARRIVED 34 MINUTES LATER, AND THE RIVAL EXPLANATION FAILED A
   REAL TEST. Same evening.** Frick posted seven bets at 19:17 and his list
   **overlaps the Racing Post list on three horses** — the comparison the entry
@@ -2300,6 +2327,14 @@ Long Distance Cup** — plus the **Balmoral Handicap**.
     could be pasted, so the result was compiled from web search; two assumptions
     were tested in a committed script rather than left unstated
     (`champions-day-band-sensitivity.mjs`).
+
+    **Checked against an independent collection on 25 Oct and it held: 9/9
+    published positions confirmed**, including the three flagged provisional
+    (Speed Of Sound 9th, Gavriel 8th, and the Balmoral order, which settled
+    against the one source that dissented on the winner). **One ran count was
+    wrong** — the 14:40 listed twelve, not thirteen — and the money did not move,
+    which is what the sensitivity script had predicted. A prediction that an error
+    would be free is worth little until an error turns up to test it; one did.
   - **The at-the-off pass never ran** — no `nr-check.mjs`, no offer read, no going
     re-read. It cost nothing here because the only withdrawal was replaced by a
     reserve, which is luck and not method.
@@ -2526,6 +2561,22 @@ Add new course profiles as they're covered.
     - **Two agreeing reimplementations are not a check on the original.** This
       is the same shape as §12's "two inferences agreeing is still one
       inference", in code rather than in place bands.
+
+    **AND THE CHECK ITSELF STOPPED RUNNING, SILENTLY, BECAUSE THE CONTAINER
+    MOVED. Fixed 25 Oct 2026.** `share-eligibility.mjs` hardcoded
+    `/opt/pw-browsers/chromium-1194/chrome-linux/chrome` and imported
+    `playwright-core` as a bare specifier. The session came back on a new image
+    with **chromium-1243 under `chrome-linux64`** and no `node_modules` in the
+    repo, so the one check that arbitrates the display contract threw on launch
+    rather than reporting anything.
+
+    - It now **discovers** the newest Chromium under `/opt/pw-browsers` across
+      both layout names, and resolves `playwright-core` through `createRequire`
+      against the container's tool install.
+    - The wider point: a check that depends on a path the environment owns will
+      fail the day that path changes, and it fails *loudly at launch* — which is
+      the good case. **A check pinned to someone else's filesystem is a check
+      with an expiry date**; discover what you depend on rather than asserting it.
   - Festival colours are duplicated as canvas literals in `fmb-share.js`.
     `node scripts/check-share-palette.mjs` pins them to
     `FESTIVALS_2026[].accentColor` and fails on drift — run it after any
@@ -2564,6 +2615,21 @@ Add new course profiles as they're covered.
     derivation's own output** rather than typing it beside the prose.
   - Two panels stating the same number is a free consistency check and this is
     the second time it has caught something. Prefer restating to paraphrasing.
+
+- **CHECK THE LICENCE BEFORE YOU READ, AND SAY WHAT IT PERMITS. Added
+  25 Oct 2026.** `bumasello/mazetick` is **MIT**, which is why §12 could borrow
+  its findings and say so. `ficokelly/Racing-app` — reviewed for the same purpose
+  — **carries no licence file at all**: no LICENSE, no COPYING, a README of one
+  line. Absent a licence the default is all rights reserved.
+
+  - So it was **read and not copied**: no code lifted, no data vendored into this
+    repo, and the derivation takes a local clone as an argument.
+  - **Findings are still usable and still need attributing.** What it produced
+    here was a check on our own published numbers and a market trail — facts
+    about races, not their code.
+  - Look for the licence **first**. It decides what the review can output before
+    a line of it is read, and "no licence" is a finding in its own right rather
+    than an absence to shrug at.
 
 - **No number ships without the script that produced it, committed.** Added
   6 Oct 2026, borrowed from `bumasello/mazetick` (MIT), whose article schema

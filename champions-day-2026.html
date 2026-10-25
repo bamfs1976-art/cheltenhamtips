@@ -201,8 +201,13 @@
     &sect;12&rsquo;s primary route is a pasted Racing Post card and it was not available, so these results were
     <strong>compiled from web search</strong>. Corroborated across several sources: the first three home in all seven races, Scoville fourth,
     Crown Of Oaks a non-runner, twenty ran in the Balmoral, going Good.
-    <strong>Provisional:</strong> Speed Of Sound 9th at 25/1 (one aggregator, price not clearly labelled), Gavriel 8th, and the Balmoral order itself,
-    where one French source shows a different winner.
+    <strong style="color:#4ade80">&#9989; CONFIRMED 25 Oct against an independent collection of The Racing API</strong>
+    (<code>github.com/ficokelly/Racing-app</code> &mdash; unlicensed, so read and never copied; derivation
+    <code>scripts/analysis/champions-day-independent-check.mjs</code>). <strong>All nine explicitly published positions agree, 9/9</strong>, including the
+    three that were flagged provisional: <strong>Speed Of Sound 9th, Gavriel 8th</strong>, and the Balmoral order, which settles in Equidia&rsquo;s favour
+    against the French source that showed a different winner. <strong style="color:var(--gold-lt)">One correction: the 14:40 listed TWELVE runners, not
+    thirteen</strong> (Danielle pulled up). The band and the money are unchanged &mdash; the sensitivity script had called that race invariant, and an error
+    finally turned up to test the prediction. The 25/1 starting price is still single-sourced and is not needed: see the market-trail panel below.
     <strong>Two assumptions were tested rather than left unstated</strong> (<code>champions-day-band-sensitivity.mjs</code>): the unverified ran counts are
     invariant in five races of six &mdash; the 16:00 is the exception, where two withdrawals would make it win-only and cost Calandagan&rsquo;s 75p &mdash; and
     <strong>the Balmoral&rsquo;s 1/4 fraction is the real exposure</strong>. Nobody read the Sky Bet offer, &sect;12 records that a promotion
@@ -210,6 +215,52 @@
     The at-the-off pass never ran: no <code>nr-check.mjs</code>, no offer read, no going re-read. &sect;15 says record that, so it is recorded.</div>
 
     <div class="xs-row"><em>Derivation: <code>scripts/analysis/champions-day-settlement.sh</code> &mdash; settle.mjs exits 0, nothing unresolved.</em></div>
+  </section>
+
+  <section class="panel blue-top">
+    <h2 class="panel-head">&#128200; The racecard-to-off leg, measured for the first time &mdash; and it says we called a drifter a steamer</h2>
+
+    <p style="font-size:0.82rem;line-height:1.7;color:#cbd5cf">&sect;5b has carried the same complaint since the St Leger: <em>&ldquo;we measure
+    forecast&rarr;racecard and never racecard&rarr;off, and the second move is the bigger one.&rdquo;</em> An independent public collection of The Racing API
+    &mdash; the API &sect;12 records as unreachable from this session &mdash; carries <strong>eleven timestamped snapshots of Speed Of Sound&rsquo;s price on
+    race day, per bookmaker</strong>. That is the missing leg, and it is the first time this archive has seen one.</p>
+
+    <div class="tbl-scroll"><table style="width:100%;border-collapse:collapse;font-size:0.74rem;margin:10px 0">
+      <thead><tr style="color:var(--gold-lt);text-align:left"><th style="padding:4px 6px">UTC</th><th style="padding:4px 6px">betway</th><th style="padding:4px 6px">ladbrokes</th><th style="padding:4px 6px">paddypower</th><th style="padding:4px 6px">pointsbet</th><th style="padding:4px 6px">skybet</th><th style="padding:4px 6px">tabtouch</th><th style="padding:4px 6px">wmhill</th><th style="padding:4px 6px"><strong>BEST</strong></th></tr></thead>
+      <tbody>
+        <tr><td style="padding:4px 6px">00:31</td><td style="padding:4px 6px">12.0</td><td style="padding:4px 6px">12.0</td><td style="padding:4px 6px">12.0</td><td style="padding:4px 6px">&mdash;</td><td style="padding:4px 6px">11.0</td><td style="padding:4px 6px">11.0</td><td style="padding:4px 6px">11.0</td><td style="padding:4px 6px"><strong>12.0</strong></td></tr>
+        <tr><td style="padding:4px 6px">04:23</td><td style="padding:4px 6px">12.0</td><td style="padding:4px 6px">12.0</td><td style="padding:4px 6px">12.0</td><td style="padding:4px 6px">&mdash;</td><td style="padding:4px 6px">11.0</td><td style="padding:4px 6px">12.0</td><td style="padding:4px 6px">11.0</td><td style="padding:4px 6px"><strong>12.0</strong></td></tr>
+        <tr style="background:rgba(251,191,36,0.08)"><td style="padding:4px 6px">07:29</td><td style="padding:4px 6px">12.0</td><td style="padding:4px 6px"><strong>13.0</strong></td><td style="padding:4px 6px">12.0</td><td style="padding:4px 6px">12.0</td><td style="padding:4px 6px">11.0</td><td style="padding:4px 6px">11.0</td><td style="padding:4px 6px">12.0</td><td style="padding:4px 6px"><strong>13.0</strong></td></tr>
+        <tr><td style="padding:4px 6px">09:22</td><td style="padding:4px 6px">13.0</td><td style="padding:4px 6px">13.0</td><td style="padding:4px 6px">12.0</td><td style="padding:4px 6px">12.0</td><td style="padding:4px 6px">11.0</td><td style="padding:4px 6px">12.0</td><td style="padding:4px 6px">13.0</td><td style="padding:4px 6px"><strong>13.0</strong></td></tr>
+        <tr><td style="padding:4px 6px">11:34</td><td style="padding:4px 6px">13.0</td><td style="padding:4px 6px">13.0</td><td style="padding:4px 6px">12.0</td><td style="padding:4px 6px">13.0</td><td style="padding:4px 6px">11.0</td><td style="padding:4px 6px">12.0</td><td style="padding:4px 6px">13.0</td><td style="padding:4px 6px"><strong>13.0</strong></td></tr>
+      </tbody>
+    </table></div>
+
+    <div class="xs-row" style="border-left-color:rgba(239,68,68,0.5);background:rgba(239,68,68,0.06)">
+    <strong style="color:#fca5a5">The direction of the finding is confirmed, and it no longer needs the disputed 25/1.</strong>
+    Every book held or drifted through race morning and <strong>not one shortened</strong>. We called her a STEAM and she was easing all the way to the off.
+    The settlement panel&rsquo;s provisional starting price is now beside the point &mdash; eleven observations of the live market say the same thing on
+    their own.</div>
+
+    <div class="xs-row" style="border-left-color:rgba(251,191,36,0.6);background:rgba(251,191,36,0.07)">
+    <strong style="color:var(--gold-lt)">The obvious explanation was tested and refused.</strong> A new bookmaker (pointsbet) joins at 07:29, exactly when
+    the best price moves 12.0&rarr;13.0 &mdash; so the suspicion is a <em>composition artefact</em>, a maximum over a changing set of books moving because the
+    set changed rather than because money did. Restricting the maximum to the <strong>six books present from the first snapshot</strong> gives the same
+    12.0&rarr;13.0. <strong>Ladbrokes moved on its own board, betway and William Hill followed, and the newcomer arrived below the best.</strong> The drift
+    is real. The tidy story was wrong and the control is what said so.</div>
+
+    <div class="xs-row" style="border-left-color:rgba(239,68,68,0.5);background:rgba(239,68,68,0.06)">
+    <strong style="color:#fca5a5">&#9888; And the mechanism is worse than &ldquo;we got one wrong&rdquo;.</strong>
+    At 04:23 the <strong>entire market sat at 11/1&ndash;12/1</strong> while our card carried <strong>16/1</strong> &mdash; a betting forecast pasted two days
+    earlier. The panel&rsquo;s 12/1 was not short against the market; <strong>it was short against a stale number of ours</strong>. The shorter-price test
+    differences a live price against a two-day-old forecast and books the whole gap as money, so on this horse it was never measuring a move at all.
+    That is &sect;6&rsquo;s 16 October flag &mdash; <em>&ldquo;our card prices are better than the market&rsquo;s&rdquo;</em> &mdash; with the mechanism shown
+    rather than suspected.</div>
+
+    <div class="xs-row"><strong>Source and its limit.</strong> <code>github.com/ficokelly/Racing-app</code>, a public repository collecting The Racing API.
+    <strong>It carries no licence file</strong>, so the default is all rights reserved: it has been read, and neither its code nor its data is copied into
+    this repo. The derivation takes a local clone as an argument and vendors nothing.
+    <em><code>scripts/analysis/champions-day-independent-check.mjs</code>.</em></div>
   </section>
 
   <section id="day1" class="panel eb-top">
