@@ -997,6 +997,46 @@ Rules:
     so the rule applies unchanged: count it as one and say the mastheads are
     not visible.
 
+- **A SOURCE GRID CAN DO THE ROW-COUNTING FOR YOU, AND ITS HEADLINE NUMBER WILL
+  BE WRONG. Added 13 Nov 2026** (Cheltenham November, Day 1;
+  `scripts/analysis/cheltenham-nov-day1-consensus.mjs`). A supplied
+  tipster-consensus grid carried eight rows across six races and printed its own
+  NAP badge: **Ga Law, "2/8"**. Every correction in this section applies to that
+  one fraction, and all three move it:
+
+  - **Two rows posted nothing** (William Hill, Mullington). §6 already says an
+    absence is **n/a, not 0%** — so the denominator is six rows, not eight.
+  - **Two more are HRN "Biggest Priced" panels**, which §6 counts as **zero
+    opinions**. Four desks actually hold a view: Raceolly, Spotlight, Grimshaw
+    and @RoadCheltenham.
+  - **The numerator is the Marvelman error.** Ga Law's two rows are Raceolly's
+    tip and the panel harvesting it — the loosened duplicate test resolves it
+    straight away, a known column holds the horse. **One opinion, not two.**
+
+  So a badge reading 2/8 is really **1 of 4**, and the grid is not a tenth
+  source: it is the same four columns laid out in a table. **When a grid hands
+  you a consensus count, re-derive it before printing it** — the arithmetic is
+  the thing it got wrong, not the names.
+
+  **And the real finding is the other number: ZERO crossovers on the whole
+  card.** Sixteen tips, four desks, **six pairings, seventeen shared-race
+  comparisons, not one agreement** — and that is not thin coverage, because
+  **five of the six races had two or more desks in them**. §6's Doncaster entry
+  found nine tips producing no 2x because eight of them were one column; this is
+  the opposite shape — four genuinely distinct desks, every one of them
+  disagreeing with every other. Write it as **"none yet, at four columns"**, as
+  the absence rule requires.
+
+  - **Grimshaw's independence test ran a fourth time and held again: 3 from 3.**
+    Doncaster 2/3, Newmarket 2/3, Ascot 6/6, Cheltenham 3/3. The HRN masthead
+    says distrust and the tip count says settle it, and the tip count is now
+    right four times running.
+  - **@RoadCheltenham is new and tipped two races, diverging in both.** §6 says
+    a desk this thin cannot earn a crossover badge in either direction; it has
+    none to earn here. Registered as **RC** anyway, because it is a meeting-
+    specific column likely to file on all three days — and the colour is the
+    closest pair in the table (see the registry note below).
+
 - **The absence rule paid off within a day, and the two numbers are different.
   Added 10 Oct 2026.** Friday recorded Raceolly as **n/a, not 0%**, because all
   six of his tips were at Chepstow. On Saturday he tipped two Newmarket races
@@ -1572,6 +1612,7 @@ Milnes, ★ from Spotlight, one horse at one price.
 | LB | Lambourn (Otis Brankin-Frisby / Liam Headd, Racing Post) | steel (#94a3b8) |
 | WC | West Country (Liam Watson, Racing Post) | tan (#d4a574) |
 | AM | Andrew Mount | yellow (#fde047) |
+| RC | @RoadCheltenham | soft red (#fca5a5) |
 
 New tipsters: assign a 2-3 letter code and a distinct badge colour. Keep
 the system extensible.
@@ -1605,6 +1646,20 @@ the closest pair in the table, against TN's amber (#fcd34d).
   **one-tip column** that §6 says can never earn a badge anyway. A registry
   entry is cheap; a near-duplicate colour on a card where both desks appear is
   not.
+
+**The twenty-third was assigned anyway, and the warning above applies to it.
+13 Nov 2026** (Cheltenham November Day 1, assigning RC for @RoadCheltenham).
+It is a **two-tip column**, which is exactly the shape the line above says to
+think twice about — taken because it is a meeting-specific desk likely to file
+on all three days, not because two tips earned it.
+
+- **Its soft red (#fca5a5) is the closest pair in the table, against BIG's
+  #ef4444**, and the two are a tone apart rather than a hue apart. They have
+  already appeared on the same card: the Day 1 consensus card carries `RC` and
+  discounts both `BIG` panels in the same breath.
+- That is survivable only because of the rule above — **the code is the
+  identifier**. `RC` and `BIG` are not confusable even where the reds nearly
+  are. If a third red is ever needed, re-colour rather than add.
 
 ---
 
