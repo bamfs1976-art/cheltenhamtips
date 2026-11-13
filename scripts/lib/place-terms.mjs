@@ -59,9 +59,19 @@ export const BANDS = {
 export const BOUNDARIES = { handicap: [16, 12, 8, 5], other: [8, 5] };
 export const AT_RISK_MARGIN = 2;
 
-/** Nurseries are handicaps. */
+/** Nurseries are handicaps.
+ *
+ * `hcp` was added 13 Nov 2026, from the first Cheltenham November card — three
+ * of its six races are written "Cond Jockeys Hcp Hurdle", "Veterans' Hcp
+ * Chase", "Novices' Hcp Hurdle", and none of them matched. A 19-runner
+ * handicap then read **3 places at 1/5** instead of 4 at 1/4: wrong on the
+ * count, and wrong on the fraction by the exact 20% §12 warns about. It fails
+ * SHUT rather than open, so it would have closed a LONG slot that qualifies
+ * rather than waving one through — still a silent mis-read of the race type,
+ * and the direction is luck. Abbreviations are the card's choice, not ours.
+ */
 export function isHandicap(race = {}) {
-  return /handicap|\bh'?cap\b|nursery/i.test(
+  return /handicap|\bh'?cap\b|\bhcp\b|nursery/i.test(
     `${race.race_name ?? ''} ${race.race_type ?? ''} ${race.pattern ?? ''}`,
   );
 }

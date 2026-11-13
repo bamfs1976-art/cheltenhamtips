@@ -1,0 +1,374 @@
+{
+ "races": [
+  {
+   "t": "13:10",
+   "name": "Conditional Jockeys&rsquo; Handicap Hurdle",
+   "dist": "2m&frac12;f",
+   "n": 19,
+   "cls": "Cl3 4yo+ 0-125",
+   "ew": "EW 1/4 4pl",
+   "long": "open",
+   "note": "<strong>Nineteen runners, four places, and the RPR column is empty of information.</strong> r(RPR,&nbsp;OR) reads <strong>&minus;0.233</strong> here &mdash; negative, so better-marked horses are projected <em>lower</em>, which is the race-par signature at its most extreme rather than a line. r(gap,&nbsp;OR) is <strong>&minus;0.910</strong>: ranking on <code>RPR&nbsp;&minus;&nbsp;OR</code> would hand you the bottom weight by arithmetic. <strong>Topspeed and the penalty carry this race instead.</strong>",
+   "picks": [
+    {
+     "tag": "nap",
+     "h": "Keno Black",
+     "odds": "7/1",
+     "pn": "<strong>He won last time and carries a 7lb penalty for it</strong> &mdash; which is the one fact on this card that is not a projection: it says the handicapper has not reassessed him yet. Joint-top RPR of the nineteen, Mulholland&rsquo;s yard at 63%, and at 7/1 into four places the each-way half pays for itself (&pound;1.38 back on &pound;1 if he merely places)."
+    },
+    {
+     "tag": "nb",
+     "h": "High Fibre",
+     "odds": "7/2",
+     "sb": [
+      [
+       "spot",
+       "SPOT"
+      ]
+     ],
+     "pn": "Also won last time, third-highest Topspeed (117) and a 59% yard. He is the market&rsquo;s answer and Spotlight&rsquo;s, which is why he takes the NB rather than the NAP &mdash; not on merit, on the fact that we have a horse at twice the price with the same &lsquo;won last time&rsquo; case and a penalty proving it."
+    },
+    {
+     "tag": "long",
+     "h": "Double Oban",
+     "odds": "25/1",
+     "sb": [
+      [
+       "big",
+       "BIG"
+      ]
+     ],
+     "pn": "<strong>All three legs, and the signal named exactly.</strong> Price 25/1 clears 8/1 by a street; 19 runners in a handicap pays four, so the place test holds. The signal is <strong>joint-highest Topspeed in the race (122)</strong> off a yard running at 58%, with a 3lb claim. <strong>Say what it is not:</strong> this is not course-and-distance form &mdash; the sheet carries no CD/C/D flags at all &mdash; and CD form is the leg the slot&rsquo;s only profitable pick turned on. <strong>Diamatiste (33/1) shares that Topspeed of 122</strong> and is the alternative at a bigger price; he has no trainer strike rate recorded, which is a gap rather than a negative. The BIG row is an aggregator panel and counts zero &mdash; the reason here is the speed figure, not the panel."
+    }
+   ]
+  },
+  {
+   "t": "13:45",
+   "name": "Paddy Power Novices&rsquo; Chase",
+   "dist": "2m",
+   "n": 6,
+   "cls": "Cl1 4yo+",
+   "ew": "EW 1/4 2pl",
+   "long": "shut-nonhcap",
+   "note": "Six runners, two places, and one withdrawal takes it to win only. The RPR line is technically usable (r&nbsp;=&nbsp;0.317) but it is fitted on <strong>six points with a reach of 0.36</strong>, barely past the degeneracy threshold &mdash; printed, and nothing rests on it.",
+   "picks": [
+    {
+     "tag": "nap",
+     "h": "Kingston Narcissus",
+     "odds": "4/1",
+     "sb": [
+      [
+       "bg",
+       "BG"
+      ]
+     ],
+     "pn": "<strong>Highest Topspeed in the race (137)</strong> and the most consistent chase form of the six &mdash; 1-2-2-2-3, never out of the first three in five starts. Over two miles at Cheltenham a horse that keeps finding the line is worth more than one that has won once; Skelton has the yard and the jockey."
+    },
+    {
+     "tag": "nb",
+     "h": "Intosomethinggood",
+     "odds": "9/2",
+     "pn": "Top-rated on both OR (135) and RPR (149) with a Topspeed of 134, and the youngest in the field at five. In a novice chase class is the primary factor and he has the most of it; the pulled-up run two back is the reason he is 9/2 and not favourite."
+    }
+   ]
+  },
+  {
+   "t": "14:20",
+   "name": "Shloer Chase <span class=\"g1\">(Grade 2)</span>",
+   "dist": "2m&frac12;f",
+   "n": 4,
+   "cls": "Cl1 4yo+",
+   "ew": "WIN ONLY",
+   "long": "shut-small",
+   "note": "<strong>Four runners &mdash; win only, no each-way market at all.</strong> Rule 6 flags thin each-way value below five; here there is none to flag. Both picks are staked <strong>&pound;1 win</strong> rather than 50p each-way, which keeps the &pound;1 unit and wastes nothing on a place half that does not exist.",
+   "picks": [
+    {
+     "tag": "nap",
+     "h": "Jonbon",
+     "odds": "10/11",
+     "pn": "<strong>Ten pounds clear of the race on official rating and nine on Topspeed</strong>, and Cheltenham&rsquo;s uphill finish is the track that most reliably returns the best horse. <strong>The each-way price argument that demoted a 6/4 shot at Ascot does not apply here and it is worth saying why:</strong> that argument is about the <em>place half</em> being unable to pay for itself at a short price. In a win-only race there is no place half, so the stake is efficient at 10/11 in a way it would not be at 10/11 with three places. Odds-on, so a banker and not a value bet &mdash; and rule 7 keeps him out of any accumulator."
+    },
+    {
+     "tag": "nb",
+     "h": "Mighty Bandit",
+     "odds": "13/2",
+     "sb": [
+      [
+       "big",
+       "BIG"
+      ]
+     ],
+     "pn": "The youngest in the race by two years and the only one of the four whose recent form is mostly wins &mdash; 2-1-1-1-4. He is 14lb behind Jonbon on official rating and that is probably the whole story, but he is the one improving and Sean Bowen rides."
+    }
+   ]
+  },
+  {
+   "t": "14:55",
+   "name": "Veterans&rsquo; Handicap Chase",
+   "dist": "3m1f",
+   "n": 8,
+   "cls": "Cl2 10yo+",
+   "ew": "EW 1/5 3pl",
+   "long": "shut-hcap8",
+   "note": "<strong>The most compressed RPR column in this archive.</strong> Spread ratio <strong>0.18</strong> &mdash; against 0.27 in the Cambridgeshire that produced the finding and 0.32 in the Old Rowley Cup &mdash; with r(RPR,&nbsp;OR) at &minus;0.179 and r(gap,&nbsp;OR) at <strong>&minus;0.977</strong>. The column says nothing. <strong>Note what that traps:</strong> Time To Bite carries the biggest RPR&minus;OR gap in the race (27lb) purely because he has the lowest mark, and he is 25/1. That is the subtraction talking, not the horse, and he is not our pick.",
+   "picks": [
+    {
+     "tag": "nap",
+     "h": "Triple Trade",
+     "odds": "100/30",
+     "sb": [
+      [
+       "bg",
+       "BG"
+      ]
+     ],
+     "pn": "<strong>Won last time, joint-top Topspeed (140) and joint-top RPR (151), off 10st 13lb.</strong> Second-lowest weight in a three-mile-one chase with Harry Cobden booked is the shape that wins veterans&rsquo; handicaps at this track. Grimshaw holds him too &mdash; that is one opinion, not a crossover, so rule 8 does not bite."
+    },
+    {
+     "tag": "nb",
+     "h": "Ga Law",
+     "odds": "7/1",
+     "sb": [
+      [
+       "ro",
+       "RO"
+      ],
+      [
+       "big",
+       "BIG"
+      ]
+     ],
+     "pn": "<strong>Top official rating in the race and joint-top Topspeed, for the hottest yard in it at 70%</strong>, with a 5lb claim taking real weight off a 12st burden over 3m1f &mdash; which matters more here than anywhere. <strong>He is the horse the source grid naps at &ldquo;2/8&rdquo;, and that count is wrong:</strong> the second row is an aggregator panel harvesting Raceolly, so it is one opinion. We hold him on the figures, at NB, and the badge had nothing to do with it."
+    }
+   ]
+  },
+  {
+   "t": "15:30",
+   "name": "Hyde Novices&rsquo; Hurdle <span class=\"g1\">(Grade 2)</span>",
+   "dist": "2m&frac12;f",
+   "n": 10,
+   "cls": "Cl1 4yo+",
+   "ew": "EW 1/5 3pl",
+   "long": "shut-nonhcap",
+   "note": "<strong>Six of the ten carry no official rating at all</strong>, so there is no OR&rarr;RPR line to fit and the residual is simply unavailable. What is left on the page is form figures and Topspeed, and both point the same way.",
+   "picks": [
+    {
+     "tag": "nap",
+     "h": "Woodstock Octo",
+     "odds": "11/2",
+     "pn": "<strong>Five wins from six starts &mdash; 1-1-1 then 1-1 &mdash; and the highest Topspeed in the race by twelve pounds</strong> (125 against 113). In a Grade 2 where most of the field is unrated, an unbeaten-this-season profile backed by a real speed figure is the most concrete thing on the page. The missing trainer strike rate is a gap in the data, not a mark against him."
+    },
+    {
+     "tag": "nb",
+     "h": "Lock Stock",
+     "odds": "7/1",
+     "pn": "<strong>Highest RPR in the race (139) and one of only four runners with an official mark to anchor it</strong> &mdash; which in this particular race is worth something, because it means the figure is measuring a horse rather than projecting one. Second-best Topspeed, won two of his last three, 58% yard."
+    }
+   ]
+  },
+  {
+   "t": "16:00",
+   "name": "Novices&rsquo; Handicap Hurdle",
+   "dist": "2m4f",
+   "n": 18,
+   "cls": "Cl3 4yo+ 0-125",
+   "ew": "EW 1/4 4pl",
+   "long": "open",
+   "note": "<strong>The flattest RPR line on the card and close to the flattest in the archive:</strong> r(RPR,&nbsp;OR) = &minus;0.057 with a reach of <strong>0.05</strong>, meaning the fitted line can move a runner by a twentieth of the RPR spread. Ranking by residual here would be ranking by raw RPR, which is exactly what the method exists to prevent. Topspeed, the jockey bookings and last-time-out form carry the race.",
+   "picks": [
+    {
+     "tag": "nap",
+     "h": "Tuppence",
+     "odds": "9/1",
+     "pn": "<strong>Won last time, second-highest Topspeed in the field (121), and a 7lb claim that brings 11st 4lb down to an effective 10st 11lb over two and a half miles.</strong> Two concrete positives and a weight concession in a race where the ratings column is empty."
+    },
+    {
+     "tag": "nb",
+     "h": "Way Of Stars",
+     "odds": "13/2",
+     "pn": "<strong>Highest Topspeed in the race (122)</strong> and ran second last time. A four-year-old against mostly five- and six-year-olds over 2m4f at Cheltenham is the question mark, and Pipe&rsquo;s 33% is the lowest strike rate of our six NAPs and NBs &mdash; which is why he is NB."
+    },
+    {
+     "tag": "long",
+     "h": "Ade Boy",
+     "odds": "20/1",
+     "pn": "<strong>The signal here is one of the three &sect;4 names explicitly: a significant jockey booking.</strong> <strong>Brian Hughes</strong> &mdash; the perennial champion jumps jockey &mdash; has exactly two rides on this card, and this is one of them, for the highest trainer strike rate in the race (69%). Third-highest Topspeed (118) backs it. 20/1 clears the price leg and 18 runners in a handicap pays four. <strong>The trap in this race, named so it is on the record:</strong> Ade Boy also has the lowest official mark and therefore close to the biggest RPR&minus;OR gap, and that is arithmetic, not analysis. The gap is not why he is here; the booking and the speed figure are."
+    }
+   ]
+  }
+ ],
+ "claims": {
+  "Keno Black": [
+   [
+    "rpr",
+    129
+   ],
+   [
+    "ts",
+    112
+   ],
+   [
+    "trpc",
+    0.63
+   ]
+  ],
+  "High Fibre": [
+   [
+    "ts",
+    117
+   ],
+   [
+    "trpc",
+    0.59
+   ]
+  ],
+  "Double Oban": [
+   [
+    "ts",
+    122
+   ],
+   [
+    "trpc",
+    0.58
+   ],
+   [
+    "claim",
+    3
+   ]
+  ],
+  "Diamatiste": [
+   [
+    "ts",
+    122
+   ]
+  ],
+  "Kingston Narcissus": [
+   [
+    "ts",
+    137
+   ]
+  ],
+  "Intosomethinggood": [
+   [
+    "or",
+    135
+   ],
+   [
+    "rpr",
+    149
+   ],
+   [
+    "ts",
+    134
+   ]
+  ],
+  "Jonbon": [
+   [
+    "or",
+    165
+   ],
+   [
+    "ts",
+    163
+   ]
+  ],
+  "Mighty Bandit": [
+   [
+    "or",
+    151
+   ]
+  ],
+  "Triple Trade": [
+   [
+    "ts",
+    140
+   ],
+   [
+    "rpr",
+    151
+   ]
+  ],
+  "Ga Law": [
+   [
+    "or",
+    145
+   ],
+   [
+    "ts",
+    140
+   ],
+   [
+    "trpc",
+    0.7
+   ]
+  ],
+  "Time To Bite": [
+   [
+    "or",
+    123
+   ],
+   [
+    "rpr",
+    150
+   ]
+  ],
+  "Woodstock Octo": [
+   [
+    "ts",
+    125
+   ],
+   [
+    "rpr",
+    133
+   ]
+  ],
+  "Lock Stock": [
+   [
+    "rpr",
+    139
+   ],
+   [
+    "ts",
+    113
+   ],
+   [
+    "trpc",
+    0.58
+   ]
+  ],
+  "Tuppence": [
+   [
+    "ts",
+    121
+   ],
+   [
+    "claim",
+    7
+   ]
+  ],
+  "Way Of Stars": [
+   [
+    "ts",
+    122
+   ],
+   [
+    "trpc",
+    0.33
+   ]
+  ],
+  "Ade Boy": [
+   [
+    "ts",
+    118
+   ],
+   [
+    "trpc",
+    0.69
+   ],
+   [
+    "or",
+    105
+   ]
+  ]
+ }
+}

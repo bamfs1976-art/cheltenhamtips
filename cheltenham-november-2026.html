@@ -80,6 +80,7 @@
   .sb-tn { background:rgba(252,211,77,0.16); border:1px solid rgba(252,211,77,0.5); color:#fcd34d }
   .sb-big { background:rgba(239,68,68,0.18); border:1px solid rgba(239,68,68,0.55); color:#fca5a5 }
   .sb-jm { background:rgba(244,114,182,0.16); border:1px solid rgba(244,114,182,0.5); color:#f9a8d4 }
+  .sb-rc { background:rgba(252,165,165,0.16); border:1px solid rgba(252,165,165,0.5); color:#fca5a5 }
   .sb-cd { font-size:0.6rem; font-weight:700; padding:2px 6px; border-radius:4px; margin-left:4px; background:rgba(74,222,128,0.16); border:1px solid rgba(74,222,128,0.45); color:#4ade80 }
   .sb-3x { background:rgba(251,191,36,0.28); border:1px solid rgba(251,191,36,0.7); color:#fff7dc; font-weight:800 }
   .sb-4x { background:rgba(251,191,36,0.36); border:1px solid rgba(251,191,36,0.85); color:#fffdf5; font-weight:800 }
@@ -134,7 +135,7 @@
 <a class="fmb-skip" href="#main">Skip to content</a>
 
 <div id="fmb-nav-root"></div>
-<div class="live-strip">&#127806; Cheltenham November Meeting &middot; <strong>13&ndash;15 NOV 2026</strong> &middot; Cheltenham &middot; <strong style="color:#fcd34d">AWAITING DECLARATIONS &mdash; no race priced</strong> &middot; <strong style="color:var(--eb-lt)">ITV expected Sat 14 &mdash; unconfirmed until the declared card</strong></div>
+<div class="live-strip">&#127806; Cheltenham November Meeting &middot; <strong>13&ndash;15 NOV 2026</strong> &middot; Cheltenham &middot; <strong style="color:var(--eb-lt)">DAY 1 LIVE &mdash; 6 races priced, 14 picks</strong> &middot; <strong style="color:#fcd34d">Sat 14 and Sun 15 await declarations</strong></div>
 <main class="container" id="main" tabindex="-1">
   <header class="site-header">
     <div class="header-badge">&#127806; Cheltenham &middot; Jumps</div>
@@ -144,35 +145,218 @@
       <div><span class="hero-stat-val">5</span><span class="hero-stat-lbl">feature races</span></div>
       <div><span class="hero-stat-val">3</span><span class="hero-stat-lbl">days</span></div>
       <div><span class="hero-stat-val">3</span><span class="hero-stat-lbl">handicap features</span></div>
-      <div><span class="hero-stat-val">0</span><span class="hero-stat-lbl">priced yet</span></div>
+      <div><span class="hero-stat-val">14</span><span class="hero-stat-lbl">Day 1 picks</span></div>
     </div>
   </header>
   <div class="day-tabs">
-    <a href="#day1" class="day-tab">Fri 13 Nov</a>
-    <a href="#day2" class="day-tab active">Sat 14 Nov</a>
+    <a href="#day1" class="day-tab active">Fri 13 Nov</a>
+    <a href="#day2" class="day-tab">Sat 14 Nov</a>
     <a href="#day3" class="day-tab">Sun 15 Nov</a>
   </div>
   <div class="titlebar">
     <h2>cheltenham-november-2026 &middot; 13&ndash;15 Nov 2026 &middot; Cheltenham</h2>
-    <p><strong>The jumps season&rsquo;s first serious championship test, and the best Cheltenham form line before the Festival.</strong> <strong style="color:#fcd34d">Nothing on this page is priced, and nothing will be until declarations.</strong>
-    UK declarations confirm <strong>48 hours out</strong>, so the first card here can be built on <strong>11 November</strong> and not before.
-    Rule 13 is absolute: no declared field, no bet. What is published now is the course profile, the confirmed feature races and the
-    place-count arithmetic that decides the LONG slot &mdash; all of which can be settled in advance of a single runner being named.</p>
+    <p><strong>The jumps season&rsquo;s first serious championship test, and the best Cheltenham form line before the Festival.</strong> <strong style="color:var(--eb-lt)">Day 1 is declared and priced: 6 races, 14 picks, &pound;14.00.</strong>
+    The gate passed 6 of 6 on a declared field of 65 runners, and the LONG slot is open in two races &mdash; both of them supporting handicaps this page
+    could not name in advance. Saturday and Sunday are still awaiting declarations and stay unpriced; rule 13 is absolute.</p>
   </div>
   <section id="day1" class="panel eb-top">
-    <h2 class="panel-head">&#127806; Day 1 &middot; Fri 13 Nov &middot; <span style="color:var(--silver)">broadcaster unconfirmed &mdash; read it off the declared card (&sect;9, 7 Oct)</span></h2>
+    <h2 class="panel-head">&#127806; Day 1 &middot; Friday 13 November &middot; 6 races &middot; 14 picks &middot; &pound;14.00</h2>
+
     <div class="gate-grid">
-      <div class="gate-cell"><div class="gc-lbl">Declarations</div><div class="gc-val">Not confirmed</div></div>
-      <div class="gate-cell"><div class="gc-lbl">Field size</div><div class="gc-val">Unknown</div></div>
-      <div class="gate-cell"><div class="gc-lbl">Gate</div><div class="gc-val">1 NO BET</div></div>
-      <div class="gate-cell"><div class="gc-lbl">LONG slot</div><div class="gc-val">Not assessed</div></div>
+      <div class="gate-cell ok"><div class="gc-lbl">Declarations</div><div class="gc-val">Confirmed &mdash; 6/6</div></div>
+      <div class="gate-cell ok"><div class="gc-lbl">Declared field</div><div class="gc-val">65 runners</div></div>
+      <div class="gate-cell ok"><div class="gc-lbl">LONG slot</div><div class="gc-val">2 of 6 open</div></div>
+      <div class="gate-cell wait"><div class="gc-lbl">Place band at risk</div><div class="gc-val">4 of 6 races</div></div>
+      <div class="gate-cell wait"><div class="gc-lbl">Going</div><div class="gc-val">Good, Gd/Sf places</div></div>
+      <div class="gate-cell wait"><div class="gc-lbl">Market trail</div><div class="gc-val">Not available</div></div>
     </div>
-    <p style="font-size:0.82rem;line-height:1.7;color:#fca5a5;margin-top:10px"><strong>NO BET &mdash; declarations not confirmed.</strong>
-    Every race on this day fails the pre-flight gate on the same leg: there is no declared field, so there is no field size, no going read and nothing to price.
-    The gate is not being run race by race here because it cannot be &mdash; that is one reason, stated once, rather than 1 copies of it.</p>
-    <p style="font-size:0.82rem;line-height:1.7;color:#cbd5cf"><strong>Feature races on the published programme</strong> (the programme is published well ahead;
-    <strong>off-times and the supporting card are not</strong>, and are deliberately left blank rather than guessed):</p>
-    <div class="race-block"><p class="race-hd">Supreme Trial Novices&rsquo; Hurdle &middot; <span class="g1">Listed</span> &middot; 2m½f</p><p style="font-size:0.8rem;color:var(--silver);margin:4px 0 0">novices</p></div>
+
+    <div class="pending-inline" style="background:rgba(34,197,94,0.08);border-color:rgba(34,197,94,0.4);color:#bbf7d0;margin-top:14px">
+      <strong style="color:#dcfce7">&#9989; The LONG forecast on this page was PARTIAL, it said so, and the caveat is what came true.</strong><br><br>
+      This page predicted the slot could open in <strong>three races</strong> &mdash; the Paddy Power Gold Cup, the Paddy Power Handicap Hurdle and the
+      Greatwood &mdash; because those are the three handicaps among the five <em>published features</em>. It then said, in as many words:
+      <em>&ldquo;a supporting handicap of sixteen would open the slot and the advance page would not see it coming. &lsquo;Three can open it&rsquo; is
+      supported; &lsquo;at most three&rsquo; is not.&rdquo;</em><br><br>
+      <strong>Friday&rsquo;s declared card opens the slot in two races, and neither is a feature.</strong> The 13:10 Conditional Jockeys&rsquo; Handicap
+      Hurdle (19 runners) and the 16:00 Novices&rsquo; Handicap Hurdle (18) are both supporting handicaps that this page could not name in advance, because
+      the supporting programme is not published that far out. The <em>shape</em> forecast was right and deliberately incomplete; saying so beforehand is
+      the only reason that reads as method rather than luck.
+    </div>
+
+    <div class="pending-inline" style="background:rgba(239,68,68,0.09);border-color:rgba(239,68,68,0.45);color:#fca5a5">
+      <strong style="color:#fecaca">&#9888; Three gaps in today&rsquo;s data, stated before the picks rather than after.</strong><br><br>
+      <strong>No market trail.</strong> The racecard supplies <strong>one</strong> price per runner &mdash; a betting forecast. &sect;5b needs
+      <em>two observations of the same market</em> before STEAM or DRIFT means anything, and the 25 Oct scoring narrowed it further: run the
+      shorter-price test only where one source prices two or more of our picks in the same race, and read every move against the race median.
+      <strong>One observation is not a trail, so no pick on this card carries a market call.</strong> Rule 5 makes the move the primary mechanical
+      signal; today that signal is simply absent, and inventing it would be worse than missing it.<br><br>
+      <strong>The going is second-hand and there is no GoingStick.</strong> &ldquo;Good, good to soft in places&rdquo; comes off a tipster consensus
+      grid, not off a racecard going line, and no strip readings are available. Rules 11, 12 and 17 all want the real thing read on the morning and
+      again at the off. On an Old Course card in November that is the single most consequential unknown here.<br><br>
+      <strong>No CD / C / D flags.</strong> The sheet carries no course-and-distance markers, so the LONG&rsquo;s strongest signal leg &mdash; the one
+      the slot&rsquo;s only profitable pick in the archive turned on &mdash; could not be used in either race where the slot is open.
+    </div>
+
+    <div class="race-block">
+      <p class="race-hd">13:10 &middot; Conditional Jockeys&rsquo; Handicap Hurdle &middot; 2m&frac12;f &middot; 19 rnrs &middot; Cl3 4yo+ 0-125 &middot; EW 1/4 4pl</p>
+      <div class="tip-row"><strong>Nineteen runners, four places, and the RPR column is empty of information.</strong> r(RPR,&nbsp;OR) reads <strong>&minus;0.233</strong> here &mdash; negative, so better-marked horses are projected <em>lower</em>, which is the race-par signature at its most extreme rather than a line. r(gap,&nbsp;OR) is <strong>&minus;0.910</strong>: ranking on <code>RPR&nbsp;&minus;&nbsp;OR</code> would hand you the bottom weight by arithmetic. <strong>Topspeed and the penalty carry this race instead.</strong></div>
+      <div class="pick-row">
+        <div class="pick-tag nap">NAP</div>
+        <div><span class="pick-horse">Keno Black</span><span class="conns">Bradley Harris | Neil Mulholland 63% | F:091F-1 | 6yo 11st 3 (7lb ex)lb | OR 114 &middot; TS 112 &middot; RPR 129</span><div class="pick-note"><strong>He won last time and carries a 7lb penalty for it</strong> &mdash; which is the one fact on this card that is not a projection: it says the handicapper has not reassessed him yet. Joint-top RPR of the nineteen, Mulholland&rsquo;s yard at 63%, and at 7/1 into four places the each-way half pays for itself (&pound;1.38 back on &pound;1 if he merely places).</div></div>
+        <div class="pick-odds">7/1</div>
+      </div>
+      <div class="pick-row">
+        <div class="pick-tag nb">NB</div>
+        <div><span class="pick-horse">High Fibre</span><span class="sb sb-spot">SPOT</span><span class="conns">Toby McCain-Mitchell | James Owen 59% | F:125-51 | 7yo 11st 9lb | OR 120 &middot; TS 117 &middot; RPR 126</span><div class="pick-note">Also won last time, third-highest Topspeed (117) and a 59% yard. He is the market&rsquo;s answer and Spotlight&rsquo;s, which is why he takes the NB rather than the NAP &mdash; not on merit, on the fact that we have a horse at twice the price with the same &lsquo;won last time&rsquo; case and a penalty proving it.</div></div>
+        <div class="pick-odds">7/2</div>
+      </div>
+      <div class="pick-row">
+        <div class="pick-tag long">LONG</div>
+        <div><span class="pick-horse">Double Oban</span><span class="sb sb-big">BIG</span><span class="conns">Lewis Saunders(3) | Olly Murphy 58% | F:215-52 | 6yo 11st 8lb | OR 119 &middot; TS 122 &middot; RPR 127</span><div class="pick-note"><strong>All three legs, and the signal named exactly.</strong> Price 25/1 clears 8/1 by a street; 19 runners in a handicap pays four, so the place test holds. The signal is <strong>joint-highest Topspeed in the race (122)</strong> off a yard running at 58%, with a 3lb claim. <strong>Say what it is not:</strong> this is not course-and-distance form &mdash; the sheet carries no CD/C/D flags at all &mdash; and CD form is the leg the slot&rsquo;s only profitable pick turned on. <strong>Diamatiste (33/1) shares that Topspeed of 122</strong> and is the alternative at a bigger price; he has no trainer strike rate recorded, which is a gap rather than a negative. The BIG row is an aggregator panel and counts zero &mdash; the reason here is the speed figure, not the panel.</div></div>
+        <div class="pick-odds">25/1</div>
+      </div>
+    </div>
+    <div class="race-block">
+      <p class="race-hd">13:45 &middot; Paddy Power Novices&rsquo; Chase &middot; 2m &middot; 6 rnrs &middot; Cl1 4yo+ &middot; EW 1/4 2pl</p>
+      <div class="tip-row">Six runners, two places, and one withdrawal takes it to win only. The RPR line is technically usable (r&nbsp;=&nbsp;0.317) but it is fitted on <strong>six points with a reach of 0.36</strong>, barely past the degeneracy threshold &mdash; printed, and nothing rests on it.</div>
+      <div class="pick-row">
+        <div class="pick-tag nap">NAP</div>
+        <div><span class="pick-horse">Kingston Narcissus</span><span class="sb sb-bg">BG</span><span class="conns">Harry Skelton | Dan Skelton 44% | F:-12223 | 7yo 11st 4lb | OR 130 &middot; TS 137 &middot; RPR 145</span><div class="pick-note"><strong>Highest Topspeed in the race (137)</strong> and the most consistent chase form of the six &mdash; 1-2-2-2-3, never out of the first three in five starts. Over two miles at Cheltenham a horse that keeps finding the line is worth more than one that has won once; Skelton has the yard and the jockey.</div></div>
+        <div class="pick-odds">4/1</div>
+      </div>
+      <div class="pick-row">
+        <div class="pick-tag nb">NB</div>
+        <div><span class="pick-horse">Intosomethinggood</span><span class="conns">Sam Twiston-Davies | Nigel & Willy Twiston-Davies 58% | F:4P1-13 | 5yo 11st 4lb | OR 135 &middot; TS 134 &middot; RPR 149</span><div class="pick-note">Top-rated on both OR (135) and RPR (149) with a Topspeed of 134, and the youngest in the field at five. In a novice chase class is the primary factor and he has the most of it; the pulled-up run two back is the reason he is 9/2 and not favourite.</div></div>
+        <div class="pick-odds">9/2</div>
+      </div>
+      <div class="nobet"><strong>LONG shut, and in a non-handicap it cannot open at any field size.</strong> The non-handicap ladder tops out at three places however many run, so the four the place test needs is unreachable here &mdash; arithmetic settled before anyone counted the field. Two picks only.</div>
+    </div>
+    <div class="race-block">
+      <p class="race-hd">14:20 &middot; Shloer Chase <span class="g1">(Grade 2)</span> &middot; 2m&frac12;f &middot; 4 rnrs &middot; Cl1 4yo+ &middot; WIN ONLY</p>
+      <div class="tip-row"><strong>Four runners &mdash; win only, no each-way market at all.</strong> Rule 6 flags thin each-way value below five; here there is none to flag. Both picks are staked <strong>&pound;1 win</strong> rather than 50p each-way, which keeps the &pound;1 unit and wastes nothing on a place half that does not exist.</div>
+      <div class="pick-row">
+        <div class="pick-tag nap">NAP</div>
+        <div><span class="pick-horse">Jonbon</span><span class="conns">Harry Cobden | Nicky Henderson 47% | F:22112- | 10yo 11st 10lb | OR 165 &middot; TS 163 &middot; RPR 173</span><div class="pick-note"><strong>Ten pounds clear of the race on official rating and nine on Topspeed</strong>, and Cheltenham&rsquo;s uphill finish is the track that most reliably returns the best horse. <strong>The each-way price argument that demoted a 6/4 shot at Ascot does not apply here and it is worth saying why:</strong> that argument is about the <em>place half</em> being unable to pay for itself at a short price. In a win-only race there is no place half, so the stake is efficient at 10/11 in a way it would not be at 10/11 with three places. Odds-on, so a banker and not a value bet &mdash; and rule 7 keeps him out of any accumulator.</div></div>
+        <div class="pick-odds">10/11</div>
+      </div>
+      <div class="pick-row">
+        <div class="pick-tag nb">NB</div>
+        <div><span class="pick-horse">Mighty Bandit</span><span class="sb sb-big">BIG</span><span class="conns">Sean Bowen | Warren Greatrex 40% | F:21114- | 6yo 11st 4lb | OR 151 &middot; TS 154 &middot; RPR 164</span><div class="pick-note">The youngest in the race by two years and the only one of the four whose recent form is mostly wins &mdash; 2-1-1-1-4. He is 14lb behind Jonbon on official rating and that is probably the whole story, but he is the one improving and Sean Bowen rides.</div></div>
+        <div class="pick-odds">13/2</div>
+      </div>
+      <div class="nobet"><strong>LONG shut &mdash; four runners is win only.</strong> There are no places to pay, so the slot fails on the place leg before price or signal is reached. Two picks only.</div>
+    </div>
+    <div class="race-block">
+      <p class="race-hd">14:55 &middot; Veterans&rsquo; Handicap Chase &middot; 3m1f &middot; 8 rnrs &middot; Cl2 10yo+ &middot; EW 1/5 3pl</p>
+      <div class="tip-row"><strong>The most compressed RPR column in this archive.</strong> Spread ratio <strong>0.18</strong> &mdash; against 0.27 in the Cambridgeshire that produced the finding and 0.32 in the Old Rowley Cup &mdash; with r(RPR,&nbsp;OR) at &minus;0.179 and r(gap,&nbsp;OR) at <strong>&minus;0.977</strong>. The column says nothing. <strong>Note what that traps:</strong> Time To Bite carries the biggest RPR&minus;OR gap in the race (27lb) purely because he has the lowest mark, and he is 25/1. That is the subtraction talking, not the horse, and he is not our pick.</div>
+      <div class="pick-row">
+        <div class="pick-tag nap">NAP</div>
+        <div><span class="pick-horse">Triple Trade</span><span class="sb sb-bg">BG</span><span class="conns">Harry Cobden | Joe Tizzard 54% | F:34U6-1 | 10yo 10st 13lb | OR 130 &middot; TS 140 &middot; RPR 151</span><div class="pick-note"><strong>Won last time, joint-top Topspeed (140) and joint-top RPR (151), off 10st 13lb.</strong> Second-lowest weight in a three-mile-one chase with Harry Cobden booked is the shape that wins veterans&rsquo; handicaps at this track. Grimshaw holds him too &mdash; that is one opinion, not a crossover, so rule 8 does not bite.</div></div>
+        <div class="pick-odds">100/30</div>
+      </div>
+      <div class="pick-row">
+        <div class="pick-tag nb">NB</div>
+        <div><span class="pick-horse">Ga Law</span><span class="sb sb-ro">RO</span><span class="sb sb-big">BIG</span><span class="conns">Isabelle Ryder(5) | Jamie Snowden 70% | F:3/30-5 | 10yo 12st 0lb | OR 145 &middot; TS 140 &middot; RPR 148</span><div class="pick-note"><strong>Top official rating in the race and joint-top Topspeed, for the hottest yard in it at 70%</strong>, with a 5lb claim taking real weight off a 12st burden over 3m1f &mdash; which matters more here than anywhere. <strong>He is the horse the source grid naps at &ldquo;2/8&rdquo;, and that count is wrong:</strong> the second row is an aggregator panel harvesting Raceolly, so it is one opinion. We hold him on the figures, at NB, and the badge had nothing to do with it.</div></div>
+        <div class="pick-odds">7/1</div>
+      </div>
+      <div class="nobet"><strong>LONG shut on the place count, and this one is a judgement the field size makes for us.</strong> Eight runners in a handicap pays three; the test needs four, which needs sixteen. Two picks only &mdash; and note the race is <em>on</em> the 8-runner boundary, so one withdrawal takes it to two places.</div>
+    </div>
+    <div class="race-block">
+      <p class="race-hd">15:30 &middot; Hyde Novices&rsquo; Hurdle <span class="g1">(Grade 2)</span> &middot; 2m&frac12;f &middot; 10 rnrs &middot; Cl1 4yo+ &middot; EW 1/5 3pl</p>
+      <div class="tip-row"><strong>Six of the ten carry no official rating at all</strong>, so there is no OR&rarr;RPR line to fit and the residual is simply unavailable. What is left on the page is form figures and Topspeed, and both point the same way.</div>
+      <div class="pick-row">
+        <div class="pick-tag nap">NAP</div>
+        <div><span class="pick-horse">Woodstock Octo</span><span class="conns">Ben Jones | Kayley Woollacott | F:111-11 | 6yo 11st 2lb | TS 125 &middot; RPR 133</span><div class="pick-note"><strong>Five wins from six starts &mdash; 1-1-1 then 1-1 &mdash; and the highest Topspeed in the race by twelve pounds</strong> (125 against 113). In a Grade 2 where most of the field is unrated, an unbeaten-this-season profile backed by a real speed figure is the most concrete thing on the page. The missing trainer strike rate is a gap in the data, not a mark against him.</div></div>
+        <div class="pick-odds">11/2</div>
+      </div>
+      <div class="pick-row">
+        <div class="pick-tag nb">NB</div>
+        <div><span class="pick-horse">Lock Stock</span><span class="conns">Charlie Hammond | Stuart Edmunds 58% | F:29-113 | 6yo 11st 2lb | OR 124 &middot; TS 113 &middot; RPR 139</span><div class="pick-note"><strong>Highest RPR in the race (139) and one of only four runners with an official mark to anchor it</strong> &mdash; which in this particular race is worth something, because it means the figure is measuring a horse rather than projecting one. Second-best Topspeed, won two of his last three, 58% yard.</div></div>
+        <div class="pick-odds">7/1</div>
+      </div>
+      <div class="nobet"><strong>LONG shut, and in a non-handicap it cannot open at any field size.</strong> The non-handicap ladder tops out at three places however many run, so the four the place test needs is unreachable here &mdash; arithmetic settled before anyone counted the field. Two picks only.</div>
+    </div>
+    <div class="race-block">
+      <p class="race-hd">16:00 &middot; Novices&rsquo; Handicap Hurdle &middot; 2m4f &middot; 18 rnrs &middot; Cl3 4yo+ 0-125 &middot; EW 1/4 4pl</p>
+      <div class="tip-row"><strong>The flattest RPR line on the card and close to the flattest in the archive:</strong> r(RPR,&nbsp;OR) = &minus;0.057 with a reach of <strong>0.05</strong>, meaning the fitted line can move a runner by a twentieth of the RPR spread. Ranking by residual here would be ranking by raw RPR, which is exactly what the method exists to prevent. Topspeed, the jockey bookings and last-time-out form carry the race.</div>
+      <div class="pick-row">
+        <div class="pick-tag nap">NAP</div>
+        <div><span class="pick-horse">Tuppence</span><span class="conns">Mr Lucas Murphy(7) | Lucinda Russell & Michael Scudamore 51% | F:/241-1 | 6yo 11st 4lb | OR 112 &middot; TS 121 &middot; RPR 126</span><div class="pick-note"><strong>Won last time, second-highest Topspeed in the field (121), and a 7lb claim that brings 11st 4lb down to an effective 10st 11lb over two and a half miles.</strong> Two concrete positives and a weight concession in a race where the ratings column is empty.</div></div>
+        <div class="pick-odds">9/1</div>
+      </div>
+      <div class="pick-row">
+        <div class="pick-tag nb">NB</div>
+        <div><span class="pick-horse">Way Of Stars</span><span class="conns">Jack Tudor | David Pipe 33% | F:3210-2 | 4yo 11st 7lb | OR 115 &middot; TS 122 &middot; RPR 126</span><div class="pick-note"><strong>Highest Topspeed in the race (122)</strong> and ran second last time. A four-year-old against mostly five- and six-year-olds over 2m4f at Cheltenham is the question mark, and Pipe&rsquo;s 33% is the lowest strike rate of our six NAPs and NBs &mdash; which is why he is NB.</div></div>
+        <div class="pick-odds">13/2</div>
+      </div>
+      <div class="pick-row">
+        <div class="pick-tag long">LONG</div>
+        <div><span class="pick-horse">Ade Boy</span><span class="conns">Brian Hughes | Charlie Longsdon 69% | F:634-23 | 5yo 10st 11lb | OR 105 &middot; TS 118 &middot; RPR 125</span><div class="pick-note"><strong>The signal here is one of the three &sect;4 names explicitly: a significant jockey booking.</strong> <strong>Brian Hughes</strong> &mdash; the perennial champion jumps jockey &mdash; has exactly two rides on this card, and this is one of them, for the highest trainer strike rate in the race (69%). Third-highest Topspeed (118) backs it. 20/1 clears the price leg and 18 runners in a handicap pays four. <strong>The trap in this race, named so it is on the record:</strong> Ade Boy also has the lowest official mark and therefore close to the biggest RPR&minus;OR gap, and that is arithmetic, not analysis. The gap is not why he is here; the booking and the speed figure are.</div></div>
+        <div class="pick-odds">20/1</div>
+      </div>
+    </div>
+
+    <div class="pending-inline" style="background:rgba(96,165,250,0.07);border-color:rgba(96,165,250,0.35);color:#cbd5cf">
+      <h3 class="panel-head" style="font-size:0.9rem;margin:0 0 4px">&#128221; External columns &mdash; three desks, after the panels and the absentees come out</h3>
+      <div class="tip-row" style="margin-top:8px">
+        <strong>The grid that arrived this morning carried eight rows. Three of them are opinions.</strong>
+        <span style="color:#f0abfc">Spotlight</span> 6 tips in 6 races &middot;
+        <span style="color:#c4b5fd">Raceolly</span> 5 in 5 &middot;
+        <span style="color:#fdba74">Grimshaw</span> 3 in 3.<br><br>
+        <strong>William Hill and Steve Mullington posted nothing</strong> &mdash; recorded as <strong>n/a, not 0%</strong>. A column that skips a meeting
+        has not disagreed with us, and booking it as a zero would average a fabricated number against measured ones.<br><br>
+        <strong>Both &ldquo;Biggest Priced&rdquo; rows are aggregator panels and count zero.</strong> They are other columns&rsquo; selections collected,
+        not views of their own. Six panel rows on this card, no opinions in them.<br><br>
+        <strong style="color:#fca5a5">And @RoadCheltenham&rsquo;s two picks are not in the declared field.</strong> Folie Golith (13:45) and Moneygarrow
+        (15:30) both appeared on the morning grid; neither is declared. The 13:45 is missing cloth 3, so Folie Golith is plausibly a withdrawal; the 15:30
+        has no gap at all, so Moneygarrow was never in it. <strong>A grid can carry an opinion on a horse that does not run. The card cannot.</strong>
+        That is why the desk count here is three and the morning&rsquo;s share card said four &mdash; same method, later data.
+      </div>
+    </div>
+
+    <div class="pending-inline" style="background:rgba(96,165,250,0.07);border-color:rgba(96,165,250,0.35);color:#cbd5cf">
+      <h3 class="panel-head" style="font-size:0.9rem;margin:0 0 4px">&#128260; Crossover signals &mdash; there are none, and that is the finding</h3>
+      <div class="tip-row" style="margin-top:8px">
+        <strong style="color:#fde68a">Zero crossovers on the whole card.</strong> Fourteen tips, three desks, three pairings,
+        <strong>eleven shared-race comparisons and not one agreement</strong>. All 3 of 3 tested pairings are fully divergent.<br><br>
+        <strong>That is not thin coverage.</strong> Five of the six races had two or more desks in them, so there were five chances to agree and none was
+        taken. &sect;6&rsquo;s Doncaster entry found nine tips producing no 2x because eight of them were one column; this is the opposite shape &mdash;
+        genuinely distinct desks, every one disagreeing with every other. Written as <strong>&ldquo;none yet, at three columns&rdquo;</strong>, because an
+        absence is a property of the sample and a fourth column could produce one tomorrow.<br><br>
+        <strong style="color:#fdba74">Grimshaw&rsquo;s independence test ran a fourth time and held: 3 from 3.</strong> Doncaster 2/3, Newmarket 2/3,
+        Ascot 6/6, Cheltenham 3/3. The HRN masthead says distrust him by default and the tip count says settle it, and the tip count has now been right
+        four meetings running.<br><br>
+        <strong>Dissent to flag: none.</strong> The rule asks for any horse 2+ independent sources hold that we do not &mdash; with no crossovers anywhere
+        there is no such horse. Single-column picks we are opposing, named so the archive can score them:
+        <span style="color:#f0abfc">Spotlight</span> Gidleigh Park (14:20), Thunder Rock (14:55), Ferocimo (15:30), Crooked Path (16:00) &middot;
+        <span style="color:#c4b5fd">Raceolly</span> Snatch A Glance, Bill Joyce, Red Acres Georgie, Shallow Bowles &middot;
+        <span style="color:#fdba74">Grimshaw</span> Hitintheheadlines.
+      </div>
+    </div>
+
+    <div class="pending-inline" style="margin-top:12px">
+      <h3 class="panel-head" style="font-size:0.9rem;margin:0 0 4px">&#128200; Key signals</h3>
+      <div class="tip-row" style="margin-top:8px">
+        <strong>&#9679; The ratings column is empty in all three handicaps &mdash; the exact races the LONG lives in.</strong>
+        r(RPR,&nbsp;OR) reads &minus;0.233 in the 13:10, &minus;0.179 in the 14:55 and &minus;0.057 in the 16:00. All three fail the signed gate, so there
+        is no line and therefore no residual. The 14:55&rsquo;s spread ratio of <strong>0.18</strong> is the most compressed in this archive, against 0.27
+        in the Cambridgeshire that produced the finding. <strong>Topspeed, last-time-out form, the penalty and the jockey bookings carry this card</strong>
+        &mdash; all printed on the racecard, none of them a projection.
+        (<code>scripts/analysis/rpr-calibration-cheltenham-13-nov.py</code>)<br><br>
+        <strong>&#9679; Two LONGs, and both races are near a place boundary.</strong> The 13:10 is three runners above sixteen and the 16:00 only two:
+        <strong>three withdrawals take the 16:00 from four places to three</strong> and Ade Boy&rsquo;s slot with it. Both are provisional until
+        <code>nr-check.mjs</code> has run against the declared withdrawals.<br><br>
+        <strong>&#9679; The slot&rsquo;s record says expect nothing.</strong> 0 winners from 7 and 0.64 points per pick across the season; one placed horse
+        in the entire archive. Two qualifying races is not a reason to expect a different answer, and running it twice in an afternoon doubles the exposure
+        to the engine&rsquo;s known structural leak.<br><br>
+        <strong>&#9679; The each-way arithmetic was applied to every race, including the one where it argues the other way.</strong> At Ascot a 6/4 NAP was
+        demoted because the place half could not pay for itself, and the same card then left a 6/5 NAP alone &mdash; a principle used once and ignored once.
+        Here it demotes High Fibre at 7/2 behind a 7/1 shot with the better non-projection case, and it <em>supports</em> Jonbon at 10/11, because a win-only
+        race has no place half to waste. Same test, two directions, stated both times.<br><br>
+        <strong>&#9679; No Lucky 15.</strong> Record is &minus;82.1% across eleven days and it no longer runs by default. Say the word and it can be built
+        from the four legs at 4/1 or bigger.
+      </div>
+    </div>
   </section>
 
   <section id="day2" class="panel eb-top">
@@ -307,6 +491,8 @@
     <div style="margin-top:6px"><a href="https://www.begambleaware.org">BeGambleAware</a> &middot; <a href="https://www.gamcare.org.uk">GamCare</a> &middot; National Gambling Helpline 0808 8020 133</div>
   </footer>
 
+  <script src="js/fmb-share.js" defer></script>
+  <script src="js/fmb-share-ui.js" defer></script>
 </main>
 </body>
 </html>

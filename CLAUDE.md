@@ -2487,6 +2487,28 @@ the Friday the **Supreme Trial Novices' Hurdle (Listed)** and the Sunday the
 - Declarations confirm 48 hours out, so the first card is built on 11 November
   and not before.
 
+- **2026 Day 1: 6 races gated 6/6, 65 declared runners, 14 picks, £14.00.** The
+  LONG opened in **two** races and the partial-forecast caveat above is the
+  reason that reads as method. This page named the three handicap *features* and
+  said in as many words that "at most three" was not supported, because a
+  supporting handicap of sixteen would open the slot unseen. **Both of Friday's
+  LONG-open races are supporting handicaps** — the 13:10 Conditional Jockeys'
+  (19 runners) and the 16:00 Novices' Handicap Hurdle (18) — and neither is on
+  the published feature list. Forecast the shape, state what the shape cannot
+  see, and the archive can score both halves.
+- **The RPR column was empty in all three handicaps, which is where the LONG
+  lives** (`scripts/analysis/rpr-calibration-cheltenham-13-nov.py`). Signed
+  r(RPR, OR) read **−0.233, −0.179 and −0.057** — all three fail §6's gate, so
+  no line and therefore no residual. The 14:55's spread ratio of **0.18** is the
+  most compressed in this archive, against 0.27 in the Cambridgeshire that
+  produced the finding. What carried the card instead: **Topspeed** (printed on
+  this sheet), last-time-out form, a **7lb penalty**, and the jockey bookings.
+- **No CD / C / D flags on the supplied sheet**, so the LONG's strongest signal
+  leg could not be used in either race where the slot was open. Ask for them.
+- **The going came off a tipster grid, not a racecard going line, and there was
+  no GoingStick.** On an Old Course card in November that is the single most
+  consequential unknown, and rules 11, 12 and 17 all want the real reading.
+
 ### Kempton Park (jumps)
 
 Right-handed, **flat**, and sharp — an oval of about 1m5f with easy bends and a
@@ -2708,6 +2730,23 @@ Add new course profiles as they're covered.
   - Two panels stating the same number is a free consistency check and this is
     the second time it has caught something. Prefer restating to paraphrasing.
 
+  **THAT CHECK NOW EXISTS, FOR THE CARD'S OWN FIGURES. Added 13 Nov 2026**
+  (`scripts/analysis/cheltenham-nov-day1-build.py`). §10 said "no check compares
+  a number in a sentence against the script that produced it". For racecard
+  figures it is cheap to build, and the first draft of that card needed it: a
+  pick's stat line read **TS 149** where the racecard says **134**, and the note
+  under it said 134 — two numbers, one horse, one paragraph.
+
+  - **The stat line is now DERIVED from the parsed racecard**, never typed. That
+    removes the whole class rather than catching one instance.
+  - **Every numeric claim a pick note makes is declared and checked** before a
+    line of HTML is written; a mismatch exits non-zero. Day 1 ran **35 figures
+    across 16 horses**, all agreeing. Verified by re-introducing the 149 and
+    watching the build refuse.
+  - The limit, stated: it checks figures that exist **on the racecard**. A
+    derived number — a correlation, a points-per-pick — is still only guarded by
+    the older habit of restating it in two panels.
+
 - **CHECK THE LICENCE BEFORE YOU READ, AND SAY WHAT IT PERMITS. Added
   25 Oct 2026.** `bumasello/mazetick` is **MIT**, which is why §12 could borrow
   its findings and say so. `ficokelly/Racing-app` — reviewed for the same purpose
@@ -2838,6 +2877,29 @@ Add new course profiles as they're covered.
   - **When you de-duplicate a model, de-duplicate the vocabulary it reads.**
     Two scripts importing the same `place-terms.mjs` still disagreed, because
     they disagreed about what the card was telling them.
+
+  **AND THE MODEL CAN BE RIGHT WHILE FAILING TO RECOGNISE THE RACE. Added
+  13 Nov 2026** (Cheltenham November Day 1). `isHandicap()` matched `handicap`
+  and `h'cap` — and not **`Hcp`**, which is how the supplied card spelled
+  **three of its six races**: "Cond Jockeys Hcp Hurdle", "Veterans' Hcp Chase",
+  "Novices' Hcp Hurdle". A 19-runner handicap then returned **3 places at 1/5
+  instead of 4 at 1/4**: wrong on the count, and wrong on the fraction by the
+  exact 20% §12 warns about.
+
+  - **The bands were never wrong; the race type was.** Every entry above is
+    about getting the ladder right, and this is the first one where a correct
+    ladder was handed the wrong row. A model is only as good as the thing that
+    decides which part of it applies.
+  - **It fails SHUT, not open** — a qualifying LONG reads as closed rather than
+    a closed one waving through. That is the safe direction, and it is luck:
+    nothing in the regex chose it, and the fraction error runs the other way.
+  - **Abbreviations are the card's choice, not ours.** The archive had seen
+    `handicap` and `h'cap` and concluded the pattern was complete; that was a
+    fact about every card read so far, the same shape as §6's error about
+    absences, committed on a regex.
+  - Pinned by a 16-runner `Hcp` race in `scripts/fixtures/nr-regression.json`.
+    **Remove `\bhcp\b` and the replay drops from 8 decisions to 7**, which is
+    how the guard was verified rather than asserted.
 
   **TWO MORE FROM THE SAME SETTLEMENT, AND THE SECOND FIX WAS BACKWARDS.**
 

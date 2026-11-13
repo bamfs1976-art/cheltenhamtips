@@ -1,0 +1,77 @@
+{
+  "event": "Cheltenham November Day 1",
+  "date": "2026-11-13",
+  "_note": "The card AS PRICED. `places` is the count each race was priced at and nothing else (CLAUDE.md §10, 17 Oct). No `offer` block anywhere: the Sky Bet terms were never read for this card, so no special is claimed — the base band is all that is asserted. Run at the off: node scripts/nr-check.mjs --card scripts/analysis/cheltenham-nov-day1-card.json --nr \"<off> <horse>, ...\"",
+  "races": [
+    {
+      "off": "13:10",
+      "race_name": "Conditional Jockeys' Handicap Hurdle",
+      "declared": 19,
+      "places": 4,
+      "ewFrac": "1/4",
+      "picks": [
+        { "slot": "NAP", "horse": "Keno Black", "odds": "7/1" },
+        { "slot": "NB", "horse": "High Fibre", "odds": "7/2" },
+        { "slot": "LONG", "horse": "Double Oban", "odds": "25/1",
+          "oddsObserved": [{ "source": "RP betting forecast, declared card", "odds": "25/1" }] }
+      ]
+    },
+    {
+      "off": "13:45",
+      "race_name": "Paddy Power Novices' Chase",
+      "declared": 6,
+      "places": 2,
+      "ewFrac": "1/4",
+      "picks": [
+        { "slot": "NAP", "horse": "Kingston Narcissus", "odds": "4/1" },
+        { "slot": "NB", "horse": "Intosomethinggood", "odds": "9/2" }
+      ]
+    },
+    {
+      "off": "14:20",
+      "race_name": "Shloer Chase (Grade 2)",
+      "declared": 4,
+      "places": 0,
+      "ewFrac": "1/4",
+      "picks": [
+        { "slot": "NAP", "horse": "Jonbon", "odds": "10/11" },
+        { "slot": "NB", "horse": "Mighty Bandit", "odds": "13/2" }
+      ]
+    },
+    {
+      "off": "14:55",
+      "race_name": "Veterans' Handicap Chase",
+      "declared": 8,
+      "places": 3,
+      "ewFrac": "1/5",
+      "picks": [
+        { "slot": "NAP", "horse": "Triple Trade", "odds": "100/30" },
+        { "slot": "NB", "horse": "Ga Law", "odds": "7/1" }
+      ]
+    },
+    {
+      "off": "15:30",
+      "race_name": "Hyde Novices' Hurdle (Grade 2)",
+      "declared": 10,
+      "places": 3,
+      "ewFrac": "1/5",
+      "picks": [
+        { "slot": "NAP", "horse": "Woodstock Octo", "odds": "11/2" },
+        { "slot": "NB", "horse": "Lock Stock", "odds": "7/1" }
+      ]
+    },
+    {
+      "off": "16:00",
+      "race_name": "Novices' Handicap Hurdle",
+      "declared": 18,
+      "places": 4,
+      "ewFrac": "1/4",
+      "picks": [
+        { "slot": "NAP", "horse": "Tuppence", "odds": "9/1" },
+        { "slot": "NB", "horse": "Way Of Stars", "odds": "13/2" },
+        { "slot": "LONG", "horse": "Ade Boy", "odds": "20/1",
+          "oddsObserved": [{ "source": "RP betting forecast, declared card", "odds": "20/1" }] }
+      ]
+    }
+  ]
+}

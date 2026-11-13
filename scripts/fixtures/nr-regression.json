@@ -1,5 +1,5 @@
 {
-  "event": "Regression — the three the archive already lost to",
+  "event": "Regression \u2014 the three the archive already lost to",
   "date": "replay",
   "races": [
     {
@@ -92,6 +92,27 @@
             {
               "source": "at the off",
               "odds": "3/1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "off": "14:05",
+      "_why": "The Hcp ABBREVIATION case, added 13 Nov 2026. isHandicap() matched 'handicap' and \"h'cap\" but not 'Hcp', which is how Cheltenham's November card spells three of its six races. Unfixed, this race reads as a non-handicap: 16 and 15 runners both pay 3, so no band move is reported and the LONG looks safe. Fixed, 16 runners pays 4 and 15 pays 3 \u2014 the band moves and the slot goes with it.",
+      "race_name": "Veterans' Hcp Chase",
+      "declared": 16,
+      "places": 4,
+      "ewFrac": "1/4",
+      "picks": [
+        {
+          "slot": "LONG",
+          "horse": "Abbreviated",
+          "odds": "20/1",
+          "oddsObserved": [
+            {
+              "source": "declared card",
+              "odds": "20/1"
             }
           ]
         }
