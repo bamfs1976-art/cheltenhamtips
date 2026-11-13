@@ -227,9 +227,14 @@
       stats: statsFor(races, settled),
       races: races,
       settled: settled,
-      note: settled
-        ? 'Settled at the prices shown · 50p each-way singles'
-        : 'Selections as priced · 50p each-way · not a guarantee'
+      /* Short enough to survive footer(): the room left for this note is
+         whatever the mark does not take, and 'CHELTENHAM NOVEMBER 2026' is
+         long enough that the old 52-character note truncated mid-word.
+         It also no longer asserts 50p EACH-WAY, which is not true of every
+         card — a 4-runner race is win only, and the share card is the one
+         artefact that leaves the site, where nobody can check it against
+         the page. The staking convention lives on the page. */
+      note: settled ? 'Settled at the prices shown' : 'Selections as priced · not a guarantee'
     };
   }
 
